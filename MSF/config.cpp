@@ -24,4 +24,25 @@ class Cfg3DEN
 			#include "MSF_Attributes_Persist.hpp"
 		};
 	};
+	class Mission
+	{
+		class MSF
+		{
+			displayName = "Mission Attributes";
+			display = "Display3DENEditAttributesPreview";
+			class AttributeCategories
+			{
+				class MSFPersist
+				{
+					class Attributes
+					{
+						class OperationName
+						{
+							property = "missionGroup";
+						};
+					};
+				};
+			};		
+		};
+	};
 };

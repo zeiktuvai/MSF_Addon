@@ -9,7 +9,7 @@
         object - Unit object (vehicle).
         
 	Examples:
-		[unit] call GetVehicleData.sqf;
+		[unit] call MSF_fnc_Persist_GetVehicleData;
 
 	Function Ver 2.0
 	Implemented in: MSF Addon v1.0
@@ -28,18 +28,14 @@ private _look = [];
 private _ammo = [];
 private _fuel = -1;
 private _isAlive = true;
-private _deathLoc = [];
-private _aceSupply = [];
+private _loc = [];
+private _aceRefuel = -1;
+private _aceRearm = -1;
 
 // get damage 
 if (_unit getVariable "MSF_Persist_isDamageEnable") then {
 	if (damage _unit == 1) then {
 		_isAlive = false;
-		if (MSF_Persist_Data_Death) then 
-		{
-			_deathLoc pushBack getPosATL _unit;
-			_deathLoc pushBack getDir _unit;
-		};
 	}
 	else 
 	{
@@ -53,6 +49,12 @@ if (_unit getVariable "MSF_Persist_isDamageEnable") then {
 			_damage pushBack [_i,[_PartN,_HitP]];
 		}; 
 	};	
+};
+
+if (_unit getVariable "MSF_Persist_isLocEnable") then 
+{
+	_loc pushBack getPosATL _unit;
+	_loc pushBack getDir _unit;
 };
 
 if (_isAlive) then {
@@ -109,17 +111,15 @@ if (_isAlive) then {
 };
 
 if (_unit getVariable "MSF_Persist_isACERefuel") then {		
-	private _fuelsupply = [_unit] call ace_refuel_fnc_getFuel; 	
-	_aceSupply pushBack _fuelsupply;
+	_aceRefuel = [_unit] call ace_refuel_fnc_getFuel;
 };
 
 if (_unit getVariable "MSF_Persist_isACERearm") then {
-	private _ammosupply = [_unit] call ace_rearm_fnc_getSupplyCount;
-	_aceSupply pushBack _ammosupply;
+	_aceRearm = [_unit] call ace_rearm_fnc_getSupplyCount;
 };
 
 // Set return variable
-_return = [_vehicleName, _vehicleType, _damage, _inventory, _look, _ammo, _fuel, _isAlive, _deathLoc, _aceSupply];
+_return = [_vehicleName, _vehicleType, _damage, _inventory, _look, _ammo, _fuel, _isAlive, _loc, _aceRefuel, _aceRearm];
 
 // return data
 _return;
