@@ -1,4 +1,4 @@
-name = "Mission Support Foundation v0.4";
+name = "Mission Support Foundation";
 description = "MSF - A";
 tooltip = "Mission Support Foundation v0.4";
 tooltipOwned = "MSF Owned";

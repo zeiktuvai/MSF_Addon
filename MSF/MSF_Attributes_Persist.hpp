@@ -53,7 +53,7 @@ class MSFPersistence
 			property = "MSF_Persist_isLocEnable";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = true;
+			defaultValue = false;
 			unique = 0; 
 			validate = "none";
 			condition = "objectVehicle";

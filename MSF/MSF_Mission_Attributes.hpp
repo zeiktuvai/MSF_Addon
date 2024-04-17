@@ -13,9 +13,10 @@ class MSFSettings
 				{
 					displayName = "Operation Name";
 					tooltip = "Sets the...";
-					property = "missionGroup";
+					property = "MSF_Mission_OpName";
 					control = "Edit";							
-					defaultValue = "";
+					defaultValue = "Operation";
+					validate = "variable";
 				};
 			};
 		};
