@@ -1,7 +1,7 @@
 class MSFSettings
 {
 	displayName = "MSF Settings";
-	display = "Display3DENEditAttributesPreview";
+	display = "Display3DENEditAttributes";
 	class AttributeCategories
 	{
 		class MSFBase
@@ -39,7 +39,7 @@ class MSFSettings
 					property = "MSF_Mission_Number";			
 					control = "EditShort";
 					validate = "number";
-					defaultValue = 0;
+					defaultValue = 1;
 				};
 				class EnablementCategory
 				{

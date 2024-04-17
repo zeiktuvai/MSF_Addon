@@ -11,7 +11,7 @@ class MSFPersistence
 			property = "MSF_Persist_isEnable";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 0;
+			defaultValue = false;
 			unique = 0; 
 			validate = "none";
 			condition = "objectVehicle";
@@ -93,6 +93,12 @@ class MSFPersistence
 			unique = 0; 
 			validate = "none";
 			condition = "objectVehicle";
+		};
+		class ACELogistics
+		{
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "ACE Logistics States";
 		};
 		class MSF_Persist_isACERefuel
 		{
