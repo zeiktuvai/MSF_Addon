@@ -26,7 +26,7 @@
 
 params ["_unit", "_vicType", "_inventory", "_damage", "_look", "_ammo", "_fuel", "_isAlive", "_loc", "_aceRefuel", "_aceRearm"];
 
-if (typeOf _unit != _vicType) exitWith {["Vehicle Type does not match; vehicle %1 of type %2 does not match saved type of %3", vehicleVarName _unit, typeOf _unit, _vicType] call BIS_fnc_error;};
+//if (typeOf _unit != _vicType) exitWith {["Vehicle Type does not match; vehicle %1 of type %2 does not match saved type of %3", vehicleVarName _unit, typeOf _unit, _vicType] call BIS_fnc_error;};
 
 // restore damage 
 if (_unit getVariable "MSF_Persist_isDamageEnable") then {

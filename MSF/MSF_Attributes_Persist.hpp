@@ -29,7 +29,7 @@ class MSFPersistence
 			property = "MSF_Persist_isInvEnable";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 1;
+			defaultValue = true;
 			unique = 0; 
 			validate = "none";
 			condition = "objectVehicle";
@@ -41,7 +41,7 @@ class MSFPersistence
 			property = "MSF_Persist_isDamageEnable";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 1;
+			defaultValue = true;
 			unique = 0; 
 			validate = "none";
 			condition = "objectVehicle";
@@ -53,7 +53,7 @@ class MSFPersistence
 			property = "MSF_Persist_isLocEnable";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 1;
+			defaultValue = true;
 			unique = 0; 
 			validate = "none";
 			condition = "objectVehicle";
@@ -65,7 +65,7 @@ class MSFPersistence
 			property = "MSF_Persist_isAmmoEnable";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 1;
+			defaultValue = true;
 			unique = 0; 
 			validate = "none";
 			condition = "objectVehicle";
@@ -77,7 +77,7 @@ class MSFPersistence
 			property = "MSF_Persist_isFuelEnable";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 1;
+			defaultValue = true;
 			unique = 0; 
 			validate = "none";
 			condition = "objectVehicle";
@@ -89,7 +89,7 @@ class MSFPersistence
 			property = "MSF_Persist_isLookEnable";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 1;
+			defaultValue = true;
 			unique = 0; 
 			validate = "none";
 			condition = "objectVehicle";
@@ -107,7 +107,7 @@ class MSFPersistence
 			property = "MSF_Persist_isACERefuel";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 0;
+			defaultValue = false;
 			unique = 0; 
 			validate = "none";
 			condition = "objectVehicle";
@@ -119,21 +119,10 @@ class MSFPersistence
 			property = "MSF_Persist_isACERearm";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 0;
+			defaultValue = false;
 			unique = 0; 
 			validate = "none";
 			condition = "objectVehicle";
 		};
 	};
 };
-
-// Enable boxes:
-// Inventory
-// Damage
-// Location
-// Ammunition
-// Fuel
-// Appearance
-// ACE Rearm/Refule
-
-// But do I want these in the object? or the ace settings.
