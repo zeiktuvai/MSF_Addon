@@ -16,6 +16,12 @@ class MSFPersistence
 			validate = "none";
 			condition = "objectVehicle";
 		};
+		class SaveStates
+		{
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "Save States";
+		};
 		class MSF_Persist_isInvEnable
 		{
 			displayName = "Inventory Persistence";

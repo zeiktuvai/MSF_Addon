@@ -16,7 +16,6 @@ class MSFSettings
 					property = "missionGroup";
 					control = "Edit";							
 					defaultValue = "";
-					unique = 0;
 				};
 			};
 		};
@@ -32,7 +31,21 @@ class MSFSettings
 					property = "MSF_Mission_Persistence";			
 					control = "Checkbox";							
 					defaultValue = false;
-					unique = 0;
+				};
+				class MissionNumber
+				{
+					displayName = "Mission Number";
+					tooltip = "Sets the mission number in the series. (i.e. If this is mission 3 of a 10 mission series then set this to 3 so that it loads persistence data from mission 2).";
+					property = "MSF_Mission_Number";			
+					control = "EditShort";
+					validate = "number";
+					defaultValue = 0;
+				};
+				class EnablementCategory
+				{
+					data = "AttributeSystemSubcategory";
+					control = "SubCategory";
+					displayName = "Data Persistence Enablement";
 				};
 				class EnableSaving
 				{
@@ -41,7 +54,6 @@ class MSFSettings
 					property = "MSF_Mission_Saving";			
 					control = "Checkbox";							
 					defaultValue = false;
-					unique = 0;
 				};
 				class EnableLoading
 				{
@@ -50,7 +62,6 @@ class MSFSettings
 					property = "MSF_Mission_Loading";			
 					control = "Checkbox";							
 					defaultValue = false;
-					unique = 0;
 				};
 			};
 		};
