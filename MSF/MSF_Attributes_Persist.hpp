@@ -1,7 +1,7 @@
 class MSFPersistence
 {
 	displayName = "MSF Persistence";
-	collapsed = 0;
+	collapsed = 1;
 	class Attributes
 	{
 		class MSF_Persist_isEnable
