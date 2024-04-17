@@ -26,23 +26,8 @@ class Cfg3DEN
 	};
 	class Mission
 	{
-		class MSF
-		{
-			displayName = "Mission Attributes";
-			display = "Display3DENEditAttributesPreview";
-			class AttributeCategories
-			{
-				class MSFPersist
-				{
-					class Attributes
-					{
-						class OperationName
-						{
-							property = "missionGroup";
-						};
-					};
-				};
-			};		
-		};
+		#include "MSF_Mission_Attributes.hpp"
 	};
 };
+
+#include "MSF_Editor_Menu.hpp"

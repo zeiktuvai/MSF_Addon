@@ -1,12 +1,13 @@
 
-if (isServer && MSF_Persist_Enable) then {
-	if (MSF_Persist_SaveEnable) then {
+if (isServer && getMissionConfigValue "MSF_Mission_Persistence") then {
+	if (getMissionConfigValue "MSF_Mission_Saving") then {
 		_saveTrig = createTrigger ["EmptyDetector", [0,0,0]];
-		_saveTrig setTriggerStatements ["triggerActivated trig_end_mission", "[] call MSF_fnc_Persist_SaveData;", ""];			
+		_saveTrig setVehicleVarName "save_trig";
+		_saveTrig setTriggerStatements ["triggerActivated trig_end_mission", "[] call MSF_fnc_Persist_SaveData; hint 'Persistence Saved';", ""];			
 	};
 	
-	if (MSF_Persist_LoadEnable) then {
-		[] call TFY_fnc_RestoreVicDataByName;
+	if (getMissionConfigValue "MSF_Mission_Loading") then {
+		[] call MSF_fnc_Persist_LoadData;
 	};
 };
 
