@@ -32,3 +32,11 @@ class Cfg3DEN
 };
 
 #include "MSF_Editor_Menu.hpp"
+
+class Extended_PreInit_EventHandlers
+{
+    class ADDON
+    {
+        init = QUOTE(call COMPILE_FILE(XEH_preInit));
+    };
+};

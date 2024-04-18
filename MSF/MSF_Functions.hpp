@@ -2,6 +2,15 @@ class CfgFunctions
 {
     class MSF
 	{
+		class Mission
+		{
+			file = "msf\fnc\mission";
+			class Init
+			{
+				recompile = 1;
+				postInit = 1;
+			};
+		};
 		class Persistence
 		{
 			file = "msf\fnc\persist";
@@ -12,7 +21,6 @@ class CfgFunctions
 			};
 			class Persist_GetVehicleData
 			{
-				// file = "msf\fnc\persist\fn_GetVehicleData.sqf";				
 				recompile = 1;
 			};
 			class Persist_SetVehicleData
