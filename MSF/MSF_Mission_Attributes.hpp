@@ -18,6 +18,22 @@ class MSFSettings
 					defaultValue = "Operation";
 					validate = "variable";
 				};
+				class EnableGMAct
+				{
+					displayName = "Enable GM Actions";
+					tooltip = "Adds an ACE menu option called GM Actions to any player unit with the IsGM attribute set true.";
+					property = "MSF_Mission_GM";			
+					control = "Checkbox";							
+					defaultValue = false;
+				};
+				class EnableEndMission
+				{
+					displayName = "Enable End Mission Action";
+					tooltip = "Adds an ACE menu option called End Mission when a specific trigger is activated.";
+					property = "MSF_Mission_EndMission";			
+					control = "Checkbox";							
+					defaultValue = false;
+				};
 			};
 		};
 		class MSFPersist
@@ -46,7 +62,7 @@ class MSFSettings
 				{
 					data = "AttributeSystemSubcategory";
 					control = "SubCategory";
-					displayName = "Data Persistence Enablement";
+					displayName = "Mission Data Persistence";
 				};
 				class EnableSaving
 				{

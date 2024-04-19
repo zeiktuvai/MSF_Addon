@@ -10,6 +10,10 @@ class CfgFunctions
 				recompile = 1;
 				postInit = 1;
 			};
+			class ApplyGMActions
+			{
+				recompile = 1;
+			};
 		};
 		class Persistence
 		{
@@ -32,6 +36,14 @@ class CfgFunctions
 				recompile = 1;
 			};
 			class Persist_LoadData
+			{
+				recompile = 1;
+			};
+		};
+		class ACEOptions
+		{
+			file = "msf\fnc\ace";
+			class ACEMedUnconcious
 			{
 				recompile = 1;
 			};

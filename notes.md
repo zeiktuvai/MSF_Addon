@@ -30,3 +30,7 @@ if (count _data != 0 && count _vehicleList != 0) then
  } forEach _data; 
 };
 ```
+
+private _trig = missionNamespace getVariable "trig_end_mission";
+
+triggerActivated _trig;

@@ -8,7 +8,7 @@ class CfgPatches
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.0;
-        requiredAddons[] = {3DEN};
+        requiredAddons[] = {3DEN, "cba_main", "ace_main"};
         is3DENmod = 1;
     };
 };
@@ -37,6 +37,6 @@ class Extended_PreInit_EventHandlers
 {
     class ADDON
     {
-        init = QUOTE(call COMPILE_FILE(XEH_preInit));
+        init = "call compile preprocessFileLineNumbers 'msf\XEH_preInit.sqf'";
     };
 };
