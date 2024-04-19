@@ -4,12 +4,9 @@
 	Description:
 		Part of MSF ACE Extensions.  This script works with the MSF Settings area in addon options for enabling/disabling ACE
 		Medical unconciousness.
-
-	Parameter(s):
-        object - Unit object (player or unit).
         
 	Examples:
-		[player] call TFY_fncACE_MedicalUnconcious;
+		[] call MSF_fnc_ACEMedUnconcious;
 
 	Function Ver 2.0
 	Implemented in: MSF Addon v1.0
@@ -29,4 +26,3 @@ if (isServer) then {
 		}] call CBA_fnc_addEventHandler;
 	} forEach allPlayers;
 };
-

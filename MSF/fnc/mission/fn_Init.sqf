@@ -18,4 +18,8 @@ if (isServer) then {
 	if (getMissionConfigValue "MSF_Mission_GM") then {
 		[] call MSF_fnc_ApplyGMActions;
 	};
+
+	if (getMissionConfigValue "MSF_Mission_EndMission") then {
+		[] call MSF_fnc_ApplyEndMission;
+	};
 };

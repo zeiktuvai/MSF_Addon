@@ -29,6 +29,10 @@ class Cfg3DEN
 	{
 		#include "MSF_Mission_Attributes.hpp"
 	};
+	class Attributes
+	{
+		#include "MSF_Controls.hpp"
+	};
 };
 
 #include "MSF_Editor_Menu.hpp"

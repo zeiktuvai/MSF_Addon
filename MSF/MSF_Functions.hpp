@@ -14,6 +14,10 @@ class CfgFunctions
 			{
 				recompile = 1;
 			};
+			class ApplyEndMission
+			{
+				recompile = 1;
+			};
 		};
 		class Persistence
 		{

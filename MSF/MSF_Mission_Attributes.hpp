@@ -6,18 +6,18 @@ class MSFSettings
 	{
 		class MSFBase
 		{
-			displayName = "MSF Settings";
+			displayName = "MSF Options";
 			class Attributes
 			{
-				class OperationName
-				{
-					displayName = "Operation Name";
-					tooltip = "Sets the...";
-					property = "MSF_Mission_OpName";
-					control = "Edit";							
-					defaultValue = "Operation";
-					validate = "variable";
-				};
+				// class OperationName
+				// {
+				// 	displayName = "Operation Name";
+				// 	tooltip = "Sets the...";
+				// 	property = "MSF_Mission_OpName";
+				// 	control = "Edit";							
+				// 	defaultValue = "Operation";
+				// 	validate = "variable";
+				// };
 				class EnableGMAct
 				{
 					displayName = "Enable GM Actions";
@@ -33,6 +33,54 @@ class MSFSettings
 					property = "MSF_Mission_EndMission";			
 					control = "Checkbox";							
 					defaultValue = false;
+				};
+				class EndTriggerName
+				{
+					displayName = "Ending Trigger Name";
+					tooltip = "The variable name of the trigger that ends the mission (For this to work it should not be synced to a scenario end module, or call BIS_fnc_EndMission) If 'End Mission Action' is enabled then this is required!";
+					property = "MSF_Mission_EndTrig";
+					control = "Edit";							
+					defaultValue = "trig_end_mission";
+					validate = "variable";
+				};
+				class EnablementCategory
+				{
+					data = "AttributeSystemSubcategory";
+					control = "SubCategory";
+					displayName = "Loadouts and Uniforms";
+				};
+				class NATOMissionUniforms
+				{
+					displayName = "Uniform";
+					tooltip = "Selects the uniform color for the NATO faction.";
+					property = "MSF_Mission_NATO_Uniforms";
+					control = "UniCombo";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = 0;
+					condition = "objectControllable";
+					typeName = "NUMBER";
+
+					class Values
+					{
+						class Temperate
+						{
+							name = "Temperate";
+							tooltip = "Temperate Uniform (i.e. Multicam)";
+							value = 0;
+						};
+						class Night
+						{
+							name = "Night";
+							tooltip = "Night Uniform";
+							value = 1;
+						};
+						class Winter
+						{
+							name = "Winter";
+							tooltip = "Winter Uniforms (Requires NATO Winter Faction [by MALLINGA] to be installed)";
+							value = 2;
+						};
+					};
 				};
 			};
 		};
@@ -57,6 +105,7 @@ class MSFSettings
 					control = "EditShort";
 					validate = "number";
 					defaultValue = 1;
+					typeName = "NUMBER";
 				};
 				class EnablementCategory
 				{

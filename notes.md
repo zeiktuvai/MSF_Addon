@@ -7,7 +7,11 @@ h1 isKindOf "LandVehicle";
 // Saving any vehicles in a named trigger area???
 // Ace interaction to manually save data as well.
 // Maybe in mission display if data is saved?
+// add trigger name for end mission save "Make Mandatory"
 
+// loadout
+// Set uniform in mission attr
+// Allow units to override
 
 private _vehicleList = vehicles select { _x getVariable "MSF_Persist_isEnable" == true; }; 
 
