@@ -55,7 +55,7 @@ class CfgFunctions
 		class Loadouts
 		{
 			file = "msf\fnc\loadout";
-			class LoadoutsInit
+			class Loadouts_Init
 			{
 				recompile = 1;
 			};
@@ -71,6 +71,7 @@ class CfgFunctions
 			{
 				recompile = 1;
 			};
+			class test {};
 		};
 	};
 };

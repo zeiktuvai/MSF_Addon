@@ -21,26 +21,33 @@ class Cfg3DEN
 	{
 		class AttributeCategories
 		{
-			#include "msf\cfg\MSF_Attributes_Persist.hpp"			
-			#include "msf\cfg\MSF_Attributes_Base.hpp"		
+			#include "cfg\MSF_Attributes_Persist.hpp"			
+			#include "cfg\MSF_Attributes_Base.hpp"		
 		};
 	};
 	class Mission
 	{
-		#include "msf\cfg\MSF_Mission_Attributes.hpp"
+		#include "cfg\MSF_Mission_Attributes.hpp"
 	};
 	class Attributes
 	{
-		#include "msf\cfg\MSF_Controls.hpp"
+		#include "cfg\MSF_Controls.hpp"
 	};
 };
 
-#include "msf\cfg\MSF_Editor_Menu.hpp"
+#include "cfg\MSF_Editor_Menu.hpp"
 
 class Extended_PreInit_EventHandlers
 {
     class ADDON
     {
         init = "call compile preprocessFileLineNumbers 'msf\XEH_preInit.sqf'";
+    };
+};
+
+//not working....
+class Extended_InitPost_EventHandlers {
+	class CAManBase {        
+		init = "[] call MSF_fnc_test;";        
     };
 };
