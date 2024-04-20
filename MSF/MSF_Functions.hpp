@@ -52,5 +52,25 @@ class CfgFunctions
 				recompile = 1;
 			};
 		};
+		class Loadouts
+		{
+			file = "msf\fnc\loadout";
+			class LoadoutsInit
+			{
+				recompile = 1;
+			};
+			class GetDynamicLoadoutByClass
+			{
+				recompile = 1;
+			};
+			class ApplyInitialLoadout
+			{
+				recompile = 1;
+			};
+			class ApplyRespawnInventory
+			{
+				recompile = 1;
+			};
+		};
 	};
 };

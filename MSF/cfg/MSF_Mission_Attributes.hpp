@@ -49,11 +49,19 @@ class MSFSettings
 					control = "SubCategory";
 					displayName = "Loadouts and Uniforms";
 				};
+				class EnableDynLoadout
+				{
+					displayName = "Enable Dynamic Loadouts";
+					tooltip = "This enables automatic starting loadout and respawn loadouts to be applied to player units based on unit class.";
+					property = "MSF_Loadout_Dyn_Enable";			
+					control = "Checkbox";							
+					defaultValue = false;
+				};
 				class NATOMissionUniforms
 				{
-					displayName = "Uniform";
-					tooltip = "Selects the uniform color for the NATO faction.";
-					property = "MSF_Mission_NATO_Uniforms";
+					displayName = "NATO Faction Uniform";
+					tooltip = "Selects the uniform color for the base NATO faction. (Not Pacific or Woodland).";
+					property = "MSF_Loadout_NATO_Uniform";
 					control = "UniCombo";
 					expression = "_this setVariable ['%s',_value];";
 					defaultValue = 0;

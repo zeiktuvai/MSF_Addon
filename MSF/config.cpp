@@ -8,7 +8,7 @@ class CfgPatches
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.0;
-        requiredAddons[] = {3DEN, "cba_main", "ace_main"};
+        requiredAddons[] = {3DEN, "cba_settings", "ace_interaction"};
         is3DENmod = 1;
     };
 };
@@ -21,21 +21,21 @@ class Cfg3DEN
 	{
 		class AttributeCategories
 		{
-			#include "MSF_Attributes_Persist.hpp"			
-			#include "MSF_Attributes_Base.hpp"		
+			#include "msf\cfg\MSF_Attributes_Persist.hpp"			
+			#include "msf\cfg\MSF_Attributes_Base.hpp"		
 		};
 	};
 	class Mission
 	{
-		#include "MSF_Mission_Attributes.hpp"
+		#include "msf\cfg\MSF_Mission_Attributes.hpp"
 	};
 	class Attributes
 	{
-		#include "MSF_Controls.hpp"
+		#include "msf\cfg\MSF_Controls.hpp"
 	};
 };
 
-#include "MSF_Editor_Menu.hpp"
+#include "msf\cfg\MSF_Editor_Menu.hpp"
 
 class Extended_PreInit_EventHandlers
 {
