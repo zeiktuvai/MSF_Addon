@@ -24,7 +24,7 @@ class MSFSettings
 					tooltip = "Adds an ACE menu option called GM Actions to any player unit with the IsGM attribute set true.";
 					property = "MSF_Mission_GM";			
 					control = "Checkbox";							
-					defaultValue = false;
+					defaultValue = 0;
 				};
 				class EnableEndMission
 				{
@@ -32,7 +32,7 @@ class MSFSettings
 					tooltip = "Adds an ACE menu option called End Mission when a specific trigger is activated.";
 					property = "MSF_Mission_EndMission";			
 					control = "Checkbox";							
-					defaultValue = false;
+					defaultValue = 0;
 				};
 				class EndTriggerName
 				{
@@ -55,7 +55,7 @@ class MSFSettings
 					tooltip = "This enables automatic starting loadout and respawn loadouts to be applied to player units based on unit class.";
 					property = "MSF_Loadout_Dyn_Enable";			
 					control = "Checkbox";							
-					defaultValue = false;
+					defaultValue = 0;
 				};
 				class NATOMissionUniforms
 				{
@@ -90,6 +90,20 @@ class MSFSettings
 						};
 					};
 				};
+				class MultiplayerCategory
+				{
+					data = "AttributeSystemSubcategory";
+					control = "SubCategory";
+					displayName = "Multiplayer Options";
+				};
+				class EnableRoP
+				{
+					displayName = "Enable Respawn on Player";
+					tooltip = "This enables setting each player on the units side as a respawn position.";
+					property = "MSF_Multi_RoP";			
+					control = "Checkbox";							
+					defaultValue = 0;
+				};
 			};
 		};
 		class MSFPersist
@@ -103,7 +117,7 @@ class MSFSettings
 					tooltip = "Enable the persistence module for this mission.";
 					property = "MSF_Mission_Persistence";			
 					control = "Checkbox";							
-					defaultValue = false;
+					defaultValue = 0;
 				};
 				class MissionNumber
 				{
@@ -127,7 +141,7 @@ class MSFSettings
 					tooltip = "Enables saving persistence data on enabled objects.";
 					property = "MSF_Mission_Saving";			
 					control = "Checkbox";							
-					defaultValue = false;
+					defaultValue = 0;
 				};
 				class EnableLoading
 				{
@@ -135,7 +149,7 @@ class MSFSettings
 					tooltip = "Enables loading persistence data on enabled objects.";
 					property = "MSF_Mission_Loading";			
 					control = "Checkbox";							
-					defaultValue = false;
+					defaultValue = 0;
 				};
 			};
 		};

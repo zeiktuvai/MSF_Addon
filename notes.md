@@ -18,7 +18,8 @@ h1 isKindOf "LandVehicle";
 // TASKS:
 // Move Loadout/Respawn Scripts into mod
 
-
+// research a event handler to make more tank hits kill us and less tank hits kill them
+// just make our vehicles more tough
 
 private _vehicleList = vehicles select { _x getVariable "MSF_Persist_isEnable" == true; }; 
 

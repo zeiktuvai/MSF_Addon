@@ -18,6 +18,10 @@ class CfgFunctions
 			{
 				recompile = 1;
 			};
+			class ConfigRespawnOnPlayer
+			{
+				recompile = 1;
+			};
 		};
 		class Persistence
 		{
@@ -55,7 +59,7 @@ class CfgFunctions
 		class Loadouts
 		{
 			file = "msf\fnc\loadout";
-			class Loadouts_Init
+			class InitializeLoadouts
 			{
 				recompile = 1;
 			};

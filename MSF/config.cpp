@@ -46,8 +46,8 @@ class Extended_PreInit_EventHandlers
 };
 
 //not working....
-class Extended_InitPost_EventHandlers {
-	class CAManBase {        
-		init = "[] call MSF_fnc_test;";        
-    };
-};
+// class Extended_InitPost_EventHandlers {
+// 	class CAManBase {        
+// 		init = "[] call MSF_fnc_test;";        
+//     };
+// };
