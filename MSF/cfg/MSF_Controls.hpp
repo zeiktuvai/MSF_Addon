@@ -6,17 +6,17 @@ class UniCombo : Combo
 		class Temperate
 		{
 			text = "Temperate";
-			data = "";
+			data = 0;
 		};
 		class Night
 		{
 			text = "Night";
-			data = "";
+			data = 1;
 		};
 		class Winter
 		{
 			text = "Winter";
-			data = "";
+			data = 2;
 		};
 	};
 };

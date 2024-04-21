@@ -1,10 +1,8 @@
-params ["_init", "_jip"];
-
 /*
 	Author: zeik_tuvai
 
 	Description:
-		Part of MSF Persistence module.  This is the initialization script for persistence that is ran on mission init.
+		Part of MSF.  This script is used to initialize object properties.
         
 	Examples:
 		[] call MSF_fnc_Init;

@@ -11,7 +11,7 @@
 	Implemented in: MSF Addon v1.0
 */
 private _vehicleList = vehicles select { _x getVariable "MSF_Persist_isEnable" == true; };
-private _prevMiss = format ["MSF_Persist_%1", [(getMissionConfigValue "MSF_Mission_Number") - 1, 0] call BIS_fnc_cutDecimals];
+private _prevMiss = format ["MSF_Persist_%1", [(getMissionConfigValue ["MSF_Mission_Number", 1]) - 1, 0] call BIS_fnc_cutDecimals];
 private _data = missionProfileNamespace getVariable [_prevMiss, []];
 
 if (count _data != 0 && count _vehicleList != 0) then

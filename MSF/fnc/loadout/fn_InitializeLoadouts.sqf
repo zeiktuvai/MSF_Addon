@@ -1,3 +1,15 @@
+/*
+	Author: zeik_tuvai
+
+	Description:
+		Part of MSF module.  This script is used to apply custom loadouts to player objects.
+        
+	Examples:
+		[player] call MSF_fnc_InitializeLoadouts;
+
+	Function Ver 2.0
+	Implemented in: MSF Addon v1.0
+*/
 params ["_unit"];
 
 if (getMissionConfigValue "MSF_Loadout_Dyn_Enable") then

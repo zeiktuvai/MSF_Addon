@@ -21,6 +21,6 @@ if (isServer) then
 		_data pushBack [[_vic] call MSF_fnc_Persist_GetVehicleData];
 	} forEach _vehicleList;
 
-	missionProfileNamespace setVariable [format ["MSF_Persist_%1", [getMissionConfigValue "MSF_Mission_Number", 0] call BIS_fnc_cutDecimals], _data];
+	missionProfileNamespace setVariable [format ["MSF_Persist_%1", [getMissionConfigValue ["MSF_Mission_Number", 1], 1] call BIS_fnc_cutDecimals], _data];
 	saveMissionProfileNamespace;
 };

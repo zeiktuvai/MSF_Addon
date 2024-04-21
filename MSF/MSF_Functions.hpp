@@ -2,10 +2,18 @@ class CfgFunctions
 {
     class MSF
 	{
+		class EntryPoint
+		{
+			file = "msf\fnc";
+			class Init
+			{
+				recompile = 1;
+			};
+		};
 		class Mission
 		{
 			file = "msf\fnc\mission";
-			class Init
+			class MissionInit
 			{
 				recompile = 1;
 				postInit = 1;
@@ -18,10 +26,15 @@ class CfgFunctions
 			{
 				recompile = 1;
 			};
+		};
+		class Multiplayer
+		{
+			file = "msf\fnc\multiplayer";
 			class ConfigRespawnOnPlayer
 			{
 				recompile = 1;
 			};
+			class ConfigureMP {};
 		};
 		class Persistence
 		{
@@ -75,7 +88,6 @@ class CfgFunctions
 			{
 				recompile = 1;
 			};
-			class test {};
 		};
 	};
 };
