@@ -7,16 +7,17 @@ h1 isKindOf "LandVehicle";
 // Saving any vehicles in a named trigger area???
 // Ace interaction to manually save data as well.
 // Maybe in mission display if data is saved?
-// Update persist save trigger name to use MSF_Mission_EndTrig
+// Update persist save trigger name to use MSF_Mission_EndTrig//// TEST THIS NOW!
+// Capturable vehicles that persist if they are in a trigger?
+// Some way to see what vehicles were persisted??
 
-// loadout
-// Set uniform in mission attr
-// Allow units to override
-// Implement loadouts
-// Test if loadouts can be in the mod or have to be in mission description -- not looking good
+
+// loadouts can be in mod
 
 // TASKS:
-// Move Loadout/Respawn Scripts into mod
+// Move JIP spawn on players to mod
+// Add setup files folder so description.ext can reference missionconfig.hpp
+// probably same for initplayerlocal.sqf
 
 // research a event handler to make more tank hits kill us and less tank hits kill them
 // just make our vehicles more tough
