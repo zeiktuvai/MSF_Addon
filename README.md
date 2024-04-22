@@ -38,7 +38,7 @@ This mod makes use of ACE 3 (and by extionsion CBA), which is needed for a lot o
 
 After this is complete, you can configure general settings in `Attributes > Mission Support Foundation > MSF Settings`.  Additional options can be configured in supported objects attributes dialog.
 
-![MSF_Settings](https://raw.githubusercontent.com/zeiktuvai/TFY_Arma3/c3cd00d0fafba1322924c1d89cc020ef7831e2b5/img/MSF_Settings.png)
+![MSF_Settings](https://raw.githubusercontent.com/zeiktuvai/TFY_Arma3/Dev/img/MSF_Settings.png)
 
 # Updating
 
