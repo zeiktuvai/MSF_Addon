@@ -1,6 +1,6 @@
 # Mission Support Foundation for Arma 3 - EDEN Module Edition
 
-The MSF module is a collection of tools wrapped into a conveinient framework that makes building story driven missions much easier.  It includes many commonly used features that might be a simple script or two but having to copy them from mission to mission gets annoying, especially if they need to be updated accross mission sets.
+The MSF module is a collection of tools wrapped into a convenient framework that makes building story driven missions much easier.  It includes many commonly used features that might be a simple script or two but having to copy them from mission to mission gets annoying, especially if they need to be updated across mission sets.
 
 This project started life as a set of scripts to automate applying custom loadouts to missions automatically, but as the scope expanded and I started adding things outside of loadouts it seemed prudent to re-rganize the project.  And as my knowledge of Arma grew, it made things much easier to put this into a mod and add custom attributes to objects to make configureation a breeze.
 

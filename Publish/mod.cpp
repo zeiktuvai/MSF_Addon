@@ -1,3 +1,4 @@
+dir = "@MSF";
 name = "Mission Support Foundation";
 description = "Mission Support Foundation - A mod for helping mission builders with common things that are frequently done.";
 tooltip = "Mission Support Foundation v1.0";
