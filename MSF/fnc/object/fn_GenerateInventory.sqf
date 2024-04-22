@@ -28,7 +28,7 @@ if(isServer) then
 		if (_object getVariable "MSF_Helper_InvGenerate_Enabled") then {
 			private _count = _object getVariable "MSF_Helper_InvGenerate_ItemCount";
 			private _countType = _object getVariable ["MSF_Helper_InvGenerate_Type", false];
-			systemChat format ["%1 %2 %3", _object, _count, _countType];
+
 			clearWeaponCargoGlobal _object;
 			clearMagazineCargoGlobal _object;
 			clearItemCargoGlobal _object;
