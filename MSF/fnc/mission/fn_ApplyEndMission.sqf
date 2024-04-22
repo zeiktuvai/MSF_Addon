@@ -1,4 +1,15 @@
+/*
+	Author: zeik_tuvai
 
+	Description:
+		Part of MSF.  This script is used to set up the end mission ace menu option.
+        
+	Examples:
+		[] call MSF_fnc_Init;
+
+	Function Ver 2.0
+	Implemented in: MSF Addon v1.0
+*/
 if(isServer && getMissionConfigValue "MSF_Mission_EndMission") then
 {
 	private _players = allPlayers select { _x getVariable "MSF_Player_IsSL" == true; };

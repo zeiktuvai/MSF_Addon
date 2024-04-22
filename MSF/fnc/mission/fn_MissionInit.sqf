@@ -12,6 +12,7 @@
 */
 if (isServer) then {
 	[] call MSF_fnc_ACEMedUnconcious;
+	[] call MSF_fnc_GenerateInventory;
 	
 	if (getMissionConfigValue "MSF_Mission_GM") then {
 		[] call MSF_fnc_ApplyGMActions;
@@ -20,6 +21,4 @@ if (isServer) then {
 	if (getMissionConfigValue "MSF_Mission_EndMission") then {
 		[] call MSF_fnc_ApplyEndMission;
 	};
-
-	//call generate inv
 };

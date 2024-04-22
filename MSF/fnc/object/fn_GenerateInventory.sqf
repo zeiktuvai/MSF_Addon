@@ -1,5 +1,16 @@
+/*
+	Author: zeik_tuvai
 
+	Description:
+		Part of MSF.  This script is used to generate random inventory based on properties configured on the object
+		from a list of items configured in MSF settings.  Each category can be enabled/disabled
+        
+	Examples:
+		[] call MSF_fnc_Init;
 
+	Function Ver 2.0
+	Implemented in: MSF Addon v1.0
+*/
 
 if(isServer) then 
 {
@@ -30,20 +41,30 @@ if(isServer) then
 			};
 
 			if (_countType) then {
-				for "_m" from 1 to _count do {
-					_object addMagazineCargoGlobal [selectRandom _mags, 1];
+				if (_object getVariable "MSF_Helper_InvGenerate_Magazines") then {
+					for "_m" from 1 to _count do {
+						_object addMagazineCargoGlobal [selectRandom _mags, 1];
+					};
 				};
-				for "_l" from 1 to _count do {
-					_object addMagazineCargoGlobal [selectRandom _launch, 1];
+				if (_object getVariable "MSF_Helper_InvGenerate_Launcher") then {
+					for "_l" from 1 to _count do {
+						_object addMagazineCargoGlobal [selectRandom _launch, 1];
+					};
 				};
-				for "_g" from 1 to _count do {
-					_object addMagazineCargoGlobal [selectRandom _grenade, 1];
+				if (_object getVariable "MSF_Helper_InvGenerate_Grenade") then {
+					for "_g" from 1 to _count do {
+						_object addMagazineCargoGlobal [selectRandom _grenade, 1];
+					};
 				};
-				for "_d" from 1 to _count do {
-					_object addItemCargoGlobal [selectRandom _medical, 1];
+				if (_object getVariable "MSF_Helper_InvGenerate_Medical") then {
+					for "_d" from 1 to _count do {
+						_object addItemCargoGlobal [selectRandom _medical, 1];
+					};
 				};
-				for "_f" from 1 to _count do {
-					_object addItemCargoGlobal [selectRandom _food, 1];
+				if (_object getVariable "MSF_Helper_InvGenerate_Food") then {
+					for "_f" from 1 to _count do {
+						_object addItemCargoGlobal [selectRandom _food, 1];
+					};
 				};
 			} else {
 				private _remain = _count;
