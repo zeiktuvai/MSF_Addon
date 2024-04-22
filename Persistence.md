@@ -8,9 +8,6 @@ Each option can be enabled or disabled in the settings and Save or Load can be d
 
 (Yes, I know there are mods out there that already do this.  However those were too involved and did more than what I wanted to accomplish.  I intentionally only wanted vehicles to be affected by this and the units to be handled by the loadout system).
 
-![MSF Persistence Settings](https://raw.githubusercontent.com/zeiktuvai/TFY_Arma3/Dev/img/msf_persist.png)
-
-
 # Configuration
 
 To use the persistence module complete the following steps.  
@@ -25,7 +22,11 @@ Set the parameter as such `missionGroup = "MyAmazingMission";`, changing myamazi
 
 General Persistence settings are in the attributes menu (attributes > Mission Support Foundation > MSF Settings) under the persistence section.
 
+![MSF Persistence Settings](https://raw.githubusercontent.com/zeiktuvai/TFY_Arma3/Dev/img/msf_persist.png)
+
 Specific settings for each supported vehicle type is in the attributes for that vehicle
+
+![MSF Persistence Attributes](https://raw.githubusercontent.com/zeiktuvai/TFY_Arma3/Dev/img/msf_persist_attr.png)
 
 # Module Notes
 
