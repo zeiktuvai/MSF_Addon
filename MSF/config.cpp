@@ -23,6 +23,7 @@ class Cfg3DEN
 		{
 			#include "cfg\MSF_Attributes_Persist.hpp"			
 			#include "cfg\MSF_Attributes_Base.hpp"		
+			#include "cfg\MSF_Attributes_Helpers.hpp"
 		};
 	};
 	class Mission
@@ -44,6 +45,8 @@ class Extended_PreInit_EventHandlers
         init = "call compile preprocessFileLineNumbers 'msf\XEH_preInit.sqf'";
     };
 };
+
+#include "cfg\MSF_Config.hpp"
 
 //not working....
 // class Extended_InitPost_EventHandlers {

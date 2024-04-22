@@ -109,6 +109,15 @@ class MSFSettings
 					expression = "_this setVariable ['%s',_value];";
 					defaultValue = false;
 				};
+				class EnableJnP
+				{
+					displayName = "Enable Join near Player";
+					tooltip = "When enabled, any player that joins after mission start will spawn near other players instead of at the start point.";
+					property = "MSF_Multi_JnP";	
+					control = "Checkbox";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = false;
+				};
 			};
 		};
 		class MSFPersist
@@ -159,6 +168,74 @@ class MSFSettings
 					control = "Checkbox";
 					expression = "_this setVariable ['%s',_value];";
 					defaultValue = false;
+				};
+			};
+		};
+		class MSFHelpers
+		{
+			displayName = "MSF Helper Functions";			
+			class Attributes
+			{
+				class InventoryHelper
+				{
+					displayName = "Inventory Generation";
+					data = "AttributeSystemSubcategory";
+					control = "SubCategoryDesc2";
+					description = "These pre-configured lists are what the inventory generation system uses to pick items to randomly fill enabled objects.";
+				};
+				class InventoryItems
+				{
+					displayName = "General item types";
+					tooltip = "List of items to use for auto filling containers/vehicles";
+					property = "MSF_Helper_Inv_Item";
+					control = "EditCodeMulti3";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'items');";
+				};
+				class InventoryMagList
+				{
+					displayName = "Magazine types";
+					tooltip = "List of mags to use for auto filling containers/vehicles";
+					property = "MSF_Helper_Inv_Mag";
+					control = "EditCodeMulti3";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'natoStdMags');";
+				};
+				class InventoryMagLauncher
+				{
+					displayName = "Launcher Ammmo types";
+					tooltip = "List of launcher ammo to use for auto filling containers/vehicles";
+					property = "MSF_Helper_Inv_Launcher";
+					control = "EditCodeMulti3";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'launcherRounds');";
+				};
+				class InventoryGrenades
+				{
+					displayName = "Grenade types";
+					tooltip = "List of grenades to use for auto filling containers/vehicles";
+					property = "MSF_Helper_Inv_Grenades";
+					control = "EditCodeMulti3";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'grenades');";
+				};
+				class InventoryMedicalList
+				{
+					displayName = "Medical types";
+					tooltip = "List of medical items to use for auto filling containers/vehicles";
+					property = "MSF_Helper_Inv_Med";
+					control = "EditCodeMulti3";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'aceMedical');";
+				};
+				class InventoryFoodList
+				{
+					displayName = "Food types";
+					tooltip = "List of food items to use for auto filling containers/vehicles";
+					property = "MSF_Helper_Inv_Food";
+					control = "EditCodeMulti3";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'aceFood');";
 				};
 			};
 		};

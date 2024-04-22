@@ -34,6 +34,10 @@ class CfgFunctions
 			{
 				recompile = 1;
 			};
+			class JIPSpawnNearPlayer
+			{
+				recompile = 1;
+			};
 			class ConfigureMP {};
 		};
 		class Persistence
@@ -85,6 +89,14 @@ class CfgFunctions
 				recompile = 1;
 			};
 			class ApplyRespawnInventory
+			{
+				recompile = 1;
+			};
+		};
+		class Objects
+		{
+			file = "msf\fnc\object";
+			class GenerateInventory
 			{
 				recompile = 1;
 			};

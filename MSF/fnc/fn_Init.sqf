@@ -2,7 +2,7 @@
 	Author: zeik_tuvai
 
 	Description:
-		
+		This is the entry point script for enabling MSF functions that interact with player objects using InitPlayerLocal.sqf
         
 	Examples:
 		[] call MSF_fnc_Init;
@@ -15,4 +15,4 @@ params ["_unit"];
 
 [_unit] call MSF_fnc_InitializeLoadouts;
 [_unit] call MSF_fnc_ConfigRespawnOnPlayer;
-//JOP here because this gets called in initplayerlocal
+[_unit] call MSF_fnc_JIPSpawnNearPlayer

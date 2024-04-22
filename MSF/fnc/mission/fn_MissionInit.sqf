@@ -20,4 +20,6 @@ if (isServer) then {
 	if (getMissionConfigValue "MSF_Mission_EndMission") then {
 		[] call MSF_fnc_ApplyEndMission;
 	};
+
+	//call generate inv
 };
