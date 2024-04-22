@@ -5,7 +5,7 @@
 		Part of MSF.  This script is used to set up the end mission ace menu option.
         
 	Examples:
-		[] call MSF_fnc_Init;
+		[] call MSF_fnc_ApplyEndMission;
 
 	Function Ver 2.0
 	Implemented in: MSF Addon v1.0

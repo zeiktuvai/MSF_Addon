@@ -6,7 +6,7 @@
 		from a list of items configured in MSF settings.  Each category can be enabled/disabled
         
 	Examples:
-		[] call MSF_fnc_Init;
+		[] call MSF_fnc_GenerateInventory;
 
 	Function Ver 2.0
 	Implemented in: MSF Addon v1.0
