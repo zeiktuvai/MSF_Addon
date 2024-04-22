@@ -28,6 +28,7 @@ class MSFHelpers
 			property = "MSF_Helper_InvGenerate_ItemCount";			
 			control = "EditShort";
 			expression = "_this setVariable ['%s',_value];";
+			condition = "objectHasInventoryCargo";
 			defaultValue = 0;
 			validate = "number";
 			typeName = "NUMBER";

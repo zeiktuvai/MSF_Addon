@@ -203,7 +203,7 @@ class MSFSettings
 				};
 				class InventoryMagLauncher
 				{
-					displayName = "Launcher Ammmo types";
+					displayName = "Launcher Ammo types";
 					tooltip = "List of launcher ammo to use for auto filling containers/vehicles";
 					property = "MSF_Helper_Inv_Launcher";
 					control = "EditCodeMulti3";
