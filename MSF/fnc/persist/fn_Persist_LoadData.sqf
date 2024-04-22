@@ -10,13 +10,13 @@
 	Function Ver 2.0
 	Implemented in: MSF Addon v1.0
 */
-if (isServer) then {
-	private _vehicleList = vehicles select { _x getVariable "MSF_Persist_isEnable" == true; };
-	private _prevMiss = format ["MSF_Persist_%1", [(getMissionConfigValue "MSF_Mission_Number") - 1, 0] call BIS_fnc_cutDecimals];
-	private _data = missionProfileNamespace getVariable [_prevMiss, []];
 
-	if (count _data != 0 && count _vehicleList != 0) then
-	{
+private _vehicleList = vehicles select { _x getVariable "MSF_Persist_isEnable" == true; };
+private _prevMiss = format ["MSF_Persist_%1", [(getMissionConfigValue ["MSF_Mission_Number", 1]) - 1, 0] call BIS_fnc_cutDecimals];
+private _data = missionProfileNamespace getVariable [_prevMiss, []];
+
+if (count _data != 0 && count _vehicleList != 0) then
+{
 		{
 			(_x select 0) params ["_vicName", "_vicType", "_dmg", "_inv", "_look", "_ammo", "_fuel", "_isAlive", "_loc", "_aceRefuel", "_aceRearm"];
 			private ["_vic"];
@@ -28,6 +28,4 @@ if (isServer) then {
 				_vic setVariable ["PersistenceSet", true];
 			};
 		} forEach _data;
-	};	
-};
-
+};	

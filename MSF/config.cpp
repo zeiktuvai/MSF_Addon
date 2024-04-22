@@ -8,7 +8,7 @@ class CfgPatches
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.0;
-        requiredAddons[] = {3DEN};
+        requiredAddons[] = {3DEN, "cba_settings", "ace_interaction"};
         is3DENmod = 1;
     };
 };
@@ -21,14 +21,36 @@ class Cfg3DEN
 	{
 		class AttributeCategories
 		{
-			#include "MSF_Attributes_Persist.hpp"			
-			#include "MSF_Attributes_Base.hpp"		
+			#include "cfg\MSF_Attributes_Persist.hpp"			
+			#include "cfg\MSF_Attributes_Base.hpp"		
+			#include "cfg\MSF_Attributes_Helpers.hpp"
 		};
 	};
 	class Mission
 	{
-		#include "MSF_Mission_Attributes.hpp"
+		#include "cfg\MSF_Mission_Attributes.hpp"
+	};
+	class Attributes
+	{
+		#include "cfg\MSF_Controls.hpp"
 	};
 };
 
-#include "MSF_Editor_Menu.hpp"
+#include "cfg\MSF_Editor_Menu.hpp"
+
+class Extended_PreInit_EventHandlers
+{
+    class ADDON
+    {
+        init = "call compile preprocessFileLineNumbers 'msf\XEH_preInit.sqf'";
+    };
+};
+
+#include "cfg\MSF_Config.hpp"
+
+//not working....
+// class Extended_InitPost_EventHandlers {
+// 	class CAManBase {        
+// 		init = "[] call MSF_fnc_test;";        
+//     };
+// };

@@ -2,18 +2,7 @@ h1 isKindOf "Air";
 h1 isKindOf "LandVehicle";
 
 
-// Persist TODO
-// Enable deletion of previous missions var to save space/reset progress for future play throughs.
-// Saving any vehicles in a named trigger area???
 
-// load data flow:
-// get vic list with check box enabled
-// match type and call code to set up vic
-// if no type, don't restore data
-// -what happens if no vic type? 
-// -or if two of one type saved but only one in mission?
-
-// maybe just match by type, and if there is not enough data/vics it just skipps them.
 
 private _vehicleList = vehicles select { _x getVariable "MSF_Persist_isEnable" == true; }; 
 
@@ -36,3 +25,7 @@ if (count _data != 0 && count _vehicleList != 0) then
  } forEach _data; 
 };
 ```
+
+private _trig = missionNamespace getVariable "trig_end_mission";
+
+triggerActivated _trig;
