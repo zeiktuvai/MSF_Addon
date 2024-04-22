@@ -2,25 +2,7 @@ h1 isKindOf "Air";
 h1 isKindOf "LandVehicle";
 
 
-// Persist TODO
-// Enable deletion of previous missions var to save space/reset progress for future play throughs.
-// Saving any vehicles in a named trigger area???
-// Ace interaction to manually save data as well.
-// Maybe in mission display if data is saved?
-// Update persist save trigger name to use MSF_Mission_EndTrig//// TEST THIS NOW!
-// Capturable vehicles that persist if they are in a trigger?
-// Some way to see what vehicles were persisted??
 
-
-// loadouts can be in mod
-
-// TASKS:
-// Move JIP spawn on players to mod
-// Add setup files folder so description.ext can reference missionconfig.hpp
-// probably same for initplayerlocal.sqf
-
-// research a event handler to make more tank hits kill us and less tank hits kill them
-// just make our vehicles more tough
 
 private _vehicleList = vehicles select { _x getVariable "MSF_Persist_isEnable" == true; }; 
 

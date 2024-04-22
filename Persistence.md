@@ -20,7 +20,7 @@ Set the parameter as such `missionGroup = "MyAmazingMission";`, changing myamazi
 
 **MSF Settings - Persistence**
 
-General Persistence settings are in the attributes menu (attributes > Mission Support Foundation > MSF Settings) under the persistence section.
+General Persistence settings are in the attributes menu (attributes > Mission Support Foundation > MSF Settings) under the persistence section.  The only required parameter is `Attributes > Mission Support Foundation > MSF Settings > End Trigger Name` which is the name of the trigger that will end the mission to trigger saving.  If this is not set, persistence will not work.
 
 ![MSF Persistence Settings](https://raw.githubusercontent.com/zeiktuvai/TFY_Arma3/Dev/img/msf_persist.png)
 
