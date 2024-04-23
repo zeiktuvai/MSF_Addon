@@ -25,8 +25,8 @@ This mod makes use of ACE 3 (and by extionsion CBA), which is needed for a lot o
 [Updating](#updating)  
 [Loadout Management](#loadout-management)  
 [Multiplayer Options](#multiplayer-options)  
-[Mission Flow Options](#mission-flow-options)
-[Mission Building Tools](#mission-building-tools)
+[Mission Flow Options](#mission-flow-options)  
+[Mission Building Tools](#mission-building-tools)  
 [Player Preferences](#player-preferences)  
 
 [Change Log](Changelog.md)  
