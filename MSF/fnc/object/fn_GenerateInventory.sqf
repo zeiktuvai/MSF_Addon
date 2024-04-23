@@ -48,7 +48,7 @@ if(isServer) then
 
 			if (_fill) then {
 				private _remain = loadAbs _object;
-				private _max = (maxLoad a) * .8;
+				private _max = (maxLoad _object) * .8;
 
 				while { loadAbs _object < _max } do {
 					private _cat = selectRandomWeighted[
