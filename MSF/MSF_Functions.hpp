@@ -108,5 +108,10 @@ class CfgFunctions
 			class GetVehiclesByProperty {};
 			class GetPlayersByProperty {};
 		};
+		class Validators
+		{
+			file = "msf\fnc\validators";
+			class SetInvGenEnable {};
+		};
 	};
 };

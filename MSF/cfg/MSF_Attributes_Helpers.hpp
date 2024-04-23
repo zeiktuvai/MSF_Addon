@@ -17,7 +17,7 @@ class MSFHelpersInventory
 			tooltip = "Enables random inventory generation.";
 			property = "MSF_Helper_InvGenerate_Enabled";
 			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value];";
+			expression = "_this setVariable ['%s',_value]; [_this, _value] call MSF_fnc_SetInvGenEnable;";
 			defaultValue = false;			
 			condition = "objectHasInventoryCargo";
 		};
