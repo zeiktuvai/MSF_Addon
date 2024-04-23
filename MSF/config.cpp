@@ -4,7 +4,7 @@ class CfgPatches
     {
 		name = "Mission Support Foundation"
 		author = "Zeik_Tuvai";
-		version = 0.2;
+		version = 1.1;
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.0;
