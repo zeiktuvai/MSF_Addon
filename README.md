@@ -1,6 +1,6 @@
 # Mission Support Foundation for Arma 3 - EDEN Module Edition
 
-The MSF module is a collection of tools wrapped into a conveinient framework that makes building story driven missions much easier.  It includes many commonly used features that might be a simple script or two but having to copy them from mission to mission gets annoying, especially if they need to be updated accross mission sets.
+The MSF module is a collection of tools wrapped into a convenient framework that makes building story driven missions much easier.  It includes many commonly used features that might be a simple script or two but having to copy them from mission to mission gets annoying, especially if they need to be updated across mission sets.
 
 This project started life as a set of scripts to automate applying custom loadouts to missions automatically, but as the scope expanded and I started adding things outside of loadouts it seemed prudent to re-rganize the project.  And as my knowledge of Arma grew, it made things much easier to put this into a mod and add custom attributes to objects to make configureation a breeze.
 
@@ -25,7 +25,8 @@ This mod makes use of ACE 3 (and by extionsion CBA), which is needed for a lot o
 [Updating](#updating)  
 [Loadout Management](#loadout-management)  
 [Multiplayer Options](#multiplayer-options)  
-[ACE 3 Interaction Features](#ace-interaction-features)  
+[Mission Flow Options](#mission-flow-options)  
+[Mission Building Tools](#mission-building-tools)  
 [Player Preferences](#player-preferences)  
 
 [Change Log](Changelog.md)  
@@ -67,7 +68,7 @@ This sets each player on the given side to be a respawn point for players to res
 **Join near Players**
 This makes any player that joins after the mission starts to spawn near other players of the same side instead of at the start point for that unit.
   
-# ACE Interaction Features
+# Mission Flow Options
 
 **ACE End Mission Menu Option**  
 Upon activation of a trigger, an ace self interaction option will be added to allow players to end the mission when they choose.  Any unit with the `Game Master` or `Commander/Leader` box checked will get this option.
@@ -78,6 +79,15 @@ For this to work, a trigger for the mission end parameters should be configured 
 Adds special actions to the GM unit to add QOL features to gameplay. Avaliable GM Actions:  
 - Reveal all enemies on map only to GM.  
 - Spawn an ACE Arsenal crate that can be interacted with to remove it when done.  
+
+# Mission Building Tools  
+
+**Inventory Generation System**  
+This system can be used to generate random inventory for a container. It works by using a weighted system of categories (Weapon Mags, Medical, Grenades, etc.) that can be set per container object (Vehicle, Supply Box, etc.).  When enabled on the object it works in one of two ways:  
+- It can use an exact number to generate items, using the weighted categories.
+- It can fill the container to %80 of it's max capacity using the weighted categories.  
+
+When weighting a category, they higher the number it is the higher the chance of it being picked.  To disable a category, move the slider all the way to the left to 0.1.
 
 # Player Preferences
 
