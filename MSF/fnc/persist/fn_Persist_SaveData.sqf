@@ -12,7 +12,7 @@
 */
 if (isServer) then
 {
-	private _vehicleList = vehicles select { _x getVariable "MSF_Persist_isEnable" == true; };
+	private _vehicleList = ["MSF_Persist_isEnable"]  call MSF_fnc_GetVehiclesByProperty;
 	private _data = [];
 	
 	{

@@ -100,6 +100,13 @@ class CfgFunctions
 			{
 				recompile = 1;
 			};
+			class InfiniteFuelHandler {};
+		};
+		class Helpers
+		{
+			file = "msf\fnc\helpers";
+			class GetVehiclesByProperty {};
+			class GetPlayersByProperty {};
 		};
 	};
 };
