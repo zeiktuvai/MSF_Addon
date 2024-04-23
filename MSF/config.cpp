@@ -21,9 +21,9 @@ class Cfg3DEN
 	{
 		class AttributeCategories
 		{
-			#include "cfg\MSF_Attributes_Persist.hpp"			
 			#include "cfg\MSF_Attributes_Base.hpp"		
 			#include "cfg\MSF_Attributes_Helpers.hpp"
+			#include "cfg\MSF_Attributes_Persist.hpp"			
 		};
 	};
 	class Mission
