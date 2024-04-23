@@ -23,8 +23,8 @@ class MSFHelpers
 		};
 		class MSF_Helper_InvGenerate_ItemCount
 		{
-			displayName = "Item Count";
-			tooltip = "Sets the number of items to generate for this object.";
+			displayName = "Number of Items";
+			tooltip = "Sets the number of items to generate for this object. (If fill container is disabled.)";
 			property = "MSF_Helper_InvGenerate_ItemCount";			
 			control = "EditShort";
 			expression = "_this setVariable ['%s',_value];";
@@ -33,11 +33,11 @@ class MSFHelpers
 			validate = "number";
 			typeName = "NUMBER";
 		};
-		class MSF_Helper_InvGenerate_Type
+		class MSF_Helper_InvGenerate_Fill
 		{			
-			displayName = "Item Count per Category";			
-			tooltip = "If enabled, item count is used to generate that many items per category. If disabled, item count is spread across all categories (default).";
-			property = "MSF_Helper_InvGenerate_Type";
+			displayName = "Fill Container";			
+			tooltip = "If enabled, the system will fill 80% of the objects inventory ignoring number of items.";
+			property = "MSF_Helper_InvGenerate_Fill";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = false;			
@@ -46,57 +46,58 @@ class MSFHelpers
 		class InventoryGenSysCategories
 		{
 			data = "AttributeSystemSubcategory";
-			control = "SubCategory";
-			displayName = "Item Generation Categories";			
+			control = "SubCategoryDesc1";
+			displayName = "Weighted Item Generation";
+			description = "How likely an item category will be picked when generating items (0.1 disables a category)."
 		};
-		class MSF_Helper_InvGenerate_Magazines
+		class MSF_Helper_InvGenerate_MagWeight
 		{			
-			displayName = "Enable Generating Magazines";			
-			tooltip = "Generates random mags from the list.";
-			property = "MSF_Helper_InvGenerate_Magazines";
-			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = false;			
+			displayName = "Magazine Likeliness";			
+			tooltip = "How likely the system is to add mags to the items inventory. (0.1 disables this catetory)";
+			property = "MSF_Helper_InvGenerate_MagWeight";
+			control = "SliderZeroToOneSmall";
+			expression = "if (_value == 0.1) then { _this setVariable ['%s',0]; } else { _this setVariable ['%s',_value]; };";
+			defaultValue = 1;			
 			condition = "objectHasInventoryCargo";
 		};
-		class MSF_Helper_InvGenerate_Launcher
+		class MSF_Helper_InvGenerate_LauncherWeight
 		{			
-			displayName = "Enable Generating Launcher Ammo";			
-			tooltip = "Generates random launcher ammo from the list.";
-			property = "MSF_Helper_InvGenerate_Launcher";
-			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = false;			
+			displayName = "Launcher Ammo Likeliness";			
+			tooltip = "How likely the system is to add launcher ammo to the items inventory. (0.1 disables this catetory)";
+			property = "MSF_Helper_InvGenerate_LauncherWeight";
+			control = "SliderZeroToOneSmall";
+			expression = "if (_value == 0.1) then { _this setVariable ['%s',0]; } else { _this setVariable ['%s',_value]; };";
+			defaultValue = 1;			
 			condition = "objectHasInventoryCargo";
 		};
-		class MSF_Helper_InvGenerate_Grenade
+		class MSF_Helper_InvGenerate_GrenadeWeight
 		{			
-			displayName = "Enable Generating Grenades";			
-			tooltip = "Generates random grenages from the list.";
-			property = "MSF_Helper_InvGenerate_Grenade";
-			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = false;			
+			displayName = "Grenades Likeliness";			
+			tooltip = "How likely the system is to add grenades to the items inventory. (0.1 disables this catetory)";
+			property = "MSF_Helper_InvGenerate_GrenadeWeight";
+			control = "SliderZeroToOneSmall";
+			expression = "if (_value == 0.1) then { _this setVariable ['%s',0]; } else { _this setVariable ['%s',_value]; };";
+			defaultValue = 1;			
 			condition = "objectHasInventoryCargo";
 		};
-		class MSF_Helper_InvGenerate_Medical
+		class MSF_Helper_InvGenerate_MedicalWeight
 		{			
-			displayName = "Enable Generating Medical Items";			
-			tooltip = "Generates random medical items from the list.";
-			property = "MSF_Helper_InvGenerate_Medical";
-			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = false;			
+			displayName = "Medical Likeliness";			
+			tooltip = "How likely the system is to add medical to the items inventory. (0.1 disables this catetory)";
+			property = "MSF_Helper_InvGenerate_MedicalWeight";
+			control = "SliderZeroToOneSmall";
+			expression = "if (_value == 0.1) then { _this setVariable ['%s',0]; } else { _this setVariable ['%s',_value]; };";
+			defaultValue = 1;			
 			condition = "objectHasInventoryCargo";
 		};
-		class MSF_Helper_InvGenerate_Food
+		class MSF_Helper_InvGenerate_FoodWeight
 		{			
-			displayName = "Enable Generating Food Items";			
-			tooltip = "Generates random food items from the list.";
-			property = "MSF_Helper_InvGenerate_Food";
-			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = false;			
+			displayName = "Food Likeliness";			
+			tooltip = "How likely the system is to add food to the items inventory. (0.1 disables this catetory)";
+			property = "MSF_Helper_InvGenerate_FoodWeight";
+			control = "SliderZeroToOneSmall";
+			expression = "if (_value == 0.1) then { _this setVariable ['%s',0]; } else { _this setVariable ['%s',_value]; };";
+			defaultValue = 1;			
 			condition = "objectHasInventoryCargo";
 		};
 	};
