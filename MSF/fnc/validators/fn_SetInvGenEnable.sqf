@@ -1,4 +1,4 @@
-
+// Validator for inventory generation and persistence
 params ["_this", "_value"];
 
 private _isPersist = _this getVariable ["MSF_Persist_isEnable", false];
