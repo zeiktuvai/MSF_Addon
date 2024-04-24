@@ -12,7 +12,10 @@
 - [ ] allow choosing initial and respawn loadouts in object attributes
 - [X] look into implementing infinite fuel as an attribute and spawn script so each vehicle doesnt get it's own loop (Arctic Passage)
 - [X] add menu link to github
+- [X] Might want to change it so it never exits but doesn't run code if no vics because respawn.
+- [ ] Add unit option to disable auto loadouts
+- [ ] finish turning the rest of the helper functions into msf modules
 
 # Research
-- [ ] research a event handler to make more tank hits kill us and less tank hits kill them (just make our vehicles more tough)
-- [ ] have some kind of slider to increase damage to enemy armor?
+- [X] research a event handler to make more tank hits kill us and 
+- [ ] have some kind of slider to increase damage to enemy armor? less tank hits kill them maybe? (MAWWS 55 is far weaker than 75)

@@ -336,11 +336,10 @@ class TFY_Winter_ATRifleman
         "30Rnd_65x39_caseless_black_mag_Tracer",
         "30Rnd_65x39_caseless_black_mag_Tracer",
         "30Rnd_65x39_caseless_black_mag_Tracer",
-        "MRAWS_HEAT55_F",
-        "MRAWS_HEAT55_F",
-        "MRAWS_HEAT55_F",
-        "MRAWS_HEAT55_F",
-        "MRAWS_HEAT55_F"
+        "MRAWS_HEAT_F",
+        "MRAWS_HEAT_F",
+        "MRAWS_HEAT_F",        
+        "MRAWS_HEAT_F"
     };
     items[] = {"ACE_Canteen", "ACE_MRE_CreamTomatoSoup", "ACE_MRE_ChickenTikkaMasala", "ACE_Banana", "ACE_EarPlugs", "ACE_wirecutter", "ACE_DefusalKit",
         "ACE_MapTools", "ACE_WaterBottle", "ACE_CableTie", "ACE_CableTie", "ACE_M26_Clacker", "ACE_IR_Strobe_Item", "acex_intelitems_notepad", "ACE_packingBandage",

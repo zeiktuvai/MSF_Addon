@@ -1,4 +1,5 @@
-class MSFHelpersInventory
+// Inventory Generation System Attributes
+class MSFSystems_IGS
 {
 	displayName = "MSF Inventory Generation System";
 	collapsed = 1;
@@ -99,24 +100,6 @@ class MSFHelpersInventory
 			expression = "if (_value == 0.1) then { _this setVariable ['%s',0]; } else { _this setVariable ['%s',_value]; };";
 			defaultValue = 1;			
 			condition = "objectHasInventoryCargo";
-		};
-	};
-};
-class MSFHelpersGeneral
-{
-	displayName = "MSF Functions";
-	collapsed = 1;
-	class Attributes
-	{
-		class MSF_Helper_InfFuel_Enable
-		{			
-			displayName = "Enable Infinite Fuel";			
-			tooltip = "Adds vehicle to a handler that sets the vehicles fuel to 100% ever 300 seconds.";
-			property = "MSF_Helper_InfFuel_Enable";
-			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = false;			
-			condition = "objectVehicle";
 		};
 	};
 };

@@ -8,7 +8,7 @@
 	Examples:
 		[] call MSF_fnc_GenerateInventory;
 
-	Function Ver 2.0
+	Function Ver 2.1
 	Implemented in: MSF Addon v1.0
 */
 private _isLoad = getMissionConfigValue ["MSF_Mission_Loading", false];

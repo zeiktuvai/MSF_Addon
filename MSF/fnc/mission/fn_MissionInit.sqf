@@ -14,6 +14,7 @@ if (isServer) then {
 	[] call MSF_fnc_ACEMedUnconcious;
 	[] call MSF_fnc_GenerateInventory;
 	[] call MSF_fnc_InfiniteFuelHandler;
+	[] call MSF_fnc_SetVehicleDamageReduction;
 	
 	if (getMissionConfigValue "MSF_Mission_GM") then {
 		[] call MSF_fnc_ApplyGMActions;

@@ -21,9 +21,10 @@ class Cfg3DEN
 	{
 		class AttributeCategories
 		{
-			#include "cfg\MSF_Attributes_Base.hpp"		
-			#include "cfg\MSF_Attributes_Helpers.hpp"
-			#include "cfg\MSF_Attributes_Persist.hpp"			
+			#include "cfg\attributes\MSF_Attr_Player.hpp"
+			#include "cfg\attributes\MSF_Attr_General.hpp"
+			#include "cfg\attributes\MSF_Attr_IGS.hpp"
+			#include "cfg\attributes\MSF_Attr_Persist.hpp"
 		};
 	};
 	class Mission

@@ -3,7 +3,10 @@
 
 	Description:
 		This MSF helper gets all vehicles with the provided attribute set to true.
-        
+
+	Properties:
+	  	string - Property name    
+	
 	Examples:
 		["MyObjectVariable"] call MSF_fnc_GetVehiclesByProperty;
 
