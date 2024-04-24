@@ -1,13 +1,14 @@
-class MSFHelpers
+// Inventory Generation System Attributes
+class MSFSystems_IGS
 {
-	displayName = "MSF Helper Functions";
+	displayName = "MSF Inventory Generation System";
 	collapsed = 1;
 	class Attributes
 	{
 		class InventoryGenSys
 		{
 			data = "AttributeSystemSubcategory";
-			control = "SubCategoryDesc2";
+			control = "SubCategoryDesc1";
 			displayName = "Inventory Generation System";
 			description = "Generates inventory items for this object based on items in MSF Settings and enabled categories."
 		};
@@ -17,7 +18,7 @@ class MSFHelpers
 			tooltip = "Enables random inventory generation.";
 			property = "MSF_Helper_InvGenerate_Enabled";
 			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value];";
+			expression = "_this setVariable ['%s',_value]; [_this, _value] call MSF_fnc_SetInvGenEnable;";
 			defaultValue = false;			
 			condition = "objectHasInventoryCargo";
 		};

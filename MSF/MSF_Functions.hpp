@@ -100,6 +100,20 @@ class CfgFunctions
 			{
 				recompile = 1;
 			};
+			class InfiniteFuelHandler {};
+			class SetVehicleDamageReduction {};
+		};
+		class Helpers
+		{
+			file = "msf\fnc\helpers";
+			class GetVehiclesByProperty {};
+			class GetPlayersByProperty {};
+			class GetVehiclesByPropertyValue {};
+		};
+		class Validators
+		{
+			file = "msf\fnc\validators";
+			class SetInvGenEnable {};
 		};
 	};
 };

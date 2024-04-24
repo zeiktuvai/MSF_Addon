@@ -15,7 +15,7 @@
 */
 if(isServer) then 
 {
-	private _players = allPlayers select { _x getVariable "MSF_Player_IsGM" == true; };
+	private _players = ["MSF_Player_IsGM"] call MSF_fnc_GetPlayersByProperty;
 
 	{
 		private _values = _x;

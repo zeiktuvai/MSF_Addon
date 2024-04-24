@@ -12,7 +12,7 @@
 */
 if(isServer && getMissionConfigValue "MSF_Mission_EndMission") then
 {
-	private _players = allPlayers select { _x getVariable "MSF_Player_IsSL" == true; };
+	private _players = ["MSF_Player_IsSL"] call MSF_fnc_GetPlayersByProperty;
 
 	private _endCode = {
 		if (getMissionConfigValue "MSF_Mission_Persistence" && getMissionConfigValue "MSF_Mission_Saving") then 
