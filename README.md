@@ -92,6 +92,16 @@ This system can be used to generate random inventory for a container. It works b
 
 When weighting a category, they higher the number it is the higher the chance of it being picked.  To disable a category, move the slider all the way to the left to 0.1.
 
+**Vehicle Toughness**
+This adds a HandleDamage event handler to each vehicle that has toughness (I guess a more accurate term would be damage reduction) set higher than 0 that takes incoming damage and reduces it by the percentage set on the object (up to 95%).
+
+Internally testing this using a Rooikat and a CSAT AT Missile specialist; at 0% (normal game damage) 1 Titan AT missile hit destroys the Rooikat.  At 95%, 3 Titan AT missile hits bring the vehicle damage to about 98% (and a few times blowing it up) making it completely unusable.
+
+This was added mainly because it seems so hard to kill enemy tanks while they (AI controlled OPFOR) can obliterate us in one hit usually, so this makes the playing field a bit fairer.
+
+**Infinite Fuel**
+This spawns a handler that checks all enabled vehicles (even respawned ones) if their fuel is less than 100% and sets it back to full every 300 seconds.  I added this because I am working on a operation where vehicle tech had progressed faster than in our world and everything was "infinitely powered".
+
 # Player Preferences
 
 These options are typically user configurable and do not need any configuration from the mission maker unless you want to force players into a specific setting.
