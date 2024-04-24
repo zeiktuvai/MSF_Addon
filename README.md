@@ -15,6 +15,9 @@ This mod makes use of ACE 3 (and by extionsion CBA), which is needed for a lot o
     - Make players that join in progress spawn near other players instead of at the start.
     - Enable an option to add an End Mission ACE Menu item when a trigger is activated so players can choose when to end the mission.
     - Enable a player unit as a GM with special menu options.
+- Vehicle Options:
+    - Infinite fuel.
+    - Vehicle Damage reduction.
 - Player Preferences:
     - Add a Addon Preference item to disable ACE Medical unconciousness for players.
 
