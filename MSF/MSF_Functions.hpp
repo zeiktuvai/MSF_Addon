@@ -114,6 +114,7 @@ class CfgFunctions
 		{
 			file = "msf\fnc\validators";
 			class SetInvGenEnable {};
+			class SetDialogValidator {};
 		};
 	};
 };
