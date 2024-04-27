@@ -15,6 +15,7 @@ if (isServer) then {
 	[] call MSF_fnc_GenerateInventory;
 	[] call MSF_fnc_InfiniteFuelHandler;
 	[] call MSF_fnc_SetVehicleDamageReduction;
+	[] call MSF_fnc_SetUnitDialogOption;
 	
 	if (getMissionConfigValue "MSF_Mission_GM") then {
 		[] call MSF_fnc_ApplyGMActions;
