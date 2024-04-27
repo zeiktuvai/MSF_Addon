@@ -102,6 +102,13 @@ This was added mainly because it seems so hard to kill enemy tanks while they (A
 **Infinite Fuel**  
 This spawns a handler that checks all enabled vehicles (even respawned ones) if their fuel is less than 100% and sets it back to full every 300 seconds.  I added this because I am working on a operation where vehicle tech had progressed faster than in our world and everything was "infinitely powered".  
 
+**Conversation Dialog Helper**  
+This tool sets up a unit (usually an NPC) to start a conversation defined in CfgSentences ([see Conversations Biki](https://community.bistudio.com/wiki/Conversations)).
+
+When enabled, it takes the provided class path (i.e. MyAwesomeMission >> Briefing) and sets up an ACE interaction menu option to start the conversation.
+
+You can also provide a Task ID to complete when the conversation starts, and code to run when the conversation starts.
+
 # Player Preferences
 
 These options are typically user configurable and do not need any configuration from the mission maker unless you want to force players into a specific setting.
