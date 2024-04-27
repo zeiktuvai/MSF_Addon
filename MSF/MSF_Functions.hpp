@@ -102,6 +102,7 @@ class CfgFunctions
 			};
 			class InfiniteFuelHandler {};
 			class SetVehicleDamageReduction {};
+			class SetUnitDialogOption {};
 		};
 		class Helpers
 		{
@@ -109,6 +110,7 @@ class CfgFunctions
 			class GetVehiclesByProperty {};
 			class GetPlayersByProperty {};
 			class GetVehiclesByPropertyValue {};
+			class GetUnitsByProperty {};
 		};
 		class Validators
 		{
