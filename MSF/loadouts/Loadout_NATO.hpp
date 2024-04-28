@@ -920,7 +920,22 @@ class TFY_UAVOperator
         "SmokeShellGreen",
         "SmokeShellRed",
         "HandGrenade",
-        "HandGrenade"
+        "HandGrenade",
+        "1Rnd_Smoke_Grenade_shell",
+        "1Rnd_Smoke_Grenade_shell",
+        "1Rnd_Smoke_Grenade_shell",
+        "1Rnd_Smoke_Grenade_shell",
+        "1Rnd_Smoke_Grenade_shell",
+        "1Rnd_Smoke_Grenade_shell",
+        "UGL_FlareGreen_F",
+        "rhs_mag_M397_HET",
+        "rhs_mag_M397_HET",
+        "rhs_mag_M397_HET",
+        "rhs_mag_M397_HET",
+        "rhs_mag_M397_HET",
+        "rhs_mag_M397_HET",
+        "ACE_40mm_Flare_green",
+        "ACE_40mm_Flare_green"
     };
     items[] = {
         "ACE_EarPlugs",
