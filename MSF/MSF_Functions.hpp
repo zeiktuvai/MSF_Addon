@@ -111,6 +111,7 @@ class CfgFunctions
 			class GetPlayersByProperty {};
 			class GetVehiclesByPropertyValue {};
 			class GetUnitsByProperty {};
+			class AddAceMainMenuItem {};
 		};
 		class Validators
 		{

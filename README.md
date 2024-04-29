@@ -1,4 +1,6 @@
-# Mission Support Foundation for Arma 3 - EDEN Module Edition
+# Mission Support Foundation for Arma 3 - EDEN Module
+
+**UPDATE: After some digging and experimentation, I discovered that loadouts do not work as I expected.  In order to use dynamic loadouts, every player will need to have the mod installed and not just the server due to how the mission files are packaged.**
 
 The MSF module is a collection of tools wrapped into a convenient framework that makes building story driven missions much easier.  It includes many commonly used features that might be a simple script or two but having to copy them from mission to mission gets annoying, especially if they need to be updated across mission sets.
 
@@ -36,7 +38,7 @@ This mod makes use of ACE 3 (and by extionsion CBA), which is needed for a lot o
 
 # Getting Started
 
-1. After installing the mod, Add this line `#include "\msf\MissionConfig.hpp"` to your misisons `description.ext` and then add this line `[player] call MSF_fnc_Init;` to your InitPlayerLocal.sqf in the mission folder. (If you do not have them currently you can copy the example ones on GitHub or create them yourself.)
+1. After installing the mod, Add this line `#include "\msf_client\MissionConfig.hpp"` to your misisons `description.ext` and then add this line `[player] call MSF_fnc_Init;` to your InitPlayerLocal.sqf in the mission folder. (If you do not have them currently you can copy the example ones on GitHub or create them yourself.)
 
 2. It is highly recommended to configure Multiplayer options for the loadout system and respawns work correctly.  A conveinient menu option has been added to do that for you, just navigate to `Attributes > Mission Support Foundation` and select `Configure Multiplayer`.
 
