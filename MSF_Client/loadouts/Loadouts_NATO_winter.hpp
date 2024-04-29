@@ -439,7 +439,22 @@ class TFY_Winter_UAVOperator
         "30Rnd_65x39_caseless_black_mag_Tracer",     
         "30Rnd_65x39_caseless_black_mag_Tracer",
         "100Rnd_65x39_caseless_black_mag_tracer",
-        "ACE_100Rnd_65x39_caseless_mag_Tracer_Dim"
+        "ACE_100Rnd_65x39_caseless_mag_Tracer_Dim",
+        "1Rnd_Smoke_Grenade_shell",
+        "1Rnd_Smoke_Grenade_shell",
+        "1Rnd_Smoke_Grenade_shell",
+        "1Rnd_Smoke_Grenade_shell",
+        "1Rnd_Smoke_Grenade_shell",
+        "1Rnd_Smoke_Grenade_shell",
+        "UGL_FlareGreen_F",
+        "rhs_mag_M397_HET",
+        "rhs_mag_M397_HET",
+        "rhs_mag_M397_HET",
+        "rhs_mag_M397_HET",
+        "rhs_mag_M397_HET",
+        "rhs_mag_M397_HET",
+        "ACE_40mm_Flare_green",
+        "ACE_40mm_Flare_green"
     };
     items[] = {"ACE_Canteen", "ACE_MRE_CreamTomatoSoup", "ACE_MRE_ChickenTikkaMasala", "ACE_Banana", "ACE_EarPlugs", "ACE_wirecutter", "ACE_DefusalKit",
         "ACE_MapTools", "ACE_WaterBottle", "ACE_CableTie", "ACE_CableTie", "ACE_M26_Clacker", "ACE_IR_Strobe_Item", "acex_intelitems_notepad", "ACE_packingBandage",
