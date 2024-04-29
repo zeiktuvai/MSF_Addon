@@ -1,1 +1,1 @@
-#include "\msf\MissionConfig.hpp"
+#include "\msf_client\MissionConfig.hpp"
