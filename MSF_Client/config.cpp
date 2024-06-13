@@ -4,7 +4,7 @@ class CfgPatches
     {
 		name = "MSF Client Extensions"
 		author = "Zeik_Tuvai";
-		version = 1.0;
+		version = 1.1;
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.0;
@@ -18,14 +18,14 @@ class CfgUnitInsignia
     {
 		displayName = "Task Force Yodel Insignia";
 		author = "zeik_tuvai";
-		texture = "\msf\patch\TFY.paa";
+		texture = "\msf_client\patch\TFY.paa";
 		textureVehicle = "";
     };
     class tfy_backup_pilot
     {
         displayName = "TFY Backup Pilot";
         author = "Samurai";
-        texture = "\msf\patch\TFY_backup_pilot.paa";
+        texture = "\msf_client\patch\TFY_backup_pilot.paa";
         textureVehicle = "";
     }
 };
