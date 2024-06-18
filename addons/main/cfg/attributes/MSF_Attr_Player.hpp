@@ -102,7 +102,7 @@ class MSFAttributes
 			data = "AttributeSystemSubcategory";
 			control = "SubCategoryDesc1";
 			displayName = "Conversation Dialog Helper";
-			description = "This helper sets up a unit with an ace interaction menu item that starts the configured conversation dialog."
+			description = "This helper sets up a unit with an ace interaction menu item that starts the configured conversation dialog.";
 		};
 		class MSF_General_Dialog
 		{
@@ -121,7 +121,7 @@ class MSFAttributes
 			property = "MSF_General_Dialog_Class";
 			control = "EditCode";
 			expression = "_this setVariable ['%s',_value]; [_value] call MSF_fnc_SetDialogValidator;";
-			defaultValue = nil;
+			defaultValue = "nil";
 			condition = "objectControllable";
 		};
 		class MSF_General_Dialog_Task
@@ -131,7 +131,7 @@ class MSFAttributes
 			property = "MSF_General_Dialog_Task";
 			control = "EditCode";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue =  nil;
+			defaultValue =  "nil";
 			condition = "objectControllable";
 		};
 		class MSF_General_Dialog_Action
@@ -141,7 +141,7 @@ class MSFAttributes
 			property = "MSF_Dialog_Action";
 			control = "EditCodeMulti3";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = nil;
+			defaultValue = "nil";
 			condition = "objectControllable";
 		};
 	};

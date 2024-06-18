@@ -2,13 +2,13 @@ class CfgPatches
 {
     class MSF3den
     {
-		name = "MSF Client Extensions"
+		name = "MSF Client Extensions";
 		author = "Zeik_Tuvai";
 		version = 1.1;
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.0;
-        requiredAddons[] = {3DEN, "cba_settings", "ace_interaction"};
+        requiredAddons[] = { "3DEN", "cba_settings", "ace_interaction" };
     };
 };
 
@@ -27,5 +27,5 @@ class CfgUnitInsignia
         author = "Samurai";
         texture = "\msf_client\patch\TFY_backup_pilot.paa";
         textureVehicle = "";
-    }
+    };
 };

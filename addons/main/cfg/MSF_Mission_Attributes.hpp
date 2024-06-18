@@ -25,7 +25,7 @@ class MSFSettings
 					property = "MSF_Mission_GM";			
 					control = "Checkbox";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = false;
+					defaultValue = "false";
 				};
 				class EnableEndMission
 				{
@@ -34,7 +34,7 @@ class MSFSettings
 					property = "MSF_Mission_EndMission";			
 					control = "Checkbox";
 					expression = "_this setVariable ['%s',_value];";					
-					defaultValue = false;
+					defaultValue = "false";
 				};
 				class EndTriggerName
 				{
@@ -59,7 +59,7 @@ class MSFSettings
 					property = "MSF_Loadout_Dyn_Enable";			
 					control = "Checkbox";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = false;
+					defaultValue = "false";
 				};
 				class NATOMissionUniforms
 				{
@@ -68,7 +68,7 @@ class MSFSettings
 					property = "MSF_Loadout_NATO_Uniform";
 					control = "UniCombo";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = false;
+					defaultValue = "false";
 					condition = "objectControllable";
 					typeName = "Number";
 
@@ -107,7 +107,7 @@ class MSFSettings
 					property = "MSF_Multi_RoP";	
 					control = "Checkbox";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = false;
+					defaultValue = "false";
 				};
 				class EnableJnP
 				{
@@ -116,7 +116,7 @@ class MSFSettings
 					property = "MSF_Multi_JnP";	
 					control = "Checkbox";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = false;
+					defaultValue = "false";
 				};
 			};
 		};
@@ -132,7 +132,7 @@ class MSFSettings
 					property = "MSF_Mission_Persistence";			
 					control = "Checkbox";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = false;
+					defaultValue = "false";
 				};
 				class MissionNumber
 				{
@@ -158,7 +158,7 @@ class MSFSettings
 					property = "MSF_Mission_Saving";
 					control = "Checkbox";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = false;
+					defaultValue = "false";
 				};
 				class EnableLoading
 				{
@@ -167,7 +167,7 @@ class MSFSettings
 					property = "MSF_Mission_Loading";			
 					control = "Checkbox";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = false;
+					defaultValue = "false";
 				};
 			};
 		};

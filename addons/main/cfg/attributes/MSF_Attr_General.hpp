@@ -12,7 +12,7 @@ class MSFGeneralFunctions
 			property = "MSF_General_InfiniteFuel";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = false;			
+			defaultValue = "false";			
 			condition = "objectVehicle";
 		};
 		class MSF_General_DmgReduction

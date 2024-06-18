@@ -2,18 +2,18 @@ class CfgPatches
 {
     class MSF3den
     {
-		name = "Mission Support Foundation"
+		name = "Mission Support Foundation";
 		author = "Zeik_Tuvai";
-		version = 1.5
+		version = 1.5;
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.0;
-        requiredAddons[] = {3DEN, "cba_settings", "ace_interaction"};
+        requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction"};
         is3DENmod = 1;
     };
 };
 
-#include "MSF_Functions.hpp"
+// include "MSF_Functions.hpp"
 
 class Cfg3DEN
 {
@@ -43,7 +43,7 @@ class Extended_PreInit_EventHandlers
 {
     class ADDON
     {
-        init = "call compile preprocessFileLineNumbers 'msf\XEH_preInit.sqf'";
+        init = "call compile preprocessFileLineNumbers 'XEH_preInit.sqf'";
     };
 };
 

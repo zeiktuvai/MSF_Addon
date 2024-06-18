@@ -24,5 +24,8 @@ if (isServer) then {
 		[] call MSF_fnc_ApplyEndMission;
 	};
 
+	//private _vics = ["MSF_General_DmgReduction", 0] call MSF_fnc_GetVehiclesByPropertyValue;
+ 	//{[_x] call MSF_fnc_AddVehicleDamageHandler;} forEach _vics;
+
 	[] call MSF_fnc_SetVehicleDamageReduction;
 };

@@ -10,7 +10,7 @@ class MSFSystems_IGS
 			data = "AttributeSystemSubcategory";
 			control = "SubCategoryDesc1";
 			displayName = "Inventory Generation System";
-			description = "Generates inventory items for this object based on items in MSF Settings and enabled categories."
+			description = "Generates inventory items for this object based on items in MSF Settings and enabled categories.";
 		};
 		class MSF_Helper_InvGenerate_Enabled
 		{			
@@ -19,7 +19,7 @@ class MSFSystems_IGS
 			property = "MSF_Helper_InvGenerate_Enabled";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value]; [_this, _value] call MSF_fnc_SetInvGenEnable;";
-			defaultValue = false;			
+			defaultValue = "false";			
 			condition = "objectHasInventoryCargo";
 		};
 		class MSF_Helper_InvGenerate_ItemCount
@@ -41,7 +41,7 @@ class MSFSystems_IGS
 			property = "MSF_Helper_InvGenerate_Fill";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = false;			
+			defaultValue = "false";			
 			condition = "objectHasInventoryCargo";
 		};
 		class InventoryGenSysCategories
@@ -49,7 +49,7 @@ class MSFSystems_IGS
 			data = "AttributeSystemSubcategory";
 			control = "SubCategoryDesc1";
 			displayName = "Weighted Item Generation";
-			description = "How likely an item category will be picked when generating items (0.1 disables a category)."
+			description = "How likely an item category will be picked when generating items (0.1 disables a category).";
 		};
 		class MSF_Helper_InvGenerate_MagWeight
 		{			
