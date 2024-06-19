@@ -56,7 +56,6 @@ class CfgFunctions
 			class InfiniteFuelHandler {};
 			class SetVehicleDamageReduction {};
 			class SetUnitDialogOption {};
-			class AddVehicleDamageHandler {};
 		};
 		class Helpers
 		{

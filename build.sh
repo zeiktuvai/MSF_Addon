@@ -12,5 +12,5 @@
 # # -binarize="$BINARIZE" -cfgconvert="$CFG" -dssignfile="$SIGN" -filebank="$BANK"
 
 hemtt build --no-bin
-rm -r "/home/zeiktuvai/games/SteamLibrary/steamapps/common/Arma 3/!Workshop/@MSF-DEV/Addons/"*
-/bin/cp -rfp .hemttout/build/addons/* "/home/zeiktuvai/games/SteamLibrary/steamapps/common/Arma 3/!Workshop/@MSF-DEV/Addons"
+rm -r "/home/zeiktuvai/games/SteamLibrary/steamapps/common/Arma 3/!Workshop/@MSF-DEV/addons/"*
+/bin/cp -rfp .hemttout/build/addons/* "/home/zeiktuvai/games/SteamLibrary/steamapps/common/Arma 3/!Workshop/@MSF-DEV/addons"
