@@ -43,7 +43,7 @@ class Extended_PreInit_EventHandlers
 {
     class ADDON
     {
-        init = "call compile preprocessFileLineNumbers 'XEH_preInit.sqf'";
+        init = "call compile preprocessFileLineNumbers 'z\msf\addons\main\XEH_preInit.sqf'";
     };
 };
 
