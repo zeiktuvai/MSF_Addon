@@ -11,22 +11,23 @@
 	Implemented in: MSF Addon v1.5
 */
 
-// local needs to be run on all computers... and then it can handle the movement between systems.  so maybe back into initplayer.
 private _vics = ["MSF_General_DmgReduction", 0] call MSF_fnc_GetVehiclesByPropertyValue;
 
 {
-	{[_x] call MSF_fnc_AddVehicleDamageHandler;} forEach _vics;
-	// _x addEventHandler ["Local", {
-	// 	params ["_entity", "_isLocal"];
-		
-	// 	if (_islocal == true) then {		 	 
-			
-	// 		["Locality Change detected, removing handlers"] remoteExec ["systemChat"];
-	// 		[_vehicle, "HandleDamage"] remoteExec ["removeAllEventHandlers", _vehicle];
+	_x addEventHandler ["HandleDamage", {
+		private _unit = _this select 0;		
+		private _hit = _this select 1;
+		private _dam = _this select 2;
+		private _toughness = [1 - (_unit getVariable "MSF_General_DmgReduction"), 2] call BIS_fnc_cutDecimals;
+		private _damage = 0;
 
-	// 		["Adding Handlers";
-	// 		[_x] call MSF_fnc_AddVehicleDamageHandler;
-	// 		] remoteExec ["addEventHandler", _vehicle];
-	// 	};
-	// }];
+		if ("wheel" in _hit || "track" in _hit) then {
+			_damage = if (_hit isEqualTo "") then {damage _unit} else {_unit getHit _hit};
+		} else {
+			_damage = if (_hit isEqualTo "") then {damage _unit + (_dam * _toughness)} else {(_unit getHit _hit) + (_dam * _toughness)};
+		};
+		
+		[format ["dmg: %1  vic: %2", _damage, _unit]] remoteExec ["systemChat"];
+		_damage;
+	}];
 } forEach _vics;

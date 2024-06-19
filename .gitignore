@@ -399,5 +399,6 @@ FodyWeavers.xsd
 
 Publish/Addons/
 .hemttout/*
+releases/*
 *.pbo
 *.bisign
