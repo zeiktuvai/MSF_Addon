@@ -120,7 +120,7 @@ class MSFSettings
 				};
 			};
 		};		
-		class MSFHelpers
+		class MSF_S_Helpers
 		{
 			displayName = "MSF Helper Functions";			
 			class Attributes
