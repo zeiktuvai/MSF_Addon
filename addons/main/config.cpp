@@ -23,22 +23,22 @@ class Cfg3DEN
 	{
 		class AttributeCategories
 		{
-			#include "cfg\attributes\MSF_Attr_Player.hpp"
-			#include "cfg\attributes\MSF_Attr_General.hpp"
-			#include "cfg\attributes\MSF_Attr_IGS.hpp"
+			#include "cfg\object\MSF_Attr_Player.hpp"
+			#include "cfg\object\MSF_Attr_General.hpp"
+			#include "cfg\object\MSF_Attr_IGS.hpp"
 		};
 	};
 	class Mission
 	{
-		#include "cfg\MSF_Mission_Attributes.hpp"
+		#include "cfg\mission\MSF_Mission_Attributes.hpp"
 	};
 	class Attributes
 	{
-		#include "cfg\MSF_Controls.hpp"
+		#include "cfg\mission\MSF_Controls.hpp"
 	};
 };
 
-#include "cfg\MSF_Editor_Menu.hpp"
+#include "cfg\eden\MSF_Editor_Menu.hpp"
 
 class Extended_PreInit_EventHandlers
 {
@@ -48,7 +48,7 @@ class Extended_PreInit_EventHandlers
     };
 };
 
-#include "cfg\MSF_Config.hpp"
+#include "cfg\mission\MSF_Config.hpp"
 
 //not working....
 // class Extended_InitPost_EventHandlers {
