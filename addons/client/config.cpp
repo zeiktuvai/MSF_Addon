@@ -1,10 +1,12 @@
+#include "..\main\MSF_Version.hpp"
+
 class CfgPatches
 {
     class MSF3den
     {
 		name = "MSF Client Extensions";
 		author = "Zeik_Tuvai";
-		version = 1.1;
+		version = MSF_VERSION;
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.0;

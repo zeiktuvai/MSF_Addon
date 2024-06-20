@@ -1,10 +1,12 @@
+#include "..\main\MSF_Version.hpp"
+
 class CfgPatches
 {
     class MSF3den
     {
-		name = "Mission Support Foundation";
+		name = "MSF - Functions";
 		author = "Zeik_Tuvai";
-		version = 1.5;
+		version = MSF_VERSION;
         units[] = {};
         weapons[] = {};
         requiredVersion = 2.1;
