@@ -1,10 +1,12 @@
+#include "MSF_Version.hpp"
+
 class CfgPatches
 {
     class MSF3den
     {
 		name = "Mission Support Foundation";
 		author = "Zeik_Tuvai";
-		version = 1.5;
+		version = MSF_VERSION;
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.0;
@@ -24,7 +26,6 @@ class Cfg3DEN
 			#include "cfg\attributes\MSF_Attr_Player.hpp"
 			#include "cfg\attributes\MSF_Attr_General.hpp"
 			#include "cfg\attributes\MSF_Attr_IGS.hpp"
-			#include "cfg\attributes\MSF_Attr_Persist.hpp"
 		};
 	};
 	class Mission
