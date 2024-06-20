@@ -1,7 +1,7 @@
     hemtt build --no-bin
 
-    rm -r "$DEV_MOD_PATH"addons/*
-    /bin/cp -rfp .hemttout/build/addons/* "$DEV_MOD_PATH"addons/
+    rm -r "$DEV_MOD_PATH"*
+    /bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"
 while getopts ":s" option; do   
 
     case $option in

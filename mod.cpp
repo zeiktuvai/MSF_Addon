@@ -1,6 +1,6 @@
 name = "Mission Support Foundation";
 description = "Mission Support Foundation - A mod for helping mission builders with common things that are frequently done.";
-tooltip = "Mission Support Foundation v1.5";
+tooltip = "Mission Support Foundation v0.0.0";
 tooltipOwned = "by Zeik_Tuvai";
 overview = "Mission Support Foundation - A mod for helping mission builders with common things that are frequently done.";
 author = "Zeik_tuvai";
