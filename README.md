@@ -38,7 +38,7 @@ This mod makes use of ACE 3 (and by extionsion CBA), which is needed for a lot o
 
 # Getting Started
 
-1. After installing the mod, Add this line `#include "\msf_client\MissionConfig.hpp"` to your misisons `description.ext` and then add this line `[player] call MSF_fnc_Init;` to your InitPlayerLocal.sqf in the mission folder. (If you do not have them currently you can copy the example ones on GitHub or create them yourself.)
+1. After installing the mod, Add this line `#include "\z\msf\addons\client\MissionConfig.hpp"` to your misisons `description.ext` and then add this line `[player] call MSF_fnc_Init;` to your InitPlayerLocal.sqf in the mission folder. (If you do not have them currently you can copy the example ones on GitHub or create them yourself.)
 
 2. It is highly recommended to configure Multiplayer options for the loadout system and respawns work correctly.  A conveinient menu option has been added to do that for you, just navigate to `Attributes > Mission Support Foundation` and select `Configure Multiplayer`.
 
