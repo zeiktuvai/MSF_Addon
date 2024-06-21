@@ -3,6 +3,10 @@
 ## [In-Progress]
 - Implement other helpers as object attribute enabled systems (Dialog, progressbar, teleport, respawn).
 
+## [1.5]
+- Completely reworked how damage reduction works in game to combat multiplayer troubles.
+- Updated structure of mod to allow automatic build and deployment with HEMTT
+
 ## [1.4]
 - Updated vehicle damage reduction function to take into account locality.
 - Updated dialog helper function to work properly in multiplayer.
@@ -19,3 +23,4 @@
 - Implemented Persistence using object and mission attributes.
 - Implemented MSF functions using object and mission attributes.
 - Turned the inventory helper script into an inventory generation system built into the mod.
+3229844515
