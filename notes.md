@@ -30,3 +30,6 @@ private _trig = missionNamespace getVariable "trig_end_mission";
 
 triggerActivated _trig;
 
+event hanlder stuff
+https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)
+

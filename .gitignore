@@ -396,4 +396,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
 Publish/Addons/
+.hemttout/*
+releases/*
+*.pbo
+*.bisign
+z

@@ -19,3 +19,6 @@
 # Research
 - [X] research a event handler to make more tank hits kill us and 
 - [ ] have some kind of slider to increase damage to enemy armor? less tank hits kill them maybe? (MAWWS 55 is far weaker than 75)
+
+add a loadout override system for inventory item ammount.
+Re-visit loadouts and how much shit they have

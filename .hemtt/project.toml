@@ -1,0 +1,14 @@
+name = "Mission Support Foundation"
+prefix = "msf"
+author = "Zeik Tuvai"
+
+[files]
+include = [
+  "mod.cpp",
+  "README.md",
+  "LICENSE",
+  "version*",
+]
+
+[hemtt.config]
+preset = "Hemtt"
