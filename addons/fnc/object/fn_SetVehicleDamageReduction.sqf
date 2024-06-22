@@ -31,7 +31,7 @@ param ["_vics"];
 		if (MSF_Debug_Message_Enabled) then
 		{
 			[format ["Incoming Dmg: %1; Part Hit: %2; Toughness Val: %3; Applied Damage: %4; Vehicle: %5", _dam, _hit, _thoughness, _damage, _unit]] remoteExec ["systemChat"];
-		}
+		};
 		_damage;
 	}];
 } forEach _vics;
