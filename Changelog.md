@@ -3,6 +3,9 @@
 ## [In-Progress]
 - Implement other helpers as object attribute enabled systems (Dialog, progressbar, teleport, respawn).
 
+## [1.5.1]
+- Updated damage handler script to finally actually work properly on ALL clients.
+
 ## [1.5]
 - Completely reworked how damage reduction works in game to combat multiplayer troubles.
 - Updated structure of mod to allow automatic build and deployment with HEMTT
