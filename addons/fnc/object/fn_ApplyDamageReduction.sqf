@@ -18,7 +18,7 @@ if (isServer) then {
 		private _dmg = _x getVariable "MSF_General_DmgReduction";
 		_x setVariable ["MSF_General_DmgReduction", _dmg, true]
 	} forEach _vics;
-}
+};
 
 [_vics] call MSF_fnc_SetVehicleDamageReduction;
 
