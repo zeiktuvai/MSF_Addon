@@ -3,7 +3,8 @@
 
 	Description:
 		This MSF function adds an event handler to each configured vehicle to reduce damage dealt by a certain percent.
-	
+	Properties:
+		_vics  Array 	List of vehicles
 	Examples:
 		[] call MSF_fnc_SetVehicleDamageReduction;
 
@@ -11,7 +12,7 @@
 	Implemented in: MSF Addon v1.5
 */
 
-private _vics = ["MSF_General_DmgReduction", 0] call MSF_fnc_GetVehiclesByPropertyValue;
+param ["_vics"];
 
 {
 	_x addEventHandler ["HandleDamage", {

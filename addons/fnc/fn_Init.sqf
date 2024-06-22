@@ -16,4 +16,4 @@ params ["_unit"];
 [_unit] call MSF_fnc_InitializeLoadouts;
 [_unit] call MSF_fnc_ConfigRespawnOnPlayer;
 [_unit] call MSF_fnc_JIPSpawnNearPlayer;
-[] call MSF_fnc_SetVehicleDamageReduction;
+[] call MSF_fnc_ApplyDamageReduction;

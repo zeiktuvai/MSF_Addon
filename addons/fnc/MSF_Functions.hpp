@@ -39,11 +39,12 @@ class CfgFunctions
 		};
 		class Objects
 		{
-			file = "z\msf\addons\fnc";
+			file = "z\msf\addons\fnc\object";
 			class GenerateInventory {};
 			class InfiniteFuelHandler {};
 			class SetVehicleDamageReduction {};
 			class SetUnitDialogOption {};
+			class ApplyDamageReduction {};
 		};
 		class Helpers
 		{
