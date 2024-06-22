@@ -23,19 +23,15 @@ params ["_vics"];
 		private _damage = 0;
 
 		if ("wheel" in _hit || "track" in _hit) then {
-			_damage = if (_hit isEqualTo "") exitWith {
-				if (MSF_Debug_Message_Enabled) then
-					{
-						[format ["Incoming Dmg: %1; Part Hit: %2; Toughness Val: %3; Applied Damage: %4; Vic Damage: %5; Hit Damage: %6 Vehicle: %7", _dam, _hit, _thoughness, _damage, damage _unit, _unit getHit _hit, _unit]] remoteExec ["systemChat"];
-					};
-				}
+			_damage = 0;			
 		} else {
-			_damage = if (_hit isEqualTo "") then {damage _unit + (_dam * _toughness)} else {(_unit getHit _hit) + (_dam * _toughness)};
+			private _prevDam = [_unit getHit _hit, damage _unit] select (_hit isEqualTo "");
+			_damage = _prevDam + ((_dam - _prevDam) * _toughness);
 		};
 
 		if (MSF_Debug_Message_Enabled) then
 		{
-			[format ["Incoming Dmg: %1; Part Hit: %2; Toughness Val: %3; Applied Damage: %4; Vic Damage: %5; Hit Damage: %6 Vehicle: %7", _dam, _hit, _thoughness, _damage, damage _unit, _unit getHit _hit, _unit]] remoteExec ["systemChat"];
+			[format ["Incoming Dmg: %1; Part Hit: %2; Toughness Val: %3; Applied Damage: %4; Vic Damage: %5; Hit Damage: %6 Vehicle: %7", _dam, _hit, _toughness, _damage, damage _unit, _unit getHit _hit, _unit]] remoteExec ["systemChat"];
 		};
 		
 		_damage;
