@@ -9,16 +9,18 @@ class TFY_Commander
         "SmokeShellGreen", "SmokeShellGreen", "SmokeShellGreen", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", 
         "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "ACE_HandFlare_Green", "ACE_HandFlare_Green", "1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", 
         "1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F", "UGL_FlareGreen_F", "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan", "1Rnd_HE_Grenade_shell"
-        };
+    };
     items[] = {
         "ACE_EarPlugs", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_DefusalKit", "ACE_M26_Clacker", "ACE_MapTools", "ACE_wirecutter", "ACE_WaterBottle", 
         "ACE_WaterBottle", "ACE_Banana", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_bloodIV", "ACE_bodyBag", 
         "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", 
         "ACE_splint", "ACE_splint", "ACE_splint", "ACE_adenosine", "ACE_adenosine", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", 
-        "ACE_salineIV_500", "ACE_plasmaIV_500", "ACE_Canteen","ACE_HuntIR_monitor"};
+        "ACE_salineIV_500", "ACE_plasmaIV_500", "ACE_Canteen","ACE_HuntIR_monitor"
+    };
     linkedItems[] = {
         "V_PlateCarrierSpec_tna_F", "rhsusf_opscore_rg_cover_pelt", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", 
-        "ItemGPS", "NVGogglesB_blk_F", "rhsusf_acc_SFMB556", "rhsusf_acc_su230"};    
+        "ItemGPS", "NVGogglesB_blk_F", "rhsusf_acc_SFMB556", "rhsusf_acc_su230"
+    };    
     uniformClass = "U_B_T_Soldier_SL_F";
     backpack = "B_ViperLightHarness_oli_F";
 };
@@ -30,16 +32,22 @@ class TFY_Autorifleman
     weapons[] = {
         "rhs_weap_m249", "Binocular"
     };
-    magazines[] = {"acex_intelitems_notepad", "rhsusf_100Rnd_556x45_M855_soft_pouch", "HandGrenade", "HandGrenade", "HandGrenade", "SmokeShellGreen", 
-    "SmokeShellGreen", "SmokeShellGreen", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_coyote", 
-    "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_ucp", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch", 
-    "rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote"};
-    items[] = {"ACE_MapTools", "ACE_DefusalKit", "ACE_M26_Clacker", "ACE_IR_Strobe_Item", "ACE_EarPlugs", "ACE_CableTie", "ACE_WaterBottle", "ACE_WaterBottle",
-    "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", 
-    "ACE_quikclot", "ACE_quikclot", "ACE_bloodIV", "ACE_bodyBag", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", 
-    "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_Canteen", "ACE_salineIV_500", "ACE_salineIV_500"};
-    linkedItems[] = {"V_PlateCarrier1_tna_F", "rhsusf_opscore_fg_pelt_nsw", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
-    "JAS_GPNVG18_blk_TI", "rhsusf_acc_saw_bipod"};
+    magazines[] = {
+        "acex_intelitems_notepad", "rhsusf_100Rnd_556x45_M855_soft_pouch", "HandGrenade", "HandGrenade", "HandGrenade", "SmokeShellGreen", 
+        "SmokeShellGreen", "SmokeShellGreen", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_coyote", 
+        "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_ucp", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch", 
+        "rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote"
+    };
+    items[] = {
+        "ACE_MapTools", "ACE_DefusalKit", "ACE_M26_Clacker", "ACE_IR_Strobe_Item", "ACE_EarPlugs", "ACE_CableTie", "ACE_WaterBottle", "ACE_WaterBottle",
+        "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", 
+        "ACE_quikclot", "ACE_quikclot", "ACE_bloodIV", "ACE_bodyBag", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", 
+        "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_Canteen", "ACE_salineIV_500", "ACE_salineIV_500"
+    };
+    linkedItems[] = {
+        "V_PlateCarrier1_tna_F", "rhsusf_opscore_fg_pelt_nsw", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "JAS_GPNVG18_blk_TI", "rhsusf_acc_saw_bipod"
+    };
     uniformClass = "U_B_T_Soldier_SL_F";
     backpack = "B_AssaultPack_tna_F"; 
 };
@@ -56,16 +64,19 @@ class TFY_Marksman
         "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_20Rnd_762x51_m993_Mag", 
         "rhsusf_mag_17Rnd_9x19_FMJ", "rhsusf_mag_17Rnd_9x19_FMJ", "rhsusf_mag_17Rnd_9x19_FMJ", "rhsusf_mag_17Rnd_9x19_FMJ", "rhsusf_20Rnd_762x51_m993_Mag", 
         "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_20Rnd_762x51_m993_Mag", 
-        "rhsusf_mag_17Rnd_9x19_JHP"};
+        "rhsusf_mag_17Rnd_9x19_JHP"
+    };
     items[] = {
         "ACE_EarPlugs", "ACE_MapTools", "ACE_DefusalKit", "ACE_M26_Clacker", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_HuntIR_monitor", "ACE_WaterBottle", 
         "ACE_bloodIV", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", 
         "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", 
         "ACE_elasticBandage", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", 
-        "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_adenosine", "ACE_adenosine", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_Canteen"};
+        "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_adenosine", "ACE_adenosine", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_Canteen"
+    };
     linkedItems[] = {
         "V_PlateCarrier2_rgr", "H_HelmetB_camo", "G_Balaclava_TI_tna_F", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_Tan_TI", 
-        "rhsusf_acc_anpeq15side_bk", "optic_DMS", "rhsusf_acc_harris_bipod"};
+        "rhsusf_acc_anpeq15side_bk", "optic_DMS", "rhsusf_acc_harris_bipod"
+    };
     uniformClass = "U_B_T_Soldier_SL_F";
     backpack = "B_AssaultPack_tna_F";
 };
@@ -77,15 +88,16 @@ class TFY_Grenadier
     weapons[] = {
         "rhs_weap_hk416d145_m320","Rangefinder"
     };
-    magazines[] = {"acex_intelitems_notepad", "HandGrenade", "HandGrenade", "HandGrenade", "SmokeShellGreen", "SmokeShellGreen", 
-    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", 
-    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
-    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red",
-    "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "1Rnd_SmokeGreen_Grenade_shell", 
-    "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", 
-    "1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F", "UGL_FlareGreen_F", "rhs_mag_M397_HET", "rhs_mag_M397_HET", "rhs_mag_M433_HEDP", "rhs_mag_M433_HEDP", 
-    "rhs_mag_M441_HE", "rhs_mag_M441_HE", "ACE_HuntIR_M203", "ACE_HuntIR_M203", "ACE_HuntIR_M203", "ACE_HuntIR_M203", "ACE_HuntIR_M203", "rhs_mag_m4009", 
-    "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan", "1Rnd_HE_Grenade_shell"
+    magazines[] = {
+        "acex_intelitems_notepad", "HandGrenade", "HandGrenade", "HandGrenade", "SmokeShellGreen", "SmokeShellGreen", 
+        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", 
+        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
+        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red",
+        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "1Rnd_SmokeGreen_Grenade_shell", 
+        "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", 
+        "1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F", "UGL_FlareGreen_F", "rhs_mag_M397_HET", "rhs_mag_M397_HET", "rhs_mag_M433_HEDP", "rhs_mag_M433_HEDP", 
+        "rhs_mag_M441_HE", "rhs_mag_M441_HE", "ACE_HuntIR_M203", "ACE_HuntIR_M203", "ACE_HuntIR_M203", "ACE_HuntIR_M203", "ACE_HuntIR_M203", "rhs_mag_m4009", 
+        "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan", "1Rnd_HE_Grenade_shell"
     };
     items[] = {
         "ACE_EarPlugs", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_DefusalKit", "ACE_M26_Clacker", "ACE_MapTools", "ACE_HuntIR_monitor", "ACE_Banana", 
@@ -132,10 +144,6 @@ class TFY_Rifleman
     uniformClass = "U_B_T_Soldier_SL_F";
     backpack = "B_ViperLightHarness_oli_F";
 };
-
-
-
-
 class TFY_ATRifleman
 {
     displayName = "AT Rifleman";
@@ -160,7 +168,6 @@ class TFY_ATRifleman
         "V_PlateCarrier2_tna_F", "H_HelmetB_Enh_tna_F", "rhs_googles_orange", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI", 
         "rhsusf_acc_su230"
     };
-
     uniformClass = "U_B_T_Soldier_SL_F";
     backpack = "B_ViperLightHarness_oli_F";
 };
