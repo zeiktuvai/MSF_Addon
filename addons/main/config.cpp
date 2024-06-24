@@ -49,6 +49,7 @@ class Extended_PreInit_EventHandlers
 };
 
 #include "cfg\mission\MSF_Config.hpp"
+#include "cfg\object\MSF_Attr_Trigger.hpp"
 
 //not working....
 // class Extended_InitPost_EventHandlers {

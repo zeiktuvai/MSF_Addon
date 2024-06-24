@@ -45,6 +45,7 @@ class CfgFunctions
 			class SetVehicleDamageReduction {};
 			class SetUnitDialogOption {};
 			class ApplyDamageReduction {};
+			class GenerateRandomTriggerPatrol {};
 		};
 		class Helpers
 		{
@@ -57,9 +58,10 @@ class CfgFunctions
 		};
 		class Validators
 		{
-			file = "z\msf\addons\fnc";
+			file = "z\msf\addons\fnc\validator";
 			class SetInvGenEnable {};
 			class SetDialogValidator {};
+			class SetCfgEntryValidator {};
 		};
 	};
 };
