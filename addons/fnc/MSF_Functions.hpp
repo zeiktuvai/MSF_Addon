@@ -9,13 +9,16 @@ class CfgFunctions
 		};
 		class Mission
 		{
-			file = "z\msf\addons\fnc";
+			file = "z\msf\addons\fnc\mission";
 			class MissionInit
 			{				
 				postInit = 1;
 			};
 			class ApplyGMActions {};
 			class ApplyEndMission {};
+			class ApplyRandomTriggerPatrol {};
+			class CreateRandomTriggerPatrol {};
+			class DeleteRandomTriggerPatrol {};
 		};
 		class Multiplayer
 		{
@@ -45,7 +48,6 @@ class CfgFunctions
 			class SetVehicleDamageReduction {};
 			class SetUnitDialogOption {};
 			class ApplyDamageReduction {};
-			class GenerateRandomTriggerPatrol {};
 		};
 		class Helpers
 		{
@@ -62,6 +64,7 @@ class CfgFunctions
 			class SetInvGenEnable {};
 			class SetDialogValidator {};
 			class SetCfgEntryValidator {};
+			class CheckNotifyTriggerHasArea {};
 		};
 	};
 };
