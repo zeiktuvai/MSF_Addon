@@ -3,6 +3,10 @@
 ## [In-Progress]
 - Implement other helpers as object attribute enabled systems (Dialog, progressbar, teleport, respawn).
 
+## [1.5.2]
+- Added random patrol generator based on trigger area.
+- Updated NATO and Night loadouts to have less equipment.
+
 ## [1.5.1]
 - Updated damage handler script to finally actually work properly on ALL clients.
 

@@ -111,6 +111,17 @@ When enabled, it takes the provided class path (i.e. MyAwesomeMission >> Briefin
 
 You can also provide a Task ID to complete when the conversation starts, and code to run when the conversation starts.
 
+**Random Patrol Generator**
+This tool can generate a patrol with a number of waypoints across a defined area.  To configure, place a trigger down and size it to the area you want to be patrolled (Really small areas of less than 100m and areas larger than 3000m may yeild unexpected results).
+
+In the attributes of that trigger, scroll to the bottom and you have a few options. They are:
+- Enable random patrols (checkbox)
+- Configure the patrol group to spawn (Open config viewer, go to `+CfgGroups' and navigate to the group you want to spawn, only paste the name of the group.  Not the whole path).
+- Despawn patrol when players leave area.
+- Spawn two groups instead of one.
+
+When enabled with a proper group, the patrol will spawn when a player enters the trigger area.  If you make the trigger repeatable and set it to despawn on leave, you can have the patrol despawn and respawn when players re-enter the area.
+
 # Player Preferences
 
 These options are typically user configurable and do not need any configuration from the mission maker unless you want to force players into a specific setting.
