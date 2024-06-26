@@ -12,16 +12,25 @@
 */
 
 private _triggers = allMissionObjects "EmptyDetector" select { 
-	_x getVariable ["MSF_Trigger_Patrol", false] == true 
-	&& _x getVariable ["MSF_Trig_Patrol_Group", ""] != ""
+	(_x getVariable ["MSF_Trigger_Patrol", false] == true && _x getVariable ["MSF_Trig_Patrol_Group", ""] != "") ||
+	_x getVariable ["MSF_Trigger_Patrol_Vic", false] == true
 };
 
 {	
-	
-	if(triggerArea _x select 0 != 0 && triggerArea _x select 1 != 0) then {		
-		_x setTriggerActivation ["ANYPLAYER", "PRESENT", (triggerActivation _x) select 2];
-		_x setTriggerStatements ["this",
-		"[thisTrigger] call MSF_fnc_CreateRandomTriggerPatrol;",
-		"[thisTrigger] call MSF_fnc_DeleteRandomTriggerPatrol;"];
+	if (_x getVariable ["MSF_Trigger_Patrol", false] && !(_x getVariable ["MSF_Trigger_Patrol_Vic", false])) then {
+		if(triggerArea _x select 0 != 0 && triggerArea _x select 1 != 0) then {		
+			_x setTriggerActivation ["ANYPLAYER", "PRESENT", (triggerActivation _x) select 2];
+			_x setTriggerStatements ["this",
+			"[thisTrigger] call MSF_fnc_CreateRandomTriggerPatrol;",
+			"[thisTrigger] call MSF_fnc_DeleteRandomTriggerPatrol;"];
+		};
+	};
+	if (_x getVariable ["MSF_Trigger_Patrol_Vic", false] && !(_x getVariable ["MSF_Trigger_Patrol", false])) then {
+		if(triggerArea _x select 0 != 0 && triggerArea _x select 1 != 0) then {		
+			_x setTriggerActivation ["ANYPLAYER", "PRESENT", false];
+			_x setTriggerStatements ["this",
+			"[thisTrigger] call MSF_fnc_CreateAreaVehiclePatrol;",
+			""];
+		};
 	};
 } forEach _triggers;

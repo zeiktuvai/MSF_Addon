@@ -13,11 +13,13 @@
 
 params ["_trigger"];
 
-if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {
-	private _grpN = _trigger getVariable ["MSF_Trig_Patrol_Group", "OIA_InfTeam"];
-	private _grpName = _grpN trim ["""", 0];
+if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {	
+	private _groupTypes = parseSimpleArray(_trigger getVariable ["MSF_Trig_Patrol_Group", []]);
+	private _grpName = selectRandom _groupTypes;
 	private _amount = 8;
-	private _type = [configfile >> "CfgGroups", 4] call BIS_fnc_returnChildren select { configName _x == _grpName } select 0;		
+	private _type = [configfile >> "CfgGroups", 4] call BIS_fnc_returnChildren select { configName _x == _grpName } select 0;
+	private _mode = _trigger getVariable ["MSF_Trig_Patrol_CombatMode", "RED"];
+	private _behv = _trigger getVariable ["MSF_Trig_Patrol_Behav", "AWARE"];
 	private _ids = [];
 	private _count = [1, 2] select ((_trigger getVariable ["MSF_Trig_Patrol_SpawnCount", false]) == true);
 
@@ -36,8 +38,8 @@ if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {
 			_wp = _group addWaypoint [_location, 10, _i ];
 
 			if ( _i == 1 ) then {
-				[_group, _i] setWaypointBehaviour "SAFE";
-				[_group, _i] setWaypointCombatMode "RED";
+				[_group, _i] setWaypointBehaviour _behv;
+				[_group, _i] setWaypointCombatMode _mode;
 				[_group, _i] setWaypointFormation "COLUMN";
 			};    
 		};

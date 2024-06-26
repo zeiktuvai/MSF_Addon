@@ -19,6 +19,7 @@ class CfgFunctions
 			class ApplyRandomTriggerPatrol {};
 			class CreateRandomTriggerPatrol {};
 			class DeleteRandomTriggerPatrol {};
+			class CreateAreaVehiclePatrol {};
 		};
 		class Multiplayer
 		{
