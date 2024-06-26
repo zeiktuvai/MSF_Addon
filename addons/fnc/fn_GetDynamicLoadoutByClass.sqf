@@ -147,7 +147,8 @@ switch (_uniformType) do
 			["NATO_WINTER_SOLDIER_REPAIR", ["TFY_Winter_VehicleCrewman"]],
 			["NATO_WINTER_SOLDIER_ENGINEER", ["TFY_Winter_VehicleCrewman"]],
 			["NATO_WINTER_SOLDIER_MEDIC", ["TFY_Winter_Medic"]],
-			["NATO_WINTER_SOLDIER_UAV", ["TFY_Winter_UAVOperator"]]
+			["NATO_WINTER_SOLDIER_UAV", ["TFY_Winter_UAVOperator"]],
+			["NATO_WINTER_SOLDIER_EXP", ["TFY_Winter_MineSpec"]]
 		];
 	};
 };
