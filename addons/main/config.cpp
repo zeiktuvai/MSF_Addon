@@ -11,7 +11,6 @@ class CfgPatches
         weapons[] = {};
         requiredVersion = 1.0;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction"};
-        is3DENmod = 1;
     };
 };
 
