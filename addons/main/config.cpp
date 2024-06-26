@@ -31,6 +31,7 @@ class Cfg3DEN
 	class Mission
 	{
 		#include "cfg\mission\MSF_Mission_Attributes.hpp"
+		#include "cfg\mission\MSF_Mission_Properties.hpp"
 	};
 	class Attributes
 	{
@@ -57,3 +58,4 @@ class Extended_PreInit_EventHandlers
 // 		init = "[] call MSF_fnc_test;";        
 //     };
 // };
+
