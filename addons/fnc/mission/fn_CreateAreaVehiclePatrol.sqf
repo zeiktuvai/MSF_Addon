@@ -24,10 +24,17 @@ private _skip = 0;
 private _skipVal = parseNumber((count _roads) / _num - 1 toFixed 0);
 private _initial = [];
 private _count = [1, 2] select ((_trigger getVariable ["MSF_Trig_Patrol_SpawnCount", false]) == true);
+private _side = east;
+switch (_trigger getVariable ["MSF_Trig_Patrol_Side", 0]) do {
+	case 0: { _side = east; };
+	case 1: { _side = resistance; };
+	case 2: { _side = west; };
+	default { _side = east };
+};
 
 for "_g" from 1 to _count do {
 	if (_g == 1) then {	_initial = getPosATL (_roads select _skip);	} else { _initial = getPosATL (_roads select (count _roads - 1)); };
-	private _gen = [_initial, 0, selectRandom _vehicles, EAST] call BIS_fnc_spawnVehicle;
+	private _gen = [_initial, 0, selectRandom _vehicles, _side] call BIS_fnc_spawnVehicle;
 	private _group = _gen select 2;
 	_group setSpeedMode _speed;
 	_group setCombatMode _mode;

@@ -21,13 +21,20 @@ if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {
 	private _mode = _trigger getVariable ["MSF_Trig_Patrol_CombatMode", "RED"];
 	private _behv = _trigger getVariable ["MSF_Trig_Patrol_Behav", "AWARE"];
 	private _speed = _trigger getVariable ["MSF_Trig_Patrol_Speed", "NORMAL"];
+	private _side = east;
+	switch (_trigger getVariable ["MSF_Trig_Patrol_Side", 0]) do {
+		case 0: { _side = east; };
+		case 1: { _side = resistance; };
+		case 2: { _side = west; };
+		default { _side = east };
+	};
 	private _ids = [];
 	private _count = [1, 2] select ((_trigger getVariable ["MSF_Trig_Patrol_SpawnCount", false]) == true);
 
 	for "_g" from 1 to _count do {
 		private _start = [_trigger] call BIS_fnc_randomPosTrigger;
 		private _pos = [_start, 1, 50, 3, 0, 20, 0] call BIS_fnc_findSafePos;
-		private _group = [_pos, east, _type] call BIS_fnc_spawnGroup;
+		private _group = [_pos, _side, _type] call BIS_fnc_spawnGroup;
 		_group deleteGroupWhenEmpty true;
 		_group setSpeedMode _speed;
 		_group setCombatMode _mode;
