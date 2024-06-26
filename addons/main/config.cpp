@@ -11,7 +11,6 @@ class CfgPatches
         weapons[] = {};
         requiredVersion = 1.0;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction"};
-        is3DENmod = 1;
     };
 };
 
@@ -31,6 +30,7 @@ class Cfg3DEN
 	class Mission
 	{
 		#include "cfg\mission\MSF_Mission_Attributes.hpp"
+		#include "cfg\mission\MSF_Mission_Properties.hpp"
 	};
 	class Attributes
 	{
@@ -49,6 +49,7 @@ class Extended_PreInit_EventHandlers
 };
 
 #include "cfg\mission\MSF_Config.hpp"
+#include "cfg\object\MSF_Attr_Trigger.hpp"
 
 //not working....
 // class Extended_InitPost_EventHandlers {
@@ -56,3 +57,4 @@ class Extended_PreInit_EventHandlers
 // 		init = "[] call MSF_fnc_test;";        
 //     };
 // };
+

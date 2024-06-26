@@ -111,6 +111,25 @@ When enabled, it takes the provided class path (i.e. MyAwesomeMission >> Briefin
 
 You can also provide a Task ID to complete when the conversation starts, and code to run when the conversation starts.
 
+**Random Patrol Generator**
+This tool can generate a patrol with a number of waypoints across a defined area.  To configure, place a `Trigger MSF Patrol` down and size it to the area you want to be patrolled (Really small areas of less than 100m and areas larger than 3000m may yeild unexpected results).
+
+In the attributes of that trigger, scroll to the bottom and you have a few options. They are:
+- Add created patrols to Zeus.
+- Set the patrol behavior.
+- Set the patrol combat mode.
+- Set the patrol speed.
+- Spawn two groups instead of one.
+- Number of waypoints (4-10).
+- Side of spawned patrol.
+- Enable Infantry Patrols.
+- List of groups to pick from for spawn (Array: ["Group","Group"] Open config viewer, go to `+CfgGroups' and navigate to the group you want to spawn, only paste the name of the group.  Not the whole path).
+- Despawn patrol when players leave area.
+- Enable Vehicle patrol mode. (Trigger will only do Infantry or Vehicle, not both).
+- List of Vehicle classes to pick from (Array: ["Car1","Car2"]).
+
+When enabled with a proper group, the patrol will spawn when a player enters the trigger area.  If you make the trigger repeatable and set it to despawn on leave, you can have the patrol despawn and respawn when players re-enter the area.
+
 # Player Preferences
 
 These options are typically user configurable and do not need any configuration from the mission maker unless you want to force players into a specific setting.
