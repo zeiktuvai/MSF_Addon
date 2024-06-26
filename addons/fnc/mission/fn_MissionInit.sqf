@@ -15,7 +15,9 @@ if (isServer) then {
 	[] call MSF_fnc_GenerateInventory;
 	[] call MSF_fnc_InfiniteFuelHandler;	
 	[] call MSF_fnc_SetUnitDialogOption;
-	
+	[] call MSF_fnc_ApplyDamageReduction;
+	[] call MSF_fnc_ApplyRandomTriggerPatrol;
+
 	if (getMissionConfigValue "MSF_Mission_GM") then {
 		[] call MSF_fnc_ApplyGMActions;
 	};
@@ -23,9 +25,4 @@ if (isServer) then {
 	if (getMissionConfigValue "MSF_Mission_EndMission") then {
 		[] call MSF_fnc_ApplyEndMission;
 	};
-
-	//private _vics = ["MSF_General_DmgReduction", 0] call MSF_fnc_GetVehiclesByPropertyValue;
- 	//{[_x] call MSF_fnc_AddVehicleDamageHandler;} forEach _vics;
-
-	[] call MSF_fnc_ApplyDamageReduction;
 };

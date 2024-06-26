@@ -9,4 +9,9 @@ class MSFConfig
 		aceMedical[] = {"ACE_bloodIV_500", "ACE_bloodIV", "ACE_quikclot", "ACE_packingBandage", "ACE_elasticBandage", "ACE_fieldDressing", "ACE_adenosine", "ACE_bodyBag", "ACE_bodyBag_blue", "ACE_bodyBag_white", "ACE_EarPlugs", "ACE_epinephrine", "ACE_morphine", "ACE_plasmaIV", "ACE_plasmaIV_500", "ACE_plasmaIV_250", "ACE_salineIV", "ACE_salineIV_250", "ACE_salineIV_500", "ACE_splint", "ACE_tourniquet"};
 		aceFood[] = {"ACE_Can_RedGull", "ACE_Can_Spirit", "ACE_Canteen", "ACE_Canteen_Empty", "ACE_Canteen_Half", "ACE_Humanitarian_Ration", "ACE_MRE_BeefStew", "ACE_MRE_ChickenTikkaMasala", "ACE_MRE_ChickenHerbDumplings", "ACE_MRE_CreamChickenSoup", "ACE_MRE_CreamTomatoSoup", "ACE_MRE_LambCurry", "ACE_MRE_MeatballsPasta", "ACE_MRE_SteakVegetables", "ACE_Sunflower_Seeds", "ACE_WaterBottle", "ACE_WaterBottle_Empty", "ACE_WaterBottle_Half", "ACE_Can_Franta"};
 	};
+	class PatrolSets
+	{
+		Vehicles[] = {"rhs_tigr_sts_msv", "rhs_tigr_sts_3camo_msv"};
+		Groups[] = {"rhs_group_rus_msv_infantry_emr_fireteam", "rhs_group_rus_msv_infantry_emr_MANEUVER", "rhs_group_rus_msv_infantry_emr_section_AA", "rhs_group_rus_msv_infantry_emr_section_marksman", "rhs_group_rus_msv_infantry_emr_section_mg", "rhs_group_rus_msv_infantry_emr_squad", "rhs_group_rus_msv_infantry_emr_squad_2mg", "rhs_group_rus_msv_infantry_emr_squad_mg_sniper"};
+	};
 };
