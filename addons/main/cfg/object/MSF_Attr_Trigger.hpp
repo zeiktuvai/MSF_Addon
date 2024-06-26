@@ -3,7 +3,7 @@ class CfgNonAIVehicles
 	class EmptyDetector;
 	class MSFTrigger : EmptyDetector
 	{		
-		displayName = "MSF Trigger";
+		displayName = "Trigger MSF Patrol";
 		class Attributes
 		{
 			class MSFPatrols
@@ -39,6 +39,35 @@ class CfgNonAIVehicles
 				expression = "_this setVariable ['%s',_value];";
 				defaultValue = "SAFE";				
 			};
+			class MSF_Trig_Patrol_Speed
+			{
+				displayName = "Spawn Speed Mode";
+				tooltip = "Speed mode of the patrol.";
+				property = "MSF_Trig_Patrol_Speed";
+				control = "SpeedModeGroup";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = "normal";
+			};
+			class MSF_Trig_Patrol_SpawnCount
+			{
+				displayName = "Spawn two patrols";
+				tooltip = "Adds a second spawned patrol on activation. (Could get weird if trigger area is too small).";
+				property = "MSF_Trig_Patrol_SpawnCount";
+				control = "Checkbox";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = "false";				
+			};
+			class MSF_Trig_Patrol_WaypointCount
+			{
+				displayName = "Number of waypoints";
+				tooltip = "Sets the number of waypoints to be generated. (Minimum of 4 - Max of 10)";
+				property = "MSF_Trig_Patrol_WaypointCount";			
+				control = "EditShort";
+				expression = "if (_value > 3 && _value < 11) then {_this setVariable ['%s',_value];} else {_this setVariable ['%s',8];};";
+				defaultValue = 8;
+				validate = "number";
+				typeName = "NUMBER";
+			};
 			class MSFInfPatrols
 			{
 				data = "AttributeSystemSubcategory";
@@ -48,8 +77,8 @@ class CfgNonAIVehicles
 			};
 			class MSF_Trigger_Patrol
 			{				
-				displayName = "Enable Patrols";
-				tooltip = "Creates patrol with random waypoints in the trigger area. (Works best with smaller triggers [area < 2000]. Does not work if trigger has no area)";
+				displayName = "Enable Infantry Patrols";
+				tooltip = "Creates an infantry patrol with random waypoints in the trigger area. (Works best with smaller triggers [area < 2000]. Does not work if trigger has no area)";
 				property = "MSF_Trigger_Patrol";
 				control = "Checkbox";
 				expression = "_this setVariable ['%s',_value]; [_this, _value] call MSF_fnc_CheckNotifyTriggerHasArea;";
@@ -69,15 +98,6 @@ class CfgNonAIVehicles
 				displayName = "Despawn on Player exit";
 				tooltip = "If checked, the spawned group will be removed when players leave the trigger area (for resource conservation). If trigger is repeatable, group will spawn again on enter.";
 				property = "MSF_Trig_Patrol_Despawn";
-				control = "Checkbox";
-				expression = "_this setVariable ['%s',_value];";
-				defaultValue = "false";				
-			};
-			class MSF_Trig_Patrol_SpawnCount
-			{
-				displayName = "Spawn two patrols";
-				tooltip = "Adds a second spawned patrol on activation. (Could get weird if trigger area is too small).";
-				property = "MSF_Trig_Patrol_SpawnCount";
 				control = "Checkbox";
 				expression = "_this setVariable ['%s',_value];";
 				defaultValue = "false";				

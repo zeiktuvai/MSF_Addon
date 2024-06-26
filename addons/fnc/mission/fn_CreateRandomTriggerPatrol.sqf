@@ -16,10 +16,11 @@ params ["_trigger"];
 if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {	
 	private _groupTypes = parseSimpleArray(_trigger getVariable ["MSF_Trig_Patrol_Group", []]);
 	private _grpName = selectRandom _groupTypes;
-	private _amount = 8;
+	private _amount = _trigger getVariable ["MSF_Trig_Patrol_WaypointCount", 8];
 	private _type = [configfile >> "CfgGroups", 4] call BIS_fnc_returnChildren select { configName _x == _grpName } select 0;
 	private _mode = _trigger getVariable ["MSF_Trig_Patrol_CombatMode", "RED"];
 	private _behv = _trigger getVariable ["MSF_Trig_Patrol_Behav", "AWARE"];
+	private _speed = _trigger getVariable ["MSF_Trig_Patrol_Speed", "NORMAL"];
 	private _ids = [];
 	private _count = [1, 2] select ((_trigger getVariable ["MSF_Trig_Patrol_SpawnCount", false]) == true);
 
@@ -28,6 +29,9 @@ if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {
 		private _pos = [_start, 1, 50, 3, 0, 20, 0] call BIS_fnc_findSafePos;
 		private _group = [_pos, east, _type] call BIS_fnc_spawnGroup;
 		_group deleteGroupWhenEmpty true;
+		_group setSpeedMode _speed;
+		_group setCombatMode _mode;
+		_group setBehaviour _behv;
 		if (_trigger getVariable ["MSF_Trig_Patrol_Zeus", true]) then {
 			{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
 		};
