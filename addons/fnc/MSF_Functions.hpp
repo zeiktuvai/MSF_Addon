@@ -9,7 +9,7 @@ class CfgFunctions
 		};
 		class Mission
 		{
-			file = "z\msf\addons\fnc";
+			file = "z\msf\addons\fnc\mission";
 			class MissionInit
 			{				
 				postInit = 1;
@@ -19,7 +19,7 @@ class CfgFunctions
 		};
 		class Multiplayer
 		{
-			file = "z\msf\addons\fnc";
+			file = "z\msf\addons\fnc\mp";
 			class ConfigRespawnOnPlayer	{};
 			class JIPSpawnNearPlayer {};
 			class ConfigureMP {};
@@ -48,7 +48,7 @@ class CfgFunctions
 		};
 		class Helpers
 		{
-			file = "z\msf\addons\fnc";
+			file = "z\msf\addons\fnc\helper";
 			class GetVehiclesByProperty {};
 			class GetPlayersByProperty {};
 			class GetVehiclesByPropertyValue {};
@@ -57,9 +57,18 @@ class CfgFunctions
 		};
 		class Validators
 		{
-			file = "z\msf\addons\fnc";
+			file = "z\msf\addons\fnc\val";
 			class SetInvGenEnable {};
 			class SetDialogValidator {};
+		};
+		class ExternalFunctions
+		{
+			file = "z\msf\addons\fnc\ext";
+			class ZEN_OccupyHouse {};
+			class ZEN_InsertionSort {};
+			class ZEN_ExtendPosition {};
+			class ZEN_ArrayShuffle {};
+			class JBOY_UpDown {};
 		};
 	};
 };
