@@ -57,7 +57,7 @@ class CfgFunctions
 		};
 		class Validators
 		{
-			file = "z\msf\addons\fnc\val";
+			file = "z\msf\addons\fnc\validator";
 			class SetInvGenEnable {};
 			class SetDialogValidator {};
 		};
