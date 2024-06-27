@@ -17,7 +17,7 @@ if (isServer) then {
 	[] call MSF_fnc_SetUnitDialogOption;
 	[] call MSF_fnc_ApplyDamageReduction;
 	[] call MSF_fnc_ApplyRandomTriggerPatrol;
-	
+
 	if (getMissionConfigValue "MSF_Mission_GM") then {
 		[] call MSF_fnc_ApplyGMActions;
 	};
