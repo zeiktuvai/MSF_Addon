@@ -10,7 +10,7 @@ class TFY_Assault
 };
 class TFY_Recon
 {
-    displayName = "Marksman";
+    displayName = "Recon";
     icon = "a3\ui_f\data\gui\cfg\respawnroles\recon_ca.paa";
 };
 class TFY_Support

@@ -14,7 +14,7 @@ class display3DEN
 				class MSF_Folder
 				{
 					text = "Mission Support Foundation";
-					items[] = { "MSF_Settings", "MSF_CFG_Multi", "MSFDocs" };
+					items[] = { "MSF_Settings", "MSF_Properties", "MSF_CFG_Multi", "MSFDocs" };
 					picture = "\a3\3DEN\Data\Displays\Display3DEN\ToolBar\open_ca.paa";
 				};
 				class MSF_Settings
@@ -22,6 +22,13 @@ class display3DEN
 					text = "MSF Settings";
 					action = "edit3DENMissionAttributes 'MSFSettings';";
 					picture = "\a3\3den\data\attributes\namesound\special_ca.paa";
+					opensNewWindow = 1;
+				};
+				class MSF_Properties
+				{
+					text = "MSF Properties";
+					action = "edit3DENMissionAttributes 'MSFProperties';";
+					picture = "\a3\3den\data\cfg3den\history\changeattributes_ca.paa";
 					opensNewWindow = 1;
 				};
 				class MSF_CFG_Multi

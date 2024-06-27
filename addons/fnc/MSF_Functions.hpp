@@ -16,6 +16,10 @@ class CfgFunctions
 			};
 			class ApplyGMActions {};
 			class ApplyEndMission {};
+			class ApplyRandomTriggerPatrol {};
+			class CreateRandomTriggerPatrol {};
+			class DeleteRandomTriggerPatrol {};
+			class CreateAreaVehiclePatrol {};
 		};
 		class Multiplayer
 		{
@@ -60,6 +64,8 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\validator";
 			class SetInvGenEnable {};
 			class SetDialogValidator {};
+			class SetCfgEntryValidator {};
+			class CheckNotifyTriggerHasArea {};
 		};
 		class ExternalFunctions
 		{
