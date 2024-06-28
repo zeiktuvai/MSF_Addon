@@ -161,4 +161,66 @@ class CfgNonAIVehicles
 
 		};		
 	};
+	class MSFTriggeFortify : EmptyDetector
+	{		
+		displayName = "Trigger MSF Fortify";
+		class Attributes
+		{
+			class MSF_Trig_Fortify_Enable
+			{
+				displayName = "Enable Area Fortification";
+				tooltip = "Spawn enemies in buildings in this trigger. (If there are no buildings, no enemies will spawn).";
+				property = "MSF_Trig_Fortify_Enable";
+				control = "CheckboxState";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = "true";				
+			};
+			class MSF_Trig_Fortify_Side
+			{
+				displayName = "Side";
+				tooltip = "Faction to spawn units in.";
+				property = "MSF_Trig_Fortify_Side";
+				control = "Combo";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = 0;
+				typeName = "Number";
+				class Values
+				{
+					class East
+					{
+						name = "East";
+						tooltip = "OPFOR";
+						value = 0;
+					};
+					class Independant
+					{
+						name = "Independant";
+						tooltip = "Independant";
+						value = 1;
+					};
+					class West
+					{
+						name = "West";
+						tooltip = "BLUFOR";
+						value = 2;
+					};
+				};	
+			};
+			class MSFFortify_Building
+			{
+				data = "AttributeSystemSubcategory";
+				control = "SubCategory";
+				displayName = "Building Fortification Options";
+			};
+			class MSF_Trig_Fortify_Building
+			{
+				displayName = "Spawn two patrols";
+				tooltip = "Adds a second spawned patrol on activation. (Could get weird if trigger area is too small).";
+				property = "MSF_Trig_Fortify_Building";
+				control = "Checkbox";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = "false";				
+			};
+		};
+	};
 };

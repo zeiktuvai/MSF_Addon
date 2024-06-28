@@ -1,7 +1,10 @@
-    hemtt build --no-bin
+#!/bin/bash
+date
+hemtt build --no-bin
 
-    rm -r "$DEV_MOD_PATH"*
-    /bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"
+rm -r "$DEV_MOD_PATH"*
+/bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"
+
 while getopts ":s" option; do   
 
     case $option in
