@@ -20,10 +20,11 @@ class CfgFunctions
 			class CreateRandomTriggerPatrol {};
 			class DeleteRandomTriggerPatrol {};
 			class CreateAreaVehiclePatrol {};
+			class CreateAreaBuildingDefense {};
 		};
 		class Multiplayer
 		{
-			file = "z\msf\addons\fnc";
+			file = "z\msf\addons\fnc\mp";
 			class ConfigRespawnOnPlayer	{};
 			class JIPSpawnNearPlayer {};
 			class ConfigureMP {};
@@ -52,12 +53,14 @@ class CfgFunctions
 		};
 		class Helpers
 		{
-			file = "z\msf\addons\fnc";
+			file = "z\msf\addons\fnc\helper";
 			class GetVehiclesByProperty {};
 			class GetPlayersByProperty {};
 			class GetVehiclesByPropertyValue {};
 			class GetUnitsByProperty {};
 			class AddAceMainMenuItem {};
+			class SpawnGroupInSafePos {};
+			class GetAreaRadius {};
 		};
 		class Validators
 		{
@@ -66,6 +69,15 @@ class CfgFunctions
 			class SetDialogValidator {};
 			class SetCfgEntryValidator {};
 			class CheckNotifyTriggerHasArea {};
+		};
+		class ExternalFunctions
+		{
+			file = "z\msf\addons\fnc\ext";
+			class ZEN_OccupyHouse {};
+			class ZEN_InsertionSort {};
+			class ZEN_ExtendPosition {};
+			class ZEN_ArrayShuffle {};
+			class JBOY_UpDown {};
 		};
 	};
 };
