@@ -15,4 +15,4 @@ if (count _array > 1) then {
 			_array set [_j, _temp];
 	};
 };
-if (true) exitWith {};
+_array;

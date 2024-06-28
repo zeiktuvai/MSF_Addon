@@ -3,6 +3,7 @@
 // by Zenophon
 
 */
+#define EVAL(X) (X call _comparator)
 
 params ["_array", "_comparator"];
 private ["_i", "_j", "_count", "_element", "_value"];
@@ -24,4 +25,4 @@ for "_i" from 1 to _count step 1 do {
 
 	_array set [_j, _element];
 };
-if (true) exitWith {};
+_array;

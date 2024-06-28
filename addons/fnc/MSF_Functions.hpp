@@ -20,6 +20,7 @@ class CfgFunctions
 			class CreateRandomTriggerPatrol {};
 			class DeleteRandomTriggerPatrol {};
 			class CreateAreaVehiclePatrol {};
+			class CreateAreaBuildingDefense {};
 		};
 		class Multiplayer
 		{
@@ -58,6 +59,8 @@ class CfgFunctions
 			class GetVehiclesByPropertyValue {};
 			class GetUnitsByProperty {};
 			class AddAceMainMenuItem {};
+			class SpawnGroupInSafePos {};
+			class GetAreaRadius {};
 		};
 		class Validators
 		{

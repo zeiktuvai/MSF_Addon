@@ -1,4 +1,4 @@
-params ("_dude", "_stances");
+params ["_dude", "_stances"];
 
 if (!isServer)  exitWith {};
 

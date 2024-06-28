@@ -32,14 +32,39 @@ Incorporated into MSF for trigger area spawning.
 */
 
 #define I(X) X = X + 1;
-#define EVAL(X) (X call _comparator)
 #define EYE_HEIGHT 1.53
 #define CHECK_DISTANCE 5
 #define FOV_ANGLE 10
 #define ROOF_CHECK 4
 #define ROOF_EDGE 2
 
-private ["_center", "_units", "_buildingRadius", "_putOnRoof", "_fillEvenly", "_Zen_ExtendPosition", "_buildingsArray", "_buildingPosArray", "_buildingPositions", "_posArray", "_unitIndex", "_j", "_building", "_posArray", "_randomIndex", "_housePos", "_startAngle", "_i", "_checkPos", "_hitCount", "_isRoof", "_edge", "_k", "_unUsedUnits", "_array", "_sortHeight", "_Zen_InsertionSort", "_Zen_ArrayShuffle"];
+private [
+    "_center", 
+    "_units", 
+    "_buildingRadius", 
+    "_putOnRoof", 
+    "_fillEvenly", 
+    "_buildingsArray", 
+    "_buildingPosArray", 
+    "_buildingPositions", 
+    "_posArray", 
+    "_unitIndex", 
+    "_j", 
+    "_building", 
+    "_posArray", 
+    "_randomIndex", 
+    "_housePos", 
+    "_startAngle", 
+    "_i", 
+    "_checkPos", 
+    "_hitCount", 
+    "_isRoof", 
+    "_edge", 
+    "_k", 
+    "_unUsedUnits", 
+    "_array", 
+    "_sortHeight"
+    ];
 
 _center = _this param [0, [0,0,0], [[]], 3];
 _units = _this param [1, [objNull], [[]]];
@@ -76,15 +101,16 @@ if (count _buildingsArray == 0) exitWith {
 };
 
 // Randomize array
-_buildingPosArray = [];
-0 = [_buildingsArray] call MSF_fnc_ZEN_ArrayShuffle;
+_buildingsArray = [_buildingsArray] call MSF_fnc_ZEN_ArrayShuffle;
 
 // Get position for all buildings in array
+_buildingPosArray = [];
 {
     _posArray = [];
     for "_i" from 0 to 1000 do {
-        if ((_x buildingPos _i) isEqualTo [0,0,0]) exitWith {};
-        _posArray pushBack (_x buildingPos _i);
+        _pos = _x buildingPos _i;
+        if (_pos isEqualTo [0,0,0]) exitWith {};
+        _posArray pushBack _pos;
     };
 
     _buildingPosArray pushBack _posArray;
@@ -93,11 +119,11 @@ _buildingPosArray = [];
 // Set pos array depending on fill from bottom or top option.
 if (_sortHeight) then {
     {
-        0 = [_x, {-1 * (_this select 2)}] call MSF_fnc_ZEN_InsertionSort;
+        _x = [_x, {-1 * (_this select 2)}] call MSF_fnc_ZEN_InsertionSort;
     } forEach _buildingPosArray;
 } else {
     {
-        0 = [_x] call MSF_fnc_ZEN_ArrayShuffle;
+        _x = [_x] call MSF_fnc_ZEN_ArrayShuffle;
     } forEach _buildingPosArray;
 };
 
@@ -123,14 +149,14 @@ for [{_j = 0}, {(_unitIndex < count _units) && {(count _buildingPosArray > 0)}},
 
         _startAngle = (round random 10) * (round random 36);
         for "_i" from _startAngle to (_startAngle + 350) step 10 do {
-            _checkPos = [_housePos, CHECK_DISTANCE, (90 - _i), (_housePos select 2)] call _Zen_ExtendPosition;
+            _checkPos = [_housePos, CHECK_DISTANCE, (90 - _i), (_housePos select 2)] call MSF_fnc_ZEN_ExtendPosition;
             if !(lineIntersects [_checkPos, [_checkPos select 0, _checkPos select 1, (_checkPos select 2) + 25], objNull, objNull]) then {
                 if !(lineIntersects [_housePos, _checkPos, objNull, objNull]) then {
-                    _checkPos = [_housePos, CHECK_DISTANCE, (90 - _i), (_housePos select 2) + (CHECK_DISTANCE * tan FOV_ANGLE)] call _Zen_ExtendPosition;
+                    _checkPos = [_housePos, CHECK_DISTANCE, (90 - _i), (_housePos select 2) + (CHECK_DISTANCE * tan FOV_ANGLE)] call MSF_fnc_ZEN_ExtendPosition;
                     if !(lineIntersects [_housePos, _checkPos, objNull, objNull]) then {
                         _hitCount = 0;
                         for "_k" from 30 to 360 step 30 do {
-                            _checkPos = [_housePos, 20, (90 - _k), (_housePos select 2)] call _Zen_ExtendPosition;
+                            _checkPos = [_housePos, 20, (90 - _k), (_housePos select 2)] call MSF_fnc_ZEN_ExtendPosition;
                             if (lineIntersects [_housePos, _checkPos, objNull, objNull]) then {
                                 I(_hitCount)
                             };
@@ -143,7 +169,7 @@ for [{_j = 0}, {(_unitIndex < count _units) && {(count _buildingPosArray > 0)}},
                             if (_isRoof) then {
                                 _edge = false;
                                 for "_k" from 30 to 360 step 30 do {
-                                    _checkPos = [_housePos, ROOF_EDGE, (90 - _k), (_housePos select 2)] call _Zen_ExtendPosition;
+                                    _checkPos = [_housePos, ROOF_EDGE, (90 - _k), (_housePos select 2)] call MSF_fnc_ZEN_ExtendPosition;
                                     _edge = !(lineIntersects [_checkPos, [(_checkPos select 0), (_checkPos select 1), (_checkPos select 2) - EYE_HEIGHT - 1], objNull, objNull]);
 
                                     if (_edge) exitWith {
@@ -153,7 +179,7 @@ for [{_j = 0}, {(_unitIndex < count _units) && {(count _buildingPosArray > 0)}},
                             };
 
                             if (!(_isRoof) || {_edge}) then {
-                                (_units select _unitIndex) doWatch ([_housePos, CHECK_DISTANCE, (90 - _i), (_housePos select 2) - (getTerrainHeightASL _housePos)] call _Zen_ExtendPosition);
+                                (_units select _unitIndex) doWatch ([_housePos, CHECK_DISTANCE, (90 - _i), (_housePos select 2) - (getTerrainHeightASL _housePos)] call MSF_fnc_ZEN_ExtendPosition);
 
                                 (_units select _unitIndex) disableAI "TARGET";
                                 (_units select _unitIndex) setPosASL [(_housePos select 0), (_housePos select 1), (_housePos select 2) - EYE_HEIGHT];
