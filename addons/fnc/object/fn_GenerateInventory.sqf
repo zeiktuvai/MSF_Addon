@@ -17,12 +17,12 @@ if(isServer ) then
 {
 	private _objects = entities [["Thing", "AllVehicles"], [], false, true] select { _x getVariable "MSF_Helper_InvGenerate_Enabled" == true; };
 
-	private _launch = call compile getMissionConfigValue "MSF_Helper_Inv_Launcher";
-	private _grenade = call compile getMissionConfigValue "MSF_Helper_Inv_Grenades";
-	private _medical = call compile getMissionConfigValue "MSF_Helper_Inv_Med";
-	private _food = call compile getMissionConfigValue "MSF_Helper_Inv_Food";
-	private _mags = call compile getMissionConfigValue "MSF_Helper_Inv_Mag";
-	private _items = call compile getMissionConfigValue "MSF_Helper_Inv_Item";
+	private _launch = call compile getMissionConfigValue ["MSF_Helper_Inv_Launcher", getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'launcherRounds')];
+	private _grenade = call compile getMissionConfigValue ["MSF_Helper_Inv_Grenades", getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'grenades')];
+	private _medical = call compile getMissionConfigValue ["MSF_Helper_Inv_Med", getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'aceMedical')];
+	private _food = call compile getMissionConfigValue ["MSF_Helper_Inv_Food", getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'aceFood')];
+	private _mags = call compile getMissionConfigValue ["MSF_Helper_Inv_Mag", getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'natoStdMags')];
+	private _items = call compile getMissionConfigValue ["MSF_Helper_Inv_Item", getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'items')];
 
 	{
 		private _object = _x;
