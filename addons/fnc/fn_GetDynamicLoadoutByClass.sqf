@@ -27,7 +27,7 @@ switch (_uniformType) do
 		[
 			["B_Soldier_F", ["TFY_Rifleman"]],
 			["B_Soldier_A_F", ["TFY_Rifleman"]],
-			["B_soldier_AR_F", ["TFY_Rifleman"]],
+			["B_soldier_AR_F", ["TFY_Autorifleman"]],
 			["B_Soldier_lite_F", ["TFY_Rifleman"]],
 			["B_Soldier_GL_F", ["TFY_Grenadier"]],
 			["B_medic_F", ["TFY_Medic"]],
@@ -62,7 +62,7 @@ switch (_uniformType) do
 		[
 			["B_Soldier_F", ["TFY_Rifleman_N"]],
 			["B_Soldier_A_F", ["TFY_Rifleman_N"]],
-			["B_soldier_AR_F", ["TFY_Rifleman_N"]],
+			["B_soldier_AR_F", ["TFY_Autorifleman_N"]],
 			["B_Soldier_lite_F", ["TFY_Rifleman_N"]],
 			["B_Soldier_GL_F", ["TFY_Grenadier_N"]],
 			["B_medic_F", ["TFY_Medic_N"]],
@@ -97,7 +97,7 @@ switch (_uniformType) do
 		[
 			["B_Soldier_F", ["TFY_Winter_Rifleman"]],
 			["B_Soldier_A_F", ["TFY_Winter_Rifleman"]],
-			["B_soldier_AR_F", ["TFY_Winter_Rifleman"]],
+			["B_soldier_AR_F", ["TFY_Winter_Gunner"]],
 			["B_Soldier_lite_F", ["TFY_Winter_Rifleman"]],
 			["B_Soldier_GL_F", ["TFY_Winter_Grenadier"]],
 			["B_medic_F", ["TFY_Winter_Medic"]],
@@ -147,7 +147,8 @@ switch (_uniformType) do
 			["NATO_WINTER_SOLDIER_REPAIR", ["TFY_Winter_VehicleCrewman"]],
 			["NATO_WINTER_SOLDIER_ENGINEER", ["TFY_Winter_VehicleCrewman"]],
 			["NATO_WINTER_SOLDIER_MEDIC", ["TFY_Winter_Medic"]],
-			["NATO_WINTER_SOLDIER_UAV", ["TFY_Winter_UAVOperator"]]
+			["NATO_WINTER_SOLDIER_UAV", ["TFY_Winter_UAVOperator"]],
+			["NATO_WINTER_SOLDIER_EXP", ["TFY_Winter_MineSpec"]]
 		];
 	};
 };

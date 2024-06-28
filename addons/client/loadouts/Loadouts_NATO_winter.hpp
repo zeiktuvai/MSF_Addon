@@ -224,7 +224,7 @@ class TFY_Winter_VehicleCrewman
     icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
     role = "TFY_Crew";
     weapons[] = {
-        "arifle_MX_SW_Winter_F","Binocular", "rhsusf_weap_m1911a1"
+        "arifle_MX_SW_Winter_F", "Binocular", "rhsusf_weap_m1911a1"
     };
     magazines[] = {
         "acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellGreen", "30Rnd_65x39_caseless_black_mag_Tracer", "9Rnd_45ACP_Mag",
