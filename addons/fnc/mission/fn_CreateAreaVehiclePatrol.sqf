@@ -13,7 +13,7 @@
 params ["_trigger"];
 
 
-private _radius = [triggerArea _trigger select 0, triggerArea _trigger select 1] select ((triggerArea _trigger select 0) <= (triggerArea _trigger select 1));
+private _radius = [_trigger] call MSF_fnc_GetAreaRadius;
 private _roads = (position _trigger) nearRoads _radius;
 private _vehicles = parseSimpleArray(_trigger getVariable ["MSF_Trig_Patrol_Vic_Types", []]);
 private _mode = _trigger getVariable ["MSF_Trig_Patrol_CombatMode", "RED"];

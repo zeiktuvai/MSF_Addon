@@ -228,7 +228,7 @@ class TFY_Winter_VehicleCrewman
     };
     magazines[] = {
         "acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellGreen", "30Rnd_65x39_caseless_black_mag_Tracer", "9Rnd_45ACP_Mag",
-        "30Rnd_65x39_caseless_black_mag_Tracer", "30Rnd_65x39_caseless_black_mag_Tracer", "30Rnd_65x39_caseless_black_mag_Tracer", "9Rnd_45ACP_Mag", "SmokeShellRed".
+        "30Rnd_65x39_caseless_black_mag_Tracer", "30Rnd_65x39_caseless_black_mag_Tracer", "30Rnd_65x39_caseless_black_mag_Tracer", "9Rnd_45ACP_Mag", "SmokeShellRed",
         "30Rnd_65x39_caseless_black_mag_Tracer", "30Rnd_65x39_caseless_black_mag_Tracer", "30Rnd_65x39_caseless_black_mag_Tracer", "9Rnd_45ACP_Mag", "SmokeShellRed"
     };
     items[] = {
@@ -284,7 +284,7 @@ class TFY_Winter_Medic
     uniformClass = "NATO_WINTER_UNIFORM";
     backpack = "NATO_WINTER_ASSAULTPACK_MEDIC";
 };
-class TFY_MineSpec
+class TFY_Winter_MineSpec
 {
     displayName = "Mine Specialist";
     icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
