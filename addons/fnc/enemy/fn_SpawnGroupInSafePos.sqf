@@ -8,7 +8,7 @@
 		[Trigger Objct] call MSF_fnc_SpawnGroupInSafePosition;
 
 	Function Ver 1.0
-	Implemented in: MSF Addon v1.5.2
+	Implemented in: MSF Addon v1.6.0
 */
 params [["_position", [0,0,0], [[]], 3], ["_side", east, [east]], ["_groupTypes", [""], [[]]]];
 

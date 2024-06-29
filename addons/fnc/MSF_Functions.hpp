@@ -17,10 +17,18 @@ class CfgFunctions
 			class ApplyGMActions {};
 			class ApplyEndMission {};
 			class ApplyRandomTriggerPatrol {};
+			class ApplyAreaFortification {};
+		};
+		class Enemy
+		{
+			file = "z\msf\addons\fnc\enemy";
+			class CreateAreaBuildingDefense {};
+			class CreateAreaVehicleDefense {};
+			class CreateAreaVehiclePatrol {};
 			class CreateRandomTriggerPatrol {};
 			class DeleteRandomTriggerPatrol {};
-			class CreateAreaVehiclePatrol {};
-			class CreateAreaBuildingDefense {};
+			class FortifyArea {};
+			class SpawnGroupInSafePos {};
 		};
 		class Multiplayer
 		{
@@ -59,7 +67,6 @@ class CfgFunctions
 			class GetVehiclesByPropertyValue {};
 			class GetUnitsByProperty {};
 			class AddAceMainMenuItem {};
-			class SpawnGroupInSafePos {};
 			class GetAreaRadius {};
 		};
 		class Validators
