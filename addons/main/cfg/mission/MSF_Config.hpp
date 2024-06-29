@@ -11,7 +11,11 @@ class MSFConfig
 	};
 	class PatrolSets
 	{
-		Vehicles[] = {"rhs_tigr_sts_msv", "rhs_tigr_sts_3camo_msv"};
-		Groups[] = {"rhs_group_rus_msv_infantry_emr_fireteam", "rhs_group_rus_msv_infantry_emr_MANEUVER", "rhs_group_rus_msv_infantry_emr_section_AA", "rhs_group_rus_msv_infantry_emr_section_marksman", "rhs_group_rus_msv_infantry_emr_section_mg", "rhs_group_rus_msv_infantry_emr_squad", "rhs_group_rus_msv_infantry_emr_squad_2mg", "rhs_group_rus_msv_infantry_emr_squad_mg_sniper"};
+		class AFRF_Classes
+		{
+			Groups[] = {"rhs_group_rus_msv_infantry_emr_fireteam", "rhs_group_rus_msv_infantry_emr_MANEUVER", "rhs_group_rus_msv_infantry_emr_section_AA", "rhs_group_rus_msv_infantry_emr_section_marksman", "rhs_group_rus_msv_infantry_emr_section_mg", "rhs_group_rus_msv_infantry_emr_squad", "rhs_group_rus_msv_infantry_emr_squad_2mg", "rhs_group_rus_msv_infantry_emr_squad_mg_sniper"};
+			Vehicles[] = {"rhs_tigr_msv","rhs_tigr_3camo_msv","rhs_tigr_sts_msv","rhs_tigr_sts_3camo_msv","rhs_tigr_m_msv","rhs_tigr_m_3camo_msv"};
+			Armor[] = {"rhs_bmp2k_msv", "rhs_bmp3_late_msv", "rhs_t72bc_tv", "rhs_t72be_tv", "rhs_t80b", "rhs_t90a_tv", "rhs_t90sm_tv", "rhs_t14_tv"};
+		};
 	};
 };

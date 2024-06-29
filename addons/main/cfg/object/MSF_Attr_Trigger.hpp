@@ -122,7 +122,7 @@ class CfgNonAIVehicles
 				property = "MSF_Trig_Patrol_Group";
 				control = "EditCode";
 				expression = "_this setVariable ['%s',_value];";
-				defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Groups');";
+				defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Groups');";
 			};
 			class MSF_Trig_Patrol_Despawn
 			{
@@ -156,7 +156,7 @@ class CfgNonAIVehicles
 				property = "MSF_Trig_Patrol_Vic_Types";
 				control = "EditCode";
 				expression = "_this setVariable ['%s',_value];";
-				defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Vehicles');";
+				defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Vehicles');";
 			};
 
 		};		
@@ -169,7 +169,7 @@ class CfgNonAIVehicles
 			class MSF_Trig_Fortify_Enable
 			{
 				displayName = "Enable Area Fortification";
-				tooltip = "Spawn enemies in buildings in this trigger. (If there are no buildings, no enemies will spawn).";
+				tooltip = "Enables the area fortification system for this trigger.";
 				property = "MSF_Trig_Fortify_Enable";
 				control = "CheckboxState";
 				expression = "_this setVariable ['%s',_value];";
@@ -212,13 +212,46 @@ class CfgNonAIVehicles
 				control = "SubCategory";
 				displayName = "Building Fortification Options";
 			};
-			class MSF_Trig_Fortify_Building
+			class MSF_Trig_Fortify_Building_Enable
 			{
-				displayName = "Spawn two patrols";
-				tooltip = "Adds a second spawned patrol on activation. (Could get weird if trigger area is too small).";
-				property = "MSF_Trig_Fortify_Building";
+				displayName = "Enable Area Fortification";
+				tooltip = "Spawn enemies in buildings in this trigger. (If there are no buildings, no enemies will spawn).";
+				property = "MSF_Trig_Fortify_Building_Enable";
 				control = "Checkbox";
 				expression = "_this setVariable ['%s',_value];";
+				defaultValue = "true";				
+			};
+			class MSF_Trig_Fortify_Building_Num
+			{
+				displayName = "Number to Spawn";
+				tooltip = "Number of buildings to fortify (1-10).";
+				property = "MSF_Trig_Fortify_Building_Num";
+				control = "EditShort";
+				expression = "if (_value > 0 && _value < 11) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',5]; }";
+				defaultValue = "false";				
+			};
+			class MSFFortify_Vics
+			{
+				data = "AttributeSystemSubcategory";
+				control = "SubCategory";
+				displayName = "Area Fortification Vechicles";
+			};
+			class MSF_Trig_Fortify_Vehicle_Enable
+			{
+				displayName = "Enable Vehicles ";
+				tooltip = "Spawn vehicles in the fortification area.";
+				property = "MSF_Trig_Fortify_Vehicle_Enable";
+				control = "Checkbox";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = "true";				
+			};
+			class MSF_Trig_Fortify_Vehicle_Num
+			{
+				displayName = "Number to Spawn";
+				tooltip = "Number of vehicles to spawn.";
+				property = "MSF_Trig_Fortify_Vehicle_Num";
+				control = "EditShort";
+				expression = "if (_value > 0 && _value < 11) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
 				defaultValue = "false";				
 			};
 		};
