@@ -8,7 +8,7 @@
 		[Trigger Objct] call MSF_fnc_CreateAreaBuildingDefense;
 
 	Function Ver 1.0
-	Implemented in: MSF Addon v1.5.2
+	Implemented in: MSF Addon v1.5.3
 */
 params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [east]], ["_groupTypes", [], [[]]]];
 	
@@ -18,7 +18,9 @@ for "_i" from 1 to _num do {
 	sleep 0.2;
 	private _pos = [_trigger] call BIS_fnc_randomPosTrigger;
 	private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
-	{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
+	if (_trigger getVariable ["MSF_Trig_Fortify_Zeus", false]) then {
+		{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
+	};
 
 	[_pos, units _group, _radius, false, false, true] call MSF_fnc_ZEN_OccupyHouse;
 };

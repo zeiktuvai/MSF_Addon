@@ -8,9 +8,10 @@ class CfgNonAIVehicles
 		{
 			class MSFPatrols
 			{
-				data = "AttributeSystemSubcategory";
-				control = "SubCategory";
-				displayName = "Patrol Options";
+				data = "AttributeSystemSubcategory";				
+				control = "SubCategoryDesc1";
+				displayName = "Patrol Options";				
+				description = "Be sure to set the trigger activation properties, or units won't spawn.";
 			};
 			class MSF_Trig_Patrol_Zeus
 			{
@@ -166,6 +167,13 @@ class CfgNonAIVehicles
 		displayName = "Trigger MSF Fortify";
 		class Attributes
 		{
+			class MSFFortifyA
+			{
+				data = "AttributeSystemSubcategory";				
+				control = "SubCategoryDesc1";
+				displayName = "Area Fortification Options";				
+				description = "Be sure to set the trigger activation properties, or units won't spawn.";
+			};
 			class MSF_Trig_Fortify_Enable
 			{
 				displayName = "Enable Area Fortification";
@@ -173,7 +181,16 @@ class CfgNonAIVehicles
 				property = "MSF_Trig_Fortify_Enable";
 				control = "CheckboxState";
 				expression = "_this setVariable ['%s',_value];";
-				defaultValue = "true";				
+				defaultValue = "false";				
+			};
+			class MSF_Trig_Fortify_Zeus
+			{
+				displayName = "Add Spawns to Zeus";
+				tooltip = "Adds spawned units to zeus.";
+				property = "MSF_Trig_Fortify_Zeus";
+				control = "Checkbox";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = "false";				
 			};
 			class MSF_Trig_Fortify_Side
 			{
@@ -219,7 +236,7 @@ class CfgNonAIVehicles
 				property = "MSF_Trig_Fortify_Building_Enable";
 				control = "Checkbox";
 				expression = "_this setVariable ['%s',_value];";
-				defaultValue = "true";				
+				defaultValue = "false";				
 			};
 			class MSF_Trig_Fortify_Building_Num
 			{
@@ -228,7 +245,9 @@ class CfgNonAIVehicles
 				property = "MSF_Trig_Fortify_Building_Num";
 				control = "EditShort";
 				expression = "if (_value > 0 && _value < 11) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',5]; }";
-				defaultValue = "false";				
+				defaultValue = "5";
+				validate = "number";
+				typeName = "NUMBER";
 			};
 			class MSFFortify_Vics
 			{
@@ -238,12 +257,12 @@ class CfgNonAIVehicles
 			};
 			class MSF_Trig_Fortify_Vehicle_Enable
 			{
-				displayName = "Enable Vehicles ";
+				displayName = "Enable Vehicles";
 				tooltip = "Spawn vehicles in the fortification area.";
 				property = "MSF_Trig_Fortify_Vehicle_Enable";
 				control = "Checkbox";
 				expression = "_this setVariable ['%s',_value];";
-				defaultValue = "true";				
+				defaultValue = "false";				
 			};
 			class MSF_Trig_Fortify_Vehicle_Num
 			{
@@ -252,7 +271,70 @@ class CfgNonAIVehicles
 				property = "MSF_Trig_Fortify_Vehicle_Num";
 				control = "EditShort";
 				expression = "if (_value > 0 && _value < 11) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
+				defaultValue = "2";
+				validate = "number";
+				typeName = "NUMBER";		
+			};
+			class MSF_Trig_Fortify_VicFillPercentage
+			{
+				displayName = "Chance of full vehicle";
+				tooltip = "This percentage sets the chance that the spawned vehicle will be full of infantry.";
+				property = "MSF_Trig_Fortify_VicFillPercentage";
+				control = "Slider";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = 0;				
+			};
+			class MSFFortify_Armor
+			{
+				data = "AttributeSystemSubcategory";
+				control = "SubCategory";
+				displayName = "Area Fortification Armored Vehicles";
+			};
+			class MSF_Trig_Fortify_Armor_Enable
+			{
+				displayName = "Enable Armored Vehicles";
+				tooltip = "Spawn armored vehicles in the fortification area.";
+				property = "MSF_Trig_Fortify_Armor_Enable";
+				control = "Checkbox";
+				expression = "_this setVariable ['%s',_value];";
 				defaultValue = "false";				
+			};
+			class MSF_Trig_Fortify_Armor_Num
+			{
+				displayName = "Number to Spawn";
+				tooltip = "Number of armored vehicles to spawn.";
+				property = "MSF_Trig_Fortify_Armor_Num";
+				control = "EditShort";
+				expression = "if (_value > 0 && _value < 5) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
+				defaultValue = "2";
+				validate = "number";
+				typeName = "NUMBER";		
+			};
+			class MSFFortify_Static
+			{
+				data = "AttributeSystemSubcategory";
+				control = "SubCategory";
+				displayName = "Area Fortification Static Turret Emplacements";
+			};
+			class MSF_Trig_Fortify_Static_Enable
+			{
+				displayName = "Enable Static Turrets";
+				tooltip = "Spawn turret emplacements in the fortification area.";
+				property = "MSF_Trig_Fortify_Static_Enable";
+				control = "Checkbox";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = "false";				
+			};
+			class MSF_Trig_Fortify_Static_Num
+			{
+				displayName = "Number to Spawn";
+				tooltip = "Number of turret emplacements to spawn.";
+				property = "MSF_Trig_Fortify_Static_Num";
+				control = "EditShort";
+				expression = "if (_value > 0 && _value < 11) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
+				defaultValue = "2";
+				validate = "number";
+				typeName = "NUMBER";		
 			};
 		};
 	};

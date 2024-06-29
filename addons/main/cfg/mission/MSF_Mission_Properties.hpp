@@ -72,35 +72,62 @@ class MSFProperties
 				};
 			};
 		};
-		class MSFPatrolProps
+		class MSFSpawnProps
 		{
-			displayName = "MSF Patrol Properties";			
+			displayName = "MSF Spawn Properties";			
 			class Attributes
 			{
-				class PatrolHelper
+				class UnitLists
 				{
-					displayName = "Patrol Spawning";
+					displayName = "Unit Lists";
 					data = "AttributeSystemSubcategory";
 					control = "SubCategoryDesc1";
-					description = "Patrol spawning class names.";
+					description = "Unit class names used for spawning enemy units.";
 				};
 				class PatrolVicTypes
 				{
-					displayName = "List of Vehicles to spawn.";
+					displayName = "List of Vehicles to spawn";
 					tooltip = "List of enemy vehicles to spawn in triggers.";
 					property = "MSFProp_Vic_Types";
 					control = "EditCodeMulti3";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Vehicles');";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Vehicles');";
 				};
 				class PatrolGroupTypes
 				{
-					displayName = "List of Groups to spawn.";
+					displayName = "List of Groups to spawn";
 					tooltip = "List of enemy groups to spawn in triggers.";
 					property = "MSFProp_Group_Types";
 					control = "EditCodeMulti3";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Groups');";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Groups');";
+				};
+				class ArmorTypes
+				{
+					displayName = "List of Armor to Spawn";
+					tooltip = "List of enemy armor to spawn in triggers.";
+					property = "MSFProp_Armor_Types";
+					control = "EditCodeMulti3";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Armor');";
+				};
+				class TurretTypes
+				{
+					displayName = "List of Turrets to Spawn";
+					tooltip = "List of enemy turrets to spawn in triggers.";
+					property = "MSFProp_Turrets_Types";
+					control = "EditCodeMulti3";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Turrets');";
+				};
+				class UnitTypes
+				{
+					displayName = "List of units";
+					tooltip = "List of enemy units to spawn in vehicles.";
+					property = "MSFProp_Unit_Types";
+					control = "EditCodeMulti3";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Units');";
 				};
 			};
 		};
