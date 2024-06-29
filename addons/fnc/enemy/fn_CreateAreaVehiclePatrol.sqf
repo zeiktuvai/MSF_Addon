@@ -8,7 +8,7 @@
 		[Trigger Objct] call MSF_fnc_CreateAreaVehiclePatrol;
 
 	Function Ver 1.0
-	Implemented in: MSF Addon v1.5.2
+	Implemented in: MSF Addon v1.6.0
 */
 params ["_trigger"];
 

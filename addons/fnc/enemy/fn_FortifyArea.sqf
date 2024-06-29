@@ -8,7 +8,7 @@
 		[Trigger Objct] call MSF_fnc_FortifyArea;
 
 	Function Ver 1.0
-	Implemented in: MSF Addon v1.5.3
+	Implemented in: MSF Addon v1.6.0
 */
 
 

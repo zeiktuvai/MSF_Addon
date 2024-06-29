@@ -3,6 +3,13 @@
 ## [In-Progress]
 - Implement other helpers as object attribute enabled systems (Dialog, progressbar, teleport, respawn).
 
+## [1.6.0]
+- Added Area fortification system on a trigger.
+    - Spawns infantry in buildings, vehicles, armor and turrets in a trigger area.
+    - Makes use of code from ZEN functions and ESS system.
+- Updated Winder loadouts to come in line with NATO/Night loadouts.
+- Fixed bug in inventory generation system failing to get defined list of items to spawn.
+
 ## [1.5.2]
 - Added random patrol generator based on trigger area.
 - Updated NATO and Night loadouts to have less equipment.

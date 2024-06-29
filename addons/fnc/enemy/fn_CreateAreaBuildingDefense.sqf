@@ -8,7 +8,7 @@
 		[Trigger Objct] call MSF_fnc_CreateAreaBuildingDefense;
 
 	Function Ver 1.0
-	Implemented in: MSF Addon v1.5.3
+	Implemented in: MSF Addon v1.6.0
 */
 params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [east]], ["_groupTypes", [], [[]]]];
 	

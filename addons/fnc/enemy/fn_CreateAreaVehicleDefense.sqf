@@ -8,7 +8,7 @@
 		[Trigger Objct, 2, east, ["Jeep"], false, false] call MSF_fnc_CreateAreaVehicleDefense;
 
 	Function Ver 1.0
-	Implemented in: MSF Addon v1.5.3
+	Implemented in: MSF Addon v1.6.0
 */
 params [
 	["_trigger", objNull, [objNull]],
