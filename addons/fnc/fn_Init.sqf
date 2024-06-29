@@ -17,3 +17,7 @@ params ["_unit"];
 [_unit] call MSF_fnc_ConfigRespawnOnPlayer;
 [_unit] call MSF_fnc_JIPSpawnNearPlayer;
 [] call MSF_fnc_ApplyDamageReduction;
+
+if (getMissionConfigValue ["MSF_Loadout_UnitPatch", true]) then {
+	[_unit, "tfy_insignia"] call BIS_fnc_setUnitInsignia;
+}

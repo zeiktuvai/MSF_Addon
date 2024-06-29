@@ -94,6 +94,15 @@ class MSFSettings
 						};
 					};
 				};
+				class EnableUnitPatch
+				{
+					displayName = "Apply Unit patch on start";
+					tooltip = "Applys unit patch to all players on start (WIP: only applys TFY patch as of right now.)";
+					property = "MSF_Loadout_UnitPatch";			
+					control = "Checkbox";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "true";
+				};
 				class MultiplayerCategory
 				{
 					data = "AttributeSystemSubcategory";
