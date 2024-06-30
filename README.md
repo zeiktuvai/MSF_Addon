@@ -10,47 +10,15 @@ This mod makes use of ACE 3 (and by extionsion CBA), which is needed for a lot o
 
 See the [Wiki](https://github.com/zeiktuvai/MSF_Addon/wiki) for more information and how to get started.
 
-# Feature Set
-- Loadout management system (Respawn loadouts and initial spawn loadout) with multiple classes and uniform types.
-- Persistence module for persisting vehicle data between missions.
-- Inventory generation system for vehicles and containers.
-- Multiplayer options:
-    - Make every player a respawn point.
-    - Make players that join in progress spawn near other players instead of at the start.
-    - Enable an option to add an End Mission ACE Menu item when a trigger is activated so players can choose when to end the mission.
-    - Enable a player unit as a GM with special menu options.
-- Vehicle Options:
-    - Infinite fuel.
-    - Vehicle Damage reduction.
-- Player Preferences:
-    - Add a Addon Preference item to disable ACE Medical unconciousness for players.
-
 ## Table of Contents  
 
-[Getting Started](#getting-started)  
 [Persistence Module](Persistence.md)
-[Updating](#updating)  
 [Loadout Management](#loadout-management)  
 [Multiplayer Options](#multiplayer-options)  
 [Mission Flow Options](#mission-flow-options)  
 [Mission Building Tools](#mission-building-tools)  
 [Player Preferences](#player-preferences)  
 
-[Change Log](Changelog.md)  
-
-# Getting Started
-
-1. After installing the mod, Add this line `#include "\z\msf\addons\client\MissionConfig.hpp"` to your misisons `description.ext` and then add this line `[player] call MSF_fnc_Init;` to your InitPlayerLocal.sqf in the mission folder. (If you do not have them currently you can copy the example ones on GitHub or create them yourself.)
-
-2. It is highly recommended to configure Multiplayer options for the loadout system and respawns work correctly.  A conveinient menu option has been added to do that for you, just navigate to `Attributes > Mission Support Foundation` and select `Configure Multiplayer`.
-
-After this is complete, you can configure general settings in `Attributes > Mission Support Foundation > MSF Settings`.  Additional options can be configured in supported objects attributes dialog.
-
-![MSF_Settings](https://raw.githubusercontent.com/zeiktuvai/TFY_Arma3/Dev/img/MSF_Settings.png)
-
-# Updating
-
-Unlike the previous iteration, everything is stored in the mod so when new functions or loadouts are released they are immediately available to the mission upon update.  (You will of course have to update each mission that uses it if there are new uniform styles or object options, but changes to existing features will apply automatically).
 
 # Loadout Management
 
