@@ -1,8 +1,5 @@
 # Changelog
 
-## [In-Progress]
-- Implement other helpers as object attribute enabled systems (Dialog, progressbar, teleport, respawn).
-
 ## [1.6.0]
 - Added Area fortification system on a trigger.
     - Spawns infantry in buildings, vehicles, armor and turrets in a trigger area.
@@ -37,4 +34,3 @@
 - Implemented Persistence using object and mission attributes.
 - Implemented MSF functions using object and mission attributes.
 - Turned the inventory helper script into an inventory generation system built into the mod.
-3229844515

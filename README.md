@@ -1,12 +1,14 @@
-# Mission Support Foundation for Arma 3 - EDEN Module
+# Mission Support Foundation for Arma 3
 
-The MSF module is a collection of tools wrapped into a convenient framework that makes building story driven missions much easier.  It includes many commonly used features that might be a simple script or two but having to copy them from mission to mission gets annoying, especially if they need to be updated across mission sets.
+The MSF project is a collection of scripts and resources to make building story driven unique experiences far easier in Arma 3. Instead of copying and pasting a bunch of scripts into the mission folder and using execVM to run them, I took on the task of incorporating all of them into a addon that can be installed through the workshop.
 
-This project started life as a set of scripts to automate applying custom loadouts to missions automatically, but as the scope expanded and I started adding things outside of loadouts it seemed prudent to re-rganize the project.  And as my knowledge of Arma grew, it made things much easier to put this into a mod and add custom attributes to objects to make configureation a breeze.
+Doing so allowed missions to easily be updated with new content, scripts and bug fixes without having to download, extract, re-publish all your missions.
 
-This mod makes use of ACE 3 (and by extionsion CBA), which is needed for a lot of the custom interactions to work properly.  
+This project started life as a set of scripts to automate applying custom loadouts to missions automatically, but as the scope expanded and I started adding things outside of loadouts it seemed prudent to re-rganize the project. And as my knowledge of Arma grew, it made things much easier to put this into a mod and add custom attributes to objects to make configureation a breeze.
 
-> **NOTE:** This mod is required on all systems and the server in order for certain parts of it to work properly (Mainly loadouts and damage reduction).
+This mod makes use of ACE 3 (and by extionsion CBA), which is needed for a lot of the custom interactions to work properly.
+
+See the [Wiki](https://github.com/zeiktuvai/MSF_Addon/wiki) for more information and how to get started.
 
 # Feature Set
 - Loadout management system (Respawn loadouts and initial spawn loadout) with multiple classes and uniform types.
