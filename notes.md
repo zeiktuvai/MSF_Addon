@@ -1,3 +1,8 @@
+- changed number of base items that spawn in inventory gen
+- fixed bug that causes inv gen system to panic in new scenario
+- added repair specialist, engineer, helicopter pilot, and sniper loadouts
+- optimized patrol and fortify code to reduce stuttering when playing locally, but spawn as quickly as possible when on a dedicated server.
+
 h1 isKindOf "Air";
 h1 isKindOf "LandVehicle";
 
