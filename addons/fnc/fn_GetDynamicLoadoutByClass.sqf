@@ -32,8 +32,8 @@ switch (_uniformType) do
 			["B_Soldier_GL_F", ["TFY_Grenadier"]],
 			["B_medic_F", ["TFY_Medic"]],
 			["B_crew_F", ["TFY_VehicleCrewman"]],
-			["B_engineer_F", ["TFY_VehicleCrewman"]],
-			["B_soldier_repair_F", ["TFY_VehicleCrewman"]],
+			["B_engineer_F", ["TFY_Engineer"]],
+			["B_soldier_repair_F", ["TFY_Repair"]],
 			["B_support_GMG_F", ["TFY_Autorifleman"]],
 			["B_support_MG_F", ["TFY_Autorifleman"]],
 			["B_HeavyGunner_F", ["TFY_Autorifleman"]],
@@ -54,7 +54,10 @@ switch (_uniformType) do
 			["B_diver_F", ["TFY_Diver", "TFY_Rifleman", "TFY_Autorifleman", "TFY_ATRifleman"]],
 			["B_diver_TL_F", ["TFY_Diver", "TFY_Rifleman", "TFY_Autorifleman", "TFY_ATRifleman"]],
 			["B_diver_exp_F", ["TFY_Diver_Expl", "TFY_Rifleman", "TFY_Autorifleman", "TFY_ATRifleman"]],
-			["B_soldier_mine_F", ["TFY_MineSpec"]]
+			["B_soldier_mine_F", ["TFY_MineSpec"]],
+			["B_Helipilot_F", ["TFY_Pilot"]],
+			["B_helicrew_F", ["TFY_Pilot"]],
+			["B_Sharpshooter_F", ["TFY_Sniper"]]
 		];
 	};
 	case 1: {
@@ -67,8 +70,8 @@ switch (_uniformType) do
 			["B_Soldier_GL_F", ["TFY_Grenadier_N"]],
 			["B_medic_F", ["TFY_Medic_N"]],
 			["B_crew_F", ["TFY_VehicleCrewman_N"]],
-			["B_engineer_F", ["TFY_VehicleCrewman_N"]],
-			["B_soldier_repair_F", ["TFY_VehicleCrewman_N"]],
+			["B_engineer_F", ["TFY_Engineer_N"]],
+			["B_soldier_repair_F", ["TFY_Repair_N"]],
 			["B_support_GMG_F", ["TFY_Autorifleman_N"]],
 			["B_support_MG_F", ["TFY_Autorifleman_N"]],
 			["B_HeavyGunner_F", ["TFY_Autorifleman_N"]],
@@ -89,7 +92,10 @@ switch (_uniformType) do
 			["B_diver_F", ["TFY_Diver", "TFY_Rifleman", "TFY_Autorifleman", "TFY_ATRifleman"]],
 			["B_diver_TL_F", ["TFY_Diver", "TFY_Rifleman", "TFY_Autorifleman", "TFY_ATRifleman"]],
 			["B_diver_exp_F", ["TFY_Diver_Expl", "TFY_Rifleman", "TFY_Autorifleman", "TFY_ATRifleman"]],
-			["B_soldier_mine_F", ["TFY_MineSpec"]]
+			["B_soldier_mine_F", ["TFY_MineSpec"]],
+			["B_Helipilot_F", ["TFY_Pilot"]],
+			["B_helicrew_F", ["TFY_Pilot"]],
+			["B_Sharpshooter_F", ["TFY_Sniper"]]
 		];
 	};
 	case 2: {
@@ -102,8 +108,8 @@ switch (_uniformType) do
 			["B_Soldier_GL_F", ["TFY_Winter_Grenadier"]],
 			["B_medic_F", ["TFY_Winter_Medic"]],
 			["B_crew_F", ["TFY_Winter_VehicleCrewman"]],
-			["B_engineer_F", ["TFY_Winter_VehicleCrewman"]],
-			["B_soldier_repair_F", ["TFY_Winter_VehicleCrewman"]],
+			["B_engineer_F", ["TFY_Winter_Engineer"]],
+			["B_soldier_repair_F", ["TFY_Winter_Repair"]],
 			["B_support_GMG_F", ["TFY_Winter_Gunner"]],
 			["B_support_MG_F", ["TFY_Winter_Gunner"]],
 			["B_HeavyGunner_F", ["TFY_Winter_Gunner"]],
@@ -125,6 +131,9 @@ switch (_uniformType) do
 			["B_diver_TL_F", ["TFY_Diver", "TFY_Winter_Rifleman", "TFY_Winter_Gunner", "TFY_Winter_ATRifleman"]],
 			["B_diver_exp_F", ["TFY_Diver_Expl", "TFY_Winter_Rifleman", "TFY_Winter_Gunner", "TFY_Winter_ATRifleman"]],
 			["B_soldier_mine_F", ["TFY_MineSpec"]],
+			["B_Helipilot_F", ["TFY_Winter_Pilot"]],
+			["B_helicrew_F", ["TFY_Winter_Pilot"]],
+			["B_Sharpshooter_F", ["TFY_Winter_Sniper"]],
 			["NATO_WINTER_SOLDIER_A", ["TFY_Winter_Rifleman"]],
 			["NATO_WINTER_SOLDIER", ["TFY_Winter_Rifleman"]],		
 			["NATO_WINTER_SOLDIER_LITE", ["TFY_Winter_Rifleman"]],		
@@ -144,11 +153,15 @@ switch (_uniformType) do
 			["NATO_WINTER_SOLDIER_HEAVYGUNNER", ["TFY_Winter_Gunner"]],
 			["NATO_WINTER_SOLDIER_SL", ["TFY_Winter_Commander"]],
 			["NATO_WINTER_CREW", ["TFY_Winter_VehicleCrewman"]],
-			["NATO_WINTER_SOLDIER_REPAIR", ["TFY_Winter_VehicleCrewman"]],
-			["NATO_WINTER_SOLDIER_ENGINEER", ["TFY_Winter_VehicleCrewman"]],
+			["NATO_WINTER_SOLDIER_REPAIR", ["TFY_Winter_Repair"]],
+			["NATO_WINTER_SOLDIER_ENGINEER", ["TFY_Winter_Engineer"]],
 			["NATO_WINTER_SOLDIER_MEDIC", ["TFY_Winter_Medic"]],
 			["NATO_WINTER_SOLDIER_UAV", ["TFY_Winter_UAVOperator"]],
-			["NATO_WINTER_SOLDIER_EXP", ["TFY_Winter_MineSpec"]]
+			["NATO_WINTER_SOLDIER_EXP", ["TFY_Winter_MineSpec"]],
+			["NATO_WINTER_HELIPILOT", ["TFY_Winter_Pilot"]],
+			["NATO_WINTER_HELICREW", ["TFY_Winter_Pilot"]],
+			["NATO_WINTER_SNIPER", ["TFY_Winter_Sniper"]],
+			["NATO_WINTER_SOLDIER_SHARPSHOOTER", ["TFY_Winter_Sniper"]]
 		];
 	};
 };
