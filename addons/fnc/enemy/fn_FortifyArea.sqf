@@ -25,19 +25,29 @@ if (_trigger getVariable ["MSF_Trig_Fortify_Enable", false]) then {
 	// building defense
 	if (_trigger getVariable ["MSF_Trig_Fortify_Building_Enable", false]) then {
 		private _buildingNum = _trigger getVariable ["MSF_Trig_Fortify_Building_Num", 5];
-		[_trigger, _buildingNum, _side, _infantryGroupClasses] spawn 
+		if (!isDedicated) then {
+			[_trigger, _buildingNum, _side, _infantryGroupClasses] spawn 
+			{		
+				params ["_trigger", "_buildingNum", "_side", "_groupTypes"];
+				[_trigger, _buildingNum, _side, _groupTypes] call MSF_fnc_CreateAreaBuildingDefense;
+			};
+		}
+		else
 		{
-			params ["_trigger", "_buildingNum", "_side", "_groupTypes"];
-			[_trigger, _buildingNum, _side, _groupTypes]  call MSF_fnc_CreateAreaBuildingDefense;
-
+			[_trigger, _buildingNum, _side, _infantryGroupClasses] call MSF_fnc_CreateAreaBuildingDefense;
 		};
 	};
 
 	// static vics
 	if (_trigger getVariable ["MSF_Trig_Fortify_Vehicle_Enable", false]) then {
 		private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_Vehicle_Num", 2];
-		[_trigger, _vicNum, _side, _vicTypes] spawn {
-			params ["_trigger", "_vicNum", "_side", "_vicTypes"];
+		if (!isDedicated) then {
+			[_trigger, _vicNum, _side, _vicTypes] spawn {
+				params ["_trigger", "_vicNum", "_side", "_vicTypes"];
+				[_trigger, _vicNum, _side, _vicTypes] call MSF_fnc_CreateAreaVehicleDefense;
+			};
+		}
+		else {
 			[_trigger, _vicNum, _side, _vicTypes] call MSF_fnc_CreateAreaVehicleDefense;
 		};
 	};
@@ -45,17 +55,28 @@ if (_trigger getVariable ["MSF_Trig_Fortify_Enable", false]) then {
 	// armored vics
 	if (_trigger getVariable ["MSF_Trig_Fortify_Armor_Enable", false]) then {
 		private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_Armor_Num", 2];
-		[_trigger, _vicNum, _side, _armorTypes] spawn {
-			params ["_trigger", "_vicNum", "_side", "_armorTypes"];
+		if (!isDedicated) then {
+			[_trigger, _vicNum, _side, _armorTypes] spawn {
+				params ["_trigger", "_vicNum", "_side", "_armorTypes"];
+				[_trigger, _vicNum, _side, _armorTypes, true] call MSF_fnc_CreateAreaVehicleDefense;
+			};
+		}
+		else {
 			[_trigger, _vicNum, _side, _armorTypes, true] call MSF_fnc_CreateAreaVehicleDefense;
 		};
 	};
 
 	// static turrets
-	if (_trigger getVariable ["MSF_Trig_Fortify_Armor_Enable", false]) then {
-		private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_Armor_Num", 2];
-		[_trigger, _vicNum, _side, _staticTypes] spawn {
-			params ["_trigger", "_vicNum", "_side", "_staticTypes"];
+	if (_trigger getVariable ["MSF_Trig_Fortify_Static_Enable", false]) then {
+		private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_Static_Num", 2];
+		if (!isDedicated) then {
+			[_trigger, _vicNum, _side, _staticTypes] spawn {
+				params ["_trigger", "_vicNum", "_side", "_staticTypes"];
+				[_trigger, _vicNum, _side, _staticTypes, false, true] call MSF_fnc_CreateAreaVehicleDefense;
+			};
+		}
+		else
+		{
 			[_trigger, _vicNum, _side, _staticTypes, false, true] call MSF_fnc_CreateAreaVehicleDefense;
 		};
 	};
