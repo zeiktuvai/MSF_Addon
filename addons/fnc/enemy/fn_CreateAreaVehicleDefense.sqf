@@ -22,7 +22,9 @@ params [
 private _unitTypes = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Units');
 
 for "_i" from 1 to _num do {
-	sleep 0.1;
+	if (!isDedicated) then {
+		sleep 0.1;
+	};
 	
 	private _type = selectRandom _vicTypes;
 	private _pos = [[_trigger] call BIS_fnc_randomPosTrigger, 5, 100, 3, 0, 10, 0] call BIS_fnc_findSafePos;

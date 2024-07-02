@@ -21,10 +21,10 @@ private _triggers = allMissionObjects "EmptyDetector" select {
 	private _activation = triggerActivation _x;
 
 	private _trig = createTrigger ["emptyDetector", getPos _x];
-	_trig setTriggerArea [_area + 50, _area + 50, 0, false];
+	_trig setTriggerArea [_area + 100, _area + 100, 0, false];
 	_trig setTriggerActivation [_activation select 0, _activation select 1, false];
 	_trig setVariable ["linked_trigger", _x];
 	_trig setTriggerStatements ["this", "(thistrigger getVariable ""linked_trigger"") setVariable [""Activate"", true];",""];
-	_x setTriggerStatements ["thistrigger getVariable [""Activate"", false];", "[thisTrigger] call MSF_fnc_FortifyArea;", ""];
+	_x setTriggerStatements ["thistrigger getVariable [""Activate"", false];", "[thisTrigger] remoteExec [""MSF_fnc_FortifyArea"", 2]", ""];
 
 } forEach _triggers;

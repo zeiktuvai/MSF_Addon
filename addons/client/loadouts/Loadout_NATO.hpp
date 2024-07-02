@@ -17,7 +17,7 @@ class TFY_Commander
         "ACE_WaterBottle", "ACE_Banana", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_bloodIV", "ACE_bodyBag", 
         "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", 
         "ACE_splint", "ACE_splint", "ACE_splint", "ACE_adenosine", "ACE_adenosine", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", 
-        "ACE_salineIV_500", "ACE_plasmaIV_500", "ACE_Canteen","ACE_HuntIR_monitor"
+        "ACE_salineIV_500", "ACE_plasmaIV_500", "ACE_Canteen","ACE_HuntIR_monitor", "ACE_microDAGR"
     };
     linkedItems[] = {
         "V_PlateCarrierSpec_tna_F", "rhsusf_opscore_rg_cover_pelt", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", 
@@ -44,7 +44,8 @@ class TFY_Autorifleman
         "ACE_MapTools", "ACE_DefusalKit", "ACE_M26_Clacker", "ACE_IR_Strobe_Item", "ACE_EarPlugs", "ACE_CableTie", "ACE_WaterBottle", "ACE_WaterBottle",
         "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", 
         "ACE_quikclot", "ACE_quikclot", "ACE_bloodIV", "ACE_bodyBag", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", 
-        "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_Canteen", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_HuntIR_monitor"
+        "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_Canteen", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_HuntIR_monitor", 
+        "ACE_microDAGR"
     };
     linkedItems[] = {
         "V_PlateCarrier1_tna_F", "rhsusf_opscore_fg_pelt_nsw", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
@@ -73,7 +74,7 @@ class TFY_Marksman
         "ACE_bloodIV", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", 
         "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", 
         "ACE_elasticBandage", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", 
-        "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_adenosine", "ACE_adenosine", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_Canteen"
+        "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_adenosine", "ACE_adenosine", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_Canteen", "ACE_microDAGR"
     };
     linkedItems[] = {
         "V_PlateCarrier2_rgr", "H_HelmetB_camo", "G_Balaclava_TI_tna_F", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_Tan_TI", 
@@ -106,7 +107,7 @@ class TFY_Grenadier
         "ACE_WaterBottle", "ACE_Canteen", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_bloodIV", "ACE_bodyBag", 
         "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", 
         "ACE_splint", "ACE_splint", "ACE_splint", "ACE_adenosine", "ACE_adenosine", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", 
-        "ACE_salineIV_500", "ACE_plasmaIV_500", "ACE_Canteen"
+        "ACE_salineIV_500", "ACE_plasmaIV_500", "ACE_Canteen", "ACE_microDAGR"
     };
     linkedItems[] = {
         "V_PlateCarrier2_tna_F", "rhsusf_opscore_fg_pelt_nsw", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", 
@@ -138,7 +139,7 @@ class TFY_Rifleman
         "ACE_Canteen", "ACE_Banana", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", 
         "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_bloodIV", "ACE_bodyBag", "ACE_epinephrine", "ACE_epinephrine", 
         "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_adenosine", 
-        "ACE_adenosine", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_HuntIR_monitor"
+        "ACE_adenosine", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_HuntIR_monitor", "ACE_microDAGR"
     };
     linkedItems[] = {
         "V_PlateCarrier2_tna_F", "rhsusf_opscore_fg_pelt_nsw", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI", "rhsusf_acc_su230"
@@ -164,7 +165,7 @@ class TFY_ATRifleman
         "ACE_EarPlugs", "ACE_MapTools", "ACE_DefusalKit", "ACE_M26_Clacker", "ACE_IR_Strobe_Item", "ACE_HuntIR_monitor", "ACE_CableTie", "ACE_WaterBottle", 
         "ACE_Banana", "ACE_Canteen", "ACE_adenosine", "ACE_adenosine", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", 
         "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_bloodIV", "ACE_bloodIV", "ACE_epinephrine", 
-        "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_salineIV_500", "ACE_salineIV_500"
+        "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_microDAGR"
     };
     linkedItems[] = {
         "V_PlateCarrier2_tna_F", "H_HelmetB_Enh_tna_F", "rhs_googles_orange", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI", 
@@ -192,7 +193,7 @@ class TFY_AARifleman
         "ACE_splint", "ACE_WaterBottle", "ACE_Banana", "ACE_Canteen", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", 
         "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_bloodIV", "ACE_epinephrine", "ACE_epinephrine", 
         "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_salineIV_500", 
-        "ACE_salineIV_500"
+        "ACE_salineIV_500", "ACE_microDAGR"
     };
     linkedItems[] = {
         "V_PlateCarrier2_tna_F", "H_HelmetB_Enh_tna_F", "rhs_googles_orange", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI", 
@@ -218,7 +219,8 @@ class TFY_UAVOperator
         "ACE_EarPlugs", "ACE_MapTools", "ACE_DefusalKit", "ACE_M26_Clacker", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_Banana", "ACE_Canteen", "ACE_WaterBottle", 
         "ACE_HuntIR_monitor", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", 
         "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_bodyBag", "ACE_epinephrine", "ACE_adenosine", "ACE_morphine", "ACE_morphine", 
-        "ACE_morphine", "ACE_morphine", "ACE_splint", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_UAVBattery"
+        "ACE_morphine", "ACE_morphine", "ACE_splint", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_UAVBattery", 
+        "ACE_microDAGR"
     };
     linkedItems[] = {
         "V_PlateCarrier2_tna_F", "rhsusf_opscore_rg_cover", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", "JAS_GPNVG18_blk_TI",
@@ -246,7 +248,7 @@ class TFY_VehicleCrewman
         "ACE_WaterBottle", "ACE_Banana", "ACE_Canteen", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", 
         "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_bloodIV", "ACE_epinephrine", "ACE_epinephrine", 
         "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ToolKit", 
-        "ACE_adenosine", "ACE_adenosine", "ACE_bodyBag", "ACE_salineIV_500", "ACE_salineIV_500"
+        "ACE_adenosine", "ACE_adenosine", "ACE_bodyBag", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_microDAGR"
     };
     linkedItems[] = {
         "V_PlateCarrier2_rgr", "H_HelmetCrew_B", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI", "rhsusf_acc_su230"
@@ -269,22 +271,23 @@ class TFY_Medic
         "ACE_painkillers", "ACE_painkillers", "ACE_painkillers", "ACE_painkillers", "ACE_painkillers", "rhs_mag_30Rnd_556x45_Mk318_SCAR", "rhs_mag_rsp30_red"
     };
     items[] = {
-        "ACE_EarPlugs", "ACE_MapTools", "ACE_M26_Clacker", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_CableTie", "ACE_Banana", "ACE_Canteen", "ACE_WaterBottle", 
-        "ACE_WaterBottle", "ACE_EarPlugs", "ACE_CableTie", "ACE_CableTie", "ACE_CableTie", "ACE_CableTie", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", 
-        "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet",
-        "ACE_tourniquet", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bodyBag", "ACE_morphine", "ACE_morphine", "ACE_morphine",
-        "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_epinephrine", "ACE_epinephrine", 
-        "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", 
-        "ACE_adenosine", "ACE_adenosine", "ACE_adenosine", "ACE_adenosine", "ACE_adenosine", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", 
-        "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", 
-        "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", 
-        "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", 
-        "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", 
-        "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", 
-        "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", 
-        "ACE_EarPlugs", "ACE_IR_Strobe_Item", "ACE_bodyBag_blue", "ACE_surgicalKit", "ACE_suture", "ACE_suture", "ACE_suture", "ACE_suture", "ACE_suture", 
-        "ACE_salineIV_500", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_personalAidKit", "ACE_personalAidKit", 
-        "ACE_personalAidKit", "ACE_personalAidKit", "ACE_personalAidKit", "ACE_HuntIR_monitor"
+        "ACE_EarPlugs", "ACE_MapTools", "ACE_CableTie", "ACE_CableTie", "ACE_M26_Clacker", "ACE_IR_Strobe_Item", "ACE_Banana", "ACE_Canteen", "ACE_WaterBottle",
+        "ACE_WaterBottle", "ACE_EarPlugs", "ACE_EarPlugs", "ACE_CableTie", "ACE_CableTie", "ACE_CableTie", "ACE_CableTie", "ACE_splint", "ACE_splint", "ACE_splint",
+        "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet",
+        "ACE_tourniquet", "ACE_tourniquet", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine",
+        "ACE_morphine", "ACE_suture", "ACE_suture", "ACE_suture", "ACE_suture", "ACE_bloodIV", "ACE_bloodIV", "ACE_bodyBag", "ACE_morphine", "ACE_morphine",
+        "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_epinephrine",
+        "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_adenosine", "ACE_adenosine", "ACE_adenosine", "ACE_adenosine", "ACE_adenosine",
+        "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot",
+        "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot",
+        "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage",
+        "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage",
+        "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage",
+        "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage",
+        "ACE_packingBandage", "ACE_IR_Strobe_Item", "ACE_bodyBag_blue", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_salineIV_500",
+        "ACE_salineIV_500", "ACE_personalAidKit", "ACE_HuntIR_monitor", "ACE_plasmaIV", "ACE_plasmaIV", "ACE_bloodIV_500", "ACE_bloodIV_500",
+        "ACE_plasmaIV_500", "ACE_plasmaIV_500", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet",
+        "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_microDAGR"
     };
     linkedItems[] = {
         "V_TacVestIR_blk", "H_HelmetB_Light_tna_F", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", "JAS_GPNVG18_blk_TI", 
@@ -308,13 +311,117 @@ class TFY_MineSpec
     items[] = {
         "ACE_EarPlugs", "ACE_MapTools", "ACE_DefusalKit", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_WaterBottle", "MineDetector", "ACE_Banana", "ACE_Canteen", 
         "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", 
-        "ACE_quikclot", "ACE_quikclot", "ACE_morphine", "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_HuntIR_monitor"
+        "ACE_quikclot", "ACE_quikclot", "ACE_morphine", "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_salineIV_500", "ACE_salineIV_500", 
+        "ACE_HuntIR_monitor", "ACE_microDAGR"
     };
     linkedItems[] = {
             "V_EOD_olive_F", "rhs_altyn_visordown", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "rhsusf_acc_su230"
     };  
     uniformClass = "U_B_T_Soldier_SL_F";
     backpack = "B_ViperHarness_oli_F";
+};
+class TFY_Repair
+{
+    displayName = "Repair Specialist";
+    icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+    role = "TFY_Support";  
+    weapons[] = {"rhs_weap_hk416d145", "rhsusf_weap_m1911a1", "Binocular"};
+    magazines[] = {
+        "acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellGreen", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
+        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
+        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red",
+        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "HandGrenade", "HandGrenade", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag",
+        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhsusf_mag_7x45acp_MHP"
+    };
+    items[] = {
+        "ACE_EarPlugs", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_MapTools", "ACE_M26_Clacker", "ACE_Banana", "ACE_microDAGR", "ACE_Flashlight_XL50",
+        "ACE_WaterBottle", "ACE_Canteen", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_epinephrine",
+        "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_bloodIV", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint",
+        "ACE_adenosine", "ACE_bodyBag", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_HuntIR_monitor", "ACE_morphine", "ACE_morphine", "ACE_packingBandage",
+        "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot",
+        "ACE_quikclot", "ACE_epinephrine", "ToolKit"
+    };
+    linkedItems[] = {
+      "V_PlateCarrier2_rgr", "H_Booniehat_tna_F", "G_Tactical_Clear", "ItemMap", "ItemCompass", "TFAR_microdagr", "ItemGPS", "JAS_GPNVG18_blk_TI", "rhsusf_acc_su230"
+    };
+    uniformClass = "U_C_ConstructionCoverall_Black_F";
+    backpack = "B_ViperLightHarness_oli_F";
+};
+class TFY_Engineer
+{
+    displayName = "Engineer";
+    icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+    role = "TFY_Support";
+    weapons[] = {
+        "rhs_weap_hk416d145", "rhsusf_weap_m1911a1", "Binocular"
+    };
+    magazines[] = {
+        "acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellGreen", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "SmokeShellRed", "SmokeShellRed", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
+        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red",
+        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "HandGrenade", "HandGrenade", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag",
+        "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhsusf_mag_7x45acp_MHP"
+    };
+    items[] = {
+        "ACE_EarPlugs", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_MapTools", "ACE_M26_Clacker", "ACE_Banana", "ACE_packingBandage", "ACE_packingBandage",
+        "ACE_packingBandage", "ACE_packingBandage", "ACE_RangeCard", "ACE_WaterBottle", "ACE_Canteen", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot",
+        "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_bloodIV",
+        "ACE_morphine", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_adenosine", "ACE_adenosine", "ACE_bodyBag", "ACE_salineIV_500",
+        "ACE_salineIV_500", "ACE_wirecutter", "MineDetector", "ACE_microDAGR", "ACE_Flashlight_XL50", "ACE_M26_Clacker", "ACE_Flashlight_KSF1",
+        "ACE_HuntIR_monitor", "ACE_Fortify", "ACE_EntrenchingTool", "ACE_DefusalKit", "ACE_DeadManSwitch", "ToolKit"
+    };
+    linkedItems[] = {
+      "V_PlateCarrier2_rgr", "H_HelmetB_Light_tna_F", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "rhsusf_acc_su230"
+    };
+    uniformClass = "U_B_T_Soldier_AR_F";
+    backpack = "B_ViperLightHarness_oli_F";
+};
+class TFY_Pilot
+{
+    displayName = "Helicopter Pilot";
+    icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+    role = "Assault";
+    weapons[] = {
+        "rhs_weap_m4a1_carryhandle_mstock", "rhsusf_weap_m1911a1", "Binocular"
+    };
+    magazines[] = {
+        "acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellRed", "SmokeShellRed", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag",
+        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red",
+        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhsusf_mag_7x45acp_MHP"
+    };
+    items[] = {
+        "ACE_EarPlugs", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_MapTools", "ACE_RangeCard", "ACE_Banana", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage",
+        "ACE_adenosine", "ACE_morphine", "ACE_morphine", "ACE_splint", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_salineIV_500", "ACE_DAGR", "ACE_WaterBottle", "ACE_Canteen", "ACE_quikclot", "ACE_quikclot",
+        "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_salineIV_500", "ACE_bodyBag", "ACE_bloodIV", "ACE_microDAGR"
+    };
+    linkedItems[] = {
+        "V_Chestrig_oli", "H_PilotHelmetHeli_B", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI", "rhsusf_acc_su230"
+    };
+    uniformClass = "U_B_HeliPilotCoveralls";
+    backpack = "B_Parachute";
+};
+class TFY_Sniper
+{
+    displayName = "Sniper";
+    icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+    role = "Recon";
+    weapons[] = {
+        "rhs_weap_M107_w", "rhsusf_weap_m1911a1", "Rangefinder"
+    };
+    magazines[] = {
+        "acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellRed", "SmokeShellRed", "SmokeShellPurple", "rhsusf_mag_10Rnd_STD_50BMG_mk211", "rhsusf_mag_10Rnd_STD_50BMG_mk211", "9Rnd_45ACP_Mag",
+        "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "rhsusf_mag_10Rnd_STD_50BMG_mk211", "rhsusf_mag_10Rnd_STD_50BMG_mk211", "rhsusf_mag_10Rnd_STD_50BMG_mk211", "rhsusf_mag_10Rnd_STD_50BMG_mk211",
+        "rhsusf_mag_10Rnd_STD_50BMG_mk211", "9Rnd_45ACP_Mag"
+    };
+    items[] = {
+        "FirstAidKit", "ACE_CableTie", "ACE_EarPlugs", "ACE_IR_Strobe_Item", "ACE_Banana", "ACE_RangeCard", "ACE_PlottingBoard", "ACE_microDAGR", "ACE_MapTools", "ACE_HuntIR_monitor", "ACE_ATragMX", "ACE_packingBandage",
+        "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_morphine", "ACE_morphine", "ACE_morphine",
+        "ACE_morphine", "ACE_adenosine", "ACE_epinephrine", "ACE_bodyBag", "ACE_bodyBag", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_splint", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_bloodIV"
+    };
+    linkedItems[] = {
+        "V_PlateCarrier1_rgr", "H_Shemag_olive_hs", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI", "rhsusf_acc_LEUPOLDMK4_2"
+    };
+    uniformClass = "U_B_T_Sniper_F";
+    backpack = "B_Kitbag_rgr";
 };
 class TFY_Diver_Expl
 {
@@ -335,7 +442,7 @@ class TFY_Diver_Expl
     "MineDetector", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", 
     "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_bodyBag", "ACE_bodyBag", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", 
     "ACE_morphine", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_salineIV_500", 
-    "ACE_salineIV_500", "ACE_HuntIR_monitor"
+    "ACE_salineIV_500", "ACE_HuntIR_monitor", "ACE_microDAGR"
    };
    linkedItems[] = {
     "V_RebreatherB", "G_B_Diving", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI", "muzzle_snds_L"
@@ -364,7 +471,7 @@ class TFY_Diver
         "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_bodyBag", "ACE_bodyBag", "ACE_epinephrine", "ACE_adenosine", "ACE_morphine", 
         "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_splint", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", 
         "ACE_elasticBandage", "ACE_tourniquet", "ACE_tourniquet", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_salineIV_500", "ACE_bodyBag_blue",
-        "ACE_HuntIR_monitor"
+        "ACE_HuntIR_monitor", "ACE_microDAGR"
     };
     linkedItems[] = {"V_RebreatherB", "G_B_Diving", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI", "muzzle_snds_L"};
     uniformClass = "U_B_Wetsuit";

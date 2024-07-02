@@ -19,20 +19,39 @@ private _triggers = allMissionObjects "EmptyDetector" select {
 {	
 	private _act = triggerActivation _x;
 
-	if (_x getVariable ["MSF_Trigger_Patrol", false] && !(_x getVariable ["MSF_Trigger_Patrol_Vic", false])) then {
-		if(triggerArea _x select 0 != 0 && triggerArea _x select 1 != 0) then {		
+	if (_x getVariable ["MSF_Trigger_Patrol", false] && !(_x getVariable ["MSF_Trigger_Patrol_Vic", false])) then 
+	{
+		if(triggerArea _x select 0 != 0 && triggerArea _x select 1 != 0) then 
+		{		
 			_x setTriggerActivation [_act select 0, _act select 1, _act select 2];
-			_x setTriggerStatements ["this",
-			"[thisTrigger] call MSF_fnc_CreateRandomTriggerPatrol;",
-			"[thisTrigger] call MSF_fnc_DeleteRandomTriggerPatrol;"];
+			if (!isDedicated) then {
+				_x setTriggerStatements ["this", 
+				"[thisTrigger] spawn  {	params [""_trigger""]; [_trigger] call MSF_fnc_CreateRandomTriggerPatrol; };", 
+				"[thisTrigger] call MSF_fnc_DeleteRandomTriggerPatrol;"];			
+			}
+			else
+			{
+				_x setTriggerStatements ["this", "[thisTrigger] call MSF_fnc_CreateRandomTriggerPatrol;", "[thisTrigger] call MSF_fnc_DeleteRandomTriggerPatrol;"];
+			};			
 		};
 	};
-	if (_x getVariable ["MSF_Trigger_Patrol_Vic", false] && !(_x getVariable ["MSF_Trigger_Patrol", false])) then {
-		if(triggerArea _x select 0 != 0 && triggerArea _x select 1 != 0) then {		
+
+	if (_x getVariable ["MSF_Trigger_Patrol_Vic", false] && !(_x getVariable ["MSF_Trigger_Patrol", false])) then 
+	{
+		if(triggerArea _x select 0 != 0 && triggerArea _x select 1 != 0) then 
+		{		
 			_x setTriggerActivation [_act select 0, _act select 1, _act select 2];
-			_x setTriggerStatements ["this",
-			"[thisTrigger] call MSF_fnc_CreateAreaVehiclePatrol;",
-			""];
+			if (!isDedicated) then 
+			{
+				_x setTriggerStatements ["this", 
+				"[thisTrigger] spawn  {	params [""_trigger""]; [_trigger] call MSF_fnc_CreateAreaVehiclePatrol; };", 
+				"[thisTrigger] call MSF_fnc_DeleteRandomTriggerPatrol;"];			
+			
+			}
+			else
+			{
+				_x setTriggerStatements ["this", "[thisTrigger] call MSF_fnc_CreateAreaVehiclePatrol;",	""];
+			};				
 		};
 	};
 } forEach _triggers;
