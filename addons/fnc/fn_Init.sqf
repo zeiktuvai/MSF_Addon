@@ -13,10 +13,14 @@
 
 params ["_unit"];
 
-[_unit] call MSF_fnc_InitializeLoadouts;
+//[_unit] call MSF_fnc_InitializeLoadouts;
 [_unit] call MSF_fnc_ConfigRespawnOnPlayer;
 [_unit] call MSF_fnc_JIPSpawnNearPlayer;
 [] call MSF_fnc_ApplyDamageReduction;
+
+// [_unit, configfile >> "CfgVehicles" >> "TFY_Marksman"] call BIS_fnc_loadInventory;
+// [configfile >> "CfgVehicles" >> "TFY_Marksman"]
+
 
 if (getMissionConfigValue ["MSF_Loadout_UnitPatch", true]) then {
 	waitUntil { time > 1};
