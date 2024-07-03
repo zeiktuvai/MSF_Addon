@@ -46,63 +46,21 @@ class MSFSettings
 					defaultValue = "trig_end_mission";
 					validate = "variable";
 				};
-				class EnablementCategory
-				{
-					data = "AttributeSystemSubcategory";
-					control = "SubCategory";
-					displayName = "Loadouts and Uniforms";
-				};
-				class EnableDynLoadout
-				{
-					displayName = "Enable Dynamic Loadouts";
-					tooltip = "This enables automatic starting loadout and respawn loadouts to be applied to player units based on unit class.";
-					property = "MSF_Loadout_Dyn_Enable";			
-					control = "Checkbox";
-					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "false";
-				};
-				class NATOMissionUniforms
-				{
-					displayName = "NATO Faction Uniform";
-					tooltip = "Selects the uniform color for the base NATO faction. (Not Pacific or Woodland).";
-					property = "MSF_Loadout_NATO_Uniform";
-					control = "UniCombo";
-					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "false";
-					condition = "objectControllable";
-					typeName = "Number";
-
-					class Values
-					{
-						class Temperate
-						{
-							name = "Temperate";
-							tooltip = "Temperate Uniform (i.e. Multicam)";
-							value = 0;
-						};
-						class Night
-						{
-							name = "Night";
-							tooltip = "Night Uniform";
-							value = 1;
-						};
-						class Winter
-						{
-							name = "Winter";
-							tooltip = "Winter Uniforms (Requires NATO Winter Faction [by MALLINGA] to be installed)";
-							value = 2;
-						};
-					};
-				};
-				class EnableUnitPatch
-				{
-					displayName = "Apply Unit patch on start";
-					tooltip = "Applys unit patch to all players on start (WIP: only applys TFY patch as of right now.)";
-					property = "MSF_Loadout_UnitPatch";			
-					control = "Checkbox";
-					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "true";
-				};
+				// class EnablementCategory
+				// {
+				// 	data = "AttributeSystemSubcategory";
+				// 	control = "SubCategory";
+				// 	displayName = "Loadouts and Uniforms";
+				// };				
+				// class EnableUnitPatch
+				// {
+				// 	displayName = "Apply Unit patch on start";
+				// 	tooltip = "Applys unit patch to all players on start (WIP: only applys TFY patch as of right now.)";
+				// 	property = "MSF_Loadout_UnitPatch";			
+				// 	control = "Checkbox";
+				// 	expression = "_this setVariable ['%s',_value];";
+				// 	defaultValue = "true";
+				// };
 				class MultiplayerCategory
 				{
 					data = "AttributeSystemSubcategory";
