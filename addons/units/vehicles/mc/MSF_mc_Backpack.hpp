@@ -1,6 +1,10 @@
-class B_ViperLightHarness_oli_F;  //B_ViperLightHarness_blk_F
-class MSF_mc_BaseBackpack : B_ViperLightHarness_oli_F
+class B_ViperLightHarness_base_F;  //B_ViperLightHarness_blk_F   B_ViperLightHarness_oli_F
+class MSF_mc_BaseBackpack : B_ViperLightHarness_base_F
 {
+	displayName = "Viper Light Standard Backpack";
+	scope = 2;	
+	hiddenSelectionsTextures[] = {"\A3\Supplies_F_Exp\Bags\Data\Backpack_ViperOp_khk_co.paa"};
+	picture = "\A3\Supplies_F_Exp\Bags\Data\UI\icon_B_ViperLightHarness_khk_F_ca.paa";
 	class TransportItems {
 		class _xx_quickclot {
 			name = "ACE_quikclot";
@@ -97,6 +101,7 @@ class MSF_mc_BaseBackpack : B_ViperLightHarness_oli_F
 
 class MSF_mc_MarksmanBackpack : MSF_mc_BaseBackpack
 {
+	displayName = "Viper Light Marksman Backpack";
 	class TransportMagazines {
 		class _xx_20rnd_m993 {
 			magazine = "rhsusf_20Rnd_762x51_m993_Mag";
@@ -107,6 +112,7 @@ class MSF_mc_MarksmanBackpack : MSF_mc_BaseBackpack
 
 class MSF_mc_PMAGBackpack : MSF_mc_BaseBackpack
 {
+	displayName = "Viper Light Infantry Backpack";
 	class TransportMagazines {
 		class _xx_30rnd_tan_pmag {
 			magazine = "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan";
@@ -117,6 +123,7 @@ class MSF_mc_PMAGBackpack : MSF_mc_BaseBackpack
 
 class MSF_mc_PMAGSupplyBackpack : MSF_mc_BaseBackpack
 {
+	displayName = "Viper Light Ammo Bearer Backpack";
 	class TransportMagazines {
 		class _xx_20rnd_pmag {
 			magazine = "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red";
@@ -129,8 +136,20 @@ class MSF_mc_PMAGSupplyBackpack : MSF_mc_BaseBackpack
 	};
 };
 
+class MSF_mc_SniperBackpack : MSF_mc_BaseBackpack
+{
+	displayName = "Viper Light Sniper Backpack";
+	class TransportMagazines {
+		class _xx_10rnd_50 {
+			magazine = "rhsusf_mag_10Rnd_STD_50BMG_mk211";
+			count = 3;
+		};
+	};
+};
+
 class MSF_mc_ATBackpack : MSF_mc_BaseBackpack
 {
+	displayName = "Viper Light Anti-Tank Backpack";
 	class TransportMagazines {
 		class _xx_maaws_het {
 			magazine = "rhs_mag_maaws_HEAT";
@@ -145,6 +164,7 @@ class MSF_mc_ATBackpack : MSF_mc_BaseBackpack
 
 class MSF_mc_AABackpack : MSF_mc_BaseBackpack
 {
+	displayName = "Viper Light Anti-Air Backpack";
 	class TransportMagazines {
 		class _xx_titan_aa {
 			magazine = "Titan_AA";
@@ -155,6 +175,7 @@ class MSF_mc_AABackpack : MSF_mc_BaseBackpack
 
 class MSF_mc_MedicBackpack : MSF_mc_BaseBackpack
 {
+	displayName = "Viper Light Medic Backpack";
 	class TransportItems {
 		class _xx_quickclot {
 			name = "ACE_quikclot";
@@ -224,9 +245,79 @@ class MSF_mc_MedicBackpack : MSF_mc_BaseBackpack
 			name = "ACE_personalAidKit";
 			count = 1;
 		};
-		class _xx_suture {
-			name = "ACE_suture";
-			count = 4;
+	};
+};
+
+class MSF_mc_EngBackpack : MSF_mc_BaseBackpack
+{
+	displayName = "Viper Light Engineer Backpack";
+	class TransportItems {
+		class _xx_wirecut {
+			name = "ACE_wirecutter";
+			count = 1;
+		};
+		class _xx_mined {
+			name = "MineDetector";
+			count = 1;
+		};
+		class _xx_flash {
+			name = "ACE_Flashlight_XL50";
+			count = 1;
+		};
+		class _xx_m26 {
+			name = "ACE_M26_Clacker";
+			count = 2;
+		};
+		class _xx_ksf1 {
+			name = "ACE_Flashlight_KSF1";
+			count = 1;
+		};
+		class _xx_fortify {
+			name = "ACE_Fortify";
+			count = 1;
+		};
+		class _xx_etool {
+			name = "ACE_EntrenchingTool";
+			count = 1;
+		};
+		class _xx_defus {
+			name = "ACE_DefusalKit";
+			count = 1;
+		};
+		class _xx_dmsw {
+			name = "ACE_DeadManSwitch";
+			count = 1;
+		};
+		class _xx_tool {
+			name = "ToolKit";
+			count = 1;
+		};		
+		class _xx_earplug {
+			name = "ACE_EarPlugs";
+			count = 2;
 		};
 	};
 };
+
+class MSF_mc_MineBackpack : MSF_mc_BaseBackpack
+{
+	displayName = "Viper Light Mine Spec. Backpack";
+	class TransportMagazines {
+		class _xx_persmine {
+			magazine = "APERSMine_Range_Mag";
+			count = 5;
+		};
+		class _xx_atmine {
+			magazine = "ATMine_Range_Mag";
+			count = 2;
+		};
+		class _xx_boundmine {
+			magazine = "APERSBoundingMine_Range_Mag";
+			count = 1;
+		};
+	};
+};
+		// class _xx_suture {
+		// 	name = "ACE_suture";
+		// 	count = 4;
+		// };

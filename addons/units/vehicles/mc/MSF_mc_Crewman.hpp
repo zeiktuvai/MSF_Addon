@@ -2,10 +2,10 @@ class MSF_Crewman :  MSF_Soldier_Base
 {
 	displayName = "Vehicle Crewman";
 	role = "MSFCrew";	
-	editorSubcategory = "MSF_EdSubcat_Inf_Trop";
+	editorSubcategory = "MSF_EdSubcat_Inf";
 	icon = "iconManEngineer";
 	scope = 2;
-	scopecurator = 2;
+	scopeCurator = 2;
 	weapons[] = {
         "MSF_rhs_hk416d", "Binocular", "rhsusf_weap_m1911a1", "Throw", "Put"
     };
@@ -19,7 +19,7 @@ class MSF_Crewman :  MSF_Soldier_Base
 		"ACE_ATragMX", "ACE_RangeCard", "ACE_Banana", "ToolKit"
     };
     linkedItems[] = {
-        "V_PlateCarrier2_tna_F", "rhsusf_opscore_fg_pelt_nsw", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "rhsusf_spcs_ocp_crewman", "H_HelmetCrew_B", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS",
 		"JAS_GPNVG18_blk_TI"
     };	
 	respawnWeapons[] = {
@@ -35,7 +35,7 @@ class MSF_Crewman :  MSF_Soldier_Base
 		 "ACE_ATragMX", "ACE_RangeCard", "ACE_Banana", "ToolKit"
 	};
 	respawnLinkedItems[] = {
-        "V_PlateCarrier2_rgr", "H_HelmetCrew_B", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "rhsusf_spcs_ocp_crewman", "H_HelmetCrew_B", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
 		"JAS_GPNVG18_blk_TI"
 	};
     uniformClass = "U_B_HeliPilotCoveralls";

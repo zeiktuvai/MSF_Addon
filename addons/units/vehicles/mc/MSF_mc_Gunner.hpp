@@ -3,9 +3,9 @@ class MSF_Gunner :  MSF_Soldier_Base
 	displayName = "Support Gunner";
 	icon = "iconManMG";
 	role = "MSFAssault";	
-	editorSubcategory = "MSF_EdSubcat_Inf_Trop";
+	editorSubcategory = "MSF_EdSubcat_Inf";
 	scope = 2;
-	scopecurator = 2;
+	scopeCurator = 2;
 	weapons[] = {
         "MSF_rhs_m249", "Binocular", "Throw", "Put"
     };
@@ -19,8 +19,8 @@ class MSF_Gunner :  MSF_Soldier_Base
 		"ACE_Banana", "ACE_WaterBottle"        
     };
     linkedItems[] = {
-        "V_PlateCarrier1_tna_F", "rhsusf_opscore_fg_pelt_nsw", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
-        "JAS_GPNVG18_blk_TI"
+        "rhsusf_spcs_ocp_saw", "rhsusf_opscore_mc_cover_pelt", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "JAS_GPNVG18_Tan_TI"
     };	
 	respawnWeapons[] = {
 		"MSF_rhs_m249", "Binocular", "Throw", "Put"
@@ -35,9 +35,9 @@ class MSF_Gunner :  MSF_Soldier_Base
 		"ACE_Banana", "ACE_WaterBottle" 
 	};
 	respawnLinkedItems[] = {
-        "V_PlateCarrier1_tna_F", "rhsusf_opscore_fg_pelt_nsw", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
-        "JAS_GPNVG18_blk_TI"	
+        "rhsusf_spcs_ocp_saw", "rhsusf_opscore_mc_cover_pelt", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "JAS_GPNVG18_Tan_TI"	
 	};
-    uniformClass = "U_B_T_Soldier_SL_F";
+    uniformClass = "rhs_uniform_cu_ocp";
     backpack = "MSF_mc_BaseBackpack";
 };

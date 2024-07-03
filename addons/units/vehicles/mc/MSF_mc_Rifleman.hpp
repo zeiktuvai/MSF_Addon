@@ -2,9 +2,9 @@ class MSF_Rifleman :  MSF_Soldier_Base
 {
 	displayName = "Rifleman";
 	role = "MSFAssault";	
-	editorSubcategory = "MSF_EdSubcat_Inf_Trop";
+	editorSubcategory = "MSF_EdSubcat_Inf";
 	scope = 2;
-	scopecurator = 2;
+	scopeCurator = 2;
 	weapons[] = {
         "MSF_rhs_hk416d", "Binocular", "rhs_weap_M320", "Throw", "Put"
     };
@@ -20,8 +20,8 @@ class MSF_Rifleman :  MSF_Soldier_Base
 		"MineDetector", "ACE_Banana"  
     };
     linkedItems[] = {
-        "V_PlateCarrier2_tna_F", "rhsusf_opscore_fg_pelt_nsw", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
-		"JAS_GPNVG18_blk_TI"
+        "rhsusf_spcs_ocp_rifleman", "rhsusf_opscore_mc_pelt", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+		"JAS_GPNVG18_Tan_TI"
     };	
 	respawnWeapons[] = {
 		"MSF_rhs_hk416d", "Binocular", "rhs_weap_M320", "Throw", "Put"
@@ -37,9 +37,9 @@ class MSF_Rifleman :  MSF_Soldier_Base
 		"MineDetector", "ACE_Banana"
 	};
 	respawnLinkedItems[] = {
-        "V_PlateCarrier2_tna_F", "rhsusf_opscore_fg_pelt_nsw", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
-		"JAS_GPNVG18_blk_TI"
+        "rhsusf_spcs_ocp_rifleman", "rhsusf_opscore_mc_pelt", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+		"JAS_GPNVG18_Tan_TI"
 	};
-    uniformClass = "U_B_T_Soldier_SL_F";
+    uniformClass = "rhs_uniform_cu_ocp";
     backpack = "MSF_mc_PMAGSupplyBackpack";
 };

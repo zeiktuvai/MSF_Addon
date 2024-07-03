@@ -3,9 +3,9 @@ class MSF_Leader :  MSF_Soldier_Base
 	displayName = "Leader";
 	icon = "iconManLeader";
 	role = "MSFCommand";	
-	editorSubcategory = "MSF_EdSubcat_Inf_Trop";
+	editorSubcategory = "MSF_EdSubcat_Inf";
 	scope = 2;
-	scopecurator = 2;
+	scopeCurator = 2;
 	weapons[] = {
         "MSF_rhs_weap_hk416_m320", "Binocular", "Throw", "Put"
     };
@@ -20,8 +20,8 @@ class MSF_Leader :  MSF_Soldier_Base
 		"ACE_Banana", "ACE_DefusalKit", "ACE_M26_Clacker", "ACE_wirecutter", "ACE_WaterBottle", "ACE_epinephrine", "ACE_splint", "ACE_splint", "ACE_adenosine"       
     };
     linkedItems[] = {
-        "V_PlateCarrier2_tna_F", "rhsusf_opscore_rg_cover_pelt", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", 
-        "ItemGPS", "NVGogglesB_blk_F"
+        "rhsusf_spc_squadleader", "rhsusf_opscore_mc_cover_pelt_nsw", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", 
+        "ItemGPS", "JAS_GPNVG18_Tan_TI"
     };	
 	respawnWeapons[] = {
 		"MSF_rhs_weap_hk416_m320", "Binocular", "Throw", "Put"
@@ -37,9 +37,9 @@ class MSF_Leader :  MSF_Soldier_Base
 		"ACE_Banana", "ACE_DefusalKit", "ACE_M26_Clacker", "ACE_wirecutter", "ACE_WaterBottle", "ACE_epinephrine", "ACE_splint", "ACE_splint", "ACE_adenosine"
 	};
 	respawnLinkedItems[] = {
-        "V_PlateCarrier2_tna_F", "rhsusf_opscore_rg_cover_pelt", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", 
-        "ItemGPS", "NVGogglesB_blk_F"		
+        "rhsusf_spc_squadleader", "rhsusf_opscore_mc_cover_pelt_nsw", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", 
+        "ItemGPS", "JAS_GPNVG18_Tan_TI"		
 	};
-    uniformClass = "U_B_T_Soldier_SL_F";
+    uniformClass = "rhs_uniform_g3_mc";
     backpack = "MSF_mc_PMAGBackpack";
 };

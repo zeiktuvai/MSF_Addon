@@ -12,9 +12,10 @@
 		[unit] call MSF_fnc_ApplyInsignia;
 
 	Function Ver 1.0
-	Implemented in: MSF Addon v1.7
+	Implemented in: MSF Addon v2.0
 */
 
 params ["_unit"];
 
-_unit setObjectTexture ["insignia", "z\msf\addons\client\patch\TFY.paa"];
+[_unit, ""] call BIS_fnc_setUnitInsignia; 
+[_unit, "tfy_insignia"] call BIS_fnc_setUnitInsignia;

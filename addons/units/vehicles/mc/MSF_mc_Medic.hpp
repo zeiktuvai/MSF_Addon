@@ -2,9 +2,10 @@ class MSF_Medic :  MSF_Soldier_Base
 {
 	displayName = "Combat Medic";
 	role = "MSFSupport";	
-	editorSubcategory = "MSF_EdSubcat_Inf_Trop";
+	editorSubcategory = "MSF_EdSubcat_Inf";
 	scope = 2;
-	scopecurator = 2;
+	scopeCurator = 2;
+    attendant = 1;
 	weapons[] = {
         "MSF_rhs_hk416d", "Binocular", "rhs_weap_rsp30_red", "Throw", "Put"
     };
@@ -18,7 +19,7 @@ class MSF_Medic :  MSF_Soldier_Base
 		"ACE_Banana"  
     };
     linkedItems[] = {
-        "V_TacVestIR_blk", "H_HelmetB_Light_tna_F", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
+        "rhsusf_spcs_ocp_medic", "H_HelmetB_light", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
 		"JAS_GPNVG18_blk_TI"
     };	
 	respawnWeapons[] = {
@@ -34,9 +35,9 @@ class MSF_Medic :  MSF_Soldier_Base
 		"ACE_Banana"
 	};
 	respawnLinkedItems[] = {
-        "V_TacVestIR_blk", "H_HelmetB_Light_tna_F", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
+        "rhsusf_spcs_ocp_medic", "H_HelmetB_light", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
 		"JAS_GPNVG18_blk_TI"
 	};
-    uniformClass = "U_B_T_Soldier_SL_F";
+    uniformClass = "rhs_uniform_cu_ocp";
     backpack = "MSF_mc_MedicBackpack";
 };
