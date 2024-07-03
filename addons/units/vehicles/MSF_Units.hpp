@@ -1,0 +1,12 @@
+    #include "mc\MSF_mc_Marksman.hpp"
+    #include "mc\MSF_mc_Leader.hpp"
+	#include "mc\MSF_mc_Gunner.hpp"
+	#include "mc\MSF_mc_Grenadier.hpp"
+	#include "mc\MSF_mc_Rifleman.hpp"
+	#include "mc\MSF_mc_Missile.hpp"
+	#include "mc\MSF_mc_Backpack.hpp"
+	#include "mc\MSF_mc_UAV.hpp"
+	#include "mc\MSF_mc_Crewman.hpp"
+	#include "mc\MSF_mc_Medic.hpp"
+
+	#include "blk\MSF_blk_Rifleman.hpp"
