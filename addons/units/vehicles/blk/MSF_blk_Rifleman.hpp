@@ -13,7 +13,7 @@ class MSF_Rifleman_N : MSF_Rifleman
 		"ItemGPS", "JAS_GPNVG18_blk_TI"        
     };
     uniformClass = "rhs_uniform_g3_blk";
-    backpack = "MSF_mc_PMAGSupplyBackpack";
+    backpack = "MSF_blk_PMAGSupplyBackpack";
 };
 
 //Put supressor in inventory muzzle_snds_M

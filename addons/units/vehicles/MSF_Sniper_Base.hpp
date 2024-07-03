@@ -6,6 +6,7 @@ class MSF_Sniper_Base : B_T_Sniper_F
 	role = "MSFAssault";
 	author = "Zeik_Tuvai";
 	faction = "BLU_F_MSF";
+	scope = 0;
 	class eventhandlers
 	{
 		class MSF_Init
