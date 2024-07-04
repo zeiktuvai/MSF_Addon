@@ -1,4 +1,4 @@
-class B_ViperLightHarness_base_F;  //B_ViperLightHarness_blk_F   B_ViperLightHarness_oli_F
+class B_ViperLightHarness_base_F;
 class MSF_mc_BaseBackpack : B_ViperLightHarness_base_F
 {
 	displayName = "Viper Light Standard Backpack";

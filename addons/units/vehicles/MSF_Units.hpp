@@ -38,3 +38,5 @@
 #include "blk\MSF_blk_Repair.hpp"
 #include "blk\MSF_blk_Rifleman.hpp"
 #include "blk\MSF_blk_UAV.hpp"
+
+//#include "win\MSF_w_Backpack.hpp"

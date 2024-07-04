@@ -1,6 +1,8 @@
+- added all previous loadouts as units under NATO (MSF)
+	- Make sure to remove MSF_Config.hpp line from your description ext
+	- Replace all units that used loadouts with new MSF ones.
 - changed number of base items that spawn in inventory gen
 - fixed bug that causes inv gen system to panic in new scenario
-- added repair specialist, engineer, helicopter pilot, and sniper loadouts
 - optimized patrol and fortify code to reduce stuttering when playing locally, but spawn as quickly as possible when on a dedicated server.
 
 h1 isKindOf "Air";
@@ -31,9 +33,9 @@ if (count _data != 0 && count _vehicleList != 0) then
 };
 ```
 
-private _trig = missionNamespace getVariable "trig_end_mission";
+private _Nrig = missionNamespace getVariable "trig_end_mission";
 
-triggerActivated _trig;
+triggerActivated _Nrig;
 
 event hanlder stuff
 https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)
@@ -64,12 +66,12 @@ https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)
 				class Title : Title {};
 				class Value : ctrlCombo
 				{
-					onLoad = "_east = [configfile >> 'CfgGroups' >> 'East', 2, false] call BIS_fnc_returnChildren; _indep = [configfile >> 'CfgGroups' >> 'Indep', 2, false] call BIS_fnc_returnChildren; _west = [configfile >> 'CfgGroups' >> 'West', 2, false] call BIS_fnc_returnChildren; _groups = _east + _indep + _west; _control = _this select 0; { _group = _x; if(gettext (_group >> 'name') != '') then {_lbadd = _control lbadd gettext (_group >> 'name'); _control lbsetdata [_lbadd, configname _group]; _control lbsetpicture [_lbadd, gettext (_group >> 'icon')]; }; } foreach _groups;";
+					onLoad = "_east = [configfile >> 'CfgGroups' >> 'East', 2, false] call BIS_fnc_returnChildren; _indep = [configfile >> 'CfgGroups' >> 'Indep', 2, false] call BIS_fnc_returnChildren; _west = [configfile >> 'CfgGroups' >> 'West', 2, false] call BIS_fnc_returnChildren; _groups = _east + _indep + _west; _control = _Nhis select 0; { _group = _x; if(gettext (_group >> 'name') != '') then {_lbadd = _control lbadd gettext (_group >> 'name'); _control lbsetdata [_lbadd, configname _group]; _control lbsetpicture [_lbadd, gettext (_group >> 'icon')]; }; } foreach _groups;";
 				};
 			};
 		};
 
-    // _control = _this select 0; 
+    // _control = _Nhis select 0; 
 // {
 // 	_cfgFace = _x; 
 // 	if (gettext (_cfgFace >> 'displayname') != '' && getnumber (_cfgFace >> 'disabled') == 0) then 
@@ -98,3 +100,5 @@ https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)
 // 		_control lbsetpicture [_lbadd, gettext (_group >> 'icon')];
 // 	};
 // } foreach _groups;
+
+
