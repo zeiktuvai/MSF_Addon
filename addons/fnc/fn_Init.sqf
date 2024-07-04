@@ -13,14 +13,13 @@
 
 params ["_unit"];
 
-[_unit] call MSF_fnc_InitializeLoadouts;
 [_unit] call MSF_fnc_ConfigRespawnOnPlayer;
 [_unit] call MSF_fnc_JIPSpawnNearPlayer;
 [] call MSF_fnc_ApplyDamageReduction;
 
-if (getMissionConfigValue ["MSF_Loadout_UnitPatch", true]) then {
-	waitUntil { time > 1};
+// if (getMissionConfigValue ["MSF_Loadout_UnitPatch", true]) then {
+// 	waitUntil { time > 1};
 
-	[_unit, ""] call BIS_fnc_setUnitInsignia;
-	[_unit, "tfy_insignia"] call BIS_fnc_setUnitInsignia;
-}
+// 	[_unit, ""] call BIS_fnc_setUnitInsignia;
+// 	[_unit, "tfy_insignia"] call BIS_fnc_setUnitInsignia;
+// }

@@ -19,5 +19,5 @@ class MSFConfig
 			Turrets[] = {"RHS_AGS30_TriPod_MSV","rhs_KORD_MSV","rhs_KORD_high_MSV","RHS_NSV_TriPod_MSV","RHS_ZU23_MSV"};
 			Units[] = {"rhs_msv_emr_armoredcrew", "rhs_msv_emr_rifleman", "rhs_msv_emr_sergeant", "rhs_msv_emr_machinegunner", "rhs_msv_emr_LAT"};
 		};
-	};
+	};	
 };

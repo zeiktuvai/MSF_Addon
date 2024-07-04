@@ -39,16 +39,8 @@ class CfgFunctions
 		};
 		class ACEOptions
 		{
-			file = "z\msf\addons\fnc";
+			file = "z\msf\addons\fnc\ace";
 			class ACEMedUnconcious {};
-		};
-		class Loadouts
-		{
-			file = "z\msf\addons\fnc";
-			class InitializeLoadouts {};
-			class GetDynamicLoadoutByClass {};
-			class ApplyInitialLoadout {};
-			class ApplyRespawnInventory {};
 		};
 		class Objects
 		{

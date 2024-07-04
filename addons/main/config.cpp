@@ -57,4 +57,3 @@ class Extended_PreInit_EventHandlers
 // 		init = "[] call MSF_fnc_test;";        
 //     };
 // };
-
