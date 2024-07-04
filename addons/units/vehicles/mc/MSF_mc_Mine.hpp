@@ -2,7 +2,7 @@ class MSF_Mine :  MSF_Soldier_Base
 {
 	displayName = "Mine Specialist";
 	role = "MSFSupport";	
-	editorSubcategory = "MSF_EdSubcat_Inf_Trop";
+	editorSubcategory = "MSF_EdSubcat_Inf";
 	scope = 2;
 	scopeCurator = 2;
 	canDeactivateMines = 1;
@@ -18,7 +18,7 @@ class MSF_Mine :  MSF_Soldier_Base
 		"ACE_DefusalKit", "MineDetector", "ACE_Banana" 
     };
     linkedItems[] = {
-        "V_EOD_olive_F", "rhs_altyn_visordown", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI"
+        "V_EOD_olive_F", "rhs_altyn_visordown", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI"
     };	
 	respawnWeapons[] = {
 		"MSF_rhs_hk416d", "Binocular", "Throw", "Put"
@@ -31,7 +31,7 @@ class MSF_Mine :  MSF_Soldier_Base
 		"ACE_DefusalKit", "MineDetector", "ACE_Banana"
 	};
 	respawnLinkedItems[] = {
-        "V_EOD_olive_F", "rhs_altyn_visordown", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI"
+        "V_EOD_olive_F", "rhs_altyn_visordown", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_blk_TI"
 	};
     uniformClass = "U_B_T_Soldier_SL_F";
     backpack = "MSF_mc_MineBackpack";

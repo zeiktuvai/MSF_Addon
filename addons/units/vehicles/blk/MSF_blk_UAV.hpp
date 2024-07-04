@@ -2,11 +2,11 @@ class MSF_UAV_N :  MSF_UAV
 {
 	editorSubcategory = "MSF_EdSubcat_Inf_Night";
     linkedItems[] = {
-        "V_PlateCarrier2_blk", "H_HelmetSpecB_blk", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
+        "V_PlateCarrier2_blk", "H_HelmetSpecB_blk", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
 		"JAS_GPNVG18_blk_TI"
     };	
 	respawnLinkedItems[] = {
-        "V_PlateCarrier2_blk", "H_HelmetSpecB_blk", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
+        "V_PlateCarrier2_blk", "H_HelmetSpecB_blk", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
 		"JAS_GPNVG18_blk_TI"
 	};
     uniformClass = "rhs_uniform_g3_blk";

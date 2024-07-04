@@ -19,7 +19,7 @@ class MSF_Crewman :  MSF_Soldier_Base
 		"ACE_ATragMX", "ACE_RangeCard", "ACE_Banana", "ToolKit"
     };
     linkedItems[] = {
-        "rhsusf_spcs_ocp_crewman", "H_HelmetCrew_B", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS",
+        "rhsusf_spcs_ocp_crewman", "H_HelmetCrew_B", "G_Tactical_Clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS",
 		"JAS_GPNVG18_blk_TI"
     };	
 	respawnWeapons[] = {
@@ -35,7 +35,7 @@ class MSF_Crewman :  MSF_Soldier_Base
 		 "ACE_ATragMX", "ACE_RangeCard", "ACE_Banana", "ToolKit"
 	};
 	respawnLinkedItems[] = {
-        "rhsusf_spcs_ocp_crewman", "H_HelmetCrew_B", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "rhsusf_spcs_ocp_crewman", "H_HelmetCrew_B", "G_Tactical_Clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
 		"JAS_GPNVG18_blk_TI"
 	};
     uniformClass = "U_B_HeliPilotCoveralls";

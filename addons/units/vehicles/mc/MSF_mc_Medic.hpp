@@ -19,7 +19,7 @@ class MSF_Medic :  MSF_Soldier_Base
 		"ACE_Banana"  
     };
     linkedItems[] = {
-        "rhsusf_spcs_ocp_medic", "H_HelmetB_light", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
+        "rhsusf_spcs_ocp_medic", "H_HelmetB_light", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
 		"JAS_GPNVG18_blk_TI"
     };	
 	respawnWeapons[] = {
@@ -35,7 +35,7 @@ class MSF_Medic :  MSF_Soldier_Base
 		"ACE_Banana"
 	};
 	respawnLinkedItems[] = {
-        "rhsusf_spcs_ocp_medic", "H_HelmetB_light", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
+        "rhsusf_spcs_ocp_medic", "H_HelmetB_light", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
 		"JAS_GPNVG18_blk_TI"
 	};
     uniformClass = "rhs_uniform_cu_ocp";

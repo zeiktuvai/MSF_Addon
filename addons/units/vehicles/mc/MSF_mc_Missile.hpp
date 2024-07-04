@@ -19,7 +19,7 @@ class MSF_ATRifleman :  MSF_Soldier_Base
 		"ACE_Banana"  
     };
     linkedItems[] = {
-        "rhsusf_plateframe_rifleman", "H_HelmetSpecB_paint1", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "rhsusf_plateframe_rifleman", "H_HelmetSpecB_paint1", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
 		"JAS_GPNVG18_blk_TI"
     };	
 	respawnWeapons[] = {
@@ -35,7 +35,7 @@ class MSF_ATRifleman :  MSF_Soldier_Base
 		"ACE_Banana"
 	};
 	respawnLinkedItems[] = {
-        "rhsusf_plateframe_rifleman", "H_HelmetSpecB_paint1", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "rhsusf_plateframe_rifleman", "H_HelmetSpecB_paint1", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
 		"JAS_GPNVG18_blk_TI"
 	};
     uniformClass = "rhs_uniform_g3_mc";
@@ -63,7 +63,7 @@ class MSF_AARifleman :  MSF_Soldier_Base
 		"ACE_Banana"  
     };
     linkedItems[] = {
-        "rhsusf_plateframe_rifleman", "H_HelmetSpecB_paint1", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "rhsusf_plateframe_rifleman", "H_HelmetSpecB_paint1", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
 		"JAS_GPNVG18_blk_TI"
     };	
 	respawnWeapons[] = {
@@ -79,7 +79,7 @@ class MSF_AARifleman :  MSF_Soldier_Base
 		"ACE_Banana"
 	};
 	respawnLinkedItems[] = {
-        "rhsusf_plateframe_rifleman", "H_HelmetSpecB_paint1", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "rhsusf_plateframe_rifleman", "H_HelmetSpecB_paint1", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
 		"JAS_GPNVG18_blk_TI"
 	};
     uniformClass = "rhs_uniform_g3_mc";

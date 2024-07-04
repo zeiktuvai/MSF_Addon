@@ -20,7 +20,7 @@ class MSF_Repair :  MSF_Soldier_Base
 		"ACE_Banana", "ACE_Flashlight_XL50"
     };
     linkedItems[] = {
-        "rhsusf_iotv_ocp_Repair", "rhs_Booniehat_ocp", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_Tan_TI"
+        "rhsusf_iotv_ocp_Repair", "rhs_Booniehat_ocp", "G_Tactical_Clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_Tan_TI"
     };	
 	respawnWeapons[] = {
 		"MSF_rhs_hk416d", "Binocular", "rhsusf_weap_m1911a1", "Throw", "Put"
@@ -35,7 +35,7 @@ class MSF_Repair :  MSF_Soldier_Base
 		"ACE_Banana", "ACE_Flashlight_XL50"
 	};
 	respawnLinkedItems[] = {
-        "rhsusf_iotv_ocp_Repair", "rhs_Booniehat_ocp", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_Tan_TI"
+        "rhsusf_iotv_ocp_Repair", "rhs_Booniehat_ocp", "G_Tactical_Clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_Tan_TI"
 	};
     uniformClass = "rhs_uniform_g3_tan";
     backpack = "MSF_mc_PMAGBackpack";

@@ -2,11 +2,11 @@ class MSF_Rifleman_T :  MSF_Rifleman
 {
 	editorSubcategory = "MSF_EdSubcat_Inf_Trop";
     linkedItems[] = {
-        "V_PlateCarrier2_tna_F", "rhsusf_opscore_fg_pelt_nsw", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "V_PlateCarrier2_tna_F", "rhsusf_opscore_fg_pelt_nsw", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
 		"JAS_GPNVG18_blk_TI"
     };	
 	respawnLinkedItems[] = {
-        "V_PlateCarrier2_tna_F", "rhsusf_opscore_fg_pelt_nsw", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "V_PlateCarrier2_tna_F", "rhsusf_opscore_fg_pelt_nsw", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
 		"JAS_GPNVG18_blk_TI"
 	};
     uniformClass = "U_B_T_Soldier_SL_F";

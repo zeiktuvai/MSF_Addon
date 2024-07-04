@@ -22,7 +22,7 @@ class MSF_Engineer :  MSF_Soldier_Base
 		"ACE_Banana"
     };
     linkedItems[] = {
-        "rhsusf_spcs_ocp_teamleader", "H_HelmetB_light_desert", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS"
+        "rhsusf_spcs_ocp_teamleader", "H_HelmetB_light_desert", "G_Tactical_Clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS"
     };	
 	respawnWeapons[] = {
 		"MSF_rhs_hk416d", "Binocular", "rhsusf_weap_m1911a1", "Throw", "Put"
@@ -38,7 +38,7 @@ class MSF_Engineer :  MSF_Soldier_Base
 		"ACE_Banana"
 	};
 	respawnLinkedItems[] = {
-        "rhsusf_spcs_ocp_teamleader", "H_HelmetB_light_desert", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS"
+        "rhsusf_spcs_ocp_teamleader", "H_HelmetB_light_desert", "G_Tactical_Clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS"
 	};
     uniformClass = "U_B_CombatUniform_mcam_tshirt";
     backpack = "MSF_mc_EngBackpack";

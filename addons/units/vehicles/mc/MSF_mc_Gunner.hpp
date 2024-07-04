@@ -19,7 +19,7 @@ class MSF_Gunner :  MSF_Soldier_Base
 		"ACE_Banana", "ACE_WaterBottle"        
     };
     linkedItems[] = {
-        "rhsusf_spcs_ocp_saw", "rhsusf_opscore_mc_cover_pelt", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "rhsusf_spcs_ocp_saw", "rhsusf_opscore_mc_cover_pelt", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
         "JAS_GPNVG18_Tan_TI"
     };	
 	respawnWeapons[] = {
@@ -35,7 +35,7 @@ class MSF_Gunner :  MSF_Soldier_Base
 		"ACE_Banana", "ACE_WaterBottle" 
 	};
 	respawnLinkedItems[] = {
-        "rhsusf_spcs_ocp_saw", "rhsusf_opscore_mc_cover_pelt", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "rhsusf_spcs_ocp_saw", "rhsusf_opscore_mc_cover_pelt", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
         "JAS_GPNVG18_Tan_TI"	
 	};
     uniformClass = "rhs_uniform_cu_ocp";

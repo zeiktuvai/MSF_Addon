@@ -23,7 +23,7 @@ class MSF_Pilot :  MSF_Soldier_Base
 		"muzzle_snds_M"
     };
     linkedItems[] = {
-        "V_Chestrig_oli", "H_PilotHelmetHeli_B", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "V_Chestrig_oli", "H_PilotHelmetHeli_B", "G_Tactical_Clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
 		"JAS_GPNVG18_blk_TI",
     };	
 	respawnWeapons[] = {
@@ -43,7 +43,7 @@ class MSF_Pilot :  MSF_Soldier_Base
 		"muzzle_snds_M"
 	};
 	respawnLinkedItems[] = {
-        "V_Chestrig_oli", "H_PilotHelmetHeli_B", "G_Tactical_Clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "V_Chestrig_oli", "H_PilotHelmetHeli_B", "G_Tactical_Clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
 		"JAS_GPNVG18_blk_TI",
 	};
     uniformClass = "U_B_HeliPilotCoveralls";

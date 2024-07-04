@@ -14,13 +14,13 @@ class MSF_Rifleman :  MSF_Soldier_Base
 		"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "1Rnd_Smoke_Grenade_shell", "1Rnd_Smoke_Grenade_shell", 
 		"1Rnd_Smoke_Grenade_shell", "1Rnd_Smoke_Grenade_shell",	"UGL_FlareGreen_F", "rhs_mag_M397_HET",
 		"rhs_mag_M397_HET", "rhs_mag_M397_HET", "ACE_40mm_Flare_green",  "ACE_40mm_Flare_green", 
-		"1Rnd_Smoke_Grenade_shell"
+		"1Rnd_Smoke_Grenade_shell", "ACE_HuntIR_M203", "ACE_HuntIR_M203", "ACE_HuntIR_M203"
     };
     items[] = {
 		"MineDetector", "ACE_Banana"  
     };
     linkedItems[] = {
-        "rhsusf_spcs_ocp_rifleman", "rhsusf_opscore_mc_pelt", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "rhsusf_spcs_ocp_rifleman", "rhsusf_opscore_mc_pelt", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
 		"JAS_GPNVG18_Tan_TI"
     };	
 	respawnWeapons[] = {
@@ -31,13 +31,13 @@ class MSF_Rifleman :  MSF_Soldier_Base
 		"rhs_mag_30Rnd_556x45_Mk318_PMAG", "1Rnd_Smoke_Grenade_shell", "1Rnd_Smoke_Grenade_shell", 
 		"1Rnd_Smoke_Grenade_shell", "1Rnd_Smoke_Grenade_shell",	"UGL_FlareGreen_F", "rhs_mag_M397_HET",
 		"rhs_mag_M397_HET", "rhs_mag_M397_HET", "ACE_40mm_Flare_green",  "ACE_40mm_Flare_green", 
-		"1Rnd_Smoke_Grenade_shell" 
+		"1Rnd_Smoke_Grenade_shell", "ACE_HuntIR_M203", "ACE_HuntIR_M203", "ACE_HuntIR_M203"
 	};
 	RespawnItems[] = {
 		"MineDetector", "ACE_Banana"
 	};
 	respawnLinkedItems[] = {
-        "rhsusf_spcs_ocp_rifleman", "rhsusf_opscore_mc_pelt", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
+        "rhsusf_spcs_ocp_rifleman", "rhsusf_opscore_mc_pelt", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
 		"JAS_GPNVG18_Tan_TI"
 	};
     uniformClass = "rhs_uniform_cu_ocp";

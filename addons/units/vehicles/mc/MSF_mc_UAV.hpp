@@ -21,7 +21,7 @@ class MSF_UAV :  MSF_Soldier_Base
         "ACE_microDAGR", "ACE_Banana"  
     };
     linkedItems[] = {
-        "rhsusf_plateframe_teamleader", "rhsusf_opscore_ut_pelt_nsw", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
+        "rhsusf_plateframe_teamleader", "rhsusf_opscore_ut_pelt_nsw", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
 		"JAS_GPNVG18_blk_TI"
     };	
 	respawnWeapons[] = {
@@ -39,7 +39,7 @@ class MSF_UAV :  MSF_Soldier_Base
         "ACE_microDAGR", "ACE_Banana"  
 	};
 	respawnLinkedItems[] = {
-        "rhsusf_plateframe_teamleader", "rhsusf_opscore_ut_pelt_nsw", "rhs_googles_clear", "ItemMap", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
+        "rhsusf_plateframe_teamleader", "rhsusf_opscore_ut_pelt_nsw", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "B_UavTerminal", 
 		"JAS_GPNVG18_blk_TI"
 	};
     uniformClass = "rhs_uniform_g3_mc";

@@ -18,7 +18,7 @@ class MSF_Marksman : MSF_Soldier_Base
 		"ACE_elasticBandage", "ACE_epinephrine", "ACE_morphine", "ACE_adenosine"
 	};
 	linkedItems[] = {
-		"rhsusf_spcs_ocp_sniper", "H_HelmetB_camo", "rhsusf_shemagh2_tan", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_Tan_TI"
+		"rhsusf_spcs_ocp_sniper", "H_HelmetB_camo", "rhsusf_shemagh2_tan", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_Tan_TI"
 	};
 	respawnWeapons[] = {
 		"MSF_rhs_weap_m14ebrri","Rangefinder","rhsusf_weap_glock17g4", "Throw", "Put"
@@ -33,7 +33,7 @@ class MSF_Marksman : MSF_Soldier_Base
 		"ACE_elasticBandage", "ACE_epinephrine", "ACE_morphine", "ACE_adenosine"
 	};
 	respawnLinkedItems[] = {
-		"rhsusf_spcs_ocp_sniper", "H_HelmetB_camo", "rhsusf_shemagh2_tan", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_Tan_TI"			
+		"rhsusf_spcs_ocp_sniper", "H_HelmetB_camo", "rhsusf_shemagh2_tan", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", "JAS_GPNVG18_Tan_TI"			
 	};
 	uniformClass = "rhs_uniform_g3_mc";
 	backpack = "MSF_mc_MarksmanBackpack";
