@@ -1,4 +1,4 @@
-class MSF_Diver :  MSF_Soldier_Base
+class MSF_SF_Diver :  MSF_Soldier_Base
 {
 	displayName = "Assault Diver";
 	role = "MSFSpecial";	

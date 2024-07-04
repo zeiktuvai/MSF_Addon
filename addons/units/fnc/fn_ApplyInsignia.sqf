@@ -17,5 +17,14 @@
 
 params ["_unit"];
 
-[_unit, ""] call BIS_fnc_setUnitInsignia; 
+[_unit, ""] call BIS_fnc_setUnitInsignia;
+if ("T" in (typeOf _unit)) exitWith {
+	[_unit, "tfy_insignia_trop"] call BIS_fnc_setUnitInsignia;
+};
+if ("W" in (typeOf _unit)) exitWith {
+	[_unit, "tfy_insignia_arct"] call BIS_fnc_setUnitInsignia;
+};
+if ("N" in (typeOf _unit) || "_SF_" in (typeOf _unit)) exitWith {
+	[_unit, "tfy_insignia_blk"] call BIS_fnc_setUnitInsignia;
+};
 [_unit, "tfy_insignia"] call BIS_fnc_setUnitInsignia;

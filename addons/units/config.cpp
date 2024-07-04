@@ -21,7 +21,7 @@ class CfgPatches
             "MSF_Marksman_N", "MSF_Medic_N", "MSF_ATRifleman_N", "MSF_AARifleman_N", "MSF_Repair_N", "MSF_Rifleman_N", 
             "MSF_UAV_N", "MSF_Crewman_W", "MSF_Engineer_W", "MSF_Grenadier_W", "MSF_Gunner_W", "MSF_Leader_W",
             "MSF_Marksman_W", "MSF_Medic_W", "MSF_Mine_W", "MSF_ATRifleman_W", "MSF_AARifleman_W", "MSF_Pilot_W",
-            "MSF_Repair_W", "MSF_Rifleman_W", "MSF_Sniper_W", "MSF_UAV_W", "MSF_Diver_Exp", "MSF_Diver"
+            "MSF_Repair_W", "MSF_Rifleman_W", "MSF_Sniper_W", "MSF_UAV_W", "MSF_SF_Diver_Exp", "MSF_SF_Diver"
         };
         weapons[] = {};
         requiredVersion = 2.0;
