@@ -3,6 +3,7 @@
 #include "MSF_Roles.hpp"
 #include "MSF_Faction.hpp"
 #include "MSF_Categories.hpp"
+#include "MSF_Weapons.hpp"
 
 class CfgPatches
 {
@@ -18,7 +19,9 @@ class CfgPatches
             "MSF_Marksman_T", "MSF_Medic_T", "MSF_ATRifleman_T", "MSF_AARifleman_T", "MSF_Repair_T", "MSF_Rifleman_T", 
             "MSF_Sniper_T", "MSF_UAV_T", "MSF_Engineer_N", "MSF_Grenadier_N", "MSF_Gunner_N", "MSF_Leader_N", 
             "MSF_Marksman_N", "MSF_Medic_N", "MSF_ATRifleman_N", "MSF_AARifleman_N", "MSF_Repair_N", "MSF_Rifleman_N", 
-            "MSF_UAV_N"
+            "MSF_UAV_N", "MSF_Crewman_W", "MSF_Engineer_W", "MSF_Grenadier_W", "MSF_Gunner_W", "MSF_Leader_W",
+            "MSF_Marksman_W", "MSF_Medic_W", "MSF_Mine_W", "MSF_ATRifleman_W", "MSF_AARifleman_W", "MSF_Pilot_W",
+            "MSF_Repair_W", "MSF_Rifleman_W", "MSF_Sniper_W", "MSF_UAV_W"
         };
         weapons[] = {};
         requiredVersion = 2.0;
@@ -27,14 +30,6 @@ class CfgPatches
     };
 };
 
-class CfgWeapons {
-    #include "weapons\MSF_rhs_m14ebr.hpp"
-    #include "weapons\MSF_rhs_hk416_m320.hpp"
-    #include "weapons\MSF_rhs_m249.hpp"
-    #include "weapons\MSF_rhs_hk416d.hpp"
-    #include "weapons\MSF_rhs_hk416d10.hpp"
-    #include "weapons\MSF_rhs_M107.hpp"
-};
 class CfgVehicles {
     #include "vehicles\MSF_Soldier_Base.hpp"
     #include "vehicles\MSF_Sniper_Base.hpp"

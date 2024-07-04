@@ -11,7 +11,7 @@ class MSF_Sniper_Base : B_T_Sniper_F
 	{
 		class MSF_Init
 		{
-			init = "[_this select 0] call MSF_fnc_ApplyInsignia;";
+			init = "[_this select 0] call MSF_fnc_ApplyInsignia; [_this select 0] call MSF_fnc_AddRadio;";
 		};
 	};
 };

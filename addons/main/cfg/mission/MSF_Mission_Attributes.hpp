@@ -85,6 +85,21 @@ class MSFSettings
 					expression = "_this setVariable ['%s',_value];";
 					defaultValue = "false";
 				};
+				class UnitRadio
+				{
+					data = "AttributeSystemSubcategory";
+					control = "SubCategory";
+					displayName = "Communications";
+				};
+				class EnableTFAR
+				{
+					displayName = "Enable TFAR Radios";
+					tooltip = "When enabled, an appropriate TFAR radio will be equipped to all MSF Units. (When disabled a standard radio is used instead)";
+					property = "MSF_Radio_TFAR";	
+					control = "Checkbox";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "false";
+				};
 			};
 		};		
 	};		
