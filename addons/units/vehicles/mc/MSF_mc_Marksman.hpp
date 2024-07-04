@@ -26,7 +26,8 @@ class MSF_Marksman : MSF_Soldier_Base
 	respawnMagazines[] = {
 		"acex_intelitems_notepad", "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_20Rnd_762x51_m993_Mag",
 		"rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_mag_17Rnd_9x19_FMJ", "rhsusf_mag_17Rnd_9x19_FMJ", "rhsusf_mag_17Rnd_9x19_FMJ", "rhsusf_mag_17Rnd_9x19_FMJ",
-		"rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_mag_17Rnd_9x19_JHP"	};
+		"rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_mag_17Rnd_9x19_JHP"	
+	};
 	RespawnItems[] = {
 		"ACE_Banana", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", 
 		"ACE_elasticBandage", "ACE_epinephrine", "ACE_morphine", "ACE_adenosine"

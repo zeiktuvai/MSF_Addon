@@ -29,4 +29,12 @@
 #include "trop\MSF_trop_UAV.hpp"
 
 #include "blk\MSF_blk_Backpack.hpp"
+#include "blk\MSF_blk_Grenadier.hpp"
+#include "blk\MSF_blk_Gunner.hpp"
+#include "blk\MSF_blk_Leader.hpp"
+#include "blk\MSF_blk_Marksman.hpp"
+#include "blk\MSF_blk_Medic.hpp"
+#include "blk\MSF_blk_Missile.hpp"
+#include "blk\MSF_blk_Repair.hpp"
 #include "blk\MSF_blk_Rifleman.hpp"
+#include "blk\MSF_blk_UAV.hpp"
