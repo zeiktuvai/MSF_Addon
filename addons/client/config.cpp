@@ -18,37 +18,44 @@ class CfgUnitInsignia
 {
     class tfy_insignia
     {
-		displayName = "Task Force Yodel Insignia (MC)";
-		author = "zeik_tuvai";
-		texture = "z\msf\addons\client\patch\unit_mc.paa";
-		textureVehicle = "";
+      displayName = "Task Force Yodel Insignia (MC)";
+      author = "zeik_tuvai";
+      texture = "z\msf\addons\client\patch\unit_mc.paa";
+      textureVehicle = "";
     };
     class tfy_insignia_trop
     {
-		displayName = "Task Force Yodel Insignia (Tropic)";
-		author = "zeik_tuvai";
-		texture = "z\msf\addons\client\patch\unit_trop.paa";
-		textureVehicle = "";
+      displayName = "Task Force Yodel Insignia (Tropic)";
+      author = "zeik_tuvai";
+      texture = "z\msf\addons\client\patch\unit_trop.paa";
+      textureVehicle = "";
     };
     class tfy_insignia_arct
     {
-		displayName = "Task Force Yodel Insignia (arctic)";
-		author = "zeik_tuvai";
-		texture = "z\msf\addons\client\patch\unit_arct.paa";
-		textureVehicle = "";
+      displayName = "Task Force Yodel Insignia (arctic)";
+      author = "zeik_tuvai";
+      texture = "z\msf\addons\client\patch\unit_arct.paa";
+      textureVehicle = "";
     };
     class tfy_insignia_blk
     {
-		displayName = "Task Force Yodel Insignia (night)";
-		author = "zeik_tuvai";
-		texture = "z\msf\addons\client\patch\unit_blk.paa";
-		textureVehicle = "";
+      displayName = "Task Force Yodel Insignia (night)";
+      author = "zeik_tuvai";
+      texture = "z\msf\addons\client\patch\unit_blk.paa";
+      textureVehicle = "";
+    };
+    class tfy_insignia_train
+    {
+      displayName = "TFY Trainee";
+      author = "zeik_tuvai";
+      texture = "z\msf\addons\client\patch\unit_train.paa";
+      textureVehicle = "";
     };
     class tfy_backup_pilot
     {
-        displayName = "TFY Backup Pilot";
-        author = "Samurai";
-        texture = "z\msf\addons\client\patch\TFY_backup_pilot.paa";
-        textureVehicle = "";
+      displayName = "TFY Backup Pilot";
+      author = "Samurai";
+      texture = "z\msf\addons\client\patch\TFY_backup_pilot.paa";
+      textureVehicle = "";
     };
 };
