@@ -7,6 +7,7 @@ class CfgFunctions
 			file = "z\msf\addons\units\fnc";
 			class ApplyInsignia {};
 			class AddRadio {};
+			class SetInsigniaHandler {};
 		};
 	};
 };

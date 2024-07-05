@@ -28,9 +28,13 @@ class MSF_Soldier_Base : B_Soldier_base_f
 	};
 	class eventhandlers
 	{
-		class MSF_Init
+		class MSF_Insignia
 		{
-			init = "[_this select 0] call MSF_fnc_ApplyInsignia; [_this select 0] call MSF_fnc_AddRadio;";
+			init = "[_this select 0] call MSF_fnc_ApplyInsignia; [_this select 0] call MSF_fnc_SetInsigniaHandler;";
+		};
+		class MSF_Radio
+		{
+			init = " [_this select 0] call MSF_fnc_AddRadio;";
 		};
 	};
 };
