@@ -4,13 +4,13 @@ class CfgPatches
 {
     class MSF3den
     {
-		name = "MSF Client Extensions";
-		author = "Zeik_Tuvai";
-		version = MSF_VERSION;
-        units[] = {};
-        weapons[] = {};
-        requiredVersion = 1.0;
-        requiredAddons[] = { "3DEN", "cba_settings", "ace_interaction" };
+      name = "MSF Client Extensions";
+      author = "Zeik_Tuvai";
+      version = MSF_VERSION;
+      units[] = {};
+      weapons[] = {};
+      requiredVersion = 1.0;
+      requiredAddons[] = { "3DEN", "cba_settings", "ace_interaction" };
     };
 };
 
@@ -18,7 +18,7 @@ class CfgUnitInsignia
 {
     class tfy_insignia
     {
-      displayName = "Task Force Yodel Insignia (MC)";
+      displaayName = "Task Force Yodel Insignia (MC)";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\patch\unit_mc.paa";
       textureVehicle = "";

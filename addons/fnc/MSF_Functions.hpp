@@ -54,12 +54,13 @@ class CfgFunctions
 		class Helpers
 		{
 			file = "z\msf\addons\fnc\helper";
-			class GetVehiclesByProperty {};
-			class GetPlayersByProperty {};
-			class GetVehiclesByPropertyValue {};
-			class GetUnitsByProperty {};
 			class AddAceMainMenuItem {};
 			class GetAreaRadius {};
+			class GetInventoryLists {};
+			class GetPlayersByProperty {};
+			class GetUnitsByProperty {};
+			class GetVehiclesByProperty {};
+			class GetVehiclesByPropertyValue {};
 		};
 		class Validators
 		{
