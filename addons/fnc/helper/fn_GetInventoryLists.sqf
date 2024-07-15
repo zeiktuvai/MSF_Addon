@@ -1,4 +1,4 @@
-params [["_magType", 0, [0]];
+params [["_magType", 0, [0]]];
 private _mags = [];
 
 private _launch = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Launcher", str getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'launcherRounds')]);
