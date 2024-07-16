@@ -19,6 +19,7 @@ class CfgFunctions
 			class ApplyRandomTriggerPatrol {};
 			class ApplyAreaFortification {};
 			class ApplyObjectActions {};
+			class RespawnVehicleCustomization {};
 		};
 		class Enemy
 		{
