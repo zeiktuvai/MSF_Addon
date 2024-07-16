@@ -2,22 +2,24 @@ class CfgFunctions
 {
     class MSF
 	{
-		class Player
+		class Initialization
 		{
 			file = "z\msf\addons\fnc";
 			class Init {};
-		};
-		class Mission
-		{
-			file = "z\msf\addons\fnc\mission";
 			class MissionInit
 			{				
 				postInit = 1;
 			};
-			class ApplyGMActions {};
-			class ApplyEndMission {};
-			class ApplyRandomTriggerPatrol {};
+		};
+		class Mission
+		{
+			file = "z\msf\addons\fnc\mission";
 			class ApplyAreaFortification {};
+			class ApplyEndMission {};
+			class ApplyGMActions {};
+			class ApplyObjectActions {};
+			class ApplyRandomTriggerPatrol {};
+			class RespawnVehicleCustomization {};
 		};
 		class Enemy
 		{
@@ -34,8 +36,8 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\mp";
 			class ConfigRespawnOnPlayer	{};
-			class JIPSpawnNearPlayer {};
 			class ConfigureMP {};
+			class JIPSpawnNearPlayer {};
 		};
 		class ACEOptions
 		{
@@ -45,21 +47,24 @@ class CfgFunctions
 		class Objects
 		{
 			file = "z\msf\addons\fnc\object";
+			class ApplyDamageReduction {};
 			class GenerateInventory {};
 			class InfiniteFuelHandler {};
-			class SetVehicleDamageReduction {};
+			class SetTimeBasedInteraction {};
 			class SetUnitDialogOption {};
-			class ApplyDamageReduction {};
+			class SetVehicleDamageReduction {};
 		};
 		class Helpers
 		{
 			file = "z\msf\addons\fnc\helper";
-			class GetVehiclesByProperty {};
-			class GetPlayersByProperty {};
-			class GetVehiclesByPropertyValue {};
-			class GetUnitsByProperty {};
 			class AddAceMainMenuItem {};
 			class GetAreaRadius {};
+			class GetInventoryLists {};
+			class GetObjectsByProperty {};
+			class GetPlayersByProperty {};
+			class GetUnitsByProperty {};
+			class GetVehiclesByProperty {};
+			class GetVehiclesByPropertyValue {};
 		};
 		class Validators
 		{

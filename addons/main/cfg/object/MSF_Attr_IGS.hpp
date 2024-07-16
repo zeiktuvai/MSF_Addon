@@ -2,7 +2,6 @@
 class MSFSystems_IGS
 {
 	displayName = "MSF Inventory Generation System";
-	collapsed = 1;
 	class Attributes
 	{
 		class InventoryGenSys

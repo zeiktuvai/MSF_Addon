@@ -2,7 +2,7 @@
 	Author: zeik_tuvai
 
 	Description:
-		Placed in the init field of a object, this code sets up an ace interaction framework action that disables itself on activation and runs
+		MSF Function. This code sets up an ace interaction framework action that disables itself on activation and runs
 		the provided code.
 
 	Parameter(s):
@@ -27,11 +27,18 @@
 		};
 		null = [this, 10, "Eat spaghetti", _finish, "I was too full!!!", false] execVM "scripts\tfy_helper_ace-progressbar.sqf";
 
-	Script version 1.1	
+	Script version 2.0	
 */
 
-params ["_unit", "_timer", "_actionName", "_successCode", "_failureMessage", "_isRepeatable"];
-_values = [_unit, _timer, _actionName, _successCode, _failureMessage];
+params [
+	["_object", objNull, [objNull]],
+	["_timer", 10, [1]],
+	["_actionName", "Interact", ["words"]],
+	["_successCode", "", ["words"]],
+	["_failMessage", "", ["words"]],
+	["_isRepeatable", false, [false]]
+];
+_values = [_object, _timer, _actionName, _successCode, _failMessage];
 private ["_cond"];
 
 if (isNil "_isRepeatable") then
@@ -40,7 +47,7 @@ if (isNil "_isRepeatable") then
 };
 
 //Setup variable on object to hold action enablement.
-_unit setVariable ["actionEnabled", true, true];
+_object setVariable ["actionEnabled", true, true];
 
 //Code for ace action
 private _statement = {
@@ -51,9 +58,10 @@ private _statement = {
 	//Progressbar code
 	[_vals select 1, [_arguments], {
 	params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
-	_args params ["_success"];
+	_args params ["_values"];
+	_values params ["_obj", "_code", "_fail"];
 
-	call (_success select 1);
+	call compile (_code);
 
 	_success select 0 setVariable ["actionEnabled", false, true];
 	},
@@ -82,4 +90,4 @@ else
 
 //Create action and add it to object.
 private _performAction = ["performaction", _actionName, "", _statement, _cond, {}, [_values]] call ace_interact_menu_fnc_createAction;
-[_unit,0,["ACE_MainActions"],_performAction] call ace_interact_menu_fnc_addActionToObject;
+[_object,0,["ACE_MainActions"],_performAction] call ace_interact_menu_fnc_addActionToObject;

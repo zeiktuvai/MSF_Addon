@@ -1,7 +1,6 @@
 class MSFAttributes
 {
 	displayName = "MSF Attributes";
-	collapsed = 1;
 	class Attributes
 	{
 		class PlayerOptions

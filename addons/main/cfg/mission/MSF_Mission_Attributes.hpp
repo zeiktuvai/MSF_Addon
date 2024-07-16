@@ -46,6 +46,15 @@ class MSFSettings
 					defaultValue = "trig_end_mission";
 					validate = "variable";
 				};
+				class MSF_Mission_VicCustomization
+				{
+					displayName = "Persist Vehicle Customizations";
+					tooltip = "When a vehicle has been customized in the garage, this presists those changes when vehicles are respawned with a vehicle respawn module.";
+					property = "MSF_Mission_VicCustomization";			
+					control = "Checkbox";
+					expression = "_this setVariable ['%s',_value];";					
+					defaultValue = "true";
+				};
 				// class EnablementCategory
 				// {
 				// 	data = "AttributeSystemSubcategory";
