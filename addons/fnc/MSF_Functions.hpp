@@ -18,6 +18,7 @@ class CfgFunctions
 			class ApplyEndMission {};
 			class ApplyRandomTriggerPatrol {};
 			class ApplyAreaFortification {};
+			class ApplyObjectActions {};
 		};
 		class Enemy
 		{
@@ -50,6 +51,7 @@ class CfgFunctions
 			class SetVehicleDamageReduction {};
 			class SetUnitDialogOption {};
 			class ApplyDamageReduction {};
+			class SetTimeBasedInteraction {};
 		};
 		class Helpers
 		{
@@ -61,6 +63,7 @@ class CfgFunctions
 			class GetUnitsByProperty {};
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};
+			class GetObjectsByProperty {};
 		};
 		class Validators
 		{
