@@ -15,7 +15,7 @@ set3DENMissionAttributes
 		["Multiplayer", "respawn", 3],
 		["Multiplayer", "respawnDelay", 15],
 		["Multiplayer", "respawnDialog", true],
-		["Multiplayer", "respawnTemplates", [ "Counter","MenuPosition", "MenuInventory", "Spectator" ]],
+		["Multiplayer", "respawnTemplates", [ "Counter","MenuPosition", "Spectator" ]],
 		["Multiplayer", "respawnOnStart", -1]
 	];
 
