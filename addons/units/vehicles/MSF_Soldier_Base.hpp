@@ -34,7 +34,7 @@ class MSF_Soldier_Base : B_Soldier_base_f
 		};
 		class MSF_Radio
 		{
-			init = " [_this select 0] call MSF_fnc_AddRadio;";
+			init = "[_this select 0] call MSF_fnc_AddRadio;";
 		};
 	};
 };
