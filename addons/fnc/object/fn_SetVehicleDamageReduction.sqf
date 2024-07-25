@@ -19,7 +19,7 @@ params ["_vics"];
 		private _unit = _this select 0;		
 		private _hit = _this select 1;
 		private _dam = _this select 2;
-		private _toughness = 1 - (arv getVariable "MSF_General_DmgReduction");
+		private _toughness = 1 - (_unit getVariable "MSF_General_DmgReduction");
 		private _damage = 0;
 
 		if ("wheel" in _hit || "track" in _hit) then {
