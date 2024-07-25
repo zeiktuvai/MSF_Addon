@@ -205,6 +205,15 @@ class CfgNonAIVehicles
 					};
 				};	
 			};
+			class MSF_Trig_Fortify_Probability
+			{
+				displayName = "Spawn Chance";
+				tooltip = "Percent chance that the area will fortify.";
+				property = "MSF_Trig_Fortify_Probability";
+				control = "Slider";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = 1;				
+			};
 			class MSFFortify_Building
 			{
 				data = "AttributeSystemSubcategory";
@@ -230,6 +239,15 @@ class CfgNonAIVehicles
 				defaultValue = "5";
 				validate = "number";
 				typeName = "NUMBER";
+			};
+			class MSF_Trig_Fortify_Building_Probability
+			{
+				displayName = "Spawn Chance";
+				tooltip = "Percent chance that patrols will spawn";
+				property = "MSF_Trig_Fortify_Building_Probability";
+				control = "Slider";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = 1;				
 			};
 			class MSFFortify_Vics
 			{
@@ -266,6 +284,15 @@ class CfgNonAIVehicles
 				expression = "_this setVariable ['%s',_value];";
 				defaultValue = 0;				
 			};
+			class MSF_Trig_Fortify_Vehicle_Probability
+			{
+				displayName = "Spawn Chance";
+				tooltip = "Percent chance that patrols will spawn";
+				property = "MSF_Trig_Fortify_Vehicle_Probability";
+				control = "Slider";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = 1;				
+			};
 			class MSFFortify_Armor
 			{
 				data = "AttributeSystemSubcategory";
@@ -292,6 +319,15 @@ class CfgNonAIVehicles
 				validate = "number";
 				typeName = "NUMBER";		
 			};
+			class MSF_Trig_Fortify_Armor_Probability
+			{
+				displayName = "Spawn Chance";
+				tooltip = "Percent chance that patrols will spawn";
+				property = "MSF_Trig_Fortify_Armor_Probability";
+				control = "Slider";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = 1;				
+			};
 			class MSFFortify_Static
 			{
 				data = "AttributeSystemSubcategory";
@@ -317,6 +353,15 @@ class CfgNonAIVehicles
 				defaultValue = "2";
 				validate = "number";
 				typeName = "NUMBER";		
+			};
+			class MSF_Trig_Fortify_Static_Probability
+			{
+				displayName = "Spawn Chance";
+				tooltip = "Percent chance that patrols will spawn";
+				property = "MSF_Trig_Fortify_Static_Probability";
+				control = "Slider";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = 1;				
 			};
 			class MSFFortify_Patrol
 			{
