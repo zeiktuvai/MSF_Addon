@@ -28,7 +28,7 @@ if (isServer) then {
 		[] call MSF_fnc_ApplyEndMission;
 	};	
 
-	if (getMissionConfigValue ["MSF_Mission_EndMission", true]) then {
+	if (getMissionConfigValue ["MSF_Mission_VicCustomization", true]) then {
 		[] call MSF_fnc_RespawnVehicleCustomization;
 	};
 };
