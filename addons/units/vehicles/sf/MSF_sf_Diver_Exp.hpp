@@ -5,6 +5,7 @@ class MSF_SF_Diver_Exp :  MSF_Soldier_Base
 	editorSubcategory = "MSF_EdSubcat_Inf_Spec";
 	scope = 2;
 	scopeCurator = 2;
+	canDeactivateMines = 1;
 	weapons[] = {
         "arifle_SDAR_F", "Binocular", "hgun_P07_snds_F", "Throw", "Put"
     };
