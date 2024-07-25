@@ -25,6 +25,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\enemy";
 			class CreateAreaBuildingDefense {};
+			class CreateAreaDefense {};
 			class CreateAreaVehicleDefense {};
 			class CreateAreaVehiclePatrol {};
 			class CreateRandomTriggerPatrol {};
@@ -58,6 +59,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\helper";
 			class AddAceMainMenuItem {};
+			class FindSafeSpawnPos {};
 			class GetAreaRadius {};
 			class GetInventoryLists {};
 			class GetObjectsByProperty {};
