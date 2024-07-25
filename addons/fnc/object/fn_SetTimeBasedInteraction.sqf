@@ -41,11 +41,6 @@ params [
 _values = [_object, _timer, _actionName, _successCode, _failMessage];
 private ["_cond"];
 
-if (isNil "_isRepeatable") then
-{
-	_isRepeatable = false;
-};
-
 //Setup variable on object to hold action enablement.
 _object setVariable ["actionEnabled", true, true];
 
@@ -63,7 +58,7 @@ private _statement = {
 
 	call compile (_code);
 
-	_success select 0 setVariable ["actionEnabled", false, true];
+	_obj setVariable ["actionEnabled", false, true];
 	},
 	{ 
 		params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
@@ -77,10 +72,10 @@ private _statement = {
 if (!_isRepeatable) then
 {
 	_cond = {
-	params ["_target", "_player", "_cparams"];
-	_cparams params ["_cvals"];
+		params ["_target", "_player", "_cparams"];
+		_cparams params ["_cvals"];
 
-	_cvals select 0 getVariable "actionEnabled";
+		_cvals select 0 getVariable "actionEnabled";
 	};
 }
 else

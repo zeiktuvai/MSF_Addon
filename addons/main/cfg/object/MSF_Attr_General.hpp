@@ -60,20 +60,14 @@ class MSFGeneralFunctions
 			expression = "_this setVariable ['%s',_value];";			
 			defaultValue = "Interact";
 		};
-		class MSF_Gen_prog_CodeDesc
-		{
-			data = "AttributeSystemSubcategory";
-			control = "SubCategoryNoHeader1";
-			description = "Use  _obj  in your code to refer to the object being interacted with.";
-		};
 		class MSF_Gen_prog_action
 		{
 			displayName = "Action Code";
-			tooltip = "Code block that is ran upon completion of the interaction.";
+			tooltip = "Code block that is ran upon completion of the interaction. Use _obj in your code to refer to the object being interacted with.";
 			property = "MSF_Gen_prog_action";
 			control = "EditCodeMulti3";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "hint ""Success""";
+			defaultValue = "";
 		};
 		class MSF_Gen_prog_fail
 		{
