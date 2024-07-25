@@ -30,7 +30,7 @@ for "_i" from 1 to _num do {
 	private _pos = [[_trigger] call BIS_fnc_randomPosTrigger, 5, 100, 3, 0, 10, 0] call BIS_fnc_findSafePos;
 	private _vic = [_pos, 0, _type, _side] call BIS_fnc_spawnVehicle;
 
-	if (_trigger getVariable ["MSF_Trig_Fortify_Zeus", false]) then {
+	if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
 		{ _x addCuratorEditableObjects [[_vic select 0], true]} forEach allCurators;
 	};
 	

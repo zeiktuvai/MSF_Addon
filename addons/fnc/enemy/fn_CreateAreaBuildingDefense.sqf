@@ -14,15 +14,27 @@ params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [eas
 	
 private _radius = [_trigger] call MSF_fnc_GetAreaRadius;
 
-for "_i" from 1 to _num do {
-	if (!isDedicated) then {
-		sleep 0.1;
-	};
-	private _pos = [_trigger] call BIS_fnc_randomPosTrigger;
-	private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
-	[_pos, units _group, _radius, false, false, true] call MSF_fnc_ZEN_OccupyHouse;
+private _bldg0 = nearestObjects [getPosATL aa, ["house"], _radius]; 
+private _bldg1 = nearestObjects [getPosATL aa, ["building"], _radius];
+private _bldg = _bldg0 arrayIntersect _bldg1;
+private _bldgFound = false;
 
-	if (_trigger getVariable ["MSF_Trig_Fortify_Zeus", false]) then {
-		{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
+{
+	if ( count (_x buildingPos -1) > 0 ) then { _bldgFound = true; };
+} forEach _bldg;
+
+
+if (_bldgFound == true) then {
+	for "_i" from 1 to _num do {
+		if (!isDedicated) then {
+			sleep 0.1;
+		};
+		private _pos = [_trigger] call BIS_fnc_randomPosTrigger;
+		private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
+		[_pos, units _group, _radius, false, false, true] call MSF_fnc_ZEN_OccupyHouse;
+
+		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
+			{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
+		};
 	};
 };

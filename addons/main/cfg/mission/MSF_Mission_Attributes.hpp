@@ -55,6 +55,15 @@ class MSFSettings
 					expression = "_this setVariable ['%s',_value];";					
 					defaultValue = "true";
 				};
+				class MSF_Mission_Zeus
+				{
+					displayName = "Add units to Zeus";
+					tooltip = "Add all spawned units to every zeus module placed in the mission.";
+					property = "MSF_Mission_Zeus";			
+					control = "Checkbox";
+					expression = "_this setVariable ['%s',_value];";					
+					defaultValue = "true";
+				};
 				// class EnablementCategory
 				// {
 				// 	data = "AttributeSystemSubcategory";

@@ -13,15 +13,6 @@ class CfgNonAIVehicles
 				displayName = "Patrol Options";				
 				description = "Be sure to set the trigger activation properties, or units won't spawn.";
 			};
-			class MSF_Trig_Patrol_Zeus
-			{
-				displayName = "Add Generated Patrols to Zeus";
-				tooltip = "If checked, the generated patrols will be added to all Zeus's (curators) in the mission.";
-				property = "MSF_Trig_Patrol_Zeus";
-				control = "Checkbox";
-				expression = "_this setVariable ['%s',_value];";
-				defaultValue = "true";				
-			};
 			class MSF_Trig_Patrol_CombatMode
 			{
 				displayName = "Spawn Behavior";
@@ -183,15 +174,6 @@ class CfgNonAIVehicles
 				expression = "_this setVariable ['%s',_value];";
 				defaultValue = "false";				
 			};
-			class MSF_Trig_Fortify_Zeus
-			{
-				displayName = "Add Spawns to Zeus";
-				tooltip = "Adds spawned units to zeus.";
-				property = "MSF_Trig_Fortify_Zeus";
-				control = "Checkbox";
-				expression = "_this setVariable ['%s',_value];";
-				defaultValue = "false";				
-			};
 			class MSF_Trig_Fortify_Side
 			{
 				displayName = "Side";
@@ -231,7 +213,7 @@ class CfgNonAIVehicles
 			};
 			class MSF_Trig_Fortify_Building_Enable
 			{
-				displayName = "Enable Area Fortification";
+				displayName = "Enable Building Fortification";
 				tooltip = "Spawn enemies in buildings in this trigger. (If there are no buildings, no enemies will spawn).";
 				property = "MSF_Trig_Fortify_Building_Enable";
 				control = "Checkbox";
@@ -328,13 +310,48 @@ class CfgNonAIVehicles
 			class MSF_Trig_Fortify_Static_Num
 			{
 				displayName = "Number to Spawn";
-				tooltip = "Number of turret emplacements to spawn.";
+				tooltip = "Number of turret emplacements to spawn. (Capped at 10)";
 				property = "MSF_Trig_Fortify_Static_Num";
 				control = "EditShort";
-				expression = "if (_value > 0 && _value < 11) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
+				expression = "if (_value > 0 && _value < 10) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
 				defaultValue = "2";
 				validate = "number";
 				typeName = "NUMBER";		
+			};
+			class MSFFortify_Patrol
+			{
+				data = "AttributeSystemSubcategory";
+				control = "SubCategory";
+				displayName = "Area Fortification Infantry Patrols";
+			};
+			class MSF_Trig_Fortify_Patrol_Enable
+			{
+				displayName = "Enable area patrols";
+				tooltip = "Spawn patrols in the fortification area.";
+				property = "MSF_Trig_Fortify_Patrol_Enable";
+				control = "Checkbox";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = "false";				
+			};
+			class MSF_Trig_Fortify_patrol_Num
+			{
+				displayName = "Number to Spawn";
+				tooltip = "Number of patrols emplacements to spawn. (capped at 5)";
+				property = "MSF_Trig_Fortify_patrol_Num";
+				control = "EditShort";
+				expression = "if (_value > 0 && _value < 5) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
+				defaultValue = "2";
+				validate = "number";
+				typeName = "NUMBER";		
+			};
+			class MSF_Trig_Fortify_Patrol_Probability
+			{
+				displayName = "Spawn Chance";
+				tooltip = "Percent chance that patrols will spawn";
+				property = "MSF_Trig_Fortify_Patrol_Probability";
+				control = "Slider";
+				expression = "_this setVariable ['%s',_value];";
+				defaultValue = 1;				
 			};
 		};
 	};
