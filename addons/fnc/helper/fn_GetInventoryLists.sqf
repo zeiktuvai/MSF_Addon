@@ -1,4 +1,12 @@
-params [["_magType", 0, [0]]];
+/*
+	Author: zeik_tuvai
+
+	Description:
+		Gets an array list of configured inventory items for filling cargo containers.
+    	
+	Function Ver 1.0
+	Implemented in: MSF Addon v2.1.0
+*/params [["_magType", 0, [0]]];
 private _mags = [];
 
 private _launch = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Launcher", str getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'launcherRounds')]);
@@ -9,10 +17,10 @@ private _items = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Item",
 
 switch (_magType) do {
 	case 0: {
-		private _mags = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Mag", str getArray (configFile >> 'MSFConfig' >> 'MagazineSets' >> 'rhs_usaf')]);
+		_mags = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Mag", str getArray (configFile >> 'MSFConfig' >> 'MagazineSets' >> 'rhs_usaf')]);
 	 };
 	case 1: {
-		private _mags = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Mag", str getArray (configFile >> 'MSFConfig' >> 'MagazineSets' >> 'mx')]);
+		_mags = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Mag", str getArray (configFile >> 'MSFConfig' >> 'MagazineSets' >> 'mx')]);
 	};
 };
 

@@ -19,6 +19,7 @@ if (isServer) then {
 	[] call MSF_fnc_ApplyRandomTriggerPatrol;
 	[] call MSF_fnc_ApplyAreaFortification;
 	[] call MSF_fnc_ApplyObjectActions;
+	[] call MSF_fnc_ApplySupplyTriggers;
 
 	if (getMissionConfigValue "MSF_Mission_GM") then {
 		[] call MSF_fnc_ApplyGMActions;

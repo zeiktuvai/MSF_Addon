@@ -19,6 +19,7 @@ class CfgFunctions
 			class ApplyGMActions {};
 			class ApplyObjectActions {};
 			class ApplyRandomTriggerPatrol {};
+			class ApplySupplyTriggers {};
 			class RespawnVehicleCustomization {};
 		};
 		class Enemy
@@ -49,6 +50,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\object";
 			class ApplyDamageReduction {};
+			class CreateRandomSupplies {};
 			class GenerateInventory {};
 			class InfiniteFuelHandler {};
 			class SetTimeBasedInteraction {};
@@ -59,7 +61,10 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\helper";
 			class AddAceMainMenuItem {};
+			class CreateActivationTrigger {};
+			class FindOutsidePositionInTrigger {};
 			class FindSafeSpawnPos {};
+			class GenerateRandomInventory {};
 			class GetAreaRadius {};
 			class GetInventoryLists {};
 			class GetObjectsByProperty {};
