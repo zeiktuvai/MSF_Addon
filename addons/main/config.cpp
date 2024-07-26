@@ -49,7 +49,14 @@ class Extended_PreInit_EventHandlers
 };
 
 #include "cfg\mission\MSF_Config.hpp"
-#include "cfg\object\MSF_Attr_Trigger.hpp"
+
+class CfgNonAIVehicles
+{
+	class EmptyDetector;
+	#include "cfg\trigger\MSF_Attr_FortifyTrigger.hpp"
+	#include "cfg\trigger\MSF_Attr_PatrolTrigger.hpp"
+	#include "cfg\trigger\MSF_Attr_SupplyTrigger.hpp"
+};
 
 //not working....
 // class Extended_InitPost_EventHandlers {
