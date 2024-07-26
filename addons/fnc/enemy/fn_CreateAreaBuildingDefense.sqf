@@ -29,12 +29,18 @@ if (_bldgFound == true) then {
 		if (!isDedicated) then {
 			sleep 0.1;
 		};
-		private _pos = [_trigger] call BIS_fnc_randomPosTrigger;
-		private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
-		[_pos, units _group, _radius, false, false, true] call MSF_fnc_ZEN_OccupyHouse;
+	
+		private _spawnChance = _trigger getVariable ["MSF_Trig_Fortify_Building_Probability", 1];
+		_chance = random 100;
 
-		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
-			{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
+		if (_chance >= (_spawnChance * 100)) then {	
+			private _pos = [_trigger] call BIS_fnc_randomPosTrigger;
+			private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
+			[_pos, units _group, _radius, false, false, true] call MSF_fnc_ZEN_OccupyHouse;
+
+			if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
+				{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
+			};
 		};
 	};
 };

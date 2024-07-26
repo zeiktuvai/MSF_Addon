@@ -11,10 +11,7 @@
 	Implemented in: MSF Addon v1.5.2
 */
 
-private _triggers = allMissionObjects "EmptyDetector" select { 
-	(_x getVariable ["MSF_Trigger_Patrol", false] == true && _x getVariable ["MSF_Trig_Patrol_Group", ""] != "") ||
-	_x getVariable ["MSF_Trigger_Patrol_Vic", false] == true
-};
+private _triggers = allMissionObjects "MSFTrigger";
 
 {	
 	private _act = triggerActivation _x;

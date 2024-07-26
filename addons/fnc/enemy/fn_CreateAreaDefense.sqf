@@ -18,27 +18,32 @@ for "_i" from 1 to _num do {
 		sleep 0.1;
 	};
 
-	private _pos = [_trigger] call MSF_fnc_FindSafeSpawnPos;
-	private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
+	private _spawnChance = _trigger getVariable ["MSF_Trig_Fortify_Patrol_Probability", 1];
+	_chance = random 100;
 
-	if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
-		{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
+	if (_chance >= (_spawnChance * 100)) then {	
+		private _pos = [_trigger] call MSF_fnc_FindSafeSpawnPos;
+		private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
+
+		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
+			{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
+		};
+
+		private _start = getPos (units _group select 0);
+
+		for "_w" from 1 to 5 do
+		{
+			//find random trigger pos
+			_wp = _group addWaypoint [[_trigger] call BIS_fnc_randomPosTrigger, 0];
+			_wp setWaypointType "MOVE";
+			_wp setWaypointBehaviour "SAFE";
+			_wp setWaypointCombatMode "YELLOW";
+			_wp setWaypointSpeed "LIMITED";
+			_wp setWaypointFormation "FILE";
+		};
+
+		// add final waypoint for cycle movement
+		_wp = _group addWaypoint [_start, 0];
+		_wp setWaypointType "CYCLE";
 	};
-
-	private _start = getPos (units _group select 0);
-
-	for "_w" from 1 to 5 do
-	{
-		//find random trigger pos
-		_wp = _group addWaypoint [[_trigger] call BIS_fnc_randomPosTrigger, 0];
-		_wp setWaypointType "MOVE";
-		_wp setWaypointBehaviour "SAFE";
-		_wp setWaypointCombatMode "YELLOW";
-		_wp setWaypointSpeed "LIMITED";
-		_wp setWaypointFormation "FILE";
-	};
-
-	// add final waypoint for cycle movement
-	_wp = _group addWaypoint [_start, 0];
-	_wp setWaypointType "CYCLE";
 };
