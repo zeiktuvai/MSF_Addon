@@ -122,12 +122,21 @@ class MSFProperties
 				};
 				class UnitTypes
 				{
-					displayName = "List of units";
-					tooltip = "List of enemy units to spawn in vehicles.";
+					displayName = "List of Infantry units to Spawn";
+					tooltip = "List of enemy infantry units to spawn from.";
 					property = "MSFProp_Unit_Types";
 					control = "EditCodeMulti3";
 					expression = "_this setVariable ['%s',_value];";
 					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Units');";
+				};
+				class AirTypes
+				{
+					displayName = "List of Air units to Spawn";
+					tooltip = "List of enemy air units to spawn from.";
+					property = "MSFProp_Air_Types";
+					control = "EditCodeMulti3";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Air');";
 				};
 			};
 		};

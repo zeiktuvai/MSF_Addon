@@ -24,6 +24,7 @@ class MSFConfig
 			Armor[] = {"rhs_bmp2k_msv", "rhs_bmp3_late_msv", "rhs_t72bc_tv", "rhs_t72be_tv", "rhs_t80b", "rhs_t90a_tv", "rhs_t90sm_tv", "rhs_t14_tv"};
 			Turrets[] = {"RHS_AGS30_TriPod_MSV","rhs_KORD_MSV","rhs_KORD_high_MSV","RHS_NSV_TriPod_MSV","RHS_ZU23_MSV"};
 			Units[] = {"rhs_msv_emr_armoredcrew", "rhs_msv_emr_rifleman", "rhs_msv_emr_sergeant", "rhs_msv_emr_machinegunner", "rhs_msv_emr_LAT"};
+			Air[] = {"RHS_Mi24P_vdv", "RHS_Mi24V_vdv", "RHS_Mi8mt_vdv", "RHS_Mi8MTV3_vdv", "RHS_Mi8MTV3_heavy_vdv"};
 		};
 	};	
 };

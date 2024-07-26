@@ -25,6 +25,7 @@ class CfgFunctions
 		class Enemy
 		{
 			file = "z\msf\addons\fnc\enemy";
+			class CreateAreaAirAttack {};
 			class CreateAreaBuildingDefense {};
 			class CreateAreaDefense {};
 			class CreateAreaVehicleDefense {};

@@ -11,21 +11,13 @@
 	Implemented in: MSF Addon v1.6.0
 */
 
-MSF_ifnc_GetUnitSpawnProbability = {
-	params [["_chance", 1, [1]]];
-	private _spawn = false;
-
-	if (random 1 <= _chance) then { _spawn = true; };
-
-	_spawn;
-};
-
 params [["_trigger", objNull, [objNull]]];
 
 private _infantryGroupClasses = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Groups');
 private _staticTypes = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Turrets');
 private _vicTypes = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Vehicles');
 private _armorTypes = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Armor');
+private _airClasses = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Air');
 
 if (_trigger getVariable ["MSF_Trig_Fortify_Enable", false]) then {
 	private _side = _trigger getVariable ["MSF_Trig_Fortify_Side", east];
@@ -90,19 +82,34 @@ if (_trigger getVariable ["MSF_Trig_Fortify_Enable", false]) then {
 	};
 
 	// Area patrol
-	if (_trigger getVariable ["MSF_Trig_Fortify_Patrol_Enable", false]) then {
-		if ([_trigger getVariable ["MSF_Trig_Fortify_Patrol_Probability", 1]] call MSF_ifnc_GetUnitSpawnProbability) then {
-			private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_patrol_Num", 2];
-			if (!isDedicated) then {
-				[_trigger, _vicNum, _side, _infantryGroupClasses] spawn {
-					params ["_trigger", "_vicNum", "_side", "_infantryGroupClasses"];
-					[_trigger, _vicNum, _side, _infantryGroupClasses] call MSF_fnc_CreateAreaDefense;
-				};
-			}
-			else
-			{
+	if (_trigger getVariable ["MSF_Trig_Fortify_Patrol_Enable", false]) then {		
+		private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_patrol_Num", 2];
+		if (!isDedicated) then {
+			[_trigger, _vicNum, _side, _infantryGroupClasses] spawn {
+				params ["_trigger", "_vicNum", "_side", "_infantryGroupClasses"];
 				[_trigger, _vicNum, _side, _infantryGroupClasses] call MSF_fnc_CreateAreaDefense;
 			};
-		};
+		}
+		else
+		{
+			[_trigger, _vicNum, _side, _infantryGroupClasses] call MSF_fnc_CreateAreaDefense;
+		};		
 	};
+
+	// Air units
+	if (_trigger getVariable ["MSF_Trig_Fortify_Air_Enable", false]) then {		
+		private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_Air_Num", 2];
+		private _chance = _trigger getVariable ["MSF_Trig_Fortify_Air_Probability", 1];
+
+		if (!isDedicated) then {
+			[_trigger, _vicNum, _side, _infantryGroupClasses] spawn {
+				params ["_trigger", "_vicNum", "_side", "_infantryGroupClasses"];
+				[_trigger, _vicNum, _side, _airClasses, _chance] call MSF_fnc_CreateAreaAirAttack;
+			};
+		}
+		else
+		{
+			[_trigger, _vicNum, _side, _airClasses, _chance] call MSF_fnc_CreateAreaAirAttack;
+		};
+	};	
 };

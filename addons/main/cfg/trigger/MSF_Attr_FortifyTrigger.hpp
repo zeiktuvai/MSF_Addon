@@ -10,15 +10,6 @@ class MSFTriggeFortify : EmptyDetector
 			displayName = "Area Fortification Options";				
 			description = "Be sure to set the trigger activation properties, or units won't spawn.";
 		};
-		class MSF_Trig_Fortify_Enable
-		{
-			displayName = "Enable Area Fortification";
-			tooltip = "Enables the area fortification system for this trigger.";
-			property = "MSF_Trig_Fortify_Enable";
-			control = "CheckboxState";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "false";				
-		};
 		class MSF_Trig_Fortify_Side
 		{
 			displayName = "Side";
@@ -239,6 +230,41 @@ class MSFTriggeFortify : EmptyDetector
 			displayName = "Spawn Chance";
 			tooltip = "Percent chance that patrols will spawn";
 			property = "MSF_Trig_Fortify_Patrol_Probability";
+			control = "Slider";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 1;				
+		};
+		class MSFFortify_Air
+		{
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "Area Fortification Air unit attack";
+		};
+		class MSF_Trig_Fortify_Air_Enable
+		{
+			displayName = "Enable Air Units";
+			tooltip = "Spawn air units that fly to the trigger and seek and destroy.";
+			property = "MSF_Trig_Fortify_Air_Enable";
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "false";				
+		};
+		class MSF_Trig_Fortify_Air_Num
+		{
+			displayName = "Number to Spawn";
+			tooltip = "Number of patrols emplacements to spawn. (capped at 5)";
+			property = "MSF_Trig_Fortify_Air_Num";
+			control = "EditShort";
+			expression = "if (_value > 0 && _value < 5) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
+			defaultValue = "2";
+			validate = "number";
+			typeName = "NUMBER";		
+		};
+		class MSF_Trig_Fortify_Air_Probability
+		{
+			displayName = "Spawn Chance";
+			tooltip = "Percent chance that air units will spawn";
+			property = "MSF_Trig_Fortify_Air_Probability";
 			control = "Slider";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 1;				

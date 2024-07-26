@@ -11,9 +11,7 @@
 	Implemented in: MSF Addon v1.5.2
 */
 
-private _triggers = allMissionObjects "EmptyDetector" select { 
-	_x getVariable ["MSF_Trig_Fortify_Enable", false] == true;
-};
+private _triggers = allMissionObjects "MSFTriggeFortify";
 
 
 {
