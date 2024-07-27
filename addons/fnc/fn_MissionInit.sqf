@@ -17,8 +17,8 @@ if (isServer) then {
 	[] call MSF_fnc_SetUnitDialogOption;
 	[] call MSF_fnc_ApplyDamageReduction;
 	[] call MSF_fnc_ApplyRandomTriggerPatrol;
-	[] call MSF_fnc_ApplyAreaFortification;
 	[] call MSF_fnc_ApplyObjectActions;
+	[] call MSF_fnc_SetupMSFTriggers;
 
 	if (getMissionConfigValue "MSF_Mission_GM") then {
 		[] call MSF_fnc_ApplyGMActions;
@@ -28,7 +28,7 @@ if (isServer) then {
 		[] call MSF_fnc_ApplyEndMission;
 	};	
 
-	if (getMissionConfigValue ["MSF_Mission_EndMission", true]) then {
+	if (getMissionConfigValue ["MSF_Mission_VicCustomization", true]) then {
 		[] call MSF_fnc_RespawnVehicleCustomization;
 	};
 };

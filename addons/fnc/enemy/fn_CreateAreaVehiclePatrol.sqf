@@ -40,7 +40,7 @@ for "_g" from 1 to _count do {
 	_group setCombatMode _mode;
 	_group setBehaviour _behv;
 
-	if (_trigger getVariable ["MSF_Trig_Patrol_Zeus", true]) then {
+	if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
 	{ _x addCuratorEditableObjects [[_gen select 0], true]} forEach allCurators;
 	};
 

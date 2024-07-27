@@ -14,20 +14,23 @@ class CfgFunctions
 		class Mission
 		{
 			file = "z\msf\addons\fnc\mission";
-			class ApplyAreaFortification {};
 			class ApplyEndMission {};
 			class ApplyGMActions {};
 			class ApplyObjectActions {};
 			class ApplyRandomTriggerPatrol {};
 			class RespawnVehicleCustomization {};
+			class SetupMSFTriggers {};
 		};
 		class Enemy
 		{
 			file = "z\msf\addons\fnc\enemy";
+			class CreateAreaAirAttack {};
 			class CreateAreaBuildingDefense {};
+			class CreateAreaDefense {};
 			class CreateAreaVehicleDefense {};
 			class CreateAreaVehiclePatrol {};
 			class CreateRandomTriggerPatrol {};
+			class CreateWaveDefenseArea {};
 			class DeleteRandomTriggerPatrol {};
 			class FortifyArea {};
 			class SpawnGroupInSafePos {};
@@ -48,20 +51,28 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\object";
 			class ApplyDamageReduction {};
+			class CreateRandomSupplies {};
 			class GenerateInventory {};
 			class InfiniteFuelHandler {};
 			class SetTimeBasedInteraction {};
 			class SetUnitDialogOption {};
 			class SetVehicleDamageReduction {};
+			class SpawnSeekAndDestroyVehicles {};
 		};
 		class Helpers
 		{
 			file = "z\msf\addons\fnc\helper";
 			class AddAceMainMenuItem {};
+			class CreateActivationTrigger {};
+			class FindOutsidePositionInTrigger {};
+			class FindSafeSpawnPos {};
+			class GenerateRandomInventory {};
 			class GetAreaRadius {};
 			class GetInventoryLists {};
 			class GetObjectsByProperty {};
 			class GetPlayersByProperty {};
+			class GetSpawnChance {};
+			class GetUnitClasses {};
 			class GetUnitsByProperty {};
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};

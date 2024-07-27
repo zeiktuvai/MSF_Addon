@@ -26,26 +26,34 @@ for "_i" from 1 to _num do {
 		sleep 0.1;
 	};
 	
-	private _type = selectRandom _vicTypes;
-	private _pos = [[_trigger] call BIS_fnc_randomPosTrigger, 5, 100, 3, 0, 10, 0] call BIS_fnc_findSafePos;
-	private _vic = [_pos, 0, _type, _side] call BIS_fnc_spawnVehicle;
-
-	if (_trigger getVariable ["MSF_Trig_Fortify_Zeus", false]) then {
-		{ _x addCuratorEditableObjects [[_vic select 0], true]} forEach allCurators;
-	};
+	private _spawnChance = _trigger getVariable ["MSF_Trig_Fortify_Vehicle_Probability", 1];
+	if (_isArmor) then {_spawnChance = _trigger getVariable ["MSF_Trig_Fortify_Armor_Probability", 1];};
+	if (_isStatic) then {_spawnChance = _trigger getVariable ["MSF_Trig_Fortify_Static_Probability", 1];};
 	
-	if (!_isArmor && !_isStatic) then {
-		private _spawnChance = _trigger getVariable ["MSF_Trig_Fortify_VicFillPercentage", 0];
-		_chance = random 100;
-		if (_chance > (_spawnChance * 100)) then {		
-			_totalSlots = ([_type, true] call BIS_fnc_crewCount);
-			_cargoSlots = ([_type, false] call BIS_fnc_crewCount);
-			_availSlots = _totalSlots - _cargoSlots - count crew (_vic select 0);
+	_chance = random 100;
 
-			for "_k" from 1 to _availSlots do {
-				private _crewD = (_vic select 2) createUnit [selectRandom _unitTypes, _pos, [], 0, "FORM"];
-				[_crewD] join (_vic select 2);
-				_crewD moveInAny (_vic select 0);
+	if ([_spawnChance] call MSF_fnc_GetSpawnChance) then {	
+		private _type = selectRandom _vicTypes;
+		private _pos = [[_trigger] call BIS_fnc_randomPosTrigger, 5, 100, 3, 0, 10, 0] call BIS_fnc_findSafePos;
+		private _vic = [_pos, 0, _type, _side] call BIS_fnc_spawnVehicle;
+
+		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
+			{ _x addCuratorEditableObjects [[_vic select 0], true]} forEach allCurators;
+		};
+		
+		if (!_isArmor && !_isStatic) then {
+			private _fillChance = _trigger getVariable ["MSF_Trig_Fortify_VicFillPercentage", 0];
+			_fchance = random 100;
+			if (_fchance >+ (_fillChance * 100)) then {		
+				_totalSlots = ([_type, true] call BIS_fnc_crewCount);
+				_cargoSlots = ([_type, false] call BIS_fnc_crewCount);
+				_availSlots = _totalSlots - _cargoSlots - count crew (_vic select 0);
+
+				for "_k" from 1 to _availSlots do {
+					private _crewD = (_vic select 2) createUnit [selectRandom _unitTypes, _pos, [], 0, "FORM"];
+					[_crewD] join (_vic select 2);
+					_crewD moveInAny (_vic select 0);
+				};
 			};
 		};
 	};

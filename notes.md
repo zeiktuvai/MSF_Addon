@@ -1,41 +1,15 @@
-- added all previous loadouts as units under NATO (MSF)
-	- Make sure to remove MSF_Config.hpp line from your description ext
-	- Replace all units that used loadouts with new MSF ones.
-- changed number of base items that spawn in inventory gen
-- fixed bug that causes inv gen system to panic in new scenario
-- optimized patrol and fortify code to reduce stuttering when playing locally, but spawn as quickly as possible when on a dedicated server.
+- Added Vehicle customization persitence.
+- Added area infantry patrol to fortify trigger.
+- Added spawning air units to fortify trigger.
+- Added new trigger to spawn supplies within the trigger area.
+- Added new trigger to spawn far enemies that assault the trigger area in waves.
+- Updated Triggers to use global zeus variable.
+- Fixed bug with SF Diver explosive spec not being able to defuse explosives.
+- Fixed bug in damage reduction that incorrectly applied toughness value.
+- Fixed bug that caused the interaction progress bar to stay repeatable.
+- Fixed bug in Fortify Building Defense causing the wrong trigger to be passed.
 
-h1 isKindOf "Air";
-h1 isKindOf "LandVehicle";
 
-
-
-
-private _vehicleList = vehicles select { _x getVariable "MSF_Persist_isEnable" == true; }; 
-
-private _data = missionProfileNamespace getVariable ["MSF_Persist_1", []]; 
-
-```sqf
-if (count _data != 0 && count _vehicleList != 0) then 
-{ 
- { 
-  (_x select 0) params ["_vicName", "_vicType", "_dmg", "_inv", "_look", "_ammo", "_fuel", "_isAlive", "_loc", "_aceRefuel", "_aceRearm"]; 
-  private ["_vic"]; 
- 
-  _vic = _vehicleList select { typeOf _x == _vicType && _x getVariable ["PersistenceSet", false] == false } select 0; 
- 
-  if (!isNil "_vic") then { 
-    [_vic, _vicType, _inv, _dmg, _look, _ammo, _fuel, _isAlive, _loc, _aceRefuel, _aceRearm] call MSF_fnc_Persist_SetVehicleData;
-   systemChat str _vic;
-   _vic setVariable ["PersistenceSet", true]; 
-  }; 
- } forEach _data; 
-};
-```
-
-private _Nrig = missionNamespace getVariable "trig_end_mission";
-
-triggerActivated _Nrig;
 
 event hanlder stuff
 https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)

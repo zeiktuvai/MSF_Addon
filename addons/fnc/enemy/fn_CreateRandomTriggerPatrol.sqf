@@ -36,7 +36,7 @@ if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {
 		_group setSpeedMode _speed;
 		_group setCombatMode _mode;
 		_group setBehaviour _behv;
-		if (_trigger getVariable ["MSF_Trig_Patrol_Zeus", true]) then {
+		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
 			{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
 		};
 		_ids pushBack _group;
