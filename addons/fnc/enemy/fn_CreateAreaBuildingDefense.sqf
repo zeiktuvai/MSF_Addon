@@ -14,8 +14,8 @@ params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [eas
 	
 private _radius = [_trigger] call MSF_fnc_GetAreaRadius;
 
-private _bldg0 = nearestObjects [getPosATL aa, ["house"], _radius]; 
-private _bldg1 = nearestObjects [getPosATL aa, ["building"], _radius];
+private _bldg0 = nearestObjects [getPosATL _trigger, ["house"], _radius]; 
+private _bldg1 = nearestObjects [getPosATL _trigger, ["building"], _radius];
 private _bldg = _bldg0 arrayIntersect _bldg1;
 private _bldgFound = false;
 
@@ -33,7 +33,7 @@ if (_bldgFound == true) then {
 		private _spawnChance = _trigger getVariable ["MSF_Trig_Fortify_Building_Probability", 1];
 		_chance = random 100;
 
-		if (_chance >= (_spawnChance * 100)) then {	
+		if ([_spawnChance] call MSF_fnc_GetSpawnChance) then {	
 			private _pos = [_trigger] call BIS_fnc_randomPosTrigger;
 			private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
 			[_pos, units _group, _radius, false, false, true] call MSF_fnc_ZEN_OccupyHouse;
