@@ -41,15 +41,6 @@ class MSFTriggeFortify : EmptyDetector
 				};
 			};	
 		};
-		class MSF_Trig_Fortify_Probability
-		{
-			displayName = "Spawn Chance";
-			tooltip = "Percent chance that the area will fortify.";
-			property = "MSF_Trig_Fortify_Probability";
-			control = "Slider";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 1;				
-		};
 		class MSFFortify_Building
 		{
 			data = "AttributeSystemSubcategory";
@@ -217,7 +208,7 @@ class MSFTriggeFortify : EmptyDetector
 		class MSF_Trig_Fortify_patrol_Num
 		{
 			displayName = "Number to Spawn";
-			tooltip = "Number of patrols emplacements to spawn. (capped at 5)";
+			tooltip = "Number of patrols to spawn. (capped at 5)";
 			property = "MSF_Trig_Fortify_patrol_Num";
 			control = "EditShort";
 			expression = "if (_value > 0 && _value < 5) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
@@ -252,7 +243,7 @@ class MSFTriggeFortify : EmptyDetector
 		class MSF_Trig_Fortify_Air_Num
 		{
 			displayName = "Number to Spawn";
-			tooltip = "Number of patrols emplacements to spawn. (capped at 5)";
+			tooltip = "Number of air units to spawn. (capped at 5)";
 			property = "MSF_Trig_Fortify_Air_Num";
 			control = "EditShort";
 			expression = "if (_value > 0 && _value < 5) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
