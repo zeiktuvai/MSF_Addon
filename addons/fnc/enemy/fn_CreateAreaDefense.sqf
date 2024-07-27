@@ -21,7 +21,7 @@ for "_i" from 1 to _num do {
 	private _spawnChance = _trigger getVariable ["MSF_Trig_Fortify_Patrol_Probability", 1];
 	_chance = random 100;
 
-	if (_chance >= (_spawnChance * 100)) then {	
+	if ([_spawnChance] call MSF_fnc_GetSpawnChance) then {	
 		private _pos = [_trigger] call MSF_fnc_FindSafeSpawnPos;
 		private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
 

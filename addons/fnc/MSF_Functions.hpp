@@ -14,13 +14,12 @@ class CfgFunctions
 		class Mission
 		{
 			file = "z\msf\addons\fnc\mission";
-			class ApplyAreaFortification {};
 			class ApplyEndMission {};
 			class ApplyGMActions {};
 			class ApplyObjectActions {};
 			class ApplyRandomTriggerPatrol {};
-			class ApplySupplyTriggers {};
 			class RespawnVehicleCustomization {};
+			class SetupMSFTriggers {};
 		};
 		class Enemy
 		{
@@ -31,6 +30,7 @@ class CfgFunctions
 			class CreateAreaVehicleDefense {};
 			class CreateAreaVehiclePatrol {};
 			class CreateRandomTriggerPatrol {};
+			class CreateWaveDefenseArea {};
 			class DeleteRandomTriggerPatrol {};
 			class FortifyArea {};
 			class SpawnGroupInSafePos {};
@@ -57,6 +57,7 @@ class CfgFunctions
 			class SetTimeBasedInteraction {};
 			class SetUnitDialogOption {};
 			class SetVehicleDamageReduction {};
+			class SpawnSeekAndDestroyVehicles {};
 		};
 		class Helpers
 		{
@@ -70,6 +71,8 @@ class CfgFunctions
 			class GetInventoryLists {};
 			class GetObjectsByProperty {};
 			class GetPlayersByProperty {};
+			class GetSpawnChance {};
+			class GetUnitClasses {};
 			class GetUnitsByProperty {};
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};

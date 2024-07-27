@@ -32,7 +32,7 @@ for "_i" from 1 to _num do {
 	
 	_chance = random 100;
 
-	if (_chance >= (_spawnChance * 100)) then {	
+	if ([_spawnChance] call MSF_fnc_GetSpawnChance) then {	
 		private _type = selectRandom _vicTypes;
 		private _pos = [[_trigger] call BIS_fnc_randomPosTrigger, 5, 100, 3, 0, 10, 0] call BIS_fnc_findSafePos;
 		private _vic = [_pos, 0, _type, _side] call BIS_fnc_spawnVehicle;

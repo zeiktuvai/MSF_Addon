@@ -20,15 +20,11 @@
 params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [east]], ["_vehicleTypes", [], [[]]], ["_spawnChance", 1, [1]]];
 
 for "_i" from 1 to _num do {
-	if (!isDedicated) then {
-		sleep 0.1;
-	};
 	
-	_chance = random 100;
 
-	if (_chance >= (_spawnChance * 100)) then {	
+	if ([_spawnChance] call MSF_fnc_GetSpawnChance) then {	
 		private _type = selectRandom _vehicleTypes;
-		private _pos = _trigger getRelPos [700, random 350];
+		private _pos = _trigger getRelPos [1000, random 350];
 		private _vic = [_pos, 0, _type, _side] call BIS_fnc_spawnVehicle;
 
 		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
