@@ -48,9 +48,6 @@ params [["_trigger", objNull, [objNull]]];
 		_waveCount = _waveCount + 1;
 		if (_waveCount == _waves) then { break; };
 
-		systemChat format["waves: %1 Wave count: %2 _run: %3", _waves, _waveCount, _run];
-		systemChat "Starting Sleep";
-
 		sleep _interval;
 	};
 };
