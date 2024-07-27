@@ -1,13 +1,4 @@
-- Added Vehicle customization persitence.
-- Added area infantry patrol to fortify trigger.
-- Added spawning air units to fortify trigger.
-- Added new trigger to spawn supplies within the trigger area.
-- Added new trigger to spawn far enemies that assault the trigger area in waves.
-- Updated Triggers to use global zeus variable.
-- Fixed bug with SF Diver explosive spec not being able to defuse explosives.
-- Fixed bug in damage reduction that incorrectly applied toughness value.
-- Fixed bug that caused the interaction progress bar to stay repeatable.
-- Fixed bug in Fortify Building Defense causing the wrong trigger to be passed.
+
 
 
 
