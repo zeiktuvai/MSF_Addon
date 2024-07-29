@@ -10,6 +10,6 @@ if(isServer) then
 			_x getVariable "MSF_Gen_prog_action",
 			_x getVariable "MSF_Gen_prog_fail",
 			_x getVariable "MSF_Gen_prog_repeat"
-		] call MSF_fnc_SetTimeBasedInteraction;
+		] remoteExec ["MSF_fnc_SetTimeBasedInteraction"];
 	} forEach _objects;
 };
