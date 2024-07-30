@@ -29,8 +29,9 @@ params [["_trigger", objNull, [objNull]]];
 
 		//  vics
 		private _vicNum = _trigger getVariable ["MSF_Trig_Wave_Vehicle_Num", 0];
+		private _fill = _trigger getVariable ["MSF_Trig_Wave_VicFillPercentage", 0];
 		if (_vicNum > 0) then {
-			[_trigger, _vicNum, _side, 400, _vicTypes, 1] call MSF_fnc_SpawnSeekAndDestroyVehicles;
+			[_trigger, _vicNum, _side, 400, _vicTypes, 1, _fill] call MSF_fnc_SpawnSeekAndDestroyVehicles;
 		};
 
 		// armored vics

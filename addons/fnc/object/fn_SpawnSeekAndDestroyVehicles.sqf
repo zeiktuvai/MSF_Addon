@@ -10,11 +10,12 @@
 		side	Side to spawn units on
 		array	List of heli class names
 		int		Probability of spawn
+		int		Probability to fill vehicle (If it has slots)
 
 	Examples:
-		[Trigger, 2, east, ["Heli"], 1] call MSF_fnc_
+		[Trigger, 2, east, ["Heli"], 1, 0] call MSF_fnc_
 
-	Function Ver 1.0
+	Function Ver 2.0
 	Implemented in: MSF Addon v2.1.0
 */
 params [
@@ -23,7 +24,8 @@ params [
 	["_side", east, [east]],
 	["_distance", 250, [250]],
 	["_vehicleTypes", [], [[]]],
-	["_spawnChance", 1, [1]]
+	["_spawnChance", 1, [1]],
+	["_fillChance", 0, [0]]
 ];
 
 for "_i" from 1 to _num do {
@@ -39,5 +41,19 @@ for "_i" from 1 to _num do {
 		private _wp = (_vic select 2) addWaypoint [position _trigger, 0];
 		_wp setWaypointSpeed "FULL";
 		_wp setWaypointType "SAD";
+	};
+
+	if ([_fillChance] call MSF_fnc_GetSpawnChance) then {
+		_totalSlots = ([_type, true] call BIS_fnc_crewCount);
+		_cargoSlots = ([_type, false] call BIS_fnc_crewCount);
+		_availSlots = _totalSlots - _cargoSlots - count crew (_vic select 0);
+
+		if (_avalSlots > 0) then {
+			for "_k" from 1 to _availSlots do {
+				private _crewD = (_vic select 2) createUnit [selectRandom _unitTypes, _pos, [], 0, "FORM"];
+				[_crewD] join (_vic select 2);
+				_crewD moveInAny (_vic select 0);
+			};
+		};
 	};
 };
