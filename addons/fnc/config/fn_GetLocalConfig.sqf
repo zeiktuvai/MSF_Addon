@@ -1,4 +1,5 @@
 private ["_cfg"];
+_cfg = configNull;
 
 if (fileExists "MissionClassesConfig.hpp") then {
 	MSF_configCache = createHashMap;
