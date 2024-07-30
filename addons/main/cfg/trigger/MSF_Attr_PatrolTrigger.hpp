@@ -104,15 +104,6 @@ class MSFTrigger : EmptyDetector
 			expression = "_this setVariable ['%s',_value]; [_this, _value] call MSF_fnc_CheckNotifyTriggerHasArea;";
 			defaultValue = "false";				
 		};
-		class MSF_Trig_Patrol_Group
-		{
-			displayName = "CfgGroups Entry Name";
-			tooltip = "Name of group to be spawned for patrol from CfgGroup";
-			property = "MSF_Trig_Patrol_Group";
-			control = "EditCode";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Set1' >> 'Groups');";
-		};
 		class MSF_Trig_Patrol_Despawn
 		{
 			displayName = "Despawn on Player exit";
@@ -138,15 +129,5 @@ class MSFTrigger : EmptyDetector
 			expression = "_this setVariable ['%s',_value]; [_this, _value] call MSF_fnc_CheckNotifyTriggerHasArea;";
 			defaultValue = "false";				
 		};
-		class MSF_Trig_Patrol_Vic_Types
-		{
-			displayName = "Vehicle Type Class Names";
-			tooltip = "Array of vehicle class names. i.e. [""Jeep"",""Truck""]";
-			property = "MSF_Trig_Patrol_Vic_Types";
-			control = "EditCode";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Set1' >> 'Vehicles');";
-		};
-
 	};		
 };

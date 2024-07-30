@@ -5,7 +5,7 @@
 
 params [["_type", 0, [0]]];
 
-private ["_cfg", "_return", "_faction", "_groups", "_vics", "_armor", "_air", "_turrets", "_units"];
+private ["_cfg", "_return", "_faction", "_groups", "_vics", "_armor", "_air", "_turrets", "_units", "_vicPatrol"];
 _return = [];
 _cfg = [] call MSF_fnc_GetLocalConfig;
 
@@ -16,32 +16,36 @@ switch (_type) do {
 };
 
 // Get default unit set
-_groups = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> _faction >> 'Groups');
-_vics 	= getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> _faction >> 'Vehicles');
-_armor 	= getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> _faction >> 'Armor');
-_air 	= getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> _faction >> 'Air');
-_turrets = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> _faction >> 'Turrets');
-_units 	= getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> _faction >> 'Units');
+_groups = getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Groups');
+_vics 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Vehicles');
+_armor 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Armor');
+_air 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Air');
+_turrets = getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Turrets');
+_units 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Units');
+_vicPatrol 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'VehiclePatrols');
 
 if (!isNull _cfg) then {
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'PatrolSets' >> _faction >> 'Groups')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'PatrolSets' >> _faction >> 'Groups');
+	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Groups')) then {
+		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Groups');
 	} else { _return pushBack _groups; };
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'PatrolSets' >> _faction >> 'Vehicles')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'PatrolSets' >> _faction >> 'Vehicles');
+	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Vehicles')) then {
+		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Vehicles');
 	} else { _return pushBack _vics; };
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'PatrolSets' >> _faction >> 'Armor')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'PatrolSets' >> _faction >> 'Armor');
+	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Armor')) then {
+		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Armor');
 	} else { _return pushBack _armor; };
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'PatrolSets' >> _faction >> 'Air')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'PatrolSets' >> _faction >> 'Air');
+	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Air')) then {
+		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Air');
 	} else { _return pushBack _air; };
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'PatrolSets' >> _faction >> 'Turrets')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'PatrolSets' >> _faction >> 'Turrets');
+	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Turrets')) then {
+		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Turrets');
 	} else { _return pushBack _turrets; };
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'PatrolSets' >> _faction >> 'Units')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'PatrolSets' >> _faction >> 'Units');
+	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Units')) then {
+		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Units');
 	} else { _return pushBack _units; };
+	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'VehiclePatrols')) then {
+		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'VehiclePatrols');
+	} else { _return pushBack _vicPatrol; };
 }
 else 
 {
@@ -51,6 +55,7 @@ else
 	_return pushBack _air;
 	_return pushBack _turrets;
 	_return pushBack _units;
+	_return pushBack _vicPatrol;
 };
 
 _return;

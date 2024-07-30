@@ -12,10 +12,11 @@
 */
 params ["_trigger"];
 
+private _classes = [] call MSF_fnc_GetUnitClasses;
 
 private _radius = [_trigger] call MSF_fnc_GetAreaRadius;
 private _roads = (position _trigger) nearRoads _radius;
-private _vehicles = parseSimpleArray(_trigger getVariable ["MSF_Trig_Patrol_Vic_Types", []]);
+private _vehicles = _classes select 6;
 private _mode = _trigger getVariable ["MSF_Trig_Patrol_CombatMode", "RED"];
 private _behv = _trigger getVariable ["MSF_Trig_Patrol_Behav", "AWARE"];
 private _speed = _trigger getVariable ["MSF_Trig_Patrol_Speed", "NORMAL"];

@@ -14,7 +14,8 @@
 params ["_trigger"];
 
 if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {	
-	private _groupTypes = parseSimpleArray(_trigger getVariable ["MSF_Trig_Patrol_Group", []]);	
+	private _classes = [] call MSF_fnc_GetUnitClasses;
+	private _groupTypes = _classes select 0;	
 	private _amount = _trigger getVariable ["MSF_Trig_Patrol_WaypointCount", 8];	
 	private _mode = _trigger getVariable ["MSF_Trig_Patrol_CombatMode", "RED"];
 	private _behv = _trigger getVariable ["MSF_Trig_Patrol_Behav", "AWARE"];

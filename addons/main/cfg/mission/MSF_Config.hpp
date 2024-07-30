@@ -13,16 +13,17 @@ class MSFConfig
 		Set1[] = {"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_coyote", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_ucp", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch", "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_mag_17Rnd_9x19_JHP", "rhsusf_mag_17Rnd_9x19_FMJ", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red"};
 		Set2[] = {"100Rnd_65x39_caseless_black_mag", "100Rnd_65x39_caseless_khaki_mag", "100Rnd_65x39_caseless_mag", "100Rnd_65x39_caseless_black_mag_tracer", "ACE_100Rnd_65x39_caseless_mag_Tracer_Dim", "100Rnd_65x39_caseless_khaki_mag_tracer", "100Rnd_65x39_caseless_mag_Tracer", "200Rnd_65x39_cased_Box", "ACE_200Rnd_65x39_cased_Box_Tracer_Dim", "200Rnd_65x39_cased_Box_Tracer", "200Rnd_65x39_cased_Box_Red", "20Rnd_650x39_Cased_Mag_F", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_green", "30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_msbs_mag", "30Rnd_65x39_caseless_msbs_mag_Tracer", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_green_mag_Tracer", "30Rnd_65x39_caseless_black_mag_Tracer", "ACE_30Rnd_65x39_caseless_green_mag_Tracer_Dim", "ACE_30Rnd_65x39_caseless_mag_Tracer_Dim", "30Rnd_65x39_caseless_khaki_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "ACE_20Rnd_65_Creedmor_mag", "ACE_30Rnd_65_Creedmor_black_mag", "ACE_30Rnd_65_Creedmor_khaki_mag", "ACE_30Rnd_65_Creedmor_msbs_mag", "ACE_30Rnd_65_Creedmor_mag", "200Rnd_65x39_cased_Box_Tracer_Red", "7Rnd_408_Mag", "ACE_7Rnd_408_305gr_Mag", "130Rnd_338_Mag", "rhsusf_mag_10Rnd_STD_50BMG_mk211"};
 	};
-	class PatrolSets
+	class UnitSets
 	{
 		class Set1
 		{
 			Groups[] = {"rhs_group_rus_msv_infantry_emr_fireteam", "rhs_group_rus_msv_infantry_emr_MANEUVER", "rhs_group_rus_msv_infantry_emr_section_AA", "rhs_group_rus_msv_infantry_emr_section_marksman", "rhs_group_rus_msv_infantry_emr_section_mg", "rhs_group_rus_msv_infantry_emr_squad", "rhs_group_rus_msv_infantry_emr_squad_2mg", "rhs_group_rus_msv_infantry_emr_squad_mg_sniper"};
 			Vehicles[] = {"rhs_tigr_msv","rhs_tigr_3camo_msv","rhs_tigr_sts_msv","rhs_tigr_sts_3camo_msv","rhs_tigr_m_msv","rhs_tigr_m_3camo_msv"};
-			Armor[] = {"rhs_bmp2k_msv", "rhs_bmp3_late_msv", "rhs_t72bc_tv", "rhs_t72be_tv", "rhs_t80b", "rhs_t90a_tv", "rhs_t90sm_tv", "rhs_t14_tv"};
+			Armor[] = {"rhs_bmp2k_msv", "rhs_bmp3_late_msv", "rhs_t72bc_tv", "rhs_t72be_tv", "rhs_t80b", "rhs_t90a_tv", "rhs_t90sm_tv"};
 			Turrets[] = {"RHS_AGS30_TriPod_MSV","rhs_KORD_MSV","rhs_KORD_high_MSV","RHS_NSV_TriPod_MSV","RHS_ZU23_MSV"};
 			Units[] = {"rhs_msv_emr_armoredcrew", "rhs_msv_emr_rifleman", "rhs_msv_emr_sergeant", "rhs_msv_emr_machinegunner", "rhs_msv_emr_LAT"};
 			Air[] = {"RHS_Mi24P_vdv", "RHS_Mi24V_vdv", "RHS_Mi8mt_vdv", "RHS_Mi8MTV3_vdv", "RHS_Mi8MTV3_heavy_vdv"};
+			VehiclePatrols[] = {"rhs_tigr_msv","rhs_tigr_3camo_msv","rhs_tigr_sts_msv","rhs_tigr_sts_3camo_msv","rhs_tigr_m_msv","rhs_tigr_m_3camo_msv", "rhs_bmp2k_msv", "rhs_bmp3_late_msv"};
 		};
 	};	
 };
