@@ -1,4 +1,4 @@
-class MSFConfig
+class MSF_Mission_Classes
 {
 	class InventorySets
 	{
