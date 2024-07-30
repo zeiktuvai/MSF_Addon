@@ -91,7 +91,7 @@ class MSFProperties
 					property = "MSFProp_Vic_Types";
 					control = "EditCodeMulti3";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Vehicles');";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Set1' >> 'Vehicles');";
 				};
 				class PatrolGroupTypes
 				{
@@ -100,7 +100,7 @@ class MSFProperties
 					property = "MSFProp_Group_Types";
 					control = "EditCodeMulti3";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Groups');";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Set1' >> 'Groups');";
 				};
 				class ArmorTypes
 				{
@@ -109,7 +109,7 @@ class MSFProperties
 					property = "MSFProp_Armor_Types";
 					control = "EditCodeMulti3";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Armor');";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Set1' >> 'Armor');";
 				};
 				class TurretTypes
 				{
@@ -118,7 +118,7 @@ class MSFProperties
 					property = "MSFProp_Turrets_Types";
 					control = "EditCodeMulti3";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Turrets');";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Set1' >> 'Turrets');";
 				};
 				class UnitTypes
 				{
@@ -127,7 +127,7 @@ class MSFProperties
 					property = "MSFProp_Unit_Types";
 					control = "EditCodeMulti3";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Units');";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Set1' >> 'Units');";
 				};
 				class AirTypes
 				{
@@ -136,7 +136,7 @@ class MSFProperties
 					property = "MSFProp_Air_Types";
 					control = "EditCodeMulti3";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Air');";
+					defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Set1' >> 'Air');";
 				};
 			};
 		};

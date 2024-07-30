@@ -13,11 +13,8 @@
 
 params [["_trigger", objNull, [objNull]]];
 
-private _infantryGroupClasses = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Groups');
-private _staticTypes = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Turrets');
-private _vicTypes = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Vehicles');
-private _armorTypes = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Armor');
-private _airClasses = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Air');
+private _classes = [] call MSF_fnc_GetUnitClasses;
+_classes params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClasses", "_staticTypes", "_fillUnits"];
 
 private _side = _trigger getVariable ["MSF_Trig_Fortify_Side", east];
 

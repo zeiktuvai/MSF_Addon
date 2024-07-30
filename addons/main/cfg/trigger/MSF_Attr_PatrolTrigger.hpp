@@ -111,7 +111,7 @@ class MSFTrigger : EmptyDetector
 			property = "MSF_Trig_Patrol_Group";
 			control = "EditCode";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Groups');";
+			defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Set1' >> 'Groups');";
 		};
 		class MSF_Trig_Patrol_Despawn
 		{
@@ -145,7 +145,7 @@ class MSFTrigger : EmptyDetector
 			property = "MSF_Trig_Patrol_Vic_Types";
 			control = "EditCode";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Vehicles');";
+			defaultValue = "getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'Set1' >> 'Vehicles');";
 		};
 
 	};		
