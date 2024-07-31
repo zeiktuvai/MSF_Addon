@@ -1,4 +1,9 @@
-
+- Added the ability to have a local config file to dictate unit/inventory spawn instead of eden text boxes.
+- Added code to use defaults if local config entries are missing instead of returning an empty array.
+- Updated units to not have Thermal NVGS.
+- Updated night units to actually have silencers on weapons that can have them.
+- Updated patrol triggers to get unit spawn classes from config.
+- Fixed bug in progress bar action code causing it not to appear in multiplayer.
 
 
 

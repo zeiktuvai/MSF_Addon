@@ -20,7 +20,7 @@ class MSF_Leader :  MSF_Soldier_Base
     };
     linkedItems[] = {
         "rhsusf_spc_squadleader", "rhsusf_opscore_mc_cover_pelt_nsw", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", 
-        "ItemGPS", "JAS_GPNVG18_Tan_TI"
+        "ItemGPS", "JAS_GPNVG18_Tan"
     };	
 	respawnWeapons[] = {
 		"MSF_rhs_weap_hk416_m320", "Binocular", "Throw", "Put"
@@ -36,7 +36,7 @@ class MSF_Leader :  MSF_Soldier_Base
 	};
 	respawnLinkedItems[] = {
         "rhsusf_spc_squadleader", "rhsusf_opscore_mc_cover_pelt_nsw", "rhsusf_oakley_goggles_clr", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", 
-        "ItemGPS", "JAS_GPNVG18_Tan_TI"		
+        "ItemGPS", "JAS_GPNVG18_Tan"		
 	};
     uniformClass = "rhs_uniform_g3_mc";
     backpack = "MSF_mc_PMAGSupplyBackpack";
