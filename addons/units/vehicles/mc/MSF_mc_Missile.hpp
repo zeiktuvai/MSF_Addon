@@ -20,7 +20,7 @@ class MSF_ATRifleman :  MSF_Soldier_Base
     };
     linkedItems[] = {
         "rhsusf_plateframe_rifleman", "H_HelmetSpecB_paint1", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
-		"JAS_GPNVG18_blk_TI"
+		"JAS_GPNVG18_blk"
     };	
 	respawnWeapons[] = {
 		"MSF_rhs_hk416d", "Rangefinder", "launch_MRAWS_green_F", "Throw", "Put"
@@ -36,7 +36,7 @@ class MSF_ATRifleman :  MSF_Soldier_Base
 	};
 	respawnLinkedItems[] = {
         "rhsusf_plateframe_rifleman", "H_HelmetSpecB_paint1", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
-		"JAS_GPNVG18_blk_TI"
+		"JAS_GPNVG18_blk"
 	};
     uniformClass = "rhs_uniform_g3_mc";
     backpack = "MSF_mc_ATBackpack";
@@ -64,7 +64,7 @@ class MSF_AARifleman :  MSF_Soldier_Base
     };
     linkedItems[] = {
         "rhsusf_plateframe_rifleman", "H_HelmetSpecB_paint1", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
-		"JAS_GPNVG18_blk_TI"
+		"JAS_GPNVG18_blk"
     };	
 	respawnWeapons[] = {
 		"MSF_rhs_hk416d", "Rangefinder", "launch_I_Titan_F", "Throw", "Put"
@@ -80,7 +80,7 @@ class MSF_AARifleman :  MSF_Soldier_Base
 	};
 	respawnLinkedItems[] = {
         "rhsusf_plateframe_rifleman", "H_HelmetSpecB_paint1", "rhs_googles_clear", "ItemMap", "ItemRadio", "ItemCompass", "ACE_Altimeter", "ItemGPS", 
-		"JAS_GPNVG18_blk_TI"
+		"JAS_GPNVG18_blk"
 	};
     uniformClass = "rhs_uniform_g3_mc";
     backpack = "MSF_mc_AABackpack";

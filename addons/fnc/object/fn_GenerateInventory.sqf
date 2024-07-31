@@ -17,12 +17,8 @@ if(isServer ) then
 {
 	private _objects = entities [["Thing", "AllVehicles"], [], false, true] select { _x getVariable "MSF_Helper_InvGenerate_Enabled" == true; };
 
-	private _launch = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Launcher", str getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'launcherRounds')]);
-	private _grenade = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Grenades", str getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'grenades')]);
-	private _medical = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Med", str getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'aceMedical')]);
-	private _food = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Food", str getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'aceFood')]);
-	private _mags = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Mag", str getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'natoStdMags')]);
-	private _items = parseSimpleArray (getMissionConfigValue ["MSF_Helper_Inv_Item", str getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'items')]);
+	private _inv = [] call MSF_fnc_GetInventoryLists;
+	_inv params ["_items", "_mags", "_launch", "_grenade", "_medical", "_food"];
 
 	{
 		private _object = _x;

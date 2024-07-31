@@ -36,5 +36,9 @@ class MSF_Soldier_Base : B_Soldier_base_f
 		{
 			init = "[_this select 0] call MSF_fnc_AddRadio;";
 		};
+		class MSF_Stealth
+		{
+			init = "[_this select 0] call MSF_fnc_AddSilencer;";
+		};
 	};
 };

@@ -19,7 +19,8 @@ params [
 	["_isStatic", false, [false]]
 ];
 
-private _unitTypes = getArray (configFile >> 'MSFConfig' >> 'PatrolSets' >> 'AFRF_Classes' >> 'Units');
+private _classes = [] call MSF_fnc_GetUnitClasses;
+_classes params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClasses", "_staticTypes", "_unitTypes"];
 
 for "_i" from 1 to _num do {
 	if (!isDedicated) then {

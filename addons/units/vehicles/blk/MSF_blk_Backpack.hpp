@@ -4,12 +4,6 @@ class MSF_blk_BaseBackpack : MSF_mc_BaseBackpack
 	scope = 2;	
 	hiddenSelectionsTextures[] = {"\A3\Supplies_F_Exp\Bags\Data\Backpack_ViperOp_blk_co.paa"};
 	picture = "\A3\Supplies_F_Exp\Bags\Data\UI\icon_B_ViperLightHarness_blk_F_ca.paa";
-	class TransportItems {
-		class _xx_silencer {
-			name = "muzzle_snds_M";
-			count = 1;
-		};
-	};	
 };
 
 class MSF_blk_MarksmanBackpack : MSF_mc_MarksmanBackpack

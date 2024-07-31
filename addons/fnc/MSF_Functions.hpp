@@ -11,6 +11,13 @@ class CfgFunctions
 				postInit = 1;
 			};
 		};
+		class Config
+		{
+			file = "z\msf\addons\fnc\config";
+			class GetInventoryLists {};
+			class GetLocalConfig {};
+			class GetUnitClasses {};
+		};
 		class Mission
 		{
 			file = "z\msf\addons\fnc\mission";
@@ -68,11 +75,9 @@ class CfgFunctions
 			class FindSafeSpawnPos {};
 			class GenerateRandomInventory {};
 			class GetAreaRadius {};
-			class GetInventoryLists {};
 			class GetObjectsByProperty {};
 			class GetPlayersByProperty {};
 			class GetSpawnChance {};
-			class GetUnitClasses {};
 			class GetUnitsByProperty {};
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};
