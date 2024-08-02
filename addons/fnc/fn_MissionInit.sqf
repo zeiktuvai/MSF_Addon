@@ -16,15 +16,15 @@ if (isServer) then {
 	[] call MSF_fnc_InfiniteFuelHandler;	
 	[] call MSF_fnc_SetUnitDialogOption;
 	[] call MSF_fnc_ApplyDamageReduction;
-	[] call MSF_fnc_ApplyRandomTriggerPatrol;
+	//[] call MSF_fnc_ApplyRandomTriggerPatrol;
 	[] call MSF_fnc_ApplyObjectActions;
 	[] call MSF_fnc_SetupMSFTriggers;
 
-	if (getMissionConfigValue "MSF_Mission_GM") then {
+	if (getMissionConfigValue ["MSF_Mission_GM", false]) then {
 		[] call MSF_fnc_ApplyGMActions;
 	};
 
-	if (getMissionConfigValue "MSF_Mission_EndMission") then {
+	if (getMissionConfigValue ["MSF_Mission_EndMission", false]) then {
 		[] call MSF_fnc_ApplyEndMission;
 	};	
 

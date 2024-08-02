@@ -21,7 +21,7 @@ class display3DEN
 				{
 					text = "MSF Settings";
 					action = "edit3DENMissionAttributes 'MSFSettings';";
-					picture = "\a3\3den\data\attributes\namesound\special_ca.paa";
+					picture = "z\msf\addons\main\ui\MSF_icon.paa";
 					opensNewWindow = 1;
 				};
 				class MSF_CFG_Multi
@@ -34,7 +34,7 @@ class display3DEN
 				{
 					text = "Documentation (GitHub)";
 					picture = "\a3\3DEN\Data\Controls\ctrlMenu\link_ca.paa";
-					weblink = "https://github.com/zeiktuvai/MSF_Addon/blob/Dev/README.md";
+					weblink = "https://github.com/zeiktuvai/MSF_Addon/wiki";
 					opensNewWindow = 1;
 				};
 			};

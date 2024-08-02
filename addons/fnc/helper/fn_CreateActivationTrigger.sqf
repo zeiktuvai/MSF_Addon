@@ -10,14 +10,16 @@
 */
 params [
 	["_trigger", objNull, [objNull]],
-	["_w", 50, [1]],
-	["_h", 50, [1]],
+	["_x", 50, [1]],
+	["_y", 50, [1]],
+	["_z", 50, [1]],
 	["_activationBy", "WEST", ["WEST"]],
-	["_activationType", "present", ["present"]]
+	["_activationType", "present", ["present"]],
+	["_isRectangle", false, [false]]
 ];
 
 private _trig = createTrigger ["emptyDetector", getPos _trigger];
-_trig setTriggerArea [_w, _h, 0, false];
+_trig setTriggerArea [_x, _y, 0, _isRectangle, _z];
 _trig setTriggerActivation [_activationBy, _activationType, false];
 _trig setTriggerStatements ["this", "",""];
 _trigger setVariable ["linked_trigger", _trig];
