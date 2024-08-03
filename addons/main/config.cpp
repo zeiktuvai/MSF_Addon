@@ -52,6 +52,7 @@ class Extended_PreInit_EventHandlers
 class CfgNonAIVehicles
 {
 	class EmptyDetector;
+	#include "cfg\trigger\MSF_Attr_BuildingTrigger.hpp"
 	#include "cfg\trigger\MSF_Attr_FortifyTrigger.hpp"
 	#include "cfg\trigger\MSF_Attr_PatrolTrigger.hpp"
 	#include "cfg\trigger\MSF_Attr_SupplyTrigger.hpp"
