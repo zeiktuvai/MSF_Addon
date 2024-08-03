@@ -16,7 +16,6 @@ if (isServer) then {
 	[] call MSF_fnc_InfiniteFuelHandler;	
 	[] call MSF_fnc_SetUnitDialogOption;
 	[] call MSF_fnc_ApplyDamageReduction;
-	//[] call MSF_fnc_ApplyRandomTriggerPatrol;
 	[] call MSF_fnc_ApplyObjectActions;
 	[] call MSF_fnc_SetupMSFTriggers;
 
