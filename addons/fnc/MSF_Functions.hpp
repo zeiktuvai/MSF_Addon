@@ -23,8 +23,7 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\mission";
 			class ApplyEndMission {};
 			class ApplyGMActions {};
-			class ApplyObjectActions {};
-			class ApplyRandomTriggerPatrol {};
+			class ApplyObjectActions {};			
 			class RespawnVehicleCustomization {};
 			class SetupMSFTriggers {};
 		};
