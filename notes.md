@@ -1,8 +1,3 @@
-- Updated spawn triggers (Fortify, Patrol, Supply, Wave) to have a configurable height limit.
-- Removed properties menu in favor of mission config file.
-
-
-
 event hanlder stuff
 https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)
 
