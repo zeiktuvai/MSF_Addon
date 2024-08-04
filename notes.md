@@ -1,6 +1,4 @@
-- Updated spawn triggers (Fortify, Patrol, Supply, Wave) to have a configurable height limit.
-- Removed properties menu in favor of mission config file.
-
+- Added "Destroy Buildings" module to destroy buildings and add building fires in the module area.
 
 
 event hanlder stuff
