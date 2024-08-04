@@ -1,6 +1,3 @@
-- Added "Destroy Buildings" module to destroy buildings and add building fires in the module area.
-
-
 event hanlder stuff
 https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)
 
