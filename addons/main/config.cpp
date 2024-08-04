@@ -1,4 +1,6 @@
 #include "MSF_Version.hpp"
+#include "cfg\eden\MSF_Editor_Menu.hpp"
+#include "cfg\mission\MSF_Config.hpp"
 
 class CfgPatches
 {
@@ -7,14 +9,42 @@ class CfgPatches
 		name = "Mission Support Foundation";
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
-        units[] = {};
+        units[] = {"MSF_Module_BldgDestroy"};
         weapons[] = {};
         requiredVersion = 1.0;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction"};
     };
 };
 
-// include "MSF_Functions.hpp"
+class CfgVehicles
+{
+	class Logic;
+	class Module_F : Logic
+	{
+		class AttributesBase
+		{
+			class Default;
+			class Checkbox;
+			class ModuleDescription;
+		};
+
+		class ModuleDescription
+		{
+			class AnyBrain;
+		};
+	};
+
+	#include "cfg\module\MSF_Mod_BuildingDestroy.hpp"
+};
+
+class CfgFactionClasses
+{
+	class NO_CATEGORY;
+	class MSF_Module : NO_CATEGORY
+	{
+		displayName = "MSF Modules";
+	};
+};
 
 class Cfg3DEN
 {
@@ -37,7 +67,6 @@ class Cfg3DEN
 	};
 };
 
-#include "cfg\eden\MSF_Editor_Menu.hpp"
 
 class Extended_PreInit_EventHandlers
 {
@@ -47,12 +76,10 @@ class Extended_PreInit_EventHandlers
     };
 };
 
-#include "cfg\mission\MSF_Config.hpp"
 
 class CfgNonAIVehicles
 {
 	class EmptyDetector;
-	#include "cfg\trigger\MSF_Attr_BuildingTrigger.hpp"
 	#include "cfg\trigger\MSF_Attr_FortifyTrigger.hpp"
 	#include "cfg\trigger\MSF_Attr_PatrolTrigger.hpp"
 	#include "cfg\trigger\MSF_Attr_SupplyTrigger.hpp"
