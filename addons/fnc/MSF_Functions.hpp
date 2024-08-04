@@ -56,6 +56,7 @@ class CfgFunctions
 		class Objects
 		{
 			file = "z\msf\addons\fnc\object";
+			class ApplyBuildingDestruction {};
 			class ApplyDamageReduction {};
 			class CreateRandomSupplies {};
 			class GenerateInventory {};
