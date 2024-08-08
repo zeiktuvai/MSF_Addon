@@ -46,6 +46,7 @@ class CfgUnitInsignia
     };
     class tfy_insignia_train
     {
+      scope = 1;
       displayName = "TFY Trainee";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\patch\unit_train.paa";
@@ -60,6 +61,7 @@ class CfgUnitInsignia
     };
     class tfy_qual_armor_1
     {
+      scope = 1;
       displayName = "Armor Qualification - Rank 1";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\armor_rank1.paa";
@@ -67,6 +69,7 @@ class CfgUnitInsignia
     };
     class tfy_qual_armor_2
     {
+      scope = 1;
       displayName = "Armor Qualification - Rank 2";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\armor_rank2.paa";
@@ -74,6 +77,7 @@ class CfgUnitInsignia
     };
     class tfy_qual_armor_3
     {
+      scope = 1;
       displayName = "Armor Qualification - Rank 3";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\armor_rank3.paa";
