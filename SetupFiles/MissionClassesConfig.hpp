@@ -25,5 +25,10 @@ class MSF_Mission_Classes
 			Air[] = {"RHS_Mi24P_vdv", "RHS_Mi24V_vdv", "RHS_Mi8mt_vdv", "RHS_Mi8MTV3_vdv", "RHS_Mi8MTV3_heavy_vdv"};
 			VehiclePatrols[] = {"rhs_tigr_msv","rhs_tigr_3camo_msv","rhs_tigr_sts_msv","rhs_tigr_sts_3camo_msv","rhs_tigr_m_msv","rhs_tigr_m_3camo_msv", "rhs_bmp2k_msv", "rhs_bmp3_late_msv"};
 		};
-	};	
+	};
+	class Drones
+	{
+		Classes[] = {"B_UAV_02_dynamicLoadout_F", "B_T_UAV_03_dynamicLoadout_F"};
+		Count[] = {2, 1};
+	};
 };

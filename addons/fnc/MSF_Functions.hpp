@@ -17,6 +17,7 @@ class CfgFunctions
 			class GetInventoryLists {};
 			class GetLocalConfig {};
 			class GetUnitClasses {};
+			class GetDroneList {};
 		};
 		class Mission
 		{
@@ -26,6 +27,7 @@ class CfgFunctions
 			class ApplyObjectActions {};			
 			class RespawnVehicleCustomization {};
 			class SetupMSFTriggers {};
+			class SetupUAVSpawnSystem {};
 		};
 		class Enemy
 		{
