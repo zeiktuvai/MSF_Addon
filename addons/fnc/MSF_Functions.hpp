@@ -67,6 +67,7 @@ class CfgFunctions
 			class SetUnitDialogOption {};
 			class SetVehicleDamageReduction {};
 			class SpawnSeekAndDestroyVehicles {};
+			class SpawnUAV {};
 		};
 		class Helpers
 		{
