@@ -9,15 +9,12 @@ class MSFSettings
 			displayName = "MSF Options";
 			class Attributes
 			{
-				// class OperationName
-				// {
-				// 	displayName = "Operation Name";
-				// 	tooltip = "Sets the...";
-				// 	property = "MSF_Mission_OpName";
-				// 	control = "Edit";							
-				// 	defaultValue = "Operation";
-				// 	validate = "variable";
-				// };
+				class PlayerCat
+				{
+					data = "AttributeSystemSubcategory";
+					control = "SubCategory";
+					displayName = "Player Options";
+				};
 				class EnableGMAct
 				{
 					displayName = "Enable GM Actions";
@@ -46,14 +43,20 @@ class MSFSettings
 					defaultValue = "trig_end_mission";
 					validate = "variable";
 				};
-				class MSF_Mission_VicCustomization
+				class EnableTFAR
 				{
-					displayName = "Persist Vehicle Customizations";
-					tooltip = "When a vehicle has been customized in the garage, this presists those changes when vehicles are respawned with a vehicle respawn module.";
-					property = "MSF_Mission_VicCustomization";			
+					displayName = "Enable TFAR Radios";
+					tooltip = "When enabled, an appropriate TFAR radio will be equipped to all MSF Units. (When disabled a standard radio is used instead)";
+					property = "MSF_Radio_TFAR";	
 					control = "Checkbox";
-					expression = "_this setVariable ['%s',_value];";					
-					defaultValue = "true";
+					expression = "_this setVariable ['%s',_value];";
+					defaultValue = "false";
+				};
+				class SpawnCat
+				{
+					data = "AttributeSystemSubcategory";
+					control = "SubCategory";
+					displayName = "Spawn Options";
 				};
 				class MSF_Mission_Zeus
 				{
@@ -97,20 +100,31 @@ class MSFSettings
 					expression = "_this setVariable ['%s',_value];";
 					defaultValue = "false";
 				};
-				class UnitRadio
+				class VicCat
 				{
 					data = "AttributeSystemSubcategory";
 					control = "SubCategory";
-					displayName = "Communications";
+					displayName = "Vehicle Options";
 				};
-				class EnableTFAR
+				class MSF_Mission_VicCustomization
 				{
-					displayName = "Enable TFAR Radios";
-					tooltip = "When enabled, an appropriate TFAR radio will be equipped to all MSF Units. (When disabled a standard radio is used instead)";
-					property = "MSF_Radio_TFAR";	
+					displayName = "Persist Vehicle Customizations";
+					tooltip = "When a vehicle has been customized in the garage, this presists those changes when vehicles are respawned with a vehicle respawn module.";
+					property = "MSF_Mission_VicCustomization";			
 					control = "Checkbox";
+					expression = "_this setVariable ['%s',_value];";					
+					defaultValue = "true";
+				};				
+				class InfiniteFuelTick
+				{
+					displayName = "Infinite Fuel Interval";
+					tooltip = "Sets the interval that the infinite fuel handler will use when refuling enabled vehicles.";
+					property = "MSF_Vic_InfiniteFuel_Tick";			
+					control = "EditShort";
 					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "false";
+					defaultValue = 120;
+					validate = "number";
+					typeName = "NUMBER";
 				};
 			};
 		};		

@@ -12,25 +12,21 @@
 	Implemented in: MSF Addon v1.0
 */
 
-
-private _vics = ["MSF_General_InfiniteFuel"] call MSF_fnc_GetVehiclesByProperty;
-
-if (count _vics > 0) then {
-	[] spawn 
-	{ 
-		params ["_vicList"];
-
-		while { true } do 
+[] spawn 
+{ 		
+	private _interval = getMissionConfigValue ["MSF_Vic_InfiniteFuel_Tick", 120];
+	
+	while { true } do 
+	{
+		private _vicList = (["MSF_General_InfiniteFuel"] call MSF_fnc_GetVehiclesByProperty) select { alive _x };
+	
 		{
-			private _vicList = ["MSF_General_InfiniteFuel"] call MSF_fnc_GetVehiclesByProperty;
-			{
-				if (fuel _x < 1) then 
-				{ 
-					_x setFuel 1; 
-				}; 
-			} forEach _vicList;
+			if (fuel _x < 1) then 
+			{ 
+				_x setFuel 1; 
+			}; 
+		} forEach _vicList;
 
-			sleep 300;
-		};
+		sleep _interval;
 	};
 };
