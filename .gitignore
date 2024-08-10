@@ -397,9 +397,10 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-Publish/Addons/
-.hemttout/*
-releases/*
+MSF-Units-Winter/.hemttout/*
+MSF-Units-Winter/releases/*
+MSF-Units-Winter/.hemttout/*
+MSF-Units-Winter/releases/*
 *.pbo
 *.bisign
 z
