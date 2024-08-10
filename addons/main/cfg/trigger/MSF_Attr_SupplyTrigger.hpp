@@ -9,6 +9,15 @@ class MSFTriggerSupply : EmptyDetector
 			control = "SubCategory";
 			displayName = "Supply generation option";				
 		};
+		class MSF_Trig_Supply_ActivationSize
+		{
+			displayName = "Activation Size";
+			tooltip = "This sets the additional size added to the trigger size to determine the activation area. (i.e. if trigger is 400x400 and this is set to 400x400, trigger will activate at 800x800 from the center.)";
+			property = "MSF_Trig_Supply_ActivationSize";
+			control = "EditAB";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "[500,500]";
+		};		
 		class MSF_Trig_Supply_Items
 		{
 			displayName = "Enable Supply Cache";
@@ -35,6 +44,15 @@ class MSFTriggerSupply : EmptyDetector
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "true";				
+		};
+		class MSF_Trig_Supply_HeightLimit
+		{
+			displayName = "Disable Trigger Height Limit";
+			tooltip = "All triggers that spawn units (Patrol, Fortify, Wave Defense and Supply) are limited to 50m height to prevent mass trigger activiation as aircraft zoom past.  Enabling this removes that limit.";
+			property = "MSF_Trig_Supply_HeightLimit";			
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";					
+			defaultValue = "false";
 		};
 		class MSFSupply_Items
 		{

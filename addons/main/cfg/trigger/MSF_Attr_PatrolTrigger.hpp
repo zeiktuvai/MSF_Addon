@@ -17,7 +17,8 @@ class MSFTrigger : EmptyDetector
 			property = "MSF_Trig_Patrol_CombatMode";
 			control = "CombatModeGroup";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "YELLOW";				
+			defaultValue = "2";		
+			//"YELLOW"
 		};
 		class MSF_Trig_Patrol_Behav
 		{
@@ -26,7 +27,8 @@ class MSFTrigger : EmptyDetector
 			property = "MSF_Trig_Patrol_Behav";
 			control = "BehaviourGroup";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "SAFE";				
+			defaultValue = "1";
+			//"AWARE"
 		};
 		class MSF_Trig_Patrol_Speed
 		{
@@ -87,6 +89,15 @@ class MSFTrigger : EmptyDetector
 					value = 2;
 				};
 			};	
+		};
+		class MSF_Trig_Patrol_HeightLimit
+		{
+			displayName = "Disable Trigger Height Limit";
+			tooltip = "All triggers that spawn units (Patrol, Fortify, Wave Defense and Supply) are limited to 50m height to prevent mass trigger activiation as aircraft zoom past.  Enabling this removes that limit.";
+			property = "MSF_Trig_Patrol_HeightLimit";			
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";					
+			defaultValue = "false";
 		};
 		class MSFInfPatrols
 		{

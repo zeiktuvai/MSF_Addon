@@ -16,11 +16,11 @@ if (isServer) then {
 	private _fortify = allMissionObjects "MSFTriggeFortify";
 	private _patrol = allMissionObjects "MSFTrigger";
 
-	private _height = if (getMissionConfigValue ["MSF_Mission_Trigger_HeightLimit", false]) then { -1 } else { 50 };
 
 	{		
-	private _statement = triggerStatements _x;
+		private _statement = triggerStatements _x;
 		private _waveArea = triggerArea _x;
+		private _height = if (_x getVariable ["MSF_Trig_Waves_HeightLimit", false]) then { -1 } else { 50 };
 
 		_x setTriggerStatements[_statement select 0, "[thisTrigger] call MSF_fnc_CreateWaveDefenseArea;", _statement select 2];
 		_x setTriggerArea[_waveArea select 0, _waveArea select 1, _waveArea select 2, _waveArea select 3, _height];
@@ -29,8 +29,11 @@ if (isServer) then {
 	{		
 		private _area = triggerArea _x;
 		private _activ = triggerActivation _x;
+		private _height = if (_x getVariable ["MSF_Trig_Supply_HeightLimit", false]) then { -1 } else { 50 };
+		private _activationSize = _x getVariable ["MSF_Trig_Supply_ActivationSize", [500,500]];
+
 		if ((_area select 0) > 5 && (_area select 1) > 5) then {
-			[_x, (_area select 0)+500, (_area select 1)+500, _height, _activ select 0, _activ select 1, false] call MSF_fnc_CreateActivationTrigger;
+			[_x, (_area select 0)+(_activationSize select 0), (_area select 1)+(_activationSize select 1), _height, _activ select 0, _activ select 1, false] call MSF_fnc_CreateActivationTrigger;
 			_x setTriggerStatements[(triggerStatements _x) select 0, "[thisTrigger] call MSF_fnc_CreateRandomSupplies;", (triggerStatements _x) select 2];
 		};
 	} forEach _supply;
@@ -38,14 +41,18 @@ if (isServer) then {
 	{
 		private _area = [_x] call MSF_fnc_GetAreaRadius;
 		private _activ = triggerActivation _x;
+		private _height = if (_x getVariable ["MSF_Trig_Fortify_HeightLimit", false]) then { -1 } else { 50 };
+		private _activationSize = _x getVariable ["MSF_Trig_Fortify_ActivationSize", [300,300]];
+		private _onStart = _x getVariable ["MSF_Trig_Fortify_SpawnImmediately", false];
 
-		[_x, _area+300, _area +300, _height, _activ select 0, _activ select 1, false] call MSF_fnc_CreateActivationTrigger;
+		[_x, _area+(_activationSize select 0), _area+(_activationSize select 1), _height, _activ select 0, _activ select 1, false, _onStart] call MSF_fnc_CreateActivationTrigger;
 		_x setTriggerStatements[(triggerStatements _x) select 0, "[thisTrigger] remoteExec [""MSF_fnc_FortifyArea"", 2]", (triggerStatements _x) select 2];
 	} forEach _fortify;
 
 	{	
 		private _act = triggerActivation _x;
 		private _trigArea = triggerArea _x;
+		private _height = if (_x getVariable ["MSF_Trig_Patrol_HeightLimit", false]) then { -1 } else { 50 };
 
 		if (_x getVariable ["MSF_Trigger_Patrol", false] && !(_x getVariable ["MSF_Trigger_Patrol_Vic", false])) then 
 		{
