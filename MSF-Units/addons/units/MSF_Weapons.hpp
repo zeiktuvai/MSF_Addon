@@ -1,0 +1,14 @@
+class CfgWeapons {
+    #include "weapons\MSF_rhs_m14ebr.hpp"
+    #include "weapons\MSF_rhs_hk416_m320.hpp"
+    #include "weapons\MSF_rhs_m249.hpp"
+    #include "weapons\MSF_rhs_hk416d.hpp"
+    #include "weapons\MSF_rhs_hk416d10.hpp"
+    #include "weapons\MSF_rhs_M107.hpp"
+    #include "weapons\MSF_rhs_M107b.hpp"
+    #include "weapons\MSF_MXSW_W.hpp"
+    #include "weapons\MSF_MXGL_White.hpp"
+    #include "weapons\MSF_MMG_W.hpp"
+    #include "weapons\MSF_MXM_W.hpp"
+    #include "weapons\MSF_MXC_W.hpp"
+};
