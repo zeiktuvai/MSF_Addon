@@ -1,3 +1,6 @@
+- Added interval mission setting to set the interval at which the infinite fuel handler refills all enabled vehicles.
+- Added functions to allow UAV operators to spawn UAVs as configured in MissionConfigClasses.hpp
+
 event hanlder stuff
 https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)
 
