@@ -64,15 +64,6 @@ class MSFSettings
 					expression = "_this setVariable ['%s',_value];";					
 					defaultValue = "true";
 				};
-				class MSF_Mission_Trigger_HeightLimit
-				{
-					displayName = "Disable Trigger Height Limit";
-					tooltip = "All triggers that spawn units (Patrol, Fortify, Wave Defense and Supply) are limited to 50m height to prevent mass trigger activiation as aircraft zoom past.  Enabling this removes that limit.";
-					property = "MSF_Mission_Trigger_HeightLimit";			
-					control = "Checkbox";
-					expression = "_this setVariable ['%s',_value];";					
-					defaultValue = "false";
-				};
 				class MultiplayerCategory
 				{
 					data = "AttributeSystemSubcategory";

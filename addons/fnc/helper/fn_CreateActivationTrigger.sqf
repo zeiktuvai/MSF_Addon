@@ -15,13 +15,15 @@ params [
 	["_z", 50, [1]],
 	["_activationBy", "WEST", ["WEST"]],
 	["_activationType", "present", ["present"]],
-	["_isRectangle", false, [false]]
+	["_isRectangle", false, [false]],
+	["_onStart", false, [false]]
 ];
 
+private _actStatement = ["this", "true"] select (_onStart);
 private _trig = createTrigger ["emptyDetector", getPos _trigger];
 _trig setTriggerArea [_x, _y, 0, _isRectangle, _z];
 _trig setTriggerActivation [_activationBy, _activationType, false];
-_trig setTriggerStatements ["this", "",""];
+_trig setTriggerStatements [_actStatement, "",""];
 _trigger setVariable ["linked_trigger", _trig];
 _statements = triggerStatements _trigger;
 _trigger setTriggerStatements ["triggerActivated (thistrigger getVariable ""linked_trigger"");", _statements select 1, _statements select 2];
