@@ -115,7 +115,7 @@ class MSF_mc_PMAGBackpack : MSF_mc_BaseBackpack
 	displayName = "Viper Light Infantry Backpack";
 	class TransportMagazines {
 		class _xx_30rnd_tan_pmag {
-			magazine = "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan";
+			magazine = "rhs_mag_20Rnd_SCAR_762x51_m62_tracer";
 			count = 3;
 		};
 	};
@@ -126,7 +126,7 @@ class MSF_mc_PMAGSupplyBackpack : MSF_mc_BaseBackpack
 	displayName = "Viper Light Ammo Bearer Backpack";
 	class TransportMagazines {
 		class _xx_20rnd_pmag {
-			magazine = "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red";
+			magazine = "rhs_mag_20Rnd_SCAR_762x51_m62_tracer";
 			count = 6;
 		};
 		class _xx_30rnd_tan_pmag {
@@ -317,7 +317,103 @@ class MSF_mc_MineBackpack : MSF_mc_BaseBackpack
 		};
 	};
 };
-		// class _xx_suture {
-		// 	name = "ACE_suture";
-		// 	count = 4;
-		// };
+
+class TFAR_rt1523g_sage;
+class MSF_mc_RTOBackPack : TFAR_rt1523g_sage
+{
+	displayName = "MSF ASIP Pack";
+	scope = 2;	
+	class TransportItems {
+		class _xx_quickclot {
+			name = "ACE_quikclot";
+			count = 5;
+		};
+		class _xx_packBandage {
+			name = "ACE_packingBandage";
+			count = 5;
+		};
+		class _xx_tourniquet {
+			name = "ACE_tourniquet";
+			count = 2;
+		};
+		class _xx_splint {
+			name = "ACE_splint";
+			count = 2;
+		};
+		class _xx_epi {
+			name = "ACE_epinephrine";
+			count = 1;
+		};
+		class _xx_aden {
+			name = "ACE_adenosine";
+			count = 1;
+		};
+		class _xx_morph {
+			name = "ACE_morphine";
+			count = 4;
+		};
+		class _xx_saline500 {
+			name = "ACE_salineIV_500";
+			count = 2;
+		};
+		class _xx_blood {
+			name = "ACE_bloodIV";
+			count = 1;
+		};
+		class _xx_bodybag {
+			name = "ACE_bodyBag";
+			count = 1;
+		};
+		class _xx_earplug {
+			name = "ACE_EarPlugs";
+			count = 1;
+		};
+		class _xx_mapt {
+			name = "ACE_MapTools";
+			count = 1;
+		};
+		class _xx_m26 {
+			name = "ACE_M26_Clacker";
+			count = 1;
+		};
+		class _xx_strobe{
+			name = "ACE_IR_Strobe_Item";
+			count = 1;
+		};
+		class _xx_cabletie{
+			name = "ACE_CableTie";
+			count = 1;
+		};
+		class _xx_huntir {
+			name = "ACE_HuntIR_monitor";
+			count = 1;
+		};
+		class _xx_waterbot {
+			name = "ACE_WaterBottle";
+			count = 1;
+		};
+		class _xx_canteen {
+			name = "ACE_Canteen";
+			count = 1;
+		};
+		class _xx_mdagr {
+			name = "ACE_microDAGR";
+			count = 1;
+		};
+	};
+	class TransportMagazines {
+		class _xx_handgrenade {
+			magazine = "HandGrenade";
+			count = 2;
+		};
+		class _xx_smokered {
+			magazine = "SmokeShellRed";
+			count = 1;
+		};
+		class _xx_smokegreen {
+			magazine = "SmokeShellGreen";
+			count = 1;
+		};
+	};
+};
+
