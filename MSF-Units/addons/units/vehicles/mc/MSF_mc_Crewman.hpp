@@ -7,11 +7,11 @@ class MSF_Crewman :  MSF_Soldier_Base
 	scope = 2;
 	scopeCurator = 2;
 	weapons[] = {
-        "MSF_rhs_hk416d", "Binocular", "rhsusf_weap_m1911a1", "Throw", "Put"
+        "MSF_rhs_SCARH", "Binocular", "rhsusf_weap_m1911a1", "Throw", "Put"
     };
     magazines[] = {
-        "acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellRed", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
-        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
+        "acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellRed", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+        "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
 		"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag",
 		"9Rnd_45ACP_Mag", "rhs_mag_30Rnd_556x45_Mk318_PMAG", "rhsusf_mag_7x45acp_MHP"
     };
@@ -23,11 +23,11 @@ class MSF_Crewman :  MSF_Soldier_Base
 		"JAS_GPNVG18_blk_TI"
     };	
 	respawnWeapons[] = {
-		"MSF_rhs_hk416d", "Binocular", "rhsusf_weap_m1911a1", "Throw", "Put"
+		"MSF_rhs_SCARH", "Binocular", "rhsusf_weap_m1911a1", "Throw", "Put"
 	};
 	respawnMagazines[] = {
-        "acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellRed", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
-        "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
+        "acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellRed", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+        "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
 		"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag",
 		"9Rnd_45ACP_Mag", "rhs_mag_30Rnd_556x45_Mk318_PMAG", "rhsusf_mag_7x45acp_MHP"
 	};

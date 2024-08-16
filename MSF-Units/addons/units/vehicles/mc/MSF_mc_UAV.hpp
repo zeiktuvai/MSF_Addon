@@ -6,12 +6,12 @@ class MSF_UAV :  MSF_Soldier_Base
 	scope = 2;
 	scopeCurator = 2;
 	weapons[] = {
-        "MSF_rhs_hk416d", "Binocular", "rhs_weap_rsp30_red", "Throw", "Put"
+        "MSF_rhs_SCARH", "Binocular", "rhs_weap_rsp30_red", "Throw", "Put"
     };
     magazines[] = {
- 		"acex_intelitems_notepad", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "HandGrenade", "HandGrenade", 
-        "SmokeShellRed", "SmokeShellPurple", "SmokeShellPurple", "rhs_mag_30Rnd_556x45_M855A1_PMAG", "rhs_mag_30Rnd_556x45_M855A1_PMAG", 
-        "rhs_mag_30Rnd_556x45_M855A1_PMAG", "SmokeShellGreen", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_rsp30_red"
+ 		"acex_intelitems_notepad", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "HandGrenade", "HandGrenade", 
+        "SmokeShellRed", "SmokeShellPurple", "SmokeShellPurple", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", 
+        "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "SmokeShellGreen", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_rsp30_red"
     };
     items[] = {
 		"ACE_EarPlugs", "ACE_MapTools", "ACE_DefusalKit", "ACE_M26_Clacker", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_Banana", "ACE_Canteen", "ACE_WaterBottle", 
@@ -25,11 +25,12 @@ class MSF_UAV :  MSF_Soldier_Base
 		"JAS_GPNVG18_blk"
     };	
 	respawnWeapons[] = {
-		"MSF_rhs_hk416d", "Binocular", "rhs_weap_rsp30_red", "Throw", "Put"
+		"MSF_rhs_SCARH", "Binocular", "rhs_weap_rsp30_red", "Throw", "Put"
 	};
 	respawnMagazines[] = {
-      	"acex_intelitems_notepad", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "HandGrenade", "HandGrenade", 
-        "SmokeShellRed", "SmokeShellPurple", "SmokeShellPurple", "rhs_mag_30Rnd_556x45_M855A1_PMAG", "rhs_mag_30Rnd_556x45_M855A1_PMAG", 
+ 		"acex_intelitems_notepad", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "HandGrenade", "HandGrenade", 
+        "SmokeShellRed", "SmokeShellPurple", "SmokeShellPurple", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", 
+        "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "SmokeShellGreen", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_rsp30_red"
 	};
 	RespawnItems[] = {
 		"ACE_EarPlugs", "ACE_MapTools", "ACE_DefusalKit", "ACE_M26_Clacker", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_Banana", "ACE_Canteen", "ACE_WaterBottle", 

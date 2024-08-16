@@ -2,8 +2,15 @@
 date
 hemtt build --no-bin
 
-rm -r "$DEV_MOD_PATH"*
-/bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"
+currentPath=$(pwd)
+
+if [[ ${currentPath} == *"Units"* ]]; then 
+    rm -r "$DEV_MOD_PATH"@MSF-Units-DEV/*
+    /bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"@MSF-Units-DEV/
+else
+    rm -r "$DEV_MOD_PATH"@MSF-DEV/*
+    /bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"@MSF-DEV/
+fi
 
 while getopts ":s" option; do   
 
@@ -15,3 +22,4 @@ while getopts ":s" option; do
             exit;;        
     esac
 done
+

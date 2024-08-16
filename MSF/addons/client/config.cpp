@@ -18,7 +18,7 @@ class CfgUnitInsignia
 {
     class tfy_insignia
     {
-      displaayName = "Task Force Yodel Insignia (MC)";
+      displayName = "Task Force Yodel Insignia (MC)";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\patch\unit_mc.paa";
       textureVehicle = "";

@@ -77,7 +77,11 @@ class MSF_trop_MineBackpack : MSF_mc_MineBackpack
 	hiddenSelectionsTextures[] = {"\A3\Supplies_F_Exp\Bags\Data\Backpack_ViperOp_oli_co.paa"};
 	picture = "\A3\Supplies_F_Exp\Bags\Data\UI\icon_B_ViperLightHarness_oli_F_ca.paa";	
 };
-		// class _xx_suture {
-		// 	name = "ACE_suture";
-		// 	count = 4;
-		// };
+
+class MSF_trop_RTOBackPack : MSF_mc_RTOBackPack
+{
+	displayName = "MSF ASIP Pack (trop)";
+	scope = 2;	
+	hiddenSelectionsTextures[] = {"\z\tfar\addons\backpacks\models\data\camo\backpack_green_co.paa"};
+	picture = "\z\tfar\addons\backpacks\rt1523g\ui\rt1523g_icon.paa";
+};

@@ -1,6 +1,6 @@
-- Added interval mission setting to set the interval at which the infinite fuel handler refills all enabled vehicles.
-- Added functions to allow UAV operators to spawn UAVs as configured in MissionConfigClasses.hpp
-- Added height limit check box and activation size to triggers and removed the mission wide check box.
+UNITS:
+- Updated weapons for some units
+- Added RTO unit
 
 
 event hanlder stuff

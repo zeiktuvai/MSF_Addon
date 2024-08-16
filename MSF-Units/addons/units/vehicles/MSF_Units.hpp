@@ -11,6 +11,7 @@
 #include "mc\MSF_mc_Pilot.hpp"
 #include "mc\MSF_mc_Repair.hpp"
 #include "mc\MSF_mc_Rifleman.hpp"
+#include "mc\MSF_mc_RTO.hpp"
 #include "mc\MSF_mc_Sniper.hpp"
 #include "mc\MSF_mc_UAV.hpp"
 
@@ -25,10 +26,12 @@
 #include "trop\MSF_trop_Missile.hpp"
 #include "trop\MSF_trop_Repair.hpp"
 #include "trop\MSF_trop_Rifleman.hpp"
+#include "trop\MSF_trop_RTO.hpp"
 #include "trop\MSF_trop_Sniper.hpp"
 #include "trop\MSF_trop_UAV.hpp"
 
 #include "blk\MSF_blk_Backpack.hpp"
+#include "blk\MSF_blk_Engineer.hpp"
 #include "blk\MSF_blk_Grenadier.hpp"
 #include "blk\MSF_blk_Gunner.hpp"
 #include "blk\MSF_blk_Leader.hpp"
@@ -37,6 +40,7 @@
 #include "blk\MSF_blk_Missile.hpp"
 #include "blk\MSF_blk_Repair.hpp"
 #include "blk\MSF_blk_Rifleman.hpp"
+#include "blk\MSF_blk_RTO.hpp"
 #include "blk\MSF_blk_UAV.hpp"
 
 #include "w\MSF_w_Backpack.hpp"

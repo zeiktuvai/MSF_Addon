@@ -1,9 +1,9 @@
-private _drones = [] call MSF_fnc_GetDroneList;
+MSF_UAVInventory = [] call MSF_fnc_GetDroneList;
 private _droneOps = allPlayers select { "MSF_UAV" in typeOf _x };
 
 
-if (count _drones > 0 && count _droneOps > 0) then {
-	missionNamespace setVariable ["MSF_UAVInventory", _drones, true];
+if (count MSF_UAVInventory > 0 && count _droneOps > 0) then {
+	publicVariable "MSF_UAVInventory";
 	
 	{   
 		private _children = {
@@ -21,16 +21,16 @@ if (count _drones > 0 && count _droneOps > 0) then {
 
 					if (serverTime > (_player getVariable ["MSF_UAV_SpawnTimer", 0])) then 
 					{
-						private _droneArray = missionNamespace getVariable "MSF_UAVInventory";
-						private _dIndex = _droneArray findIf { (_params select 0) in _x };
+						private _dIndex = MSF_UAVInventory findIf { (_params select 0) in _x };
 						private _update = _droneArray select _dIndex;
 						_update set [1, (_update select 1) - 1];
-
 						private _uavObj = [_player, _drone, west] call MSF_fnc_SpawnUAV;
+						
 						_player setVariable ["MSF_UAV_SpawnTimer", serverTime + _interval];
 						private _uavlist = _player getVariable ["MSF_UAV_List", []];
 						_uavlist pushBack (_uavObj select 0);
-						_player setVariable ["MSF_UAV_List", _uavlist];
+						_player setVariable ["MSF_UAV_List", _uavlist];	
+						publicVariable "MSF_UAVInventory";
 
 						if (local _player) then {
 							hint format ["Launched %1", _name];

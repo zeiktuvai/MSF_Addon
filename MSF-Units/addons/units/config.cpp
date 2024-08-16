@@ -10,7 +10,7 @@ class CfgPatches
     {
 		name = "MSF Units";
 		author = "Zeik_Tuvai";
-		version = "v1.0.0";
+		version = "v0.0.0";
         units[] = {
             "MSF_Crewman", "MSF_Engineer", "MSF_Grenadier", "MSF_Gunner", "MSF_Leader", "MSF_Marksman", "MSF_Medic",
             "MSF_Mine", "MSF_ATRifleman", "MSF_AARifleman", "MSF_Pilot", "MSF_Repair", "MSF_Rifleman", "MSF_Sniper",
