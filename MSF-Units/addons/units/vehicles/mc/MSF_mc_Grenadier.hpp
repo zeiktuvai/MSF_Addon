@@ -6,12 +6,12 @@ class MSF_Grenadier :  MSF_Soldier_Base
 	scope = 2;
 	scopeCurator = 2;
 	weapons[] = {
-        "MSF_rhs_weap_hk416_m320","Rangefinder", "Throw", "Put"
+        "MSF_SPAR_GL","Rangefinder", "Throw", "Put"
     };
     magazines[] = {
-        "acex_intelitems_notepad", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
-		"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
-		"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell",
+        "acex_intelitems_notepad", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+		"rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+		"rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell",
 		"1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_HE_Grenade_shell", 
 		"1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F", "UGL_FlareGreen_F", "rhs_mag_M397_HET",
 		"rhs_mag_M397_HET", "rhs_mag_M433_HEDP", "rhs_mag_M433_HEDP", "rhs_mag_M441_HE", "rhs_mag_M441_HE",
@@ -26,12 +26,12 @@ class MSF_Grenadier :  MSF_Soldier_Base
         "ItemGPS", "JAS_GPNVG18_Tan_TI"
     };	
 	respawnWeapons[] = {
-		"MSF_rhs_weap_hk416_m320","Rangefinder", "Throw", "Put"
+		"MSF_SPAR_GL","Rangefinder", "Throw", "Put"
 	};
 	respawnMagazines[] = {
-        "acex_intelitems_notepad", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
-		"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
-		"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell",
+        "acex_intelitems_notepad", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+		"rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+		"rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell",
 		"1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_HE_Grenade_shell", 
 		"1Rnd_HE_Grenade_shell", "1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F", "UGL_FlareGreen_F", "rhs_mag_M397_HET",
 		"rhs_mag_M397_HET", "rhs_mag_M433_HEDP", "rhs_mag_M433_HEDP", "rhs_mag_M441_HE", "rhs_mag_M441_HE",
