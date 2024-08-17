@@ -1,6 +1,4 @@
-UNITS:
-- Updated weapons for some units
-- Added RTO unit
+- Fixed bug in Join on Player causing it not to work.
 
 
 event hanlder stuff
