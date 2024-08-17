@@ -1,1 +1,1 @@
-[player] call MSF_fnc_Init;
+[player, didJIP] call MSF_fnc_Init;
