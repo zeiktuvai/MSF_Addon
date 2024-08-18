@@ -5,11 +5,11 @@ hemtt build --no-bin
 currentPath=$(pwd)
 
 if [[ ${currentPath} == *"Units"* ]]; then 
-    rm -r "$DEV_MOD_PATH"@MSF-Units-DEV/*
-    /bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"@MSF-Units-DEV/
+    rm -r "$DEV_MOD_PATH"@MSF-Units-Dev/*
+    /bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"@MSF-Units-Dev/
 else
-    rm -r "$DEV_MOD_PATH"@MSF-DEV/*
-    /bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"@MSF-DEV/
+    rm -r "$DEV_MOD_PATH"@MSF-Dev/*
+    /bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"@MSF-Dev/
 fi
 
 while getopts ":s" option; do   

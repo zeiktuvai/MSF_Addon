@@ -127,11 +127,7 @@ class MSF_mc_PMAGSupplyBackpack : MSF_mc_BaseBackpack
 	class TransportMagazines {
 		class _xx_20rnd_pmag {
 			magazine = "rhs_mag_20Rnd_SCAR_762x51_m62_tracer";
-			count = 6;
-		};
-		class _xx_30rnd_tan_pmag {
-			magazine = "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red";
-			count = 6;
+			count = 12;
 		};
 	};
 };

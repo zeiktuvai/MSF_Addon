@@ -11,8 +11,8 @@
 	Implemented in: MSF Addon v1.0
 */
 
-params ["_unit", ["_jip", false, [false]]];
+params [["_unit", objNull, [objNull]], ["_jip", false, [false]]];
 
 [_unit] call MSF_fnc_ConfigRespawnOnPlayer;
-[_unit, "_jip"] call MSF_fnc_JIPSpawnNearPlayer;
+[_unit, _jip] call MSF_fnc_JIPSpawnNearPlayer;
 [] call MSF_fnc_ApplyDamageReduction;

@@ -15,4 +15,5 @@ class CfgWeapons {
     #include "weapons\MSF_rhs_SCARH.hpp"
     #include "weapons\MSF_SPAR_GL.hpp"
     #include "weapons\MSF_rhs_m240B.hpp"
+    #include "weapons\MSF_rhs_SCARH_STD.hpp"
 };

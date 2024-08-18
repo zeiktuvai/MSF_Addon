@@ -56,6 +56,7 @@
 #include "w\MSF_w_Pilot.hpp"
 #include "w\MSF_w_Repair.hpp"
 #include "w\MSF_w_Rifleman.hpp"
+#include "w\MSF_w_RTO.hpp"
 #include "w\MSF_w_Sniper.hpp"
 #include "w\MSF_w_UAV.hpp"
 
