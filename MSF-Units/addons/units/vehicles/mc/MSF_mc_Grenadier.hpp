@@ -6,7 +6,7 @@ class MSF_Grenadier :  MSF_Soldier_Base
 	scope = 2;
 	scopeCurator = 2;
 	weapons[] = {
-        "MSF_SPAR_GL","Rangefinder", "Throw", "Put"
+        "MSF_rhs_SCARH_STD", "rhs_weap_M320", "Rangefinder", "Throw", "Put"
     };
     magazines[] = {
         "acex_intelitems_notepad", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
@@ -26,7 +26,7 @@ class MSF_Grenadier :  MSF_Soldier_Base
         "ItemGPS", "JAS_GPNVG18_Tan_TI"
     };	
 	respawnWeapons[] = {
-		"MSF_SPAR_GL","Rangefinder", "Throw", "Put"
+		"MSF_rhs_SCARH_STD", "rhs_weap_M320", "Rangefinder", "Throw", "Put"
 	};
 	respawnMagazines[] = {
         "acex_intelitems_notepad", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",

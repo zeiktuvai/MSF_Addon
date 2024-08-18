@@ -7,7 +7,7 @@ class MSF_Leader :  MSF_Soldier_Base
 	scope = 2;
 	scopeCurator = 2;
 	weapons[] = {
-        "MSF_SPAR_GL", "Binocular", "Throw", "Put"
+        "MSF_rhs_SCARH_STD", "rhs_weap_M320", "Binocular", "Throw", "Put"
     };
     magazines[] = {
 		"acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellGreen",
@@ -23,7 +23,7 @@ class MSF_Leader :  MSF_Soldier_Base
         "ItemGPS", "JAS_GPNVG18_Tan"
     };	
 	respawnWeapons[] = {
-		"MSF_SPAR_GL", "Binocular", "Throw", "Put"
+		"MSF_rhs_SCARH_STD", "rhs_weap_M320", "Binocular", "Throw", "Put"
 	};
 	respawnMagazines[] = {
 		"acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellGreen",

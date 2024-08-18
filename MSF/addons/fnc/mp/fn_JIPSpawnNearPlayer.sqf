@@ -9,11 +9,12 @@
 	Function Ver 1.0
 	Implemented in: MSF Addon v1.0
 */
+params [["_player", objNull, [objNull]], ["_jip", false, [false]]];
 
-if (getMissionConfigValue "MSF_Multi_JnP" && didJIP) then {
-    waituntil {sleep 1; !isnull player};
+if (getMissionConfigValue ["MSF_Multi_JnP", false] && _jip) then {
+    waituntil {sleep 1; !isnull _player};
 
     private _unit = playableUnits call BIS_fnc_selectRandom;
     private _startPos = [getPos _unit, random [25, 0, 100], random 360] call BIS_fnc_relPos;
-    player setPos _startPos;
+    _player setPos _startPos;
 };

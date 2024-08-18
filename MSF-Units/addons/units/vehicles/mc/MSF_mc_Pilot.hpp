@@ -7,13 +7,13 @@ class MSF_Pilot :  MSF_Soldier_Base
 	scope = 2;
 	scopeCurator = 2;
 	weapons[] = {
-        "MSF_rhs_hk416d10", "Binocular", "rhsusf_weap_m1911a1", "Throw", "Put"
+        "MSF_rhs_SCARH_STD", "Binocular", "rhsusf_weap_m1911a1", "Throw", "Put"
     };
     magazines[] = {
         "acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellRed", "SmokeShellRed", "9Rnd_45ACP_Mag", 
-		"9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
-		"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red",
-		"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhsusf_mag_7x45acp_MHP"
+		"9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+		"rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+		"rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhsusf_mag_7x45acp_MHP"
     };
     items[] = {
 		"ACE_EarPlugs", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_MapTools", "ACE_RangeCard", "ACE_Banana", "ACE_packingBandage", "ACE_packingBandage",
@@ -27,13 +27,13 @@ class MSF_Pilot :  MSF_Soldier_Base
 		"JAS_GPNVG18_blk_TI",
     };	
 	respawnWeapons[] = {
-		"MSF_rhs_hk416d10", "Binocular", "rhsusf_weap_m1911a1", "Throw", "Put"
+		"MSF_rhs_SCARH_STD", "Binocular", "rhsusf_weap_m1911a1", "Throw", "Put"
 	};
 	respawnMagazines[] = {
         "acex_intelitems_notepad", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellRed", "SmokeShellRed", "9Rnd_45ACP_Mag", 
-		"9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",
-		"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red",
-		"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhsusf_mag_7x45acp_MHP"
+		"9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "9Rnd_45ACP_Mag", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+		"rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+		"rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhsusf_mag_7x45acp_MHP"
 	};
 	RespawnItems[] = {
 		"ACE_EarPlugs", "ACE_IR_Strobe_Item", "ACE_CableTie", "ACE_MapTools", "ACE_RangeCard", "ACE_Banana", "ACE_packingBandage", "ACE_packingBandage",
@@ -49,3 +49,4 @@ class MSF_Pilot :  MSF_Soldier_Base
     uniformClass = "U_B_HeliPilotCoveralls";
     backpack = "B_Parachute";
 };
+
