@@ -2,11 +2,11 @@ params [["_trigger", objNull, [objNull]]];
 
 [_trigger] spawn {
 	private _trigger = _this select 0;
-
-	_units = [0] call MSF_fnc_GetUnitClasses; 
+	
+	private _side = (_trigger getVariable ["MSF_Trig_Wave_Side", 0]) call BIS_fnc_sideType;
+	private _units = [_side] call MSF_fnc_GetUnitClasses; 
 	_units params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClasses", "_turrets", "_infUnits"];
 
-	private _side = _trigger getVariable ["MSF_Trig_Wave_Side", east];
 	private _waves = _trigger getVariable ["MSF_Trig_Waves_Num", 2];
 	private _interval = _trigger getVariable ["MSF_Trig_Waves_Interval", 300];
 	private _waveCount = 0;
@@ -31,7 +31,7 @@ params [["_trigger", objNull, [objNull]]];
 		private _vicNum = _trigger getVariable ["MSF_Trig_Wave_Vehicle_Num", 0];
 		private _fill = _trigger getVariable ["MSF_Trig_Wave_VicFillPercentage", 0];
 		if (_vicNum > 0) then {
-			[_trigger, _vicNum, _side, 400, _vicTypes, 1, _fill] call MSF_fnc_SpawnSeekAndDestroyVehicles;
+			[_trigger, _vicNum, _side, 400, _vicTypes, 1, _fill, _infUnits] call MSF_fnc_SpawnSeekAndDestroyVehicles;
 		};
 
 		// armored vics

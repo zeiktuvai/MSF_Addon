@@ -12,8 +12,8 @@
 */
 params ["_trigger"];
 
-private _classes = [] call MSF_fnc_GetUnitClasses;
-
+private _side = [_trigger getVariable ["MSF_Trig_Patrol_Side", 0]] call BIS_fnc_sideType;
+private _classes = [_side] call MSF_fnc_GetUnitClasses;
 private _radius = [_trigger] call MSF_fnc_GetAreaRadius;
 private _roads = (position _trigger) nearRoads _radius;
 private _vehicles = _classes select 6;
@@ -25,13 +25,7 @@ private _skip = 0;
 private _skipVal = parseNumber((count _roads) / _num - 1 toFixed 0);
 private _initial = [];
 private _count = [1, 2] select ((_trigger getVariable ["MSF_Trig_Patrol_SpawnCount", false]) == true);
-private _side = east;
-switch (_trigger getVariable ["MSF_Trig_Patrol_Side", 0]) do {
-	case 0: { _side = east; };
-	case 1: { _side = resistance; };
-	case 2: { _side = west; };
-	default { _side = east };
-};
+
 
 for "_g" from 1 to _count do {
 	if (_g == 1) then {	_initial = getPosATL (_roads select _skip);	} else { _initial = getPosATL (_roads select (count _roads - 1)); };

@@ -1,4 +1,4 @@
-- Fixed bug in Join on Player causing it not to work.
+- Updated magazine config into three "sets", can be enabled or disabled in the mission config.
 
 
 event hanlder stuff

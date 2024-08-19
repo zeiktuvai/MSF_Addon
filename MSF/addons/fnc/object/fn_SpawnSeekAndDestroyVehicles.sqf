@@ -25,10 +25,10 @@ params [
 	["_distance", 250, [250]],
 	["_vehicleTypes", [], [[]]],
 	["_spawnChance", 1, [1]],
-	["_fillChance", 0, [0]]
+	["_fillChance", 0, [0]],
+	["_fillUnits", [], [[]]]
 ];
 
-private _fillUnits = [] call MSF_fnc_GetUnitClasses;
 private _zeus = getMissionConfigValue ["MSF_Mission_Zeus", true];
 
 for "_i" from 1 to _num do {

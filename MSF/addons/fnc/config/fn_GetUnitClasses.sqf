@@ -3,17 +3,27 @@
 	_units params ["_infGroups", "_vics", "_armor", "_air", "_turrets", "_infUnits"];
 */
 
-params [["_type", 0, [0]]];
+params [["_side", east, [east]]];
 
 private ["_cfg", "_return", "_faction", "_groups", "_vics", "_armor", "_air", "_turrets", "_units", "_vicPatrol"];
 _return = [];
 _cfg = [] call MSF_fnc_GetLocalConfig;
 
-switch (_type) do {
-	case 0: { _faction = "Set1" };
-	case 1: { _faction = "Set2" };
-	default { _faction = "Set1" };
+switch (_side) do {
+	case east: {
+		_faction = "Set1";
+	};
+	case resistance: {
+		_faction = "Set2";
+	};
+	case west: {
+		_faction = "Set3";
+	};
+	default {
+		_faction = "Set1";
+	 };
 };
+
 
 // Get default unit set
 _groups = getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Groups');
