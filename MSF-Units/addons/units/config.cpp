@@ -2,7 +2,6 @@
 #include "MSF_Roles.hpp"
 #include "MSF_Faction.hpp"
 #include "MSF_Categories.hpp"
-#include "MSF_Weapons.hpp"
 
 class CfgPatches
 {
@@ -33,7 +32,58 @@ class CfgPatches
 };
 
 class CfgVehicles {
-    #include "vehicles\MSF_Soldier_Base.hpp"
-    #include "vehicles\MSF_Sniper_Base.hpp"
-    #include "vehicles\MSF_Units.hpp"
+    #include "vehicles\MSF_Units_BLUFOR.hpp"
+
+    class O_soldier_F;
+    class Slocam_Soldier : O_soldier_F {
+        author = "Zeik_Tuvai"; 
+        _generalMacro = "O_soldier_F"; 
+        scope = 2; 
+        displayName = "Slocam Soldier"; 
+        identityTypes[] = {"Head_NATO", "G_NATO_default"}; 
+        genericNames = "TakistaniMen"; 
+        faction = "MSF_OPFOR";
+        model = "\A3\characters_f_beta\INDEP\ia_soldier_01.p3d"; 
+        uniformClass = "Slocam_Uniform"; 
+        hiddenSelections[] = {"Camo","Insignia"}; 
+        hiddenSelectionsTextures[] = {"z\msf\addons\units\data\MSF_OPFOR_clothing.paa"};
+        //hiddenSelectionsMaterials[] = {"Custom_Uniform\Data\custom_camo.rvmat"};  
+        weapons[] = {"arifle_TRG20_ACO_Flash_F","Throw","Put"}; 
+        respawnWeapons[] = {"arifle_TRG20_ACO_Flash_F","Throw","Put"}; 
+        magazines[] = {"HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"}; 
+        respawnMagazines[] = {"HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"};
+        linkedItems[] = {"CUstom_Helmet1","Custom_Vest1","ItemMap","ItemCompass","ItemWatch","ItemRadio"}; 
+        respawnLinkedItems[] = {"CUstom_Helmet1","Custom_Vest1","ItemMap","ItemCompass","ItemWatch","ItemRadio"}; 
+    };
+};
+
+class UniformSlotInfo 
+{ 
+    slotType = 0; 
+    linkProxy = "-"; 
+}; 
+
+class CfgWeapons
+{
+    #include "MSF_Weapons.hpp"
+    
+    class ItemCore;
+    class UniformItem;    
+    class Uniform_Base : ItemCore
+    {
+        class ItemInfo;
+    };
+
+    class Slocam_Uniform : Uniform_Base
+    {
+        scope = 2;
+        displayName = "Slocam Uniform";
+        //picture = "-";
+        model = "\A3\characters_f_beta\INDEP\ia_soldier_01.p3d"; 
+        class ItemInfo : UniformItem { 
+            uniformClass = "Slocam_Soldier"; 
+            containerClass = "Supply50"; 
+            mass = 50; 
+        }; 
+    };
 };
