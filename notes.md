@@ -1,4 +1,5 @@
 - Updated magazine config into three "sets", can be enabled or disabled in the mission config.
+- Updated spawn triggers so that they now can spawn independent and blufor forces.
 
 
 event hanlder stuff
