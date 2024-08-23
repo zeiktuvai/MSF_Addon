@@ -1,4 +1,9 @@
-- Fixed bug in Join on Player causing it not to work.
+- Updated magazine config into three "sets", can be enabled or disabled in the mission config.
+- Updated spawn triggers so that they now can spawn independent and blufor forces.
+
+
+Units
+- Fixed an issue with with backpacks that caused some items to not be included.
 
 
 event hanlder stuff

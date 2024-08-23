@@ -25,10 +25,10 @@ params [
 	["_distance", 250, [250]],
 	["_vehicleTypes", [], [[]]],
 	["_spawnChance", 1, [1]],
-	["_fillChance", 0, [0]]
+	["_fillChance", 0, [0]],
+	["_fillUnits", [], [[]]]
 ];
 
-private _fillUnits = [] call MSF_fnc_GetUnitClasses;
 private _zeus = getMissionConfigValue ["MSF_Mission_Zeus", true];
 
 for "_i" from 1 to _num do {
@@ -48,7 +48,7 @@ for "_i" from 1 to _num do {
 
 			if (_availSlots > 0) then {
 				for "_k" from 1 to _availSlots do {
-					private _crewD = (_vic select 2) createUnit [selectRandom (_fillUnits select 5), _pos, [], 0, "FORM"];
+					private _crewD = (_vic select 2) createUnit [selectRandom _fillUnits , _pos, [], 0, "FORM"];
 					[_crewD] join (_vic select 2);
 					_crewD moveInAny (_vic select 0);
 					if (_zeus) then { { _x addCuratorEditableObjects [[_crewD], true]; } forEach allCurators; };

@@ -10,13 +10,12 @@
 	Function Ver 1.0
 	Implemented in: MSF Addon v1.6.0
 */
-
 params [["_trigger", objNull, [objNull]]];
 
-private _classes = [] call MSF_fnc_GetUnitClasses;
+private _side = [_trigger getVariable ["MSF_Trig_Fortify_Side", 0]] call BIS_fnc_sideType;
+private _classes = [_side] call MSF_fnc_GetUnitClasses;
 _classes params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClasses", "_staticTypes", "_fillUnits"];
 
-private _side = _trigger getVariable ["MSF_Trig_Fortify_Side", east];
 
 // building defense
 if (_trigger getVariable ["MSF_Trig_Fortify_Building_Enable", false]) then {
@@ -24,8 +23,8 @@ if (_trigger getVariable ["MSF_Trig_Fortify_Building_Enable", false]) then {
 	
 	[_trigger, _buildingNum, _side, _infantryGroupClasses] spawn 
 	{		
-		params ["_trigger", "_buildingNum", "_side", "_groupTypes"];
-		[_trigger, _buildingNum, _side, _groupTypes] call MSF_fnc_CreateAreaBuildingDefense;
+		params ["_trigger", "_buildingNum", "_side", "_infantryGroupClasses"];
+		[_trigger, _buildingNum, _side, _infantryGroupClasses] call MSF_fnc_CreateAreaBuildingDefense;
 	};	
 };
 
@@ -33,9 +32,9 @@ if (_trigger getVariable ["MSF_Trig_Fortify_Building_Enable", false]) then {
 if (_trigger getVariable ["MSF_Trig_Fortify_Vehicle_Enable", false]) then {
 	private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_Vehicle_Num", 2];
 
-	[_trigger, _vicNum, _side, _vicTypes] spawn {
-		params ["_trigger", "_vicNum", "_side", "_vicTypes"];
-		[_trigger, _vicNum, _side, _vicTypes] call MSF_fnc_CreateAreaVehicleDefense;
+	[_trigger, _vicNum, _side, _vicTypes, _fillUnits] spawn {
+		params ["_trigger", "_vicNum", "_side", "_vicTypes", "_fillUnits"];
+		[_trigger, _vicNum, _side, _vicTypes, _fillUnits] call MSF_fnc_CreateAreaVehicleDefense;
 	};
 };
 
@@ -43,9 +42,9 @@ if (_trigger getVariable ["MSF_Trig_Fortify_Vehicle_Enable", false]) then {
 if (_trigger getVariable ["MSF_Trig_Fortify_Armor_Enable", false]) then {
 	private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_Armor_Num", 2];
 
-	[_trigger, _vicNum, _side, _armorTypes] spawn {
-		params ["_trigger", "_vicNum", "_side", "_armorTypes"];
-		[_trigger, _vicNum, _side, _armorTypes, true] call MSF_fnc_CreateAreaVehicleDefense;
+	[_trigger, _vicNum, _side, _armorTypes, _fillUnits] spawn {
+		params ["_trigger", "_vicNum", "_side", "_armorTypes", "_fillUnits"];
+		[_trigger, _vicNum, _side, _armorTypes, _fillUnits, true] call MSF_fnc_CreateAreaVehicleDefense;
 	};
 };
 
@@ -53,9 +52,9 @@ if (_trigger getVariable ["MSF_Trig_Fortify_Armor_Enable", false]) then {
 if (_trigger getVariable ["MSF_Trig_Fortify_Static_Enable", false]) then {
 	private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_Static_Num", 2];
 
-	[_trigger, _vicNum, _side, _staticTypes] spawn {
-		params ["_trigger", "_vicNum", "_side", "_staticTypes"];
-		[_trigger, _vicNum, _side, _staticTypes, false, true] call MSF_fnc_CreateAreaVehicleDefense;
+	[_trigger, _vicNum, _side, _staticTypes, _fillUnits] spawn {
+		params ["_trigger", "_vicNum", "_side", "_staticTypes", "_fillUnits"];
+		[_trigger, _vicNum, _side, _staticTypes, _fillUnits, false, true] call MSF_fnc_CreateAreaVehicleDefense;
 	};
 };
 

@@ -80,13 +80,13 @@ class MSFTrigger : EmptyDetector
 				{
 					name = "Independant";
 					tooltip = "Independant";
-					value = 1;
+					value = 2;
 				};
 				class West
 				{
 					name = "West";
 					tooltip = "BLUFOR";
-					value = 2;
+					value = 1;
 				};
 			};	
 		};

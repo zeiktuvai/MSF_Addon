@@ -15,12 +15,10 @@ params [
 	["_num", 0, [0]],
 	["_side", east, [east]],
 	["_vicTypes", [], [[]]],
+	["_unitTypes", [], [[]]],
 	["_isArmor", false, [false]],
 	["_isStatic", false, [false]]
 ];
-
-private _classes = [] call MSF_fnc_GetUnitClasses;
-_classes params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClasses", "_staticTypes", "_unitTypes"];
 
 for "_i" from 1 to _num do {
 	if (!isDedicated) then {
