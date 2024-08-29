@@ -1,4 +1,3 @@
-- Updated magazine config into three "sets", can be enabled or disabled in the mission config.
 
 
 event hanlder stuff

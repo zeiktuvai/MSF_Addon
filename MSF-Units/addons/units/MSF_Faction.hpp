@@ -6,8 +6,8 @@ class CfgFactionClasses {
         priority = 3;
         side = 1;
     };
-    class MSF_OPFOR {
-        displayName = "OPFOR (MSF)";
+    class OPF_ARC_MSF {
+        displayName = "ARC (MSF)";
         flag = "\a3\Data_f\Flags\flag_CSAT_co.paa";
         icon = "\a3\Data_f\cfgFactionClasses_OPF_ca.paa";
         priority = 2;
