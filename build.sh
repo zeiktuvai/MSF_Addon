@@ -22,4 +22,3 @@ while getopts ":s" option; do
             exit;;        
     esac
 done
-
