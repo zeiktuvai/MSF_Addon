@@ -59,28 +59,76 @@ class CfgUnitInsignia
       texture = "z\msf\addons\client\patch\TFY_backup_pilot.paa";
       textureVehicle = "";
     };
-    class tfy_qual_armor_1
+    class TFY_Armor_Rank1
     {
       scope = 1;
-      displayName = "Armor Qualification - Rank 1";
+      displayName = "Armor Spec - Rank 1";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\armor_rank1.paa";
       textureVehicle = "";
     };
-    class tfy_qual_armor_2
+    class TFY_Armor_Rank2
     {
       scope = 1;
-      displayName = "Armor Qualification - Rank 2";
+      displayName = "Armor Spec - Rank 2";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\armor_rank2.paa";
       textureVehicle = "";
     };
-    class tfy_qual_armor_3
+    class TFY_Armor_Rank3
     {
       scope = 1;
-      displayName = "Armor Qualification - Rank 3";
+      displayName = "Armor Spec - Rank 3";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\armor_rank3.paa";
+      textureVehicle = "";
+    };
+    class TFY_CQB_Rank1
+    {
+      scope = 1;
+      displayName = "CQB Spec - Rank 1";
+      author = "zeik_tuvai";
+      texture = "z\msf\addons\client\qual\cqb_rank1.paa";
+      textureVehicle = "";
+    };
+    class TFY_CQB_Rank2
+    {
+      scope = 1;
+      displayName = "CQB Spec - Rank 2";
+      author = "zeik_tuvai";
+      texture = "z\msf\addons\client\qual\cqb_rank2.paa";
+      textureVehicle = "";
+    };
+    class TFY_CQB_Rank3
+    {
+      scope = 1;
+      displayName = "CQB Spec - Rank 3";
+      author = "zeik_tuvai";
+      texture = "z\msf\addons\client\qual\cqb_rank3.paa";
+      textureVehicle = "";
+    };
+    class TFY_Drone_Rank1
+    {
+      scope = 1;
+      displayName = "Drone Spec - Rank 1";
+      author = "zeik_tuvai";
+      texture = "z\msf\addons\client\qual\drone_rank1.paa";
+      textureVehicle = "";
+    };
+    class TFY_Drone_Rank2
+    {
+      scope = 1;
+      displayName = "Drone Spec - Rank 2";
+      author = "zeik_tuvai";
+      texture = "z\msf\addons\client\qual\drone_rank2.paa";
+      textureVehicle = "";
+    };
+    class TFY_Drone_Rank3
+    {
+      scope = 1;
+      displayName = "Drone Spec - Rank 3";
+      author = "zeik_tuvai";
+      texture = "z\msf\addons\client\qual\drone_rank3.paa";
       textureVehicle = "";
     };
 };

@@ -2,7 +2,6 @@
 #include "MSF_Roles.hpp"
 #include "MSF_Faction.hpp"
 #include "MSF_Categories.hpp"
-#include "MSF_Weapons.hpp"
 
 class CfgPatches
 {
@@ -24,7 +23,8 @@ class CfgPatches
             "MSF_Crewman_W", "MSF_Engineer_W", "MSF_Grenadier_W", "MSF_Gunner_W", "MSF_Leader_W", "MSF_Marksman_W", "MSF_Medic_W", 
             "MSF_Mine_W", "MSF_ATRifleman_W", "MSF_AARifleman_W", "MSF_Pilot_W", "MSF_Repair_W", "MSF_Rifleman_W", "MSF_Sniper_W", 
             "MSF_UAV_W", "MSF_w_BaseBackpack", "MSF_w_PMAGBackpack", "MSF_w_PMAGSupplyBackpack", "MSF_w_SniperBackpack",
-            "MSF_w_ATBackpack", "MSF_w_AABackpack", "MSF_w_SAWBackpack", "MSF_w_MedicBackpack", "MSF_w_EngBackpack", "MSF_w_MineBackpack"
+            "MSF_w_ATBackpack", "MSF_w_AABackpack", "MSF_w_SAWBackpack", "MSF_w_MedicBackpack", "MSF_w_EngBackpack", "MSF_w_MineBackpack",
+            "MSF_O_ARC_Rifleman"
         };
         weapons[] = {};
         requiredVersion = 2.0;
@@ -33,7 +33,20 @@ class CfgPatches
 };
 
 class CfgVehicles {
-    #include "vehicles\MSF_Soldier_Base.hpp"
-    #include "vehicles\MSF_Sniper_Base.hpp"
-    #include "vehicles\MSF_Units.hpp"
+    #include "vehicles\MSF_Units_BLUFOR.hpp"
+    #include "vehicles\MSF_Units_OPFOR.hpp"
 };
+
+class CfgWeapons
+{
+    class ItemCore;
+    #include "MSF_Weapons.hpp"
+    #include "MSF_Uniforms.hpp"
+    #include "MSF_Equipment.hpp"
+};
+
+class UniformSlotInfo 
+{ 
+    slotType = 0; 
+    linkProxy = "-"; 
+}; 

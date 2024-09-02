@@ -1,9 +1,4 @@
-- Updated magazine config into three "sets", can be enabled or disabled in the mission config.
-- Updated spawn triggers so that they now can spawn independent and blufor forces.
-
-
-Units
-- Fixed an issue with with backpacks that caused some items to not be included.
+ARC 
 
 
 event hanlder stuff
@@ -27,5 +22,3 @@ https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)
 // 		_control lbsetpicture [_lbadd, gettext (_group >> 'icon')];
 // 	};
 // } foreach _groups;
-
-
