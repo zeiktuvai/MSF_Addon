@@ -14,3 +14,7 @@
 #include "weapons\MSF_SPAR_GL.hpp"
 #include "weapons\MSF_rhs_m240B.hpp"
 #include "weapons\MSF_rhs_SCARH_STD.hpp"
+#include "weapons\MSF_ARC_SPAR.hpp"
+#include "weapons\MSF_ARC_SPAR_MG.hpp"
+#include "weapons\MSF_ARC_SPAR_GL.hpp"
+#include "weapons\MSF_ARC_DMR.hpp"

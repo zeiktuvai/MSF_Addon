@@ -1,3 +1,4 @@
+ARC 
 
 
 event hanlder stuff
@@ -21,5 +22,3 @@ https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)
 // 		_control lbsetpicture [_lbadd, gettext (_group >> 'icon')];
 // 	};
 // } foreach _groups;
-
-
