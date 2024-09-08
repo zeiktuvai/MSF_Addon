@@ -6,7 +6,7 @@ class MSF_O_ARC_Autorifleman : MSF_O_ARC_Soldier_Base
     scopeCurator = 2;
     role = "MSFAssault";
     icon = "iconManMG";
-	editorPreview = "\z\msf\addons\units\ui\MSF_O_ARC_Soldier_LMG.jpg";
+	editorPreview = "z\msf\addons\units\data\ui\MSF_O_ARC_Soldier_LMG.jpg";
 	weapons[] = {
         "MSF_ARC_SPAR_MG", "Binocular", "Throw", "Put"
     };

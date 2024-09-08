@@ -5,5 +5,5 @@
         scope = 2;
         scopeCurator = 2;
         role = "MSFAssault";
-        editorPreview = "\z\msf\addons\units\ui\MSF_O_ARC_Soldier_F.jpg"; 
+        editorPreview = "z\msf\addons\units\data\ui\MSF_O_ARC_Soldier_F.jpg"; 
     };

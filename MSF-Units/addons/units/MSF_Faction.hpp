@@ -8,8 +8,8 @@ class CfgFactionClasses {
     };
     class OPF_ARC_MSF {
         displayName = "ARC";
-        flag = "z\msf\addons\units\ui\flag_arc_co.paa";
-        icon = "z\msf\addons\units\ui\cfgfactionclasses_arc_ca.paa";
+        flag = "z\msf\addons\units\data\ui\flag_arc_co.paa";
+        icon = "z\msf\addons\units\data\ui\cfgfactionclasses_arc_ca.paa";
         priority = 2;
         side = 0;
         factionName = "Autonomous Regions Coalition";

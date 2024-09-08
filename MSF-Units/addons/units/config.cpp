@@ -24,7 +24,7 @@ class CfgPatches
             "MSF_Mine_W", "MSF_ATRifleman_W", "MSF_AARifleman_W", "MSF_Pilot_W", "MSF_Repair_W", "MSF_Rifleman_W", "MSF_Sniper_W", 
             "MSF_UAV_W", "MSF_w_BaseBackpack", "MSF_w_PMAGBackpack", "MSF_w_PMAGSupplyBackpack", "MSF_w_SniperBackpack",
             "MSF_w_ATBackpack", "MSF_w_AABackpack", "MSF_w_SAWBackpack", "MSF_w_MedicBackpack", "MSF_w_EngBackpack", "MSF_w_MineBackpack",
-            "MSF_O_ARC_Rifleman"
+            "MSF_O_ARC_Rifleman", "MSF_O_ARC_Marksman", "MSF_O_ARC_Grenadier", "MSF_O_ARC_Autorifleman"
         };
         weapons[] = {};
         requiredVersion = 2.0;
@@ -41,7 +41,6 @@ class CfgWeapons
 {
     class ItemCore;
     #include "MSF_Weapons.hpp"
-    #include "MSF_Uniforms.hpp"
     #include "MSF_Equipment.hpp"
 };
 

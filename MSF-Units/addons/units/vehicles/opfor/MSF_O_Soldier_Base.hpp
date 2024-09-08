@@ -12,7 +12,7 @@ class MSF_O_ARC_Soldier_Base : O_soldier_F
 	genericNames = "TakistaniMen";
 	model = "\A3\characters_f_beta\INDEP\ia_soldier_01.p3d"; 
 	hiddenSelections[] = {"Camo","Insignia"}; 
-	hiddenSelectionsTextures[] = {"z\msf\addons\units\data\MSF_O_ARC_clothing.paa"};  
+	hiddenSelectionsTextures[] = {"z\msf\addons\units\data\arc\MSF_O_ARC_clothing.paa"};  
 	weapons[] = {
         "MSF_ARC_SPAR", "Binocular", "Throw", "Put"
     };

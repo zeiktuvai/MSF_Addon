@@ -5,7 +5,7 @@ class ARC_Vest : Vest_Camo_Base
     //picture = "-"; 
     model = "A3\Characters_F\BLUFOR\equip_b_Vest01"; 
     hiddenSelections[] = {"Camo"}; 
-    hiddenSelectionsTextures[] = {"z\msf\addons\units\data\MSF_O_ARC_Vest.paa"}; 
+    hiddenSelectionsTextures[] = {"z\msf\addons\units\data\arc\MSF_O_ARC_Vest.paa"}; 
     class ItemInfo: VestItem 
     { 
         uniformModel = "A3\Characters_F\BLUFOR\equip_b_Vest01.p3d"; 
@@ -23,7 +23,7 @@ class ARC_Vest_Lite : Vest_Camo_Base
     //picture = "-"; 
     model = "A3\Characters_F\BLUFOR\equip_b_Vest02"; 
     hiddenSelections[] = {"Camo"}; 
-    hiddenSelectionsTextures[] = {"z\msf\addons\units\data\MSF_O_ARC_Vest.paa"}; 
+    hiddenSelectionsTextures[] = {"z\msf\addons\units\data\arc\MSF_O_ARC_Vest.paa"}; 
     class ItemInfo: VestItem 
     { 
         uniformModel = "A3\Characters_F\BLUFOR\equip_b_Vest02.p3d"; 
