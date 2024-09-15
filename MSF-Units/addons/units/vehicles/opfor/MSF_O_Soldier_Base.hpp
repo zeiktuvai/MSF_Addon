@@ -46,4 +46,5 @@ class MSF_O_ARC_Soldier_Base : O_soldier_F
 		"ARC_Vest", "ARC_Helmet", "rhs_googles_orange", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"
 	};
 	uniformClass = "ARC_Uniform";
+	backpack = "MSF_O_ARC_Backpack";
 };

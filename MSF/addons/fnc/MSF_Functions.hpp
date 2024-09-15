@@ -102,5 +102,12 @@ class CfgFunctions
 			class ZEN_ArrayShuffle {};
 			class JBOY_UpDown {};
 		};
+		class TFY
+		{
+			file = "z\msf\addons\fnc\TFY";
+			class InitializeInternal {
+				postInit = 1;
+			};
+		};
 	};
 };

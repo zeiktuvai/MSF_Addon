@@ -62,7 +62,7 @@ class CfgUnitInsignia
     class TFY_Armor_Rank1
     {
       scope = 1;
-      displayName = "Armor Spec - Rank 1";
+      displayName = "Basic Armor Crewman ";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\armor_rank1.paa";
       textureVehicle = "";
@@ -70,7 +70,7 @@ class CfgUnitInsignia
     class TFY_Armor_Rank2
     {
       scope = 1;
-      displayName = "Armor Spec - Rank 2";
+      displayName = "Armor Sergeant";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\armor_rank2.paa";
       textureVehicle = "";
@@ -78,7 +78,7 @@ class CfgUnitInsignia
     class TFY_Armor_Rank3
     {
       scope = 1;
-      displayName = "Armor Spec - Rank 3";
+      displayName = "Combined Arms Tank Commander";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\armor_rank3.paa";
       textureVehicle = "";
@@ -86,49 +86,81 @@ class CfgUnitInsignia
     class TFY_CQB_Rank1
     {
       scope = 1;
-      displayName = "CQB Spec - Rank 1";
+      displayName = "Basic CQB";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\cqb_rank1.paa";
       textureVehicle = "";
     };
-    class TFY_CQB_Rank2
+    class TFY_Signal_Rank1
     {
       scope = 1;
-      displayName = "CQB Spec - Rank 2";
+      displayName = "Basic Radio Operator (TFAR) ";
       author = "zeik_tuvai";
-      texture = "z\msf\addons\client\qual\cqb_rank2.paa";
+      texture = "z\msf\addons\client\qual\signal_rank1.paa";
       textureVehicle = "";
     };
-    class TFY_CQB_Rank3
+    class TFY_Signal_Rank2
     {
       scope = 1;
-      displayName = "CQB Spec - Rank 3";
+      displayName = "Radio Net Operator (TFAR)";
       author = "zeik_tuvai";
-      texture = "z\msf\addons\client\qual\cqb_rank3.paa";
+      texture = "z\msf\addons\client\qual\signal_rank2.paa";
       textureVehicle = "";
     };
-    class TFY_Drone_Rank1
+    class TFY_Signal_Rank3
     {
       scope = 1;
-      displayName = "Drone Spec - Rank 1";
+      displayName = "Combined Arms Comms Coordinator (TFAR)";
       author = "zeik_tuvai";
-      texture = "z\msf\addons\client\qual\drone_rank1.paa";
+      texture = "z\msf\addons\client\qual\signal_rank3.paa";
       textureVehicle = "";
     };
-    class TFY_Drone_Rank2
+    class TFY_Medical_Rank1
     {
       scope = 1;
-      displayName = "Drone Spec - Rank 2";
+      displayName = "Basic First Aid";
       author = "zeik_tuvai";
-      texture = "z\msf\addons\client\qual\drone_rank2.paa";
+      texture = "z\msf\addons\client\qual\medical_rank1.paa";
       textureVehicle = "";
     };
-    class TFY_Drone_Rank3
+    class TFY_Medical_Rank2
     {
       scope = 1;
-      displayName = "Drone Spec - Rank 3";
+      displayName = "Combat Medic";
       author = "zeik_tuvai";
-      texture = "z\msf\addons\client\qual\drone_rank3.paa";
+      texture = "z\msf\addons\client\qual\medical_rank2.paa";
+      textureVehicle = "";
+    };
+    class TFY_Aviator
+    {      
+      displayName = "Aviator";
+      author = "zeik_tuvai";
+      texture = "z\msf\addons\client\qual\aviator.paa";
       textureVehicle = "";
     };
 };
+
+    // class TFY_Medical_Rank3
+    // {
+    //   scope = 1;
+    //   displayName = "Medical Spec - Rank 3";
+    //   author = "zeik_tuvai";
+    //   texture = "z\msf\addons\client\qual\medical_rank3.paa";
+    //   textureVehicle = "";
+    // };
+    // class TFY_Medical_Rank
+    // {
+    //   scope = 1;
+    //   displayName = "Basic First Aid";
+    //   author = "zeik_tuvai";
+    //   texture = "z\msf\addons\client\qual\medical_rank1.paa";
+    //   textureVehicle = "";
+    // };
+    // class TFY_Drone_Rank3
+    // {
+    //   scope = 1;
+    //   displayName = "Drone Spec - Rank 3";
+    //   author = "zeik_tuvai";
+    //   texture = "z\msf\addons\client\qual\drone_rank3.paa";
+    //   textureVehicle = "";
+    // };

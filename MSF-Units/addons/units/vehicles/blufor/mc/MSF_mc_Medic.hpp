@@ -6,6 +6,7 @@ class MSF_Medic :  MSF_Soldier_Base
 	scope = 2;
 	scopeCurator = 2;
     attendant = 1;
+    icon = "iconManMedic";
 	weapons[] = {
         "MSF_rhs_SCARH", "Binocular", "rhs_weap_rsp30_red", "Throw", "Put"
     };
