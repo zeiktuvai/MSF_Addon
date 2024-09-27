@@ -15,6 +15,3 @@ class CfgPatches
 };
 
 #include "MSF_Functions.hpp"
-
-
-

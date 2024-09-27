@@ -11,10 +11,14 @@
 */
 params [["_player", objNull, [objNull]], ["_jip", false, [false]]];
 
-if (getMissionConfigValue ["MSF_Multi_JnP", false] && _jip) then {
-    waituntil {sleep 1; !isnull _player};
-
-    private _unit = playableUnits call BIS_fnc_selectRandom;
-    private _startPos = [getPos _unit, random [25, 0, 100], random 360] call BIS_fnc_relPos;
-    _player setPos _startPos;
+if (getMissionConfigValue ["MSF_Multi_JnP", false] && _jip) then 
+{
+	[_player] spawn 
+	{
+		params ["_player"];
+		private _unit = (playableUnits select { _x != player }) call BIS_fnc_selectRandom;
+		private _startPos = [getPos _unit, random [25, 0, 100], random 360] call BIS_fnc_relPos;		
+		
+		_player setPos _startPos;
+	}
 };

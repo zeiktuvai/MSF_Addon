@@ -1,4 +1,6 @@
-ARC 
+- Updated MSF_fnc_Init to do nothing.
+- Updated TFY internal items.
+- Removed dependency of adding `[] call MSF_fnc_Init` into `initPlayerLocal.sqf`
 
 
 event hanlder stuff
