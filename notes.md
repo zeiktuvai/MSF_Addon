@@ -1,10 +1,3 @@
-- Moved functions from MSF_fnc_Init into MissionInit so they are executed automatically upon player join.
-- Moved functions out of Units Addon and into MSF main.
-- Updated JIPSpawnNearPlayer to work correctly.
-- Updated MSF_fnc_Init to do nothing.
-- Updated TFY internal items.
-- Removed dependency of adding `[] call MSF_fnc_Init` into `initPlayerLocal.sqf`
-
 
 event hanlder stuff
 https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)
