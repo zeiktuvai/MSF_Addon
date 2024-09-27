@@ -32,3 +32,10 @@ if (isServer) then {
 		[] call MSF_fnc_RespawnVehicleCustomization;
 	};
 };
+
+if (!isServer) then
+{	
+	[player] call MSF_fnc_ConfigRespawnOnPlayer;
+	[player, didJIP] call MSF_fnc_JIPSpawnNearPlayer;
+	[] call MSF_fnc_ApplyDamageReduction;
+}		

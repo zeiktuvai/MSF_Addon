@@ -17,7 +17,7 @@
 
 params ["_unit"];
 
-if (isNil "IsTFY") theen {
+if (isNil "IsTFY") then {
 	[_unit, ""] call BIS_fnc_setUnitInsignia;
 	if ("T" in (typeOf _unit)) exitWith {
 		[_unit, "tfy_insignia_trop"] call BIS_fnc_setUnitInsignia;
@@ -29,15 +29,9 @@ if (isNil "IsTFY") theen {
 		[_unit, "tfy_insignia_blk"] call BIS_fnc_setUnitInsignia;
 	};
 	[_unit, "tfy_insignia"] call BIS_fnc_setUnitInsignia;
-
-	_unit addMPEventHandler ["MPRespawn", {
-		params ["_unit"]; 
-	
-		[_unit] spawn {
-			params ["_unit"]; 
-
-			uiSleep 1;
-			[_unit] call MSF_fnc_ApplyInsignia;  
-		};
-	}];
+}
+else
+{
+	[_unit, ""] call BIS_fnc_setUnitInsignia;
+	[_unit, TFY_Qualifications] call BIS_fnc_setUnitInsignia;
 };

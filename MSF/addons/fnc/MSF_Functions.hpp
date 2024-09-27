@@ -85,6 +85,14 @@ class CfgFunctions
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};
 		};
+		class Units
+		{
+			file = "z\msf\addons\fnc\units";
+			class AddRadio {};
+			class AddSilencer {};
+			class ApplyInsignia {};
+			class SetInsigniaEH {};
+		};
 		class Validators
 		{
 			file = "z\msf\addons\fnc\validator";
