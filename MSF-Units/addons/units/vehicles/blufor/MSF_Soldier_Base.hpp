@@ -30,7 +30,7 @@ class MSF_Soldier_Base : B_Soldier_base_f
 	{
 		class MSF_Insignia
 		{
-			init = "[_this select 0] call MSF_fnc_SetInsigniaEH;";
+			init = "[_this select 0] call MSF_fnc_ApplyInsignia;";
 		};
 		class MSF_Radio
 		{
