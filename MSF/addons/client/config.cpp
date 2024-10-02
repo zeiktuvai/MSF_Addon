@@ -62,7 +62,7 @@ class CfgUnitInsignia
     class TFY_Armor_Rank1
     {
       scope = 1;
-      displayName = "Armor Crewman (Armor I)";
+      displayName = "Basic - Armor Crewman";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\armor_rank1.paa";
       textureVehicle = "";
@@ -70,7 +70,7 @@ class CfgUnitInsignia
     class TFY_Armor_Rank2
     {
       scope = 1;
-      displayName = "Armor Sergeant (Armor II)";
+      displayName = "Armor II - Armor Sergeant";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\armor_rank2.paa";
       textureVehicle = "";
@@ -78,7 +78,7 @@ class CfgUnitInsignia
     class TFY_Armor_Rank3
     {
       scope = 1;
-      displayName = "Tank Commander (Armor III)";
+      displayName = "Armor II - Tank Commander";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\armor_rank3.paa";
       textureVehicle = "";
@@ -86,7 +86,7 @@ class CfgUnitInsignia
     class TFY_CQB_Rank1
     {
       scope = 1;
-      displayName = "CQB";
+      displayName = "Basic - CQB";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\cqb_rank1.paa";
       textureVehicle = "";
@@ -94,7 +94,7 @@ class CfgUnitInsignia
     class TFY_Marksman_Rank2
     {
       scope = 1;
-      displayName = "Designated Marksman";
+      displayName = "Infantry - Designated Marksman";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\marksman_rank2.paa";
       textureVehicle = "";
@@ -102,7 +102,7 @@ class CfgUnitInsignia
     class TFY_Signal_Rank1
     {
       scope = 1;
-      displayName = "Radio Operator (Signal I)";
+      displayName = "Basic - Radio Operator";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\signal_rank1.paa";
       textureVehicle = "";
@@ -110,7 +110,7 @@ class CfgUnitInsignia
     class TFY_Signal_Rank2
     {
       scope = 1;
-      displayName = "Radio Net Operator (Signal II)";
+      displayName = "Signal II - Radio Net Operator";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\signal_rank2.paa";
       textureVehicle = "";
@@ -118,7 +118,7 @@ class CfgUnitInsignia
     class TFY_Signal_Rank3
     {
       scope = 1;
-      displayName = "Commo Chief (Signal III)";
+      displayName = "Signal III - Commo Chief";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\signal_rank3.paa";
       textureVehicle = "";
@@ -126,7 +126,7 @@ class CfgUnitInsignia
     class TFY_Medical_Rank1
     {
       scope = 1;
-      displayName = "First Aid";
+      displayName = "Basic - First Aid";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\medical_rank1.paa";
       textureVehicle = "";
@@ -134,7 +134,7 @@ class CfgUnitInsignia
     class TFY_Pilot_Heli
     {      
       scope = 1;
-      displayName = "Helicopter Pilot";
+      displayName = "Aviation - Helicopter Pilot";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\pilot_heli.paa";
       textureVehicle = "";
@@ -142,7 +142,7 @@ class CfgUnitInsignia
     class TFY_Pilot_Fixedwing
     {      
       scope = 1;
-      displayName = "Fixed-Wing Pilot";
+      displayName = "Aviation - Fixed-Wing Pilot";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\pilot_fixedwing.paa";
       textureVehicle = "";
@@ -150,7 +150,7 @@ class CfgUnitInsignia
     class TFY_Pilot_UAV
     {      
       scope = 1;
-      displayName = "UAV Pilot";
+      displayName = "Aviation - UAV Pilot";
       author = "zeik_tuvai";
       texture = "z\msf\addons\client\qual\pilot_uav.paa";
       textureVehicle = "";
