@@ -10,6 +10,7 @@ class CfgFunctions
 			{				
 				postInit = 1;
 			};
+			class ModTest {};
 		};
 		class Config
 		{
