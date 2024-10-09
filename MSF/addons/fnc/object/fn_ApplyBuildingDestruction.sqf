@@ -7,8 +7,6 @@ private _fireProb = _logic getVariable ["FireProbability", false];
 private _area = [_logic, false] call MSF_fnc_GetAreaRadius;
 private _modPos = position _logic;
 
-// params [["_triggger", objNull, [objNull]], ["_prob", 1, [1]], ["_fire", false, [false]], ["_fireProb", 0.5, [1]], ["_area", 100, [100]]];
-
 private _houses = nearestObjects [_modPos, ["house"], _area];
 {
    if ([_prob] call MSF_fnc_GetSpawnChance) then

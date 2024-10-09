@@ -11,8 +11,8 @@ class MSF_Module_InfantryPatrol : Module_F
 	isDisposable = 1;	
 	is3DEN = 0;
 	curatorCanAttach = 0;
-	canSetArea = 0;
-	canSetAreaShape = 0;
+	canSetArea = 1;
+	canSetAreaShape = 1;
 	canSetAreaHeight = 0;
 
 	class AttributeValues

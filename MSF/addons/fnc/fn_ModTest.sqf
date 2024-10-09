@@ -3,5 +3,6 @@ params [
 	["_units", [], [[]]],
 	["_activated", true, [true]]
 ];
-	
-hint str _units;
+
+private _area = [_logic, false] call MSF_fnc_GetAreaRadius;	
+hint str (nearestObjects [position _logic, ["Module_F"], _area]);
