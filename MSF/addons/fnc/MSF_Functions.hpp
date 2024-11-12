@@ -85,6 +85,11 @@ class CfgFunctions
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};
 		};
+		class Intel
+		{
+			file = "z\msf\addons\fnc\intel";
+			class SetupIntel {};
+		};
 		class Units
 		{
 			file = "z\msf\addons\fnc\units";
