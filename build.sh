@@ -1,6 +1,6 @@
 #!/bin/bash
 date
-hemtt build --no-bin
+hemtt build
 
 currentPath=$(pwd)
 

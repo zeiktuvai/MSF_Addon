@@ -17,7 +17,7 @@ private _houses = nearestObjects [_modPos, ["house"], _area];
 		if (_dam > 0.5) then { _dam = 1; };
 		_x setDamage _dam;
    };
-} foreach _houses;
+} forEach _houses;
 
 if (_fire) then {	
 	{
@@ -26,5 +26,5 @@ if (_fire) then {
 				"test_EmptyObjectForFireBig" createVehicle position _x;				
 			};
 		};
-	} foreach _houses;	
+	} forEach _houses;	
 }

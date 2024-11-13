@@ -24,7 +24,7 @@ if(isServer ) then
 		private _object = _x;
 		private _isPersist = _object getVariable ["MSF_Persist_isEnable", false];
 		
-		if (_isPersist == false || (_isPersist == true && _isLoad == false)) then {
+		if ( !_isPersist || (!_isPersist && !_isLoad)) then {
 			if (_object getVariable "MSF_Helper_InvGenerate_Enabled") then {
 				private _count = _object getVariable "MSF_Helper_InvGenerate_ItemCount";
 				private _fill = _object getVariable ["MSF_Helper_InvGenerate_Fill", false];

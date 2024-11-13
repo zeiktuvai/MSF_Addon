@@ -24,7 +24,7 @@ private _bldgFound = false;
 } forEach _bldg;
 
 
-if (_bldgFound == true) then {
+if (_bldgFound) then {
 	for "_i" from 1 to _num do {
 		if (!isDedicated) then {
 			sleep 0.1;

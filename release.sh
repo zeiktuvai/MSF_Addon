@@ -1,6 +1,6 @@
 #!/bin/bash
 date
-hemtt release --no-bin
+hemtt release
 
 currentPath=$(pwd)
 

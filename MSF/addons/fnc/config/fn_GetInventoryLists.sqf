@@ -20,7 +20,7 @@ _cfg = [] call MSF_fnc_GetLocalConfig;
 if (_magset1) then { _mags append getArray (configFile >> 'MSFConfig' >> 'MagazineSets' >> "Set1");};
 if (_magset2) then { _mags append getArray (configFile >> 'MSFConfig' >> 'MagazineSets' >> "Set2");};
 if (_magset3) then { _mags append getArray (configFile >> 'MSFConfig' >> 'MagazineSets' >> "Set3");};
-if (_magset1 == false && _magset2 == false && _magset3 == false) then { _mags append getArray (configFile >> 'MSFConfig' >> 'MagazineSets' >> "Set1");};
+if (!_magset1 && !_magset2 && !_magset3) then { _mags append getArray (configFile >> 'MSFConfig' >> 'MagazineSets' >> "Set1");};
 
 // Default config entries
 _items 	= getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'items');
