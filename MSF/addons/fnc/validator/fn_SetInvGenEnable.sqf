@@ -1,5 +1,5 @@
 // Validator for inventory generation and persistence
-params ["_this", "_value"];
+//params ["_this", "_value"];
 
 private _isPersist = _this getVariable ["MSF_Persist_isEnable", false];
 private _isGen = _this getVariable ["MSF_Helper_InvGenerate_Enabled", false];
