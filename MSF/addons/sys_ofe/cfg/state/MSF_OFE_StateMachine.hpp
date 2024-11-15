@@ -1,4 +1,4 @@
-class MSF_Escape_Statemachine {
+class MSF_OFE_Statemachine {
     list = "allGroups select {!isPlayer leader _x}";
     skipNull = 1;
 

@@ -4,7 +4,7 @@ class CfgPatches
 {
     class MSF3den
     {
-		name = "MSF - Escape System";
+		name = "MSF - Occupational Force Engagement System";
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
         units[] = {};
@@ -14,5 +14,6 @@ class CfgPatches
     };
 };
 
-#include "MSF_Esc_Functions.hpp"
-#include "MSF_Esc_StateMachine.hpp"
+#include "MSF_OFE_Functions.hpp"
+#include "cfg\state\MSF_OFE_StateMachine.hpp"
+#include "cfg\modules\MSF_OFE_Modules.hpp"

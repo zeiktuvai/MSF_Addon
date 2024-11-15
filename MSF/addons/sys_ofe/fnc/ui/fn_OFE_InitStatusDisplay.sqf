@@ -11,8 +11,8 @@ with uiNamespace do {
 		while {true} do { 
 			_ctrl ctrlSetStructuredText parseText format[ 
 				"<t color='#ffffff' align='center' size='1'> Enemy Strength: %1  |  Notoriety: %2</t>", 
-				[missionNamespace getVariable ["MSF_EnemyStr", 4]] call MSF_fnc_Esc_GetStrengthText,
-				[missionNamespace getVariable ["MSF_Notoriety", 0]] call MSF_fnc_Esc_GetNotorietyText
+				[missionNamespace getVariable ["MSF_OFE_EnemyStr", 4]] call MSF_fnc_Esc_GetStrengthText,
+				[missionNamespace getVariable ["MSF_OFE_Notoriety", 0]] call MSF_fnc_Esc_GetNotorietyText
 			]; 
 			sleep 5;
 		}; 
