@@ -66,6 +66,7 @@ class CfgFunctions
 			class SetTimeBasedInteraction {};
 			class SetUnitDialogOption {};
 			class SetVehicleDamageReduction {};
+			class ShowHideObjects {};
 			class SpawnSeekAndDestroyVehicles {};
 			class SpawnUAV {};
 		};
@@ -80,6 +81,7 @@ class CfgFunctions
 			class GetAreaRadius {};
 			class GetObjectsByProperty {};
 			class GetPlayersByProperty {};
+			class GetRoadDirection {};
 			class GetSpawnChance {};
 			class GetUnitsByProperty {};
 			class GetVehiclesByProperty {};
