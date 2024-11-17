@@ -11,7 +11,7 @@ private _group = createGroup [east, true];
 // Find out how to keep spawnd units in place on start.
 {
 	(selectRandom _unitTypes) createUnit [getPos _x, _group];
-} forEach (_objects select {typeOf _x == "Land_HelipadEmpty_F"});
+} forEach (_objects select {typeOf _x == "MSF_Placeholder_Infantry"});
 
 {
 	{
