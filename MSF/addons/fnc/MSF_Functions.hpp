@@ -49,6 +49,7 @@ class CfgFunctions
 			class ConfigRespawnOnPlayer	{};
 			class ConfigureMP {};
 			class JIPSpawnNearPlayer {};
+			class RandomSpawn {};
 		};
 		class ACEOptions
 		{
