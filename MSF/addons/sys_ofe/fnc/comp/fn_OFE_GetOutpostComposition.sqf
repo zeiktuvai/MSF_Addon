@@ -1,6 +1,6 @@
 private _outposts = [
 [
-	["MSF_Placeholder_Vehicle",[4.39307,-3.19336,0],0,1,0,[],"","",true,false], 
+	["MSF_Placeholder_Vehicle_U",[4.39307,-3.19336,0],0,1,0,[],"","",true,false], 
 	["MSF_Placeholder_Supplies",[-6.38965,-0.269531,0],0,1,0,[],"","",true,false], 
 	["Land_Cargo_House_V4_F",[5.59863,4.5625,0],90,1,0,[],"","",true,false], 
 	["MSF_Placeholder_Infantry",[3.14258,6.07129,0],0,1,0,[],"","",true,false], 

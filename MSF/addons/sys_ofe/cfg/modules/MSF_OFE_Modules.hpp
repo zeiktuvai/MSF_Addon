@@ -17,3 +17,4 @@ class Module_F : Logic
 
 #include "MSF_Mod_OFE.hpp"
 #include "MSF_Mod_OFE_Checkpoint.hpp"
+#include "MSF_Mod_OFE_Outpost.hpp"

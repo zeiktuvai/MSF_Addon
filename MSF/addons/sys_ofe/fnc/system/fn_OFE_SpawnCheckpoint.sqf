@@ -8,22 +8,16 @@ private _dir = [_position] call MSF_fnc_GetRoadDirection;
 private _objects = [_position, _dir, _def] call BIS_fnc_objectsMapper;
 private _group = createGroup [east, true];
 
-// Find out how to keep spawnd units in place on start.
-{
-	(selectRandom _unitTypes) createUnit [getPos _x, _group];
-} forEach (_objects select {typeOf _x == "MSF_Placeholder_Infantry"});
-
-{
-	{
-		_group createUnit [(selectRandom _unitTypes), _x, [], 0, "NONE"];
-	} forEach (_x buildingPos -1);
-} forEach (_objects select {_x isKindOf "House_F"});
-
-private _box = (_objects select {typeOf _x == "Box_FIA_Ammo_F"}) select 0;
-[_box, 20, !_supply] call MSF_fnc_OFE_FillContainers;
+[_unitTypes, _objects select {typeOf _x == "MSF_Placeholder_Infantry"}, _group] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
+[_unitTypes, _objects, _group] call MSF_fnc_OFE_SpawnInfantryInBuildings;
+private _boxes = [_objects select {typeOf _x == "MSF_Placeholder_Supplies"}] call MSF_fnc_OFE_SpawnAndFillBoxes;
+private _vicAmmoBoxes = [_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}] call MSF_fnc_OFE_SpawnVehicleAmmo;
 
 private _allObjs = units _group;
 _allObjs append _objects;
+if (count _boxes > 0) then {_allObjs append _boxes};
+if (count _vicAmmoBoxes > 0) then {_allObjs append _vicAmmoBoxes};
+
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
 
 [_logic, 250, 250, "west", "present", false, _allObjs] call MSF_fnc_OFE_CreateModuleActivationTrigger;
