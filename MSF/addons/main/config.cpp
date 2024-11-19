@@ -35,6 +35,7 @@ class CfgVehicles
 	};
 
 	#include "cfg\module\MSF_Mod_BuildingDestroy.hpp"
+	#include "cfg\module\MSF_Mod_RandomSpawn.hpp"
 };
 
 class CfgFactionClasses
