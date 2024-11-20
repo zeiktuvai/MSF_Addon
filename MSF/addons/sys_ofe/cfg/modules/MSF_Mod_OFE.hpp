@@ -6,7 +6,7 @@ class MSF_Module_OFE : Module_F
 	category = "MSF_Module";
 	function = "MSF_fnc_OFE_Init";
 	functionPriority = 1;
-	isGlobal = 0;
+	isGlobal = 1;
 	isTriggerActivated = 0;
 	isDisposable = 1;	
 	is3DEN = 0;

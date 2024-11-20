@@ -20,7 +20,7 @@ if (count _vicAmmoBoxes > 0) then {_allObjs append _vicAmmoBoxes};
 
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
 
-[_logic, 250, 250, "west", "present", false, _allObjs] call MSF_fnc_OFE_CreateModuleActivationTrigger;
+[_logic, 250, 250, "west", "present", false, _allObjs, true] call MSF_fnc_OFE_CreateModuleActivationTrigger;
 [_logic, 50, 50] call MSF_fnc_OFE_CreateModuleClearTrigger;
 
 // This will need to integrate with intel system.

@@ -37,5 +37,5 @@ if (_strength >= 0.4 && _strength < 0.6) then { _notoriety = 2 };
 if (_strength >= 0.6 && _strength < 0.8) then { _notoriety = 3 };
 if (_strength >= 0.8) then { _notoriety = 4 };
 
-private _return = [_emyStr, _notoriety];
+private _return = [_emyStr, _notoriety, _strength];
 _return;

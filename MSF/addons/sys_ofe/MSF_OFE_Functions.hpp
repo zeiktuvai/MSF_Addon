@@ -31,6 +31,7 @@ class CfgFunctions
 			class OFE_FillContainers {};
 			class OFE_SpawnCheckpoint {};
 			class OFE_SpawnOutpost {};
+			class OFE_SpawnUnits {};
 		};
 		class MSF_OFE_UI
 		{
