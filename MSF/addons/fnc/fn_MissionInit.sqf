@@ -18,7 +18,6 @@ if (isServer) then {
 	[] call MSF_fnc_ApplyDamageReduction;
 	[] call MSF_fnc_ApplyObjectActions;
 	[] call MSF_fnc_SetupMSFTriggers;
-	[] call MSF_fnc_RandomSpawn;
 	//[] call MSF_fnc_SetupUAVSpawnSystem;
 
 	if (getMissionConfigValue ["MSF_Mission_GM", false]) then {
@@ -39,4 +38,6 @@ if (!isServer) then
 	[player] call MSF_fnc_ConfigRespawnOnPlayer;
 	[player, didJIP] call MSF_fnc_JIPSpawnNearPlayer;
 	[] call MSF_fnc_ApplyDamageReduction;
-}		
+};
+
+[] call MSF_fnc_RandomSpawn;

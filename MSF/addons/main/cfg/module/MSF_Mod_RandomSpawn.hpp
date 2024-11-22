@@ -6,7 +6,7 @@ class MSF_Module_RandomSpawn : Module_F
 	category = "MSF_Module";
 	function = "";
 	functionPriority = 1;
-	isGlobal = 0;
+	isGlobal = 1;
 	isTriggerActivated = 0;
 	isDisposable = 1;	
 	is3DEN = 0;
