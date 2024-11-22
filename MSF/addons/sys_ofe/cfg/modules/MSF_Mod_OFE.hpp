@@ -4,9 +4,9 @@ class MSF_Module_OFE : Module_F
 	displayName = "OFE System";
 	icon = "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_toolbox_groups_ca.paa";
 	category = "MSF_Module";
-	function = "MSF_fnc_OFE_Init";
+	function = "MSF_fnc_OFE_Configure";
 	functionPriority = 1;
-	isGlobal = 1;
+	isGlobal = 0;
 	isTriggerActivated = 0;
 	isDisposable = 1;	
 	is3DEN = 0;

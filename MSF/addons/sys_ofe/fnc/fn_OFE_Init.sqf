@@ -1,10 +1,6 @@
-params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", true, [true]]];
-
 if (!(missionNamespace getVariable ["MSF_OFE_Setup", false])) then 
 {
 	if (isServer) then {
-		private _EnemySide = _logic getVariable ["EnemySide", 0];
-		missionNamespace setVariable ["MSF_OFE_EnemyFaction", _EnemySide, 0];
 		missionNamespace setVariable ["MSF_OFE_EnemyStr", 4, true];
 		missionNamespace setVariable ["MSF_OFE_Notoriety", 0, true];
 		missionNamespace setVariable ["MSF_OFE_cpClear", 0, true];
@@ -27,7 +23,6 @@ if (!(missionNamespace getVariable ["MSF_OFE_Setup", false])) then
 			};
 		};
 	};
-
-	[] call MSF_fnc_OFE_InitStatusDisplay;
-
 };
+
+[] call MSF_fnc_OFE_InitStatusDisplay;
