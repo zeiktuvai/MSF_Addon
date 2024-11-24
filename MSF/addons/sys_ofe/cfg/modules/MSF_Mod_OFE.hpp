@@ -4,12 +4,12 @@ class MSF_Module_OFE : Module_F
 	displayName = "OFE System";
 	icon = "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_toolbox_groups_ca.paa";
 	category = "MSF_Module";
-	function = "MSF_fnc_OFE_Configure";
+	function = "MSF_fnc_OFE_Mod";
 	functionPriority = 1;
 	isGlobal = 0;
 	isTriggerActivated = 0;
 	isDisposable = 1;	
-	is3DEN = 0;
+	is3DEN = 1;
 	curatorCanAttach = 0;
 	canSetArea = 0;
 	canSetAreaShape = 0;
@@ -45,12 +45,6 @@ class MSF_Module_OFE : Module_F
 					name = "East";
 					tooltip = "OPFOR";
 					value = 0;
-				};
-				class Independant
-				{
-					name = "Independant";
-					tooltip = "Independant";
-					value = 2;
 				};
 				class West
 				{

@@ -10,7 +10,7 @@ _trig setTriggerArea [_x, _y, 0, false];
 _trig setTriggerActivation [[_faction] call BIS_fnc_sideNameUnlocalized, "NOT PRESENT", false];
 _trig setTriggerStatements [
 	"this && count (allPlayers select { _x inArea thisTrigger}) > 0",
-	"hint 'clear'; private _count = missionNamespace getVariable ['MSF_OFE_cpClear', 0]; _count = _count + 1; missionNamespace setVariable ['MSF_OFE_cpClear', _count, true];",
+	"private _count = missionNamespace getVariable ['MSF_OFE_cpClear', 0]; _count = _count + 1; missionNamespace setVariable ['MSF_OFE_cpClear', _count, true];",
 	""
 ];
 _trig;

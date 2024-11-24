@@ -1,10 +1,10 @@
-class MSF_Module_OFE_POI_Vic : Module_F
+class MSF_Module_OFE_POI_Static : Module_F
 {
 	scope = 2;
-	displayName = "OFE - Unmanned Vehicle POI";
-	icon = "ca\ui\data\iconcar_ca.paa";
+	displayName = "OFE - Static Turret POI";
+	icon = "a3\static_f_gamma\data\ui\gear_staticturret_gmg_ca.paa";
 	category = "MSF_Module";
-	function = "MSF_fnc_OFE_Mod_SpawnVehiclePOI";
+	function = "MSF_fnc_OFE_Mod_SpawnStaticPOI";
 	functionPriority = 1;
 	isGlobal = 0;
 	isTriggerActivated = 0;
@@ -28,7 +28,7 @@ class MSF_Module_OFE_POI_Vic : Module_F
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = "MSF Occupying Force Engagement System - This module spawns a random vehicle that players can steal and use.";
+		description = "MSF Occupying Force Engagement System - This module spawns a random turret that players can steal and use.";
 		sync[] = { "LocationArea_F" };
 
 		class LocationArea_F

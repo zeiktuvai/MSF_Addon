@@ -1,0 +1,1 @@
+[pos, 0, selectRandom _vehicles, _side] call BIS_fnc_spawnVehicle;

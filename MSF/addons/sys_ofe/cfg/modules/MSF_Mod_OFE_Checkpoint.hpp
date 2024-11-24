@@ -4,7 +4,7 @@ class MSF_Mod_OFE_Checkpoint : Module_F
 	displayName = "OFE - Road Checkpoint";
 	icon = "a3\modules_f_beta\data\firingdrills\checkpoint_ca.paa";
 	category = "MSF_Module";
-	function = "MSF_fnc_OFE_SpawnCheckpoint";
+	function = "MSF_fnc_OFE_Mod_SpawnCheckpoint";
 	functionPriority = 1;
 	isGlobal = 0;
 	isTriggerActivated = 0;

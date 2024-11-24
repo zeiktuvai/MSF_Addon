@@ -14,3 +14,7 @@ for "_i" from 1 to _count do {
 	_group createUnit [(selectRandom _unitTypes), _spot, [], 0, "NONE"];
 	_spots deleteAt (_spots find _spot);
 };
+
+{
+    _x disableAI "path";
+} forEach units _group;
