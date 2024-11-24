@@ -1,16 +1,13 @@
 params [["_player", objNull, [objNull]], ["_jip", false, [false]]];
 private _spawns = allMissionObjects "MSF_Module_RandomSpawn";
 
-//!is3DENPreview &&
-if ( count _spawns > 1 && !didJIP) then {
+if (!is3DENPreview && count _spawns > 1 && !didJIP) then {
 	if (isServer) then
 	{
 		private _loc = position (selectRandom _spawns);
 		missionNamespace setVariable ["MSF_RandomSpawnStart", _loc, true];
 	};
-	// {
-	// 	_x setPos _loc;
-	// } forEach allPlayers;
+
 	[player] spawn 
 	{
 		params ["_player"];	
