@@ -1,12 +1,12 @@
-class MSF_Module_RandomSpawn : Module_F
+class MSF_Module_RandomSpawnCrash : Module_F
 {
 	scope = 2;
-	displayName = "Random Spawn Location";
+	displayName = "Crashed Vic at Spawn";
 	icon = "a3\ui_f\data\igui\rsctitles\mpprogress\respawn_ca.paa";
 	category = "MSF_Module";
-	function = "";
+	function = "MSF_fnc_Mod_RandomSpawnCrash";
 	functionPriority = 1;
-	isGlobal = 1;
+	isGlobal = 0;
 	isTriggerActivated = 0;
 	isDisposable = 1;	
 	is3DEN = 0;
@@ -28,7 +28,7 @@ class MSF_Module_RandomSpawn : Module_F
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = "If more than one of these modules is placed on a map, one will be selected at random as the starting spawn. (Does not function in 3den, only when playing outside of the editor).";
+		description = "If this is placed on a map, it spawns a wrecked and burning vehicle near spawn.";
 		sync[] = { "LocationArea_F" };
 
 		class LocationArea_F

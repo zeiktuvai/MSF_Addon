@@ -13,7 +13,7 @@ switch _mode do
 			["_isCuratorPlaced", false, [true]]	// True if the module was placed by Zeus
 		];
 		
-		private _EnemySide = _logic getVariable ["EnemySide", 0];
+		private _EnemySide = [_logic getVariable ["EnemySide", 0]] call BIS_fnc_sideType;
 		missionNamespace setVariable ["MSF_OFE_EnemyFaction", _EnemySide, true];
 	};
 	// When some attributes were changed (including position and rotation)

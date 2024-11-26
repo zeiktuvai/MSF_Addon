@@ -29,6 +29,11 @@ class CfgFunctions
 			class SetupMSFTriggers {};
 			class SetupUAVSpawnSystem {};
 		};
+		class Module
+		{
+			file = "z\msf\addons\fnc\module";
+			class Mod_RandomSpawnCrash {};
+		};
 		class Enemy
 		{
 			file = "z\msf\addons\fnc\enemy";

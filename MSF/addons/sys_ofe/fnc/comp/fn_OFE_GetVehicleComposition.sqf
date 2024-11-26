@@ -8,12 +8,12 @@ private _vics = [
 		["MSF_Placeholder_Infantry",[1.90137,6.54541,0],0,1,0,[],"","",true,false]
 	],
 	[
-		["Land_DuctTape_F",[4.22852,-1.31299,0],0.00281139,1,0,[],"","",true,false], 
-		["MSF_Placeholder_Vehicle_U",[4.26416,-2.12793,0],0,1,0,[],"","",true,false], 
-		["Land_CanisterFuel_F",[5.08545,-0.144043,2.00272e-05],359.964,1,0,[],"","",true,false], 
-		["Land_CanisterFuel_F",[5.04102,-0.950684,2.0504e-05],269.959,1,0,[],"","",true,false], 
-		["MSF_Placeholder_Vehicle_U",[6.98438,-2.41943,0],0,1,0,[],"","",true,false], 
-		["MSF_Placeholder_Vehicle_U",[7.11426,2.15039,0],0,1,0,[],"","",true,false]
+		["MSF_Placeholder_Infantry",[-0.709961,-1.82959,0],0,1,0,[],"","",true,false], 
+		["Land_CanisterFuel_F",[-2.60889,0.445801,2.00272e-05],359.964,1,0,[],"","",true,false], 
+		["Land_CanisterFuel_F",[-2.65332,-0.36084,2.0504e-05],269.959,1,0,[],"","",true,false], 
+		["MSF_Placeholder_Vehicle_U",[-0.580078,2.74023,0],0,1,0,[],"","",true,false], 
+		["Land_DuctTape_F",[-3.46582,-0.723145,0],0.0028114,1,0,[],"","",true,false], 
+		["MSF_Placeholder_Infantry",[-3.42969,-1.5376,0],0,1,0,[],"","",true,false]
 	]
 ];
 

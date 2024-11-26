@@ -24,7 +24,7 @@ if (_checkpoint) then {
 } else {
 	_trig setTriggerStatements [
 		"this",
-		"private _objs = thisTrigger getVariable 'objects'; [_objs, true] call MSF_fnc_ShowHideObjects; [_objs] call MSF_fnc_OFE_SpawnUnits;",
+		"private _objs = thisTrigger getVariable 'objects'; [_objs, true] call MSF_fnc_ShowHideObjects; [_objs, thisTrigger] call MSF_fnc_OFE_SpawnUnits;",
 		""
 	];
 };
