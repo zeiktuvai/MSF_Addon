@@ -17,6 +17,7 @@ class CfgFunctions
 		class MSF_OFE_Compositions
 		{
 			file = "z\msf\addons\sys_ofe\fnc\comp";
+			class OFE_GetArmorComposition {};
 			class OFE_GetCheckpointComposition {};
 			class OFE_GetOutpostComposition {};
 			class OFE_GetStaticComposition {};
@@ -25,6 +26,7 @@ class CfgFunctions
 		class MSF_OFE_Modules
 		{
 			file = "z\msf\addons\sys_ofe\fnc\module";
+			class OFE_Mod_SpawnArmorPOI {};
 			class OFE_Mod_SpawnCheckpoint {};
 			class OFE_Mod_SpawnOutpost {};
 			class OFE_Mod_SpawnStaticPOI {};

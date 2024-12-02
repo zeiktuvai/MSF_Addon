@@ -15,8 +15,9 @@ class Module_F : Logic
 	};
 };
 
-#include "MSF_Mod_OFE.hpp"
+#include "MSF_Mod_OFE_ArmorPOI.hpp"
 #include "MSF_Mod_OFE_Checkpoint.hpp"
 #include "MSF_Mod_OFE_Outpost.hpp"
 #include "MSF_Mod_OFE_StaticPOI.hpp"
 #include "MSF_Mod_OFE_VicPOI.hpp"
+#include "MSF_Mod_OFE.hpp"

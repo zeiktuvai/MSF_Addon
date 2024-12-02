@@ -11,7 +11,7 @@ class MSF_OFE_Config
             };
             UnmannedArmor[] = {
                 "rhs_btr80a_msv", "rhs_btr80_msv", "rhs_btr70_msv", "I_APC_tracked_03_cannon_F", "I_APC_Wheeled_03_cannon_F", "I_MBT_03_cannon_F", "rhs_t90sm_tv", "rhs_t80um", 
-                "B_MBT_01_TUSK_F", "B_MBT_01_cannon_F", "O_MBT_04_command_F", "O_MBT_02_cannon_F"
+                "B_MBT_01_TUSK_F", "B_MBT_01_cannon_F", "O_MBT_04_command_F", "O_MBT_02_cannon_F", "B_MBT_01_arty_F", "O_MBT_02_arty_F", "rhs_2s1_tv", "I_Truck_02_MRL_F"
             };
             UnmannedStatic[] = {
                 "B_HMG_01_A_F", "B_GMG_01_F", "B_static_AA_F", "rhs_SPG9M_MSV", "RHS_ZU23_MSV", "I_Mortar_01_F"

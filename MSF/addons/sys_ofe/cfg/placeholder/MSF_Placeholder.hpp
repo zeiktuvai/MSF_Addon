@@ -69,3 +69,11 @@ class MSF_Placeholder_Infantry_D : Land_HelipadEmpty_F
     editorSubcategory = "MSF_OFE";
     editorPreview = "";
 };
+
+class MSF_Placeholder_Direction: Land_HelipadEmpty_F
+{
+    displayName = "Spawn Direction Placeholder";
+    editorCategory = "MSF";
+    editorSubcategory = "MSF_OFE";
+    editorPreview = "";
+};
