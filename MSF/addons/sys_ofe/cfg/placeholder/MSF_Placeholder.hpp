@@ -61,3 +61,11 @@ class MSF_Placeholder_Vehicle_U : Land_HelipadEmpty_F
     editorSubcategory = "MSF_OFE";
     editorPreview = "";
 };
+
+class MSF_Placeholder_Infantry_D : Land_HelipadEmpty_F
+{
+    displayName = "Dead Infantry Spawn Placeholder";
+    editorCategory = "MSF";
+    editorSubcategory = "MSF_OFE";
+    editorPreview = "";
+};
