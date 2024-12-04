@@ -6,7 +6,7 @@ private _supply = _logic getVariable ["Supplies", true];
 private _position = position _logic;
 private _dir = [_position] call MSF_fnc_GetRoadDirection;
 private _objects = [_position, _dir, _def] call BIS_fnc_objectsMapper;
-private _allObjs = [_side, _objects, 0] call MSF_fnc_OFE_PopulatePosition;
+private _allObjs = [_side, _objects, 0, [_supply]] call MSF_fnc_OFE_PopulatePosition;
 
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
 

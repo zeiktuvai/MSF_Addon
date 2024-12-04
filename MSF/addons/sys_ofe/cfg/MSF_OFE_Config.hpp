@@ -1,5 +1,10 @@
 class MSF_OFE_Config
 {
+    class Cargo
+    {
+        SupplyBoxes[] = {"Box_FIA_Ammo_F", "Box_FIA_Support_F", "Box_FIA_Wps_F"};
+        VicAmmoBoxes[] = {"Box_NATO_AmmoVeh_F", "Box_EAF_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_IND_AmmoVeh_F"};
+    };
     class Units
     {
         class Empty

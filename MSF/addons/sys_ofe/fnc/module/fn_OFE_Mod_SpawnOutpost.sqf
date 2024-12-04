@@ -7,7 +7,7 @@ private _vic = _logic getVariable ["Vehicle", true];
 private _vicChance = _logic getVariable ["Probability", 1];
 private _position = position _logic;
 private _objects = [_position, 0, _def] call BIS_fnc_objectsMapper;
-private _allObjs = [_side, _objects, 1, [_vic, _vicChance]] call MSF_fnc_OFE_PopulatePosition;
+private _allObjs = [_side, _objects, 1, [_vic, _vicChance, _supply]] call MSF_fnc_OFE_PopulatePosition;
 
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
 

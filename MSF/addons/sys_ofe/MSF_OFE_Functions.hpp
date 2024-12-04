@@ -12,6 +12,7 @@ class CfgFunctions
 		class MSF_OFE_Config
 		{
 			file = "z\msf\addons\sys_ofe\fnc\cfg";
+			class OFE_GetCargoClasses {};
 			class OFE_GetUnmannedClasses {};
 		};
 		class MSF_OFE_Compositions
@@ -21,6 +22,7 @@ class CfgFunctions
 			class OFE_GetCheckpointComposition {};
 			class OFE_GetOutpostComposition {};
 			class OFE_GetStaticComposition {};
+			class OFE_GetSupplyComposition {};
 			class OFE_GetVehicleComposition {};
 		};
 		class MSF_OFE_Modules
@@ -30,6 +32,7 @@ class CfgFunctions
 			class OFE_Mod_SpawnCheckpoint {};
 			class OFE_Mod_SpawnOutpost {};
 			class OFE_Mod_SpawnStaticPOI {};
+			class OFE_Mod_SpawnSupplyPOI {};
 			class OFE_Mod_SpawnVehiclePOI {};
 			class OFE_Mod {};
 		};
