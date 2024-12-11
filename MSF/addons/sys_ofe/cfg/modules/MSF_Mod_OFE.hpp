@@ -1,7 +1,7 @@
 class MSF_Module_OFE : Module_F
 {
 	scope = 2;
-	displayName = "OFE System";
+	displayName = "OFE - System Settings";
 	icon = "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_toolbox_groups_ca.paa";
 	category = "MSF_Module";
 	function = "MSF_fnc_OFE_Mod";

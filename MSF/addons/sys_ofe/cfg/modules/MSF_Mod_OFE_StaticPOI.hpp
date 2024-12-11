@@ -1,7 +1,7 @@
 class MSF_Module_OFE_POI_Static : Module_F
 {
 	scope = 2;
-	displayName = "OFE - Static Turret POI";
+	displayName = "OFE POI - Static Turret";
 	icon = "a3\static_f_gamma\data\ui\gear_staticturret_gmg_ca.paa";
 	category = "MSF_Module";
 	function = "MSF_fnc_OFE_Mod_SpawnStaticPOI";

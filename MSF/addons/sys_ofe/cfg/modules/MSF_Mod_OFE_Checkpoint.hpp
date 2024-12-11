@@ -1,7 +1,7 @@
 class MSF_Mod_OFE_Checkpoint : Module_F
 {
 	scope = 2;
-	displayName = "OFE - Road Checkpoint";
+	displayName = "OFE Location - Road Checkpoint";
 	icon = "a3\modules_f_beta\data\firingdrills\checkpoint_ca.paa";
 	category = "MSF_Module";
 	function = "MSF_fnc_OFE_Mod_SpawnCheckpoint";

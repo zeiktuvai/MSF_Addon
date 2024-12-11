@@ -1,7 +1,7 @@
 class MSF_Module_OFE_POI_Supply : Module_F
 {
 	scope = 2;
-	displayName = "OFE - Supply Cache POI";
+	displayName = "OFE POI - Supply Cache";
 	icon = "a3\ui_f\data\map\vehicleicons\iconcrateord_ca.paa";
 	category = "MSF_Module";
 	function = "MSF_fnc_OFE_Mod_SpawnSupplyPOI";

@@ -1,7 +1,7 @@
 class MSF_Mod_OFE_Outpost : Module_F
 {
 	scope = 2;
-	displayName = "OFE - Outpost";
+	displayName = "OFE Location - Outpost";
 	icon = "a3\3den\data\displays\display3den\toolbar\widget_area_off_ca.paa";
 	category = "MSF_Module";
 	function = "MSF_fnc_OFE_Mod_SpawnOutpost";
@@ -34,7 +34,7 @@ class MSF_Mod_OFE_Outpost : Module_F
 		};
 		class Vehicle
 		{
-			displayName = "Spawn Vehicle";
+			displayName = "Spawn Empty Vehicles";
 			tooltip = "Spawns a unmanned vehicle at this location.";
 			property = "MSF_Mod_OFE_OP_Vic";
 			control = "Checkbox";
@@ -43,9 +43,9 @@ class MSF_Mod_OFE_Outpost : Module_F
 		};
 		class Probability
 		{
-			property = "MSF_Mod_OFE_OP_Vic_Prob";
-			displayName = "Unmaned vehicle spawn Chance";
+			displayName = "Empty Vehicle spawn Chance";
 			tooltip = "The chance for an unmanned vehicle to spawn at this location.";
+			property = "MSF_Mod_OFE_OP_Vic_Prob";
 			control = "Slider";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 1;
