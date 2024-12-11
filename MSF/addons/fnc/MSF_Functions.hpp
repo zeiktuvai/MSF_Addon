@@ -69,6 +69,7 @@ class CfgFunctions
 			class CreateRandomSupplies {};
 			class GenerateInventory {};
 			class InfiniteFuelHandler {};
+			class SetRandomVehicleState {};
 			class SetTimeBasedInteraction {};
 			class SetUnitDialogOption {};
 			class SetVehicleDamageReduction {};

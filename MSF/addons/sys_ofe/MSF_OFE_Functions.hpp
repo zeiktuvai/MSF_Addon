@@ -19,6 +19,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\sys_ofe\fnc\comp";
 			class OFE_GetArmorComposition {};
+			class OFE_GetBaseComposition {};
 			class OFE_GetCheckpointComposition {};
 			class OFE_GetOutpostComposition {};
 			class OFE_GetStaticComposition {};
@@ -29,6 +30,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\sys_ofe\fnc\module";
 			class OFE_Mod_SpawnArmorPOI {};
+			class OFE_Mod_SpawnBase {};
 			class OFE_Mod_SpawnCheckpoint {};
 			class OFE_Mod_SpawnOutpost {};
 			class OFE_Mod_SpawnStaticPOI {};
@@ -44,7 +46,6 @@ class CfgFunctions
 			class OFE_SpawnInfantryInBuildings {};
 			class OFE_SpawnInfantryOnPlaceholder {};
 			class OFE_SpawnMannedVic {};
-			class OFE_SpawnUnits {};
 			class OFE_SpawnUnmannedVic {};
 			class OFE_SpawnVehicleAmmo {};
 		};
@@ -58,6 +59,7 @@ class CfgFunctions
 			class OFE_CreateModuleAITrigger {};
 			class OFE_CreateModuleClearTrigger {};
 			class OFE_FillContainers {};
+			class OFE_SpawnLocation {};
 			class OFE_SpawnPOI {};
 		};
 		class MSF_OFE_UI

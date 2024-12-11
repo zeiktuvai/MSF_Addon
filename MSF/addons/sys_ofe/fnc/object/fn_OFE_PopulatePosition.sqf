@@ -1,49 +1,58 @@
-// _type: 0 Checkpoint, 1 Outpost, 2 Base, 3 helibase, 4 bastion
+// _type: 0 Checkpoint, 1 Outpost, 2 Base, 3 airbase, 4 bastion
 
-params ["_side", ["_objects", [], [[]]], ["_type", 0, [0]], "_params"];
+params [["_logic", objNull, [objNull]], ["_def", [], [[]]], ["_type", 0, [0]], "_params"];
 
+private _activationRange = 500;
+
+//TODO: Update this to use a configurable value
+private _friendlySide = "west";
+
+private _side = missionNamespace getVariable ["MSF_OFE_EnemyFaction", east];
+private _position = position _logic;
 private _unitTypes = [_side] call MSF_fnc_GetUnitClasses;
-private _uTypes = [] call MSF_fnc_OFE_GetUnmannedClasses;
 private _group = createGroup [_side, true];
-private ["_vics"];
+private _objects = [];
+private _vics = [];
 private _boxes = [];
 private _vicAmmoBoxes = [];
 
 switch (_type) do {
 	case 0: {
+		private _dir = [_position] call MSF_fnc_GetRoadDirection;
+		_objects = [_position, _dir, _def] call BIS_fnc_objectsMapper;
+
 		[_unitTypes select 5, _objects select {typeOf _x == "MSF_Placeholder_Infantry"}, _group] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
 		[_unitTypes select 5, _objects, _group] call MSF_fnc_OFE_SpawnInfantryInBuildings;
 		_params params ["_supply"];
 
+		// TODO: make this spawn in activation trigger to take strength into account.
 		if (_supply) then {
 			_vicAmmoBoxes = [_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}, 100] call MSF_fnc_OFE_SpawnVehicleAmmo;
 			_boxes = [_objects select {typeOf _x == "MSF_Placeholder_Supplies"}] call MSF_fnc_OFE_SpawnAndFillBoxes;
 		};
-	 };
-	case 1: {
-		_params params ["_vic", "_vicChance", "_supply"];
-		if (_supply) then {
-			_vicAmmoBoxes = [_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}, 250] call MSF_fnc_OFE_SpawnVehicleAmmo;
-			_boxes = [_objects select {typeOf _x == "MSF_Placeholder_Supplies"}] call MSF_fnc_OFE_SpawnAndFillBoxes;
-		};
-
-		if (_vic && [_vicChance] call MSF_fnc_GetSpawnChance) then {
-			_vics = [_uTypes select 0, _objects select {typeOf _x == "MSF_Placeholder_Vehicle_U"}] call MSF_fnc_OFE_SpawnUnmannedVic;
-		};
+	};
+	case 1;
+	case 2;
+	case 3: {
+		_objects = [_position, 0, _def] call BIS_fnc_objectsMapper;
 	};
 	default {
+		_objects = [_position, 0, _def] call BIS_fnc_objectsMapper;
 		_vicAmmoBoxes = [_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}, 100] call MSF_fnc_OFE_SpawnVehicleAmmo;
 		_boxes = [_objects select {typeOf _x == "MSF_Placeholder_Supplies"}] call MSF_fnc_OFE_SpawnAndFillBoxes;
 	 };
 };
 
-
 private _allObjs = units _group;
 _allObjs append _objects;
 if (count _boxes > 0) then {_allObjs append _boxes};
 if (count _vicAmmoBoxes > 0) then {_allObjs append _vicAmmoBoxes};
-if (!isNil "_vics" ) then {
-	if (count _vics > 0) then {_allObjs append _vics};
-};
+if (count _vics > 0) then {_allObjs append _vics};
 
-_allObjs;
+[_logic, _activationRange, _activationRange, _friendlySide, "present", false, _allObjs, _type, _params] call MSF_fnc_OFE_CreateModuleActivationTrigger;
+[_type, _position] call MSF_fnc_OFE_CreateMapMarker;
+[_allObjs, false] call MSF_fnc_ShowHideObjects;
+[_logic, 50, 50, _type] call MSF_fnc_OFE_CreateModuleClearTrigger;
+[_logic, 50, 50] call MSF_fnc_OFE_CreateModuleAITrigger;
+
+//_allObjs;

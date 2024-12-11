@@ -86,5 +86,5 @@ if (_type == 3) then {
 
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
 //TODO: Update activation so that it can detect player faction.
-[_logic, 250, 250, "west", "present", false, _allObjs, true] call MSF_fnc_OFE_CreateModuleActivationTrigger;
+[_logic, 250, 250, "west", "present", false, _allObjs, 5] call MSF_fnc_OFE_CreateModuleActivationTrigger;
 [5, _position] call MSF_fnc_OFE_CreateMapMarker;

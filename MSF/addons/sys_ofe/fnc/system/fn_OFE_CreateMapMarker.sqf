@@ -17,6 +17,12 @@ switch (_type) do {
 		_markerColor = "Color1_FD_F";
 		_markerText = "Outpost";
 	 };
+	case 2: {
+		_name = "Base_" + (str _position);
+		_markerType = "mil_triangle";
+		_markerColor = "Color1_FD_F";
+		_markerText = "Base";
+	 };
 	case 5: {
 		_name = "POI_" + (str _position);
 		_markerType = "hd_unknown";
