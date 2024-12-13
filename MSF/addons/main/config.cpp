@@ -46,6 +46,10 @@ class CfgFactionClasses
 	{
 		displayName = "MSF Modules";
 	};
+	class MSF_Module_OFE : NO_CATEGORY
+	{
+		displayName = "MSF - Occupational Force Engagement";
+	};
 };
 
 class Cfg3DEN

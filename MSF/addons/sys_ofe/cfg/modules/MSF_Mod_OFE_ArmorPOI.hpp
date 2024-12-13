@@ -1,11 +1,11 @@
 class MSF_Module_OFE_POI_Armor : Module_F
 {
 	scope = 2;
-	displayName = "OFE POI - Unmanned Armor";
+	displayName = "POI - Unmanned Armor";
 	icon = "a3\data_f_tank\logos\arma3_tank_icon_ca.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_OFE";
 	function = "MSF_fnc_OFE_Mod_SpawnArmorPOI";
-	functionPriority = 1;
+	functionPriority = 2;
 	isGlobal = 0;
 	isTriggerActivated = 0;
 	isDisposable = 1;	

@@ -1,18 +1,18 @@
-class MSF_Mod_OFE_Base : Module_F
+class MSF_Mod_OFE_Pop_HeliBase : Module_F
 {
 	scope = 2;
-	displayName = "Spawn Location - Base";
-	icon = "a3\modules_f_beta\data\firingdrills\checkpoint_ca.paa";
+	displayName = "Populate Existing Location";
+	icon = "a3\3den\data\displays\display3den\panelleft\entitylist_location_ca.paa";
 	category = "MSF_Module_OFE";
-	function = "MSF_fnc_OFE_Mod_SpawnBase";
+	function = "MSF_fnc_OFE_Mod_ExistingLocation ";
 	functionPriority = 2;
 	isGlobal = 0;
 	isTriggerActivated = 0;
 	isDisposable = 1;	
 	is3DEN = 0;
 	curatorCanAttach = 0;
-	canSetArea = 0;
-	canSetAreaShape = 0;
+	canSetArea = 1;
+	canSetAreaShape = 1;
 	canSetAreaHeight = 0;
 
 	class AttributeValues
@@ -23,6 +23,43 @@ class MSF_Mod_OFE_Base : Module_F
 
 	class Attributes : AttributesBase
 	{
+		class Type
+		{
+			displayName = "Location Type";
+			tooltip = "Type of location to spawn.";
+			property = "MSF_OFE_Type";
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 5;
+			typeName = "Number";
+			class Values
+			{
+				class Outpost
+				{
+					name = "Outpost";
+					tooltip = "Outpost";
+					value = 5;
+				};
+				class Base
+				{
+					name = "Base";
+					tooltip = "Base";
+					value = 6;
+				};
+				class Helibase
+				{
+					name = "Heli-Base";
+					tooltip = "Heli-Base";
+					value = 6;
+				};
+				class Airbase
+				{
+					name = "Air-Base";
+					tooltip = "Air-Base";
+					value = 7;
+				};
+			};	
+		};
 		class Supplies
 		{
 			displayName = "Spawn Supplies";
@@ -55,7 +92,7 @@ class MSF_Mod_OFE_Base : Module_F
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = "MSF OFE System Module - Spawns a base with enemies at the location of the module.";
+		description = "MSF OFE System Module - This module will populate an existing area on the map (i.e. map placed military bases).  Expand the module to cover the area, then use placeholders to spawn different equipment.";
 		sync[] = { "LocationArea_F" };
 
 		class LocationArea_F

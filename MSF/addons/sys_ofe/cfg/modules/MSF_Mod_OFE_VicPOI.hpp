@@ -1,11 +1,11 @@
 class MSF_Module_OFE_POI_Vic : Module_F
 {
 	scope = 2;
-	displayName = "OFE POI - Unmanned Vehicle";
+	displayName = "POI - Unmanned Vehicle";
 	icon = "ca\ui\data\iconcar_ca.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_OFE";
 	function = "MSF_fnc_OFE_Mod_SpawnVehiclePOI";
-	functionPriority = 1;
+	functionPriority = 2;
 	isGlobal = 0;
 	isTriggerActivated = 0;
 	isDisposable = 1;	

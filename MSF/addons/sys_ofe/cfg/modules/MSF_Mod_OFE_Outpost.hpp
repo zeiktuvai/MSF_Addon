@@ -1,11 +1,11 @@
 class MSF_Mod_OFE_Outpost : Module_F
 {
 	scope = 2;
-	displayName = "OFE Location - Outpost";
-	icon = "a3\3den\data\displays\display3den\toolbar\widget_area_off_ca.paa";
-	category = "MSF_Module";
+	displayName = "Spawn Location - Outpost";
+	icon = "a3\modules_f_beta\data\firingdrills\checkpoint_ca.paa";
+	category = "MSF_Module_OFE";
 	function = "MSF_fnc_OFE_Mod_SpawnOutpost";
-	functionPriority = 1;
+	functionPriority = 2;
 	isGlobal = 0;
 	isTriggerActivated = 0;
 	isDisposable = 1;	

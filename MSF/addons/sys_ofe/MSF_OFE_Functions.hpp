@@ -29,6 +29,7 @@ class CfgFunctions
 		class MSF_OFE_Modules
 		{
 			file = "z\msf\addons\sys_ofe\fnc\module";
+			class OFE_Mod_ExistingLocation {};
 			class OFE_Mod_MissionArea {};
 			class OFE_Mod_SpawnArmorPOI {};
 			class OFE_Mod_SpawnBase {};

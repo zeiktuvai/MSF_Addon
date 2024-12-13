@@ -1,4 +1,4 @@
-// _type: 0 Checkpoint, 1 Outpost, 2 Base, 3 airbase, 4 bastion
+// _type: 0 Checkpoint, 1 Outpost, 2 Base, 3 airbase, 4 bastion, 5 existing outpost, 6 existing base, 7 existing helibase, 8 existing airbase
 
 params [["_logic", objNull, [objNull]], ["_def", [], [[]]], ["_type", 0, [0]], "_params"];
 
@@ -36,11 +36,12 @@ switch (_type) do {
 	case 3: {
 		_objects = [_position, 0, _def] call BIS_fnc_objectsMapper;
 	};
-	default {
-		_objects = [_position, 0, _def] call BIS_fnc_objectsMapper;
-		_vicAmmoBoxes = [_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}, 100] call MSF_fnc_OFE_SpawnVehicleAmmo;
-		_boxes = [_objects select {typeOf _x == "MSF_Placeholder_Supplies"}] call MSF_fnc_OFE_SpawnAndFillBoxes;
-	 };
+	case 5;
+	case 6;
+	case 7;
+	case 8: {
+		_objects = _def;
+	};
 };
 
 private _allObjs = units _group;
@@ -51,8 +52,8 @@ if (count _vics > 0) then {_allObjs append _vics};
 
 [_logic, _activationRange, _activationRange, _friendlySide, "present", false, _allObjs, _type, _params] call MSF_fnc_OFE_CreateModuleActivationTrigger;
 [_type, _position] call MSF_fnc_OFE_CreateMapMarker;
-[_allObjs, false] call MSF_fnc_ShowHideObjects;
+if (_type < 5) then {
+	[_allObjs, false] call MSF_fnc_ShowHideObjects;
+};
 [_logic, 50, 50, _type] call MSF_fnc_OFE_CreateModuleClearTrigger;
 [_logic, 50, 50] call MSF_fnc_OFE_CreateModuleAITrigger;
-
-//_allObjs;
