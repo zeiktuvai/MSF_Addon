@@ -32,9 +32,21 @@ class CfgHints
 	{
 		class EnemyStrength
 		{
-			displayName = "Enemy Strength";			
-			description = "Enemy strength has been reduced to %11. <br/><br/> As enemy strength is lowered bases will be less defended and easier to take, however your notoriety will rise.";
+			displayName = "Enemy Strength";
+			description = "Enemy strength has been reduced to %11.";
+			tip = "As enemy strength is lowered bases will be less defended and easier to take, however your notoriety will rise.";
 			arguments[] = {"[missionNamespace getVariable ['MSF_OFE_EnemyStr', 4]] call MSF_fnc_OFE_GetStrengthText"};
+			image = "z\msf\addons\main\ui\msf_icon.paa";
 		};
+	};
+};
+
+class CfgDebriefing
+{
+	class OFE_escaped
+	{
+		title = "Successful Escape";		
+		description = "Your team successfully engaged the enemy and escaped the area.";
+		pictureBackground = "a3\ui_f\data\gui\cfg\debriefing\debriefingbackground_co.paa";
 	};
 };

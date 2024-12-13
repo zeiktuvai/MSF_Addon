@@ -15,6 +15,7 @@ switch _mode do
 		
 		private _EnemySide = [_logic getVariable ["EnemySide", 0]] call BIS_fnc_sideType;
 		missionNamespace setVariable ["MSF_OFE_EnemyFaction", _EnemySide, true];
+		missionNamespace setVariable ["MSF_OFE_Init", true, true];
 	};
 	// When some attributes were changed (including position and rotation)
 	case "attributesChanged3DEN": {

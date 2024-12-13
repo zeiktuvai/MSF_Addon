@@ -16,7 +16,7 @@ class MSF_OFE_EnemyStatemachine {
 
     class Stage1 {
         onState = "";
-        onStateEntered = "hint 'stage 1'";
+        onStateEntered = "[['OFE', 'EnemyStrength'], 15, '', 20, '', true, true, false, true] call BIS_fnc_advHint;";
         onStateleaving = "";
 
         class MoveToStage2 {
@@ -28,7 +28,7 @@ class MSF_OFE_EnemyStatemachine {
 
     class Stage2 {
         onState = "";
-        onStateEntered = "hint 'stage 2'";
+        onStateEntered = "[['OFE', 'EnemyStrength'], 15, '', 20, '', true, true, false, true] call BIS_fnc_advHint;";
         onStateleaving = "";
 
         class MoveToStage3 {
@@ -40,7 +40,7 @@ class MSF_OFE_EnemyStatemachine {
 
     class Stage3 {
         onState = "";
-        onStateEntered = "hint 'stage 3'";
+        onStateEntered = "[['OFE', 'EnemyStrength'], 15, '', 20, '', true, true, false, true] call BIS_fnc_advHint;";
         onStateleaving = "";
 
         class MoveToFinalStage {
