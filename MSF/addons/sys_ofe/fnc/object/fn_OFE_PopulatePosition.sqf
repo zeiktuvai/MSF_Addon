@@ -1,4 +1,4 @@
-// _type: 0 Checkpoint, 1 Outpost, 2 Base, 3 airbase, 4 bastion, 5 existing outpost, 6 existing base, 7 existing helibase, 8 existing airbase
+// _type: 0 Checkpoint, 1 Outpost, 2 Base, 3 helibase, 4 bastion, 5 existing outpost, 6 existing base, 7 existing helibase, 8 existing airbase
 
 params [["_logic", objNull, [objNull]], ["_def", [], [[]]], ["_type", 0, [0]], "_params"];
 

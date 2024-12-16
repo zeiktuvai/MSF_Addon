@@ -25,6 +25,9 @@ class MSF_OFE_Config
                 "B_Heli_Transport_03_unarmed_F", "B_Heli_Light_01_F", "B_Heli_Transport_01_F", "O_Heli_Transport_04_covered_F", "O_Heli_Light_02_unarmed_F", "I_Heli_Transport_02_F",
                 "I_Heli_light_03_unarmed_F"
             };
+            UnmannedPlane[] = {
+                "B_Plane_CAS_01_dynamicLoadout_F", "B_Plane_Fighter_01_F", "O_Plane_CAS_02_dynamicLoadout_F", "O_Plane_Fighter_02_F", "I_Plane_Fighter_04_F", "I_Plane_Fighter_03_dynamicLoadout_F"
+            };
             FuelTruck[] = {
                 "B_Truck_01_fuel_F", "O_Truck_02_fuel_F", "I_Truck_02_fuel_F"
             };

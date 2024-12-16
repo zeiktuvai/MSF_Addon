@@ -27,7 +27,11 @@ if (_type == 3 || _type == 7 || _type == 8) then {
 	[_uTypes select 3, _objects select {typeOf _x == "MSF_Placeholder_Heli"}] call MSF_fnc_OFE_SpawnEscapeVic;
 };
 
-[_uTypes select 4, _objects select {typeOf _x == "MSF_Placeholder_FuelTruck"}] call MSF_fnc_OFE_SpawnUnmannedVic;
+if (_type == 8) then {
+	[_uTypes select 4, _objects select {typeOf _x == "MSF_Placeholder_Aircraft"}] call MSF_fnc_OFE_SpawnEscapeVic;
+};
+
+[_uTypes select 5, _objects select {typeOf _x == "MSF_Placeholder_FuelTruck"}] call MSF_fnc_OFE_SpawnUnmannedVic;
 
 switch (_type) do {
 	case 5;

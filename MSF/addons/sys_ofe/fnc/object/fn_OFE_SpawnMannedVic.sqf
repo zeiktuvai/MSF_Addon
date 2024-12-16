@@ -12,15 +12,6 @@ if (count _objects > 0) then {
 	} forEach _objects;
 
 	{
-		private _dirPlaceholders = nearestObjects [_x, ["MSF_Placeholder_Direction"], 2.5];
-
-		if (count _dirPlaceholders > 0) then {
-			private _dir = _x getRelDir (_dirPlaceholders select 0);
-			_x setDir (getDir _x + _dir);
-		} else {
-			private _dir = _x getRelDir _center;
-			_x setDir (getDir _x + _dir - 180);
-		};
-
+		[_x, _center] call MSF_fnc_OFE_SetSpawnDir;
 	} forEach _vics;	
 };
