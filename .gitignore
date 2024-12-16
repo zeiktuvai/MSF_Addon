@@ -403,7 +403,3 @@ MSF-Units/.hemttout/*
 MSF-Units/releases/*
 *.pbo
 *.bisign
-z
-
-#TEMP
-MSF-Units/build.sh
