@@ -5,99 +5,117 @@ class MSF_Placeholder : Land_HelipadEmpty_F
 
 class MSF_Placeholder_Infantry : MSF_Placeholder
 {
-    displayName = "Infantry Spawn Placeholder";
-    editorCategory = "MSF";
-    editorSubcategory = "MSF_OFE";
+    displayName = "Units - Infantry";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
     editorPreview = "";
     scope = 2;
 };
 
 class MSF_Placeholder_Vehicle : MSF_Placeholder
 {
-    displayName = "Vehicle Spawn Placeholder";
-    editorCategory = "MSF";
-    editorSubcategory = "MSF_OFE";
+    displayName = "Units - Vehicle";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
     editorPreview = "";
     scope = 2;
 };
 
 class MSF_Placeholder_Armor : MSF_Placeholder
 {
-    displayName = "Armor Spawn Placeholder";
-    editorCategory = "MSF";
-    editorSubcategory = "MSF_OFE";
+    displayName = "Units - Armor";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
     editorPreview = "";
     scope = 2;
 };
 
 class MSF_Placeholder_Heli : MSF_Placeholder
 {
-    displayName = "Helicopter Spawn Placeholder";
-    editorCategory = "MSF";
-    editorSubcategory = "MSF_OFE";
+    displayName = "Units - Helicopter";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
     editorPreview = "";
     scope = 2;
 };
 
 class MSF_Placeholder_Aircraft : MSF_Placeholder
 {
-    displayName = "Aircraft Spawn Placeholder";
-    editorCategory = "MSF";
-    editorSubcategory = "MSF_OFE";
+    displayName = "Units - Aircraft";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
     editorPreview = "";
     scope = 2;
 };
 
 class MSF_Placeholder_Supplies: MSF_Placeholder
 {
-    displayName = "Supplies Spawn Placeholder";
-    editorCategory = "MSF";
-    editorSubcategory = "MSF_OFE";
+    displayName = "Logistics - Supplies";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
     editorPreview = "";
     scope = 2;
 };
 
 class MSF_Placeholder_VehicleAmmo : MSF_Placeholder
 {
-    displayName = "Vehicle Ammo Spawn Placeholder";
-    editorCategory = "MSF";
-    editorSubcategory = "MSF_OFE";
+    displayName = "Logistics - Vehicle Ammo";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
     editorPreview = "";
     scope = 2;
 };
 
 class MSF_Placeholder_Vehicle_U : MSF_Placeholder
 {
-    displayName = "Unmanned Vehicle Spawn Placeholder";
-    editorCategory = "MSF";
-    editorSubcategory = "MSF_OFE";
+    displayName = "Empty - Vehicle";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
     editorPreview = "";
     scope = 2;
 };
 
 class MSF_Placeholder_Infantry_D : MSF_Placeholder
 {
-    displayName = "Dead Infantry Spawn Placeholder";
-    editorCategory = "MSF";
-    editorSubcategory = "MSF_OFE";
+    displayName = "Empty - Dead Infantry";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
     editorPreview = "";
     scope = 2;
 };
 
 class MSF_Placeholder_Direction : MSF_Placeholder
 {
-    displayName = "Spawn Direction Placeholder";
-    editorCategory = "MSF";
-    editorSubcategory = "MSF_OFE";
+    displayName = "Misc - Spawn Direction";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
     editorPreview = "";
     scope = 2;
 };
 
 class MSF_Placeholder_Static : MSF_Placeholder
 {
-    displayName = "Turret Spawn Placeholder";
-    editorCategory = "MSF";
-    editorSubcategory = "MSF_OFE";
+    displayName = "Units - Turret";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
+    editorPreview = "";
+    scope = 2;
+};
+
+class MSF_Placeholder_FuelTruck : MSF_Placeholder
+{
+    displayName = "Empty - Fuel Truck";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
+    editorPreview = "";
+    scope = 2;
+};
+
+class MSF_Placeholder_AmmoTruck : MSF_Placeholder
+{
+    displayName = "Empty - Ammo Truck";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
     editorPreview = "";
     scope = 2;
 };

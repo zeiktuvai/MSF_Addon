@@ -21,6 +21,16 @@ class MSF_OFE_Config
             UnmannedStatic[] = {
                 "B_HMG_01_A_F", "B_GMG_01_F", "B_static_AA_F", "rhs_SPG9M_MSV", "RHS_ZU23_MSV", "I_Mortar_01_F"
             };
+            UnmannedHeli[] = {
+                "B_Heli_Transport_03_unarmed_F", "B_Heli_Light_01_F", "B_Heli_Transport_01_F", "O_Heli_Transport_04_covered_F", "O_Heli_Light_02_unarmed_F", "I_Heli_Transport_02_F",
+                "I_Heli_light_03_unarmed_F"
+            };
+            FuelTruck[] = {
+                "B_Truck_01_fuel_F", "O_Truck_02_fuel_F", "I_Truck_02_fuel_F"
+            };
+            AmmoTruck [] = {
+                "B_Truck_01_ammo_F", "O_Truck_02_Ammo_F", "I_Truck_02_ammo_F"
+            };
         };
         class OPFOR
         {

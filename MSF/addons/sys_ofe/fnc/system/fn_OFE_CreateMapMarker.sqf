@@ -10,25 +10,42 @@ switch (_type) do {
 		_markerType = "mil_dot";
 		_markerColor = "Color1_FD_F";
 		_markerText = "Checkpoint";
-	 };
+	};
+	case 5;
 	case 1: {
 		_name = "Outpost_" + (str _position);
 		_markerType = "mil_triangle";
 		_markerColor = "Color1_FD_F";
 		_markerText = "Outpost";
-	 };
+	};
+	case 6;
 	case 2: {
 		_name = "Base_" + (str _position);
-		_markerType = "mil_triangle";
+		_markerType = "loc_Bunker";
 		_markerColor = "Color1_FD_F";
 		_markerText = "Base";
 	 };
-	case 5: {
+	case 3;
+	case 7: {
+		_name = "HeliBase_" + (str _position);
+		_markerType = "mil_marker";
+		_markerColor = "Color1_FD_F";
+		_markerText = "Heli-Base";
+	};
+	case 4;
+	case 8: {
+		_name = "AirBase_" + (str _position);
+		_markerType = "mil_marker";
+		_markerColor = "Color1_FD_F";
+		_markerText = "AirBase";
+	};
+	case 9: {
 		_name = "POI_" + (str _position);
 		_markerType = "hd_unknown";
 		_markerColor = "Color3_FD_F";
 		_markerText = "Point of Interest";
 	};
+	case
 	default {
 		_name = "POI_" + (str _position);
 		_markerType = "hd_unknown";

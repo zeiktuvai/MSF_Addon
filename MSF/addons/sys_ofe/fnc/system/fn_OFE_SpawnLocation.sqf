@@ -17,20 +17,35 @@ private ["_vicAmmo", "_supplyCnt"];
 
 [_objects, true] call MSF_fnc_ShowHideObjects;
 
-[_unitTypes select 5, _objects select {typeOf _x == "MSF_Placeholder_Infantry"}, _group] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
-[_unitTypes select 5, _objects, _group] call MSF_fnc_OFE_SpawnInfantryInBuildings;
 [_unitTypes select 1, _objects select {typeOf _x == "MSF_Placeholder_Vehicle"}, _side, _center] call MSF_fnc_OFE_SpawnMannedVic;
 [_unitTypes select 2, _objects select {typeOf _x == "MSF_Placeholder_Armor"}, _side, _center] call MSF_fnc_OFE_SpawnMannedVic;
 [_unitTypes select 4, _objects select {typeOf _x == "MSF_Placeholder_Static"}, _side, _center] call MSF_fnc_OFE_SpawnMannedVic;
+[_unitTypes select 5, _objects select {typeOf _x == "MSF_Placeholder_Infantry"}, _group] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
+[_unitTypes select 5, _objects, _group] call MSF_fnc_OFE_SpawnInfantryInBuildings;
+
+if (_type == 3 || _type == 7 || _type == 8) then {
+	[_uTypes select 3, _objects select {typeOf _x == "MSF_Placeholder_Heli"}] call MSF_fnc_OFE_SpawnEscapeVic;
+};
+
+[_uTypes select 4, _objects select {typeOf _x == "MSF_Placeholder_FuelTruck"}] call MSF_fnc_OFE_SpawnUnmannedVic;
 
 switch (_type) do {
+	case 5;
 	case 1: {
 		_vicAmmo = 500;
 		_supplyCnt = 70;
 	};
+	case 6;
 	case 2: {
 		_vicAmmo = 750;
 		_supplyCnt = 120;
+	};
+	case 3;
+	case 4;
+	case 7;
+	case 8: {
+		_vicAmmo = 1000;
+		_supplyCnt = 140;
 	};
 	default {
 		_vicAmmo = 100;

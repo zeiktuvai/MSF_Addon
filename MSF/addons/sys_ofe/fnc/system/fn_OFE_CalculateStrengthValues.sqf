@@ -10,10 +10,10 @@ private _opClr = missionNamespace getVariable ["MSF_OFE_opClear", 0];
 private _bClr = missionNamespace getVariable ["MSF_OFE_baseClear", 0];
 private _airbClr = missionNamespace getVariable ["MSF_OFE_airbaseClear", 0];
 
-private _cpCount = count (allMissionObjects "MSF_Mod_OFE_Checkpoint");
-private _opCount = count (allMissionObjects "MSF_Mod_OFE_Outpost");
-private _bCount = count (allMissionObjects "MSF_Mod_OFE_Base");
-private _airbCount = count (allMissionObjects "MSF_Mod_OFE_Airbase");
+private _cpCount = missionNamespace getVariable ["MSF_OFE_cpCount", 1];
+private _opCount = missionNamespace getVariable ["MSF_OFE_opCount", 0];
+private _bCount = missionNamespace getVariable ["MSF_OFE_baseCount", 0];
+private _airbCount = missionNamespace getVariable ["MSF_OFE_airbaseCount", 0];
 
 private _totalVal = 0;
 if (_cpCount > 0) then { _cpval =  (_cpWeight / _cpCount) * _cpClr; _totalVal = _totalVal + _cpWeight; } else { _cpval = 0 };

@@ -11,10 +11,14 @@ private _trig = createTrigger ["emptyDetector", getPos _logic];
 
 switch (_type) do {
 	case 0: { _clearVar = "MSF_OFE_cpClear"; };
+	case 5;
 	case 1: { _clearVar = "MSF_OFE_opClear"; };
+	case 6;
 	case 2: { _clearVar = "MSF_OFE_baseClear"; };
-	case 3: { _clearVar = "MSF_OFE_baseClear"; };
-	default { _clearVar = "MSF_OFE_airbaseClear"; };
+	case 7;
+	case 8;	
+	case 3: { _clearVar = "MSF_OFE_airbaseClear"; };
+	default { _clearVar = "MSF_OFE_InvalidType"; };
 };
 
 _trig setTriggerArea [_x, _y, 0, false];

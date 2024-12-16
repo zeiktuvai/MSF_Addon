@@ -26,6 +26,12 @@ class CfgFunctions
 			class OFE_GetSupplyComposition {};
 			class OFE_GetVehicleComposition {};
 		};
+		class MSF_OFE_Helpers
+		{
+			file = "z\msf\addons\sys_ofe\fnc\helper";
+			class OFE_EnumerateModules {};
+			class OFE_SetSpawnDir {};
+		};
 		class MSF_OFE_Modules
 		{
 			file = "z\msf\addons\sys_ofe\fnc\module";
@@ -45,6 +51,7 @@ class CfgFunctions
 			file = "z\msf\addons\sys_ofe\fnc\object";
 			class OFE_PopulatePosition {};
 			class OFE_SpawnAndFillBoxes {};
+			class OFE_SpawnEscapeVic {};
 			class OFE_SpawnInfantryInBuildings {};
 			class OFE_SpawnInfantryOnPlaceholder {};
 			class OFE_SpawnMannedVic {};

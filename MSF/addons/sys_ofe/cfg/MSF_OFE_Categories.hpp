@@ -1,8 +1,8 @@
 class CfgEditorCategories
 {
-    class MSF
+    class MSF_OFE
     {
-        displayName = "MSF";
+        displayName = "MSF - Occupational Force Engagement Sys.";
         priority = 1;
         side = 1;
     };
@@ -10,8 +10,8 @@ class CfgEditorCategories
 
 class CfgEditorSubcategories
 {
-    class MSF_OFE
+    class MSF_OFE_Placeholder
     {
-        displayName = "Occupational Force Engagement System";
+        displayName = "Spawn Placeholders";
     };
 };

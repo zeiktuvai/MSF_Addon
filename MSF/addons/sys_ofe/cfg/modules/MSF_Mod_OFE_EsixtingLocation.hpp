@@ -1,10 +1,10 @@
-class MSF_Mod_OFE_Pop_HeliBase : Module_F
+class MSF_Mod_OFE_ExistingLoc : Module_F
 {
 	scope = 2;
 	displayName = "Populate Existing Location";
-	icon = "a3\3den\data\displays\display3den\panelleft\entitylist_location_ca.paa";
+	icon = "a3\3den\data\displays\display3den\panelleft\locationlist_ca.paa";
 	category = "MSF_Module_OFE";
-	function = "MSF_fnc_OFE_Mod_ExistingLocation ";
+	function = "MSF_fnc_OFE_Mod_ExistingLocation";
 	functionPriority = 2;
 	isGlobal = 0;
 	isTriggerActivated = 0;
@@ -50,13 +50,13 @@ class MSF_Mod_OFE_Pop_HeliBase : Module_F
 				{
 					name = "Heli-Base";
 					tooltip = "Heli-Base";
-					value = 6;
+					value = 7;
 				};
 				class Airbase
 				{
 					name = "Air-Base";
 					tooltip = "Air-Base";
-					value = 7;
+					value = 8;
 				};
 			};	
 		};

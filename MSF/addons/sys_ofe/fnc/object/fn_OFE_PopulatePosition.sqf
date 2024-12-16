@@ -2,6 +2,8 @@
 
 params [["_logic", objNull, [objNull]], ["_def", [], [[]]], ["_type", 0, [0]], "_params"];
 
+//hint format ["%1 %2", missionNamespace getVariable "MSF_OFE_cpCount", [] call MSF_fnc_OFE_CalculateStrengthValues];
+
 private _activationRange = 500;
 
 //TODO: Update this to use a configurable value
@@ -12,12 +14,13 @@ private _position = position _logic;
 private _unitTypes = [_side] call MSF_fnc_GetUnitClasses;
 private _group = createGroup [_side, true];
 private _objects = [];
-private _vics = [];
-private _boxes = [];
-private _vicAmmoBoxes = [];
+private _allObjs = [];
 
 switch (_type) do {
 	case 0: {
+		private _vics = [];
+		private _boxes = [];
+		private _vicAmmoBoxes = [];
 		private _dir = [_position] call MSF_fnc_GetRoadDirection;
 		_objects = [_position, _dir, _def] call BIS_fnc_objectsMapper;
 
@@ -25,11 +28,15 @@ switch (_type) do {
 		[_unitTypes select 5, _objects, _group] call MSF_fnc_OFE_SpawnInfantryInBuildings;
 		_params params ["_supply"];
 
-		// TODO: make this spawn in activation trigger to take strength into account.
 		if (_supply) then {
 			_vicAmmoBoxes = [_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}, 100] call MSF_fnc_OFE_SpawnVehicleAmmo;
 			_boxes = [_objects select {typeOf _x == "MSF_Placeholder_Supplies"}] call MSF_fnc_OFE_SpawnAndFillBoxes;
 		};
+		
+		_allObjs append units _group;
+		if (count _boxes > 0) then {_allObjs append _boxes};
+		if (count _vicAmmoBoxes > 0) then {_allObjs append _vicAmmoBoxes};
+		if (count _vics > 0) then {_allObjs append _vics};
 	};
 	case 1;
 	case 2;
@@ -44,11 +51,7 @@ switch (_type) do {
 	};
 };
 
-private _allObjs = units _group;
 _allObjs append _objects;
-if (count _boxes > 0) then {_allObjs append _boxes};
-if (count _vicAmmoBoxes > 0) then {_allObjs append _vicAmmoBoxes};
-if (count _vics > 0) then {_allObjs append _vics};
 
 [_logic, _activationRange, _activationRange, _friendlySide, "present", false, _allObjs, _type, _params] call MSF_fnc_OFE_CreateModuleActivationTrigger;
 [_type, _position] call MSF_fnc_OFE_CreateMapMarker;
