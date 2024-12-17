@@ -1,19 +1,7 @@
-- Moved functions from MSF_fnc_Init into MissionInit so they are executed automatically upon player join.
-- Moved functions out of Units Addon and into MSF main.
-- Updated JIPSpawnNearPlayer to work correctly.
-- Updated MSF_fnc_Init to do nothing.
-- Updated TFY internal items.
-- Removed dependency of adding `[] call MSF_fnc_Init` into `initPlayerLocal.sqf`
-
-
-event hanlder stuff
-https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)
+- Fixed bug in persist validation function throwing an error at random times.
 
 // Base class templates
 		
-		
-    
-
 // _east = [configfile >> 'CfgGroups' >> 'East', 2, false] call BIS_fnc_returnChildren;
 // _indep = [configfile >> 'CfgGroups' >> 'Indep', 2, false] call BIS_fnc_returnChildren;
 // _west = [configfile >> 'CfgGroups' >> 'West', 2, false] call BIS_fnc_returnChildren;
@@ -27,3 +15,7 @@ https://github.com/CBATeam/CBA_A3/wiki/Extended-Event-Handlers-(new)
 // 		_control lbsetpicture [_lbadd, gettext (_group >> 'icon')];
 // 	};
 // } foreach _groups;
+
+// supply truck
+[[],[[["rhs_fim92_mag",1],4],[["rhs_mag_20Rnd_556x45_Mk262_Stanag",20],15],[["rhs_mag_30Rnd_556x45_M855_Stanag",30],15],[["rhsusf_mag_17Rnd_9x19_FMJ",17],5],[["rhs_mag_M433_HEDP",1],6]],[[["rhs_weap_fim92","","","",[],[],""],1],[["rhs_weap_fim92","","","",["rhs_fim92_mag",1],[],""],2],[["rhs_weap_M136","","","",[],[],""],2],[["rhs_weap_M320","","","",[],[],""],1]]]
+
