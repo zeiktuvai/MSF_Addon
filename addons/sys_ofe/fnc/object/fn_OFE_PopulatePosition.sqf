@@ -40,7 +40,8 @@ switch (_type) do {
 	};
 	case 1;
 	case 2;
-	case 3: {
+	case 3;
+	case 4: {
 		_objects = [_position, 0, _def] call BIS_fnc_objectsMapper;
 	};
 	case 5;
@@ -58,5 +59,7 @@ _allObjs append _objects;
 if (_type < 5) then {
 	[_allObjs, false] call MSF_fnc_ShowHideObjects;
 };
-[_logic, 50, 50, _type] call MSF_fnc_OFE_CreateModuleClearTrigger;
+if (_type != 4) then {
+	[_logic, 50, 50, _type] call MSF_fnc_OFE_CreateModuleClearTrigger;	
+};
 [_logic, 50, 50] call MSF_fnc_OFE_CreateModuleAITrigger;

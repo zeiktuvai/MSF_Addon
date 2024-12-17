@@ -17,6 +17,7 @@ class Module_F : Logic
 
 #include "MSF_Mod_OFE_ArmorPOI.hpp"
 #include "MSF_Mod_OFE_Base.hpp"
+#include "MSF_Mod_OFE_Bastion.hpp"
 #include "MSF_Mod_OFE_Checkpoint.hpp"
 #include "MSF_Mod_OFE_EsixtingLocation.hpp"
 #include "MSF_Mod_OFE_MissionArea.hpp"

@@ -119,3 +119,21 @@ class MSF_Placeholder_AmmoTruck : MSF_Placeholder
     editorPreview = "";
     scope = 2;
 };
+
+class MSF_Placeholder_BldgSpawnExempt : MSF_Placeholder
+{
+    displayName = "Misc - Disable Building Spawn";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
+    editorPreview = "";
+    scope = 2;
+};
+
+class MSF_Placeholder_Armor_U : MSF_Placeholder
+{
+    displayName = "Empty - Armor";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
+    editorPreview = "";
+    scope = 2;
+};

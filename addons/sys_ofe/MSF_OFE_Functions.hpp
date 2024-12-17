@@ -18,8 +18,10 @@ class CfgFunctions
 		class MSF_OFE_Compositions
 		{
 			file = "z\msf\addons\sys_ofe\fnc\comp";
+			class OFE_GetAAComposition {};
 			class OFE_GetArmorComposition {};
 			class OFE_GetBaseComposition {};
+			class OFE_GetBastionComposition {};
 			class OFE_GetCheckpointComposition {};
 			class OFE_GetOutpostComposition {};
 			class OFE_GetStaticComposition {};
@@ -39,6 +41,7 @@ class CfgFunctions
 			class OFE_Mod_MissionArea {};
 			class OFE_Mod_SpawnArmorPOI {};
 			class OFE_Mod_SpawnBase {};
+			class OFE_Mod_SpawnBastion {};
 			class OFE_Mod_SpawnCheckpoint {};
 			class OFE_Mod_SpawnOutpost {};
 			class OFE_Mod_SpawnStaticPOI {};

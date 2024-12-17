@@ -23,7 +23,7 @@ private ["_vicAmmo", "_supplyCnt"];
 [_unitTypes select 5, _objects select {typeOf _x == "MSF_Placeholder_Infantry"}, _group] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
 [_unitTypes select 5, _objects, _group] call MSF_fnc_OFE_SpawnInfantryInBuildings;
 
-if (_type == 3 || _type == 7 || _type == 8) then {
+if (_type == 3 || _type == 4 || _type == 7 || _type == 8) then {
 	[_uTypes select 3, _objects select {typeOf _x == "MSF_Placeholder_Heli"}] call MSF_fnc_OFE_SpawnEscapeVic;
 };
 
@@ -32,6 +32,7 @@ if (_type == 8) then {
 };
 
 [_uTypes select 5, _objects select {typeOf _x == "MSF_Placeholder_FuelTruck"}] call MSF_fnc_OFE_SpawnUnmannedVic;
+[_uTypes select 6, _objects select {typeOf _x == "MSF_Placeholder_AmmoTruck"}] call MSF_fnc_OFE_SpawnUnmannedVic;
 
 switch (_type) do {
 	case 5;
@@ -72,4 +73,14 @@ if (_supply) then {
 if (_vic && [_vicChance - _str] call MSF_fnc_GetSpawnChance) then {
 	private _vics = [_uTypes select 0, _objects select {typeOf _x == "MSF_Placeholder_Vehicle_U"}] call MSF_fnc_OFE_SpawnUnmannedVic;
 	[_vics] call MSF_fnc_SetRandomVehicleState;
+};
+
+if (_type == 4) then {
+	private _ant = nearestObjects [_center, ["Land_Radar_01_antenna_F"], 50];
+
+	if (count _ant > 0) then {
+		private _obj = _ant select 0;
+		private _loc = position _obj;
+		_obj setPos [_loc select 0, _loc select 1, 130.507];
+	}
 };
