@@ -36,54 +36,6 @@ class Cfg3DEN
 	class Attributes
 	{
 		#include "cfg\mission\MSF_Controls.hpp"
-		
-		class Default; // Empty template with pre-defined width and single line height
-		class Title : Default
-		{
-			class Controls
-			{
-				class Title;
-			};
-		}; // Two-column template with title on the left and space for content on the right
-		class TitleWide : Default
-		{
-			class Controls
-			{
-				class Title;
-			};
-		}; // Template with full-width single line title and space for content below it
-
-		// Your attribute class
-		class MyAttributeControl : Title
-		{
-			// Expression called when the control is loaded, used to apply the value. It is not called when multiple entities are edited at once due to the fact that _value would not be available then.
-			// See the note below this config extract
-			// Passed params are: _this - controlsGroup, _value - saved value, _config - Path to attribute config e.g.:bin\config.bin/Cfg3DEN/Object/AttributeCategories/CATEGORY/Attributes/ATTRIBUTE
-			attributeLoad = "(_this controlsGroupCtrl 100) ctrlSetText _value";
-
-			// Expression called when attributes window is closed and changes confirmed. Used to save the value.
-			// Passed param: _this - control
-			attributeSave = "ctrlText (_this controlsGroupCtrl 100)";
-
-			// List of controls, structure is the same as with any other controls group
-			class Controls : Controls
-			{
-				class Title : Title{}; // Inherit existing title control. Text of any control with class Title will be changed to attribute displayName
-				class Value : Combo
-				{
-					class ItemsConfig
-					{
-						path[] = { "CfgNotifications" };	// Path to config container
-						localConfig = 1;					// 1 to search local Description.ext as well
-						propertyText = "title";				// item's text
-						propertyTextRight = "description";	// item's right text
-						propertyPicture = "iconPicture";	// item's picture
-						propertyColor = "color";			// item's text colour
-						sort = 1; // whether the list should be sorted or not (1 = sorted/ 0 = unsorted)
-					};
-				};
-			};
-		};
 	};
 };
 
