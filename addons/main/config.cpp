@@ -1,6 +1,7 @@
 #include "MSF_Version.hpp"
 #include "cfg\eden\MSF_Editor_Menu.hpp"
 #include "cfg\mission\MSF_Config.hpp"
+#include "cfg\module\MSF_Modules.hpp"
 
 class CfgPatches
 {
@@ -15,24 +16,6 @@ class CfgPatches
         requiredVersion = 1.0;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction"};
     };
-};
-
-class CfgVehicles
-{
-	#include "cfg\module\MSF_Module.hpp"
-};
-
-class CfgFactionClasses
-{
-	class NO_CATEGORY;
-	class MSF_Module : NO_CATEGORY
-	{
-		displayName = "MSF Modules";
-	};
-	class MSF_Module_OFE : NO_CATEGORY
-	{
-		displayName = "MSF - Occupational Force Engagement";
-	};
 };
 
 class Cfg3DEN
@@ -56,7 +39,6 @@ class Cfg3DEN
 	};
 };
 
-
 class Extended_PreInit_EventHandlers
 {
     class ADDON
@@ -64,7 +46,6 @@ class Extended_PreInit_EventHandlers
         init = "call compile preprocessFileLineNumbers 'z\msf\addons\main\XEH_preInit.sqf'";
     };
 };
-
 
 class CfgNonAIVehicles
 {
@@ -74,10 +55,3 @@ class CfgNonAIVehicles
 	#include "cfg\trigger\MSF_Attr_SupplyTrigger.hpp"
 	#include "cfg\trigger\MSF_Attr_WaveTrigger.hpp"
 };
-
-//not working....
-// class Extended_InitPost_EventHandlers {
-// 	class CAManBase {        
-// 		init = "[] call MSF_fnc_test;";        
-//     };
-// };

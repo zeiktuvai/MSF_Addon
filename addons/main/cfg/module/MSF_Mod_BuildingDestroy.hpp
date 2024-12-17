@@ -51,7 +51,7 @@ class MSF_Module_BldgDestroy : Module_F
 			defaultValue = 0;
 		};
 					
-		class ModuleDescription : ModuleDescription {}; // Module description should be shown last
+		class ModuleDescription : ModuleDescription {};
 	};
 	
 	class ModuleDescription : ModuleDescription
