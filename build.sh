@@ -1,20 +1,11 @@
 #!/bin/bash
 date
-hemtt build --no-bin
+hemtt build
 
-currentPath=$(pwd)
-
-if [[ ${currentPath} == *"Units"* ]]; then 
-    rm -r "$DEV_MOD_PATH"@MSF-Units-Dev/*
-    rm -r ~/Arma_Dev/@MSF-Units-Dev/*
-    /bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"@MSF-Units-Dev/
-    /bin/cp -rfp .hemttout/build/* ~/Arma_Dev/@MSF-Units-Dev/
-else
-    rm -r "$DEV_MOD_PATH"@MSF-Dev/*
-    rm -r ~/Arma_Dev/@MSF-Dev/*
-    /bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"@MSF-Dev/
-    /bin/cp -rfp .hemttout/build/* ~/Arma_Dev/@MSF-Dev/
-fi
+rm -r "$DEV_MOD_PATH"@MSF-Dev/*
+rm -r ~/Arma_Dev/@MSF-Dev/*
+/bin/cp -rfp .hemttout/build/* "$DEV_MOD_PATH"@MSF-Dev/
+/bin/cp -rfp .hemttout/build/* ~/Arma_Dev/@MSF-Dev/
 
 while getopts ":s" option; do   
 

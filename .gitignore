@@ -397,13 +397,8 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-MSF/.hemttout/*
-MSF/releases/*
-MSF-Units/.hemttout/*
-MSF-Units/releases/*
+.hemttout/*
+releases/*
+
 *.pbo
 *.bisign
-z
-
-#TEMP
-MSF-Units/build.sh

@@ -1,0 +1,39 @@
+private _armor = [
+	[
+		["MSF_Placeholder_Vehicle_U",[-1.66309,0.243164,0],0,1,0,[],"","",true,false], 
+		["Land_Wrench_F",[-1.96973,4.39893,0],119.394,1,0,[],"","",true,false], 
+		["Land_TankTracks_01_short_F",[-1.4624,5.24463,-4.76837e-07],282.947,1,0,[],"","",true,false], 
+		["Land_RefuelingHose_01_F",[-3.55566,4.2959,0],2.70598e-05,1,0,[],"","",true,false], 
+		["Land_CanisterFuel_F",[1.57568,5.75049,2.00272e-05],114.106,1,0,[],"","",true,false], 
+		["Land_TorqueWrench_01_F",[-0.448242,6.05762,0],289.565,1,0,[],"","",true,false], 
+		["Land_DeskChair_01_sand_F",[-1.4585,5.9292,-1.90735e-06],173.022,1,0,[],"","",true,false], 
+		["Land_TankRoadWheels_01_single_F",[-2.69287,5.62451,0],7.38611e-06,1,0,[],"","",true,false], 
+		["Land_CanisterFuel_F",[2.07666,5.89893,2.0504e-05],174.037,1,0,[],"","",true,false], 
+		["MSF_Placeholder_Infantry",[1.53662,-6.4248,0],0,1,0,[],"","",true,false], 
+		["MSF_Placeholder_Direction",[-6.73193,0.108887,0],0,1,0,[],"","",true,false], 
+		["Item_ToolKit",[-4.39795,5.57813,0],0,1,0,[],"","",true,false], 
+		["MSF_Placeholder_Infantry_D",[-2.73096,6.60693,0],0,1,0,[],"","",true,false], 
+		["MSF_Placeholder_Infantry",[-7.52686,5.26563,0],0,1,0,[],"","",true,false], 
+		["MSF_Placeholder_Infantry",[-0.644043,9.41797,0],0,1,0,[],"","",true,false]
+	],
+	[
+		["MSF_Placeholder_Direction",[-1.99463,-3.3125,0],0,1,0,[],"","",true,false], 
+		["MSF_Placeholder_Vehicle_U",[3.88623,-3.27832,0],0,1,0,[],"","",true,false], 
+		["MSF_Placeholder_Infantry_D",[0.874023,6.6958,0],0,1,0,[],"","",true,false], 
+		["Land_Pillow_grey_F",[3.91504,6.04492,1.43051e-06],0.193579,1,0,[],"","",true,false], 
+		["Land_Map_F",[3.43164,6.50146,0],0.000117455,1,0,[],"","",true,false], 
+		["Land_Ground_sheet_folded_khaki_F",[4.18945,6.40479,5.8651e-05],46.4961,1,0,[],"","",true,false], 
+		["MSF_Placeholder_Infantry",[-5.45166,5.49072,0],0,1,0,[],"","",true,false], 
+		["MSF_Placeholder_Infantry_D",[6.82666,3.78271,0],0,1,0,[],"","",true,false], 
+		["CamoNet_BLUFOR_open_F",[3.48193,6.67969,0],0,1,0,[],"","",true,false], 
+		["Land_Magazine_rifle_F",[3.56055,7.53955,0],7.77166e-05,1,0,[],"","",true,false], 
+		["Land_Ammobox_rounds_F",[3.0415,7.93115,-0.00016737],0.00343248,1,0,[],"","",true,false], 
+		["Land_Magazine_rifle_F",[2.84521,8.0874,0],7.77168e-05,1,0,[],"","",true,false], 
+		["Land_Magazine_rifle_F",[2.99658,8.26318,0],5.60852e-05,1,0,[],"","",true,false], 
+		["Land_DeskChair_01_black_F",[3.47412,8.0752,0],359.999,1,0,[],"","",true,false], 
+		["Land_TentDome_F",[5.73584,7.27783,0],2.42836,1,0,[],"","",true,false], 
+		["MSF_Placeholder_Infantry",[1.6665,-9.20313,0],0,1,0,[],"","",true,false]
+	]
+];
+
+selectRandom _armor;
