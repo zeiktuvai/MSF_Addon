@@ -83,4 +83,4 @@ if (_type == 4) then {
 		private _loc = position _obj;
 		_obj setPos [_loc select 0, _loc select 1, 0];
 	}
-};
+}; 
