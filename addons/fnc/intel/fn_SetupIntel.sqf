@@ -1,6 +1,6 @@
 private ["_logic","_units","_show"];
 
-_logic = _this param [0,objnull,[objnull]];
+_logic = _this param [0,objNull,[objNull]];
 _units = _this param [1,[],[[]]];
 _activated = _this param [2,true,[true]];
 
