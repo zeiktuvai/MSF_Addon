@@ -9,7 +9,8 @@ class CfgPatches
 		name = "Mission Support Foundation";
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
-        units[] = {"MSF_Module_BldgDestroy"};
+        units[] = {"MSF_Module_BldgDestroy", "MSF_Module_RandomSpawn", "MSF_Module_RandomSpawnCrash"};
+		//"MSF_Module_InfantryPatrol"};
         weapons[] = {};
         requiredVersion = 1.0;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction"};
@@ -18,25 +19,7 @@ class CfgPatches
 
 class CfgVehicles
 {
-	class Logic;
-	class Module_F : Logic
-	{
-		class AttributesBase
-		{
-			class Default;
-			class Checkbox;
-			class ModuleDescription;
-		};
-
-		class ModuleDescription
-		{
-			class AnyBrain;
-		};
-	};
-
-	#include "cfg\module\MSF_Mod_BuildingDestroy.hpp"
-	#include "cfg\module\MSF_Mod_RandomSpawn.hpp"
-	#include "cfg\module\MSF_Mod_RandomSpawnCrash.hpp"
+	#include "cfg\module\MSF_Module.hpp"
 };
 
 class CfgFactionClasses
