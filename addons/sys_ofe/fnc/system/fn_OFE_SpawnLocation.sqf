@@ -81,6 +81,6 @@ if (_type == 4) then {
 	if (count _ant > 0) then {
 		private _obj = _ant select 0;
 		private _loc = position _obj;
-		_obj setPos [_loc select 0, _loc select 1, 130.507];
+		_obj setPos [_loc select 0, _loc select 1, 0];
 	}
 };
