@@ -32,5 +32,5 @@ if (_despawn) then {
 		} forEach _groups;
 	};
 
-	_trigger setVariable ["MSF_Patrol_Group_ID", []];
+	_trigger setVariable ["MSF_Patrol_Group_ID", [], true];
 };

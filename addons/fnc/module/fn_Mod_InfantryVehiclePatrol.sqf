@@ -7,7 +7,6 @@ private _combatMode = _logic getVariable ["CombatMode", "RED"];
 private _behavior = _logic getVariable ["Behavior", "AWARE"];
 private _speed = _logic getVariable ["Speed", "NORMAL"];
 private _spawnCount = _logic getVariable ["SpawnCount", false];
-private _waypointCount = _logic getVariable ["WaypointCount", 8];
 private _activation = _logic getVariable ["Activation", "WEST"];
 private _activationType = _logic getVariable ["ActivationType", "present"];
 private _side = _logic getVariable ["Side", 0];
@@ -20,10 +19,10 @@ if (!_isVic) then {
 	if(_area select 0 > 100 && _area select 1 > 100) then 
 	{		
 		[_area select 0, _area select 1, _height, _position, [_activation, _activationType], ["this",
-			"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateAreaInfantryPatrol; }; ",
+			"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateAreaInfantryPatrol;}; ",
 			"[thisTrigger] call MSF_fnc_DeleteAreaInfantryPatrol;"],
-			_isRectangle, false,
-			[_side, _waypointCount, _combatMode, _behavior, _speed, _spawnCount, _despawn]
+			_isRectangle, false, _despawn,
+			[_side, 8, _combatMode, _behavior, _speed, _spawnCount, _despawn]
 		] call MSF_fnc_CreateActivationTrigger;	
 	};
 }
@@ -33,8 +32,8 @@ else {
 		[_area select 0, _area select 1, _height, _position, [_activation, _activationType], ["this",
 			"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateAreaVehiclePatrol; }; ",
 			""],
-			_isRectangle, false,
-			[_side, _waypointCount, _combatMode, _behavior, _speed, _spawnCount]
+			_isRectangle, false, false,
+			[_side, 10, _combatMode, _behavior, _speed, _spawnCount]
 		] call MSF_fnc_CreateActivationTrigger;	
 	};
 };

@@ -51,6 +51,5 @@ class CfgNonAIVehicles
 {
 	class EmptyDetector;
 	#include "cfg\trigger\MSF_Attr_FortifyTrigger.hpp"
-	#include "cfg\trigger\MSF_Attr_SupplyTrigger.hpp"
 	#include "cfg\trigger\MSF_Attr_WaveTrigger.hpp"
 };

@@ -24,8 +24,8 @@ if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {
 	private _count = [1, 2] select (_spawnCount);
 
 	for "_g" from 1 to _count do {
-		private _start = [_trigger] call BIS_fnc_randomPosTrigger;
-		private _group = [_start, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;		
+		private _route = [_trigger, _amount, ([_trigger, true] call MSF_fnc_GetAreaRadius) * 2, false] call MSF_fnc_GetRadialPositionRoute;
+		private _group = [_route select 0, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;		
 		_group deleteGroupWhenEmpty true;
 		_group setSpeedMode _speed;
 		_group setCombatMode _mode;
@@ -35,21 +35,8 @@ if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {
 		};
 		_ids pushBack _group;
 
-		for "_i" from 1 to _amount do {
-			private _location = [_trigger] call BIS_fnc_randomPosTrigger;
-			_wp = _group addWaypoint [_location, 10, _i ];
-
-			if ( _i == 1 ) then {
-				[_group, _i] setWaypointBehaviour _behv;
-				[_group, _i] setWaypointCombatMode _mode;
-				[_group, _i] setWaypointSpeed _speed;
-				[_group, _i] setWaypointFormation "COLUMN";
-			};    
-		};
-
-		_wp = _group addWaypoint [_start, 10, _amount];
-		[_group, _amount] setWaypointType "CYCLE";	
+		[_route, _group] call MSF_fnc_GeneratePatrolRoute;
 	};
-
-	[_trigger, ["MSF_Patrol_Group_ID", _ids]] remoteExec ["setVariable"];
+	
+	_trigger setVariable ["MSF_Patrol_Group_ID", _ids, true];
 };

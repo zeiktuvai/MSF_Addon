@@ -1,8 +1,8 @@
-class MSF_Module_VehiclePatrol : Module_F
+class MSF_Module_Spawn_InfantryPatrol : Module_F
 {
 	scope = 2;
-	displayName = "Spawn - Vehicle Patrol";
-	icon = "a3\ui_f\data\gui\rsc\rscdisplaygarage\car_ca.paa";
+	displayName = "Spawn - Infantry Patrol";
+	icon = "a3\ui_f\data\igui\cfg\simpletasks\types\rifle_ca.paa";
 	category = "MSF_Module";
 	function = "MSF_fnc_Mod_InfantryVehiclePatrol";
 	functionPriority = 1;
@@ -17,7 +17,7 @@ class MSF_Module_VehiclePatrol : Module_F
 
 	class AttributeValues
 	{
-		size3[] = { 1000, 1000, -1 };
+		size3[] = { 500, 500, -1 };
 		isRectangle = 0;
 	};
 
@@ -77,20 +77,18 @@ class MSF_Module_VehiclePatrol : Module_F
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "false";				
 		};
-		class WaypointCount
+		class Despawn
 		{
-			displayName = "Number of waypoints";
-			tooltip = "Sets the number of waypoints to be generated. (Minimum of 4 - Max of 10)";		
-			control = "EditShort";
-			expression = "if (_value > 3 && _value < 11) then {_this setVariable ['%s',_value];} else {_this setVariable ['%s',8];};";
-			property = "MSF_Module_InfPatrol_WayC";
-			defaultValue = 10;
-			validate = "number";
-			typeName = "NUMBER";
+			displayName = "Despawn on Exit";
+			tooltip = "Despawns the patrols when players are no longer in the area";
+			control = "Checkbox";
+			property = "MSF_Module_InfPatrol_Despawn";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "false";				
 		};
 		class Side
 		{
-			displayName = "Side";
+			displayName = "Spawn Side";
 			tooltip = "Faction to spawn the patrol in.";
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
@@ -125,7 +123,7 @@ class MSF_Module_VehiclePatrol : Module_F
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = "Generates a vehicle patrol in the area of the module with a random path along the nearest roads. Module area MUST be larger than 500 for the module to function.";
+		description = "Generates an infantry patrol in the area of the module with a random path. Module area MUST be greater than 100 for the module to function. The modules size determines the area units need to be in for the module to spawn.";
 		sync[] = { "LocationArea_F", "EmptyDetector" };
 
 		class LocationArea_F

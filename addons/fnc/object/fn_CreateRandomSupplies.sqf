@@ -9,38 +9,33 @@
 */
 params [["_trigger", objNull, [objNull]]];
 
-private _min = _trigger getVariable ["MSF_Trig_Supply_VicAmmo_Min", 500];
-private _max = _trigger getVariable ["MSF_Trig_Supply_VicAmmo_Max", 1000];
-private _supplyCount = _trigger getVariable ["MSF_Trig_Supply_Items_Num", 25];
-private _fuelCount = _trigger getVariable ["MSF_Trig_Supply_Fuel_Count", 5];
-private _wmag = _trigger getVariable ["MSF_Trig_Supply_Items_MagWeight", 1];
-private _wlau = _trigger getVariable ["MSF_Trig_Supply_Items_LauncherWeight", 1];
-private _wgre = _trigger getVariable ["MMSF_Trig_Supply_Items_GrenadeWeight", 1];
-private _wmed = _trigger getVariable ["MSF_Trig_Supply_Items_MedicalWeight", 1];
-private _wfoo = _trigger getVariable ["MSF_Trig_Supply_Items_FoodWeight", 1];
+private _vals = _trigger getVariable ["module_params", []];
+_vals params ["_supply", "_ammo", "_fuel", "_supplyCount", "_wmag", "_wlau", "_wgre", "_wmed", "_wfoo", "_min", "_max", "_fuelCount"];
+
 private _probability = [_wmag, _wlau, _wgre, _wmed, _wfoo];
 
-private _position = 
+private _position = position _trigger;
 
 // Create supply cache
-if (_trigger getVariable ["MSF_Trig_Supply_Items", true]) then {
-	private _box = "VirtualReammoBox_camonet_F" createVehicle ([_trigger] call MSF_fnc_FindOutsidePositionInTrigger);
+if (_supply) then {
+	private _box = "VirtualReammoBox_camonet_F" createVehicle (_position findEmptyPosition [5, 50, "VirtualReammoBox_camonet_F"]);
+	//([_trigger] call MSF_fnc_FindOutsidePositionInTrigger);
 	
 	// Fill box with supplies
 	[_box, _supplyCount, false, _probability] call MSF_fnc_GenerateRandomInventory;
 };
 
 // Spawn vehicle ammo box
-if (_trigger getVariable ["MSF_Trig_Supply_VehicleAmmo", true]) then {
-	private _vicAmmo = "Box_NATO_AmmoVeh_F" createVehicle ([_trigger] call MSF_fnc_FindOutsidePositionInTrigger);
+if (_ammo) then {
+	private _vicAmmo = "Box_NATO_AmmoVeh_F" createVehicle (_position findEmptyPosition [5, 50, "Box_NATO_AmmoVeh_F"]);
 
 	// Set vehicle ammo box amount
 	[_vicAmmo, parseNumber((random [_min, (_min+_max) / 2, _max]) toFixed 0)] call ace_rearm_fnc_setSupplyCount;
 };
 
 // Create fuel canisters.
-if (_trigger getVariable ["MSF_Trig_Supply_Fuel", true]) then {
+if (_fuel) then {
 	for "_i" from 1 to _fuelCount do {
-		"Land_CanisterFuel_Red_F" createVehicle ([_trigger] call MSF_fnc_FindOutsidePositionInTrigger);
+		"Land_CanisterFuel_Red_F" createVehicle (_position findEmptyPosition [5, 50, "Land_CanisterFuel_Red_F"]);
 	};
 };

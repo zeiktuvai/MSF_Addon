@@ -35,6 +35,8 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\module";
 			class Mod_InfantryVehiclePatrol {};
 			class Mod_RandomSpawnCrash {};
+			class Mod_Spawn_Fortify {};
+			class Mod_Spawn_Supplies {};
 		};
 		class Enemy
 		{
@@ -48,6 +50,7 @@ class CfgFunctions
 			class CreateWaveDefenseArea {};
 			class DeleteAreaInfantryPatrol {};
 			class FortifyArea {};
+			class GeneratePatrolRoute {};
 			class SpawnGroupInSafePos {};
 		};
 		class Multiplayer
@@ -87,9 +90,9 @@ class CfgFunctions
 			class FindOutsidePositionInTrigger {};
 			class FindSafeSpawnPos {};
 			class GenerateRandomInventory {};
-			class GetAreaRadius {};
 			class GetObjectsByProperty {};
 			class GetPlayersByProperty {};
+			class GetRadialPositionRoute {};
 			class GetRoadDirection {};
 			class GetSpawnChance {};
 			class GetUnitsByProperty {};
@@ -100,6 +103,12 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\intel";
 			class SetupIntel {};
+		};
+		class Math
+		{
+			file = "z\msf\addons\fnc\math";
+			class GetAreaRadius {};
+			class OrderArrayByStartingValue {};
 		};
 		class Units
 		{
