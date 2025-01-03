@@ -13,16 +13,15 @@
 
 params ["_trigger"];
 
+private _vals = _trigger getVariable ["module_params", []];
+_vals params ["_sideVal", "_amount", "_mode", "_behv", "_speed", "_spawnCount"];
+
 if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {
-	private _side = [_trigger getVariable ["MSF_Trig_Patrol_Side", 0]] call BIS_fnc_sideType;
+	private _side = [_sideVal] call BIS_fnc_sideType;
 	private _classes = [_side] call MSF_fnc_GetUnitClasses;
-	private _groupTypes = _classes select 0;	
-	private _amount = _trigger getVariable ["MSF_Trig_Patrol_WaypointCount", 8];	
-	private _mode = _trigger getVariable ["MSF_Trig_Patrol_CombatMode", "RED"];
-	private _behv = _trigger getVariable ["MSF_Trig_Patrol_Behav", "AWARE"];
-	private _speed = _trigger getVariable ["MSF_Trig_Patrol_Speed", "NORMAL"];	
+	private _groupTypes = _classes select 0;
 	private _ids = [];
-	private _count = [1, 2] select ((_trigger getVariable ["MSF_Trig_Patrol_SpawnCount", false]) == true);
+	private _count = [1, 2] select (_spawnCount);
 
 	for "_g" from 1 to _count do {
 		private _start = [_trigger] call BIS_fnc_randomPosTrigger;

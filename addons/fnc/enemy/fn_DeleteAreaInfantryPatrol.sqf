@@ -12,7 +12,10 @@
 */
 params ["_trigger"];
 
-if (_trigger getVariable ["MSF_Trig_Patrol_Despawn", false]) then {
+private _vals = _trigger getVariable ["module_params", ["","","","","","",false]];
+private _despawn = _vals select 6;
+
+if (_despawn) then {
 	private _groups = _trigger getVariable ["MSF_Patrol_Group_ID", []];
 
 	if (count _groups > 0) then {

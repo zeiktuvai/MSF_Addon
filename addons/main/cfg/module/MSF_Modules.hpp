@@ -19,7 +19,8 @@ class CfgVehicles
 
 	
 	#include "MSF_Mod_BuildingDestroy.hpp"
-	// #include "MSF_Mod_InfantryPatrol.hpp"
+	#include "MSF_Mod_InfantryPatrol.hpp"
+	#include "MSF_Mod_VehiclePatrol.hpp"
 	// #include "MSF_Mod_Intel.hpp"
 	// #include "MSF_Mod_IntelItem.hpp"
 	#include "MSF_Mod_RandomSpawn.hpp"

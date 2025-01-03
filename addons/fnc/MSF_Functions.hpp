@@ -24,7 +24,8 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\mission";
 			class ApplyEndMission {};
 			class ApplyGMActions {};
-			class ApplyObjectActions {};			
+			class ApplyObjectActions {};
+			class CreateActivationTrigger {};		
 			class RespawnVehicleCustomization {};
 			class SetupMSFTriggers {};
 			class SetupUAVSpawnSystem {};
@@ -32,6 +33,7 @@ class CfgFunctions
 		class Module
 		{
 			file = "z\msf\addons\fnc\module";
+			class Mod_InfantryVehiclePatrol {};
 			class Mod_RandomSpawnCrash {};
 		};
 		class Enemy
@@ -40,11 +42,11 @@ class CfgFunctions
 			class CreateAreaAirAttack {};
 			class CreateAreaBuildingDefense {};
 			class CreateAreaDefense {};
+			class CreateAreaInfantryPatrol {};
 			class CreateAreaVehicleDefense {};
 			class CreateAreaVehiclePatrol {};
-			class CreateRandomTriggerPatrol {};
 			class CreateWaveDefenseArea {};
-			class DeleteRandomTriggerPatrol {};
+			class DeleteAreaInfantryPatrol {};
 			class FortifyArea {};
 			class SpawnGroupInSafePos {};
 		};
@@ -81,7 +83,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\helper";
 			class AddAceMainMenuItem {};
-			class CreateActivationTrigger {};
+			class CreateLinkedActivationTrigger {};
 			class FindOutsidePositionInTrigger {};
 			class FindSafeSpawnPos {};
 			class GenerateRandomInventory {};
