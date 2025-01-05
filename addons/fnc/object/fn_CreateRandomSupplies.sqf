@@ -19,7 +19,6 @@ private _position = position _trigger;
 // Create supply cache
 if (_supply) then {
 	private _box = "VirtualReammoBox_camonet_F" createVehicle (_position findEmptyPosition [5, 50, "VirtualReammoBox_camonet_F"]);
-	//([_trigger] call MSF_fnc_FindOutsidePositionInTrigger);
 	
 	// Fill box with supplies
 	[_box, _supplyCount, false, _probability] call MSF_fnc_GenerateRandomInventory;

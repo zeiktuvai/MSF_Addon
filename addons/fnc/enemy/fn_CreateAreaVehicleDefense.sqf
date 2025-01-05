@@ -19,6 +19,7 @@ params [
 	["_unitTypes", [], [[]]],
 	["_spawnType", 0, [0]],
 	["_spawnProb", 1, [1]],
+	["_logicArea", [], [[]]],
 	["_fill", 0, [0]]
 ];
 
@@ -29,7 +30,7 @@ for "_i" from 1 to _num do {
 	
 	if ([_spawnProb] call MSF_fnc_GetSpawnChance) then {	
 		private _type = selectRandom _vicTypes;
-		private _pos = [[_trigger] call BIS_fnc_randomPosTrigger, 5, 100, 3, 0, 10, 0] call BIS_fnc_findSafePos;
+		private _pos = [[[[position _trigger, _logicArea select 1]], []] call BIS_fnc_randomPos, 5, 100, 3, 0, 10, 0] call BIS_fnc_findSafePos;
 		private _vic = [_pos, 0, _type, _side] call BIS_fnc_spawnVehicle;
 
 		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {

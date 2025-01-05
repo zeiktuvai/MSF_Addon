@@ -23,6 +23,7 @@ class CfgVehicles
 	#include "spawn\MSF_Mod_VehiclePatrol.hpp"
 	#include "spawn\MSF_Mod_Supply.hpp"
 	#include "spawn\MSF_Mod_Fortify.hpp"
+	#include "spawn\MSF_Mod_Wave.hpp"
 	#include "MSF_Mod_RandomSpawn.hpp"
 	#include "MSF_Mod_RandomSpawnCrash.hpp"
 };

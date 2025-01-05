@@ -10,8 +10,7 @@
 	Function Ver 1.0
 	Implemented in: MSF Addon v2.1.0
 */
-
-params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [east]], ["_groupTypes", [], [[]]], ["_prob", 1, [1]]];
+params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [east]], ["_groupTypes", [], [[]]], ["_prob", 1, [1]], ["_logicArea", [], [[]]]];
 
 for "_i" from 1 to _num do {
 	if (!isDedicated) then {

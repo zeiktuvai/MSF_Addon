@@ -1,54 +1,46 @@
 params [["_trigger", objNull, [objNull]]];
 
-[_trigger] spawn {
-	private _trigger = _this select 0;
-	
-	private _side = (_trigger getVariable ["MSF_Trig_Wave_Side", 0]) call BIS_fnc_sideType;
-	private _units = [_side] call MSF_fnc_GetUnitClasses; 
-	_units params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClasses", "_turrets", "_infUnits"];
+private _vals = _trigger getVariable ["module_params", []];
+_vals params ["_side", "_waves", "_interval", "_infNum", "_vicNum", "_armorNum", "_airNum", "_vicFill"];
 
-	private _waves = _trigger getVariable ["MSF_Trig_Waves_Num", 2];
-	private _interval = _trigger getVariable ["MSF_Trig_Waves_Interval", 300];
-	private _waveCount = 0;
-	private _run = true;
+private _units = [_side] call MSF_fnc_GetUnitClasses; 
+_units params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClasses", "_turrets", "_infUnits"];
 
-	while {_run} do {
+private _waveCount = 0;
+private _run = true;
 
-		for "_g" from 1 to (_trigger getVariable ["MSF_Trig_Wave_Infantry_Num", 0]) do {
-			private _pos = _trigger getRelPos [400, random 350];		
-			private _group = [_pos, _side, _infantryGroupClasses] call MSF_fnc_SpawnGroupInSafePos;
-			
-			if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
-				{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
-			};
-			
-			private _wp = _group addWaypoint [position _trigger, 0];
-			_wp setWaypointSpeed "FULL";
-			_wp setWaypointType "SAD";
+while {_run} do {
+
+	for "_g" from 1 to _infNum do {
+		private _pos = _trigger getRelPos [400, random 350];		
+		private _group = [_pos, _side, _infantryGroupClasses] call MSF_fnc_SpawnGroupInSafePos;
+		
+		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
+			{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
 		};
-
-		//  vics
-		private _vicNum = _trigger getVariable ["MSF_Trig_Wave_Vehicle_Num", 0];
-		private _fill = _trigger getVariable ["MSF_Trig_Wave_VicFillPercentage", 0];
-		if (_vicNum > 0) then {
-			[_trigger, _vicNum, _side, 400, _vicTypes, 1, _fill, _infUnits] call MSF_fnc_SpawnSeekAndDestroyVehicles;
-		};
-
-		// armored vics
-		private _aNum = _trigger getVariable ["MSF_Trig_Wave_Armor_Num", 0];
-		if (_aNum > 0) then {
-			[_trigger, _aNum, _side, 400, _armorTypes, 1] call MSF_fnc_SpawnSeekAndDestroyVehicles;
-		};
-
-		// Air units
-		private _airNum = _trigger getVariable ["MSF_Trig_Wave_Air_Num", 0];
-		if (_airNum > 0) then {
-			[_trigger, _airNum, _side, 1000, _airClasses, 1] call MSF_fnc_SpawnSeekAndDestroyVehicles;			
-		};
-
-		_waveCount = _waveCount + 1;
-		if (_waveCount == _waves) then { break; };
-
-		sleep _interval;
+		
+		private _wp = _group addWaypoint [position _trigger, 0];
+		_wp setWaypointSpeed "FULL";
+		_wp setWaypointType "SAD";
 	};
+
+	//  vics
+	if (_vicNum > 0) then {
+		[_trigger, _vicNum, _side, 400, _vicTypes, 1, _vicFill, _infUnits] call MSF_fnc_SpawnSeekAndDestroyVehicles;
+	};
+
+	// armored vics
+	if (_armorNum > 0) then {
+		[_trigger, _armorNum, _side, 400, _armorTypes, 1] call MSF_fnc_SpawnSeekAndDestroyVehicles;
+	};
+
+	// Air units
+	if (_airNum > 0) then {
+		[_trigger, _airNum, _side, 1000, _airClasses, 1] call MSF_fnc_SpawnSeekAndDestroyVehicles;			
+	};
+
+	_waveCount = _waveCount + 1;
+	if (_waveCount == _waves) then { break; };
+
+	sleep _interval;
 };

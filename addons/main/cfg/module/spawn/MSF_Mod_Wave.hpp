@@ -2,7 +2,7 @@ class MSF_Module_Spawn_Wave : Module_F
 {
 	scope = 2;
 	displayName = "Spawn - Wave Defense Area";
-	icon = "a3\ui_f\data\map\mapcontrol\bunker_ca.paa";
+	icon = "x\cba\addons\ai\iconinvisibletarget.paa";
 	category = "MSF_Module";
 	function = "MSF_fnc_Mod_Spawn_Wave";
 	functionPriority = 1;
@@ -17,7 +17,7 @@ class MSF_Module_Spawn_Wave : Module_F
 
 	class AttributeValues
 	{
-		size3[] = { 500, 500, -1 };
+		size3[] = { 100, 100, -1 };
 		isRectangle = 0;
 	};
 

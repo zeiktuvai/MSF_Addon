@@ -36,6 +36,7 @@ if(_area select 0 > 100 && _area select 1 > 100) then
 		"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_FortifyArea; }; ",
 		""],
 		_isRectangle, _onStart, false,
-		[[_side] call BIS_fnc_sideType, _building, _bldgNum, _bldgProb, _vehicle, _vicNum, _vicFill, _vicProb, _armor, _armorNum, _armorProb, _static, _staticNum, _staticProb, _patrol, _patrolNum, _patrolProb, _air, _airNum, _airProb]
+		[[_side] call BIS_fnc_sideType, _building, _bldgNum, _bldgProb, _vehicle, _vicNum, _vicFill, _vicProb, _armor, _armorNum, _armorProb, _static, _staticNum, _staticProb, _patrol, _patrolNum, _patrolProb, _air, _airNum, _airProb, _area],
+		true
 	] call MSF_fnc_CreateActivationTrigger;	
 };

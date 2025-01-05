@@ -27,7 +27,6 @@ class CfgFunctions
 			class ApplyObjectActions {};
 			class CreateActivationTrigger {};		
 			class RespawnVehicleCustomization {};
-			class SetupMSFTriggers {};
 			class SetupUAVSpawnSystem {};
 		};
 		class Module

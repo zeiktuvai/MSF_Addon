@@ -230,41 +230,41 @@ class MSF_Module_Spawn_Fortify : Module_F
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 1;				
 		};
-		class MSFFortify_Patrol
-		{
-			data = "AttributeSystemSubcategory";
-			control = "SubCategory";
-			displayName = "Area Fortification Infantry Patrols";
-		};
-		class PatrolEnable
-		{
-			displayName = "Enable area patrols";
-			tooltip = "Spawn patrols in the fortification area.";
-			property = "MSF_Mod_Fortify_Patrol_Enable";
-			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "false";				
-		};
-		class patrolNum
-		{
-			displayName = "Number to Spawn";
-			tooltip = "Number of patrols to spawn. (capped at 5)";
-			property = "MSF_Mod_Fortify_patrol_Num";
-			control = "EditShort";
-			expression = "if (_value > 0 && _value < 5) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
-			defaultValue = "2";
-			validate = "number";
-			typeName = "NUMBER";		
-		};
-		class PatrolProbability
-		{
-			displayName = "Spawn Chance";
-			tooltip = "Percent chance that patrols will spawn";
-			property = "MSF_Mod_Fortify_Patrol_Probability";
-			control = "Slider";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = 1;				
-		};
+		// class MSFFortify_Patrol
+		// {
+		// 	data = "AttributeSystemSubcategory";
+		// 	control = "SubCategory";
+		// 	displayName = "Area Fortification Infantry Patrols";
+		// };
+		// class PatrolEnable
+		// {
+		// 	displayName = "Enable area patrols";
+		// 	tooltip = "Spawn patrols in the fortification area.";
+		// 	property = "MSF_Mod_Fortify_Patrol_Enable";
+		// 	control = "Checkbox";
+		// 	expression = "_this setVariable ['%s',_value];";
+		// 	defaultValue = "false";				
+		// };
+		// class patrolNum
+		// {
+		// 	displayName = "Number to Spawn";
+		// 	tooltip = "Number of patrols to spawn. (capped at 5)";
+		// 	property = "MSF_Mod_Fortify_patrol_Num";
+		// 	control = "EditShort";
+		// 	expression = "if (_value > 0 && _value < 5) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
+		// 	defaultValue = "2";
+		// 	validate = "number";
+		// 	typeName = "NUMBER";		
+		// };
+		// class PatrolProbability
+		// {
+		// 	displayName = "Spawn Chance";
+		// 	tooltip = "Percent chance that patrols will spawn";
+		// 	property = "MSF_Mod_Fortify_Patrol_Probability";
+		// 	control = "Slider";
+		// 	expression = "_this setVariable ['%s',_value];";
+		// 	defaultValue = 1;				
+		// };
 		class MSFFortify_Air
 		{
 			data = "AttributeSystemSubcategory";
