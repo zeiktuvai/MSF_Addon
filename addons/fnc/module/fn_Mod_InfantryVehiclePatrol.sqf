@@ -1,6 +1,6 @@
 params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", true, [true]]];
 
-private _isVic = typeOf _logic == "MSF_Module_VehiclePatrol";
+private _isVic = typeOf _logic == "MSF_Module_Spawn_VehiclePatrol";
 
 private _position = position _logic;
 private _combatMode = _logic getVariable ["CombatMode", "RED"];

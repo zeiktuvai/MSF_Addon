@@ -11,17 +11,14 @@
 	Implemented in: MSF Addon v2.1.0
 */
 
-params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [east]], ["_groupTypes", [], [[]]]];
+params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [east]], ["_groupTypes", [], [[]]], ["_prob", 1, [1]]];
 
 for "_i" from 1 to _num do {
 	if (!isDedicated) then {
 		sleep 0.1;
 	};
 
-	private _spawnChance = _trigger getVariable ["MSF_Trig_Fortify_Patrol_Probability", 1];
-	_chance = random 100;
-
-	if ([_spawnChance] call MSF_fnc_GetSpawnChance) then {	
+	if ([_prob] call MSF_fnc_GetSpawnChance) then {	
 		private _pos = [_trigger] call MSF_fnc_FindSafeSpawnPos;
 		private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
 

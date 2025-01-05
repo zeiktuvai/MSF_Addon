@@ -37,6 +37,7 @@ class CfgFunctions
 			class Mod_RandomSpawnCrash {};
 			class Mod_Spawn_Fortify {};
 			class Mod_Spawn_Supplies {};
+			class Mod_Spawn_Wave {};
 		};
 		class Enemy
 		{

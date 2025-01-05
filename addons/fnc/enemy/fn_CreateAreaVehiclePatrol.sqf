@@ -38,18 +38,26 @@ for "_g" from 1 to _count do {
 	{ _x addCuratorEditableObjects [[_gen select 0], true]} forEach allCurators;
 	};
 
-	for "_i" from 1 to _amount do {
-		private _pos = getPosATL (_roads select (_skip - 1));
+	if (count _roads < 11) then 
+	{
+		private _route = [_trigger, _amount, _radius * 2, false] call MSF_fnc_GetRadialPositionRoute;
+		[_route, _group] call MSF_fnc_GeneratePatrolRoute;
+	}
+	else
+	{
+		for "_i" from 1 to _amount do {
+			private _pos = getPosATL (_roads select (_skip - 1));
 
-		if ( _i == 1 ) then {
-			[_group, _i] setWaypointBehaviour _behv;
-			[_group, _i] setWaypointCombatMode _mode;
-			[_group, _i] setWaypointFormation "COLUMN";
-		};    
-			
-		_wp = _group addWaypoint [_pos, 10, _i ];
-		if (_g == 1) then {_skip = _skip + _skipVal;} else {_skip = _skip - (_skipVal - random 5);};
-	};	
-	_wp = _group addWaypoint [_initial, 10, _amount];
-	[_group, _amount] setWaypointType "CYCLE";	
+			if ( _i == 1 ) then {
+				[_group, _i] setWaypointBehaviour _behv;
+				[_group, _i] setWaypointCombatMode _mode;
+				[_group, _i] setWaypointFormation "COLUMN";
+			};    
+				
+			_wp = _group addWaypoint [_pos, 10, _i ];
+			if (_g == 1) then {_skip = _skip + _skipVal;} else {_skip = _skip - (_skipVal - random 5);};
+		};	
+		_wp = _group addWaypoint [_initial, 10, _amount];
+		[_group, _amount] setWaypointType "CYCLE";
+	};
 };

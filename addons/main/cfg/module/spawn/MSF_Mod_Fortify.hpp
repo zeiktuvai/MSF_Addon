@@ -151,7 +151,7 @@ class MSF_Module_Spawn_Fortify : Module_F
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 0;				
 		};
-		class MVehicleProbability
+		class VehicleProbability
 		{
 			displayName = "Spawn Chance";
 			tooltip = "Percent chance that patrols will spawn";
@@ -300,14 +300,12 @@ class MSF_Module_Spawn_Fortify : Module_F
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 1;				
 		};
-
-
     	class ModuleDescription : ModuleDescription {};
 	};
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = "Gen..... Module area MUST be greater than 100 for the module to function. The modules size determines the area units need to be in for the module to spawn.";
+		description = "Fortifies area within module. Module area MUST be greater than 500 for the module to function. The modules size determines the area units need to be in for the module to spawn.";
 		sync[] = { "LocationArea_F", "EmptyDetector" };
 
 		class LocationArea_F

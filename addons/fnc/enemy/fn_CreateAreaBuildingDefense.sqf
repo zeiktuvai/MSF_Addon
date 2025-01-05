@@ -10,9 +10,9 @@
 	Function Ver 1.0
 	Implemented in: MSF Addon v1.6.0
 */
-params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [east]], ["_groupTypes", [], [[]]]];
+params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [east]], ["_groupTypes", [], [[]]], ["_bldgProb", 1, [1]]];
 	
-private _radius = [_trigger] call MSF_fnc_GetAreaRadius;
+private _radius = [_trigger] call MSF_fnc_GetAreaRadius - 500;
 
 private _bldg0 = nearestObjects [getPosATL _trigger, ["house"], _radius]; 
 private _bldg1 = nearestObjects [getPosATL _trigger, ["building"], _radius];
@@ -30,10 +30,7 @@ if (_bldgFound) then {
 			sleep 0.1;
 		};
 	
-		private _spawnChance = _trigger getVariable ["MSF_Trig_Fortify_Building_Probability", 1];
-		_chance = random 100;
-
-		if ([_spawnChance] call MSF_fnc_GetSpawnChance) then {	
+		if ([_bldgProb] call MSF_fnc_GetSpawnChance) then {	
 			private _pos = [_trigger] call BIS_fnc_randomPosTrigger;
 			private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
 			[_pos, units _group, _radius, false, false, true] call MSF_fnc_ZEN_OccupyHouse;
