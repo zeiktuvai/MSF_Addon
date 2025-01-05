@@ -24,15 +24,19 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\mission";
 			class ApplyEndMission {};
 			class ApplyGMActions {};
-			class ApplyObjectActions {};			
+			class ApplyObjectActions {};
+			class CreateActivationTrigger {};		
 			class RespawnVehicleCustomization {};
-			class SetupMSFTriggers {};
 			class SetupUAVSpawnSystem {};
 		};
 		class Module
 		{
 			file = "z\msf\addons\fnc\module";
+			class Mod_InfantryVehiclePatrol {};
 			class Mod_RandomSpawnCrash {};
+			class Mod_Spawn_Fortify {};
+			class Mod_Spawn_Supplies {};
+			class Mod_Spawn_Wave {};
 		};
 		class Enemy
 		{
@@ -40,12 +44,13 @@ class CfgFunctions
 			class CreateAreaAirAttack {};
 			class CreateAreaBuildingDefense {};
 			class CreateAreaDefense {};
+			class CreateAreaInfantryPatrol {};
 			class CreateAreaVehicleDefense {};
 			class CreateAreaVehiclePatrol {};
-			class CreateRandomTriggerPatrol {};
 			class CreateWaveDefenseArea {};
-			class DeleteRandomTriggerPatrol {};
+			class DeleteAreaInfantryPatrol {};
 			class FortifyArea {};
+			class GeneratePatrolRoute {};
 			class SpawnGroupInSafePos {};
 		};
 		class Multiplayer
@@ -81,13 +86,13 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\helper";
 			class AddAceMainMenuItem {};
-			class CreateActivationTrigger {};
+			class CreateLinkedActivationTrigger {};
 			class FindOutsidePositionInTrigger {};
 			class FindSafeSpawnPos {};
 			class GenerateRandomInventory {};
-			class GetAreaRadius {};
 			class GetObjectsByProperty {};
 			class GetPlayersByProperty {};
+			class GetRadialPositionRoute {};
 			class GetRoadDirection {};
 			class GetSpawnChance {};
 			class GetUnitsByProperty {};
@@ -98,6 +103,12 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\intel";
 			class SetupIntel {};
+		};
+		class Math
+		{
+			file = "z\msf\addons\fnc\math";
+			class GetAreaRadius {};
+			class OrderArrayByStartingValue {};
 		};
 		class Units
 		{

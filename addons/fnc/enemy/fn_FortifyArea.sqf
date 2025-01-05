@@ -12,69 +12,60 @@
 */
 params [["_trigger", objNull, [objNull]]];
 
-private _side = [_trigger getVariable ["MSF_Trig_Fortify_Side", 0]] call BIS_fnc_sideType;
+private _vals = _trigger getVariable ["module_params", []];
+_vals params ["_side", "_building", "_bldgNum", "_bldgProb", "_vehicle", "_vicNum", "_vicFill", "_vicProb", "_armor", "_armorNum", "_armorProb",
+	"_static", "_staticNum", "_staticProb", "_patrol", "_patrolNum", "_patrolProb", "_air", "_airNum", "_airProb", "_logicArea"];
+
+
 private _classes = [_side] call MSF_fnc_GetUnitClasses;
 _classes params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClasses", "_staticTypes", "_fillUnits"];
 
 
 // building defense
-if (_trigger getVariable ["MSF_Trig_Fortify_Building_Enable", false]) then {
-	private _buildingNum = _trigger getVariable ["MSF_Trig_Fortify_Building_Num", 5];
-	
-	[_trigger, _buildingNum, _side, _infantryGroupClasses] spawn 
+if (_building) then {
+	[_trigger, _bldgNum, _side, _infantryGroupClasses, _bldgProb, _logicArea] spawn 
 	{		
-		params ["_trigger", "_buildingNum", "_side", "_infantryGroupClasses"];
-		[_trigger, _buildingNum, _side, _infantryGroupClasses] call MSF_fnc_CreateAreaBuildingDefense;
+		params ["_trigger", "_buildingNum", "_side", "_infantryGroupClasses", "_bldgProb", "_logicArea"];
+		[_trigger, _buildingNum, _side, _infantryGroupClasses, _bldgProb, _logicArea] call MSF_fnc_CreateAreaBuildingDefense;
 	};	
 };
 
 // static vics
-if (_trigger getVariable ["MSF_Trig_Fortify_Vehicle_Enable", false]) then {
-	private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_Vehicle_Num", 2];
-
-	[_trigger, _vicNum, _side, _vicTypes, _fillUnits] spawn {
-		params ["_trigger", "_vicNum", "_side", "_vicTypes", "_fillUnits"];
-		[_trigger, _vicNum, _side, _vicTypes, _fillUnits] call MSF_fnc_CreateAreaVehicleDefense;
+if (_vehicle) then {
+	[_trigger, _vicNum, _side, _vicTypes, _fillUnits, _vicProb, _logicArea, _vicFill] spawn {
+		params ["_trigger", "_vicNum", "_side", "_vicTypes", "_fillUnits", "_vicProb", "_logicArea", "_vicFill"];
+		[_trigger, _vicNum, _side, _vicTypes, _fillUnits, 0, _vicProb, _logicArea, _vicFill] call MSF_fnc_CreateAreaVehicleDefense;
 	};
 };
 
 // armored vics
-if (_trigger getVariable ["MSF_Trig_Fortify_Armor_Enable", false]) then {
-	private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_Armor_Num", 2];
-
-	[_trigger, _vicNum, _side, _armorTypes, _fillUnits] spawn {
-		params ["_trigger", "_vicNum", "_side", "_armorTypes", "_fillUnits"];
-		[_trigger, _vicNum, _side, _armorTypes, _fillUnits, true] call MSF_fnc_CreateAreaVehicleDefense;
+if (_armor) then {
+	[_trigger, _armorNum, _side, _armorTypes, _armorProb, _logicArea] spawn {
+		params ["_trigger", "_armorNum", "_side", "_armorTypes", "_armorProb", "_logicArea"];
+		[_trigger, _armorNum, _side, _armorTypes, [], 1, _armorProb, _logicArea] call MSF_fnc_CreateAreaVehicleDefense;
 	};
 };
 
 // static turrets
-if (_trigger getVariable ["MSF_Trig_Fortify_Static_Enable", false]) then {
-	private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_Static_Num", 2];
-
-	[_trigger, _vicNum, _side, _staticTypes, _fillUnits] spawn {
-		params ["_trigger", "_vicNum", "_side", "_staticTypes", "_fillUnits"];
-		[_trigger, _vicNum, _side, _staticTypes, _fillUnits, false, true] call MSF_fnc_CreateAreaVehicleDefense;
+if (_static) then {
+	[_trigger, _staticNum, _side, _staticTypes, _staticProb, _logicArea] spawn {
+		params ["_trigger", "_staticNum", "_side", "_staticTypes", "_staticProb", "_logicArea"];
+		[_trigger, _staticNum, _side, _staticTypes,[], 2, _staticProb, _logicArea] call MSF_fnc_CreateAreaVehicleDefense;
 	};
 };
 
 // Area patrol
-if (_trigger getVariable ["MSF_Trig_Fortify_Patrol_Enable", false]) then {		
-	private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_patrol_Num", 2];
-
-	[_trigger, _vicNum, _side, _infantryGroupClasses] spawn {
-		params ["_trigger", "_vicNum", "_side", "_infantryGroupClasses"];
-		[_trigger, _vicNum, _side, _infantryGroupClasses] call MSF_fnc_CreateAreaDefense;
-	};	
-};
+// if (_patrol) then {		
+// 	[_trigger, _patrolNum, _side, _infantryGroupClasses, _patrolProb, _logicArea] spawn {
+// 		params ["_trigger", "_patrolNum", "_side", "_infantryGroupClasses", "_patrolProb", "_logicArea"];
+// 		[_trigger, _patrolNum, _side, _infantryGroupClasses, _patrolProb, _logicArea] call MSF_fnc_CreateAreaDefense;
+// 	};	
+// };
 
 // Air units
-if (_trigger getVariable ["MSF_Trig_Fortify_Air_Enable", false]) then {		
-	private _vicNum = _trigger getVariable ["MSF_Trig_Fortify_Air_Num", 2];
-	private _chance = _trigger getVariable ["MSF_Trig_Fortify_Air_Probability", 1];
-
-	[_trigger, _vicNum, _side, _airClasses, _chance] spawn {
-		params ["_trigger", "_vicNum", "_side", "_airClasses", "_chance"];
-		[_trigger, _vicNum, _side, _airClasses, _chance] call MSF_fnc_CreateAreaAirAttack;
+if (_air) then {		
+	[_trigger, _airNum, _side, _airClasses, _airProb] spawn {
+		params ["_trigger", "_airNum", "_side", "_airClasses", "_airProb"];
+		[_trigger, _airNum, _side, _airClasses, _airProb] call MSF_fnc_CreateAreaAirAttack;
 	};
 };	

@@ -1,22 +1,53 @@
-class MSFTriggerWave : EmptyDetector
-{		
-	displayName = "Trigger MSF Wave Defense";
-	class Attributes
+class MSF_Module_Spawn_Wave : Module_F
+{
+	scope = 2;
+	displayName = "Spawn - Wave Defense Area";
+	icon = "x\cba\addons\ai\iconinvisibletarget.paa";
+	category = "MSF_Module";
+	function = "MSF_fnc_Mod_Spawn_Wave";
+	functionPriority = 1;
+	isGlobal = 0;
+	isTriggerActivated = 0;
+	isDisposable = 1;	
+	is3DEN = 0;
+	curatorCanAttach = 0;
+	canSetArea = 1;
+	canSetAreaShape = 1;
+	canSetAreaHeight = 1;
+
+	class AttributeValues
 	{
-		class MSFWave_d
+		size3[] = { 100, 100, -1 };
+		isRectangle = 0;
+	};
+
+    class Attributes : AttributesBase
+	{	
+        class Activation
 		{
-			data = "AttributeSystemSubcategory";				
-			control = "SubCategoryDesc1";
-			displayName = "Wave Defense Options";				
-			description = "Be sure to set the trigger activation properties, or units won't spawn.";
+			displayName = "Spawn Activation";
+			tooltip = "Sets the activation type for the activation trigger spawning the patrol.";
+			control = "TriggerActivation";
+			property = "MSF_Module_InfPatrol_Act";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "none";
 		};
-		class MSF_Trig_Wave_Side
+		class ActivationType
 		{
-			displayName = "Side";
-			tooltip = "Faction to spawn units in.";
-			property = "MSF_Trig_Wave_Side";
+			displayName = "Spawn Activation Type";
+			tooltip = "Sets the presence type for the activation trigger.";
+			control = "ActivationType";
+			property = "MSF_Module_InfPatrol_ActType";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "present";
+		};
+        class Side
+		{
+			displayName = "Spawn Side";
+			tooltip = "Faction to spawn the patrol in.";
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
+			property = "MSF_Module_InfPatrol_Side";
 			defaultValue = 0;
 			typeName = "Number";
 			class Values
@@ -41,101 +72,109 @@ class MSFTriggerWave : EmptyDetector
 				};
 			};	
 		};
-		class MSF_Trig_Waves_Num
+        class WaveNum
 		{
 			displayName = "Number of waves";
 			tooltip = "Number of waves to spawn";
-			property = "MSF_Trig_Waves_Num";
+			property = "MSF_Mod_Waves_Num";
 			control = "EditShort";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "2";
 			validate = "number";
 			typeName = "NUMBER";
 		};
-		class MSF_Trig_Waves_Interval
+		class WaveInterval
 		{
 			displayName = "Wave Interval";
 			tooltip = "Interval in seconds between waves.";
-			property = "MSF_Trig_Waves_Interval";
+			property = "MSF_Mod_Waves_Interval";
 			control = "EditShort";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "300";
 			validate = "number";
 			typeName = "NUMBER";
-		};
-		class MSF_Trig_Waves_HeightLimit
-		{
-			displayName = "Disable Trigger Height Limit";
-			tooltip = "All triggers that spawn units (Patrol, Fortify, Wave Defense and Supply) are limited to 50m height to prevent mass trigger activiation as aircraft zoom past.  Enabling this removes that limit.";
-			property = "MSF_Trig_Waves_HeightLimit";			
-			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value];";					
-			defaultValue = "false";
-		};
+		};		
 		class MSFWave_Types
 		{
 			data = "AttributeSystemSubcategory";
 			control = "SubCategory";
 			displayName = "Spawn Options";
 		};		
-		class MSF_Trig_Wave_Infantry_Num
+		class InfantryNum
 		{
 			displayName = "Infantry Group Count";
 			tooltip = "Number of infantry groups to spawn per wave";
-			property = "MSF_Trig_Wave_Infantry_Num";
+			property = "MSF_Mod_Wave_Infantry_Num";
 			control = "EditShort";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "0";
 			validate = "number";
 			typeName = "NUMBER";
 		};
-		class MSF_Trig_Wave_Vehicle_Num
+		class VehicleNum
 		{
 			displayName = "Vehicle Count";
 			tooltip = "Number of vehicles to spawn per wave.";
-			property = "MSF_Trig_Wave_Vehicle_Num";
+			property = "MSF_Mod_Wave_Vehicle_Num";
 			control = "EditShort";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "0";
 			validate = "number";
 			typeName = "NUMBER";		
 		};
-		class MSF_Trig_Wave_Armor_Num
+		class ArmorNum
 		{
 			displayName = "Armored Vehicle Count";
 			tooltip = "Number of armored vehicles to spawn per wave.";
-			property = "MSF_Trig_Wave_Armor_Num";
+			property = "MSF_Mod_Wave_Armor_Num";
 			control = "EditShort";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "0";
 			validate = "number";
 			typeName = "NUMBER";		
 		};
-		class MSF_Trig_Wave_Air_Num
+		class AirNum
 		{
 			displayName = "Air Unit Count";
 			tooltip = "Number of air units to spawn per wave.";
-			property = "MSF_Trig_Wave_Air_Num";
+			property = "MSF_Mod_Wave_Air_Num";
 			control = "EditShort";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "0";
 			validate = "number";
 			typeName = "NUMBER";		
-		};		
-		class MSFWave_Fill
+		};
+		class WaveFill
 		{
 			data = "AttributeSystemSubcategory";
 			control = "SubCategory";
 			displayName = "Vehicle Options";
 		};
-		class MSF_Trig_Wave_VicFillPercentage
+		class VicFillProb
 		{
 			displayName = "Chance of full vehicle";
 			tooltip = "This percentage sets the chance that the spawned vehicle will be full of infantry.";
-			property = "MSF_Trig_Wave_VicFillPercentage";
+			property = "MSF_Mod_Wave_VicFillPercentage";
 			control = "Slider";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 0;
-		};		
+		};
+        class ModuleDescription : ModuleDescription {};
+	};
+	
+	class ModuleDescription : ModuleDescription
+	{
+		description = "Designates a point that eneies will assault in waves. The modules size determines the area units need to be in for the module to spawn.";
+		sync[] = { "LocationArea_F", "EmptyDetector" };
+
+		class LocationArea_F
+		{
+			description[] = {};
+			position = 0;
+			direction = 0;
+			optional = 0;
+			duplicate = 1;
+			synced[] = { "EmptyDetector" };
+		};
 	};
 };

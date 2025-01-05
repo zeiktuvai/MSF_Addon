@@ -22,7 +22,7 @@ class CfgVehicles
 {
     class Land_HelipadEmpty_F;
     #include "cfg\placeholder\MSF_Placeholder.hpp"
-    #include "cfg\modules\MSF_OFE_Modules.hpp"
+    // #include "cfg\modules\MSF_OFE_Modules.hpp"
 };
 
 class CfgHints

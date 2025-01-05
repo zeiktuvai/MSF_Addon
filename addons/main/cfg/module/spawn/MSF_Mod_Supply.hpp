@@ -1,58 +1,78 @@
-class MSFTriggerSupply : EmptyDetector
-{		
-	displayName = "Trigger MSF Supplies";
-	class Attributes
+class MSF_Module_Spawn_Supplies : Module_F
+{
+	scope = 2;
+	displayName = "Spawn - Supplies";
+	icon = "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa";
+	category = "MSF_Module";
+	function = "MSF_fnc_Mod_Spawn_Supplies";
+	functionPriority = 1;
+	isGlobal = 0;
+	isTriggerActivated = 0;
+	isDisposable = 1;	
+	is3DEN = 0;
+	curatorCanAttach = 0;
+	canSetArea = 1;
+	canSetAreaShape = 1;
+	canSetAreaHeight = 1;
+
+	class AttributeValues
 	{
+		size3[] = { 500, 500, -1 };
+		isRectangle = 0;
+	};
+
+	class Attributes : AttributesBase
+	{
+		class Activation
+		{
+			displayName = "Spawn Activation";
+			tooltip = "Sets the activation type for the activation trigger spawning the patrol.";
+			control = "TriggerActivation";
+			property = "MSF_Module_InfPatrol_Act";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "none";
+		};
+		class ActivationType
+		{
+			displayName = "Spawn Activation Type";
+			tooltip = "Sets the presence type for the activation trigger.";
+			control = "ActivationType";
+			property = "MSF_Module_InfPatrol_ActType";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "present";
+		};
 		class MSFSupply
 		{
 			data = "AttributeSystemSubcategory";				
 			control = "SubCategory";
 			displayName = "Supply generation option";				
 		};
-		class MSF_Trig_Supply_ActivationSize
+		class SpawnItems
 		{
-			displayName = "Activation Size";
-			tooltip = "This sets the additional size added to the trigger size to determine the activation area. (i.e. if trigger is 400x400 and this is set to 400x400, trigger will activate at 800x800 from the center.)";
-			property = "MSF_Trig_Supply_ActivationSize";
-			control = "EditAB";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "[500,500]";
-		};		
-		class MSF_Trig_Supply_Items
-		{
-			displayName = "Enable Supply Cache";
-			tooltip = "Spawn a supply box in the trigger area with items (See probabilies below).";
-			property = "MSF_Trig_Supply_Items";
+			displayName = "Spawn Supply Cache";
+			tooltip = "Spawn a supply box in the Modger area with items (See probabilies below).";
+			property = "MSF_Mod_Supply_Items";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "true";				
+			defaultValue = "true";	
 		};
-		class MSF_Trig_Supply_VehicleAmmo
+		class SpawnVehicleAmmo
 		{
-			displayName = "Enable Vehicle Ammo";
+			displayName = "Spawn Vehicle Ammo";
 			tooltip = "Spawn a vehicle ammo crate.";
-			property = "MSF_Trig_Supply_VehicleAmmo";
+			property = "MSF_Mod_Supply_VehicleAmmo";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "true";				
 		};
-		class MSF_Trig_Supply_Fuel
+		class SpawnFuel
 		{
-			displayName = "Enable Fuel Cans";
+			displayName = "Spawn Fuel Cans";
 			tooltip = "Spawn fuel cans.";
-			property = "MSF_Trig_Supply_Fuel";
+			property = "MSF_Mod_Supply_Fuel";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "true";				
-		};
-		class MSF_Trig_Supply_HeightLimit
-		{
-			displayName = "Disable Trigger Height Limit";
-			tooltip = "All triggers that spawn units (Patrol, Fortify, Wave Defense and Supply) are limited to 50m height to prevent mass trigger activiation as aircraft zoom past.  Enabling this removes that limit.";
-			property = "MSF_Trig_Supply_HeightLimit";			
-			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value];";					
-			defaultValue = "false";
 		};
 		class MSFSupply_Items
 		{
@@ -60,58 +80,58 @@ class MSFTriggerSupply : EmptyDetector
 			control = "SubCategory";
 			displayName = "Item generation options";
 		};
-		class MSF_Trig_Supply_Items_Num
+		class NumItems
 		{
 			displayName = "Number of Items";
 			tooltip = "Sets the number of items to generate in the supply crate.";
-			property = "MSF_Trig_Supply_Items_Num";			
+			property = "MSF_Mod_Supply_Items_Num";			
 			control = "EditShort";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "25";
+			defaultValue = "50";
 			validate = "number";
 			typeName = "NUMBER";
 		};
-		class MSF_Trig_Supply_Items_MagWeight
+		class MagWeight
 		{			
 			displayName = "Magazine Likeliness";			
 			tooltip = "How likely the system is to add mags to the items inventory. (0.1 disables this catetory)";
-			property = "MSF_Trig_Supply_Items_MagWeight";
+			property = "MSF_Mod_Supply_Items_MagWeight";
 			control = "SliderZeroToOneSmall";
 			expression = "if (_value == 0.1) then { _this setVariable ['%s',0]; } else { _this setVariable ['%s',_value]; };";
 			defaultValue = 1;
 		};
-		class MSF_Trig_Supply_Items_LauncherWeight
+		class LauncherWeight
 		{			
 			displayName = "Launcher Ammo Likeliness";			
 			tooltip = "How likely the system is to add launcher ammo to the items inventory. (0.1 disables this catetory)";
-			property = "MSF_Trig_Supply_Items_LauncherWeight";
+			property = "MSF_Mod_Supply_Items_LauncherWeight";
 			control = "SliderZeroToOneSmall";
 			expression = "if (_value == 0.1) then { _this setVariable ['%s',0]; } else { _this setVariable ['%s',_value]; };";
 			defaultValue = 1;
 		};
-		class MMSF_Trig_Supply_Items_GrenadeWeight
+		class GrenadeWeight
 		{			
 			displayName = "Grenades Likeliness";			
 			tooltip = "How likely the system is to add grenades to the items inventory. (0.1 disables this catetory)";
-			property = "MSF_Trig_Supply_Items_GrenadeWeight";
+			property = "MSF_Mod_Supply_Items_GrenadeWeight";
 			control = "SliderZeroToOneSmall";
 			expression = "if (_value == 0.1) then { _this setVariable ['%s',0]; } else { _this setVariable ['%s',_value]; };";
 			defaultValue = 1;			
 		};
-		class MSF_Trig_Supply_Items_MedicalWeight
+		class MedicalWeight
 		{			
 			displayName = "Medical Likeliness";			
 			tooltip = "How likely the system is to add medical to the items inventory. (0.1 disables this catetory)";
-			property = "MSF_Trig_Supply_Items_MedicalWeight";
+			property = "MSF_Mod_Supply_Items_MedicalWeight";
 			control = "SliderZeroToOneSmall";
 			expression = "if (_value == 0.1) then { _this setVariable ['%s',0]; } else { _this setVariable ['%s',_value]; };";
 			defaultValue = 1;
 		};
-		class MSF_Trig_Supply_Items_FoodWeight
+		class FoodWeight
 		{			
 			displayName = "Food Likeliness";			
 			tooltip = "How likely the system is to add food to the items inventory. (0.1 disables this catetory)";
-			property = "MSF_Trig_Supply_Items_FoodWeight";
+			property = "MSF_Mod_Supply_Items_FoodWeight";
 			control = "SliderZeroToOneSmall";
 			expression = "if (_value == 0.1) then { _this setVariable ['%s',0]; } else { _this setVariable ['%s',_value]; };";
 			defaultValue = 1;
@@ -122,44 +142,62 @@ class MSFTriggerSupply : EmptyDetector
 			control = "SubCategory";
 			displayName = "Vehicle Ammo";
 		};
-		class MSF_Trig_Supply_VicAmmo_Min
+		class VicAmmoMin
 		{
 			displayName = "Minimum Ammo Supply";
 			tooltip = "Minimum vehicle ammo supply in box.";
-			property = "MSF_Trig_Supply_VicAmmo_Min";
+			property = "MSF_Mod_Supply_VicAmmo_Min";
 			control = "EditShort";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "500";
 			validate = "number";
 			typeName = "NUMBER";		
 		};
-		class MSF_Trig_Supply_VicAmmo_Max
+		class VicAmmoMax
 		{
 			displayName = "Maximum Ammo Supply";
 			tooltip = "Maximum vehicle ammo supply in box.";
-			property = "MSF_Trig_Supply_VicAmmo_Max";
+			property = "MSF_Mod_Supply_VicAmmo_Max";
 			control = "EditShort";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "1000";
 			validate = "number";
 			typeName = "NUMBER";		
-		};			
+		};
 		class MSFSupply_Fuel
 		{
 			data = "AttributeSystemSubcategory";
 			control = "SubCategory";
 			displayName = "Fuel Canisters";
 		};
-		class MSF_Trig_Supply_Fuel_Count
+		class FuelCount
 		{
 			displayName = "Number of Fuel Cans";
 			tooltip = "Number of Fuel Cans to spawn.";
-			property = "MSF_Trig_Supply_Fuel_Count";
+			property = "MSF_Mod_Supply_Fuel_Count";
 			control = "EditShort";
 			expression = "if (_value > 0 && _value < 7) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',3]; }";
 			defaultValue = "5";
 			validate = "number";
 			typeName = "NUMBER";		
+		};
+
+		class ModuleDescription : ModuleDescription {};
+	};
+	
+	class ModuleDescription : ModuleDescription
+	{
+		description = "Spawns supplies on the modules position.  The modules size determines the area units need to be in for the module to spawn.";
+		sync[] = { "LocationArea_F", "EmptyDetector" };
+
+		class LocationArea_F
+		{
+			description[] = {};
+			position = 0;
+			direction = 0;
+			optional = 0;
+			duplicate = 1;
+			synced[] = { "EmptyDetector" };
 		};
 	};
 };

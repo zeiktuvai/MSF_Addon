@@ -10,14 +10,17 @@
 	Function Ver 1.0
 	Implemented in: MSF Addon v1.6.0
 */
+// type: 0 Vic, 1 Armor, 2 Static
 params [
 	["_trigger", objNull, [objNull]],
 	["_num", 0, [0]],
 	["_side", east, [east]],
 	["_vicTypes", [], [[]]],
 	["_unitTypes", [], [[]]],
-	["_isArmor", false, [false]],
-	["_isStatic", false, [false]]
+	["_spawnType", 0, [0]],
+	["_spawnProb", 1, [1]],
+	["_logicArea", [], [[]]],
+	["_fill", 0, [0]]
 ];
 
 for "_i" from 1 to _num do {
@@ -25,25 +28,19 @@ for "_i" from 1 to _num do {
 		sleep 0.1;
 	};
 	
-	private _spawnChance = _trigger getVariable ["MSF_Trig_Fortify_Vehicle_Probability", 1];
-	if (_isArmor) then {_spawnChance = _trigger getVariable ["MSF_Trig_Fortify_Armor_Probability", 1];};
-	if (_isStatic) then {_spawnChance = _trigger getVariable ["MSF_Trig_Fortify_Static_Probability", 1];};
-	
-	_chance = random 100;
-
-	if ([_spawnChance] call MSF_fnc_GetSpawnChance) then {	
+	if ([_spawnProb] call MSF_fnc_GetSpawnChance) then {	
 		private _type = selectRandom _vicTypes;
-		private _pos = [[_trigger] call BIS_fnc_randomPosTrigger, 5, 100, 3, 0, 10, 0] call BIS_fnc_findSafePos;
+		private _pos = [[[[position _trigger, _logicArea select 1]], []] call BIS_fnc_randomPos, 5, 100, 3, 0, 10, 0] call BIS_fnc_findSafePos;
 		private _vic = [_pos, 0, _type, _side] call BIS_fnc_spawnVehicle;
 
 		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
 			{ _x addCuratorEditableObjects [[_vic select 0], true]} forEach allCurators;
 		};
 		
-		if (!_isArmor && !_isStatic) then {
-			private _fillChance = _trigger getVariable ["MSF_Trig_Fortify_VicFillPercentage", 0];
-			_fchance = random 100;
-			if (_fchance >+ (_fillChance * 100)) then {		
+		//
+		if (_spawnType == 0) then {
+
+			if ([_fill] call MSF_fnc_GetSpawnChance) then {		
 				_totalSlots = ([_type, true] call BIS_fnc_crewCount);
 				_cargoSlots = ([_type, false] call BIS_fnc_crewCount);
 				_availSlots = _totalSlots - _cargoSlots - count crew (_vic select 0);

@@ -46,12 +46,3 @@ class Extended_PreInit_EventHandlers
         init = "call compile preprocessFileLineNumbers 'z\msf\addons\main\XEH_preInit.sqf'";
     };
 };
-
-class CfgNonAIVehicles
-{
-	class EmptyDetector;
-	#include "cfg\trigger\MSF_Attr_FortifyTrigger.hpp"
-	#include "cfg\trigger\MSF_Attr_PatrolTrigger.hpp"
-	#include "cfg\trigger\MSF_Attr_SupplyTrigger.hpp"
-	#include "cfg\trigger\MSF_Attr_WaveTrigger.hpp"
-};
