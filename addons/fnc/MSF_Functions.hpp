@@ -86,7 +86,6 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\helper";
 			class AddAceMainMenuItem {};
-			class CreateLinkedActivationTrigger {};
 			class FindOutsidePositionInTrigger {};
 			class FindSafeSpawnPos {};
 			class GenerateRandomInventory {};
