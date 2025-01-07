@@ -89,6 +89,7 @@ class CfgFunctions
 			class FindOutsidePositionInTrigger {};
 			class FindSafeSpawnPos {};
 			class GenerateRandomInventory {};
+			class GetModuleActivationSide {};
 			class GetObjectsByProperty {};
 			class GetPlayersByProperty {};
 			class GetRadialPositionRoute {};

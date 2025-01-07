@@ -31,7 +31,7 @@ private _airProb = _logic getVariable ["AirProbability", 5];
 
 if(_area select 0 >= 100 && _area select 1 >= 100) then 
 {
-	[_area select 0, _area select 1, _height, _position, [str ([_activationSide] call BIS_fnc_sideType), "present"], ["this",
+	[_area select 0, _area select 1, _height, _position, [[_activationSide] call MSF_fnc_GetModuleActivationSide, "present"], ["this",
 		"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_FortifyArea; }; ",
 		""],
 		_isRectangle, _onStart, false,

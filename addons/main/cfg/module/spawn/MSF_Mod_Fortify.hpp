@@ -56,7 +56,7 @@ class MSF_Module_Spawn_Fortify : Module_F
 				{
 					name = "AnyPlayer";
 					tootip = "AnyPlayer";
-					value = "3";
+					value = 3;
 				};
 			};	
 		};

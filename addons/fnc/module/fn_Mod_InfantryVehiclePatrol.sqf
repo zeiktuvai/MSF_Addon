@@ -17,7 +17,7 @@ private _height = _area select 4;
 if (!_isVic) then {
 	if(_area select 0 >= 100 && _area select 1 >= 100) then 
 	{		
-		[_area select 0, _area select 1, _height, _position, [str ([_activationSide] call BIS_fnc_sideType), "PRESENT"], ["this",
+		[_area select 0, _area select 1, _height, _position, [[_activationSide] call MSF_fnc_GetModuleActivationSide, "PRESENT"], ["this",
 			"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateAreaInfantryPatrol;}; ",
 			"[thisTrigger] call MSF_fnc_DeleteAreaInfantryPatrol;"],
 			_isRectangle, false, _despawn,
@@ -28,7 +28,7 @@ if (!_isVic) then {
 else {
 	if(_area select 0 >= 500 && _area select 1 >= 500) then 
 	{		
-		[_area select 0, _area select 1, _height, _position, [str ([_activationSide] call BIS_fnc_sideType), "PRESENT"], ["this",
+		[_area select 0, _area select 1, _height, _position, [[_activationSide] call MSF_fnc_GetModuleActivationSide, "PRESENT"], ["this",
 			"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateAreaVehiclePatrol; }; ",
 			""],
 			_isRectangle, false, false,
