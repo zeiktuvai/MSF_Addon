@@ -4,8 +4,7 @@ private _position = position _logic;
 private _area = _logic getVariable ["objectArea", [0,0,0,false,-1]];
 private _isRectangle = (_logic getVariable ["objectArea", [0,0,0,false]]) select 3;
 private _height = _area select 4;
-private _activation = _logic getVariable ["Activation", "WEST"];
-private _activationType = _logic getVariable ["ActivationType", "present"];
+private _activationSide = _logic getVariable ["ActivationSide", 1];
 private _side = _logic getVariable ["Side", 0];
 
 private _waveNum = _logic getVariable ["WaveNum", 2];
@@ -16,7 +15,7 @@ private _armorNum = _logic getVariable ["ArmorNum", 0];
 private _airNum = _logic getVariable ["AirNum", 0];
 private _vicFill = _logic getVariable ["VicFillProb", 0];
 
-[_area select 0, _area select 1, _height, _position, [_activation, _activationType], ["this",
+[_area select 0, _area select 1, _height, _position, [str ([_activationSide] call BIS_fnc_sideType), "PRESENT"], ["this",
 	"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateWaveDefenseArea; }; ",
 	""],
 	_isRectangle, false, false,

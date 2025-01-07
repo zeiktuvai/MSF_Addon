@@ -7,8 +7,7 @@ private _combatMode = _logic getVariable ["CombatMode", "RED"];
 private _behavior = _logic getVariable ["Behavior", "AWARE"];
 private _speed = _logic getVariable ["Speed", "NORMAL"];
 private _spawnCount = _logic getVariable ["SpawnCount", false];
-private _activation = _logic getVariable ["Activation", "WEST"];
-private _activationType = _logic getVariable ["ActivationType", "present"];
+private _activationSide = _logic getVariable ["ActivationSide", 1];
 private _side = _logic getVariable ["Side", 0];
 private _area = _logic getVariable ["objectArea", [0,0,0,false,-1]];
 private _despawn = _logic getVariable ["Despawn", false];
@@ -16,9 +15,9 @@ private _isRectangle = (_logic getVariable ["objectArea", [0,0,0,false]]) select
 private _height = _area select 4;
 
 if (!_isVic) then {
-	if(_area select 0 > 100 && _area select 1 > 100) then 
+	if(_area select 0 >= 100 && _area select 1 >= 100) then 
 	{		
-		[_area select 0, _area select 1, _height, _position, [_activation, _activationType], ["this",
+		[_area select 0, _area select 1, _height, _position, [str ([_activationSide] call BIS_fnc_sideType), "PRESENT"], ["this",
 			"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateAreaInfantryPatrol;}; ",
 			"[thisTrigger] call MSF_fnc_DeleteAreaInfantryPatrol;"],
 			_isRectangle, false, _despawn,
@@ -27,9 +26,9 @@ if (!_isVic) then {
 	};
 }
 else {
-	if(_area select 0 > 500 && _area select 1 > 500) then 
+	if(_area select 0 >= 500 && _area select 1 >= 500) then 
 	{		
-		[_area select 0, _area select 1, _height, _position, [_activation, _activationType], ["this",
+		[_area select 0, _area select 1, _height, _position, [str ([_activationSide] call BIS_fnc_sideType), "PRESENT"], ["this",
 			"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateAreaVehiclePatrol; }; ",
 			""],
 			_isRectangle, false, false,

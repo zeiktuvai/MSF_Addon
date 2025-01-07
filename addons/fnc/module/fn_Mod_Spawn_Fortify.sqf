@@ -4,8 +4,7 @@ private _position = position _logic;
 private _area = _logic getVariable ["objectArea", [0,0,0,false,-1]];
 private _isRectangle = (_logic getVariable ["objectArea", [0,0,0,false]]) select 3;
 private _height = _area select 4;
-private _activation = _logic getVariable ["Activation", "WEST"];
-private _activationType = _logic getVariable ["ActivationType", "present"];
+private _activationSide = _logic getVariable ["ActivationSide", 1];
 private _side = _logic getVariable ["Side", 0];
 
 private _onStart = _logic getVariable ["SpawnImmediately", false];
@@ -30,9 +29,9 @@ private _airNum = _logic getVariable ["AirNum", 2];
 private _airProb = _logic getVariable ["AirProbability", 5];
 
 
-if(_area select 0 > 100 && _area select 1 > 100) then 
-{		
-	[_area select 0, _area select 1, _height, _position, [_activation, _activationType], ["this",
+if(_area select 0 >= 100 && _area select 1 >= 100) then 
+{
+	[_area select 0, _area select 1, _height, _position, [str ([_activationSide] call BIS_fnc_sideType), "present"], ["this",
 		"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_FortifyArea; }; ",
 		""],
 		_isRectangle, _onStart, false,

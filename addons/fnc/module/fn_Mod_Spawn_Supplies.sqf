@@ -4,8 +4,7 @@ private _position = position _logic;
 private _area = _logic getVariable ["objectArea", [0,0,0,false,-1]];
 private _isRectangle = (_logic getVariable ["objectArea", [0,0,0,false]]) select 3;
 private _height = _area select 4;
-private _activation = _logic getVariable ["Activation", "WEST"];
-private _activationType = _logic getVariable ["ActivationType", "present"];
+private _activationSide = _logic getVariable ["ActivationSide", 1];
 
 private _supply = _logic getVariable ["SpawnItems", true];
 private _ammo = _logic getVariable ["SpawnVehicleAmmo", true];
@@ -20,8 +19,8 @@ private _min = _logic getVariable ["VicAmmoMin", 500];
 private _max = _logic getVariable ["VicAmmoMax", 1000];
 private _fuelCount = _logic getVariable ["FuelCount", 5];
 
-if ((_area select 0) + (_area select 1) > 100) then {
-	[_area select 0, _area select 1, _height, _position, [_activation, _activationType], ["this",
+if ((_area select 0) + (_area select 1) >= 100) then {
+	[_area select 0, _area select 1, _height, _position, [str ([_activationSide] call BIS_fnc_sideType), "PRESENT"], ["this",
 		"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateRandomSupplies; };",""],
 		_isRectangle, false, false,
 		[_supply, _ammo, _fuel, _supplyCount, _wmag, _wlau, _wgre, _wmed, _wfoo, _min, _max, _fuelCount]

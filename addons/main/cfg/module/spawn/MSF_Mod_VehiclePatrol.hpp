@@ -23,30 +23,49 @@ class MSF_Module_Spawn_VehiclePatrol : Module_F
 
 	class Attributes : AttributesBase
 	{	
-		class Activation
+		class ActivationSide
 		{
-			displayName = "Spawn Activation";
-			tooltip = "Sets the activation type for the activation trigger spawning the patrol.";
-			control = "TriggerActivation";
-			property = "MSF_Module_InfPatrol_Act";
+			displayName = "Activation Side";
+			tooltip = "Faction that will activate this module.";
+			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "none";
-		};
-		class ActivationType
-		{
-			displayName = "Spawn Activation Type";
-			tooltip = "Sets the presence type for the activation trigger.";
-			control = "ActivationType";
-			property = "MSF_Module_InfPatrol_ActType";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "present";
-		};
+			property = "MSF_Module_vicPatrol_ActSide";
+			defaultValue = 1;
+			typeName = "Number";
+			class Values
+			{
+				class East
+				{
+					name = "East";
+					tooltip = "OPFOR";
+					value = 0;
+				};
+				class Independant
+				{
+					name = "Independant";
+					tooltip = "Independant";
+					value = 2;
+				};
+				class West
+				{
+					name = "West";
+					tooltip = "BLUFOR";
+					value = 1;
+				};
+				class Player
+				{
+					name = "AnyPlayer";
+					tootip = "AnyPlayer";
+					value = "3";
+				};
+			};	
+		};		
         class CombatMode
 		{
 			displayName = "Spawn Behavior";
 			tooltip = "Controls how and when the patrol will engage enemy targets.";
 			control = "CombatModeGroup";
-			property = "MSF_Module_InfPatrol_cMode";
+			property = "MSF_Module_vicPatrol_cMode";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "yellow";
 		};
@@ -55,7 +74,7 @@ class MSF_Module_Spawn_VehiclePatrol : Module_F
 			displayName = "Spawn Combat Mode";
 			tooltip = "Behavior pattern of the patrol.";
 			control = "BehaviourGroup";
-			property = "MSF_Module_InfPatrol_Behav";
+			property = "MSF_Module_vicPatrol_Behav";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "aware";
 		};
@@ -64,7 +83,7 @@ class MSF_Module_Spawn_VehiclePatrol : Module_F
 			displayName = "Spawn Speed Mode";
 			tooltip = "Speed mode of the patrol.";
 			control = "SpeedModeGroup";
-			property = "MSF_Module_InfPatrol_Speed";
+			property = "MSF_Module_vicPatrol_Speed";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "normal";
 		};
@@ -73,7 +92,7 @@ class MSF_Module_Spawn_VehiclePatrol : Module_F
 			displayName = "Spawn two patrols";
 			tooltip = "Adds a second spawned patrol on activation. (Could get weird if trigger area is too small).";
 			control = "Checkbox";
-			property = "MSF_Module_InfPatrol_SpawnC";
+			property = "MSF_Module_vicPatrol_SpawnC";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "false";				
 		};
@@ -83,7 +102,7 @@ class MSF_Module_Spawn_VehiclePatrol : Module_F
 			tooltip = "Faction to spawn the patrol in.";
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			property = "MSF_Module_InfPatrol_Side";
+			property = "MSF_Module_vicPatrol_Side";
 			defaultValue = 0;
 			typeName = "Number";
 			class Values
