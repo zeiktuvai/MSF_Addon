@@ -50,7 +50,7 @@ if (_armor) then {
 if (_static) then {
 	[_trigger, _staticNum, _side, _staticTypes, _staticProb, _logicArea] spawn {
 		params ["_trigger", "_staticNum", "_side", "_staticTypes", "_staticProb", "_logicArea"];
-		[_trigger, _staticNum, _side, _staticTypes,[], 2, _staticProb, _logicArea] call MSF_fnc_CreateAreaVehicleDefense;
+		[_trigger, _staticNum, _side, _staticTypes, [], 2, _staticProb, _logicArea] call MSF_fnc_CreateAreaVehicleDefense;
 	};
 };
 

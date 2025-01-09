@@ -46,3 +46,25 @@ class Extended_PreInit_EventHandlers
         init = "call compile preprocessFileLineNumbers 'z\msf\addons\main\XEH_preInit.sqf'";
     };
 };
+
+//Temp Triggers for compatibility
+class CfgNonAIVehicles
+{
+	class EmptyDetector;
+	class MSFTriggeFortify : EmptyDetector
+	{
+		scope = 0;
+	};
+	class MSFTrigger : EmptyDetector
+	{
+		scope = 0;
+	};
+	class MSFTriggerSupply : EmptyDetector
+	{
+		scope = 0;
+	};
+	class MSFTriggerWave : EmptyDetector
+	{
+		scope = 0;
+	};
+};

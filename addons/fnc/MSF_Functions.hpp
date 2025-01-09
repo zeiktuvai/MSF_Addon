@@ -14,10 +14,16 @@ class CfgFunctions
 		class Config
 		{
 			file = "z\msf\addons\fnc\config";
+			class GetDroneList {};
 			class GetInventoryLists {};
 			class GetLocalConfig {};
+			class GetOverrideCfg {};
 			class GetUnitClasses {};
-			class GetDroneList {};
+		};
+		class Data
+		{
+			file = "z\msf\addons\fnc\data";
+			class ParseValidArray {};
 		};
 		class Mission
 		{

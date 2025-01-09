@@ -5,9 +5,9 @@
 
 params [["_side", east, [east]]];
 
-private ["_cfg", "_return", "_faction", "_groups", "_vics", "_armor", "_air", "_turrets", "_units", "_vicPatrol"];
-_return = [];
-_cfg = [] call MSF_fnc_GetLocalConfig;
+private ["_faction"];
+private _override = [[_side] call BIS_fnc_sideID] call MSF_fnc_GetOverrideCfg;
+private _return = [];
 
 switch (_side) do {
 	case east: {
@@ -24,38 +24,25 @@ switch (_side) do {
 	 };
 };
 
-
 // Get default unit set
-_groups = getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Groups');
-_vics 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Vehicles');
-_armor 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Armor');
-_air 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Air');
-_turrets = getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Turrets');
-_units 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Units');
-_vicPatrol 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'VehiclePatrols');
+private _groups = getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Groups');
+private _vics 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Vehicles');
+private _armor 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Armor');
+private _air 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Air');
+private _turrets = getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Turrets');
+private _units 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Units');
+private _vicPatrol 	= getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'VehiclePatrols');
 
-if (!isNull _cfg) then {
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Groups')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Groups');
-	} else { _return pushBack _groups; };
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Vehicles')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Vehicles');
-	} else { _return pushBack _vics; };
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Armor')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Armor');
-	} else { _return pushBack _armor; };
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Air')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Air');
-	} else { _return pushBack _air; };
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Turrets')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Turrets');
-	} else { _return pushBack _turrets; };
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Units')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'Units');
-	} else { _return pushBack _units; };
-	if (isArray(_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'VehiclePatrols')) then {
-		_return pushBack getArray (_cfg >> 'MSF_Mission_Classes' >> 'UnitSets' >> _faction >> 'VehiclePatrols');
-	} else { _return pushBack _vicPatrol; };
+if (count _override > 0) then {
+	_override params ["_groupsOvr", "_vicsOvr", "_armorOvr", "_airOvr", "_turretsOvr", "_unitsOvr", "_vicPatrolOvr"];
+	
+	if (count _groupsOvr > 0) then { _return pushBack _groupsOvr; } else { _return pushBack _groups; };
+	if (count _vicsOvr > 0) then { _return pushBack _vicsOvr; } else { _return pushBack _vics; };
+	if (count _armorOvr > 0) then {	_return pushBack _armorOvr; } else { _return pushBack _armor; };
+	if (count _airOvr > 0) then { _return pushBack _airOvr;	} else { _return pushBack _air; };
+	if (count _turretsOvr > 0) then { _return pushBack _turretsOvr; } else { _return pushBack _turrets; };
+	if (count _unitsOvr > 0) then { _return pushBack _unitsOvr; } else { _return pushBack _units; };
+	if (count _vicPatrolOvr > 0) then { _return pushBack _vicPatrolOvr;	} else { _return pushBack _vicPatrol; };
 }
 else 
 {

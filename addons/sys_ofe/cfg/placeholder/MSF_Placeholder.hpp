@@ -137,3 +137,21 @@ class MSF_Placeholder_Armor_U : MSF_Placeholder
     editorPreview = "";
     scope = 2;
 };
+
+class MSF_Placeholder_Logi_Medical: MSF_Placeholder
+{
+    displayName = "Logistics - Medical Supplies";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
+    editorPreview = "";
+    scope = 2;
+};
+
+class MSF_Placeholder_Logi_Weapons: MSF_Placeholder
+{
+    displayName = "Logistics - Weapons Crate";
+    editorCategory = "MSF_OFE";
+    editorSubcategory = "MSF_OFE_Placeholder";
+    editorPreview = "";
+    scope = 2;
+};

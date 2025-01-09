@@ -19,6 +19,7 @@ class CfgVehicles
 
 	
 	#include "MSF_Mod_BuildingDestroy.hpp"
+	#include "MSF_Mod_Classes.hpp"
 	#include "spawn\MSF_Mod_InfantryPatrol.hpp"
 	#include "spawn\MSF_Mod_VehiclePatrol.hpp"
 	#include "spawn\MSF_Mod_Supply.hpp"
