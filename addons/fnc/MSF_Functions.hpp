@@ -11,12 +11,16 @@ class CfgFunctions
 				postInit = 1;
 			};
 		};
+		class ACEOptions
+		{
+			file = "z\msf\addons\fnc\ace";
+			class ACEMedUnconcious {};
+		};
 		class Config
 		{
 			file = "z\msf\addons\fnc\config";
 			class GetDroneList {};
 			class GetInventoryLists {};
-			class GetLocalConfig {};
 			class GetOverrideCfg {};
 			class GetUnitClasses {};
 		};
@@ -24,25 +28,6 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\data";
 			class ParseValidArray {};
-		};
-		class Mission
-		{
-			file = "z\msf\addons\fnc\mission";
-			class ApplyEndMission {};
-			class ApplyGMActions {};
-			class ApplyObjectActions {};
-			class CreateActivationTrigger {};		
-			class RespawnVehicleCustomization {};
-			class SetupUAVSpawnSystem {};
-		};
-		class Module
-		{
-			file = "z\msf\addons\fnc\module";
-			class Mod_InfantryVehiclePatrol {};
-			class Mod_RandomSpawnCrash {};
-			class Mod_Spawn_Fortify {};
-			class Mod_Spawn_Supplies {};
-			class Mod_Spawn_Wave {};
 		};
 		class Enemy
 		{
@@ -59,34 +44,14 @@ class CfgFunctions
 			class GeneratePatrolRoute {};
 			class SpawnGroupInSafePos {};
 		};
-		class Multiplayer
+		class ExternalFunctions
 		{
-			file = "z\msf\addons\fnc\mp";
-			class ConfigRespawnOnPlayer	{};
-			class ConfigureMP {};
-			class JIPSpawnNearPlayer {};
-			class RandomSpawn {};
-		};
-		class ACEOptions
-		{
-			file = "z\msf\addons\fnc\ace";
-			class ACEMedUnconcious {};
-		};
-		class Objects
-		{
-			file = "z\msf\addons\fnc\object";
-			class ApplyBuildingDestruction {};
-			class ApplyDamageReduction {};
-			class CreateRandomSupplies {};
-			class GenerateInventory {};
-			class InfiniteFuelHandler {};
-			class SetRandomVehicleState {};
-			class SetTimeBasedInteraction {};
-			class SetUnitDialogOption {};
-			class SetVehicleDamageReduction {};
-			class ShowHideObjects {};
-			class SpawnSeekAndDestroyVehicles {};
-			class SpawnUAV {};
+			file = "z\msf\addons\fnc\ext";
+			class ZEN_OccupyHouse {};
+			class ZEN_InsertionSort {};
+			class ZEN_ExtendPosition {};
+			class ZEN_ArrayShuffle {};
+			class JBOY_UpDown {};
 		};
 		class Helpers
 		{
@@ -116,6 +81,60 @@ class CfgFunctions
 			class GetAreaRadius {};
 			class OrderArrayByStartingValue {};
 		};
+		class Mission
+		{
+			file = "z\msf\addons\fnc\mission";
+			class ApplyBuildingDestruction {};
+			class ApplyDamageReduction {};
+			class ApplyEndMission {};
+			class ApplyGMActions {};
+			class ApplyObjectActions {};
+			class CreateActivationTrigger {};		
+			class InfiniteFuelHandler {};
+			class RespawnVehicleCustomization {};
+			class SetupUAVSpawnSystem {};
+		};
+		class Module
+		{
+			file = "z\msf\addons\fnc\module";
+			class Mod_InfantryVehiclePatrol {};
+			class Mod_RandomSpawnCrash {};
+			class Mod_Spawn_Fortify {};
+			class Mod_Spawn_Supplies {};
+			class Mod_Spawn_Wave {};
+		};
+		class Multiplayer
+		{
+			file = "z\msf\addons\fnc\mp";
+			class ConfigRespawnOnPlayer	{};
+			class ConfigureMP {};
+			class JIPSpawnNearPlayer {};
+			class RandomSpawn {};
+		};
+		class Objects
+		{
+			file = "z\msf\addons\fnc\object";
+			class GenerateInventory {};
+			class SetRandomVehicleState {};
+			class SetTimeBasedInteraction {};
+			class SetUnitDialogOption {};
+			class SetVehicleDamageReduction {};
+			class ShowHideObjects {};
+			class SpawnSeekAndDestroyVehicles {};
+			class SpawnUAV {};
+		};
+		class Spawn
+		{
+			file = "z\msf\addons\fnc\spawn";
+			class CreateRandomSupplies {};
+		};
+		class TFY
+		{
+			file = "z\msf\addons\fnc\TFY";
+			class InitializeInternal {
+				postInit = 1;
+			};
+		};
 		class Units
 		{
 			file = "z\msf\addons\fnc\units";
@@ -131,22 +150,6 @@ class CfgFunctions
 			class SetDialogValidator {};
 			class SetCfgEntryValidator {};
 			class CheckNotifyTriggerHasArea {};
-		};
-		class ExternalFunctions
-		{
-			file = "z\msf\addons\fnc\ext";
-			class ZEN_OccupyHouse {};
-			class ZEN_InsertionSort {};
-			class ZEN_ExtendPosition {};
-			class ZEN_ArrayShuffle {};
-			class JBOY_UpDown {};
-		};
-		class TFY
-		{
-			file = "z\msf\addons\fnc\TFY";
-			class InitializeInternal {
-				postInit = 1;
-			};
 		};
 	};
 };

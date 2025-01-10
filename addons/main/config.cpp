@@ -1,7 +1,8 @@
 #include "MSF_Version.hpp"
 #include "cfg\eden\MSF_Editor_Menu.hpp"
-#include "cfg\mission\MSF_Config.hpp"
-#include "cfg\module\MSF_Modules.hpp"
+#include "cfg\MSF_Config.hpp"
+#include "cfg\MSF_Categories.hpp"
+#include "cfg\MSF_Factions.hpp"
 
 class CfgPatches
 {
@@ -37,6 +38,12 @@ class Cfg3DEN
 	{
 		#include "cfg\mission\MSF_Controls.hpp"
 	};
+};
+
+class CfgVehicles
+{
+	#include "cfg\MSF_Modules.hpp"
+	#include "cfg\placeholder\MSF_Placeholder.hpp"
 };
 
 class Extended_PreInit_EventHandlers

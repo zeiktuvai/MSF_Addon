@@ -1,9 +1,9 @@
 [
-	getArray (configFile >> 'MSF_OFE_Config' >> 'Units' >> 'Empty' >> 'UnmannedVic'),
-	getArray (configFile >> 'MSF_OFE_Config' >> 'Units' >> 'Empty' >> 'UnmannedArmor'),
-	getArray (configFile >> 'MSF_OFE_Config' >> 'Units' >> 'Empty' >> 'UnmannedStatic'),
-	getArray (configFile >> 'MSF_OFE_Config' >> 'Units' >> 'Empty' >> 'UnmannedHeli'),
-	getArray (configFile >> 'MSF_OFE_Config' >> 'Units' >> 'Empty' >> 'UnmannedPlane'),	
-	getArray (configFile >> 'MSF_OFE_Config' >> 'Units' >> 'Empty' >> 'FuelTruck'),
-	getArray (configFile >> 'MSF_OFE_Config' >> 'Units' >> 'Empty' >> 'AmmoTruck')
+	getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedVic'),
+	getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedArmor'),
+	getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedStatic'),
+	getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedHeli'),
+	getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedPlane'),	
+	getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'FuelTruck'),
+	getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'AmmoTruck')
 ];
