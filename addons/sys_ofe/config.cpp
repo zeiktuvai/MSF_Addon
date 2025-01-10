@@ -2,7 +2,7 @@
 //#include "cfg\MSF_OFE_Categories.hpp"
 #include "MSF_OFE_Functions.hpp"
 #include "cfg\state\MSF_OFE_EnemyStateMachine.hpp"
-#include "cfg\MSF_OFE_Config.hpp"
+//#include "cfg\MSF_OFE_Config.hpp"
 
 class CfgPatches
 {

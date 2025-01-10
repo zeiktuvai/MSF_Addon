@@ -1,29 +1,24 @@
 params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", true, [true]]];
 
 private _position = position _logic;
-private _area = _logic getVariable ["objectArea", [0,0,0,false,-1]];
-private _isRectangle = (_logic getVariable ["objectArea", [0,0,0,false]]) select 3;
-private _height = _area select 4;
 private _activationSide = _logic getVariable ["ActivationSide", 1];
-
-private _supply = _logic getVariable ["SpawnItems", true];
-private _ammo = _logic getVariable ["SpawnVehicleAmmo", true];
-private _fuel = _logic getVariable ["SpawnFuel", true];
+private _spawnSide = _logic getVariable ["SpawnSide", 0];
+private _victimSide = _logic getVariable ["VictimSide", 2];
+private _type = _logic getVariable ["SpawnType", 0];
 private _supplyCount = _logic getVariable ["NumItems", 50];
-private _wmag = _logic getVariable ["MagWeight", 1];
-private _wlau = _logic getVariable ["LauncherWeight", 1];
-private _wgre = _logic getVariable ["GrenadeWeight", 1];
-private _wmed = _logic getVariable ["MedicalWeight", 1];
-private _wfoo = _logic getVariable ["FoodWeight", 1];
-private _min = _logic getVariable ["VicAmmoMin", 500];
-private _max = _logic getVariable ["VicAmmoMax", 1000];
-private _fuelCount = _logic getVariable ["FuelCount", 5];
+private _min = _logic getVariable ["VicAmmoMin", 250];
+private _max = _logic getVariable ["VicAmmoMax", 750];
+private _def = [];
 
-if ((_area select 0) + (_area select 1) >= 100) then {
-	[_area select 0, _area select 1, _height, _position, [[_activationSide] call MSF_fnc_GetModuleActivationSide, "PRESENT"], ["this",
-		"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateRandomSupplies; };",""],
-		_isRectangle, false, false,
-		[_supply, _ammo, _fuel, _supplyCount, _wmag, _wlau, _wgre, _wmed, _wfoo, _min, _max, _fuelCount]
-	] call MSF_fnc_CreateActivationTrigger;	
+private _stype = if (_type == 10) then { selectRandom [0, 1, 3, 4, 5] } else { _type };
+
+switch (_stype) do {
+	case 0: { _def = [] call MSF_fnc_OFE_GetVehicleComposition; };
+	case 1: { _def = [] call MSF_fnc_OFE_GetArmorComposition; };
+	case 3: { _def = [] call MSF_fnc_OFE_GetSupplyComposition; };
+	case 4: { _def = [] call MSF_fnc_OFE_GetMedicalComposition; };
+	case 5: { _def = [] call MSF_fnc_OFE_GetSupplyComposition; };
 };
-	
+
+[false, _position, _def, _stype, [_spawnSide] call BIS_fnc_sideType, [_victimSide] call BIS_fnc_sideType,
+	[_activationSide] call MSF_fnc_GetModuleActivationSide, _supplyCount, random [_min, (_min + _max) / 2, _max]] call MSF_fnc_OFE_SpawnPOI;

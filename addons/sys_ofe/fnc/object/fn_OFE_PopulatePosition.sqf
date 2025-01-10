@@ -30,7 +30,7 @@ switch (_type) do {
 
 		if (_supply) then {
 			_vicAmmoBoxes = [_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}, 100] call MSF_fnc_OFE_SpawnVehicleAmmo;
-			_boxes = [_objects select {typeOf _x == "MSF_Placeholder_Supplies"}] call MSF_fnc_OFE_SpawnAndFillBoxes;
+			_boxes = [_objects select {typeOf _x == "MSF_Placeholder_Supplies"}, 50, 0, true] call MSF_fnc_OFE_SpawnAndFillBoxes;
 		};
 		
 		_allObjs append units _group;

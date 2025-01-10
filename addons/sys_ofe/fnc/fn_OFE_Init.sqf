@@ -15,7 +15,7 @@ if (count (allMissionObjects "MSF_Module_OFE") > 0) then {
 			missionNamespace setVariable ["MSF_OFE_airbaseCount", [[["MSF_Mod_OFE_Airbase", false], ["MSF_Mod_OFE_ExistingLoc", true, 7], ["MSF_Mod_OFE_ExistingLoc", true, 8]]] call MSF_fnc_OFE_EnumerateModules, true];
 
 			missionNamespace setVariable ["MSF_OFE_Setup", true, true];
-			missionNamespace setVariable ["MSF_OFE_LogiMultiplier", 1, true];
+			//missionNamespace setVariable ["MSF_OFE_LogiMultiplier", 1, true];
 
 			[configFile >> "MSF_OFE_EnemyStatemachine"] call CBA_statemachine_fnc_createFromConfig;
 

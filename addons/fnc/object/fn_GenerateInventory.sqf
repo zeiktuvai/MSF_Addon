@@ -54,12 +54,14 @@ if(isServer ) then
 						];
 
 						switch (_cat) do {
-							case 0: { _object addMagazineCargoGlobal [selectRandom _mags, 1]; _remain = _remain - 1; };
-							case 1: { _object addMagazineCargoGlobal [selectRandom _launch, 1];	_remain = _remain - 1; };
-							case 2: { _object addMagazineCargoGlobal [selectRandom _grenade, 1]; _remain = _remain - 1; };
-							case 3: { _object addItemCargoGlobal [selectRandom _medical, 1]; _remain = _remain - 1; };
-							case 4: { _object addItemCargoGlobal [selectRandom _food, 1]; _remain = _remain - 1; };
+							case 0: { _object addMagazineCargoGlobal [selectRandom _mags, 1]; };
+							case 1: { _object addMagazineCargoGlobal [selectRandom _launch, 1]; };
+							case 2: { _object addMagazineCargoGlobal [selectRandom _grenade, 1]; };
+							case 3: { _object addItemCargoGlobal [selectRandom _medical, 1]; };
+							case 4: { _object addItemCargoGlobal [selectRandom _food, 1]; };
 						};
+
+						_remain = _remain - 1;
 					};
 				} else {
 					private _remain = _count;
@@ -74,12 +76,14 @@ if(isServer ) then
 						];
 
 						switch (_cat) do {
-							case 0: { _object addMagazineCargoGlobal [selectRandom _mags, 1]; _remain = _remain - 1; };
-							case 1: { _object addMagazineCargoGlobal [selectRandom _launch, 1];	_remain = _remain - 1; };
-							case 2: { _object addMagazineCargoGlobal [selectRandom _grenade, 1]; _remain = _remain - 1; };
-							case 3: { _object addItemCargoGlobal [selectRandom _medical, 1]; _remain = _remain - 1; };
-							case 4: { _object addItemCargoGlobal [selectRandom _food, 1]; _remain = _remain - 1; };
+							case 0: { _object addMagazineCargoGlobal [selectRandom _mags, 1]; };
+							case 1: { _object addMagazineCargoGlobal [selectRandom _launch, 1]; };
+							case 2: { _object addMagazineCargoGlobal [selectRandom _grenade, 1]; };
+							case 3: { _object addItemCargoGlobal [selectRandom _medical, 1]; };
+							case 4: { _object addItemCargoGlobal [selectRandom _food, 1]; };
 						};
+
+						_remain = _remain - 1;
 					};
 				};
 			};

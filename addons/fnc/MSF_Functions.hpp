@@ -19,10 +19,12 @@ class CfgFunctions
 		class Config
 		{
 			file = "z\msf\addons\fnc\config";
+			class GetCargoClasses {};
 			class GetDroneList {};
 			class GetInventoryLists {};
 			class GetOverrideCfg {};
 			class GetUnitClasses {};
+			class GetUnmannedClasses {};
 		};
 		class Data
 		{
@@ -120,13 +122,13 @@ class CfgFunctions
 			class SetUnitDialogOption {};
 			class SetVehicleDamageReduction {};
 			class ShowHideObjects {};
-			class SpawnSeekAndDestroyVehicles {};
-			class SpawnUAV {};
 		};
 		class Spawn
 		{
 			file = "z\msf\addons\fnc\spawn";
 			class CreateRandomSupplies {};
+			class SpawnSeekAndDestroyVehicles {};
+			class SpawnUAV {};
 		};
 		class TFY
 		{

@@ -1,6 +1,6 @@
 params [["_objects", [], [[]]], ["_value", 500, [500]]];
 
-private _boxTypes =  ([] call MSF_fnc_OFE_GetCargoClasses) select 1;
+private _boxTypes =  ([] call MSF_fnc_GetCargoClasses) select 1;
 private _boxes = [];
 
 {

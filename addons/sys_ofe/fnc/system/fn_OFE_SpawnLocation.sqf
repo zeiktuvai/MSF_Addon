@@ -4,7 +4,7 @@ private _objects = thisTrigger getVariable 'objects';
 private _side = missionNamespace getVariable ["MSF_OFE_EnemyFaction", east];
 private _group = createGroup [_side, true];
 private _unitTypes = [_side] call MSF_fnc_GetUnitClasses;
-private _uTypes = [] call MSF_fnc_OFE_GetUnmannedClasses;
+private _uTypes = [] call MSF_fnc_GetUnmannedClasses;
 private _center = position _trigger;
 private _type = _trigger getVariable ["type", 0];
 private _params = _trigger getVariable ["vars", []];
@@ -66,7 +66,7 @@ if (_supply) then {
 
 	if (_sbox) then {
 		_vicAmmoBoxes = [_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}, _vicAmmo - (_vicAmmo * _str)] call MSF_fnc_OFE_SpawnVehicleAmmo;
-		[_objects select {typeOf _x == "MSF_Placeholder_Supplies"}, _supplyCnt - (_supplyCnt * _str)] call MSF_fnc_OFE_SpawnAndFillBoxes;
+		[_objects select {typeOf _x == "MSF_Placeholder_Supplies"}, _supplyCnt - (_supplyCnt * _str), 0, true] call MSF_fnc_OFE_SpawnAndFillBoxes;
 	};
 };
 

@@ -9,12 +9,6 @@ class CfgFunctions
 				postInit = 1;
 			};
 		};
-		class MSF_OFE_Config
-		{
-			file = "z\msf\addons\sys_ofe\fnc\cfg";
-			class OFE_GetCargoClasses {};
-			class OFE_GetUnmannedClasses {};
-		};
 		class MSF_OFE_Compositions
 		{
 			file = "z\msf\addons\sys_ofe\fnc\comp";
@@ -23,6 +17,7 @@ class CfgFunctions
 			class OFE_GetBaseComposition {};
 			class OFE_GetBastionComposition {};
 			class OFE_GetCheckpointComposition {};
+			class OFE_GetMedicalComposition {};
 			class OFE_GetOutpostComposition {};
 			class OFE_GetStaticComposition {};
 			class OFE_GetSupplyComposition {};
@@ -71,7 +66,6 @@ class CfgFunctions
 			class OFE_CreateModuleActivationTrigger {};
 			class OFE_CreateModuleAITrigger {};
 			class OFE_CreateModuleClearTrigger {};
-			class OFE_FillContainers {};
 			class OFE_SpawnLocation {};
 			class OFE_SpawnPOI {};
 		};
