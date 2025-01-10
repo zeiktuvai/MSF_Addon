@@ -21,6 +21,9 @@ if ([0.5] call MSF_fnc_GetSpawnChance) then
 	_x setDamage 1;
 } forEach units _group;
 
+_allObjs append units _group;
+_allObjs append units _eGroup;
+
 switch (_type) do {
 	case 0: { //vics
 		_types = ([] call MSF_fnc_GetUnmannedClasses) select _type;
@@ -70,8 +73,6 @@ switch (_type) do {
 		};
 
 		_allObjs append _vics;
-		_allObjs append units _group;
-		_allObjs append units _eGroup;
 	};
 
 	case 3;
