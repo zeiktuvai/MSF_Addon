@@ -10,7 +10,7 @@
 	Function Ver 1.0
 	Implemented in: MSF Addon v1.6.0
 */
-params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [east]], ["_groupTypes", [], [[]]], ["_bldgProb", 1, [1]], ["_logicArea", [], [[]]]];
+params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [east]], ["_groupTypes", [], [[]]], ["_bldgProb", 1, [1]], ["_logicArea", [], [[]]], ["_bldgSpread", false, [false]]];
 
 private _x = _logicArea select 0;
 private _y = _logicArea select 1;
@@ -24,7 +24,6 @@ private _bldgFound = false;
 	if ( count (_x buildingPos -1) > 0 ) then { _bldgFound = true; };
 } forEach _bldg;
 
-
 if (_bldgFound) then {
 	for "_i" from 1 to _num do {
 		sleep 0.1;
@@ -33,7 +32,7 @@ if (_bldgFound) then {
 			private _pos = [[[position _trigger, _radius]], []] call BIS_fnc_randomPos;
 			//[_trigger] call BIS_fnc_randomPosTrigger;
 			private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
-			[_pos, units _group, _radius, false, false, true] call MSF_fnc_ZEN_OccupyHouse;
+			[_pos, units _group, _radius, false, _bldgSpread, true] call MSF_fnc_ZEN_OccupyHouse;
 
 			if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
 				{ _x addCuratorEditableObjects [units _group]} forEach allCurators;

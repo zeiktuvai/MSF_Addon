@@ -13,7 +13,7 @@
 params [["_trigger", objNull, [objNull]]];
 
 private _vals = _trigger getVariable ["module_params", []];
-_vals params ["_side", "_building", "_bldgNum", "_bldgProb", "_vehicle", "_vicNum", "_vicFill", "_vicProb", "_armor", "_armorNum", "_armorProb",
+_vals params ["_side", "_building", "_bldgNum", "_bldgSpread", "_bldgProb", "_vehicle", "_vicNum", "_vicFill", "_vicProb", "_armor", "_armorNum", "_armorProb",
 	"_static", "_staticNum", "_staticProb", "_patrol", "_patrolNum", "_patrolProb", "_air", "_airNum", "_airProb", "_logicArea"];
 
 
@@ -23,10 +23,10 @@ _classes params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClass
 
 // building defense
 if (_building) then {
-	[_trigger, _bldgNum, _side, _infantryGroupClasses, _bldgProb, _logicArea] spawn 
+	[_trigger, _bldgNum, _bldgSpread, _side, _infantryGroupClasses, _bldgProb, _logicArea] spawn 
 	{		
-		params ["_trigger", "_buildingNum", "_side", "_infantryGroupClasses", "_bldgProb", "_logicArea"];
-		[_trigger, _buildingNum, _side, _infantryGroupClasses, _bldgProb, _logicArea] call MSF_fnc_CreateAreaBuildingDefense;
+		params ["_trigger", "_buildingNum", "_bldgSpread", "_side", "_infantryGroupClasses", "_bldgProb", "_logicArea"];
+		[_trigger, _buildingNum, _side, _infantryGroupClasses, _bldgProb, _logicArea, _bldgSpread] call MSF_fnc_CreateAreaBuildingDefense;
 	};	
 };
 

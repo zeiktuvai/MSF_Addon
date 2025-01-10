@@ -118,13 +118,22 @@ class MSF_Module_Spawn_Fortify : Module_F
 		class BuildingNum
 		{
 			displayName = "Number to Spawn";
-			tooltip = "Number of buildings to fortify (1-10).";
+			tooltip = "Number of buildings to fortify.";
 			property = "MSF_Mod_Fortify_Building_Num";
 			control = "EditShort";
-			expression = "if (_value > 0 && _value < 11) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',5]; }";
+			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "5";
 			validate = "number";
 			typeName = "NUMBER";
+		};
+		class BuildingSpread
+		{
+			displayName = "Spread Spawns";
+			tooltip = "Attempts to spread spawns more evenly across all buildings in the area.";
+			property = "MSF_Mod_Fortify_Building_Spread";
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "false";
 		};
 		class BuildingProbability
 		{

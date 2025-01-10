@@ -10,6 +10,7 @@ private _side = _logic getVariable ["Side", 0];
 private _onStart = _logic getVariable ["SpawnImmediately", false];
 private _building = _logic getVariable ["BuildingEnable", false];
 private _bldgNum = _logic getVariable ["BuildingNum", 5];
+private _bldgSpread = _logic getVariable ["BuildingSpread", false];
 private _bldgProb = _logic getVariable ["BuildingProbability", 1];
 private _vehicle = _logic getVariable ["VehicleEnable", false];
 private _vicNum = _logic getVariable ["VehicleNum", 2];
@@ -35,7 +36,7 @@ if(_area select 0 >= 100 && _area select 1 >= 100) then
 		"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_FortifyArea; }; ",
 		""],
 		_isRectangle, _onStart, false,
-		[[_side] call BIS_fnc_sideType, _building, _bldgNum, _bldgProb, _vehicle, _vicNum, _vicFill, _vicProb, _armor, _armorNum, _armorProb, _static, _staticNum, _staticProb, _patrol, _patrolNum, _patrolProb, _air, _airNum, _airProb, _area],
+		[[_side] call BIS_fnc_sideType, _building, _bldgNum, _bldgSpread, _bldgProb, _vehicle, _vicNum, _vicFill, _vicProb, _armor, _armorNum, _armorProb, _static, _staticNum, _staticProb, _patrol, _patrolNum, _patrolProb, _air, _airNum, _airProb, _area],
 		true
 	] call MSF_fnc_CreateActivationTrigger;	
 };
