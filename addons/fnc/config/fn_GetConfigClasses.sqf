@@ -5,7 +5,7 @@ private _return = [];
 
 switch (_type) do {
 	case 0: {
-		private ["_faction"];
+		private _faction = "Set1";
 		private _override = [[_side] call BIS_fnc_sideID] call MSF_fnc_GetOverrideCfg;
 
 		switch (_side) do {
@@ -17,9 +17,6 @@ switch (_type) do {
 			};
 			case west: {
 				_faction = "Set3";
-			};
-			default {
-				_faction = "Set1";
 			};
 		};
 	 };
