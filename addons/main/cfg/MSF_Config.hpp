@@ -55,7 +55,15 @@ class MSFConfig
 			Air[] = {"B_Heli_Light_01_dynamicLoadout_F", "B_Heli_Light_01_F", "B_Heli_Attack_01_dynamicLoadout_F", "B_Heli_Transport_01_F"};
 			VehiclePatrols[] = {"B_MRAP_01_F", "B_MRAP_01_gmg_F", "B_MRAP_01_hmg_F", "B_LSV_01_armed_F", "B_LSV_01_unarmed_F", "B_LSV_01_AT_F", "B_Soldier_F", "B_APC_Wheeled_01_cannon_F"};
 		};
-	};	
+	};
+	class CivUnits
+	{
+		Civ_African[] = {"C_Man_casual_1_F_afro","C_Man_casual_2_F_afro","C_Man_casual_3_F_afro","C_Man_casual_4_F_afro","C_Man_casual_5_F_afro","C_Man_casual_6_F_afro","C_man_polo_1_F_afro","C_man_polo_2_F_afro","C_man_polo_3_F_afro","C_man_polo_4_F_afro","C_man_polo_5_F_afro","C_man_polo_6_F_afro"};
+		Civ_Asian[] = {"C_Man_casual_1_F_asia","C_Man_casual_2_F_asia","C_Man_casual_3_F_asia","C_Man_casual_4_F_asia","C_Man_casual_5_F_asia","C_Man_casual_6_F_asia","C_man_polo_1_F_asia","C_man_polo_2_F_asia","C_man_polo_3_F_asia","C_man_polo_4_F_asia","C_man_polo_5_F_asia","C_man_polo_6_F_asia"};
+		Civ_European[] = {"C_Man_casual_1_F_euro","C_Man_casual_2_F_euro","C_Man_casual_3_F_euro","C_Man_casual_4_F_euro","C_Man_casual_5_F_euro","C_Man_casual_6_F_euro","C_man_polo_1_F_euro","C_man_polo_2_F_euro","C_man_polo_3_F_euro","C_man_polo_4_F_euro","C_man_polo_5_F_euro","C_man_polo_6_F_euro"};
+		Civ_Livionian[] = {"C_Man_1_enoch_F","C_Man_2_enoch_F","C_Man_3_enoch_F","C_Man_4_enoch_F","C_Man_5_enoch_F","C_Man_6_enoch_F","C_Farmer_01_enoch_F"};
+		Civ_Tanoan[] = {"C_Man_casual_1_F_tanoan","C_Man_casual_2_F_tanoan","C_Man_casual_3_F_tanoan","C_Man_casual_4_F_tanoan","C_Man_casual_5_F_tanoan","C_Man_casual_6_F_tanoan"};
+	};
 	class CargoSets
 	{
 		SupplyBoxes[] = {"Box_FIA_Ammo_F", "Box_FIA_Support_F", "Box_FIA_Wps_F"};

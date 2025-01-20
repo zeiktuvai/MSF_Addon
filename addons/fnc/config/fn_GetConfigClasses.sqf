@@ -1,5 +1,5 @@
-// type 0: units, 1: Inventory, 2: Empty vehicles, 3: Cargo
-params [["_type", 0, [0]], ["_side", east, [east]]];
+// type 0: units, 1: Inventory, 2: Empty vehicles, 3: Cargo, 4: Civ Types
+params [["_type", 0, [0]], ["_side", east, [east]], ["_civType", "Civ_African", [""]]];
 
 private _return = [];
 
@@ -19,19 +19,21 @@ switch (_type) do {
 				_faction = "Set3";
 			};
 		};
-	 };
 	
-	_return =
-	[
-		[getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Groups'), _override select 0] select (count (_override select 0) > 0),
-		[getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Vehicles'), _override select 1] select (count (_override select 1) > 0),
-		[getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Armor'), _override select 2] select (count (_override select 2) > 0),
-		[getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Air'), _override select 3] select (count (_override select 3) > 0),
-		[getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Turrets'), _override select 4] select (count (_override select 4) > 0),
-		[getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Units'), _override select 5] select (count (_override select 5) > 0),
-		[getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'VehiclePatrols'), _override select 6] select (count (_override select 6) > 0)
-	];
-
+		private _isOverride = count _override > 0;
+		_return =
+		[
+			if (_isOverride && {if (_isOverride) then { count (_override select 0) > 0} else {false}}) then {_override select 0} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Groups')},
+			if (_isOverride && {if (_isOverride) then { count (_override select 1) > 0} else {false}}) then {_override select 1} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Vehicles')},
+			if (_isOverride && {if (_isOverride) then { count (_override select 2) > 0} else {false}}) then {_override select 2} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Armor')},
+			if (_isOverride && {if (_isOverride) then { count (_override select 3) > 0} else {false}}) then {_override select 3} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Air')},
+			if (_isOverride && {if (_isOverride) then { count (_override select 4) > 0} else {false}}) then {_override select 4} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Turrets')},
+			if (_isOverride && {if (_isOverride) then { count (_override select 5) > 0} else {false}}) then {_override select 5} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Units')},
+			if (_isOverride && {if (_isOverride) then { count (_override select 6) > 0} else {false}}) then {_override select 6} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'VehiclePatrols')}
+		];
+		hint format ["isover: %1; faction: %2, return: %3", _isOverride, _faction, _return];
+	};
+	
 	case 1: {
 
 		private ["_items", "_launch", "_grenade", "_med", "_food"];
@@ -76,6 +78,10 @@ switch (_type) do {
 			getArray (configFile >> 'MSFConfig' >> 'CargoSets' >> 'WeaponsBoxes')
 		];
 	};
+
+	case 4: {
+		_return = getArray (configFile >> 'MSFConfig' >> 'CivUnits' >> _civType);
+	}
 };
 
 _return;

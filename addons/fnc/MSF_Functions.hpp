@@ -100,6 +100,7 @@ class CfgFunctions
 		class Module
 		{
 			file = "z\msf\addons\fnc\module";
+			class Mod_DeadUnit {};
 			class Mod_InfantryVehiclePatrol {};
 			class Mod_RandomSpawnCrash {};
 			class Mod_Spawn_Fortify {};
