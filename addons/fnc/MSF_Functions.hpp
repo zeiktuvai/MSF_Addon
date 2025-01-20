@@ -5,7 +5,6 @@ class CfgFunctions
 		class Initialization
 		{
 			file = "z\msf\addons\fnc";
-			class Init {};
 			class MissionInit
 			{				
 				postInit = 1;
@@ -15,6 +14,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\ace";
 			class ACEMedUnconcious {};
+			class AntistasiEnemyPlanes {};
 		};
 		class Config
 		{

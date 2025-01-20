@@ -40,3 +40,4 @@ if (!isServer) then
 };
 
 [] call MSF_fnc_RandomSpawn;
+
