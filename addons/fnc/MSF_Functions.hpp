@@ -20,6 +20,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\config";
 			class GetCargoClasses {};
+			class GetConfigClasses {};
 			class GetDroneList {};
 			class GetInventoryLists {};
 			class GetOverrideCfg {};
