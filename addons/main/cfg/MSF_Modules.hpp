@@ -17,6 +17,7 @@ class Module_F : Logic
 
 #include "module\MSF_Mod_BuildingDestroy.hpp"
 #include "module\MSF_Mod_Classes.hpp"
+#include "module\spawn\MSF_Mod_DeadUnit.hpp"
 #include "module\spawn\MSF_Mod_InfantryPatrol.hpp"
 #include "module\spawn\MSF_Mod_VehiclePatrol.hpp"
 #include "module\spawn\MSF_Mod_Supply.hpp"

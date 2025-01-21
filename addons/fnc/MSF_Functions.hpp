@@ -19,12 +19,9 @@ class CfgFunctions
 		class Config
 		{
 			file = "z\msf\addons\fnc\config";
-			class GetCargoClasses {};
+			class GetConfigClasses {};
 			class GetDroneList {};
-			class GetInventoryLists {};
-			class GetOverrideCfg {};
-			class GetUnitClasses {};
-			class GetUnmannedClasses {};
+			class GetUnitOverrideCfg {};
 		};
 		class Data
 		{
@@ -99,6 +96,7 @@ class CfgFunctions
 		class Module
 		{
 			file = "z\msf\addons\fnc\module";
+			class Mod_DeadUnit {};
 			class Mod_InfantryVehiclePatrol {};
 			class Mod_RandomSpawnCrash {};
 			class Mod_Spawn_Fortify {};

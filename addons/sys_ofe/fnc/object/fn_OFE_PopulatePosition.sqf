@@ -11,7 +11,7 @@ private _friendlySide = "west";
 
 private _side = missionNamespace getVariable ["MSF_OFE_EnemyFaction", east];
 private _position = position _logic;
-private _unitTypes = [_side] call MSF_fnc_GetUnitClasses;
+private _unitTypes = [0, _side] call MSF_fnc_GetConfigClasses;
 private _group = createGroup [_side, true];
 private _objects = [];
 private _allObjs = [];

@@ -1,6 +1,3 @@
-?- Fixed bug in persist validation function throwing an error at random times.
-
-- Added option to disable enemy plane spawns in antistasi.
 
 // Base class templates
 		

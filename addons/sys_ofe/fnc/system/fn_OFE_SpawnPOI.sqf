@@ -7,8 +7,8 @@ private _objects = [_position, 0, _def] call BIS_fnc_objectsMapper;
 private _allObjs = _objects;
 private _group = createGroup [_victimSide, true];
 private _eGroup = createGroup [_enemySide, true];
-private _deadUnitTypes = ([_victimSide] call MSF_fnc_GetUnitClasses) select 5;
-private _enemyTypes = ([_enemySide] call MSF_fnc_GetUnitClasses) select 5;
+private _deadUnitTypes = ([0, _victimSide] call MSF_fnc_GetConfigClasses) select 5;
+private _enemyTypes = ([0, _enemySide] call MSF_fnc_GetConfigClasses) select 5;
 
 [_deadUnitTypes, _objects select {typeOf _x == "MSF_Placeholder_Infantry_D"}, _group] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
 
@@ -26,13 +26,13 @@ _allObjs append units _eGroup;
 
 switch (_type) do {
 	case 0: { //vics
-		_types = ([] call MSF_fnc_GetUnmannedClasses) select _type;
+		_types = ([2] call MSF_fnc_GetConfigClasses) select _type;
 	};
 	case 1: { //armor
-		_types = ([] call MSF_fnc_GetUnmannedClasses) select _type;
+		_types = ([2] call MSF_fnc_GetConfigClasses) select _type;
 	};
 	case 2: { //static
-		_types = ([] call MSF_fnc_GetUnmannedClasses) select _type;
+		_types = ([2] call MSF_fnc_GetConfigClasses) select _type;
 	};
 };
 
