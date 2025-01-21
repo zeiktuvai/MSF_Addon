@@ -109,7 +109,7 @@ class MSF_Module_Spawn_DeadUnit : Module_F
 			displayName = "Infantry Classes";
 			tooltip = "Array of classes to spawn instead of the default units. (MUST be a valid array).";
 			property = "MSF_Mod_DU_Classes";
-			control = "EditCodeMulti3";
+			control = "EditCode";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "''";
 		};
@@ -133,7 +133,7 @@ class MSF_Module_Spawn_DeadUnit : Module_F
 			displayName = "Vehicle Classes";
 			tooltip = "Array of classes to spawn instead of the default units. (MUST be a valid array).";
 			property = "MSF_Mod_DU_VicClasses";
-			control = "EditCodeMulti";
+			control = "EditCode";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "''";
 		};
@@ -157,7 +157,7 @@ class MSF_Module_Spawn_DeadUnit : Module_F
 			displayName = "Armor Classes";
 			tooltip = "Array of classes to spawn instead of the default units. (MUST be a valid array).";
 			property = "MSF_Mod_DU_ArmorClasses";
-			control = "EditCodeMulti";
+			control = "EditCode";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "''";
 		};
