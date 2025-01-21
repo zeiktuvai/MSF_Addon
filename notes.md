@@ -1,6 +1,8 @@
 ?- Fixed bug in persist validation function throwing an error at random times.
 
 - Added option to disable enemy plane spawns in antistasi.
+- Added module to spawn dead units within a module area.
+- Reorganized and streamlined some code.
 
 // Base class templates
 		

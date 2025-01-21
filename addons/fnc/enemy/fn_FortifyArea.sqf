@@ -17,7 +17,7 @@ _vals params ["_side", "_building", "_bldgNum", "_bldgSpread", "_bldgProb", "_ve
 	"_static", "_staticNum", "_staticProb", "_patrol", "_patrolNum", "_patrolProb", "_air", "_airNum", "_airProb", "_logicArea"];
 
 
-private _classes = [_side] call MSF_fnc_GetUnitClasses;
+private _classes = [0, _side] call MSF_fnc_GetConfigClasses;
 _classes params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClasses", "_staticTypes", "_fillUnits"];
 
 

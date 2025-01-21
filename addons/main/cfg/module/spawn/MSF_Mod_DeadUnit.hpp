@@ -11,13 +11,13 @@ class MSF_Module_Spawn_DeadUnit : Module_F
 	isDisposable = 1;	
 	is3DEN = 0;
 	curatorCanAttach = 0;
-	canSetArea = 1;
-	canSetAreaShape = 1;
+	canSetArea = 0;
+	canSetAreaShape = 0;
 	canSetAreaHeight = 0;
 
 	class AttributeValues
 	{
-		size3[] = { 100, 100, -1 };
+		size3[] = { 0, 0, -1 };
 		isRectangle = 0;
 	};
 
@@ -30,7 +30,7 @@ class MSF_Module_Spawn_DeadUnit : Module_F
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";con = "\a3\Data_f\cfgFactionClasses_IND_ca.paa";
 			property = "MSF_Module_vicPatrol_ActSide";
-			defaultValue = 1;
+			defaultValue = "'Civ_African'";
 			typeName = "STRING";
 			class Values
 			{
@@ -92,7 +92,15 @@ class MSF_Module_Spawn_DeadUnit : Module_F
 				};
 			};	
 		};		
-       
+		class UnitClasses
+		{
+			displayName = "Spawn Classes";
+			tooltip = "Array of classes to spawn instead of the default units. (MUST be a valid array).";
+			property = "MSF_Mod_DU_Classes";
+			control = "EditCodeMulti3";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "''";
+		};
 					
 		class ModuleDescription : ModuleDescription {};
 	};

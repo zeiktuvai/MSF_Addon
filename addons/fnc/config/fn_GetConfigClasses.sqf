@@ -1,12 +1,12 @@
-// type 0: units, 1: Inventory, 2: Empty vehicles, 3: Cargo, 4: Civ Types
 params [["_type", 0, [0]], ["_side", east, [east]], ["_civType", "Civ_African", [""]]];
 
 private _return = [];
 
 switch (_type) do {
+	// type 0: units
 	case 0: {
 		private _faction = "Set1";
-		private _override = [[_side] call BIS_fnc_sideID] call MSF_fnc_GetOverrideCfg;
+		private _override = [[_side] call BIS_fnc_sideID] call MSF_fnc_GetUnitOverrideCfg;
 
 		switch (_side) do {
 			case east: {
@@ -31,9 +31,9 @@ switch (_type) do {
 			if (_isOverride && {if (_isOverride) then { count (_override select 5) > 0} else {false}}) then {_override select 5} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'Units')},
 			if (_isOverride && {if (_isOverride) then { count (_override select 6) > 0} else {false}}) then {_override select 6} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> _faction >> 'VehiclePatrols')}
 		];
-		hint format ["isover: %1; faction: %2, return: %3", _isOverride, _faction, _return];
 	};
-	
+
+	// Type 1: Inventory
 	case 1: {
 
 		private ["_items", "_launch", "_grenade", "_med", "_food"];
@@ -55,6 +55,7 @@ switch (_type) do {
 		];
 	};
 
+	// Type 2: Empty vehicles
 	case 2: {
 		_return = 
 		[
@@ -68,6 +69,7 @@ switch (_type) do {
 		];
 	};
 
+	// Type 3: Cargo
 	case 3: {
 		_return = 
 		[
@@ -79,6 +81,7 @@ switch (_type) do {
 		];
 	};
 
+	// Type 4: Civ Types
 	case 4: {
 		_return = getArray (configFile >> 'MSFConfig' >> 'CivUnits' >> _civType);
 	}

@@ -3,7 +3,7 @@ params [["_trigger", objNull, [objNull]]];
 private _vals = _trigger getVariable ["module_params", []];
 _vals params ["_side", "_waves", "_interval", "_infNum", "_vicNum", "_armorNum", "_airNum", "_vicFill"];
 
-private _units = [_side] call MSF_fnc_GetUnitClasses; 
+private _units = [0, _side] call MSF_fnc_GetConfigClasses;
 _units params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClasses", "_turrets", "_infUnits"];
 
 private _waveCount = 0;

@@ -17,7 +17,7 @@ if(isServer ) then
 {
 	private _objects = entities [["Thing", "AllVehicles"], [], false, true] select { _x getVariable "MSF_Helper_InvGenerate_Enabled" == true; };
 
-	private _inv = [] call MSF_fnc_GetInventoryLists;
+	private _inv = [1] call MSF_fnc_GetConfigClasses;
 	_inv params ["_items", "_mags", "_launch", "_grenade", "_medical", "_food"];
 
 	{

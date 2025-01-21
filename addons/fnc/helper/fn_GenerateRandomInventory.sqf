@@ -39,7 +39,7 @@ MSF_ifnc_AddRandomItem =
 	};
 };
 
-private _inv = [] call MSF_fnc_GetInventoryLists;
+private _inv = [1] call MSF_fnc_GetConfigClasses;
 	
 clearWeaponCargoGlobal _object;
 clearMagazineCargoGlobal _object;

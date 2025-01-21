@@ -1,7 +1,7 @@
 params [["_objects", [], [[]]], ["_fillCount", 50, [1]], ["_type", 0, [0]], ["_isOFE", true, [true]]];
 
 private _str = 1;
-private _cargoTypes = [] call MSF_fnc_GetCargoClasses;
+private _cargoTypes = [3] call MSF_fnc_GetConfigClasses;
 private _boxTypes = [];
 private _probabilities = [];
 private _boxes = [];
