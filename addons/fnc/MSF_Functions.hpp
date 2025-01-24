@@ -90,7 +90,6 @@ class CfgFunctions
 		class Mission
 		{
 			file = "z\msf\addons\fnc\mission";
-			class ApplyBuildingDestruction {};
 			class ApplyDamageReduction {};
 			class ApplyEndMission {};
 			class ApplyGMActions {};
@@ -103,6 +102,7 @@ class CfgFunctions
 		class Module
 		{
 			file = "z\msf\addons\fnc\module";
+			class Mod_BuildingDestroy {};
 			class Mod_DeadUnit {};
 			class Mod_InfantryVehiclePatrol {};
 			class Mod_RandomSpawnCrash {};
