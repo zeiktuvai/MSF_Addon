@@ -10,8 +10,9 @@ switch _mode do
 		_input params [["_logic", objNull, [objNull]],	["_isActivated", true, [true]],	["_isCuratorPlaced", false, [true]]];
 
 		if (missionNamespace getVariable ["MSF_OFE_Init", false]) then {
-			private _def = [] call MSF_fnc_OFE_GetBastionComposition;
-
+			private _type = "Bastion";
+			private _def = ["Location", _type] call MSF_fnc_OFE_GetComposition;
+			//TODO: Update
 			private _allObjs = [_logic, _def, 4, [true, 1, true]] call MSF_fnc_OFE_PopulatePosition;
 		};
 	};
