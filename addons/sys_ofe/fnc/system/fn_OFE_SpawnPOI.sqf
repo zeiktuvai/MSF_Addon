@@ -118,7 +118,7 @@ switch (_type) do {
 };
 
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
-[_logic, 400, 400, _activationSide, "present", false, _allObjs, 5] call MSF_fnc_OFE_CreateModuleActivationTrigger;
+[_logic, 400, 400, _activationSide, "present", false, _allObjs, "POI"] call MSF_fnc_OFE_CreateModuleActivationTrigger;
 
 if (_isOFE) then {
 	["POI", _position] call MSF_fnc_OFE_CreateMapMarker;	

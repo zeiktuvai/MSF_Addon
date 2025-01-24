@@ -7,22 +7,59 @@ class MSF_Module_Spawn_DeadUnit : Module_F
 	function = "MSF_fnc_Mod_DeadUnit";
 	functionPriority = 1;
 	isGlobal = 0;
-	isTriggerActivated = 1;
-	isDisposable = 1;	
+	isTriggerActivated = 0;
+	isDisposable = 0;	
 	is3DEN = 0;
 	curatorCanAttach = 0;
-	canSetArea = 0;
-	canSetAreaShape = 0;
+	canSetArea = 1;
+	canSetAreaShape = 1;
 	canSetAreaHeight = 0;
 
 	class AttributeValues
 	{
-		size3[] = { 0, 0, -1 };
+		size3[] = { 50, 50, -1 };
 		isRectangle = 0;
 	};
 
 	class Attributes : AttributesBase
 	{	
+		class ActivationSide
+		{
+			displayName = "Activation Side";
+			tooltip = "Faction that will activate this module.";
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			property = "MSF_Module_supply_ActSide";
+			defaultValue = 1;
+			typeName = "Number";
+			class Values
+			{
+				class East
+				{
+					name = "East";
+					tooltip = "OPFOR";
+					value = 0;
+				};
+				class Independant
+				{
+					name = "Independant";
+					tooltip = "Independant";
+					value = 2;
+				};
+				class West
+				{
+					name = "West";
+					tooltip = "BLUFOR";
+					value = 1;
+				};
+				class Player
+				{
+					name = "AnyPlayer";
+					tootip = "AnyPlayer";
+					value = 3;
+				};
+			};	
+		};
 		class InfantryClasses
 		{
 			data = "AttributeSystemSubcategory";
@@ -167,7 +204,7 @@ class MSF_Module_Spawn_DeadUnit : Module_F
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = "Works in conjunction with the MSF Dead Infantry placeholder to spawn dead civilians on each placeholder when the linked trigger is activated.";
+		description = "Works in conjunction with the MSF Dead Infantry placeholder to spawn dead civilians on each placeholder.  Shows when players are in module area, and hides when players leave the module area.";
 		sync[] = { "LocationArea_F", "EmptyDetector" };
 
 		class LocationArea_F
