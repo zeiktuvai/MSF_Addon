@@ -2,7 +2,7 @@ params [
 	["_logic", objNull, [objNull]],
 	["_x", 50, [1]],
 	["_y", 50, [1]],
-	["_type", 0, [0]]
+	["_type", "", [""]]
 ];
 
 private ["_clearVar"];
@@ -10,14 +10,11 @@ private _faction = missionNamespace getVariable ["MSF_OFE_EnemyFaction", 0];
 private _trig = createTrigger ["emptyDetector", getPos _logic];
 
 switch (_type) do {
-	case 0: { _clearVar = "MSF_OFE_cpClear"; };
-	case 5;
-	case 1: { _clearVar = "MSF_OFE_opClear"; };
-	case 6;
-	case 2: { _clearVar = "MSF_OFE_baseClear"; };
-	case 7;
-	case 8;	
-	case 3: { _clearVar = "MSF_OFE_airbaseClear"; };
+	case "Checkpoint": { _clearVar = "MSF_OFE_cpClear"; };
+	case "Outpost": { _clearVar = "MSF_OFE_opClear"; };
+	case "Base": { _clearVar = "MSF_OFE_baseClear"; };
+	case "AirBase";	
+	case "HeliBase": { _clearVar = "MSF_OFE_airbaseClear"; };
 	default { _clearVar = "MSF_OFE_InvalidType"; };
 };
 

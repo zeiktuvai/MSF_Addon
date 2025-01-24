@@ -70,7 +70,8 @@ class MSFConfig
 		VicAmmoBoxes[] = {"Box_NATO_AmmoVeh_F", "Box_EAF_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_IND_AmmoVeh_F"};
 		MedicalBoxes[] = {"Land_PortableCabinet_01_medical_F", "Box_B_UAV_06_medical_F", "Land_PaperBox_01_small_closed_white_med_F", "ACE_medicalSupplyCrate"};
 		FoodBoxes[] = {"Land_MetalCase_01_medium_F", "Land_MetalCase_01_small_F", "Box_I_UAV_06_F", "Land_PaperBox_01_small_closed_brown_food_F"};
-		WeaponsBoxes[] = {"Land_MetalCase_01_medium_F", "Land_MetalCase_01_small_F", "Box_I_UAV_06_F"};
+		WeaponBoxes[] = {"Box_NATO_WpsSpecial_F", "Box_IND_WpsSpecial_F", "Box_EAF_WpsSpecial_F", "Box_T_NATO_WpsSpecial_F"};
+		AmmoBoxes[] = {"Box_NATO_Ammo_F", "Box_IND_Ammo_F", "Box_EAF_Ammo_F", "Box_T_East_Ammo_F"};
 	};
 	class EmptyUnitSets
 	{

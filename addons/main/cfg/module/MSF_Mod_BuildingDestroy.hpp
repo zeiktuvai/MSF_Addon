@@ -4,7 +4,7 @@ class MSF_Module_BldgDestroy : Module_F
 	displayName = "Destroy Buildings";
 	icon = "x\zen\addons\context_actions\ui\ammo_ca.paa";
 	category = "MSF_Module";
-	function = "MSF_fnc_ApplyBuildingDestruction";
+	function = "MSF_fnc_Mod_BuildingDestroy";
 	functionPriority = 1;
 	isGlobal = 0;
 	isTriggerActivated = 0;

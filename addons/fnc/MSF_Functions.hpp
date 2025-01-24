@@ -58,7 +58,6 @@ class CfgFunctions
 			class AddAceMainMenuItem {};
 			class FindOutsidePositionInTrigger {};
 			class FindSafeSpawnPos {};
-			class GenerateRandomInventory {};
 			class GetModuleActivationSide {};
 			class GetObjectsByProperty {};
 			class GetPlayersByProperty {};
@@ -74,6 +73,14 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\intel";
 			class SetupIntel {};
 		};
+		class Inventory
+		{
+			file = "z\msf\addons\fnc\inventory";
+			class GenerateArmoryAmmo {};
+			class GenerateInventory {};
+			class GenerateRandomArmory {};
+			class GenerateRandomInventory {};
+		};
 		class Math
 		{
 			file = "z\msf\addons\fnc\math";
@@ -83,7 +90,6 @@ class CfgFunctions
 		class Mission
 		{
 			file = "z\msf\addons\fnc\mission";
-			class ApplyBuildingDestruction {};
 			class ApplyDamageReduction {};
 			class ApplyEndMission {};
 			class ApplyGMActions {};
@@ -96,9 +102,11 @@ class CfgFunctions
 		class Module
 		{
 			file = "z\msf\addons\fnc\module";
+			class Mod_BuildingDestroy {};
 			class Mod_DeadUnit {};
 			class Mod_InfantryVehiclePatrol {};
 			class Mod_RandomSpawnCrash {};
+			class Mod_Spawn_Checkpoint {};
 			class Mod_Spawn_Fortify {};
 			class Mod_Spawn_Supplies {};
 			class Mod_Spawn_Wave {};
@@ -114,7 +122,6 @@ class CfgFunctions
 		class Objects
 		{
 			file = "z\msf\addons\fnc\object";
-			class GenerateInventory {};
 			class SetRandomVehicleState {};
 			class SetTimeBasedInteraction {};
 			class SetUnitDialogOption {};
@@ -124,7 +131,6 @@ class CfgFunctions
 		class Spawn
 		{
 			file = "z\msf\addons\fnc\spawn";
-			class CreateRandomSupplies {};
 			class SpawnSeekAndDestroyVehicles {};
 			class SpawnUAV {};
 		};

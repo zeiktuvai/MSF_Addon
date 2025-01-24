@@ -1,0 +1,76 @@
+class MSF_Module_Spawn_RoadCheckpoint : Module_F
+{
+	scope = 2;
+	displayName = "Spawn - Road Checkpoint";
+	icon = "a3\modules_f_beta\data\firingdrills\checkpoint_ca.paa";
+	category = "MSF_Module";
+	function = "MSF_fnc_Mod_Spawn_Checkpoint";
+	functionPriority = 1;
+	isGlobal = 0;
+	isTriggerActivated = 1;
+	isDisposable = 1;	
+	is3DEN = 0;
+	curatorCanAttach = 0;
+	canSetArea = 0;
+	canSetAreaShape = 0;
+	canSetAreaHeight = 0;
+
+	class AttributeValues
+	{
+		size3[] = { 0, 0, -1 };
+		isRectangle = 0;
+	};
+
+	class Attributes : AttributesBase
+	{
+		class SpawnSide
+		{
+			displayName = "Enemy Spawn Side";
+			tooltip = "Faction that will randomly be spawned as enemies at the location.";
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			property = "MSF_Module_Checkpoint_SpawnSide";
+			defaultValue = 0;
+			typeName = "Number";
+			class Values
+			{
+				class East
+				{
+					name = "East";
+					tooltip = "OPFOR";
+					value = 0;
+				};
+				class Independant
+				{
+					name = "Independant";
+					tooltip = "Independant";
+					value = 2;
+				};
+				class West
+				{
+					name = "West";
+					tooltip = "BLUFOR";
+					value = 1;
+				};
+			};	
+		};
+
+		class ModuleDescription : ModuleDescription {};
+	};
+	
+	class ModuleDescription : ModuleDescription
+	{
+		description = "Spawns a road checkpoint using the configured options when the linked trigger is activated.";
+		sync[] = { "LocationArea_F", "EmptyDetector" };
+
+		class LocationArea_F
+		{
+			description[] = {};
+			position = 0;
+			direction = 0;
+			optional = 0;
+			duplicate = 1;
+			synced[] = { "EmptyDetector" };
+		};
+	};
+};

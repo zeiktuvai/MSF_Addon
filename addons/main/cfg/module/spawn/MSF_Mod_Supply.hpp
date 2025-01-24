@@ -129,45 +129,51 @@ class MSF_Module_Spawn_Supplies : Module_F
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
 			property = "MSF_Module_supply_Type";
-			defaultValue = 0;
-			typeName = "Number";
+			defaultValue = "'Supplies'";
+			typeName = "Text";
 			class Values
 			{
-				class Supplies
+				class Supply
 				{
 					name = "Supply Cache";
 					tooltip = "Supply Cache (Items or Vic Ammo/Fuel)";
-					value = 3;
+					value = "Supply";
 				};
 				class Medical
 				{
 					name = "Medical Supplies";
 					tooltip = "Medical Supplies";
-					value = 4;
+					value = "Medical";
 				};
 				class Weapons
 				{
 					name = "Weapons Cache";
 					tooltip = "Weapons Cache";
-					value = 5;
+					value = "Armory";
 				};
 				class UVic
 				{
 					name = "Unmanned Vehicle";
 					tootip = "Unmanned Vehicle";
-					value = 0;
+					value = "Vehicle";
 				};
 				class UArmor
 				{
 					name = "Unmanned Armor";
 					tootip = "Unmanned Armor";
-					value = 1;
+					value = "Armor";
+				};
+				class Food
+				{
+					name = "Food Cache";
+					tooltip = "Food/water supplies";
+					value = "Food";
 				};
 				class Random
 				{
 					name = "Random";
 					tooltip = "Random Type";
-					value = 10;
+					value = "Random";
 				};
 			};	
 		};	

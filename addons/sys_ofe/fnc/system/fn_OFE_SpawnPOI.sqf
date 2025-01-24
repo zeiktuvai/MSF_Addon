@@ -1,4 +1,4 @@
-params [["_isOFE", true, [true]], ["_position", [], [[]]], ["_def", [], [[]]], ["_type", 0, [0]], ["_enemySide", east, [east]],
+params [["_isOFE", true, [true]], ["_position", [], [[]]], ["_def", [], [[]]], ["_type", "", [""]], ["_enemySide", east, [east]],
 	["_victimSide", resistance, [resistance]], ["_activationSide", "west", [""]], ["_fillCount", 50, [50]], ["_vicAmmo", 250, [250]]
 ];
 
@@ -25,21 +25,21 @@ _allObjs append units _group;
 _allObjs append units _eGroup;
 
 switch (_type) do {
-	case 0: { //vics
-		_types = ([2] call MSF_fnc_GetConfigClasses) select _type;
+	case "Vehicle": {
+		_types = ([2] call MSF_fnc_GetConfigClasses) select 0;
 	};
-	case 1: { //armor
-		_types = ([2] call MSF_fnc_GetConfigClasses) select _type;
+	case "Armor": {
+		_types = ([2] call MSF_fnc_GetConfigClasses) select 1;
 	};
-	case 2: { //static
-		_types = ([2] call MSF_fnc_GetConfigClasses) select _type;
+	case "Static": {
+		_types = ([2] call MSF_fnc_GetConfigClasses) select 2;
 	};
 };
 
 switch (_type) do {
-	case 0;
-	case 1;
-	case 2: { 
+	case "Vehicle"; 
+	case "Armor";
+	case "Static": { 
 		private _vicDir = _objects select {typeOf _x == "MSF_Placeholder_Direction"};
 
 		private	_vics = [_types, _objects select {typeOf _x == "MSF_Placeholder_Vehicle_U"}] call MSF_fnc_OFE_SpawnUnmannedVic;
@@ -50,22 +50,22 @@ switch (_type) do {
 		};
 
 		switch (_type) do {
-			case 0; //vics	
-			case 1: { //armor
+			case "Vehicle"; 
+			case "Armor": {
 				{
 					_x setVehicleAmmo random 1;
 					_x setDamage random [0, 0.45, 0.75];
 					_x setFuel random [0.2, 0.40, 0.60];
 				} forEach _vics;
 
-				if (_type == 1) then
+				if (_type == "Armor") then
 				{
 					_unt = _group createUnit [selectRandom _deadUnitTypes, getPos ((_objects select {typeOf _x == "MSF_Placeholder_Infantry_D"}) select 0), [], 0, "CAN_COLLIDE"];
 					_unt setDamage 1;
 					_unt moveInDriver (_vics select 0);
 				}
 			};
-			case 2: { //static
+			case "Static": {
 				{
 					_x setVehicleAmmo random 1;
 				} forEach _vics;		
@@ -75,13 +75,18 @@ switch (_type) do {
 		_allObjs append _vics;
 	};
 
-	case 3;
-	case 4;
-	case 5: {
+
+	case "Supply";
+	case "Medical";
+	case "Armory";
+	case "Food": {
 		private _vap = _objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"};
 		private _bp = _objects select {typeOf _x == "MSF_Placeholder_Supplies"};
 		private _med = _objects select {typeOf _x == "MSF_Placeholder_Logi_Medical"};
 		private _food = _objects select {typeOf _x == "MSF_Placeholder_Logi_Food"};
+		private _weap = _objects select {typeOf _x == "MSF_Placeholder_Logi_Weapons"};
+		private _ammo = _objects select {typeOf _x == "MSF_Placeholder_Logi_Ammo"};
+		private _weapTypes = [];
 
 		if (count _vap > 0) then 
 		{
@@ -89,16 +94,25 @@ switch (_type) do {
 			_allObjs append _vicAmmoBoxes;
 		};
 		if (count _bp > 0) then {
-			_boxes = [_bp, _fillCount, 0, _isOFE] call MSF_fnc_OFE_SpawnAndFillBoxes;
+			_boxes = [_bp, _fillCount, "Supply", _isOFE] call MSF_fnc_OFE_SpawnAndFillBoxes;
 			_allObjs append _boxes;
 		};
 		if (count _med > 0) then {
-			private _medboxes = [_med, _fillCount, 1, _isOFE] call MSF_fnc_OFE_SpawnAndFillBoxes;
+			private _medboxes = [_med, _fillCount, "Medical", _isOFE] call MSF_fnc_OFE_SpawnAndFillBoxes;
 			_allObjs append _medboxes;
 		};
 		if (count _food > 0) then {
-			private _foodboxes = [_food, _fillCount, 2, _isOFE] call MSF_fnc_OFE_SpawnAndFillBoxes;
+			private _foodboxes = [_food, _fillCount, "Food", _isOFE] call MSF_fnc_OFE_SpawnAndFillBoxes;
 			_allObjs append _foodboxes;
+		};
+		if (count _weap > 0) then {
+			private _weapboxes = [_weap, 15, "Armory", _isOFE] call MSF_fnc_OFE_SpawnAndFillBoxes;
+			_allObjs append (_weapboxes select 0);
+			_weapTypes = (_weapboxes select 1);
+		};
+		if (count _ammo > 0) then {
+			private _ammoboxes = [_ammo, 15, "Ammo", _isOFE, _weapTypes] call MSF_fnc_OFE_SpawnAndFillBoxes;
+			_allObjs append _ammoboxes;
 		};
 	};
 };
@@ -107,5 +121,5 @@ switch (_type) do {
 [_logic, 400, 400, _activationSide, "present", false, _allObjs, 5] call MSF_fnc_OFE_CreateModuleActivationTrigger;
 
 if (_isOFE) then {
-	[9, _position] call MSF_fnc_OFE_CreateMapMarker;	
+	["POI", _position] call MSF_fnc_OFE_CreateMapMarker;	
 };
