@@ -1,6 +1,7 @@
 - Added Road Checkpoint generation module.
 - Added more compositions to the supply module (including armory and food).
-- Reorganized a bunch of code.
+- Updated Dead/Empty unit module to use a trigger created via code instead of a linked trigger to optimize spawn efficiency.
+- Reorganized and optmized bunch of code.
 
 // Base class templates
 		

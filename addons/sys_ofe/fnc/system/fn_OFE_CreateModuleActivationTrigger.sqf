@@ -10,8 +10,8 @@ params [
 	["_params", [], [[]]]
 ];
 
+private _actStatement = "[thisTrigger getVariable 'objects', true] call MSF_fnc_ShowHideObjects";
 private _trig = createTrigger ["emptyDetector", getPos _logic];
-
 
 _trig setTriggerArea [_x, _y, 0, _isRectangle];
 _trig setTriggerActivation [_activationBy, _activationType, false];
@@ -23,9 +23,17 @@ switch (_type) do {
 	case "Bastion": { 
 		_trig setTriggerStatements [
 			"this",
-			"[thisTrigger getVariable 'objects', true] call MSF_fnc_ShowHideObjects",
+			_actStatement,
 			""
 		];
+	};
+	case "POI": { 
+		_trig setTriggerStatements [
+			"this",
+			_actStatement,
+			"[thisTrigger getVariable 'objects', false] call MSF_fnc_ShowHideObjects"
+		];
+		_trig setTriggerActivation [_activationBy, _activationType, true];
 	};
 	default {
 		_trig setTriggerStatements [
