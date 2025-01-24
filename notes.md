@@ -1,3 +1,6 @@
+- Added Road Checkpoint generation module.
+- Added more compositions to the supply module (including armory and food).
+- Reorganized a bunch of code.
 
 // Base class templates
 		

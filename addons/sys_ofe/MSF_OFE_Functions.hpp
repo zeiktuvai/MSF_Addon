@@ -53,6 +53,7 @@ class CfgFunctions
 			class OFE_CreateModuleAITrigger {};
 			class OFE_CreateModuleClearTrigger {};
 			class OFE_GetComposition {};
+			class OFE_GetLocationType {};
 			class OFE_SpawnLocation {};
 			class OFE_SpawnPOI {};
 		};

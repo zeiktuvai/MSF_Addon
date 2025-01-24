@@ -1,20 +1,19 @@
 params ["_trigger"];
-//TODO: Update types!
-//TODO: Add some of this to the config classes (i.e ammo/supply count).
+
 private _objects = thisTrigger getVariable 'objects';
 private _side = missionNamespace getVariable ["MSF_OFE_EnemyFaction", east];
 private _group = createGroup [_side, true];
 private _unitTypes = [0, _side] call MSF_fnc_GetConfigClasses;
 private _uTypes = [2] call MSF_fnc_GetConfigClasses;
 private _center = position _trigger;
-private _type = _trigger getVariable ["type", 0];
+private _type = _trigger getVariable ["type", "Outpost"];
+private _locationData = ["Location", _type] call MSF_fnc_OFE_GetLocationType;
 private _params = _trigger getVariable ["vars", []];
 private _str = [] call MSF_fnc_OFE_CalculateStrengthValues select 2;
-// private _supply = false;
-// private _vic = false;
-// private _vicChance = false;
+private _vicAmmo = _locationData get "VehicleAmmo";
+private _supplyCnt = _locationData get "SupplyItemCount";
+
 _params params ["_vic", "_vicChance", "_supply"];
-private ["_vicAmmo", "_supplyCnt"];
 
 [_objects, true] call MSF_fnc_ShowHideObjects;
 
@@ -24,40 +23,16 @@ private ["_vicAmmo", "_supplyCnt"];
 [_unitTypes select 5, _objects select {typeOf _x == "MSF_Placeholder_Infantry"}, _group] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
 [_unitTypes select 5, _objects, _group] call MSF_fnc_OFE_SpawnInfantryInBuildings;
 
-if (_type == 3 || _type == 4 || _type == 7 || _type == 8) then {
+if (_type in ["AirBase","HeliBase","Bastion"]) then {
 	[_uTypes select 3, _objects select {typeOf _x == "MSF_Placeholder_Heli"}] call MSF_fnc_OFE_SpawnEscapeVic;
 };
 
-if (_type == 8) then {
+if (_type == "AirBase") then {
 	[_uTypes select 4, _objects select {typeOf _x == "MSF_Placeholder_Aircraft"}] call MSF_fnc_OFE_SpawnEscapeVic;
 };
 
 [_uTypes select 5, _objects select {typeOf _x == "MSF_Placeholder_FuelTruck"}] call MSF_fnc_OFE_SpawnUnmannedVic;
 [_uTypes select 6, _objects select {typeOf _x == "MSF_Placeholder_AmmoTruck"}] call MSF_fnc_OFE_SpawnUnmannedVic;
-
-switch (_type) do {
-	case 5;
-	case 1: {
-		_vicAmmo = 500;
-		_supplyCnt = 70;
-	};
-	case 6;
-	case 2: {
-		_vicAmmo = 750;
-		_supplyCnt = 120;
-	};
-	case 3;
-	case 4;
-	case 7;
-	case 8: {
-		_vicAmmo = 1000;
-		_supplyCnt = 140;
-	};
-	default {
-		_vicAmmo = 100;
-		_supplyCnt = 30;
-	};
-};
 
 if (_supply) then {
 	private _sbox = true;
@@ -76,7 +51,7 @@ if (_vic && [_vicChance - _str] call MSF_fnc_GetSpawnChance) then {
 	[_vics] call MSF_fnc_SetRandomVehicleState;
 };
 
-if (_type == 4) then {
+if (_type == "Bastion") then {
 	private _ant = nearestObjects [_center, ["Land_Radar_01_antenna_F"], 50];
 
 	if (count _ant > 0) then {
