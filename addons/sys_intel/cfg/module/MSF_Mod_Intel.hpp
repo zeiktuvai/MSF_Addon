@@ -1,48 +1,39 @@
 class MSF_Module_Intel : Module_F
 {
 	scope = 2;
-	displayName = "Intel System - Zone";
+	displayName = "Activate/Initialize System";
 	icon = "a3\modules_f\data\iconstrategicmapinit_ca.paa";
 	category = "MSF_Module_Intel";
-	function = "";
+	function = "MSF_Intel_fnc_Mod_Init";
 	functionPriority = 1;
-	isGlobal = 1;
+	isGlobal = 0;
 	isTriggerActivated = 0;
 	isDisposable = 1;	
-	is3DEN = 0;
+	is3DEN = 1;
 	curatorCanAttach = 0;
-	canSetArea = 1;
-	canSetAreaShape = 1;
+	canSetArea = 0;
+	canSetAreaShape = 0;
 	canSetAreaHeight = 0;
 
 	class AttributeValues
 	{
-		size3[] = { 100, 100, -1 };
+		size3[] = { 0, 0, -1 };
 		isRectangle = 0;
 	};
 
 	class Attributes : AttributesBase
 	{
-		class Units : Units
-		{
-			property = "MSF_Intel_Units";
-		};
-		class Test
-		{
-			displayName = "test";
-			tooltip = "test.";
-			property = "test";
-			control = "MyAttributeControl";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "";
-			typeName = "String";			
-		};
+		// class Units : Units
+		// {
+		// 	property = "MSF_Intel_Units";
+		// };
+
 		class ModuleDescription : ModuleDescription {};
 	};
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = "MSF Intel System - Define the area and units uf an Intel Zone.";
+		description = ".";
 		sync[] = { "LocationArea_F" };
 
 		class LocationArea_F

@@ -129,7 +129,7 @@ class MSF_Module_Spawn_Supplies : Module_F
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
 			property = "MSF_Module_supply_Type";
-			defaultValue = "'Supplies'";
+			defaultValue = "'Supply'";
 			typeName = "Text";
 			class Values
 			{

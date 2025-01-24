@@ -15,3 +15,5 @@ private _def = ["POI", _stype] call MSF_fnc_OFE_GetComposition;
 
 [false, _position, _def, _stype, [_spawnSide] call BIS_fnc_sideType, [_victimSide] call BIS_fnc_sideType,
 	[_activationSide] call MSF_fnc_GetModuleActivationSide, _supplyCount, random [_min, (_min + _max) / 2, _max]] call MSF_fnc_OFE_SpawnPOI;
+
+["SUP", position _logic, "Reported Military Area", civilian, ["Color1_FD_F", "hd_warning"]] call MSF_Intel_fnc_AddIntelItem;

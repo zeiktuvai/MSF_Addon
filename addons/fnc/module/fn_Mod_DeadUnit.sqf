@@ -93,3 +93,4 @@ if (count _atSpawns > 0) then {
 
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
 [_logic, _area select 0, _area select 1, [_activationSide] call MSF_fnc_GetModuleActivationSide, "present", _area select 3, _allObjs, "POI"] call MSF_fnc_OFE_CreateModuleActivationTrigger;
+["DU", position _logic, "Reported Military Activity", civilian, ["Color3_FD_F", "hd_unknown"]] call MSF_Intel_fnc_AddIntelItem;
