@@ -97,20 +97,26 @@ class MSF_Placeholder_Armor_U : MSF_Placeholder
     scope = 2;
 };
 
-class MSF_Placeholder_Logi_Medical: MSF_Placeholder
+class MSF_Placeholder_Logi_Medical : MSF_Placeholder
 {
     displayName = "Logistics - Medical Supplies";
     scope = 2;
 };
 
-class MSF_Placeholder_Logi_Weapons: MSF_Placeholder
+class MSF_Placeholder_Logi_Weapons : MSF_Placeholder
 {
     displayName = "Logistics - Weapons Crate";
     scope = 2;
 };
 
-class MSF_Placeholder_Logi_Food: MSF_Placeholder
+class MSF_Placeholder_Logi_Food : MSF_Placeholder
 {
     displayName = "Logistics - Food Crate";
+    scope = 2;
+};
+
+class MSF_Placeholder_Logi_Ammo : MSF_Placeholder
+{
+    displayName = "Logistics - Ammo Crate";
     scope = 2;
 };

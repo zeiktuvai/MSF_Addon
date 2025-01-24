@@ -1,5 +1,5 @@
 // _type: 0 Checkpoint, 1 Outpost, 2 Base, 3 helibase, 4 bastion, 5 existing outpost, 6 existing base, 7 existing helibase, 8 existing airbase
-
+//TODO: Update Type
 params [["_logic", objNull, [objNull]], ["_def", [], [[]]], ["_type", 0, [0]], "_params"];
 
 //hint format ["%1 %2", missionNamespace getVariable "MSF_OFE_cpCount", [] call MSF_fnc_OFE_CalculateStrengthValues];
@@ -16,6 +16,7 @@ private _group = createGroup [_side, true];
 private _objects = [];
 private _allObjs = [];
 
+//TODO: Update to use classes
 switch (_type) do {
 	case 0: {
 		private _vics = [];
