@@ -9,4 +9,8 @@ class CfgFactionClasses
 	{
 		displayName = "MSF - Occupational Force Engagement";
 	};
+	class MSF_Module_Intel : NO_CATEGORY
+	{
+		displayName = "MSF - Intel System";
+	};
 };

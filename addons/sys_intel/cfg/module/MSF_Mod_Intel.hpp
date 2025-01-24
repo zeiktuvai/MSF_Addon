@@ -3,8 +3,8 @@ class MSF_Module_Intel : Module_F
 	scope = 2;
 	displayName = "Intel System - Zone";
 	icon = "a3\modules_f\data\iconstrategicmapinit_ca.paa";
-	category = "MSF_Module";
-	function = "MSF_fnc_SetupIntel";
+	category = "MSF_Module_Intel";
+	function = "";
 	functionPriority = 1;
 	isGlobal = 1;
 	isTriggerActivated = 0;

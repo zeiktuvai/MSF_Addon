@@ -3,7 +3,7 @@ class MSF_Module_IntelItem : Module_F
 	scope = 2;
 	displayName = "Intel System - Intel Item";
 	icon = "a3\modules_f\data\iconstrategicmapmission_ca.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_Intel";
 	function = "";
 	functionPriority = 1;
 	isGlobal = 0;
