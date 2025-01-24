@@ -12,8 +12,7 @@ switch _mode do
 		if (missionNamespace getVariable ["MSF_OFE_Init", false]) then {
 			private _type = "Bastion";
 			private _def = ["Location", _type] call MSF_fnc_OFE_GetComposition;
-			//TODO: Update
-			private _allObjs = [_logic, _def, 4, [true, 1, true]] call MSF_fnc_OFE_PopulatePosition;
+			private _allObjs = [_logic, _def, _type, [true, 1, true]] call MSF_fnc_OFE_PopulatePosition;
 		};
 	};
 

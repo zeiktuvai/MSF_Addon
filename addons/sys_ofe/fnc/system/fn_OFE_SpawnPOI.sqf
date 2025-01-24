@@ -121,5 +121,5 @@ switch (_type) do {
 [_logic, 400, 400, _activationSide, "present", false, _allObjs, 5] call MSF_fnc_OFE_CreateModuleActivationTrigger;
 
 if (_isOFE) then {
-	[9, _position] call MSF_fnc_OFE_CreateMapMarker;	
+	["POI", _position] call MSF_fnc_OFE_CreateMapMarker;	
 };

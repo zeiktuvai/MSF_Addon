@@ -1,5 +1,6 @@
 params ["_trigger"];
-
+//TODO: Update types!
+//TODO: Add some of this to the config classes (i.e ammo/supply count).
 private _objects = thisTrigger getVariable 'objects';
 private _side = missionNamespace getVariable ["MSF_OFE_EnemyFaction", east];
 private _group = createGroup [_side, true];
