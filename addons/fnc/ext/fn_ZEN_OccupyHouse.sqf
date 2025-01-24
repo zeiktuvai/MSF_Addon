@@ -66,12 +66,7 @@ private [
     "_sortHeight"
     ];
 
-_center = _this param [0, [0,0,0], [[]], 3];
-_units = _this param [1, [objNull], [[]]];
-_buildingRadius = _this param [2, -1, [0]];
-_putOnRoof = _this param [3, false, [true]];
-_fillEvenly = _this param [4, false, [true]];
-_sortHeight = _this param [5, false, [true]];
+params [["_center", [0,0,0], [[]], 3], ["_units", [objNull], [[]]], ["_buildingRadius", -1, [0]], ["_putOnRoof", false, [true]], ["_fillEvenly", false, [true]], ["_sortHeight" ,false, [true]]];
 
 // Check position is valid.
 if (_center isEqualTo [0,0,0]) exitWith {    

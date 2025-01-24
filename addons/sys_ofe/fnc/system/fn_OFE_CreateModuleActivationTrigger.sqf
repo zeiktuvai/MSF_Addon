@@ -6,12 +6,12 @@ params [
 	["_activationType", "present", ["present"]],
 	["_isRectangle", false, [false]],
 	["_objects", [], [[]]],
-	["_type", 0, [0]], 
+	["_type", "", [""]], 
 	["_params", [], [[]]]
 ];
 
+private _actStatement = "[thisTrigger getVariable 'objects', true] call MSF_fnc_ShowHideObjects";
 private _trig = createTrigger ["emptyDetector", getPos _logic];
-
 
 _trig setTriggerArea [_x, _y, 0, _isRectangle];
 _trig setTriggerActivation [_activationBy, _activationType, false];
@@ -19,13 +19,21 @@ _trig setVariable ["objects", _objects, true];
 _trig setVariable ["type", _type, true];
 _trig setVariable ["vars", _params, true];
 switch (_type) do {
-	case 0;
-	case 5: { 
+	case "Checkpoint";
+	case "Bastion": { 
 		_trig setTriggerStatements [
 			"this",
-			"[thisTrigger getVariable 'objects', true] call MSF_fnc_ShowHideObjects",
+			_actStatement,
 			""
 		];
+	};
+	case "POI": { 
+		_trig setTriggerStatements [
+			"this",
+			_actStatement,
+			"[thisTrigger getVariable 'objects', false] call MSF_fnc_ShowHideObjects"
+		];
+		_trig setTriggerActivation [_activationBy, _activationType, true];
 	};
 	default {
 		_trig setTriggerStatements [

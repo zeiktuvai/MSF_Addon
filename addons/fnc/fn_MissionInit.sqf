@@ -17,7 +17,6 @@ if (isServer) then {
 	[] call MSF_fnc_SetUnitDialogOption;
 	[] call MSF_fnc_ApplyDamageReduction;
 	[] call MSF_fnc_ApplyObjectActions;
-	[] call MSF_fnc_SetupMSFTriggers;
 	//[] call MSF_fnc_SetupUAVSpawnSystem;
 
 	if (getMissionConfigValue ["MSF_Mission_GM", false]) then {
@@ -41,3 +40,4 @@ if (!isServer) then
 };
 
 [] call MSF_fnc_RandomSpawn;
+

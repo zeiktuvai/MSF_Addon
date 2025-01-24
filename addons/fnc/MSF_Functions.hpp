@@ -5,34 +5,28 @@ class CfgFunctions
 		class Initialization
 		{
 			file = "z\msf\addons\fnc";
-			class Init {};
 			class MissionInit
 			{				
 				postInit = 1;
 			};
 		};
+		class ACEOptions
+		{
+			file = "z\msf\addons\fnc\ace";
+			class ACEMedUnconcious {};
+			class AntistasiEnemyPlanes {};
+		};
 		class Config
 		{
 			file = "z\msf\addons\fnc\config";
-			class GetInventoryLists {};
-			class GetLocalConfig {};
-			class GetUnitClasses {};
+			class GetConfigClasses {};
 			class GetDroneList {};
+			class GetUnitOverrideCfg {};
 		};
-		class Mission
+		class Data
 		{
-			file = "z\msf\addons\fnc\mission";
-			class ApplyEndMission {};
-			class ApplyGMActions {};
-			class ApplyObjectActions {};			
-			class RespawnVehicleCustomization {};
-			class SetupMSFTriggers {};
-			class SetupUAVSpawnSystem {};
-		};
-		class Module
-		{
-			file = "z\msf\addons\fnc\module";
-			class Mod_RandomSpawnCrash {};
+			file = "z\msf\addons\fnc\data";
+			class ParseValidArray {};
 		};
 		class Enemy
 		{
@@ -40,13 +34,77 @@ class CfgFunctions
 			class CreateAreaAirAttack {};
 			class CreateAreaBuildingDefense {};
 			class CreateAreaDefense {};
+			class CreateAreaInfantryPatrol {};
 			class CreateAreaVehicleDefense {};
 			class CreateAreaVehiclePatrol {};
-			class CreateRandomTriggerPatrol {};
 			class CreateWaveDefenseArea {};
-			class DeleteRandomTriggerPatrol {};
+			class DeleteAreaInfantryPatrol {};
 			class FortifyArea {};
+			class GeneratePatrolRoute {};
 			class SpawnGroupInSafePos {};
+		};
+		class ExternalFunctions
+		{
+			file = "z\msf\addons\fnc\ext";
+			class ZEN_OccupyHouse {};
+			class ZEN_InsertionSort {};
+			class ZEN_ExtendPosition {};
+			class ZEN_ArrayShuffle {};
+			class JBOY_UpDown {};
+		};
+		class Helpers
+		{
+			file = "z\msf\addons\fnc\helper";
+			class AddAceMainMenuItem {};
+			class FindOutsidePositionInTrigger {};
+			class FindSafeSpawnPos {};
+			class GetModuleActivationSide {};
+			class GetObjectsByProperty {};
+			class GetPlayersByProperty {};
+			class GetRadialPositionRoute {};
+			class GetRoadDirection {};
+			class GetSpawnChance {};
+			class GetUnitsByProperty {};
+			class GetVehiclesByProperty {};
+			class GetVehiclesByPropertyValue {};
+		};
+		class Inventory
+		{
+			file = "z\msf\addons\fnc\inventory";
+			class GenerateArmoryAmmo {};
+			class GenerateInventory {};
+			class GenerateRandomArmory {};
+			class GenerateRandomInventory {};
+		};
+		class Math
+		{
+			file = "z\msf\addons\fnc\math";
+			class GetAreaRadius {};
+			class OrderArrayByStartingValue {};
+		};
+		class Mission
+		{
+			file = "z\msf\addons\fnc\mission";
+			class ApplyDamageReduction {};
+			class ApplyEndMission {};
+			class ApplyGMActions {};
+			class ApplyObjectActions {};
+			class CreateActivationTrigger {};		
+			class InfiniteFuelHandler {};
+			class RespawnVehicleCustomization {};
+			class SetupUAVSpawnSystem {};
+		};
+		class Module
+		{
+			file = "z\msf\addons\fnc\module";
+			class Mod_BuildingDestroy {};
+			class Mod_DeadUnit {};
+			class Mod_InfantryVehiclePatrol {};
+			class Mod_RandomSpawnCrash {};
+			class Mod_Spawn_Checkpoint {};
+			class Mod_Spawn_Fortify {};
+			class Mod_Spawn_Supplies {};
+			class Mod_Spawn_Wave {};
 		};
 		class Multiplayer
 		{
@@ -56,43 +114,27 @@ class CfgFunctions
 			class JIPSpawnNearPlayer {};
 			class RandomSpawn {};
 		};
-		class ACEOptions
-		{
-			file = "z\msf\addons\fnc\ace";
-			class ACEMedUnconcious {};
-		};
 		class Objects
 		{
 			file = "z\msf\addons\fnc\object";
-			class ApplyBuildingDestruction {};
-			class ApplyDamageReduction {};
-			class CreateRandomSupplies {};
-			class GenerateInventory {};
-			class InfiniteFuelHandler {};
 			class SetRandomVehicleState {};
 			class SetTimeBasedInteraction {};
 			class SetUnitDialogOption {};
 			class SetVehicleDamageReduction {};
 			class ShowHideObjects {};
+		};
+		class Spawn
+		{
+			file = "z\msf\addons\fnc\spawn";
 			class SpawnSeekAndDestroyVehicles {};
 			class SpawnUAV {};
 		};
-		class Helpers
+		class TFY
 		{
-			file = "z\msf\addons\fnc\helper";
-			class AddAceMainMenuItem {};
-			class CreateActivationTrigger {};
-			class FindOutsidePositionInTrigger {};
-			class FindSafeSpawnPos {};
-			class GenerateRandomInventory {};
-			class GetAreaRadius {};
-			class GetObjectsByProperty {};
-			class GetPlayersByProperty {};
-			class GetRoadDirection {};
-			class GetSpawnChance {};
-			class GetUnitsByProperty {};
-			class GetVehiclesByProperty {};
-			class GetVehiclesByPropertyValue {};
+			file = "z\msf\addons\fnc\TFY";
+			class InitializeInternal {
+				postInit = 1;
+			};
 		};
 		class Units
 		{
@@ -109,22 +151,6 @@ class CfgFunctions
 			class SetDialogValidator {};
 			class SetCfgEntryValidator {};
 			class CheckNotifyTriggerHasArea {};
-		};
-		class ExternalFunctions
-		{
-			file = "z\msf\addons\fnc\ext";
-			class ZEN_OccupyHouse {};
-			class ZEN_InsertionSort {};
-			class ZEN_ExtendPosition {};
-			class ZEN_ArrayShuffle {};
-			class JBOY_UpDown {};
-		};
-		class TFY
-		{
-			file = "z\msf\addons\fnc\TFY";
-			class InitializeInternal {
-				postInit = 1;
-			};
 		};
 	};
 };
