@@ -23,11 +23,6 @@ class MSF_Module_Intel : Module_F
 
 	class Attributes : AttributesBase
 	{
-		// class Units : Units
-		// {
-		// 	property = "MSF_Intel_Units";
-		// };
-
 		class ModuleDescription : ModuleDescription {};
 	};
 	
