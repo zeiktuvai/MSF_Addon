@@ -63,7 +63,6 @@ class CfgFunctions
 			class GetPlayersByProperty {};
 			class GetRadialPositionRoute {};
 			class GetRoadDirection {};
-			class GetSpawnChance {};
 			class GetUnitsByProperty {};
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};
@@ -90,7 +89,8 @@ class CfgFunctions
 			class ApplyEndMission {};
 			class ApplyGMActions {};
 			class ApplyObjectActions {};
-			class CreateActivationTrigger {};		
+			class CreateActivationTrigger {};
+			class CreateMapMarker {};
 			class InfiniteFuelHandler {};
 			class RespawnVehicleCustomization {};
 			class SetupUAVSpawnSystem {};

@@ -2,7 +2,7 @@
 required data:
     - Intel Item Name 
     - Location Type
-    - Allowed Target Faction
+    - Target Type ["ThingX", "Civilian", "SoldierWB", "SoldierEB", "SoldierGB"]
     - Marker Information
         - Position <<
         - Color
@@ -20,8 +20,3 @@ required data:
         - Description
         - Position <<
 
-
-```
-
-keys _intels select { _intels get _x select 1 == east };
-```
