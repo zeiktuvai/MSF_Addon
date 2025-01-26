@@ -5,6 +5,9 @@ class CfgFunctions
 		class Initialization
 		{
 			file = "z\msf\addons\fnc";
+			class FoundationInit {
+				preInit = 1;
+			};
 			class MissionInit
 			{				
 				postInit = 1;

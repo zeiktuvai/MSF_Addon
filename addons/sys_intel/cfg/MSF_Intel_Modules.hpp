@@ -15,5 +15,7 @@ class Module_F : Logic
 	};
 };
 
-#include "module\MSF_Mod_Intel.hpp"
+class MSF_Module_Intel : Module_F {};
+
+#include "module\MSF_Mod_IntelItem.hpp"
 #include "module\MSF_Mod_IntelObjects.hpp"

@@ -93,4 +93,6 @@ if (count _atSpawns > 0) then {
 
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
 [_logic, _area select 0, _area select 1, [_activationSide] call MSF_fnc_GetModuleActivationSide, "present", _area select 3, _allObjs, "POI"] call MSF_fnc_OFE_CreateModuleActivationTrigger;
-["DEADUNIT_MOD", position _logic, "Reported Military Activity", ["CIV", "OBJ"], ["hd_unknown", "Color3_FD_F"], ["MapUpdate", "Map updated with reported Military Activity."]] call MSF_Intel_fnc_AddIntelItem;
+
+private _desc = "Reported Military Activity";
+["DEADUNIT_MOD", position _logic, _desc, ["CIV", "OBJ"], ["hd_warning", "Color1_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], _desc] call MSF_Intel_fnc_AddIntelItem;

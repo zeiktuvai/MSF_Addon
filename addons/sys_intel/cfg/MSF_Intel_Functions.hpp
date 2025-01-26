@@ -16,7 +16,7 @@ class CfgFunctions
 		class Module
 		{
 			file = "z\msf\addons\sys_intel\fnc\module";
-			class Mod_Init {};
+			class Mod_IntelItem {};
 			class Mod_IntelObjects {};
 		};
 	};

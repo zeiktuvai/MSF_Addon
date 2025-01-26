@@ -61,7 +61,8 @@ _allObjs append _objects;
 [_logic, _activationRange, _activationRange, _friendlySide, "present", false, _allObjs, _type, _params] call MSF_fnc_OFE_CreateModuleActivationTrigger;
 
 //TODO: Consolidate this
-[_type, _position, format ["Reported Location of %1", _type], ["CIV", "MIL", "OBJ"], ["mil_dot", "Color1_FD_F"], ["MapUpdate", "Map updated with reported enemy location."]] call MSF_Intel_fnc_AddIntelItem;
+private _desc = format ["Reported Location of %1", _type];
+[_type, _position, _desc, ["CIV", "MIL", "OBJ"], ["mil_dot", "Color1_FD_F"], ["MapUpdate", "Map updated with reported enemy location."], _desc] call MSF_Intel_fnc_AddIntelItem;
 if (_isOFE select 0) then {
 	[_type, _position] call MSF_fnc_OFE_CreateMapMarker;	
 };
