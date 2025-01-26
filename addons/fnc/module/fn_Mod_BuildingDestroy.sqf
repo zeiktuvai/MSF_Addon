@@ -9,7 +9,7 @@ private _modPos = position _logic;
 
 private _houses = nearestObjects [_modPos, ["house"], _area];
 {
-   if ([_prob] call MSF_fnc_GetSpawnChance) then
+   if ([_prob] call MSF_fnc_CalculateProbability) then
    {
 		private _dam = random 1;
 		if (_dam > 0.5) then { _dam = 1; };
@@ -20,7 +20,7 @@ private _houses = nearestObjects [_modPos, ["house"], _area];
 if (_fire) then {	
 	{
 		if (damage _x >= 0.6) then {			
-			if ([_fireProb] call MSF_fnc_GetSpawnChance) then {
+			if ([_fireProb] call MSF_fnc_CalculateProbability) then {
 				"test_EmptyObjectForFireBig" createVehicle position _x;				
 			};
 		};

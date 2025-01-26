@@ -17,7 +17,7 @@ for "_i" from 1 to _num do {
 		sleep 0.1;
 	};
 
-	if ([_prob] call MSF_fnc_GetSpawnChance) then {	
+	if ([_prob] call MSF_fnc_CalculateProbability) then {	
 		private _pos = [_trigger] call MSF_fnc_FindSafeSpawnPos;
 		private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
 

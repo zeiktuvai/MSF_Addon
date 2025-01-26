@@ -79,6 +79,7 @@ class CfgFunctions
 		class Math
 		{
 			file = "z\msf\addons\fnc\math";
+			class CalculateProbability {};
 			class GetAreaRadius {};
 			class OrderArrayByStartingValue {};
 		};

@@ -28,7 +28,7 @@ for "_i" from 1 to _num do {
 		sleep 0.1;
 	};
 	
-	if ([_spawnProb] call MSF_fnc_GetSpawnChance) then {	
+	if ([_spawnProb] call MSF_fnc_CalculateProbability) then {	
 		private _type = selectRandom _vicTypes;
 		private _pos = [[[[position _trigger, _logicArea select 1]], []] call BIS_fnc_randomPos, 5, 100, 3, 0, 10, 0] call BIS_fnc_findSafePos;
 		private _vic = [_pos, 0, _type, _side] call BIS_fnc_spawnVehicle;
@@ -40,7 +40,7 @@ for "_i" from 1 to _num do {
 		//
 		if (_spawnType == 0) then {
 
-			if ([_fill] call MSF_fnc_GetSpawnChance) then {		
+			if ([_fill] call MSF_fnc_CalculateProbability) then {		
 				_totalSlots = ([_type, true] call BIS_fnc_crewCount);
 				_cargoSlots = ([_type, false] call BIS_fnc_crewCount);
 				_availSlots = _totalSlots - _cargoSlots - count crew (_vic select 0);
