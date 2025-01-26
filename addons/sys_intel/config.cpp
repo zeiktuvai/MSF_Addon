@@ -27,7 +27,7 @@ class CfgNotifications
 		title = "Map Updated.";
 		iconPicture = "a3\ui_f\data\gui\rsc\rscdisplayarsenal\map_ca.paa";
 		iconText = "";
-		description = "Check your map for %1.";
+		description = "%1.";
 		color[] = {1,1,1,1};
 		duration = 5;
 	};

@@ -6,7 +6,7 @@ if ([_chance] call MSF_fnc_CalculateProbability) then {
 
 	if (!isNil "_item") exitWith {
 	[_item select 0, _item select 1, _item select 3, _item select 4 select 0, _item select 4 select 1] call MSF_fnc_CreateMapMarker;
-	["MapUpdate", [_item select 1]] remoteExec ["BIS_fnc_showNotification"];
+	[_item select 5 select 0, [_item select 5 select 1]] remoteExec ["BIS_fnc_showNotification"];
 	_intels deleteAt (_item select 0);
 	};
 };
