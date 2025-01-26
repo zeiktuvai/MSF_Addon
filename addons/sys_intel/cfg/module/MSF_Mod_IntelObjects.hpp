@@ -5,8 +5,8 @@ class MSF_Module_IntelObjects : Module_F
 	icon = "a3\modules_f\data\iconstrategicmapmission_ca.paa";
 	category = "MSF_Module_Intel";
 	function = "MSF_Intel_fnc_Mod_IntelObjects";
-	functionPriority = 1;
-	isGlobal = 1;
+	functionPriority = 2;
+	isGlobal = 0;
 	isTriggerActivated = 0;
 	isDisposable = 1;	
 	is3DEN = 0;
@@ -27,14 +27,23 @@ class MSF_Module_IntelObjects : Module_F
 		{
 			property = "MSF_Intel_Mod_Units";
 		};
-		class IntelChance
+		class InteractionChance
 		{
-			displayName = "Intel Change";
-			tooltip = "Percent chance that an object will have intel.";
-			property = "MSF_Intel_Mod_Chance";
+			displayName = "Prompt Chance";
+			tooltip = "Percent chance that an object will have an interaction prompt to check for intel.";
+			property = "MSF_Intel_Mod_InteractChance";
 			control = "Slider";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 0.5;
+		};
+		class IntelChance
+		{
+			displayName = "Chance of Intel";
+			tooltip = "Percent chance that an object will have intel.";
+			property = "MSF_Intel_Mod_IntelChance";
+			control = "Slider";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 0.6;
 		};
         // class MarkerLayer
 		// {

@@ -6,6 +6,12 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\sys_intel\fnc\data";
 			class AddIntelItem {};
+			class GetIntelItem {};
+		};
+		class interaction
+		{
+			file = "z\msf\addons\sys_intel\fnc\interaction";
+			class AddIntelInteraction {};
 		};
 		class Module
 		{
