@@ -59,7 +59,12 @@ switch (_type) do {
 _allObjs append _objects;
 
 [_logic, _activationRange, _activationRange, _friendlySide, "present", false, _allObjs, _type, _params] call MSF_fnc_OFE_CreateModuleActivationTrigger;
-[_type, _position] call MSF_fnc_OFE_CreateMapMarker;
+
+[_type, _position, format ["Reported Location of %1", _type], ["CIV", "MIL", "OBJ"], ["mil_dot", "Color1_FD_F"]] call MSF_Intel_fnc_AddIntelItem;
+
+if (_isOFE select 0) then {
+	[_type, _position] call MSF_fnc_OFE_CreateMapMarker;	
+};
 
 if (_type in ["Checkpoint","Outpost","Base","HeliBase","Bastion"]) then {
 	[_allObjs, false] call MSF_fnc_ShowHideObjects;

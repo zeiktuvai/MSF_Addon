@@ -7,19 +7,15 @@ class display3DEN
 		{
 			class Items
 			{
-				class Attributes
+				items[] += {"MSF"};
+				class MSF
 				{
-					items[] += { "MSF_Folder" };
-				};
-				class MSF_Folder
-				{
+					items[] = { "MSF_Settings", "MSF_CFG_Multi", "Separator", "MSFDocs" };					
 					text = "Mission Support Foundation";
-					items[] = { "MSF_Settings", "MSF_CFG_Multi", "MSFDocs" };
-					picture = "\a3\3DEN\Data\Displays\Display3DEN\ToolBar\open_ca.paa";
-				};
+				};				
 				class MSF_Settings
 				{
-					text = "MSF Settings";
+					text = "Mission Settings";
 					action = "edit3DENMissionAttributes 'MSFSettings';";
 					picture = "z\msf\addons\main\ui\MSF_icon.paa";
 					opensNewWindow = 1;
