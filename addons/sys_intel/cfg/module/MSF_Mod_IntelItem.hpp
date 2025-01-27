@@ -4,7 +4,7 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 	displayName = "Intel Item/Location";
 	icon = "a3\modules_f\data\iconstrategicmapmission_ca.paa";
 	category = "MSF_Module_Intel";
-	function = "";
+	function = "MSF_Intel_fnc_Mod_IntelItem";
 	functionPriority = 2;
 	isGlobal = 0;
 	isTriggerActivated = 0;
@@ -28,7 +28,7 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 			displayName = "Short Description";
 			tooltip = "Short descriptive name of the intel item.";
 			property = "MSF_MOD_IntelItem_Name";
-			control = "EditShort";
+			control = "Edit";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "''";
             typeName = "STRING";
@@ -169,10 +169,66 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 			displayName = "Notification Text";
 			tooltip = "Custom text to display in notification.";
 			property = "MSF_MOD_IntelItem_NotifText";
-			control = "EditShort";
+			control = "Edit";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "''";
             typeName = "STRING";
+		};
+		class IntelItem_Diary
+		{
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "Intel Diary Entry";
+		};
+		class DiaryText
+		{
+			displayName = "Diary Text";
+			tooltip = "Array of group classes for spawning.";
+			property = "MSF_Mod_IntelItem_Diary";
+			control = "EditCode";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "''";
+		};
+		class IntelItem_Task
+		{
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "Task Settings";
+		};
+		class TaskTitle
+		{
+			displayName = "Task Title";
+			tooltip = "Title of task to create.";
+			property = "MSF_Mod_IntelItem_Task";
+			control = "Edit";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "''";
+		};
+		class TaskDesc
+		{
+			displayName = "Task Description";
+			tooltip = "Description of task to create.";
+			property = "MSF_Mod_IntelItem_TaskDesc";
+			control = "EditMulti5";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "''";
+		};
+		class TaskAssigned
+		{
+			displayName = "Set as Current";
+			tooltip = "Assigns the item as the current task when intel is discovered.";
+			property = "MSF_Mod_IntelItem_TaskAssgn";
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "false";
+		};
+		class TaskType
+		{
+			displayName = "Task Type";
+			property = "MSF_Mod_IntelItem_TaskType";
+			control = "TaskTypes";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "'Default'";
 		};
 
 		class ModuleDescription : ModuleDescription {};
@@ -180,7 +236,7 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = ".";
+		description = "Adds a manual entry to the intel system.";
 		sync[] = { "LocationArea_F" };
 
 		class LocationArea_F

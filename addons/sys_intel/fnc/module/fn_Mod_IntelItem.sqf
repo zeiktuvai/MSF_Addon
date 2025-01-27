@@ -8,7 +8,14 @@ private _obj = _logic getVariable ["AllowOBJ", true];
 private _marker = _logic getVariable ["MarkerType", "hd_unknown"];
 private _markerColor = _logic getVariable ["MarkerColor", 0];
 private _notif = _logic getVariable ["NotificationType", "MapUpdate"];
-private _notifText = _logic getVariable ["NotificationText", "Map Updated."];
+private _notifText = _logic getVariable ["NotificationText", ""];
+private _diary = _logic getVariable ["DiaryText", ""];
+private _taskTitle = _logic getVariable ["TaskTitle", ""];
+private _taskDesc = _logic getVariable ["TaskDesc", ""];
+private _taskAssgn = _logic getVariable ["TaskAssigned", false];
+private _taskType = _logic getVariable ["TaskType", "Default"];
+private _taskID = [format ["task_%1", _position select 0]] call BIS_fnc_filterString;
+_logic setVariable ["TaskID", _taskID];
 private _targets = [];
 
 // Get Targets
@@ -16,21 +23,13 @@ if (_civ) then { _targets pushBack "CIV"; };
 if (_mil) then { _targets pushBack "MIL"; };
 if (_obj) then { _targets pushBack "OBJ"; };
 
-// Get synced task
-_modules = _logic call BIS_fnc_moduleModules;
-_module = objNull;
-
-{if (typeOf _x == "ModuleTaskCreate_F") exitWith {_module = _x}} forEach _modules;
-if (isNull _module) exitWith {false};
-
-_task = _module getVariable ["ID", ""];
-if (_task == "") exitWith {false};
-
-[_task, objNull, _task call BIS_fnc_taskDescription, _task call BIS_fnc_taskDestination, "CREATED", 10, false] call BIS_fnc_setTask;
-
-// Get Marker Data
-private _markerData = []; //[getMarkerType _marker, getMarkerColor _marker];
-//deleteMarker _marker;
-
-
-["MANUAL", _position, _name, _targets, _markerData, [_notif, _notifText], [], [_task]] call MSF_Intel_fnc_AddIntelItem;
+[
+	"MANUAL",
+	_position,
+	_name,
+	_targets,
+	[ _marker, _markerColor],
+	[_notif, _notifText],
+	[_name, _diary] select (_diary != ""),
+	[_taskID, _taskTitle, _taskDesc, _taskType, ["CREATED", "ASSIGNED"] select (_taskAssgn)]
+] call MSF_Intel_fnc_AddIntelItem;

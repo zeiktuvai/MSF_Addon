@@ -38,4 +38,4 @@ Notification
 Diary
     Description = Diary Content
 Tasks
-    []
+    [_taskID, _taskTitle, _taskDesc, _taskType, Task State]
