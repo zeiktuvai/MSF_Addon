@@ -1,4 +1,4 @@
-params [["_object", objNull, [objNull]], ["_intelChance", 0.6, [1]], ["_isUnit", true, [true]]];
+params [["_object", objNull, [objNull]], ["_intelChance", 0.6, [1]]];
 
 private _parents = [configOf _object, true] call BIS_fnc_returnParents;
 private _prompt = "Ask for Information";

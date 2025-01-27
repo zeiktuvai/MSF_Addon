@@ -54,6 +54,21 @@ class MSF_Module_Spawn_RoadCheckpoint : Module_F
 				};
 			};	
 		};
+		class Integrations
+		{
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "Integrations";
+		};
+		class IntelIntegration
+		{
+			displayName = "Intel System";
+			tooltip = "Automatically add this module to the intel system as an intel item on mission start.";
+			property = "MSF_Mod_Checkpoint_Integrate_Intel";
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";					
+			defaultValue = "true";
+		};
 
 		class ModuleDescription : ModuleDescription {};
 	};

@@ -8,6 +8,7 @@ private _type = _logic getVariable ["SpawnType", "Supply"];
 private _supplyCount = _logic getVariable ["NumItems", 50];
 private _min = _logic getVariable ["VicAmmoMin", 250];
 private _max = _logic getVariable ["VicAmmoMax", 750];
+private _intel = _logic getVariable ["IntelIntegration", true];
 
 private _stype = if (_type == "Random") then { selectRandom ["Vehicle", "Armor", "Supply", "Medical", "Armory", "Food"] } else { _type };
 
@@ -26,4 +27,6 @@ switch (_stype) do {
 	case "Armory": { _desc = "Reported Military Logistics" };
 };
 
-["SUPPLLY_MOD", position _logic, _desc, ["CIV", "MIL", "OBJ"], ["hd_unknown", "Color3_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], _desc] call MSF_Intel_fnc_AddIntelItem;
+if (_intel) then {
+	["SUPPLLY_MOD", position _logic, _desc, ["CIV", "MIL", "OBJ"], ["hd_unknown", "Color3_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], _desc] call MSF_Intel_fnc_AddIntelItem;
+};

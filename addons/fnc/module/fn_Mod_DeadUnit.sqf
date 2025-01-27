@@ -13,6 +13,10 @@ private _override = _logic getVariable ["UnitClasses", ""];
 private _vicDefault = _logic getVariable ["VicClassOverride", true];
 private _armorDefault = _logic getVariable ["ArmorClassOverride", true];
 private _area = _logic getVariable ["objectArea", [0,0,0,false,-1]];
+private _intel = _logic getVariable ["IntelIntegration", true];
+private _intelP = _logic getVariable ["IntelProvider", false];
+private _interactC = _logic getVariable ["InteractionChance", 0.7];
+private _intelC = _logic getVariable ["IntelChance", 0.2];
 private _group = objNull;
 private _allObjs = [];
 
@@ -91,8 +95,20 @@ if (count _atSpawns > 0) then {
 	_allObjs append ([_types, _atSpawns] call MSF_fnc_OFE_SpawnUnmannedVic);
 };
 
+// intel system
+if (_intelP && _type in ["Mil_NATO", "Mil_OPFOR", "Mil_IND"]) then
+{
+	{		
+		if ([_interactC] call MSF_fnc_CalculateProbability) then {
+			[_x, _intelC] call MSF_Intel_fnc_AddIntelInteraction;
+		};		
+	} forEach units _group;
+};
+
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
 [_logic, _area select 0, _area select 1, [_activationSide] call MSF_fnc_GetModuleActivationSide, "present", _area select 3, _allObjs, "POI"] call MSF_fnc_OFE_CreateModuleActivationTrigger;
 
-private _desc = "Reported Military Activity";
-["DEADUNIT_MOD", position _logic, _desc, ["CIV", "OBJ"], ["hd_warning", "Color1_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], _desc] call MSF_Intel_fnc_AddIntelItem;
+if (_intel) then {
+	private _desc = "Reported Military Activity";
+	["DEADUNIT_MOD", position _logic, _desc, ["CIV", "OBJ"], ["hd_warning", "Color1_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], _desc] call MSF_Intel_fnc_AddIntelItem;
+};
