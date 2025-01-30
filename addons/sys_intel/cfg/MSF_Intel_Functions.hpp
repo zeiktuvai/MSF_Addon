@@ -2,13 +2,7 @@ class CfgFunctions
 {
     class MSF_Intel
 	{
-		class Data
-		{
-			file = "z\msf\addons\sys_intel\fnc\data";
-			class AddIntelItem {};
-			class GetIntelItem {};
-		};
-		class interaction
+		class Interaction
 		{
 			file = "z\msf\addons\sys_intel\fnc\interaction";
 			class AddIntelInteraction {};
@@ -16,9 +10,17 @@ class CfgFunctions
 		class Module
 		{
 			file = "z\msf\addons\sys_intel\fnc\module";
+			class Mod_IntelLevel {};
 			class Mod_IntelItem {};
 			class Mod_IntelItemTask {};
 			class Mod_IntelObjects {};
+		};
+		class System
+		{
+			file = "z\msf\addons\sys_intel\fnc\system";
+			class AddIntelItem {};
+			class GetIntelItem {};
+			class SetIntelLevel {};
 		};
 	};
 };

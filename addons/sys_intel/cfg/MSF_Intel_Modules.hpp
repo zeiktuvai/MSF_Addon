@@ -20,3 +20,4 @@ class MSF_Module_Intel : Module_F {};
 #include "module\MSF_Mod_IntelItem.hpp"
 #include "module\MSF_Mod_IntelItemTask.hpp"
 #include "module\MSF_Mod_IntelObjects.hpp"
+#include "module\MSF_Mod_SetIntelLevel.hpp"

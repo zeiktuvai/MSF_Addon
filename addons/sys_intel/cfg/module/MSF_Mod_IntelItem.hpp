@@ -5,7 +5,7 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 	icon = "a3\modules_f\data\iconstrategicmapmission_ca.paa";
 	category = "MSF_Module_Intel";
 	function = "MSF_Intel_fnc_Mod_IntelItem";
-	functionPriority = 2;
+	functionPriority = 1;
 	isGlobal = 0;
 	isTriggerActivated = 0;
 	isDisposable = 1;	
@@ -32,6 +32,43 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "''";
             typeName = "STRING";
+		};
+		class IntelLevel
+		{
+			displayName = "Required Intel Level";
+			tooltip = "Mission intel level required for this item to be available to players.";
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			property = "MSF_MOD_IntelItem_Level";
+			defaultValue = 1;
+			typeName = "NUMBER";
+			class Values
+			{
+				class Level1
+				{
+					name = "Level 1";
+					tooltip = "Level 1";
+					value = 1;
+				};
+				class Level2
+				{
+					name = "Level 2";
+					tooltip = "Level 2";
+					value = 2;
+				};
+				class Level3
+				{
+					name = "Level 3";
+					tooltip = "Level 3";
+					value = 3;
+				};
+				class Level4
+				{
+					name = "Level 4";
+					tooltip = "Level 4";
+					value = 4;
+				};
+			};
 		};
 		class IntelItem_Targets
 		{
@@ -151,7 +188,7 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 			tooltip = "Type of notification that will be displayed.";
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			property = "MSF_MOD_IntelItem_Notification";
+			property = "MSDisplayes the Map updated notification with custom textF_MOD_IntelItem_Notification";
 			defaultValue = "'MapUpdate'";
 			typeName = "STRING";
 			class Values

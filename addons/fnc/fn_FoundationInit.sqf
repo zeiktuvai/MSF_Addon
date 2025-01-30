@@ -3,11 +3,10 @@ if (isServer) then {
 	missionNamespace setVariable ["MSF", createHashMap, true];
 	missionNamespace setVariable ["MSF_IntelItems", createHashMap, true];
 
-	// System Vars
+	// initial Values
 	private _foundation = missionNamespace getVariable "MSF";
-	_foundation set ["isIntelEnabled", [] call MSF_fnc_GetIsIntelEnabled];
-
-	
+	_foundation set ["IntelEnabled", false];
+	_foundation set ["IntelLevel", 1];
 };
 
 if (!isDedicated)  then {

@@ -14,6 +14,7 @@ private _taskTitle = _logic getVariable ["TaskTitle", ""];
 private _taskDesc = _logic getVariable ["TaskDesc", ""];
 private _taskAssgn = _logic getVariable ["TaskAssigned", false];
 private _taskType = _logic getVariable ["TaskType", "Default"];
+private _level = _logic getVariable ["IntelLevel", 1];
 private _taskID = [format ["task_%1", _position select 0]] call BIS_fnc_filterString;
 _logic setVariable ["TaskID", _taskID];
 private _targets = [];
@@ -28,6 +29,7 @@ if (_obj) then { _targets pushBack "OBJ"; };
 	_position,
 	_name,
 	_targets,
+	_level,
 	[ _marker, _markerColor],
 	[_notif, _notifText],
 	[_name, _diary] select (_diary != ""),

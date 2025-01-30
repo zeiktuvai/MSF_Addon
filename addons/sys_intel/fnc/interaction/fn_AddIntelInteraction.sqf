@@ -10,7 +10,7 @@ private _failAction = {[_target, objNull] remoteExec ["doWatch", 2];};
 private _actTime = 5;
 private _type = "CIV";
 
-if ("ThingX" in _parents) then {
+if (_parents findIf { _x == "Item_Base_F" || _x == "Items_base_F" } != -1) then {
 	_prompt = "Look for Intel";
 	_icon = "a3\ui_f\data\gui\rsccommon\rscbuttonsearch\search_start_ca.paa";
 	_iconHold = "a3\ui_f\data\igui\cfg\holdactions\holdaction_search_ca.paa";

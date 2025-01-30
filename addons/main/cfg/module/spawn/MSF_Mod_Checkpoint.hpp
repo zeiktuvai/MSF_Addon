@@ -7,7 +7,7 @@ class MSF_Module_Spawn_RoadCheckpoint : Module_F
 	function = "MSF_fnc_Mod_Spawn_Checkpoint";
 	functionPriority = 1;
 	isGlobal = 0;
-	isTriggerActivated = 1;
+	isTriggerActivated = 0;
 	isDisposable = 1;	
 	is3DEN = 0;
 	curatorCanAttach = 0;

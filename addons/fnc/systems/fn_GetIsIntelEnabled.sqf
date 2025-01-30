@@ -4,4 +4,7 @@ if (count ("MSF_Module_IntelObjects" allObjects 1) > 0 || count ("MSF_Module_Spa
 	_isIntel = true;
 };
 
+private _foundation = missionNamespace getVariable "MSF";
+_foundation set ["isIntelEnabled", _isIntel];
+
 _isIntel;

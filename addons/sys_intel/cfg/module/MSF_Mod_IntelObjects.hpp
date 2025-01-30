@@ -5,7 +5,7 @@ class MSF_Module_IntelObjects : MSF_Module_Intel
 	icon = "a3\modules_f_bootcamp\data\iconhint.paa";
 	category = "MSF_Module_Intel";
 	function = "MSF_Intel_fnc_Mod_IntelObjects";
-	functionPriority = 2;
+	functionPriority = 1;
 	isGlobal = 0;
 	isTriggerActivated = 0;
 	isDisposable = 1;	

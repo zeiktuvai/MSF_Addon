@@ -1,5 +1,7 @@
 params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", true, [true]]];
 
+[] call MSF_fnc_GetIsIntelEnabled;
+
 private _type = _logic getVariable ["UnitTypes", "Civ_African"];
 private _infSpawns = _units select { typeOf _x == "MSF_Placeholder_Infantry_D"};
 private _vicSpawns = _units select { typeOf _x == "MSF_Placeholder_Vehicle_U"};
@@ -110,5 +112,5 @@ if (_intelP && _type in ["Mil_NATO", "Mil_OPFOR", "Mil_IND"]) then
 
 if (_intel) then {
 	private _desc = "Reported Military Activity";
-	["DEADUNIT_MOD", position _logic, _desc, ["CIV", "OBJ"], ["hd_warning", "Color1_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], _desc] call MSF_Intel_fnc_AddIntelItem;
+	["DEADUNIT_MOD", position _logic, _desc, ["CIV", "OBJ"], 1, ["hd_warning", "Color1_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], _desc] call MSF_Intel_fnc_AddIntelItem;
 };

@@ -28,5 +28,5 @@ switch (_stype) do {
 };
 
 if (_intel) then {
-	["SUPPLLY_MOD", position _logic, _desc, ["CIV", "MIL", "OBJ"], ["hd_unknown", "Color3_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], _desc] call MSF_Intel_fnc_AddIntelItem;
+	["SUPPLLY_MOD", position _logic, _desc, ["CIV", "MIL", "OBJ"], 1, ["hd_unknown", "Color3_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], _desc] call MSF_Intel_fnc_AddIntelItem;
 };

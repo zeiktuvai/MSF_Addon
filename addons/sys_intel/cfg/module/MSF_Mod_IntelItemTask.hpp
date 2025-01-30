@@ -5,7 +5,7 @@ class MSF_Module_IntelItem_Task : MSF_Module_Intel
 	icon = "\a3\Modules_F\Data\iconTaskSetState_ca.paa";
 	category = "MSF_Module_Intel";
 	function = "MSF_Intel_fnc_Mod_IntelItemTask";
-	functionPriority = 2;
+	functionPriority = 1;
 	isGlobal = 0;
 	isTriggerActivated = 1;
 	isDisposable = 1;	
