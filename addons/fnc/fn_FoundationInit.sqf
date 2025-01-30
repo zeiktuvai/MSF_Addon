@@ -9,6 +9,4 @@ if (isServer) then {
 	_foundation set ["IntelLevel", 1];
 };
 
-if (!isDedicated)  then {
-	localNamespace setVariable ["MSF_Local", createHashMap];
-};
+localNamespace setVariable ["MSF_Local", createHashMap];

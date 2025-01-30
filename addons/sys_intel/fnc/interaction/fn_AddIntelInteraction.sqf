@@ -4,7 +4,7 @@ private _parents = [configOf _object, true] call BIS_fnc_returnParents;
 private _prompt = "Ask for Information";
 private _icon = "a3\3den\data\cfgwaypoints\talk_ca.paa";
 private _iconHold = "a3\missions_f_oldman\data\img\holdactions\holdaction_talk_ca.paa";
-private _showCondition = "!(_target getVariable ['MSF_Intel_Activated', false])";
+private _showCondition = "!(_target getVariable ['MSF_Intel_Activated', false]) && (_this distance _target < 3)";
 private _actCondition = "true";
 private _failAction = {[_target, objNull] remoteExec ["doWatch", 2];};
 private _actTime = 5;
@@ -20,7 +20,7 @@ if (_parents findIf { _x == "Item_Base_F" || _x == "Items_base_F" } != -1) then 
 
 if ("Civilian" in _parents) then {
 	_actCondition = "currentWeapon _caller == """"";
-	_showCondition = "!(_target getVariable ['MSF_Intel_Activated', false]) && [_target] call ace_medical_status_fnc_isInStableCondition";
+	_showCondition = _showCondition + " && [_target] call ace_medical_status_fnc_isInStableCondition";
 	_prompt = "Ask for Information";
 	_failAction = {[_target, objNull] remoteExec ["doWatch", 2]; hint "Civilians will not talk to you if they feel threatened.";};
 };
