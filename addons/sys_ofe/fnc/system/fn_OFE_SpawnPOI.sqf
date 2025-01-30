@@ -12,7 +12,7 @@ private _enemyTypes = ([0, _enemySide] call MSF_fnc_GetConfigClasses) select 5;
 
 [_deadUnitTypes, _objects select {typeOf _x == "MSF_Placeholder_Infantry_D"}, _group] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
 
-if ([0.5] call MSF_fnc_GetSpawnChance) then
+if ([0.5] call MSF_fnc_CalculateProbability) then
 {
 	[_enemyTypes, _objects select {typeOf _x == "MSF_Placeholder_Infantry"}, _eGroup] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
 };

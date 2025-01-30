@@ -7,7 +7,7 @@ class MSF_Module_Spawn_RoadCheckpoint : Module_F
 	function = "MSF_fnc_Mod_Spawn_Checkpoint";
 	functionPriority = 1;
 	isGlobal = 0;
-	isTriggerActivated = 1;
+	isTriggerActivated = 0;
 	isDisposable = 1;	
 	is3DEN = 0;
 	curatorCanAttach = 0;
@@ -53,6 +53,21 @@ class MSF_Module_Spawn_RoadCheckpoint : Module_F
 					value = 1;
 				};
 			};	
+		};
+		class Integrations
+		{
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "Integrations";
+		};
+		class IntelIntegration
+		{
+			displayName = "Intel System";
+			tooltip = "Automatically add this module to the intel system as an intel item on mission start.";
+			property = "MSF_Mod_Checkpoint_Integrate_Intel";
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";					
+			defaultValue = "true";
 		};
 
 		class ModuleDescription : ModuleDescription {};

@@ -10,6 +10,8 @@
 	Function Ver 2.0
 	Implemented in: MSF Addon v1.0
 */
+
+
 if (isServer) then {
 	[] call MSF_fnc_ACEMedUnconcious;
 	[] call MSF_fnc_GenerateInventory;
@@ -40,4 +42,3 @@ if (!isServer) then
 };
 
 [] call MSF_fnc_RandomSpawn;
-

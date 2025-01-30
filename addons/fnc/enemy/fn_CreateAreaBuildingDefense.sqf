@@ -28,7 +28,7 @@ if (_bldgFound) then {
 	for "_i" from 1 to _num do {
 		sleep 0.1;
 	
-		if ([_bldgProb] call MSF_fnc_GetSpawnChance) then {	
+		if ([_bldgProb] call MSF_fnc_CalculateProbability) then {	
 			private _pos = [[[position _trigger, _radius]], []] call BIS_fnc_randomPos;
 			//[_trigger] call BIS_fnc_randomPosTrigger;
 			private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;

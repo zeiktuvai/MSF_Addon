@@ -37,7 +37,7 @@ if (_type == "AirBase") then {
 if (_supply) then {
 	private _sbox = true;
 	if (_str > 0.80) then {
-		_sbox = [0.5] call MSF_fnc_GetSpawnChance;
+		_sbox = [0.5] call MSF_fnc_CalculateProbability;
 	};
 
 	if (_sbox) then {
@@ -46,7 +46,7 @@ if (_supply) then {
 	};
 };
 
-if (_vic && [_vicChance - _str] call MSF_fnc_GetSpawnChance) then {
+if (_vic && [_vicChance - _str] call MSF_fnc_CalculateProbability) then {
 	private _vics = [_uTypes select 0, _objects select {typeOf _x == "MSF_Placeholder_Vehicle_U"}] call MSF_fnc_OFE_SpawnUnmannedVic;
 	[_vics] call MSF_fnc_SetRandomVehicleState;
 };

@@ -1,5 +1,5 @@
 // _type: 0 Checkpoint, 1 Outpost, 2 Base, 3 helibase, 4 bastion, 5 existing outpost, 6 existing base, 7 existing helibase, 8 existing airbase
-params [["_logic", objNull, [objNull]], ["_def", [], [[]]], ["_type", "", [""]], "_params", ["_existing", false, [false]], ["_isOFE", [true], [[]]]];
+params [["_logic", objNull, [objNull]], ["_def", [], [[]]], ["_type", "", [""]], "_params", ["_existing", false, [false]], ["_isOFE", [true], [[]]], ["_intel", true, [true]]];
 
 //hint format ["%1 %2", missionNamespace getVariable "MSF_OFE_cpCount", [] call MSF_fnc_OFE_CalculateStrengthValues];
 
@@ -59,7 +59,15 @@ switch (_type) do {
 _allObjs append _objects;
 
 [_logic, _activationRange, _activationRange, _friendlySide, "present", false, _allObjs, _type, _params] call MSF_fnc_OFE_CreateModuleActivationTrigger;
-[_type, _position] call MSF_fnc_OFE_CreateMapMarker;
+
+//TODO: Consolidate this
+if (_intel) then {
+	private _desc = format ["Reported Location of %1", _type];
+	[_type, _position, _desc, ["CIV", "MIL", "OBJ"], 1, ["mil_dot", "Color1_FD_F"], ["MapUpdate", "Map updated with reported enemy location."], _desc] call MSF_Intel_fnc_AddIntelItem;
+};
+if (_isOFE select 0) then {
+	[_type, _position] call MSF_fnc_OFE_CreateMapMarker;	
+};
 
 if (_type in ["Checkpoint","Outpost","Base","HeliBase","Bastion"]) then {
 	[_allObjs, false] call MSF_fnc_ShowHideObjects;

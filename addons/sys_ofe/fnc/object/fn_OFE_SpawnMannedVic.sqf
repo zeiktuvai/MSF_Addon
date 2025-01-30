@@ -5,7 +5,7 @@ if (count _objects > 0) then {
 	private _str = 1 - ([] call MSF_fnc_OFE_CalculateStrengthValues select 2);
 
 	{
-		if ([_str] call MSF_fnc_GetSpawnChance) then {
+		if ([_str] call MSF_fnc_CalculateProbability) then {
 			private _vic = [position _x , 0, selectRandom _unitTypes, _side] call BIS_fnc_spawnVehicle;
 			_vics pushBack (_vic select 0);		
 		};

@@ -5,6 +5,9 @@ class CfgFunctions
 		class Initialization
 		{
 			file = "z\msf\addons\fnc";
+			class FoundationInit {
+				preInit = 1;
+			};
 			class MissionInit
 			{				
 				postInit = 1;
@@ -26,7 +29,9 @@ class CfgFunctions
 		class Data
 		{
 			file = "z\msf\addons\fnc\data";
+			class DeleteConfigValue {};
 			class ParseValidArray {};
+			class SetConfigValue {};
 		};
 		class Enemy
 		{
@@ -63,15 +68,9 @@ class CfgFunctions
 			class GetPlayersByProperty {};
 			class GetRadialPositionRoute {};
 			class GetRoadDirection {};
-			class GetSpawnChance {};
 			class GetUnitsByProperty {};
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};
-		};
-		class Intel
-		{
-			file = "z\msf\addons\fnc\intel";
-			class SetupIntel {};
 		};
 		class Inventory
 		{
@@ -84,6 +83,7 @@ class CfgFunctions
 		class Math
 		{
 			file = "z\msf\addons\fnc\math";
+			class CalculateProbability {};
 			class GetAreaRadius {};
 			class OrderArrayByStartingValue {};
 		};
@@ -94,7 +94,8 @@ class CfgFunctions
 			class ApplyEndMission {};
 			class ApplyGMActions {};
 			class ApplyObjectActions {};
-			class CreateActivationTrigger {};		
+			class CreateActivationTrigger {};
+			class CreateMapMarker {};
 			class InfiniteFuelHandler {};
 			class RespawnVehicleCustomization {};
 			class SetupUAVSpawnSystem {};
@@ -134,20 +135,17 @@ class CfgFunctions
 			class SpawnSeekAndDestroyVehicles {};
 			class SpawnUAV {};
 		};
+		class Systems
+		{
+			file = "z\msf\addons\fnc\systems";
+			class GetIsIntelEnabled {};
+		};
 		class TFY
 		{
 			file = "z\msf\addons\fnc\TFY";
 			class InitializeInternal {
 				postInit = 1;
 			};
-		};
-		class Units
-		{
-			file = "z\msf\addons\fnc\units";
-			class AddRadio {};
-			class AddSilencer {};
-			class ApplyInsignia {};
-			class SetInsigniaEH {};
 		};
 		class Validators
 		{
