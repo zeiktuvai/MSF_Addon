@@ -17,7 +17,7 @@ if ([_chance] call MSF_fnc_CalculateProbability && !(isNil "_item")) exitWith {
 		[side (allPlayers select 0), _taskID, [_taskDesc, _taskTitle, ""], _position, _taskState, 5, true, _taskType] call BIS_fnc_taskCreate;	
 	};
 
-	_intels deleteAt (_item select 0);
+	["MSF_IntelItems", _item select 0] call MSF_fnc_DeleteConfigValue;
 };
 
 private _message = "<t size='0.7'>This person has <t color='#ff0000'>no</t> information</t>";

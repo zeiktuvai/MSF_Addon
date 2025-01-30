@@ -2,8 +2,8 @@ params [["_object", objNull, [objNull]], ["_intelChance", 0.6, [1]]];
 
 private _parents = [configOf _object, true] call BIS_fnc_returnParents;
 private _prompt = "Ask for Information";
-private _icon = "a3\3den\data\cfgwaypoints\talk_ca.paa";
-private _iconHold = "a3\missions_f_oldman\data\img\holdactions\holdaction_talk_ca.paa";
+private _icon = "a3\ui_f\data\gui\rsccommon\rscbuttonsearch\search_start_ca.paa";
+private _iconHold = "a3\ui_f\data\igui\cfg\holdactions\holdaction_search_ca.paa";
 private _showCondition = "!(_target getVariable ['MSF_Intel_Activated', false]) && (_this distance _target < 3)";
 private _actCondition = "true";
 private _failAction = {[_target, objNull] remoteExec ["doWatch", 2];};
@@ -11,14 +11,14 @@ private _actTime = 5;
 private _type = "CIV";
 
 if (_parents findIf { _x == "Item_Base_F" || _x == "Items_base_F" } != -1) then {
-	_prompt = "Look for Intel";
-	_icon = "a3\ui_f\data\gui\rsccommon\rscbuttonsearch\search_start_ca.paa";
-	_iconHold = "a3\ui_f\data\igui\cfg\holdactions\holdaction_search_ca.paa";
+	_prompt = "Look for Intel";	
 	_actTime = 20;
 	_type = "OBJ";
 };
 
 if ("Civilian" in _parents) then {
+	_icon = "a3\3den\data\cfgwaypoints\talk_ca.paa";
+	_iconHold = "a3\missions_f_oldman\data\img\holdactions\holdaction_talk_ca.paa";
 	_actCondition = "currentWeapon _caller == """"";
 	_showCondition = _showCondition + " && [_target] call ace_medical_status_fnc_isInStableCondition";
 	_prompt = "Ask for Information";

@@ -29,7 +29,9 @@ class CfgFunctions
 		class Data
 		{
 			file = "z\msf\addons\fnc\data";
+			class DeleteConfigValue {};
 			class ParseValidArray {};
+			class SetConfigValue {};
 		};
 		class Enemy
 		{
