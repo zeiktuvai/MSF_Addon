@@ -4,8 +4,14 @@ private _spots = [];
 private _str = 1 - ([] call MSF_fnc_OFE_CalculateStrengthValues select 2);
 
 {
-	_spots append (_x buildingPos -1);
+	private _exempt = nearestObjects [_x, ["MSF_Placeholder_BldgSpawnExempt"], sizeOf (typeOf _x)];
+
+	if (count _exempt == 0) then {
+		_spots append (_x buildingPos -1);		
+	};
 } forEach (_objects select {_x isKindOf "House_F"});
+
+
 
 private _count = round ((count _spots) * _str);
 
