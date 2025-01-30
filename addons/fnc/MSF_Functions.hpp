@@ -133,6 +133,11 @@ class CfgFunctions
 			class SpawnSeekAndDestroyVehicles {};
 			class SpawnUAV {};
 		};
+		class Systems
+		{
+			file = "z\msf\addons\fnc\systems";
+			class GetIsIntelEnabled {};
+		};
 		class TFY
 		{
 			file = "z\msf\addons\fnc\TFY";
