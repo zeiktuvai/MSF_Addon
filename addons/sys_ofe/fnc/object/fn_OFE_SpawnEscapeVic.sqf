@@ -7,7 +7,7 @@ private _spawned = false;
 	private _ex = true;
 
 	if (_spawned) then {
-		_ex = [0.5] call MSF_fnc_GetSpawnChance;
+		_ex = [0.5] call MSF_fnc_CalculateProbability;
 	};
 
 	if (_ex) then {

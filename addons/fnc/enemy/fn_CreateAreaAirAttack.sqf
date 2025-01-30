@@ -22,7 +22,7 @@ params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [eas
 for "_i" from 1 to _num do {
 	
 
-	if ([_spawnChance] call MSF_fnc_GetSpawnChance) then {	
+	if ([_spawnChance] call MSF_fnc_CalculateProbability) then {	
 		private _type = selectRandom _vehicleTypes;
 		private _pos = _trigger getRelPos [1000, random 350];
 		private _vic = [_pos, 0, _type, _side] call BIS_fnc_spawnVehicle;

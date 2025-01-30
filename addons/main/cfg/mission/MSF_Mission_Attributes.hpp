@@ -128,39 +128,6 @@ class MSFSettings
 					validate = "number";
 					typeName = "NUMBER";
 				};
-				class InventoryCat
-				{
-					data = "AttributeSystemSubcategory";
-					control = "SubCategory";
-					displayName = "Inventory Generation Options";
-				};
-				class MSF_Mission_Inventory_Mag1
-				{
-					displayName = "Mag Set 1";
-					tooltip = "Enables generating inventory with RHS 5.56, M14 7.62 and similar mags.";
-					property = "MSF_Mission_Inventory_Mag1";
-					control = "Checkbox";
-					expression = "_this setVariable ['%s',_value];";					
-					defaultValue = "true";
-				};
-				class MSF_Mission_Inventory_Mag2
-				{
-					displayName = "Mag Set 2";
-					tooltip = "Enables generating inventory with NATO 6.5mm and similar mags.";
-					property = "MSF_Mission_Inventory_Mag2";
-					control = "Checkbox";
-					expression = "_this setVariable ['%s',_value];";					
-					defaultValue = "false";
-				};
-				class MSF_Mission_Inventory_Mag3
-				{
-					displayName = "Mag Set 3";
-					tooltip = "Enables generating inventory with SCAR 7.62, m240B 76.2 and similar mags.";
-					property = "MSF_Mission_Inventory_Mag3";
-					control = "Checkbox";
-					expression = "_this setVariable ['%s',_value];";					
-					defaultValue = "false";
-				};	
 			};
 		};		
 	};		

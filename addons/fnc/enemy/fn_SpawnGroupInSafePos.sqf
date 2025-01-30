@@ -10,6 +10,7 @@
 	Function Ver 1.0
 	Implemented in: MSF Addon v1.6.0
 */
+//TODO: FIX THIS!
 params [["_position", [0,0,0], [[]], 3], ["_side", east, [east]], ["_groupTypes", [""], [[]]]];
 
 private _grpName = selectRandom _groupTypes;

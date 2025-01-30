@@ -31,32 +31,32 @@ class MSF_Mod_OFE_ExistingLoc : Module_F
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 5;
-			typeName = "Number";
+			typeName = "Text";
 			class Values
 			{
 				class Outpost
 				{
 					name = "Outpost";
 					tooltip = "Outpost";
-					value = 5;
+					value = "Outpost";
 				};
 				class Base
 				{
 					name = "Base";
 					tooltip = "Base";
-					value = 6;
+					value = "Base";
 				};
 				class Helibase
 				{
 					name = "Heli-Base";
 					tooltip = "Heli-Base";
-					value = 7;
+					value = "HeliBase";
 				};
 				class Airbase
 				{
 					name = "Air-Base";
 					tooltip = "Air-Base";
-					value = 8;
+					value = "AirBase";
 				};
 			};	
 		};

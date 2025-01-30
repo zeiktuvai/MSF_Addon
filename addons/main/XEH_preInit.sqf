@@ -12,3 +12,12 @@
 	["Mission Support Foundation", "Debug"],
 	false
 ] call CBA_fnc_addSetting;
+[
+	"MSF_AU_Enemy_Plane",
+	"CHECKBOX",
+	["Disable Enemy Planes", "This option will prevent enemy planes from spawning in Antistasi, leaving unmanned and friendly planes alone. (Does not affect helicopters)."],
+	["Mission Support Foundation", "Antistasi"],
+	false,
+	1,
+	{[_this] call MSF_fnc_AntistasiEnemyPlanes;}
+] call CBA_fnc_addSetting;
