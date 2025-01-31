@@ -9,6 +9,9 @@ private _supplyCount = _logic getVariable ["NumItems", 50];
 private _min = _logic getVariable ["VicAmmoMin", 250];
 private _max = _logic getVariable ["VicAmmoMax", 750];
 private _intel = _logic getVariable ["IntelIntegration", true];
+private _intelP = _logic getVariable ["IntelProvider", false];
+private _interactC = _logic getVariable ["InteractionChance", 0.7];
+private _intelC = _logic getVariable ["IntelChance", 0.2];
 
 private _stype = if (_type == "Random") then { selectRandom ["Vehicle", "Armor", "Supply", "Medical", "Armory", "Food"] } else { _type };
 private _def = ["POI", _stype] call MSF_fnc_OFE_GetComposition;
@@ -29,4 +32,4 @@ if (_intel) then {
 };
 
 [false, _position, _def, _stype, [_spawnSide] call BIS_fnc_sideType, [_victimSide] call BIS_fnc_sideType,
-	[_activationSide] call MSF_fnc_GetModuleActivationSide, _supplyCount, random [_min, (_min + _max) / 2, _max], _intelID] call MSF_fnc_OFE_SpawnPOI;
+	[_activationSide] call MSF_fnc_GetModuleActivationSide, _supplyCount, random [_min, (_min + _max) / 2, _max], _intelID, [_intelP, _interactC, _intelC]] call MSF_fnc_OFE_SpawnPOI;

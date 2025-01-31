@@ -1,6 +1,6 @@
 params [["_isOFE", true, [true]], ["_position", [], [[]]], ["_def", [], [[]]], ["_type", "", [""]], ["_enemySide", east, [east]],
 	["_victimSide", resistance, [resistance]], ["_activationSide", "west", [""]], ["_fillCount", 50, [50]], ["_vicAmmo", 250, [250]],
-	["_intelID", "", [""]]
+	["_intelID", "", [""]], ["_intelProvider", [], [[]]]
 ];
 
 private ["_types"];
@@ -120,6 +120,20 @@ switch (_type) do {
 
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
 [_logic, 400, 400, _activationSide, "present", false, _allObjs, "POI", [], _intelID] call MSF_fnc_OFE_CreateModuleActivationTrigger;
+
+// intel system provider
+if (count _intelProvider > 0) then
+{
+	_intelProvider params ["_intelP", "_interactC", "_intelC"];
+
+	if (_intelP) then {
+		{		
+			if ([_interactC] call MSF_fnc_CalculateProbability) then {
+				[_x, _intelC] call MSF_Intel_fnc_AddIntelInteraction;
+			};		
+		} forEach units _group;		
+	};
+};
 
 if (_isOFE) then {
 	["POI", _position] call MSF_fnc_OFE_CreateMapMarker;	
