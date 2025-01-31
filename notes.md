@@ -1,5 +1,3 @@
-- Added the intel system that allows you to define intel providers and consumers to automatically set up varying intel items in a mission. (See wiki for more info).
-- small update to antistasi plane code.
 
 
 // supply truck
