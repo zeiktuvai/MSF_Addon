@@ -70,6 +70,47 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 				};
 			};
 		};
+		class ActivationSide
+		{
+			displayName = "Activation Side";
+			tooltip = "Faction that will show the hidden synced objects.";
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			property = "MSF_Module_IntelItem_ActSide";
+			defaultValue = 3;
+			typeName = "Number";
+			class Values
+			{
+				class East
+				{
+					name = "East";
+					tooltip = "OPFOR";
+					value = 0;
+				};
+				class Independant
+				{
+					name = "Independant";
+					tooltip = "Independant";
+					value = 2;
+				};
+				class West
+				{
+					name = "West";
+					tooltip = "BLUFOR";
+					value = 1;
+				};
+				class Player
+				{
+					name = "AnyPlayer";
+					tootip = "AnyPlayer";
+					value = 3;
+				};
+			};	
+		};
+		class Units : Units
+		{
+			property = "MSF_Mod_IntelItem_Units";
+		};
 		class IntelItem_Targets
 		{
 			data = "AttributeSystemSubcategory";

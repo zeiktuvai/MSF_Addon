@@ -1,5 +1,6 @@
 params [["_isOFE", true, [true]], ["_position", [], [[]]], ["_def", [], [[]]], ["_type", "", [""]], ["_enemySide", east, [east]],
-	["_victimSide", resistance, [resistance]], ["_activationSide", "west", [""]], ["_fillCount", 50, [50]], ["_vicAmmo", 250, [250]]
+	["_victimSide", resistance, [resistance]], ["_activationSide", "west", [""]], ["_fillCount", 50, [50]], ["_vicAmmo", 250, [250]],
+	["_intelID", "", [""]]
 ];
 
 private ["_types"];
@@ -118,7 +119,7 @@ switch (_type) do {
 };
 
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
-[_logic, 400, 400, _activationSide, "present", false, _allObjs, "POI"] call MSF_fnc_OFE_CreateModuleActivationTrigger;
+[_logic, 400, 400, _activationSide, "present", false, _allObjs, "POI", [], _intelID] call MSF_fnc_OFE_CreateModuleActivationTrigger;
 
 if (_isOFE) then {
 	["POI", _position] call MSF_fnc_OFE_CreateMapMarker;	

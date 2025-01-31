@@ -4,6 +4,7 @@ params [["_logic", objNull, [objNull]], ["_def", [], [[]]], ["_type", "", [""]],
 //hint format ["%1 %2", missionNamespace getVariable "MSF_OFE_cpCount", [] call MSF_fnc_OFE_CalculateStrengthValues];
 
 private _activationRange = 500;
+private _intelID = "";
 
 //TODO: Update this to use a configurable value
 private _friendlySide = "west";
@@ -58,16 +59,17 @@ switch (_type) do {
 
 _allObjs append _objects;
 
-[_logic, _activationRange, _activationRange, _friendlySide, "present", false, _allObjs, _type, _params] call MSF_fnc_OFE_CreateModuleActivationTrigger;
-
 //TODO: Consolidate this
 if (_intel) then {
 	private _desc = format ["Reported Location of %1", _type];
-	[_type, _position, _desc, ["CIV", "MIL", "OBJ"], 1, ["mil_dot", "Color1_FD_F"], ["MapUpdate", "Map updated with reported enemy location."], _desc] call MSF_Intel_fnc_AddIntelItem;
+	_intelID = [_type, _position, _desc, ["CIV", "MIL", "OBJ"], 1, ["mil_dot", "Color1_FD_F"], ["MapUpdate", "Map updated with reported enemy location."], _desc] call MSF_Intel_fnc_AddIntelItem;
 };
 if (_isOFE select 0) then {
 	[_type, _position] call MSF_fnc_OFE_CreateMapMarker;	
 };
+
+[_logic, _activationRange, _activationRange, _friendlySide, "present", false, _allObjs, _type, _params, _intelID] call MSF_fnc_OFE_CreateModuleActivationTrigger;
+
 
 if (_type in ["Checkpoint","Outpost","Base","HeliBase","Bastion"]) then {
 	[_allObjs, false] call MSF_fnc_ShowHideObjects;

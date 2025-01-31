@@ -15,6 +15,7 @@ private _taskDesc = _logic getVariable ["TaskDesc", ""];
 private _taskAssgn = _logic getVariable ["TaskAssigned", false];
 private _taskType = _logic getVariable ["TaskType", "Default"];
 private _level = _logic getVariable ["IntelLevel", 1];
+private _activationSide = _logic getVariable ["ActivationSide", 3];
 private _taskID = [format ["task_%1", _position select 0]] call BIS_fnc_filterString;
 _logic setVariable ["TaskID", _taskID];
 private _targets = [];
@@ -24,7 +25,7 @@ if (_civ) then { _targets pushBack "CIV"; };
 if (_mil) then { _targets pushBack "MIL"; };
 if (_obj) then { _targets pushBack "OBJ"; };
 
-[
+private _intelID = [
 	"MANUAL",
 	_position,
 	_name,
@@ -35,3 +36,6 @@ if (_obj) then { _targets pushBack "OBJ"; };
 	[_name, _diary] select (_diary != ""),
 	[_taskID, _taskTitle, _taskDesc, _taskType, ["CREATED", "ASSIGNED"] select (_taskAssgn)]
 ] call MSF_Intel_fnc_AddIntelItem;
+
+[_units, false] call MSF_fnc_ShowHideObjects;
+[_logic, 300, 300, [_activationSide] call MSF_fnc_GetModuleActivationSide, "present", false, _units, "POI", [], _intelID] call MSF_fnc_OFE_CreateModuleActivationTrigger;

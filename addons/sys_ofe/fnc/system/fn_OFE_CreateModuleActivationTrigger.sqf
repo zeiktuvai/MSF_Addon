@@ -7,10 +7,21 @@ params [
 	["_isRectangle", false, [false]],
 	["_objects", [], [[]]],
 	["_type", "", [""]], 
-	["_params", [], [[]]]
+	["_params", [], [[]]],
+	["_intelID", "", [""]]
 ];
 
-private _actStatement = "[thisTrigger getVariable 'objects', true] call MSF_fnc_ShowHideObjects";
+private _actStatement = {
+	[thisTrigger getVariable "objects", true] call MSF_fnc_ShowHideObjects;
+};
+
+private _intelAct = {
+	private _intelID = thisTrigger getVariable "IntelID";
+	if (_intelID != "") then {
+		[_intelID] call MSF_Intel_fnc_GetDiscoveredIntelItem;
+	};
+};
+
 private _trig = createTrigger ["emptyDetector", getPos _logic];
 
 _trig setTriggerArea [_x, _y, 0, _isRectangle];
@@ -18,27 +29,28 @@ _trig setTriggerActivation [_activationBy, _activationType, false];
 _trig setVariable ["objects", _objects, true];
 _trig setVariable ["type", _type, true];
 _trig setVariable ["vars", _params, true];
+_trig setVariable ["IntelID", _intelID, true];
 switch (_type) do {
 	case "Checkpoint";
 	case "Bastion": { 
 		_trig setTriggerStatements [
 			"this",
-			_actStatement,
+			toString _actStatement + toString _intelAct,
 			""
 		];
 	};
 	case "POI": { 
 		_trig setTriggerStatements [
 			"this",
-			_actStatement,
-			"[thisTrigger getVariable 'objects', false] call MSF_fnc_ShowHideObjects"
+			toString _actStatement + toString _intelAct,
+			"[thisTrigger getVariable 'objects', false] call MSF_fnc_ShowHideObjects;"
 		];
 		_trig setTriggerActivation [_activationBy, _activationType, true];
 	};
 	default {
 		_trig setTriggerStatements [
 			"this",
-			"[thisTrigger] call MSF_fnc_OFE_SpawnLocation;",
+			"[thisTrigger] call MSF_fnc_OFE_SpawnLocation;" + toString _intelAct,
 			""
 		];
 	 };

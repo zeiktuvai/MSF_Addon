@@ -19,6 +19,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\sys_intel\fnc\system";
 			class AddIntelItem {};
+			class GetDiscoveredIntelItem {};
 			class GetIntelItem {};
 			class SetIntelLevel {};
 		};

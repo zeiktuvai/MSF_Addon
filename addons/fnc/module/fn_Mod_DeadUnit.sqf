@@ -21,6 +21,7 @@ private _interactC = _logic getVariable ["InteractionChance", 0.7];
 private _intelC = _logic getVariable ["IntelChance", 0.2];
 private _group = objNull;
 private _allObjs = [];
+private _intelID = "";
 
 if (count _infSpawns > 0) then {
 	private _deadUnitTypes = [];
@@ -108,9 +109,10 @@ if (_intelP && _type in ["Mil_NATO", "Mil_OPFOR", "Mil_IND"]) then
 };
 
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
-[_logic, _area select 0, _area select 1, [_activationSide] call MSF_fnc_GetModuleActivationSide, "present", _area select 3, _allObjs, "POI"] call MSF_fnc_OFE_CreateModuleActivationTrigger;
 
 if (_intel) then {
 	private _desc = "Reported Military Activity";
-	["DEADUNIT_MOD", position _logic, _desc, ["CIV", "OBJ"], 1, ["hd_warning", "Color1_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], _desc] call MSF_Intel_fnc_AddIntelItem;
+	_intelID = ["DEADUNIT_MOD", position _logic, _desc, ["CIV", "OBJ"], 1, ["hd_warning", "Color1_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], _desc] call MSF_Intel_fnc_AddIntelItem;
 };
+
+[_logic, _area select 0, _area select 1, [_activationSide] call MSF_fnc_GetModuleActivationSide, "present", _area select 3, _allObjs, "POI", [], _intelID] call MSF_fnc_OFE_CreateModuleActivationTrigger;
