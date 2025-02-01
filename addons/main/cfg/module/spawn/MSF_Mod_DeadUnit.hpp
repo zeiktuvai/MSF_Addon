@@ -178,7 +178,7 @@ class MSF_Module_Spawn_DeadUnit : Module_F
 		{
 			data = "AttributeSystemSubcategory";
 			control = "SubCategory";
-			displayName = "Vehicle Classes";
+			displayName = "Armor Classes";
 		};
 		class ArmorClassOverride
 		{

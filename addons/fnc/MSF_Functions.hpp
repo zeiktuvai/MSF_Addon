@@ -107,6 +107,7 @@ class CfgFunctions
 			class Mod_DeadUnit {};
 			class Mod_InfantryVehiclePatrol {};
 			class Mod_RandomSpawnCrash {};
+			class Mod_ShowHide {};
 			class Mod_Spawn_Checkpoint {};
 			class Mod_Spawn_Fortify {};
 			class Mod_Spawn_Supplies {};

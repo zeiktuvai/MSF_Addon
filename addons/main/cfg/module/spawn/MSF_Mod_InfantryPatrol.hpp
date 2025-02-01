@@ -76,7 +76,7 @@ class MSF_Module_Spawn_InfantryPatrol : Module_F
 			control = "BehaviourGroup";
 			property = "MSF_Module_InfPatrol_Behav";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "aware";
+			defaultValue = "'aware'";
 		};
 		class Speed
 		{
@@ -85,7 +85,7 @@ class MSF_Module_Spawn_InfantryPatrol : Module_F
 			control = "SpeedModeGroup";
 			property = "MSF_Module_InfPatrol_Speed";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "normal";
+			defaultValue = "'limited'";
 		};
 		class SpawnCount
 		{

@@ -26,3 +26,4 @@ class Module_F : Logic
 #include "module\spawn\MSF_Mod_Wave.hpp"
 #include "module\MSF_Mod_RandomSpawn.hpp"
 #include "module\MSF_Mod_RandomSpawnCrash.hpp"
+#include "module\MSF_Mod_ShowHide.hpp"

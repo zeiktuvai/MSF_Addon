@@ -32,6 +32,10 @@ if (isServer) then {
 	if (getMissionConfigValue ["MSF_Mission_VicCustomization", true]) then {
 		[] call MSF_fnc_RespawnVehicleCustomization;
 	};
+
+	{
+		[synchronizedObjects _x select { !(_x isKindOf "EmptyDetector")}, false] call MSF_fnc_ShowHideObjects;
+	} forEach allMissionObjects "MSF_Module_ShowHide";
 };
 
 if (!isServer) then
