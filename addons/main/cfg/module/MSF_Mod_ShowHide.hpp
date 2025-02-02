@@ -33,7 +33,7 @@ class MSF_Module_ShowHide : Module_F
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = "A better version of BI's Show / Hide module.  Hides synced units, showing them when the synced trigger is activated.  Hiding them again when players leave if the trigger is repeatable.";
+		description = "A better version of BI's Show / Hide module.  Hides units on mission start, showing them when the synced trigger is activated and hiding them again when players leave if the trigger is repeatable.";
 		sync[] = { "LocationArea_F", "EmptyDetector" };
 
 		class LocationArea_F

@@ -21,9 +21,9 @@ private _desc = "Reported Unknown Site";
 switch (_stype) do {
 	case "Armor";
 	case "Vehicle": { _desc = "Reported Unkown Vehicle" };
-	case "Supply";
-	case "Medical";
-	case "Food": { _desc = "Reported Logistics Area" };
+	case "Supply": { _desc = "Reported Logistics Site" };
+	case "Medical": { _desc = "Reported Humanitarian Site" };
+	case "Food": { _desc = "Reported Sustainment Site" };
 	case "Armory": { _desc = "Reported Military Logistics" };
 };
 
