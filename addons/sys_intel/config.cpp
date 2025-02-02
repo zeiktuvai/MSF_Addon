@@ -3,12 +3,12 @@
 
 class CfgPatches
 {
-    class MSF3den
+    class ADDON
     {
 		name = "MSF - Intel System";
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
-        units[] = {"MSF_Module_Intel"};
+        units[] = {"MSF_Module_IntelItem", "MSF_Module_IntelItem_Task", "MSF_Module_IntelObjects", "MSF_Module_IntelLevel"};
         weapons[] = {};
         requiredVersion = 2.1;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction"};
