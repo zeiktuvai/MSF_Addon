@@ -15,6 +15,12 @@ private _actStatement = {
 	[thisTrigger getVariable "objects", true] call MSF_fnc_ShowHideObjects;
 };
 
+private _poiDeactStatement = {
+	private _objs = thisTrigger getVariable "objects";
+	_objs select { _x isKindOf "vehicle"};
+	[, false] call MSF_fnc_ShowHideObjects;
+};
+
 private _intelAct = {
 	private _intelID = thisTrigger getVariable "IntelID";
 	if (_intelID != "") then {
@@ -43,7 +49,7 @@ switch (_type) do {
 		_trig setTriggerStatements [
 			"this",
 			toString _actStatement + toString _intelAct,
-			"[thisTrigger getVariable 'objects', false] call MSF_fnc_ShowHideObjects;"
+			toString _poiDeactStatement
 		];
 		_trig setTriggerActivation [_activationBy, _activationType, true];
 	};
