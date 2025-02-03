@@ -17,5 +17,5 @@ class CfgPatches
 
 class CfgVehicles
 {
-    //#include "cfg\MSF_Intel_Modules.hpp"
+    #include "cfg\MSF_CBRN_Modules.hpp"
 };

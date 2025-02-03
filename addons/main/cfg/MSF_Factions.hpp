@@ -13,4 +13,8 @@ class CfgFactionClasses
 	{
 		displayName = "MSF - Intel System";
 	};
+	class MSF_Module_CBRN : NO_CATEGORY
+	{
+		displayName = "MSF - CBRN System";
+	};
 };
