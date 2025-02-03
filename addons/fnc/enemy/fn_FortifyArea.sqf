@@ -14,7 +14,7 @@ params [["_trigger", objNull, [objNull]]];
 
 private _vals = _trigger getVariable ["module_params", []];
 _vals params ["_side", "_building", "_bldgNum", "_bldgSpread", "_bldgProb", "_vehicle", "_vicNum", "_vicFill", "_vicProb", "_armor", "_armorNum", "_armorProb",
-	"_static", "_staticNum", "_staticProb", "_patrol", "_patrolNum", "_patrolProb", "_air", "_airNum", "_airProb", "_logicArea"];
+	"_static", "_staticNum", "_staticProb", "_patrol", "_patrolNum", "_patrolProb", "_air", "_airNum", "_airProb", "_logicArea", "_intelProvider"];
 
 
 private _classes = [0, _side] call MSF_fnc_GetConfigClasses;
@@ -23,10 +23,24 @@ _classes params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClass
 
 // building defense
 if (_building) then {
-	[_trigger, _bldgNum, _bldgSpread, _side, _infantryGroupClasses, _bldgProb, _logicArea] spawn 
+	[_trigger, _bldgNum, _bldgSpread, _side, _infantryGroupClasses, _bldgProb, _logicArea, _intelProvider] spawn 
 	{		
-		params ["_trigger", "_buildingNum", "_bldgSpread", "_side", "_infantryGroupClasses", "_bldgProb", "_logicArea"];
-		[_trigger, _buildingNum, _side, _infantryGroupClasses, _bldgProb, _logicArea, _bldgSpread] call MSF_fnc_CreateAreaBuildingDefense;
+		params ["_trigger", "_buildingNum", "_bldgSpread", "_side", "_infantryGroupClasses", "_bldgProb", "_logicArea", "_intelProvider"];
+		private _units = [_trigger, _buildingNum, _side, _infantryGroupClasses, _bldgProb, _logicArea, _bldgSpread] call MSF_fnc_CreateAreaBuildingDefense;
+
+		// intel system provider
+		if (count _intelProvider > 0) then
+		{
+			_intelProvider params ["_intelP", "_interactC", "_intelC"];
+
+			if (_intelP) then {
+				{
+					if ([_interactC] call MSF_fnc_CalculateProbability) then {
+						[_x, _intelC] call MSF_Intel_fnc_AddIntelInteraction;
+					};		
+				} forEach _units;		
+			};
+		};
 	};	
 };
 

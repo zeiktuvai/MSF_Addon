@@ -1,5 +1,7 @@
 // _type: 0 Checkpoint, 1 Outpost, 2 Base, 3 helibase, 4 bastion, 5 existing outpost, 6 existing base, 7 existing helibase, 8 existing airbase
-params [["_logic", objNull, [objNull]], ["_def", [], [[]]], ["_type", "", [""]], "_params", ["_existing", false, [false]], ["_isOFE", [true], [[]]], ["_intel", true, [true]]];
+params [["_logic", objNull, [objNull]], ["_def", [], [[]]], ["_type", "", [""]], "_params", ["_existing", false, [false]],
+ ["_isOFE", [true], [[]]], ["_intel", true, [true]], ["_intelProvider", [], [[]]]
+];
 
 //hint format ["%1 %2", missionNamespace getVariable "MSF_OFE_cpCount", [] call MSF_fnc_OFE_CalculateStrengthValues];
 
@@ -65,7 +67,21 @@ if (_intel) then {
 	_intelID = [_type, _position, _desc, ["CIV", "MIL", "OBJ"], 1, ["mil_dot", "Color1_FD_F"], ["MapUpdate", "Map updated with reported enemy location."], _desc] call MSF_Intel_fnc_AddIntelItem;
 };
 if (_isOFE select 0) then {
-	[_type, _position] call MSF_fnc_OFE_CreateMapMarker;	
+	[_type, _position] call MSF_fnc_OFE_CreateMapMarker;
+};
+
+// intel system provider
+if (count _intelProvider > 0) then
+{
+	_intelProvider params ["_intelP", "_interactC", "_intelC"];
+
+	if (_intelP) then {
+		{		
+			if ([_interactC] call MSF_fnc_CalculateProbability) then {
+				[_x, _intelC] call MSF_Intel_fnc_AddIntelInteraction;
+			};		
+		} forEach units _group;	
+	};
 };
 
 [_logic, _activationRange, _activationRange, _friendlySide, "present", false, _allObjs, _type, _params, _intelID] call MSF_fnc_OFE_CreateModuleActivationTrigger;

@@ -19,6 +19,7 @@ private _bldg0 = nearestObjects [getPosATL _trigger, ["house"], _radius];
 private _bldg1 = nearestObjects [getPosATL _trigger, ["building"], _radius];
 private _bldg = _bldg0 arrayIntersect _bldg1;
 private _bldgFound = false;
+private _allObjs = [];
 
 {
 	if ( count (_x buildingPos -1) > 0 ) then { _bldgFound = true; };
@@ -30,13 +31,16 @@ if (_bldgFound) then {
 	
 		if ([_bldgProb] call MSF_fnc_CalculateProbability) then {	
 			private _pos = [[[position _trigger, _radius]], []] call BIS_fnc_randomPos;
-			//[_trigger] call BIS_fnc_randomPosTrigger;
 			private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
 			[_pos, units _group, _radius, false, _bldgSpread, true] call MSF_fnc_ZEN_OccupyHouse;
 
 			if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
 				{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
 			};
+
+			_allObjs append (units _group);
 		};
 	};
 };
+
+_allObjs;

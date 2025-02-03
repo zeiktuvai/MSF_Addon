@@ -28,7 +28,9 @@ private _patrolProb = _logic getVariable ["PatrolProbability", 5];
 private _air = _logic getVariable ["AirEnable", false];
 private _airNum = _logic getVariable ["AirNum", 2];
 private _airProb = _logic getVariable ["AirProbability", 5];
-
+private _intelP = _logic getVariable ["IntelProvider", false];
+private _interactC = _logic getVariable ["InteractionChance", 0.5];
+private _intelC = _logic getVariable ["IntelChance", 0.1];
 
 if(_area select 0 >= 100 && _area select 1 >= 100) then 
 {
@@ -36,7 +38,7 @@ if(_area select 0 >= 100 && _area select 1 >= 100) then
 		"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_FortifyArea; }; ",
 		""],
 		_isRectangle, _onStart, false,
-		[[_side] call BIS_fnc_sideType, _building, _bldgNum, _bldgSpread, _bldgProb, _vehicle, _vicNum, _vicFill, _vicProb, _armor, _armorNum, _armorProb, _static, _staticNum, _staticProb, _patrol, _patrolNum, _patrolProb, _air, _airNum, _airProb, _area],
+		[[_side] call BIS_fnc_sideType, _building, _bldgNum, _bldgSpread, _bldgProb, _vehicle, _vicNum, _vicFill, _vicProb, _armor, _armorNum, _armorProb, _static, _staticNum, _staticProb, _patrol, _patrolNum, _patrolProb, _air, _airNum, _airProb, _area, [_intelP, _interactC, _intelC]],
 		true
 	] call MSF_fnc_CreateActivationTrigger;	
 };

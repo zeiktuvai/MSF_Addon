@@ -124,6 +124,7 @@ class CfgFunctions
 		class Objects
 		{
 			file = "z\msf\addons\fnc\object";
+			class GetShowHideVehicleInTrigger {};
 			class SetRandomVehicleState {};
 			class SetTimeBasedInteraction {};
 			class SetUnitDialogOption {};

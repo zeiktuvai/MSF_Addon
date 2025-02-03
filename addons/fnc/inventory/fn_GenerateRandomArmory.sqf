@@ -12,6 +12,13 @@ for "_i" from 1 to _fillCount do {
 	private _weap = configName selectRandom _primarys;
 	_box addWeaponCargoGlobal [_weap, 1];
 	_weaps pushBack _weap;
+
+	private _acc = compatibleItems _weap;
+	if (count _acc > 0 ) then {
+		if ([0.8] call MSF_fnc_CalculateProbability) then {
+			_box addItemCargoGlobal [selectRandom _acc, 1];
+		};
+	};
 };
 
 _weaps;
