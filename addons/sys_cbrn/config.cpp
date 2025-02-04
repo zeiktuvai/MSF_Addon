@@ -1,5 +1,5 @@
 #include "..\main\MSF_Version.hpp"
-//#include "cfg\MSF_Intel_Functions.hpp"
+#include "cfg\MSF_CBRN_Functions.hpp"
 
 class CfgPatches
 {
