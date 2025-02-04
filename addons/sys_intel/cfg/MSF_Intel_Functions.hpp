@@ -6,6 +6,8 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\sys_intel\fnc\interaction";
 			class AddIntelInteraction {};
+			class GetIntelItem {};
+			class GetDiscoveredIntelItem {};
 		};
 		class Module
 		{
@@ -19,8 +21,6 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\sys_intel\fnc\system";
 			class AddIntelItem {};
-			class GetDiscoveredIntelItem {};
-			class GetIntelItem {};
 			class SetIntelLevel {};
 		};
 	};
