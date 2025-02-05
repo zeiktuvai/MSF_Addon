@@ -22,16 +22,16 @@ class MSFConfig
 	};
 	class UnitSets
 	{
-		// OPFOR - RHS AFRF
+		// OPFOR - ARC
 		class Set1
 		{
-			Groups[] = {"rhs_group_rus_msv_infantry_emr_fireteam", "rhs_group_rus_msv_infantry_emr_MANEUVER", "rhs_group_rus_msv_infantry_emr_section_AA", "rhs_group_rus_msv_infantry_emr_section_marksman"};
-			Vehicles[] = {"rhs_tigr_msv","rhs_tigr_3camo_msv","rhs_tigr_sts_msv","rhs_tigr_sts_3camo_msv","rhs_tigr_m_msv","rhs_tigr_m_3camo_msv"};
+			Groups[] = {"MSF_InfTeam_ARC", "MSF_InfTeam_AT_ARC", "MSF_InfTeam_AA_ARC", "MSF_InfSentry_ARC", "MSF_ReconTeam_ARC", "MSF_ReconPatrol_ARC",	"MSF_ReconSentry_ARC"};
+			Vehicles[] = {"MSF_O_ARC_MRAP", "MSF_O_ARC_MRAP_GMG", "MSF_O_ARC_MRAP_HMG", "MSF_O_ARC_DAGOR", "MSF_O_ARC_DAGOR_AT", "MSF_O_ARC_DAGOR_Armed"};
 			Armor[] = {"rhs_bmp2k_msv", "rhs_bmp3_late_msv", "rhs_t72bc_tv", "rhs_t72be_tv", "rhs_t80b", "rhs_t90a_tv", "rhs_t90sm_tv"};
-			Turrets[] = {"RHS_AGS30_TriPod_MSV","rhs_KORD_MSV","rhs_KORD_high_MSV","RHS_NSV_TriPod_MSV","RHS_ZU23_MSV"};
-			Units[] = {"rhs_msv_emr_armoredcrew", "rhs_msv_emr_rifleman", "rhs_msv_emr_sergeant", "rhs_msv_emr_machinegunner", "rhs_msv_emr_LAT"};
+			Turrets[] = {"MSF_O_ARC_GMG_01", "MSF_O_ARC_GMG_01_High", "MSF_O_ARC_HMG_01", "MSF_O_ARC_HMG_01_High", "MSF_O_ARC_Mortar"};
+			Units[] = {"MSF_O_ARC_AARifleman", "MSF_O_ARC_ATRifleman", "MSF_O_ARC_Autorifleman", "MSF_O_ARC_Medic", "MSF_O_ARC_Grenadier", "MSF_O_ARC_Engineer", "MSF_O_ARC_Leader", "MSF_O_ARC_Marksman", "MSF_O_ARC_Rifleman"};
 			Air[] = {"RHS_Mi24P_vdv", "RHS_Mi24V_vdv", "RHS_Mi8mt_vdv", "RHS_Mi8MTV3_vdv", "RHS_Mi8MTV3_heavy_vdv"};
-			VehiclePatrols[] = {"rhs_tigr_msv","rhs_tigr_3camo_msv","rhs_tigr_sts_msv","rhs_tigr_sts_3camo_msv","rhs_tigr_m_msv","rhs_tigr_m_3camo_msv", "rhs_bmp2k_msv", "rhs_bmp3_late_msv"};
+			VehiclePatrols[] = {"MSF_O_ARC_MRAP", "MSF_O_ARC_MRAP_GMG", "MSF_O_ARC_MRAP_HMG", "MSF_O_ARC_DAGOR", "MSF_O_ARC_DAGOR_AT", "MSF_O_ARC_DAGOR_Armed"};
 		};
 		// Independant - AAF
 		class Set2
