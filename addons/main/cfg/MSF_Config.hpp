@@ -10,9 +10,9 @@ class MSFConfig
 	};
 	class MagazineSets
 	{
-		Set1[] = {"rhs_mag_20Rnd_SCAR_762x51_m118_special", "rhs_mag_20Rnd_SCAR_762x51_m61_ap", "rhs_mag_20Rnd_SCAR_762x51_m62_tracer", "rhs_mag_20Rnd_SCAR_762x51_m80_ball", "rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", "rhs_mag_20Rnd_SCAR_762x51_mk316_special", "rhsusf_100Rnd_762x51_m61_ap", "rhsusf_100Rnd_762x51_m62_tracer", "rhsusf_100Rnd_762x51", "rhsusf_100Rnd_762x51_m80a1epr", "rhsusf_100Rnd_762x51_m82_blank", "rhsusf_mag_10Rnd_STD_50BMG_mk211"};
-		Set2[] = {"100Rnd_65x39_caseless_black_mag", "100Rnd_65x39_caseless_khaki_mag", "100Rnd_65x39_caseless_mag", "100Rnd_65x39_caseless_black_mag_tracer", "ACE_100Rnd_65x39_caseless_mag_Tracer_Dim", "100Rnd_65x39_caseless_khaki_mag_tracer", "100Rnd_65x39_caseless_mag_Tracer", "200Rnd_65x39_cased_Box", "ACE_200Rnd_65x39_cased_Box_Tracer_Dim", "200Rnd_65x39_cased_Box_Tracer", "200Rnd_65x39_cased_Box_Red", "20Rnd_650x39_Cased_Mag_F", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_green", "30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_msbs_mag", "30Rnd_65x39_caseless_msbs_mag_Tracer", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_green_mag_Tracer", "30Rnd_65x39_caseless_black_mag_Tracer", "ACE_30Rnd_65x39_caseless_green_mag_Tracer_Dim", "ACE_30Rnd_65x39_caseless_mag_Tracer_Dim", "30Rnd_65x39_caseless_khaki_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "ACE_20Rnd_65_Creedmor_mag", "ACE_30Rnd_65_Creedmor_black_mag", "ACE_30Rnd_65_Creedmor_khaki_mag", "ACE_30Rnd_65_Creedmor_msbs_mag", "ACE_30Rnd_65_Creedmor_mag", "200Rnd_65x39_cased_Box_Tracer_Red", "7Rnd_408_Mag", "ACE_7Rnd_408_305gr_Mag", "130Rnd_338_Mag", "rhsusf_mag_10Rnd_STD_50BMG_mk211"};
-		Set3[] = {"rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_coyote", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_ucp", "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch", "rhsusf_20Rnd_762x51_m993_Mag", "rhsusf_mag_17Rnd_9x19_JHP", "rhsusf_mag_17Rnd_9x19_FMJ", "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red"};
+		Set1[] = {"100Rnd_65x39_caseless_black_mag", "100Rnd_65x39_caseless_khaki_mag", "100Rnd_65x39_caseless_mag", "100Rnd_65x39_caseless_black_mag_tracer", "ACE_100Rnd_65x39_caseless_mag_Tracer_Dim", "100Rnd_65x39_caseless_khaki_mag_tracer", "100Rnd_65x39_caseless_mag_Tracer", "200Rnd_65x39_cased_Box", "ACE_200Rnd_65x39_cased_Box_Tracer_Dim", "200Rnd_65x39_cased_Box_Tracer", "200Rnd_65x39_cased_Box_Red", "20Rnd_650x39_Cased_Mag_F", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_green", "30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_msbs_mag", "30Rnd_65x39_caseless_msbs_mag_Tracer", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_green_mag_Tracer", "30Rnd_65x39_caseless_black_mag_Tracer", "ACE_30Rnd_65x39_caseless_green_mag_Tracer_Dim", "ACE_30Rnd_65x39_caseless_mag_Tracer_Dim", "30Rnd_65x39_caseless_khaki_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "ACE_20Rnd_65_Creedmor_mag", "ACE_30Rnd_65_Creedmor_black_mag", "ACE_30Rnd_65_Creedmor_khaki_mag", "ACE_30Rnd_65_Creedmor_msbs_mag", "ACE_30Rnd_65_Creedmor_mag", "200Rnd_65x39_cased_Box_Tracer_Red", "7Rnd_408_Mag", "ACE_7Rnd_408_305gr_Mag", "130Rnd_338_Mag"};
+		Set2[] = {"100Rnd_65x39_caseless_black_mag", "100Rnd_65x39_caseless_khaki_mag", "100Rnd_65x39_caseless_mag", "100Rnd_65x39_caseless_black_mag_tracer", "ACE_100Rnd_65x39_caseless_mag_Tracer_Dim", "100Rnd_65x39_caseless_khaki_mag_tracer", "100Rnd_65x39_caseless_mag_Tracer", "200Rnd_65x39_cased_Box", "ACE_200Rnd_65x39_cased_Box_Tracer_Dim", "200Rnd_65x39_cased_Box_Tracer", "200Rnd_65x39_cased_Box_Red", "20Rnd_650x39_Cased_Mag_F", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_green", "30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_msbs_mag", "30Rnd_65x39_caseless_msbs_mag_Tracer", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_green_mag_Tracer", "30Rnd_65x39_caseless_black_mag_Tracer", "ACE_30Rnd_65x39_caseless_green_mag_Tracer_Dim", "ACE_30Rnd_65x39_caseless_mag_Tracer_Dim", "30Rnd_65x39_caseless_khaki_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "ACE_20Rnd_65_Creedmor_mag", "ACE_30Rnd_65_Creedmor_black_mag", "ACE_30Rnd_65_Creedmor_khaki_mag", "ACE_30Rnd_65_Creedmor_msbs_mag", "ACE_30Rnd_65_Creedmor_mag", "200Rnd_65x39_cased_Box_Tracer_Red", "7Rnd_408_Mag", "ACE_7Rnd_408_305gr_Mag", "130Rnd_338_Mag"};
+		Set3[] = {"100Rnd_65x39_caseless_black_mag", "100Rnd_65x39_caseless_khaki_mag", "100Rnd_65x39_caseless_mag", "100Rnd_65x39_caseless_black_mag_tracer", "ACE_100Rnd_65x39_caseless_mag_Tracer_Dim", "100Rnd_65x39_caseless_khaki_mag_tracer", "100Rnd_65x39_caseless_mag_Tracer", "200Rnd_65x39_cased_Box", "ACE_200Rnd_65x39_cased_Box_Tracer_Dim", "200Rnd_65x39_cased_Box_Tracer", "200Rnd_65x39_cased_Box_Red", "20Rnd_650x39_Cased_Mag_F", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_green", "30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_msbs_mag", "30Rnd_65x39_caseless_msbs_mag_Tracer", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_green_mag_Tracer", "30Rnd_65x39_caseless_black_mag_Tracer", "ACE_30Rnd_65x39_caseless_green_mag_Tracer_Dim", "ACE_30Rnd_65x39_caseless_mag_Tracer_Dim", "30Rnd_65x39_caseless_khaki_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "ACE_20Rnd_65_Creedmor_mag", "ACE_30Rnd_65_Creedmor_black_mag", "ACE_30Rnd_65_Creedmor_khaki_mag", "ACE_30Rnd_65_Creedmor_msbs_mag", "ACE_30Rnd_65_Creedmor_mag", "200Rnd_65x39_cased_Box_Tracer_Red", "7Rnd_408_Mag", "ACE_7Rnd_408_305gr_Mag", "130Rnd_338_Mag"};
 	};
 	class Weapons
 	{
@@ -22,16 +22,23 @@ class MSFConfig
 	};
 	class UnitSets
 	{
-		// OPFOR - ARC
+		// Groups[] = {"MSF_InfTeam_ARC", "MSF_InfTeam_AT_ARC", "MSF_InfTeam_AA_ARC", "MSF_InfSentry_ARC", "MSF_ReconTeam_ARC", "MSF_ReconPatrol_ARC",	"MSF_ReconSentry_ARC"};
+		// Vehicles[] = {"MSF_O_ARC_MRAP", "MSF_O_ARC_MRAP_GMG", "MSF_O_ARC_MRAP_HMG", "MSF_O_ARC_DAGOR", "MSF_O_ARC_DAGOR_AT", "MSF_O_ARC_DAGOR_Armed"};
+		// Armor[] = {};
+		// Turrets[] = {"MSF_O_ARC_GMG_01", "MSF_O_ARC_GMG_01_High", "MSF_O_ARC_HMG_01", "MSF_O_ARC_HMG_01_High", "MSF_O_ARC_Mortar"};
+		// Units[] = {"MSF_O_ARC_AARifleman", "MSF_O_ARC_ATRifleman", "MSF_O_ARC_Autorifleman", "MSF_O_ARC_Medic", "MSF_O_ARC_Grenadier", "MSF_O_ARC_Engineer", "MSF_O_ARC_Leader", "MSF_O_ARC_Marksman", "MSF_O_ARC_Rifleman"};
+		// Air[] = {};
+		// VehiclePatrols[] = {"MSF_O_ARC_MRAP", "MSF_O_ARC_MRAP_GMG", "MSF_O_ARC_MRAP_HMG", "MSF_O_ARC_DAGOR", "MSF_O_ARC_DAGOR_AT", "MSF_O_ARC_DAGOR_Armed"};
+		// OPFOR - CSAT
 		class Set1
 		{
-			Groups[] = {"MSF_InfTeam_ARC", "MSF_InfTeam_AT_ARC", "MSF_InfTeam_AA_ARC", "MSF_InfSentry_ARC", "MSF_ReconTeam_ARC", "MSF_ReconPatrol_ARC",	"MSF_ReconSentry_ARC"};
-			Vehicles[] = {"MSF_O_ARC_MRAP", "MSF_O_ARC_MRAP_GMG", "MSF_O_ARC_MRAP_HMG", "MSF_O_ARC_DAGOR", "MSF_O_ARC_DAGOR_AT", "MSF_O_ARC_DAGOR_Armed"};
-			Armor[] = {"rhs_bmp2k_msv", "rhs_bmp3_late_msv", "rhs_t72bc_tv", "rhs_t72be_tv", "rhs_t80b", "rhs_t90a_tv", "rhs_t90sm_tv"};
-			Turrets[] = {"MSF_O_ARC_GMG_01", "MSF_O_ARC_GMG_01_High", "MSF_O_ARC_HMG_01", "MSF_O_ARC_HMG_01_High", "MSF_O_ARC_Mortar"};
-			Units[] = {"MSF_O_ARC_AARifleman", "MSF_O_ARC_ATRifleman", "MSF_O_ARC_Autorifleman", "MSF_O_ARC_Medic", "MSF_O_ARC_Grenadier", "MSF_O_ARC_Engineer", "MSF_O_ARC_Leader", "MSF_O_ARC_Marksman", "MSF_O_ARC_Rifleman"};
-			Air[] = {"RHS_Mi24P_vdv", "RHS_Mi24V_vdv", "RHS_Mi8mt_vdv", "RHS_Mi8MTV3_vdv", "RHS_Mi8MTV3_heavy_vdv"};
-			VehiclePatrols[] = {"MSF_O_ARC_MRAP", "MSF_O_ARC_MRAP_GMG", "MSF_O_ARC_MRAP_HMG", "MSF_O_ARC_DAGOR", "MSF_O_ARC_DAGOR_AT", "MSF_O_ARC_DAGOR_Armed"};
+			Groups[] = {"O_T_InfSentry", "O_T_InfTeam", "O_T_InfTeam_AA", "O_T_InfTeam_AT", "O_T_reconPatrol", "O_T_reconSentry", "O_T_reconTeam", "O_T_SniperTeam"};
+			Vehicles[] = {"O_T_APC_Tracked_02_cannon_ghex_F", "O_T_APC_Wheeled_02_rcws_v2_ghex_F", "O_T_MRAP_02_ghex_F", "O_T_MRAP_02_gmg_ghex_F", "O_T_MRAP_02_hmg_ghex_F", "O_T_LSV_02_unarmed_F", "O_T_LSV_02_armed_F", "O_T_LSV_02_AT_F"};
+			Armor[] = {"O_T_MBT_04_cannon_F", "O_T_MBT_04_command_F", "O_T_MBT_02_cannon_ghex_F"};
+			Turrets[] = {"O_GMG_01_F", "O_GMG_01_high_F", "O_GMG_01_A_F", "O_HMG_01_F", "O_HMG_01_high_F", "O_HMG_01_A_F", "O_Mortar_01_F"};
+			Units[] = {"O_T_Soldier_F", "O_T_Soldier_LAT_F", "O_T_Soldier_HAT_F", "O_T_Soldier_SL_F", "O_T_Soldier_TL_F", "O_T_Soldier_Repair_F", "O_T_Soldier_M_F", "O_T_Soldier_AR_F", "O_T_Medic_F", "O_T_Engineer_F"};
+			Air[] = {"O_Heli_Light_02_dynamicLoadout_F", "O_Heli_Attack_02_dynamicLoadout_F"};
+			VehiclePatrols[] = {"O_T_MRAP_02_ghex_F", "O_T_MRAP_02_gmg_ghex_F", "O_T_MRAP_02_hmg_ghex_F", "O_T_LSV_02_unarmed_F", "O_T_LSV_02_armed_F", "O_T_LSV_02_AT_F"};
 		};
 		// Independant - AAF
 		class Set2
@@ -78,15 +85,14 @@ class MSFConfig
 	{
 		UnmannedVic[] = {
 			"B_MRAP_01_F", "B_MRAP_01_gmg_F", "B_MRAP_01_hmg_F", "B_LSV_01_unarmed_F", "B_LSV_01_AT_F", "B_LSV_01_armed_F", "B_Quadbike_01_F", "B_Truck_01_covered_F",
-			"I_MRAP_03_F", "I_MRAP_03_gmg_F", "I_MRAP_03_hmg_F", "I_Truck_02_covered_F","O_MRAP_02_F", "O_MRAP_02_gmg_F", "O_MRAP_02_hmg_F", "rhs_tigr_msv", "rhs_tigr_3camo_msv", 
-			"rhs_tigr_sts_msv", "rhs_tigr_sts_3camo_msv"
+			"I_MRAP_03_F", "I_MRAP_03_gmg_F", "I_MRAP_03_hmg_F", "I_Truck_02_covered_F","O_MRAP_02_F", "O_MRAP_02_gmg_F", "O_MRAP_02_hmg_F"
 		};
 		UnmannedArmor[] = {
-			"rhs_btr80a_msv", "rhs_btr80_msv", "rhs_btr70_msv", "I_APC_tracked_03_cannon_F", "I_APC_Wheeled_03_cannon_F", "I_MBT_03_cannon_F", "rhs_t90sm_tv", "rhs_t80um", 
-			"B_MBT_01_TUSK_F", "B_MBT_01_cannon_F", "O_MBT_04_command_F", "O_MBT_02_cannon_F", "B_MBT_01_arty_F", "O_MBT_02_arty_F", "rhs_2s1_tv", "I_Truck_02_MRL_F"
+			"I_APC_tracked_03_cannon_F", "I_APC_Wheeled_03_cannon_F", "I_MBT_03_cannon_F", "B_MBT_01_TUSK_F", "B_MBT_01_cannon_F", "O_MBT_04_command_F", "O_MBT_02_cannon_F",
+			"B_MBT_01_arty_F", "O_MBT_02_arty_F", "I_Truck_02_MRL_F"
 		};
 		UnmannedStatic[] = {
-			"B_HMG_01_A_F", "B_GMG_01_F", "B_static_AA_F", "rhs_SPG9M_MSV", "RHS_ZU23_MSV", "I_Mortar_01_F"
+			"B_HMG_01_A_F", "B_GMG_01_F", "B_static_AA_F", "I_Mortar_01_F"
 		};
 		UnmannedHeli[] = {
 			"B_Heli_Transport_03_unarmed_F", "B_Heli_Light_01_F", "B_Heli_Transport_01_F", "O_Heli_Transport_04_covered_F", "O_Heli_Light_02_unarmed_F", "I_Heli_Transport_02_F",
