@@ -33,6 +33,12 @@ class CfgFunctions
 			class ParseValidArray {};
 			class SetConfigValue {};
 		};
+		class Eden
+		{
+			file = "z\msf\addons\fnc\eden";
+			class ConfigureMP {};
+			class GetSelectedUnitWeaponData {};
+		};
 		class Enemy
 		{
 			file = "z\msf\addons\fnc\enemy";
@@ -117,7 +123,6 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\mp";
 			class ConfigRespawnOnPlayer	{};
-			class ConfigureMP {};
 			class JIPSpawnNearPlayer {};
 			class RandomSpawn {};
 		};
