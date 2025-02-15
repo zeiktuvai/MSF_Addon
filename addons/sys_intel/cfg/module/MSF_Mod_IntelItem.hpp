@@ -70,6 +70,12 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 				};
 			};
 		};
+		class IntelItem_SyncedUnits
+		{
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "Synced Units";
+		};
 		class ActivationSide
 		{
 			displayName = "Activation Side";
@@ -140,6 +146,39 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 			displayName = "Allow Objects";
 			tooltip = "Allow some objects like documents, laptops or radios to have this intel item.";
 			property = "MSF_MOD_IntelItem_Target_OBJ";
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "true";
+		};
+		class IntelItem_Enablement
+		{
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "Intel types provided to players upon discovery.";
+		};
+		class EnableTask
+		{
+			displayName = "Enable Task";
+			tooltip = "Create a task for players to complete when discovered.";
+			property = "MSF_MOD_IntelItem_En_Task";
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "true";
+		};
+		class EnableNotification
+		{
+			displayName = "Enable Notification";
+			tooltip = "Display a notification to players when discovered.";
+			property = "MSF_MOD_IntelItem_En_Notif";
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "true";
+		};
+		class EnableDiary
+		{
+			displayName = "Enable Diary Entry";
+			tooltip = "Create a diary entry when discovered.";
+			property = "MSF_MOD_IntelItem_En_Diary";
 			control = "Checkbox";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "true";
@@ -258,12 +297,30 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 			control = "SubCategory";
 			displayName = "Intel Diary Entry";
 		};
+		class DiarySubj
+		{
+			displayName = "Diary Subject";
+			tooltip = "Subject to display the diary entry under.";
+			property = "MSF_Mod_IntelItem_DiaryS";
+			control = "Edit";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "''";
+		};
+		class DiaryTitle
+		{
+			displayName = "Diary Title";
+			tooltip = "Title of the diary entry.";
+			property = "MSF_Mod_IntelItem_DiaryTi";
+			control = "Edit";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "''";
+		};
 		class DiaryText
 		{
 			displayName = "Diary Text";
-			tooltip = "Array of group classes for spawning.";
-			property = "MSF_Mod_IntelItem_Diary";
-			control = "EditCode";
+			tooltip = "Diary entry content.";
+			property = "MSF_Mod_IntelItem_DiaryT";
+			control = "EditMulti5";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "''";
 		};

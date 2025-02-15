@@ -64,7 +64,7 @@ _allObjs append _objects;
 //TODO: Consolidate this
 if (_intel) then {
 	private _desc = format ["Reported Location of %1", _type];
-	_intelID = [_type, _position, _desc, ["CIV", "MIL", "OBJ"], 1, ["mil_dot", "Color1_FD_F"], ["MapUpdate", "Map updated with reported enemy location."], _desc] call MSF_Intel_fnc_AddIntelItem;
+	_intelID = [_type, _position, _desc, ["CIV", "MIL", "OBJ"], 1, ["mil_dot", "Color1_FD_F"], ["MapUpdate", "Map updated with reported enemy location."], []] call MSF_Intel_fnc_AddIntelItem;
 };
 if (_isOFE select 0) then {
 	[_type, _position] call MSF_fnc_OFE_CreateMapMarker;
