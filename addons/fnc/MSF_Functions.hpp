@@ -13,11 +13,12 @@ class CfgFunctions
 				postInit = 1;
 			};
 		};
-		class ACEOptions
+		class ACE
 		{
 			file = "z\msf\addons\fnc\ace";
 			class ACEMedUnconcious {};
 			class AntistasiEnemyPlanes {};
+			//class SetupInventoryOverride {};
 		};
 		class Config
 		{

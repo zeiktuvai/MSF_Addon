@@ -17,7 +17,7 @@ private _type = "CIV";
 
 if (_parents findIf { _x == "Item_Base_F" || _x == "Items_base_F" } != -1) then {
 	_prompt = "Look for Intel";	
-	_actTime = 20;
+	_actTime = MSF_Intel_ObjTime;
 	_type = "OBJ";
 };
 
@@ -28,11 +28,12 @@ if ("Civilian" in _parents) then {
 	_showCondition = _showCondition + " && [_target] call ace_medical_status_fnc_isInStableCondition";
 	_prompt = "Ask for Information";
 	_failAction = compile (toString _failAction + toString {hint "Civilians will not talk to you if they feel threatened.";});
+	_actTime = MSF_Intel_CivTime;
 };
 
 if (_parents findIf { _x == "SoldierWB" || _x == "SoldierEB" || _x == "SoldierGB"; } != -1) then {
 	_prompt = "Gather Intel";
-	_actTime = 10;
+	_actTime = MSF_Intel_MilTime;
 	_type = "MIL";
 };
 
