@@ -24,7 +24,7 @@ private _hideStatement = {
 private _intelAct = {
 	private _intelID = thisTrigger getVariable "IntelID";
 	if (_intelID != "") then {
-		[_intelID] call MSF_Intel_fnc_GetDiscoveredIntelItem;
+		//[_intelID] call MSF_Intel_fnc_GetDiscoveredIntelItem;
 	};
 };
 

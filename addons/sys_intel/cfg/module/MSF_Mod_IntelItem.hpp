@@ -279,6 +279,12 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 					tooltip = "Displayes the Map updated notification with custom text.";
 					value = "MapUpdate";
 				};
+				class IntelDiscovered
+				{
+					name = "Intel Discovered";
+					tooltip = "Displayes the New Intel Discovered notification with custom text.";
+					value = "IntelDiscovered";
+				};
 			};
 		};
 		class NotificationText
