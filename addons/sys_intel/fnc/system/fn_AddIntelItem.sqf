@@ -1,5 +1,5 @@
 params [["_name", "", [""]], ["_position", [], [[]]], ["_title", "", [""]], ["_targetType", ["CIV", "MIL", "OBJ"], [[]]], ["_intelLevel", 1, [1]],
-	["_markerData", [], [[]]], ["_notificationData", [], [[]]], ["_diaryData", "", [""]], ["_taskData", [], [[]]]];
+	["_markerData", [], [[]]], ["_notificationData", [], [[]]], ["_diaryData", [], [[]]], ["_taskData", [], [[]]]];
 
 private _intel = [] call MSF_fnc_GetIsIntelEnabled;
 private _key = "";

@@ -112,7 +112,7 @@ if (_intelP && _type in ["Mil_NATO", "Mil_OPFOR", "Mil_IND"]) then
 
 if (_intel) then {
 	private _desc = "Reported Military Activity";
-	_intelID = ["DEADUNIT_MOD", position _logic, _desc, ["CIV", "OBJ"], 1, ["hd_warning", "Color1_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], _desc] call MSF_Intel_fnc_AddIntelItem;
+	_intelID = ["DEADUNIT_MOD", position _logic, _desc, ["CIV", "OBJ"], 1, ["hd_warning", "Color1_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], []] call MSF_Intel_fnc_AddIntelItem;
 };
 
 [_logic, _area select 0, _area select 1, [_activationSide] call MSF_fnc_GetModuleActivationSide, "present", _area select 3, _allObjs, "POI", [], _intelID] call MSF_fnc_OFE_CreateModuleActivationTrigger;

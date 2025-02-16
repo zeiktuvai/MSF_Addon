@@ -21,6 +21,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\sys_intel\fnc\system";
 			class AddIntelItem {};
+			class CreateNewDiaryEntry {};
 			class SetIntelLevel {};
 		};
 	};

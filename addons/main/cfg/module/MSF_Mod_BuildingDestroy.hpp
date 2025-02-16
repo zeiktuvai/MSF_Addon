@@ -2,7 +2,7 @@ class MSF_Module_BldgDestroy : Module_F
 {
 	scope = 2;
 	displayName = "Destroy Buildings";
-	icon = "x\zen\addons\context_actions\ui\ammo_ca.paa";
+	icon = "a3\modules_f\data\editterrainobject\icon_ca.paa";
 	category = "MSF_Module";
 	function = "MSF_fnc_Mod_BuildingDestroy";
 	functionPriority = 1;
