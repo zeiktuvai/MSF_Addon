@@ -54,13 +54,13 @@ if (!isServer) then
 	[] call MSF_fnc_ApplyDamageReduction;
 };
 
-if (!isDedicated) then
-{
-	if (MSF_Unit_EnableOverride_W) then {
+// if (!isDedicated) then
+// {
+// 	if (MSF_Unit_EnableOverride_W) then {
 
-		//_return select 0 params ["_rifle", "_acc", "_mags"];
-		[] call MSF_fnc_SetupInventoryOverride;
-	};
-};
+// 		//_return select 0 params ["_rifle", "_acc", "_mags"];
+// 		[] call MSF_fnc_SetupInventoryOverride;
+// 	};
+// };
 
 [] call MSF_fnc_RandomSpawn;

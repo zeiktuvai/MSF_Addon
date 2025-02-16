@@ -18,7 +18,7 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\ace";
 			class ACEMedUnconcious {};
 			class AntistasiEnemyPlanes {};
-			class SetupInventoryOverride {};
+			//class SetupInventoryOverride {};
 		};
 		class Config
 		{
