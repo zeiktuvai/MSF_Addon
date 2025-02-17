@@ -24,6 +24,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\config";
 			class GetConfigClasses {};
+			class GetConfigData {};
 			class GetDroneList {};
 			class GetUnitOverrideCfg {};
 		};
@@ -78,14 +79,6 @@ class CfgFunctions
 			class GetUnitsByProperty {};
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};
-		};
-		class Inventory
-		{
-			file = "z\msf\addons\fnc\inventory";
-			class GenerateArmoryAmmo {};
-			class GenerateInventory {};
-			class GenerateRandomArmory {};
-			class GenerateRandomInventory {};
 		};
 		class Math
 		{
@@ -160,8 +153,6 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\validator";
 			class SetInvGenEnable {};
 			class SetDialogValidator {};
-			class SetCfgEntryValidator {};
-			class CheckNotifyTriggerHasArea {};
 		};
 	};
 };
