@@ -244,6 +244,16 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 					value = "hd_destroy";
 					picture = "a3\ui_f\data\map\markers\handdrawn\destroy_ca.paa";
 				};
+				class Ellipse {
+					name = "Ellipse";
+					value = "ELLIPSE";
+					picture = "a3\3den\data\attributes\shape\ellipse_ca.paa";
+				};
+				class Rectangle {
+					name = "Rectangle";
+					value = "RECTANGLE";
+					picture = "a3\3den\data\attributes\shape\rectangle_ca.paa";
+				};
 			};
 		};
 		class MarkerColor
@@ -255,6 +265,15 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "'Default'";
 			typeName = "STRING";
+		};
+		class MarkerSize
+		{
+			displayName = "Marker Area";
+			tooltip = "Area of marker (Only for Ellipse and Rectangle).";
+			property = "MSF_MOD_IntelItem_MarkerArea";
+			control = "EditXY";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "[100, 100]";			
 		};
 		class IntelItem_Notification
 		{
@@ -370,6 +389,21 @@ class MSF_Module_IntelItem : MSF_Module_Intel
 			control = "TaskTypes";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "'Default'";
+		};
+		class IntelItem_TaskCompl
+		{
+			data = "AttributeSystemSubcategory";
+			control = "SubCategory";
+			displayName = "Task Completion";
+		};
+		class TaskComplID
+		{
+			displayName = "Task ID";
+			tooltip = "Task ID of a task to complete when this intel item is found.";
+			property = "MSF_Mod_IntelItem_TaskCompl";
+			control = "Edit";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "''";
 		};
 
 		class ModuleDescription : ModuleDescription {};
