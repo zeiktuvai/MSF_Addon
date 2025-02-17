@@ -128,6 +128,21 @@ class MSFSettings
 					validate = "number";
 					typeName = "NUMBER";
 				};
+				class IntelSys
+				{
+					data = "AttributeSystemSubcategory";
+					control = "SubCategory";
+					displayName = "Intel System Options";
+				};
+				class MSF_Intel_EnableDiscovery
+				{
+					displayName = "Enable Location Discovery";
+					tooltip = "When enabled, intel items will automatically be discovered by players when near. (This will not activate notfications or tasks).";
+					property = "MSF_Intel_EnableDiscovery";
+					control = "Checkbox";
+					expression = "_this setVariable ['%s',_value];";					
+					defaultValue = "true";
+				};	
 			};
 		};		
 	};		
