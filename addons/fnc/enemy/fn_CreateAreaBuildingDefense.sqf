@@ -10,7 +10,7 @@
 	Function Ver 1.0
 	Implemented in: MSF Addon v1.6.0
 */
-params [["_trigger", objNull, [objNull]], ["_num", 0, [0]], ["_side", east, [east]], ["_groupTypes", [], [[]]], ["_bldgProb", 1, [1]], ["_logicArea", [], [[]]], ["_bldgSpread", false, [false]]];
+params [["_trigger", objNull, [objNull]], ["_str", 0.5, [0]], ["_side", east, [east]], ["_unitTypes", [], [[]]], ["_bldgProb", 1, [1]], ["_logicArea", [], [[]]]];
 
 private _x = _logicArea select 0;
 private _y = _logicArea select 1;
@@ -26,21 +26,30 @@ private _allObjs = [];
 } forEach _bldg;
 
 if (_bldgFound) then {
-	for "_i" from 1 to _num do {
-		sleep 0.1;
-	
-		if ([_bldgProb] call MSF_fnc_CalculateProbability) then {	
-			private _pos = [[[position _trigger, _radius]], []] call BIS_fnc_randomPos;
-			private _group = [_pos, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;
-			[_pos, units _group, _radius, false, _bldgSpread, true] call MSF_fnc_ZEN_OccupyHouse;
+	{
+		private _exempt = nearestObjects [_x, ["MSF_Placeholder_BldgSpawnExempt"], sizeOf (typeOf _x)];
 
-			if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
-				{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
+		if (count _exempt == 0) then {
+			if ([_bldgProb] call MSF_fnc_CalculateProbability) then {
+				private _spots = _x buildingPos -1;
+
+				private _count = floor (count _spots * _str);
+				private _group = createGroup _side;
+				_group setCombatMode "WHITE";
+				_group setBehaviourStrong "SAFE";
+
+				for "_i" from 1 to _count do {
+					private _spot = selectRandom _spots;
+					_group createUnit [(selectRandom _unitTypes), _spot, [], 0, "NONE"];
+					_spots deleteAt (_spots find _spot);
+				};
+				
+				units _group apply { _x disableAI "PATH" };
+				_allObjs append (units _group);
 			};
-
-			_allObjs append (units _group);
 		};
-	};
+
+	} forEach _bldg;
 };
 
 _allObjs;

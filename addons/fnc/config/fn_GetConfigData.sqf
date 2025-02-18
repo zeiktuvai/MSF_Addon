@@ -39,6 +39,13 @@ switch (_type) do {
 	};
 
 	case "civs": {
-		_return = getArray (configFile >> 'MSFConfig' >> 'CivUnits' >> _civType);
-	}
+		createHashMapFromArray
+		[
+			["Civ_African", getArray (configFile >> 'MSFConfig' >> 'CivUnits' >> 'Civ_African')],
+			["Civ_Asian", getArray (configFile >> 'MSFConfig' >> 'CivUnits' >> 'Civ_Asian')],
+			["Civ_European", getArray (configFile >> 'MSFConfig' >> 'CivUnits' >> 'Civ_European')],
+			["Civ_Livionian", getArray (configFile >> 'MSFConfig' >> 'CivUnits' >> 'Civ_Livionian')],
+			["Civ_Tanoan", getArray (configFile >> 'MSFConfig' >> 'CivUnits' >> 'Civ_Tanoan')]
+		];
+	};
 };

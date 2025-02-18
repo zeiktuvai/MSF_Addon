@@ -33,28 +33,6 @@ switch (_type) do {
 		];
 	};
 
-	// Type 1: Inventory
-	case 1: {
-
-		private ["_items", "_launch", "_grenade", "_med", "_food"];
-
-		private _mags = [];
-
-		_mags append getArray (configFile >> 'MSFConfig' >> 'MagazineSets' >> "Set1");
-		_mags append getArray (configFile >> 'MSFConfig' >> 'MagazineSets' >> "Set2");
-		_mags append getArray (configFile >> 'MSFConfig' >> 'MagazineSets' >> "Set3");
-
-		_return =
-		[
-			getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'items'),
-			_mags,
-			getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'launcherRounds'),
-			getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'grenades'),
-			getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'aceMedical'),
-			getArray (configFile >> 'MSFConfig' >> 'InventorySets' >> 'aceFood')
-		];
-	};
-
 	// Type 2: Empty vehicles
 	case 2: {
 		_return = 

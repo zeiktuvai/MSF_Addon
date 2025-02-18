@@ -17,15 +17,14 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\ace";
 			class ACEMedUnconcious {};
+			class AddInventoryOverrideOption {};
 			class AntistasiEnemyPlanes {};
-			//class SetupInventoryOverride {};
 		};
 		class Config
 		{
 			file = "z\msf\addons\fnc\config";
 			class GetConfigClasses {};
 			class GetConfigData {};
-			class GetDroneList {};
 			class GetUnitOverrideCfg {};
 		};
 		class Data
@@ -56,20 +55,10 @@ class CfgFunctions
 			class GeneratePatrolRoute {};
 			class SpawnGroupInSafePos {};
 		};
-		class ExternalFunctions
-		{
-			file = "z\msf\addons\fnc\ext";
-			class ZEN_OccupyHouse {};
-			class ZEN_InsertionSort {};
-			class ZEN_ExtendPosition {};
-			class ZEN_ArrayShuffle {};
-			class JBOY_UpDown {};
-		};
 		class Helpers
 		{
 			file = "z\msf\addons\fnc\helper";
 			class AddAceMainMenuItem {};
-			class FindOutsidePositionInTrigger {};
 			class FindSafeSpawnPos {};
 			class GetModuleActivationSide {};
 			class GetObjectsByProperty {};
@@ -98,7 +87,7 @@ class CfgFunctions
 			class CreateMapMarker {};
 			class InfiniteFuelHandler {};
 			class RespawnVehicleCustomization {};
-			class SetupUAVSpawnSystem {};
+			//class SetupUAVSpawnSystem {};
 		};
 		class Module
 		{
