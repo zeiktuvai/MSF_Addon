@@ -14,11 +14,12 @@ params [["_trigger", objNull, [objNull]]];
 
 private _vals = _trigger getVariable ["module_params", []];
 _vals params ["_side", "_building", "_bldgStr", "_bldgProb", "_vehicle", "_vicNum", "_vicFill", "_vicProb", "_armor", "_armorNum", "_armorProb",
-	"_static", "_staticNum", "_staticProb", "_air", "_airNum", "_airProb", "_logicArea", "_intelProvider"];
+	"_static", "_staticNum", "_staticProb", "_air", "_airNum", "_airProb", "_logicArea", "_intelProvider", "_units"];
 
 private _classes = [0, _side] call MSF_fnc_GetConfigClasses;
 _classes params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClasses", "_staticTypes", "_fillUnits"];
 
+[_units, true] call MSF_fnc_ShowHideObjects;
 
 // building defense
 if (_building) then {
