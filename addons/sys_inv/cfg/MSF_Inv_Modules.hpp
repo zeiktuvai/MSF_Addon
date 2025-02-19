@@ -16,3 +16,4 @@ class Module_F : Logic
 };
 
 #include "module/MSF_Mod_InvGen.hpp"
+#include "module/MSF_Mod_UAV.hpp"

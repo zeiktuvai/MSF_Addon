@@ -17,6 +17,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\ace";
 			class ACEMedUnconcious {};
+			class AddAceMenuItem {};
 			class AddInventoryOverrideOption {};
 			class AntistasiEnemyPlanes {};
 		};
@@ -30,6 +31,7 @@ class CfgFunctions
 		class Data
 		{
 			file = "z\msf\addons\fnc\data";
+			class ConfigValueExists {};
 			class DeleteConfigValue {};
 			class ParseValidArray {};
 			class SetConfigValue {};
@@ -58,7 +60,7 @@ class CfgFunctions
 		class Helpers
 		{
 			file = "z\msf\addons\fnc\helper";
-			class AddAceMainMenuItem {};
+			class DistinctArray {};
 			class FindSafeSpawnPos {};
 			class GetModuleActivationSide {};
 			class GetObjectsByProperty {};
@@ -87,7 +89,6 @@ class CfgFunctions
 			class CreateMapMarker {};
 			class InfiniteFuelHandler {};
 			class RespawnVehicleCustomization {};
-			//class SetupUAVSpawnSystem {};
 		};
 		class Module
 		{

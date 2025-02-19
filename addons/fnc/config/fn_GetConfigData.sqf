@@ -1,4 +1,4 @@
-params [["_type", "inv", [""]]]; //, ["_side", east, [east]], ["_civType", "Civ_African", [""]]];
+params [["_type", "inv", [""]]]; //, ["_side", east, [east]]];
 
 switch (_type) do {
 
@@ -16,13 +16,13 @@ switch (_type) do {
 	case "empty": {
 		createHashMapFromArray
 		[
-			["Vic", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedVic')],
-			["Armor", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedArmor')],
-			["Turret", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedStatic')],
-			["Heli", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedHeli')],
-			["Plane", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedPlane')],
-			["Fuel", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'FuelTruck')],
-			["Ammo", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'AmmoTruck')]
+			["UnmannedVic", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedVic')],
+			["UnmannedArmor", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedArmor')],
+			["UnmannedStatic", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedStatic')],
+			["UnmannedHeli", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedHeli')],
+			["UnmannedPlane", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'UnmannedPlane')],
+			["FuelTruck", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'FuelTruck')],
+			["AmmoTruck", getArray (configFile >> 'MSFConfig' >> 'EmptyUnitSets' >> 'AmmoTruck')]
 		];
 	};
 

@@ -9,7 +9,7 @@ private _armorSpawns = _units select { typeOf _x == "MSF_Placeholder_Armor_U"};
 private _ftSpawns = _units select { typeOf _x == "MSF_Placeholder_FuelTruck"};
 private _atSpawns = _units select { typeOf _x == "MSF_Placeholder_AmmoTruck"};
 
-private _uTypes = [2] call MSF_fnc_GetConfigClasses;
+private _uTypes = ["empty"] call MSF_fnc_GetConfigData;
 private _activationSide = _logic getVariable ["ActivationSide", 1];
 private _override = _logic getVariable ["UnitClasses", ""];
 private _vicDefault = _logic getVariable ["VicClassOverride", true];
@@ -66,7 +66,7 @@ if (count _vicSpawns > 0) then {
 	private _vicTypes = [];
 	
 	if (_vicDefault) then {			
-		_vicTypes =	_uTypes select 0;
+		_vicTypes =	_uTypes get "UnmannedVic";
 	} else {
 		_vicTypes = [_logic, "VicClasses", "Parsing Vehicle Class Override Dead Unit module"] call MSF_fnc_ParseValidArray;
 	};
@@ -78,7 +78,7 @@ if (count _armorSpawns > 0) then {
 	private _types = [];
 	
 	if (_armorDefault) then {			
-		_types = _uTypes select 1;
+		_types = _uTypes get "UnmannedArmor";
 	} else {
 		_types = [_logic, "ArmorClasses", "Parsing Armor Class Override Dead Unit module"] call MSF_fnc_ParseValidArray;
 	};
@@ -87,13 +87,13 @@ if (count _armorSpawns > 0) then {
 };
 
 if (count _ftSpawns > 0) then {
-	private _types = _uTypes select 5;
+	private _types = _uTypes get "FuelTruck";
 	
 	_allObjs append ([_types, _ftSpawns] call MSF_fnc_OFE_SpawnUnmannedVic);	
 };
 
 if (count _atSpawns > 0) then {
-	private _types = _uTypes select 6;
+	private _types = _uTypes get "AmmoTruck";
 	
 	_allObjs append ([_types, _atSpawns] call MSF_fnc_OFE_SpawnUnmannedVic);
 };

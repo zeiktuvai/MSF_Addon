@@ -14,12 +14,16 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\sys_inv\fnc\module";
             class Mod_InvGen {};
+            class Mod_UAV {};
         };
         class System
         {
             file = "z\msf\addons\sys_inv\fnc\system";
             class GenerateInventory {};
             class SelectCategory {};
+            class SetupUAVSystem {
+                postInit = 1;
+            };
         };
     };
 };

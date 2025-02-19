@@ -1,5 +1,10 @@
 private _classes = ["Default"];
 private _names = ["Default"];
+private _weapList = [];
+
+if (MSF_Unit_EnableOverride_W_Types != "") then {
+	_weapList = parseSimpleArray MSF_Unit_EnableOverride_W_Types;
+};
 
 {
 	if (configFile >> "CfgWeapons" >> _x select 0 select 0 != configNull) then
@@ -7,7 +12,7 @@ private _names = ["Default"];
 		_classes pushBack (_x select 0 select 0);
 		_names pushBack (_x select 0 select 1);
 	};
-} forEach (parseSimpleArray MSF_Unit_EnableOverride_W_Types);
+} forEach _weapList;
 
 [
 	"MSF_User_SelectedPrimary",

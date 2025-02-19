@@ -52,17 +52,6 @@ class MSFSettings
 					expression = "_this setVariable ['%s',_value];";
 					defaultValue = "false";
 				};
-				class UAVSpawnInterval
-				{
-					displayName = "UAV Spawn Delay";
-					tooltip = "Sets the delay that players (UAV Operators) must wait before spawning another UAV.";
-					property = "MSF_Player_UAVSpawn_Delay";			
-					control = "EditShort";
-					expression = "_this setVariable ['%s',_value];";
-					defaultValue = 900;
-					validate = "number";
-					typeName = "NUMBER";
-				};
 				class SpawnCat
 				{
 					data = "AttributeSystemSubcategory";
