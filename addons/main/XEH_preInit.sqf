@@ -61,3 +61,11 @@
 	[1, 60, 15],
 	1
 ] call CBA_fnc_addSetting;
+[
+	"MSF_UAV_SpawnDelay",
+	"TIME",
+	["UAV Spawn Delay", "Sets how long a drone operator must wait before spawning another drone."],
+	["MSF - Server Settings", "UAV System"],
+	[60, 3600, 900],
+	1
+] call CBA_fnc_addSetting;

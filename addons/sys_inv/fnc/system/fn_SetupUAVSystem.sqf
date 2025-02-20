@@ -24,9 +24,3 @@ if (_count > 0 && count _droneOps > 0) then {
 		[_x, "Deploy Drone", _action, _condition, [], "\A3\Drones_F\Air_F_Gamma\UAV_02\Data\UI\Map_UAV_02_CA.paa", true] call MSF_fnc_AddAceMenuItem;
 	} forEach _droneOps;
 };
-
-// Spawn relavant code
-//private _uavObj = [_player, _drone, west] call MSF_fnc_SpawnUAV;
-//_player setVariable ["MSF_UAV_SpawnTimer", serverTime + _interval];
-// this needs to be an ace setting.
-//private _interval = getMissionConfigValue ["MSF_Player_UAVSpawn_Delay", 900];

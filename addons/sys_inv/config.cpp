@@ -10,7 +10,7 @@ class CfgPatches
 		name = "MSF - Inventory System";
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
-        units[] = {"MSF_Module_InvGen", "MSF_Module_UAV"};
+        units[] = {"MSF_Module_InvGen", "MSF_Module_UAV", "MSF_Module_UAVSpawn", "MSF_Module_UGVSpawn"};
         weapons[] = {};
         requiredVersion = 2.1;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction", "MSF3den"};

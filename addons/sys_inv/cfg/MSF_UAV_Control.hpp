@@ -40,7 +40,7 @@ class UAVDialog
         class MSF_uav_dialog_ok: RscButtonMenu
         {
             idc = 1600;
-            action = "hint str lbText [1500, (lbCurSel 1500)]; closeDialog 0;";
+            action = "private _sel = lbCurSel 1500; [player, [lbData [1500, _sel], lbText [1500, _sel]], side player] call MSF_fnc_SpawnUAV; closeDialog 0;";
             colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
             colorBackground2[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
             colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};

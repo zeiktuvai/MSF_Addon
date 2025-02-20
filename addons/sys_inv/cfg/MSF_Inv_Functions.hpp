@@ -25,5 +25,10 @@ class CfgFunctions
                 postInit = 1;
             };
         };
+        class UI
+        {
+            file = "z\msf\addons\sys_inv\fnc\ui";
+            class DisplayDeployUAV {};
+        };
     };
 };
