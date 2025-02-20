@@ -1,3 +1,4 @@
+- Added Drone spawn system (Drone Inventory Module, UAV Spawn and UGV Spawn).
 - Added ability to create ellipse/rectangle map marker for an intel item.
 - Moved Inventory Generation from attribute to module.
 - Updated fortify module to remove external code.
