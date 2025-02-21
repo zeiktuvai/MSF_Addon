@@ -13,20 +13,20 @@
 params [["_trigger", objNull, [objNull]]];
 
 private _vals = _trigger getVariable ["module_params", []];
-_vals params ["_side", "_building", "_bldgNum", "_bldgSpread", "_bldgProb", "_vehicle", "_vicNum", "_vicFill", "_vicProb", "_armor", "_armorNum", "_armorProb",
-	"_static", "_staticNum", "_staticProb", "_patrol", "_patrolNum", "_patrolProb", "_air", "_airNum", "_airProb", "_logicArea", "_intelProvider"];
-
+_vals params ["_side", "_building", "_bldgStr", "_bldgProb", "_vehicle", "_vicNum", "_vicFill", "_vicProb", "_armor", "_armorNum", "_armorProb",
+	"_static", "_staticNum", "_staticProb", "_air", "_airNum", "_airProb", "_logicArea", "_intelProvider", "_units"];
 
 private _classes = [0, _side] call MSF_fnc_GetConfigClasses;
 _classes params ["_infantryGroupClasses", "_vicTypes", "_armorTypes", "_airClasses", "_staticTypes", "_fillUnits"];
 
+[_units, true] call MSF_fnc_ShowHideObjects;
 
 // building defense
 if (_building) then {
-	[_trigger, _bldgNum, _bldgSpread, _side, _infantryGroupClasses, _bldgProb, _logicArea, _intelProvider] spawn 
+	[_trigger, _bldgStr, _side, _fillUnits, _bldgProb, _logicArea, _intelProvider] spawn 
 	{		
-		params ["_trigger", "_buildingNum", "_bldgSpread", "_side", "_infantryGroupClasses", "_bldgProb", "_logicArea", "_intelProvider"];
-		private _units = [_trigger, _buildingNum, _side, _infantryGroupClasses, _bldgProb, _logicArea, _bldgSpread] call MSF_fnc_CreateAreaBuildingDefense;
+		params ["_trigger", "_bldgStr", "_side", "_infantryGroupClasses", "_bldgProb", "_logicArea", "_intelProvider"];
+		private _units = [_trigger, _bldgStr, _side, _infantryGroupClasses, _bldgProb, _logicArea] call MSF_fnc_CreateAreaBuildingDefense;
 
 		// intel system provider
 		if (count _intelProvider > 0) then
@@ -67,14 +67,6 @@ if (_static) then {
 		[_trigger, _staticNum, _side, _staticTypes, [], 2, _staticProb, _logicArea] call MSF_fnc_CreateAreaVehicleDefense;
 	};
 };
-
-// Area patrol
-// if (_patrol) then {		
-// 	[_trigger, _patrolNum, _side, _infantryGroupClasses, _patrolProb, _logicArea] spawn {
-// 		params ["_trigger", "_patrolNum", "_side", "_infantryGroupClasses", "_patrolProb", "_logicArea"];
-// 		[_trigger, _patrolNum, _side, _infantryGroupClasses, _patrolProb, _logicArea] call MSF_fnc_CreateAreaDefense;
-// 	};	
-// };
 
 // Air units
 if (_air) then {		

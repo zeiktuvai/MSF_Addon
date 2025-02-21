@@ -28,7 +28,6 @@ class Cfg3DEN
 		{
 			#include "cfg\object\MSF_Attr_Player.hpp"
 			#include "cfg\object\MSF_Attr_General.hpp"
-			#include "cfg\object\MSF_Attr_IGS.hpp"
 		};
 	};
 	class Mission

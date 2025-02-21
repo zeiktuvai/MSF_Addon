@@ -1,6 +1,5 @@
 params [["_name", "", [""]], ["_text", "", [""]], ["_position", [], [[]]], ["_type", "", [""]], ["_color", "", [""]], ["_size", [0, 0], [[]]]];
 
-hint str _size;
 _marker = createMarkerLocal [format ["M_%1", _name], _position];
 
 if (_type == "ELLIPSE" || _type == "RECTANGLE") then {
