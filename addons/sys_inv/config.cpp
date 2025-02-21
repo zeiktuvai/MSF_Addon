@@ -21,3 +21,19 @@ class CfgVehicles
 {
     #include "cfg\MSF_Inv_Modules.hpp"
 };
+
+class CfgHints
+{
+	displayName = "MSF - Drone System";
+	class MSFDrone
+	{
+		class DroneDeployed
+		{
+			displayName = "Drone Deployed";
+            image = "\A3\Drones_F\Air_F_Gamma\UAV_02\Data\UI\Map_UAV_02_CA.paa";
+			description = "A new %11 has been deployed.";
+			tip = "Check your UAV terminal for the connected drone. This drone has been removed from the inventory.";
+			arguments[] = {{"Drone"}};
+		};
+	};
+};
