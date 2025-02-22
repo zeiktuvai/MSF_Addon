@@ -30,6 +30,9 @@ if ([_chance] call MSF_fnc_CalculateProbability && !(isNil "_item")) exitWith {
 	};
 
 	["MSF_IntelItems", _item select 0] call MSF_fnc_DeleteConfigValue;
+	private _data = missionNamespace getVariable "MSF";
+	private _intelCount = _data getOrDefault ["GatheredIntelCount", 0];
+	["MSF", "GatheredIntelCount", _intelCount + 1] call MSF_fnc_setConfigValue;
 };
 
 private _message = "<t size='0.7'>This person has <t color='#ff0000'>no</t> information</t>";
