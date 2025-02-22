@@ -1,6 +1,8 @@
-
-
-// supply truck
-[[],[[["rhs_fim92_mag",1],4],[["rhs_mag_20Rnd_556x45_Mk262_Stanag",20],15],[["rhs_mag_30Rnd_556x45_M855_Stanag",30],15],[["rhsusf_mag_17Rnd_9x19_FMJ",17],5],[["rhs_mag_M433_HEDP",1],6]],[[["rhs_weap_fim92","","","",[],[],""],1],[["rhs_weap_fim92","","","",["rhs_fim92_mag",1],[],""],2],[["rhs_weap_M136","","","",[],[],""],2],[["rhs_weap_M320","","","",[],[],""],1]]]
+- Added Drone spawn system (Drone Inventory Module, UAV Spawn and UGV Spawn).
+- Added ability to create ellipse/rectangle map marker for an intel item.
+- Moved Inventory Generation from attribute to module.
+- Updated fortify module to remove external code.
+- Updated fortify module to refine building spawn process.
+- Updated fortify module to allow for hiding/showing of synced units.
 
 [position player, 40] call BIS_fnc_objectsGrabber;

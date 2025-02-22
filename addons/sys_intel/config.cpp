@@ -24,8 +24,17 @@ class CfgNotifications
 {
 	class MapUpdate
 		{
-		title = "Map Updated.";
+		title = "Map Updated";
 		iconPicture = "a3\ui_f\data\gui\rsc\rscdisplayarsenal\map_ca.paa";
+		iconText = "";
+		description = "%1";
+		color[] = {1,1,1,1};
+		duration = 5;
+	};
+	class IntelDiscovered
+		{
+		title = "New Intel Discovered";
+		iconPicture = "a3\3den\data\cfg3den\layer\icon_ca.paa";
 		iconText = "";
 		description = "%1";
 		color[] = {1,1,1,1};

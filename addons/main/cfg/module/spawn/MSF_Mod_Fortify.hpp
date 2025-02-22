@@ -100,6 +100,11 @@ class MSF_Module_Spawn_Fortify : Module_F
 			expression = "_this setVariable ['%s',_value];";					
 			defaultValue = "false";
 		};
+		class Units : Units
+		{
+			tooltip = "Additional units that will be hidden on start and show when the area is fortified.";
+			property = "MSF_Mod_InvGen_Units";
+		};
         class MSFFortify_Building
 		{
 			data = "AttributeSystemSubcategory";
@@ -115,30 +120,19 @@ class MSF_Module_Spawn_Fortify : Module_F
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = "false";				
 		};
-		class BuildingNum
+		class BuildingStrength
 		{
-			displayName = "Number to Spawn";
-			tooltip = "Number of buildings to fortify.";
-			property = "MSF_Mod_Fortify_Building_Num";
-			control = "EditShort";
+			displayName = "Fortify Strength";
+			tooltip = "Percentage that a building will be filled.";
+			property = "MSF_Mod_Fortify_Building_percent";
+			control = "Slider";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "5";
-			validate = "number";
-			typeName = "NUMBER";
-		};
-		class BuildingSpread
-		{
-			displayName = "Spread Spawns";
-			tooltip = "Attempts to spread spawns more evenly across all buildings in the area.";
-			property = "MSF_Mod_Fortify_Building_Spread";
-			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "false";
+			defaultValue = 0.5;
 		};
 		class BuildingProbability
 		{
-			displayName = "Spawn Chance";
-			tooltip = "Percent chance that patrols will spawn";
+			displayName = "Fortify Chance";
+			tooltip = "Percent chance that a building will have units in it.";
 			property = "MSF_Mod_Fortify_Building_Probability";
 			control = "Slider";
 			expression = "_this setVariable ['%s',_value];";
@@ -182,7 +176,7 @@ class MSF_Module_Spawn_Fortify : Module_F
 		class VehicleProbability
 		{
 			displayName = "Spawn Chance";
-			tooltip = "Percent chance that patrols will spawn";
+			tooltip = "Percent chance that vehicle will spawn";
 			property = "MSF_Mod_Fortify_Vehicle_Probability";
 			control = "Slider";
 			expression = "_this setVariable ['%s',_value];";
@@ -217,7 +211,7 @@ class MSF_Module_Spawn_Fortify : Module_F
 		class ArmorProbability
 		{
 			displayName = "Spawn Chance";
-			tooltip = "Percent chance that patrols will spawn";
+			tooltip = "Percent chance that armor will spawn";
 			property = "MSF_Mod_Fortify_Armor_Probability";
 			control = "Slider";
 			expression = "_this setVariable ['%s',_value];";
@@ -252,47 +246,12 @@ class MSF_Module_Spawn_Fortify : Module_F
 		class StaticProbability
 		{
 			displayName = "Spawn Chance";
-			tooltip = "Percent chance that patrols will spawn";
+			tooltip = "Percent chance that turrets will spawn";
 			property = "MSF_Mod_Fortify_Static_Probability";
 			control = "Slider";
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 1;				
 		};
-		// class MSFFortify_Patrol
-		// {
-		// 	data = "AttributeSystemSubcategory";
-		// 	control = "SubCategory";
-		// 	displayName = "Area Fortification Infantry Patrols";
-		// };
-		// class PatrolEnable
-		// {
-		// 	displayName = "Enable area patrols";
-		// 	tooltip = "Spawn patrols in the fortification area.";
-		// 	property = "MSF_Mod_Fortify_Patrol_Enable";
-		// 	control = "Checkbox";
-		// 	expression = "_this setVariable ['%s',_value];";
-		// 	defaultValue = "false";				
-		// };
-		// class patrolNum
-		// {
-		// 	displayName = "Number to Spawn";
-		// 	tooltip = "Number of patrols to spawn. (capped at 5)";
-		// 	property = "MSF_Mod_Fortify_patrol_Num";
-		// 	control = "EditShort";
-		// 	expression = "if (_value > 0 && _value < 5) then { _this setVariable ['%s',_value]; } else { _this setVariable ['%s',2]; }";
-		// 	defaultValue = "2";
-		// 	validate = "number";
-		// 	typeName = "NUMBER";		
-		// };
-		// class PatrolProbability
-		// {
-		// 	displayName = "Spawn Chance";
-		// 	tooltip = "Percent chance that patrols will spawn";
-		// 	property = "MSF_Mod_Fortify_Patrol_Probability";
-		// 	control = "Slider";
-		// 	expression = "_this setVariable ['%s',_value];";
-		// 	defaultValue = 1;				
-		// };
 		class MSFFortify_Air
 		{
 			data = "AttributeSystemSubcategory";
@@ -328,6 +287,41 @@ class MSF_Module_Spawn_Fortify : Module_F
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 1;				
 		};
+		class F_IntelProvider
+		{
+			data = "AttributeSystemSubcategory";
+			control = "SubCategoryDesc1";
+			displayName = "Intel System Provider";
+			description = "Add spawned units to the intel system (Non-Civilian Units)";
+		};
+		class IntelProvider
+		{
+			displayName = "Intel Provider";
+			tooltip = "Automatically add units spawned in with this module as intel providers.";
+			property = "MSF_Mod_Fortify_Integrate_IntelP";
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";					
+			defaultValue = "true";
+		};
+		class InteractionChance
+		{
+			displayName = "Prompt Chance";
+			tooltip = "Percent chance that an object will have an interaction prompt to check for intel.";
+			property = "MSF_Mod_Fortify_InteractChance";
+			control = "Slider";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 0.5;
+		};
+		class IntelChance
+		{
+			displayName = "Chance of Intel";
+			tooltip = "Percent chance that an object will have intel.";
+			property = "MSF_Mod_Fortify_IntelChance";
+			control = "Slider";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 0.1;
+		};
+
     	class ModuleDescription : ModuleDescription {};
 	};
 	

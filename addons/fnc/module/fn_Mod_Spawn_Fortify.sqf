@@ -9,8 +9,7 @@ private _side = _logic getVariable ["Side", 0];
 
 private _onStart = _logic getVariable ["SpawnImmediately", false];
 private _building = _logic getVariable ["BuildingEnable", false];
-private _bldgNum = _logic getVariable ["BuildingNum", 5];
-private _bldgSpread = _logic getVariable ["BuildingSpread", false];
+private _bldgStr = _logic getVariable ["BuildingStrength", 0.5];
 private _bldgProb = _logic getVariable ["BuildingProbability", 1];
 private _vehicle = _logic getVariable ["VehicleEnable", false];
 private _vicNum = _logic getVariable ["VehicleNum", 2];
@@ -22,21 +21,19 @@ private _armorProb = _logic getVariable ["ArmorProbability", 1];
 private _static = _logic getVariable ["StaticEnable", false];
 private _staticNum = _logic getVariable ["StaticNum", 2];
 private _staticProb = _logic getVariable ["StaticProbability", 5];
-private _patrol = _logic getVariable ["PatrolEnable", false];
-private _patrolNum = _logic getVariable ["patrolNum", 2];
-private _patrolProb = _logic getVariable ["PatrolProbability", 5];
 private _air = _logic getVariable ["AirEnable", false];
 private _airNum = _logic getVariable ["AirNum", 2];
 private _airProb = _logic getVariable ["AirProbability", 5];
+private _intelP = _logic getVariable ["IntelProvider", false];
+private _interactC = _logic getVariable ["InteractionChance", 0.5];
+private _intelC = _logic getVariable ["IntelChance", 0.1];
 
+[_units, false] call MSF_fnc_ShowHideObjects;
 
-if(_area select 0 >= 100 && _area select 1 >= 100) then 
-{
-	[_area select 0, _area select 1, _height, _position, [[_activationSide] call MSF_fnc_GetModuleActivationSide, "present"], ["this",
-		"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_FortifyArea; }; ",
-		""],
-		_isRectangle, _onStart, false,
-		[[_side] call BIS_fnc_sideType, _building, _bldgNum, _bldgSpread, _bldgProb, _vehicle, _vicNum, _vicFill, _vicProb, _armor, _armorNum, _armorProb, _static, _staticNum, _staticProb, _patrol, _patrolNum, _patrolProb, _air, _airNum, _airProb, _area],
-		true
-	] call MSF_fnc_CreateActivationTrigger;	
-};
+[_area select 0, _area select 1, _height, _position, [[_activationSide] call MSF_fnc_GetModuleActivationSide, "present"], ["this",
+	"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_FortifyArea; }; ",
+	""],
+	_isRectangle, _onStart, false,
+	[[_side] call BIS_fnc_sideType, _building, _bldgStr, _bldgProb, _vehicle, _vicNum, _vicFill, _vicProb, _armor, _armorNum, _armorProb, _static, _staticNum, _staticProb, _air, _airNum, _airProb, _area, [_intelP, _interactC, _intelC], _units],
+	true
+] call MSF_fnc_CreateActivationTrigger;	

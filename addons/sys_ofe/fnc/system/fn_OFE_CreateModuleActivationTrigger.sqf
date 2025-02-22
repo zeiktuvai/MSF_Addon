@@ -15,10 +15,21 @@ private _actStatement = {
 	[thisTrigger getVariable "objects", true] call MSF_fnc_ShowHideObjects;
 };
 
-private _intelAct = {
-	private _intelID = thisTrigger getVariable "IntelID";
-	if (_intelID != "") then {
-		[_intelID] call MSF_Intel_fnc_GetDiscoveredIntelItem;
+private _hideStatement = {
+	private _objs = thisTrigger getVariable 'objects';
+	_objs = [_objs, thisTrigger] call MSF_fnc_GetShowHideVehicleInTrigger;
+	[_objs, false] call MSF_fnc_ShowHideObjects;
+};
+
+private _intelAct = {};
+
+if (getMissionConfigValue ["MSF_Intel_EnableDiscovery", true]) then
+{
+	_intelAct = {
+		private _intelID = thisTrigger getVariable "IntelID";
+		if (_intelID != "") then {
+			[_intelID] call MSF_Intel_fnc_GetDiscoveredIntelItem;
+		};
 	};
 };
 
@@ -30,6 +41,8 @@ _trig setVariable ["objects", _objects, true];
 _trig setVariable ["type", _type, true];
 _trig setVariable ["vars", _params, true];
 _trig setVariable ["IntelID", _intelID, true];
+//_logic synchronizeObjectsAdd [_trig];
+
 switch (_type) do {
 	case "Checkpoint";
 	case "Bastion": { 
@@ -43,7 +56,8 @@ switch (_type) do {
 		_trig setTriggerStatements [
 			"this",
 			toString _actStatement + toString _intelAct,
-			"[thisTrigger getVariable 'objects', false] call MSF_fnc_ShowHideObjects;"
+			toString _hideStatement
+			//"[thisTrigger getVariable 'objects', false] call MSF_fnc_ShowHideObjects;"
 		];
 		_trig setTriggerActivation [_activationBy, _activationType, true];
 	};

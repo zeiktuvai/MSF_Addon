@@ -4,15 +4,20 @@ private _parents = [configOf _object, true] call BIS_fnc_returnParents;
 private _prompt = "Ask for Information";
 private _icon = "a3\ui_f\data\gui\rsccommon\rscbuttonsearch\search_start_ca.paa";
 private _iconHold = "a3\ui_f\data\igui\cfg\holdactions\holdaction_search_ca.paa";
-private _showCondition = "!(_target getVariable ['MSF_Intel_Activated', false]) && (_this distance _target < 3)";
+private _showCondition = "!(_target getVariable ['MSF_Intel_Activated', false]) && !(_target getVariable ['MSF_Intel_InProg', false]) && (_this distance _target < 3) && count (missionNamespace getVariable 'MSF_IntelItems') > 0";
 private _actCondition = "true";
-private _failAction = {[_target, objNull] remoteExec ["doWatch", 2];};
+private _failAction = {
+	[_target, objNull] remoteExec ["doWatch", 2];
+	if (isMultiplayer) then {
+		[_target , ["MSF_Intel_InProg", false]] remoteExec ["setVariable", -(clientOwner)];
+	};
+};
 private _actTime = 5;
 private _type = "CIV";
 
 if (_parents findIf { _x == "Item_Base_F" || _x == "Items_base_F" } != -1) then {
 	_prompt = "Look for Intel";	
-	_actTime = 20;
+	_actTime = MSF_Intel_ObjTime;
 	_type = "OBJ";
 };
 
@@ -22,12 +27,13 @@ if ("Civilian" in _parents) then {
 	_actCondition = "currentWeapon _caller == """"";
 	_showCondition = _showCondition + " && [_target] call ace_medical_status_fnc_isInStableCondition";
 	_prompt = "Ask for Information";
-	_failAction = {[_target, objNull] remoteExec ["doWatch", 2]; hint "Civilians will not talk to you if they feel threatened.";};
+	_failAction = compile (toString _failAction + toString {hint "Civilians will not talk to you if they feel threatened.";});
+	_actTime = MSF_Intel_CivTime;
 };
 
 if (_parents findIf { _x == "SoldierWB" || _x == "SoldierEB" || _x == "SoldierGB"; } != -1) then {
 	_prompt = "Gather Intel";
-	_actTime = 10;
+	_actTime = MSF_Intel_MilTime;
 	_type = "MIL";
 };
 
@@ -38,7 +44,12 @@ if (_parents findIf { _x == "SoldierWB" || _x == "SoldierEB" || _x == "SoldierGB
 	_iconHold,
 	_showCondition,
 	_actCondition,
-	{ [_target, _caller] remoteExec ["doWatch", 2]; },
+	{
+		[_target, _caller] remoteExec ["doWatch", 2];
+		if (isMultiplayer) then {
+			[_target , ["MSF_Intel_InProg", true]] remoteExec ["setVariable", -(clientOwner)];
+		};
+	},
 	{},
 	{
 		_target setVariable ["MSF_Intel_Activated", true, true];

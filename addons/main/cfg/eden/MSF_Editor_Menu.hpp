@@ -10,7 +10,7 @@ class display3DEN
 				items[] += {"MSF"};
 				class MSF
 				{
-					items[] = { "MSF_Settings", "MSF_CFG_Multi", "Separator", "MSFDocs" };					
+					items[] = { "MSF_Settings", "MSF_CFG_Multi", "Separator", "MSF_GetWeaponCfg", "Separator", "MSFDocs" };					
 					text = "Mission Support Foundation";
 				};				
 				class MSF_Settings
@@ -32,6 +32,13 @@ class display3DEN
 					picture = "\a3\3DEN\Data\Controls\ctrlMenu\link_ca.paa";
 					weblink = "https://github.com/zeiktuvai/MSF_Addon/wiki";
 					opensNewWindow = 1;
+				};
+
+				class MSF_GetWeaponCfg
+				{
+					text = "Get Weapons Data";
+					action = "[] call MSF_fnc_GetSelectedUnitWeaponData";
+					picture = "a3\3den\data\displays\display3den\entitymenu\functions_ca.paa";
 				};
 			};
 		};

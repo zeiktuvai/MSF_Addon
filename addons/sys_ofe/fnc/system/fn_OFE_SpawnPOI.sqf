@@ -127,11 +127,14 @@ if (count _intelProvider > 0) then
 	_intelProvider params ["_intelP", "_interactC", "_intelC"];
 
 	if (_intelP) then {
+		private _units = units _group;
+		_units append (units _eGroup);
+
 		{		
 			if ([_interactC] call MSF_fnc_CalculateProbability) then {
 				[_x, _intelC] call MSF_Intel_fnc_AddIntelInteraction;
 			};		
-		} forEach units _group;		
+		} forEach _units;		
 	};
 };
 

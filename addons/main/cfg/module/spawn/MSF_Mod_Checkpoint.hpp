@@ -69,6 +69,40 @@ class MSF_Module_Spawn_RoadCheckpoint : Module_F
 			expression = "_this setVariable ['%s',_value];";					
 			defaultValue = "true";
 		};
+		class CP_IntelProvider
+		{
+			data = "AttributeSystemSubcategory";
+			control = "SubCategoryDesc1";
+			displayName = "Intel System Provider";
+			description = "Add spawned units to the intel system (Non-Civilian Units)";
+		};
+		class IntelProvider
+		{
+			displayName = "Intel Provider";
+			tooltip = "Automatically add units spawned in with this module as intel providers.";
+			property = "MSF_Mod_CP_Integrate_IntelP";
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";					
+			defaultValue = "true";
+		};
+		class InteractionChance
+		{
+			displayName = "Prompt Chance";
+			tooltip = "Percent chance that an object will have an interaction prompt to check for intel.";
+			property = "MSF_Mod_CP_InteractChance";
+			control = "Slider";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 0.7;
+		};
+		class IntelChance
+		{
+			displayName = "Chance of Intel";
+			tooltip = "Percent chance that an object will have intel.";
+			property = "MSF_Mod_CP_IntelChance";
+			control = "Slider";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = 0.2;
+		};
 
 		class ModuleDescription : ModuleDescription {};
 	};
