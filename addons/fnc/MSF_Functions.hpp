@@ -95,6 +95,7 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\module";
 			class Mod_BuildingDestroy {};
 			class Mod_DeadUnit {};
+			class Mod_DeleteUnit {};
 			class Mod_InfantryVehiclePatrol {};
 			class Mod_RandomSpawnCrash {};
 			class Mod_ShowHide {};

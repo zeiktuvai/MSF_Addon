@@ -1,4 +1,3 @@
-
 params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", true, [true]]];
 
 private _prob = _logic getVariable ["Probability", 1];
