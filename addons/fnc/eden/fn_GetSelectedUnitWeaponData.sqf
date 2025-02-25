@@ -18,7 +18,7 @@ if (count _units > 0) then
 		  _mags pushBack [_magName, { _x == _magName } count _invMags];
 		} forEach _uMags;
 		
-		_return pushBack [[_weap, _weapName], _acc, _mags];
+		_return pushBack [_weap, [_weap, _weapName, _acc, _mags]];
 	} forEach _units;
 	
 	copyToClipboard str _return;
