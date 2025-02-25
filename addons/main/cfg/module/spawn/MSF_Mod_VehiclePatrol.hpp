@@ -30,7 +30,7 @@ class MSF_Module_Spawn_VehiclePatrol : Module_F
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
 			property = "MSF_Module_vicPatrol_ActSide";
-			defaultValue = 1;
+			defaultValue = 3;
 			typeName = "Number";
 			class Values
 			{
@@ -67,7 +67,7 @@ class MSF_Module_Spawn_VehiclePatrol : Module_F
 			control = "CombatModeGroup";
 			property = "MSF_Module_vicPatrol_cMode";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "yellow";
+			defaultValue = "'yellow'";
 		};
 		class Behavior
 		{
@@ -76,7 +76,7 @@ class MSF_Module_Spawn_VehiclePatrol : Module_F
 			control = "BehaviourGroup";
 			property = "MSF_Module_vicPatrol_Behav";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "aware";
+			defaultValue = "'aware'";
 		};
 		class Speed
 		{

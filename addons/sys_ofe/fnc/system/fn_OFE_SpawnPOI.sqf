@@ -8,8 +8,9 @@ private _objects = [_position, 0, _def] call BIS_fnc_objectsMapper;
 private _allObjs = _objects;
 private _group = createGroup [_victimSide, true];
 private _eGroup = createGroup [_enemySide, true];
-private _deadUnitTypes = ([0, _victimSide] call MSF_fnc_GetConfigClasses) select 5;
-private _enemyTypes = ([0, _enemySide] call MSF_fnc_GetConfigClasses) select 5;
+private _deadUnitTypes = ["unit", _victimSide] call MSF_fnc_GetConfigData get "Units";
+private _enemyTypes = ["unit", _enemySide] call MSF_fnc_GetConfigData get "Units";
+private _emptyTypes = ["empty"] call MSF_fnc_GetConfigData;
 
 [_deadUnitTypes, _objects select {typeOf _x == "MSF_Placeholder_Infantry_D"}, _group] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
 
@@ -27,13 +28,13 @@ _allObjs append units _eGroup;
 
 switch (_type) do {
 	case "Vehicle": {
-		_types = ([2] call MSF_fnc_GetConfigClasses) select 0;
+		_types = _emptyTypes get "UnmannedVic";
 	};
 	case "Armor": {
-		_types = ([2] call MSF_fnc_GetConfigClasses) select 1;
+		_types = _emptyTypes get "UnmannedArmor";
 	};
 	case "Static": {
-		_types = ([2] call MSF_fnc_GetConfigClasses) select 2;
+		_types = _emptyTypes get "UnmannedStatic";
 	};
 };
 
@@ -75,7 +76,6 @@ switch (_type) do {
 
 		_allObjs append _vics;
 	};
-
 
 	case "Supply";
 	case "Medical";

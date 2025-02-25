@@ -18,7 +18,6 @@ if (isServer) then {
 	[] call MSF_fnc_SetUnitDialogOption;
 	[] call MSF_fnc_ApplyDamageReduction;
 	[] call MSF_fnc_ApplyObjectActions;
-	//[] call MSF_fnc_SetupUAVSpawnSystem;
 
 	if (getMissionConfigValue ["MSF_Mission_GM", false]) then {
 		[] call MSF_fnc_ApplyGMActions;
@@ -44,6 +43,8 @@ if (isServer) then {
 			[synchronizedObjects _x select { !(_x isKindOf "EmptyDetector")}, false] call MSF_fnc_ShowHideObjects;
 		};
 	} forEach allMissionObjects "MSF_Module_ShowHide";
+
+	[] call MSF_fnc_InitMSFHandler;
 };
 
 if (!isServer) then

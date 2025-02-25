@@ -32,19 +32,19 @@ if (count _infSpawns > 0) then {
 		case "Civ_European";
 		case "Civ_Livionian";
 		case "Civ_Tanoan": {
-			_deadUnitTypes = [4, sideEmpty, _type] call MSF_fnc_GetConfigClasses;
+			_deadUnitTypes = ["civs"] call MSF_fnc_GetConfigData get _type;
 			_group = createGroup [civilian, true];
 		};
 		case "Mil_NATO": {
-			_deadUnitTypes = [0, west] call MSF_fnc_GetConfigClasses select 5;
+			_deadUnitTypes = ["unit", west] call MSF_fnc_GetConfigData get "Units";
 			_group = createGroup [west, true];
 		};
 		case "Mil_OPFOR": {
-			_deadUnitTypes = [0, east] call MSF_fnc_GetConfigClasses select 5;
+			_deadUnitTypes = ["unit", east] call MSF_fnc_GetConfigData get "Units";
 			_group = createGroup [east, true];
 		};
 		case "Mil_IND": {
-			_deadUnitTypes = [0, independent] call MSF_fnc_GetConfigClasses select 5;
+			_deadUnitTypes = ["unit", independent] call MSF_fnc_GetConfigData get "Units";
 			_group = createGroup [independent, true];
 		};
 	};
