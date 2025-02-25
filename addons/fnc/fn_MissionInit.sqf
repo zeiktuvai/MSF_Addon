@@ -57,9 +57,8 @@ if (!isServer) then
 if (!isDedicated) then
 {
 	if (MSF_Unit_EnableOverride_W) then {
-
-		//_return select 0 params ["_rifle", "_acc", "_mags"];
 		[] call MSF_fnc_AddInventoryOverrideOption;
+		[] call MSF_fnc_SetWeaponOverrideEH;
 	};
 };
 
