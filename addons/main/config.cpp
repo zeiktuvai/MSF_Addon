@@ -13,7 +13,7 @@ class CfgPatches
 		version = MSF_VERSION;
         units[] = {"MSF_Module_BldgDestroy", "MSF_Module_RandomSpawn", "MSF_Module_RandomSpawnCrash", "MSF_Module_Spawn_InfantryPatrol",
 			"MSF_Module_Spawn_Supplies", "MSF_Module_Spawn_Fortify", "MSF_Module_Spawn_VehiclePatrol", "MSF_Module_Spawn_Wave",
-			"MSF_Module_Spawn_DeadUnit", "MSF_Module_ClassOverride", "MSF_Module_Spawn_RoadCheckpoint"};
+			"MSF_Module_Spawn_DeadUnit", "MSF_Module_ClassOverride", "MSF_Module_Spawn_RoadCheckpoint", "MSF_Module_DeleteUnit"};
         weapons[] = {};
         requiredVersion = 1.0;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction"};
