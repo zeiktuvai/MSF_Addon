@@ -19,7 +19,7 @@ class CfgPatches
 
 class CfgVehicles
 {
-   // #include "cfg\modules\MSF_OFE_Modules.hpp"
+   #include "cfg\MSF_OFE_Modules.hpp"
 };
 
 class CfgHints

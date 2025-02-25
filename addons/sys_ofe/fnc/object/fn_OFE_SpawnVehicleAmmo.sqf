@@ -1,6 +1,6 @@
 params [["_objects", [], [[]]], ["_value", 500, [500]]];
 
-private _boxTypes =  ([3] call MSF_fnc_GetConfigClasses) select 1;
+private _boxTypes = ["cargo"] call MSF_fnc_GetConfigData get "VicAmmo";
 private _boxes = [];
 
 {

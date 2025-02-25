@@ -3,12 +3,12 @@
 
 class CfgPatches
 {
-    class MSF3den
+    class ADDON
     {
 		name = "MSF - Intel System";
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
-        units[] = {"MSF_Module_Intel"};
+        units[] = {"MSF_Module_IntelItem", "MSF_Module_IntelItem_Task", "MSF_Module_IntelObjects", "MSF_Module_IntelLevel"};
         weapons[] = {};
         requiredVersion = 2.1;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction"};
@@ -24,8 +24,17 @@ class CfgNotifications
 {
 	class MapUpdate
 		{
-		title = "Map Updated.";
+		title = "Map Updated";
 		iconPicture = "a3\ui_f\data\gui\rsc\rscdisplayarsenal\map_ca.paa";
+		iconText = "";
+		description = "%1";
+		color[] = {1,1,1,1};
+		duration = 5;
+	};
+	class IntelDiscovered
+		{
+		title = "New Intel Discovered";
+		iconPicture = "a3\3den\data\cfg3den\layer\icon_ca.paa";
 		iconText = "";
 		description = "%1";
 		color[] = {1,1,1,1};

@@ -18,8 +18,7 @@ _vals params ["_sideVal", "_amount", "_mode", "_behv", "_speed", "_spawnCount"];
 
 if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {
 	private _side = [_sideVal] call BIS_fnc_sideType;
-	private _classes = [0, _side] call MSF_fnc_GetConfigClasses;
-	private _groupTypes = _classes select 0;
+	private _groupTypes = ["unit", _side] call MSF_fnc_GetConfigData get "Groups";
 	private _ids = [];
 	private _count = [1, 2] select (_spawnCount);
 

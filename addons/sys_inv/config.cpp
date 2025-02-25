@@ -1,0 +1,39 @@
+#include "..\main\MSF_Version.hpp"
+#include "cfg\MSF_Inv_Functions.hpp"
+#include "cfg\MSF_Defines.hpp"
+#include "cfg\MSF_UAV_Control.hpp"
+
+class CfgPatches
+{
+    class ADDON
+    {
+		name = "MSF - Inventory System";
+		author = "Zeik_Tuvai";
+		version = MSF_VERSION;
+        units[] = {"MSF_Module_InvGen", "MSF_Module_UAV", "MSF_Module_UAVSpawn", "MSF_Module_UGVSpawn"};
+        weapons[] = {};
+        requiredVersion = 2.1;
+        requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction", "MSF3den"};
+    };
+};
+
+class CfgVehicles
+{
+    #include "cfg\MSF_Inv_Modules.hpp"
+};
+
+class CfgHints
+{
+	displayName = "MSF - Drone System";
+	class MSFDrone
+	{
+		class DroneDeployed
+		{
+			displayName = "Drone Deployed";
+            image = "\A3\Drones_F\Air_F_Gamma\UAV_02\Data\UI\Map_UAV_02_CA.paa";
+			description = "A new %11 has been deployed.";
+			tip = "Check your UAV terminal for the connected drone. This drone has been removed from the inventory.";
+			arguments[] = {{"Drone"}};
+		};
+	};
+};

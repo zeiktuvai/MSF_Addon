@@ -13,25 +13,33 @@ class CfgFunctions
 				postInit = 1;
 			};
 		};
-		class ACEOptions
+		class ACE
 		{
 			file = "z\msf\addons\fnc\ace";
 			class ACEMedUnconcious {};
+			class AddAceMenuItem {};
+			class AddInventoryOverrideOption {};
 			class AntistasiEnemyPlanes {};
 		};
 		class Config
 		{
 			file = "z\msf\addons\fnc\config";
-			class GetConfigClasses {};
-			class GetDroneList {};
+			class GetConfigData {};
 			class GetUnitOverrideCfg {};
 		};
 		class Data
 		{
 			file = "z\msf\addons\fnc\data";
+			class ConfigValueExists {};
 			class DeleteConfigValue {};
 			class ParseValidArray {};
 			class SetConfigValue {};
+		};
+		class Eden
+		{
+			file = "z\msf\addons\fnc\eden";
+			class ConfigureMP {};
+			class GetSelectedUnitWeaponData {};
 		};
 		class Enemy
 		{
@@ -48,20 +56,10 @@ class CfgFunctions
 			class GeneratePatrolRoute {};
 			class SpawnGroupInSafePos {};
 		};
-		class ExternalFunctions
-		{
-			file = "z\msf\addons\fnc\ext";
-			class ZEN_OccupyHouse {};
-			class ZEN_InsertionSort {};
-			class ZEN_ExtendPosition {};
-			class ZEN_ArrayShuffle {};
-			class JBOY_UpDown {};
-		};
 		class Helpers
 		{
 			file = "z\msf\addons\fnc\helper";
-			class AddAceMainMenuItem {};
-			class FindOutsidePositionInTrigger {};
+			class DistinctArray {};
 			class FindSafeSpawnPos {};
 			class GetModuleActivationSide {};
 			class GetObjectsByProperty {};
@@ -71,14 +69,6 @@ class CfgFunctions
 			class GetUnitsByProperty {};
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};
-		};
-		class Inventory
-		{
-			file = "z\msf\addons\fnc\inventory";
-			class GenerateArmoryAmmo {};
-			class GenerateInventory {};
-			class GenerateRandomArmory {};
-			class GenerateRandomInventory {};
 		};
 		class Math
 		{
@@ -98,13 +88,13 @@ class CfgFunctions
 			class CreateMapMarker {};
 			class InfiniteFuelHandler {};
 			class RespawnVehicleCustomization {};
-			class SetupUAVSpawnSystem {};
 		};
 		class Module
 		{
 			file = "z\msf\addons\fnc\module";
 			class Mod_BuildingDestroy {};
 			class Mod_DeadUnit {};
+			class Mod_DeleteUnit {};
 			class Mod_InfantryVehiclePatrol {};
 			class Mod_RandomSpawnCrash {};
 			class Mod_ShowHide {};
@@ -117,7 +107,6 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\mp";
 			class ConfigRespawnOnPlayer	{};
-			class ConfigureMP {};
 			class JIPSpawnNearPlayer {};
 			class RandomSpawn {};
 		};
@@ -131,6 +120,11 @@ class CfgFunctions
 			class SetVehicleDamageReduction {};
 			class ShowHideObjects {};
 		};
+		class Player
+		{
+			file = "z\msf\addons\fnc\player";
+			class UpdatePlayerWeapon {};
+		};
 		class Spawn
 		{
 			file = "z\msf\addons\fnc\spawn";
@@ -141,6 +135,8 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\systems";
 			class GetIsIntelEnabled {};
+			class InitMSFHandler {};
+			class SetWeaponOverrideEH {};
 		};
 		class TFY
 		{
@@ -154,8 +150,6 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\validator";
 			class SetInvGenEnable {};
 			class SetDialogValidator {};
-			class SetCfgEntryValidator {};
-			class CheckNotifyTriggerHasArea {};
 		};
 	};
 };

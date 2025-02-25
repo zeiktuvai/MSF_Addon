@@ -21,10 +21,15 @@ private _hideStatement = {
 	[_objs, false] call MSF_fnc_ShowHideObjects;
 };
 
-private _intelAct = {
-	private _intelID = thisTrigger getVariable "IntelID";
-	if (_intelID != "") then {
-		[_intelID] call MSF_Intel_fnc_GetDiscoveredIntelItem;
+private _intelAct = {};
+
+if (getMissionConfigValue ["MSF_Intel_EnableDiscovery", true]) then
+{
+	_intelAct = {
+		private _intelID = thisTrigger getVariable "IntelID";
+		if (_intelID != "") then {
+			[_intelID] call MSF_Intel_fnc_GetDiscoveredIntelItem;
+		};
 	};
 };
 

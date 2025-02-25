@@ -19,7 +19,7 @@ if (_isOFE select 0) then {
 };
 
 private _position = position _logic;
-private _unitTypes = [0, _side] call MSF_fnc_GetConfigClasses;
+private _unitTypes = ["unit", _side] call MSF_fnc_GetConfigData get "Units";
 private _group = createGroup [_side, true];
 private _objects = [];
 private _allObjs = [];
@@ -32,13 +32,17 @@ switch (_type) do {
 		private _dir = [_position] call MSF_fnc_GetRoadDirection;
 		_objects = [_position, _dir, _def] call BIS_fnc_objectsMapper;
 
-		[_unitTypes select 5, _objects select {typeOf _x == "MSF_Placeholder_Infantry"}, _group] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
-		[_unitTypes select 5, _objects, _group] call MSF_fnc_OFE_SpawnInfantryInBuildings;
+		[_unitTypes, _objects select {typeOf _x == "MSF_Placeholder_Infantry"}, _group] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
+		[_unitTypes, _objects, _group] call MSF_fnc_OFE_SpawnInfantryInBuildings;
 		_params params ["_supply"];
 
 		if (_supply) then {
-			_vicAmmoBoxes = [_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}, 100] call MSF_fnc_OFE_SpawnVehicleAmmo;
-			_boxes = [_objects select {typeOf _x == "MSF_Placeholder_Supplies"}, 50, _type, true] call MSF_fnc_OFE_SpawnAndFillBoxes;
+			if (count (_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}) > 0) then {
+				_vicAmmoBoxes = [_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}, 100] call MSF_fnc_OFE_SpawnVehicleAmmo;			
+			};
+			if (count (_objects select {typeOf _x == "MSF_Placeholder_Supplies"}) > 0) then {
+				_boxes = [_objects select {typeOf _x == "MSF_Placeholder_Supplies"}, 50, "Supply", true] call MSF_fnc_OFE_SpawnAndFillBoxes;			
+			};
 		};
 		
 		_allObjs append units _group;
@@ -64,7 +68,7 @@ _allObjs append _objects;
 //TODO: Consolidate this
 if (_intel) then {
 	private _desc = format ["Reported Location of %1", _type];
-	_intelID = [_type, _position, _desc, ["CIV", "MIL", "OBJ"], 1, ["mil_dot", "Color1_FD_F"], ["MapUpdate", "Map updated with reported enemy location."], _desc] call MSF_Intel_fnc_AddIntelItem;
+	_intelID = [_type, _position, _desc, ["CIV", "MIL", "OBJ"], 1, ["mil_dot", "Color1_FD_F"], ["MapUpdate", "Map updated with reported enemy location."], []] call MSF_Intel_fnc_AddIntelItem;
 };
 if (_isOFE select 0) then {
 	[_type, _position] call MSF_fnc_OFE_CreateMapMarker;

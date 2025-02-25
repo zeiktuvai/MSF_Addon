@@ -1,4 +1,3 @@
-
 params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", true, [true]]];
 
 private _prob = _logic getVariable ["Probability", 1];
@@ -11,9 +10,15 @@ private _houses = nearestObjects [_modPos, ["house"], _area];
 {
    if ([_prob] call MSF_fnc_CalculateProbability) then
    {
-		private _dam = random 1;
-		if (_dam > 0.5) then { _dam = 1; };
-		_x setDamage _dam;
+		if (_prob == 1) then {
+			_x setDamage 1;
+		}
+		else
+		{
+			private _dam = random 1;
+			if (_dam > 0.5) then { _dam = 1; };
+			_x setDamage _dam;
+		};
    };
 } forEach _houses;
 

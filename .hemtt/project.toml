@@ -12,3 +12,7 @@ include = [
 
 [hemtt.config]
 preset = "Hemtt"
+
+[properties]
+author = "Zeik_Tuvai"
+url = "https://github.com/zeiktuvai/MSF_Addon"

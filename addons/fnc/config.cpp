@@ -2,7 +2,7 @@
 
 class CfgPatches
 {
-    class MSF3den
+    class ADDON
     {
 		name = "MSF - Functions";
 		author = "Zeik_Tuvai";
