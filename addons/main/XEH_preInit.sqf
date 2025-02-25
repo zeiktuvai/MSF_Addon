@@ -34,8 +34,7 @@
 	["Disable Enemy Planes", "This option will prevent enemy planes from spawning in Antistasi, leaving unmanned and friendly planes alone. (Does not affect helicopters)."],
 	["MSF - Server Settings", "Antistasi"],
 	false,
-	1,
-	{[_this] call MSF_fnc_AntistasiEnemyPlanes;}
+	1
 ] call CBA_fnc_addSetting;
 [
 	"MSF_Intel_CivTime",

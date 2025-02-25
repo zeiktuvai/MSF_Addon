@@ -30,7 +30,7 @@ class MSF_Module_Spawn_InfantryPatrol : Module_F
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
 			property = "MSF_Module_InfPatrol_ActSide";
-			defaultValue = 1;
+			defaultValue = 3;
 			typeName = "Number";
 			class Values
 			{
@@ -67,7 +67,7 @@ class MSF_Module_Spawn_InfantryPatrol : Module_F
 			control = "CombatModeGroup";
 			property = "MSF_Module_InfPatrol_cMode";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "yellow";
+			defaultValue = "'yellow'";
 		};
 		class Behavior
 		{

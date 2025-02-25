@@ -16,10 +16,9 @@ private _vals = _trigger getVariable ["module_params", []];
 _vals params ["_sideVal", "_amount", "_mode", "_behv", "_speed", "_spawnCount"];
 
 private _side = [_sideVal] call BIS_fnc_sideType;
-private _classes = [0, _side] call MSF_fnc_GetConfigClasses;
 private _radius = [_trigger] call MSF_fnc_GetAreaRadius;
 private _roads = (position _trigger) nearRoads _radius;
-private _vehicles = _classes select 6;
+private _vehicles = ["unit", _side] call MSF_fnc_GetConfigData get "VehiclePatrols";
 private _skip = 0;
 private _skipVal = parseNumber((count _roads) / _amount - 1 toFixed 0);
 private _initial = [];

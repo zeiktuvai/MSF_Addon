@@ -24,7 +24,7 @@ class MSFConfig
 		// Air[] = {};
 		// VehiclePatrols[] = {"MSF_O_ARC_MRAP", "MSF_O_ARC_MRAP_GMG", "MSF_O_ARC_MRAP_HMG", "MSF_O_ARC_DAGOR", "MSF_O_ARC_DAGOR_AT", "MSF_O_ARC_DAGOR_Armed"};
 		// OPFOR - CSAT
-		class Set1
+		class east
 		{
 			Groups[] = {"O_T_InfSentry", "O_T_InfTeam", "O_T_InfTeam_AA", "O_T_InfTeam_AT", "O_T_reconPatrol", "O_T_reconSentry", "O_T_reconTeam", "O_T_SniperTeam"};
 			Vehicles[] = {"O_T_APC_Tracked_02_cannon_ghex_F", "O_T_APC_Wheeled_02_rcws_v2_ghex_F", "O_T_MRAP_02_ghex_F", "O_T_MRAP_02_gmg_ghex_F", "O_T_MRAP_02_hmg_ghex_F", "O_T_LSV_02_unarmed_F", "O_T_LSV_02_armed_F", "O_T_LSV_02_AT_F"};
@@ -35,7 +35,7 @@ class MSFConfig
 			VehiclePatrols[] = {"O_T_MRAP_02_ghex_F", "O_T_MRAP_02_gmg_ghex_F", "O_T_MRAP_02_hmg_ghex_F", "O_T_LSV_02_unarmed_F", "O_T_LSV_02_armed_F", "O_T_LSV_02_AT_F"};
 		};
 		// Independant - AAF
-		class Set2
+		class guer
 		{
 			Groups[] = {"HAF_InfSentry", "HAF_InfTeam", "HAF_InfTeam_AA", "HAF_InfTeam_AT", "HAF_SniperTeam", "I_InfTeam_Light"};
 			Vehicles[] = {"I_MRAP_03_F", "I_MRAP_03_hmg_F"};
@@ -46,7 +46,7 @@ class MSFConfig
 			VehiclePatrols[] = {"I_MRAP_03_F", "I_MRAP_03_hmg_F"};
 		};
 		// BLUFOR - NATO
-		class Set3
+		class west
 		{
 			Groups[] = {"B_InfTeam_Light", "BUS_InfSentry", "BUS_InfTeam", "BUS_InfTeam_AA", "BUS_InfTeam_AT", "BUS_ReconPatrol", "BUS_ReconSentry", "BUS_ReconTeam", "BUS_SniperTeam"};
 			Vehicles[] = {"B_MRAP_01_F", "B_MRAP_01_gmg_F", "B_MRAP_01_hmg_F", "B_LSV_01_armed_F", "B_LSV_01_unarmed_F", "B_LSV_01_AT_F", "B_Soldier_F", "B_APC_Wheeled_01_cannon_F"};

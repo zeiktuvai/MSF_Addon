@@ -24,7 +24,6 @@ class CfgFunctions
 		class Config
 		{
 			file = "z\msf\addons\fnc\config";
-			class GetConfigClasses {};
 			class GetConfigData {};
 			class GetUnitOverrideCfg {};
 		};
@@ -131,6 +130,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\systems";
 			class GetIsIntelEnabled {};
+			class InitMSFHandler {};
 		};
 		class TFY
 		{
