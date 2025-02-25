@@ -120,6 +120,11 @@ class CfgFunctions
 			class SetVehicleDamageReduction {};
 			class ShowHideObjects {};
 		};
+		class Player
+		{
+			file = "z\msf\addons\fnc\player";
+			class UpdatePlayerWeapon {};
+		};
 		class Spawn
 		{
 			file = "z\msf\addons\fnc\spawn";
@@ -131,6 +136,7 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\systems";
 			class GetIsIntelEnabled {};
 			class InitMSFHandler {};
+			class SetWeaponOverrideEH {};
 		};
 		class TFY
 		{
