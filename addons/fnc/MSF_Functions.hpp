@@ -19,7 +19,6 @@ class CfgFunctions
 			class ACEMedUnconcious {};
 			class AddAceMenuItem {};
 			class AddInventoryOverrideOption {};
-			class AntistasiEnemyPlanes {};
 		};
 		class Config
 		{
@@ -55,6 +54,12 @@ class CfgFunctions
 			class FortifyArea {};
 			class GeneratePatrolRoute {};
 			class SpawnGroupInSafePos {};
+		};
+		class Handlers
+		{
+			file = "z\msf\addons\fnc\handlers";
+			class AntistasiEnemyPlanes {};
+			
 		};
 		class Helpers
 		{
@@ -96,6 +101,7 @@ class CfgFunctions
 			class Mod_DeadUnit {};
 			class Mod_DeleteUnit {};
 			class Mod_InfantryVehiclePatrol {};
+			class Mod_ProgressBarInteraction {};
 			class Mod_RandomSpawnCrash {};
 			class Mod_ShowHide {};
 			class Mod_Spawn_Checkpoint {};
