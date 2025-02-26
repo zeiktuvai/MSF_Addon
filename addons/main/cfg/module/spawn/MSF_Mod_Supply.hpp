@@ -1,9 +1,9 @@
 class MSF_Module_Spawn_Supplies : Module_F
 {
 	scope = 2;
-	displayName = "Spawn - Logistics";
+	displayName = "Logistics";
 	icon = "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_Spawn";
 	function = "MSF_fnc_Mod_Spawn_Supplies";
 	functionPriority = 1;
 	isGlobal = 0;
@@ -94,7 +94,7 @@ class MSF_Module_Spawn_Supplies : Module_F
 		class VictimSide
 		{
 			displayName = "Victim Spawn Side";
-			tooltip = "Faction that will randomly be spawned as dead units at the location.";
+			tooltip = "Faction that will MSF_Modulerandomly be spawned as dead units at the location.";
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
 			property = "MSF_Module_supply_VictimSide";

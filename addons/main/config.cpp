@@ -22,21 +22,9 @@ class CfgPatches
 
 class Cfg3DEN
 {
-	class Object
-	{
-		class AttributeCategories
-		{
-			#include "cfg\object\MSF_Attr_Player.hpp"
-			#include "cfg\object\MSF_Attr_General.hpp"
-		};
-	};
 	class Mission
 	{
 		#include "cfg\mission\MSF_Mission_Attributes.hpp"
-	};
-	class Attributes
-	{
-		#include "cfg\mission\MSF_Controls.hpp"
 	};
 };
 
@@ -50,7 +38,7 @@ class Extended_PreInit_EventHandlers
 {
     class ADDON
     {
-        init = "call compile preprocessFileLineNumbers 'z\msf\addons\main\XEH_preInit.sqf'";
+        init = "call compile preprocessFileLineNumbers 'z\msf\addons\main\settings\MSF_Server.sqf'; call compile preprocessFileLineNumbers 'z\msf\addons\main\settings\MSF_User.sqf'";
     };
 };
 
@@ -73,5 +61,20 @@ class CfgNonAIVehicles
 	class MSFTriggerWave : EmptyDetector
 	{
 		scope = 0;
+	};
+};
+
+class CfgHints
+{
+	displayName = "MSF - End Scenario";
+	class MSFEnd
+	{
+		class EndScenario
+		{
+			displayName = "Mission Completed";
+			image = "z\msf\addons\main\ui\msf_icon.paa";            
+			description = "Primary mission objectives have been completed, use the %11 option in your %12 to end the mission when you are ready.";			
+			arguments[] = {{"End Mission"}, {"ACE Self Menu"}};
+		};
 	};
 };

@@ -1,9 +1,9 @@
 class MSF_Module_Spawn_InfantryPatrol : Module_F
 {
 	scope = 2;
-	displayName = "Spawn - Infantry Patrol";
+	displayName = "Infantry Patrol";
 	icon = "a3\ui_f\data\igui\cfg\simpletasks\types\rifle_ca.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_Spawn";
 	function = "MSF_fnc_Mod_InfantryVehiclePatrol";
 	functionPriority = 1;
 	isGlobal = 0;

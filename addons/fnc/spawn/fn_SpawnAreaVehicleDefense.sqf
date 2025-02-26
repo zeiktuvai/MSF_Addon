@@ -1,15 +1,3 @@
-/*
-	Author: zeik_tuvai
-
-	Description:
-		Part of MSF.  This script creates a number of vehicles (Light, Armored, turrets) in a trigger area.
-        
-	Examples:
-		[Trigger Objct, 2, east, ["Jeep"], false, false] call MSF_fnc_CreateAreaVehicleDefense;
-
-	Function Ver 1.0
-	Implemented in: MSF Addon v1.6.0
-*/
 // type: 0 Vic, 1 Armor, 2 Static
 params [
 	["_trigger", objNull, [objNull]],

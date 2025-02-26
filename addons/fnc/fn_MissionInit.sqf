@@ -13,45 +13,23 @@
 
 
 if (isServer) then {
+	[] call MSF_fnc_InitMSFHandler;
 	[] call MSF_fnc_ACEMedUnconcious;
-	[] call MSF_fnc_InfiniteFuelHandler;	
-	[] call MSF_fnc_SetUnitDialogOption;
-	[] call MSF_fnc_ApplyDamageReduction;
-	[] call MSF_fnc_ApplyObjectActions;
-
-	if (getMissionConfigValue ["MSF_Mission_GM", false]) then {
-		[] call MSF_fnc_ApplyGMActions;
-	};
-
-	if (getMissionConfigValue ["MSF_Mission_EndMission", false]) then {
-		[] call MSF_fnc_ApplyEndMission;
-	};	
+	[] call MSF_fnc_HideShowHideModUnits;
 
 	if (getMissionConfigValue ["MSF_Mission_VicCustomization", true]) then {
 		[] call MSF_fnc_RespawnVehicleCustomization;
 	};
 
-	{
-		private _units = _x getVariable "Units";
 
-		if (typeName _units == "ARRAY") then {
-			private _id = ((_units select 0) * -1) -1;
-			[getMissionLayerEntities _id select 0, false] call MSF_fnc_ShowHideObjects;
-		}
-		else
-		{
-			[synchronizedObjects _x select { !(_x isKindOf "EmptyDetector")}, false] call MSF_fnc_ShowHideObjects;
-		};
-	} forEach allMissionObjects "MSF_Module_ShowHide";
-
-	[] call MSF_fnc_InitMSFHandler;
+	//[] call MSF_fnc_ApplyDamageReduction;
 };
 
 if (!isServer) then
 {	
 	[player] call MSF_fnc_ConfigRespawnOnPlayer;
 	[player, didJIP] call MSF_fnc_JIPSpawnNearPlayer;
-	[] call MSF_fnc_ApplyDamageReduction;
+	//[] call MSF_fnc_ApplyDamageReduction;
 };
 
 if (!isDedicated) then

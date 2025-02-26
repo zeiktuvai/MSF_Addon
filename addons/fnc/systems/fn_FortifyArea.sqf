@@ -25,7 +25,7 @@ if (_building) then {
 	[_trigger, _bldgStr, _side, _classes get "Units", _bldgProb, _logicArea, _intelProvider] spawn 
 	{		
 		params ["_trigger", "_bldgStr", "_side", "_infantryGroupClasses", "_bldgProb", "_logicArea", "_intelProvider"];
-		private _units = [_trigger, _bldgStr, _side, _infantryGroupClasses, _bldgProb, _logicArea] call MSF_fnc_CreateAreaBuildingDefense;
+		private _units = [_trigger, _bldgStr, _side, _infantryGroupClasses, _bldgProb, _logicArea] call MSF_fnc_SpawnAreaBuildingDefense;
 
 		// intel system provider
 		if (count _intelProvider > 0) then
@@ -47,7 +47,7 @@ if (_building) then {
 if (_vehicle) then {
 	[_trigger, _vicNum, _side, _classes get "Vehicles", _classes get "Units", _vicProb, _logicArea, _vicFill] spawn {
 		params ["_trigger", "_vicNum", "_side", "_vicTypes", "_fillUnits", "_vicProb", "_logicArea", "_vicFill"];
-		[_trigger, _vicNum, _side, _vicTypes, _fillUnits, 0, _vicProb, _logicArea, _vicFill] call MSF_fnc_CreateAreaVehicleDefense;
+		[_trigger, _vicNum, _side, _vicTypes, _fillUnits, 0, _vicProb, _logicArea, _vicFill] call MSF_fnc_SpawnAreaVehicleDefense;
 	};
 };
 
@@ -55,7 +55,7 @@ if (_vehicle) then {
 if (_armor) then {
 	[_trigger, _armorNum, _side, _classes get "Armor", _armorProb, _logicArea] spawn {
 		params ["_trigger", "_armorN_unitsum", "_side", "_armorTypes", "_armorProb", "_logicArea"];
-		[_trigger, _armorNum, _side, _armorTypes, [], 1, _armorProb, _logicArea] call MSF_fnc_CreateAreaVehicleDefense;
+		[_trigger, _armorNum, _side, _armorTypes, [], 1, _armorProb, _logicArea] call MSF_fnc_SpawnAreaVehicleDefense;
 	};
 };
 
@@ -63,7 +63,7 @@ if (_armor) then {
 if (_static) then {
 	[_trigger, _staticNum, _side, _classes get "Turrets", _staticProb, _logicArea] spawn {
 		params ["_trigger", "_staticNum", "_side", "_staticTypes", "_staticProb", "_logicArea"];
-		[_trigger, _staticNum, _side, _staticTypes, [], 2, _staticProb, _logicArea] call MSF_fnc_CreateAreaVehicleDefense;
+		[_trigger, _staticNum, _side, _staticTypes, [], 2, _staticProb, _logicArea] call MSF_fnc_SpawnAreaVehicleDefense;
 	};
 };
 
@@ -71,6 +71,6 @@ if (_static) then {
 if (_air) then {		
 	[_trigger, _airNum, _side, _classes get "Air", _airProb] spawn {
 		params ["_trigger", "_airNum", "_side", "_airClasses", "_airProb"];
-		[_trigger, _airNum, _side, _airClasses, _airProb] call MSF_fnc_CreateAreaAirAttack;
+		[_trigger, _airNum, _side, _airClasses, _airProb] call MSF_fnc_SpawnAreaAirAttack;
 	};
 };	

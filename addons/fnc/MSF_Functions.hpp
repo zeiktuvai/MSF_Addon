@@ -19,7 +19,6 @@ class CfgFunctions
 			class ACEMedUnconcious {};
 			class AddAceMenuItem {};
 			class AddInventoryOverrideOption {};
-			class AntistasiEnemyPlanes {};
 		};
 		class Config
 		{
@@ -41,32 +40,23 @@ class CfgFunctions
 			class ConfigureMP {};
 			class GetSelectedUnitWeaponData {};
 		};
-		class Enemy
+		class Handlers
 		{
-			file = "z\msf\addons\fnc\enemy";
-			class CreateAreaAirAttack {};
-			class CreateAreaBuildingDefense {};
-			class CreateAreaDefense {};
-			class CreateAreaInfantryPatrol {};
-			class CreateAreaVehicleDefense {};
-			class CreateAreaVehiclePatrol {};
-			class CreateWaveDefenseArea {};
-			class DeleteAreaInfantryPatrol {};
-			class FortifyArea {};
-			class GeneratePatrolRoute {};
-			class SpawnGroupInSafePos {};
+			file = "z\msf\addons\fnc\handlers";
+			class AntistasiEnemyPlanes {};
+			class InfiniteFuelHandler {};			
 		};
 		class Helpers
 		{
 			file = "z\msf\addons\fnc\helper";
+			class CreateActivationTrigger {};
+			class CreateMapMarker {};
 			class DistinctArray {};
 			class FindSafeSpawnPos {};
+			class GeneratePatrolRoute {};
 			class GetModuleActivationSide {};
-			class GetObjectsByProperty {};
-			class GetPlayersByProperty {};
 			class GetRadialPositionRoute {};
 			class GetRoadDirection {};
-			class GetUnitsByProperty {};
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};
 		};
@@ -77,26 +67,19 @@ class CfgFunctions
 			class GetAreaRadius {};
 			class OrderArrayByStartingValue {};
 		};
-		class Mission
-		{
-			file = "z\msf\addons\fnc\mission";
-			class ApplyDamageReduction {};
-			class ApplyEndMission {};
-			class ApplyGMActions {};
-			class ApplyObjectActions {};
-			class CreateActivationTrigger {};
-			class CreateMapMarker {};
-			class InfiniteFuelHandler {};
-			class RespawnVehicleCustomization {};
-		};
 		class Module
 		{
 			file = "z\msf\addons\fnc\module";
 			class Mod_BuildingDestroy {};
 			class Mod_DeadUnit {};
 			class Mod_DeleteUnit {};
+			class Mod_Dialog {};
+			class Mod_Fuel {};
+			class Mod_GM {};
 			class Mod_InfantryVehiclePatrol {};
+			class Mod_ProgressBarInteraction {};
 			class Mod_RandomSpawnCrash {};
+			class Mod_ScenarioEnd {};
 			class Mod_ShowHide {};
 			class Mod_Spawn_Checkpoint {};
 			class Mod_Spawn_Fortify {};
@@ -114,10 +97,9 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\object";
 			class GetShowHideVehicleInTrigger {};
+			class HideShowHideModUnits {};
+			class RespawnVehicleCustomization {};
 			class SetRandomVehicleState {};
-			class SetTimeBasedInteraction {};
-			class SetUnitDialogOption {};
-			class SetVehicleDamageReduction {};
 			class ShowHideObjects {};
 		};
 		class Player
@@ -128,12 +110,21 @@ class CfgFunctions
 		class Spawn
 		{
 			file = "z\msf\addons\fnc\spawn";
+			class DeleteAreaInfantryPatrol {};
+			class SpawnAreaAirAttack {};
+			class SpawnAreaBuildingDefense {};
+			class SpawnAreaInfantryPatrol {};
+			class SpawnAreaVehicleDefense {};
+			class SpawnAreaVehiclePatrol {};
+			class SpawnGroupInSafePos {};
 			class SpawnSeekAndDestroyVehicles {};
 			class SpawnUAV {};
+			class SpawnWaveDefenseArea {};
 		};
 		class Systems
 		{
 			file = "z\msf\addons\fnc\systems";
+			class FortifyArea {};
 			class GetIsIntelEnabled {};
 			class InitMSFHandler {};
 			class SetWeaponOverrideEH {};
@@ -149,7 +140,6 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\validator";
 			class SetInvGenEnable {};
-			class SetDialogValidator {};
 		};
 	};
 };

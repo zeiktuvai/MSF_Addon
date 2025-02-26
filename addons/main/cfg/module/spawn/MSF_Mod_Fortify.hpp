@@ -1,9 +1,9 @@
 class MSF_Module_Spawn_Fortify : Module_F
 {
 	scope = 2;
-	displayName = "Spawn - Fortify Area";
+	displayName = "Fortify Area";
 	icon = "a3\ui_f\data\map\mapcontrol\bunker_ca.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_Spawn";
 	function = "MSF_fnc_Mod_Spawn_Fortify";
 	functionPriority = 1;
 	isGlobal = 0;
