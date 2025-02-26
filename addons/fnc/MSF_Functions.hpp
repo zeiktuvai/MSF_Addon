@@ -40,21 +40,6 @@ class CfgFunctions
 			class ConfigureMP {};
 			class GetSelectedUnitWeaponData {};
 		};
-		class Enemy
-		{
-			file = "z\msf\addons\fnc\enemy";
-			class CreateAreaAirAttack {};
-			class CreateAreaBuildingDefense {};
-			class CreateAreaDefense {};
-			class CreateAreaInfantryPatrol {};
-			class CreateAreaVehicleDefense {};
-			class CreateAreaVehiclePatrol {};
-			class CreateWaveDefenseArea {};
-			class DeleteAreaInfantryPatrol {};
-			class FortifyArea {};
-			class GeneratePatrolRoute {};
-			class SpawnGroupInSafePos {};
-		};
 		class Handlers
 		{
 			file = "z\msf\addons\fnc\handlers";
@@ -68,6 +53,7 @@ class CfgFunctions
 			class CreateMapMarker {};
 			class DistinctArray {};
 			class FindSafeSpawnPos {};
+			class GeneratePatrolRoute {};
 			class GetModuleActivationSide {};
 			class GetRadialPositionRoute {};
 			class GetRoadDirection {};
@@ -124,12 +110,21 @@ class CfgFunctions
 		class Spawn
 		{
 			file = "z\msf\addons\fnc\spawn";
+			class DeleteAreaInfantryPatrol {};
+			class SpawnAreaAirAttack {};
+			class SpawnAreaBuildingDefense {};
+			class SpawnAreaInfantryPatrol {};
+			class SpawnAreaVehicleDefense {};
+			class SpawnAreaVehiclePatrol {};
+			class SpawnGroupInSafePos {};
 			class SpawnSeekAndDestroyVehicles {};
 			class SpawnUAV {};
+			class SpawnWaveDefenseArea {};
 		};
 		class Systems
 		{
 			file = "z\msf\addons\fnc\systems";
+			class FortifyArea {};
 			class GetIsIntelEnabled {};
 			class InitMSFHandler {};
 			class SetWeaponOverrideEH {};

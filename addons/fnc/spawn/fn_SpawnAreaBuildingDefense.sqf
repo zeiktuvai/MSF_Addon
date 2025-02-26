@@ -1,15 +1,3 @@
-/*
-	Author: zeik_tuvai
-
-	Description:
-		Part of MSF.  This script creates a number of units and sets them to occupy buildings.
-        
-	Examples:
-		[Trigger Objct] call MSF_fnc_CreateAreaBuildingDefense;
-
-	Function Ver 1.0
-	Implemented in: MSF Addon v1.6.0
-*/
 params [["_trigger", objNull, [objNull]], ["_str", 0.5, [0]], ["_side", east, [east]], ["_unitTypes", [], [[]]], ["_bldgProb", 1, [1]], ["_logicArea", [], [[]]]];
 
 private _x = _logicArea select 0;

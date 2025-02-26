@@ -18,7 +18,7 @@ if (!_isVic) then {
 	if(_area select 0 >= 100 && _area select 1 >= 100) then 
 	{		
 		[_area select 0, _area select 1, _height, _position, [[_activationSide] call MSF_fnc_GetModuleActivationSide, "PRESENT"], ["this",
-			"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateAreaInfantryPatrol;}; ",
+			"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_SpawnAreaInfantryPatrol;}; ",
 			"[thisTrigger] call MSF_fnc_DeleteAreaInfantryPatrol;"],
 			_isRectangle, false, _despawn,
 			[_side, 8, _combatMode, _behavior, _speed, _spawnCount, _despawn]
@@ -29,7 +29,7 @@ else {
 	if(_area select 0 >= 500 && _area select 1 >= 500) then 
 	{		
 		[_area select 0, _area select 1, _height, _position, [[_activationSide] call MSF_fnc_GetModuleActivationSide, "PRESENT"], ["this",
-			"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateAreaVehiclePatrol; }; ",
+			"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_SpawnAreaVehiclePatrol; }; ",
 			""],
 			_isRectangle, false, false,
 			[_side, 10, _combatMode, _behavior, _speed, _spawnCount]
