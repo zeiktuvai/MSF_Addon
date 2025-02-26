@@ -14,35 +14,7 @@ class MSFSettings
 					data = "AttributeSystemSubcategory";
 					control = "SubCategory";
 					displayName = "Player Options";
-				};
-				class EnableGMAct
-				{
-					displayName = "Enable GM Actions";
-					tooltip = "Adds an ACE menu option called GM Actions to any player unit with the IsGM attribute set true.";
-					property = "MSF_Mission_GM";			
-					control = "Checkbox";
-					expression = "_this setVariable ['%s',_value];";
-					defaultValue = "false";
-				};
-				class EnableEndMission
-				{
-					displayName = "Enable End Mission Action";
-					tooltip = "Adds an ACE menu option called End Mission when a specific trigger is activated.";
-					property = "MSF_Mission_EndMission";			
-					control = "Checkbox";
-					expression = "_this setVariable ['%s',_value];";					
-					defaultValue = "false";
-				};
-				class EndTriggerName
-				{
-					displayName = "Ending Trigger Name";
-					tooltip = "The variable name of the trigger that ends the mission (For this to work it should not be synced to a scenario end module, or call BIS_fnc_EndMission) If 'End Mission Action' is enabled then this is required!";
-					property = "MSF_Mission_EndTrig";
-					control = "Edit";
-					expression = "_this setVariable ['%s',_value];";			
-					defaultValue = "trig_end_mission";
-					validate = "variable";
-				};
+				};				
 				class EnableTFAR
 				{
 					displayName = "Enable TFAR Radios";
@@ -105,17 +77,6 @@ class MSFSettings
 					control = "Checkbox";
 					expression = "_this setVariable ['%s',_value];";					
 					defaultValue = "true";
-				};				
-				class InfiniteFuelTick
-				{
-					displayName = "Infinite Fuel Interval";
-					tooltip = "Sets the interval that the infinite fuel handler will use when refuling enabled vehicles.";
-					property = "MSF_Vic_InfiniteFuel_Tick";			
-					control = "EditShort";
-					expression = "_this setVariable ['%s',_value];";
-					defaultValue = 120;
-					validate = "number";
-					typeName = "NUMBER";
 				};
 				class IntelSys
 				{

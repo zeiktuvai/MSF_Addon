@@ -1,25 +1,14 @@
-/*
-	Author: zeik_tuvai
+params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", true, [true]]];
 
-	Description:
-		This MSF function adds an event handler to each configured vehicle to reduce damage dealt by a certain percent.
-	Properties:
-		_vics  Array 	List of vehicles
-	Examples:
-		[] call MSF_fnc_SetVehicleDamageReduction;
-
-	Function Ver 1.1
-	Implemented in: MSF Addon v1.5
-*/
-
-params ["_vics"];
+private _factor = _logic getVariable ["DmgReduction", 0.5];
 
 {
 	_x addEventHandler ["HandleDamage", {
-		private _unit = _this select 0;		
-		private _hit = _this select 1;
-		private _dam = _this select 2;
-		private _toughness = 1 - (_unit getVariable "MSF_General_DmgReduction");
+		params ["_unit", "_hit", "_dam"];
+		//private _unit = _this select 0;		
+		//private _hit = _this select 1;
+		//private _dam = _this select 2;
+		private _toughness = 1 - _factor;
 		private _damage = 0;
 
 		if ("wheel" in _hit || "track" in _hit) then {
@@ -36,6 +25,4 @@ params ["_vics"];
 		
 		_damage;
 	}];
-} forEach _vics;
-
-
+} forEach (_units select { _x isKindOf "LandVehicle" || _x isKindOf "Air" || _x isKindOf "Ship" });

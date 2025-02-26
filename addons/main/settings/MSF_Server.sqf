@@ -1,18 +1,4 @@
 [
-	"MSF_ACE_Extensions_Unconcious",
-	"CHECKBOX",
-	["Enable ACE Medical Player Unconciousness", "When disabled, the player will die upon going unconcious instead of staying unconcious until being revived or bleeding out."],
-	["MSF - User Settings", "ACE Options"],
-	true
-] call CBA_fnc_addSetting;
-[
-	"MSF_Debug_Message_Enabled",
-	"CHECKBOX",
-	["Enable Debug Messages", "When enabled, shows debug messages in system chat."],
-	["MSF - User Settings", "Debug"],
-	false
-] call CBA_fnc_addSetting;
-[
 	"MSF_Unit_EnableOverride_W",
 	"CHECKBOX",
 	["Enable Player Weapon Override", "When enabled this will override default weapons for a class with ones configured below."],
@@ -70,5 +56,13 @@
 	["UAV Spawn Delay", "Sets how long a drone operator must wait before spawning another drone."],
 	["MSF - Server Settings", "UAV System"],
 	[60, 3600, 900],
+	1
+] call CBA_fnc_addSetting;
+[
+	"MSF_Fuel_Tick",
+	"TIME",
+	["Infinite Fuel Tick", "Sets the interval used by the infinite fuel handler to refuel vehicles."],
+	["MSF - Server Settings", "MSF System"],
+	[10, 300, 60],
 	1
 ] call CBA_fnc_addSetting;

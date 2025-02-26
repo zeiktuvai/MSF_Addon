@@ -2,7 +2,7 @@ class MSF_Module_UGVSpawn : Module_F
 {
 	scope = 2;
 	displayName = "Drones - UGV Spawn Point";
-	icon = "\A3\Drones_F\Air_F_Gamma\UAV_02\Data\UI\Map_UAV_02_CA.paa";
+	icon = "a3\modules_f_beta\data\firingdrills\checkpoint_ca.paa";
 	category = "MSF_Module";
 	function = "";
 	functionPriority = 1;

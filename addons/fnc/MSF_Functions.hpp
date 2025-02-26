@@ -59,19 +59,18 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\handlers";
 			class AntistasiEnemyPlanes {};
-			
+			class InfiniteFuelHandler {};			
 		};
 		class Helpers
 		{
 			file = "z\msf\addons\fnc\helper";
+			class CreateActivationTrigger {};
+			class CreateMapMarker {};
 			class DistinctArray {};
 			class FindSafeSpawnPos {};
 			class GetModuleActivationSide {};
-			class GetObjectsByProperty {};
-			class GetPlayersByProperty {};
 			class GetRadialPositionRoute {};
 			class GetRoadDirection {};
-			class GetUnitsByProperty {};
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};
 		};
@@ -82,27 +81,19 @@ class CfgFunctions
 			class GetAreaRadius {};
 			class OrderArrayByStartingValue {};
 		};
-		class Mission
-		{
-			file = "z\msf\addons\fnc\mission";
-			class ApplyDamageReduction {};
-			class ApplyEndMission {};
-			class ApplyGMActions {};
-			class ApplyObjectActions {};
-			class CreateActivationTrigger {};
-			class CreateMapMarker {};
-			class InfiniteFuelHandler {};
-			class RespawnVehicleCustomization {};
-		};
 		class Module
 		{
 			file = "z\msf\addons\fnc\module";
 			class Mod_BuildingDestroy {};
 			class Mod_DeadUnit {};
 			class Mod_DeleteUnit {};
+			class Mod_Dialog {};
+			class Mod_Fuel {};
+			class Mod_GM {};
 			class Mod_InfantryVehiclePatrol {};
 			class Mod_ProgressBarInteraction {};
 			class Mod_RandomSpawnCrash {};
+			class Mod_ScenarioEnd {};
 			class Mod_ShowHide {};
 			class Mod_Spawn_Checkpoint {};
 			class Mod_Spawn_Fortify {};
@@ -120,10 +111,9 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\object";
 			class GetShowHideVehicleInTrigger {};
+			class HideShowHideModUnits {};
+			class RespawnVehicleCustomization {};
 			class SetRandomVehicleState {};
-			class SetTimeBasedInteraction {};
-			class SetUnitDialogOption {};
-			class SetVehicleDamageReduction {};
 			class ShowHideObjects {};
 		};
 		class Player
@@ -155,7 +145,6 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\validator";
 			class SetInvGenEnable {};
-			class SetDialogValidator {};
 		};
 	};
 };

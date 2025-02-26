@@ -26,7 +26,7 @@ class MSF_Module_ProgressBarInteract : Module_F
 		class Units : Units
 		{
 			property = "MSF_Mod_PBI_Units";
-            defaultValue = 0;
+            defaultValue = "'0'";
 		};
 		class InteractionTime
 		{
@@ -35,7 +35,7 @@ class MSF_Module_ProgressBarInteract : Module_F
 			property = "MSF_MOD_prog_time";			
 			control = "SliderTimeRespawn";
 			expression = "_this setVariable ['%s',_value];";			
-			defaultValue = 10;
+			defaultValue = "10";
 		};
 		class ActionName
 		{

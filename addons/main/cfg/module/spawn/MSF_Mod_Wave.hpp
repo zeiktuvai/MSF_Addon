@@ -1,9 +1,9 @@
 class MSF_Module_Spawn_Wave : Module_F
 {
 	scope = 2;
-	displayName = "Spawn - Wave Defense Area";
+	displayName = "Wave Defense Area";
 	icon = "x\cba\addons\ai\iconinvisibletarget.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_Spawn";
 	function = "MSF_fnc_Mod_Spawn_Wave";
 	functionPriority = 1;
 	isGlobal = 0;

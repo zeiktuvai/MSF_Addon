@@ -1,9 +1,9 @@
 class MSF_Module_Spawn_RoadCheckpoint : Module_F
 {
 	scope = 2;
-	displayName = "Spawn - Road Checkpoint";
+	displayName = "Road Checkpoint";
 	icon = "a3\modules_f_beta\data\firingdrills\checkpoint_ca.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_Spawn";
 	function = "MSF_fnc_Mod_Spawn_Checkpoint";
 	functionPriority = 1;
 	isGlobal = 0;
