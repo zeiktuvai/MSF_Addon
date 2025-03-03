@@ -4,7 +4,7 @@ class MSF_Module_InvGen : Module_F
 	displayName = "Logistics - Generate Inventory";
 	icon = "a3\weapons_f\ammoboxes\data\ui\map_support_f_ca.paa";
 	category = "MSF_Module";
-	function = "MSF_Inv_fnc_Mod_InvGen";
+	function = "MSF_Logi_fnc_Mod_InvGen";
 	functionPriority = 2;
 	isGlobal = 0;
 	isTriggerActivated = 0;
@@ -26,6 +26,7 @@ class MSF_Module_InvGen : Module_F
 		class Units : Units
 		{
 			property = "MSF_Mod_InvGen_Units";
+			defaultValue = "'0'";
 		};
         class Clear
 		{			

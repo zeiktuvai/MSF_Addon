@@ -1,10 +1,10 @@
-class MSF_Module_UAV : Module_F
+class MSF_Module_Rearm : Module_F
 {
 	scope = 2;
-	displayName = "Drones - Inventory";
-	icon = "\A3\Drones_F\Air_F_Gamma\UAV_02\Data\UI\Map_UAV_02_CA.paa";
+	displayName = "Logistics - Player Rearm";
+	icon = "a3\ui_f\data\igui\cfg\cursors\iconrearmat_ca.paa";
 	category = "MSF_Module";
-	function = "MSF_Inv_fnc_Mod_UAV";
+	function = "MSF_Logi_fnc_Mod_Rearm";
 	functionPriority = 1;
 	isGlobal = 0;
 	isTriggerActivated = 0;
@@ -25,7 +25,8 @@ class MSF_Module_UAV : Module_F
 	{
 		class Units : Units
 		{
-			property = "MSF_Mod_InvGen_Units";
+			property = "MSF_Mod_InvRearm_Units";
+            defaultValue = "'0'";
 		};
 
         class ModuleDescription : ModuleDescription {};
@@ -33,7 +34,7 @@ class MSF_Module_UAV : Module_F
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = "Adds the synced UAVs/UGVs to the mission UAV inventory.";
+		description = "Adds a hold interaction that will place mags for a players primary and handgun into their inventory.";
 		sync[] = { "LocationArea_F" };
 
 		class LocationArea_F

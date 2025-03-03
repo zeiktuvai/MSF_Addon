@@ -22,9 +22,9 @@ switch (_type) do {
 	private _box = createVehicle [selectRandom _boxTypes, position _x, [], 0, "CAN_COLLIDE"];
 	
 	switch (_type) do {
-		case "Armory": { _weapTypes = [_box, _fillCount] call MSF_Inv_fnc_GenerateRandomArmory; };
-		case "Ammo": { [_box, _weaponClasses] call MSF_Inv_fnc_GenerateArmoryAmmo; };
-		default { [_box, true, round (_fillCount * _str), false, _probabilities] call MSF_Inv_fnc_GenerateInventory; };
+		case "Armory": { _weapTypes = [_box, _fillCount] call MSF_Logi_fnc_GenerateRandomArmory; };
+		case "Ammo": { [_box, _weaponClasses] call MSF_Logi_fnc_GenerateArmoryAmmo; };
+		default { [_box, true, round (_fillCount * _str), false, _probabilities] call MSF_Logi_fnc_GenerateInventory; };
 	};
 
 	_boxes pushBack _box;

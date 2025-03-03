@@ -14,5 +14,5 @@ private _weights = [_magW, _launW, _grenW, _attchW, _medW, _foodW];
 private _compatUnits = _units select { _x isKindOf "LandVehicle" || _x isKindOf "Air" || _x isKindOf "Ship" || _x isKindOf "ThingX"};
 
 {
-	[_x, _clear, _count, _fill, _weights] call MSF_Inv_fnc_GenerateInventory;
+	[_x, _clear, _count, _fill, _weights] call MSF_Logi_fnc_GenerateInventory;
 } forEach (_compatUnits select { maxLoad _x > 0 });

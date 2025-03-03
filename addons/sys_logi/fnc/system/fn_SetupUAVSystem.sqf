@@ -7,7 +7,7 @@ private _action = {
 	private _spawnTime = _msfLocal getOrDefault ["UAV_SpawnTimer", 0];
 
 	if (serverTime > _spawnTime) then {
-		[] call MSF_Inv_fnc_DisplayDeployUAV;
+		[] call MSF_Logi_fnc_DisplayDeployUAV;
 	}
 	else
 	{

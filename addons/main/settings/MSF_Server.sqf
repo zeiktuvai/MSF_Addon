@@ -66,3 +66,19 @@
 	[10, 300, 60],
 	1
 ] call CBA_fnc_addSetting;
+[
+	"MSF_Rearm_PMags",
+	"SLIDER",
+	["Primary Mag Count", "Number of mags to re-arm a player with when using a re-arm object."],
+	["MSF - Server Settings", "MSF Logistics"],
+	[1, 10, 4, 0],
+	1
+] call CBA_fnc_addSetting;
+[
+	"MSF_Rearm_HMags",
+	"SLIDER",
+	["Handgun Mag Count", "Number of mags to re-arm a player with when using a re-arm object."],
+	["MSF - Server Settings", "MSF Logistics"],
+	[1, 10, 2, 0],
+	1
+] call CBA_fnc_addSetting;

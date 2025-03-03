@@ -1,16 +1,14 @@
 #include "..\main\MSF_Version.hpp"
-#include "cfg\MSF_Inv_Functions.hpp"
-#include "cfg\MSF_Defines.hpp"
-#include "cfg\MSF_UAV_Control.hpp"
+#include "cfg\MSF_Logi_Functions.hpp"
 
 class CfgPatches
 {
     class ADDON
     {
-		name = "MSF - Inventory System";
+		name = "MSF - Logistics System";
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
-        units[] = {"MSF_Module_InvGen", "MSF_Module_UAV", "MSF_Module_UAVSpawn", "MSF_Module_UGVSpawn"};
+        units[] = {"MSF_Module_InvGen", "MSF_Module_UAV", "MSF_Module_UAVSpawn", "MSF_Module_UGVSpawn", "MSF_Module_Rearm"};
         weapons[] = {};
         requiredVersion = 2.1;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction", "MSF3den"};
@@ -19,7 +17,8 @@ class CfgPatches
 
 class CfgVehicles
 {
-    #include "cfg\MSF_Inv_Modules.hpp"
+    #include "cfg\MSF_Logi_Modules.hpp"
+	#include "cfg\vehicle\MSF_Supply_Depot.hpp"
 };
 
 class CfgHints
