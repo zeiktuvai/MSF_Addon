@@ -7,3 +7,5 @@ private _logiInv = createHashMapFromArray [
 ];
 
 ["MSF", "LogiInventory", _logiInv] call MSF_fnc_SetConfigValue;
+
+//ace_dragging_canCarry = 1;

@@ -4,14 +4,15 @@ class CfgFunctions
 	{
         class Init
         {
-            file = "z\msf\addons\sys_logi\fnc";
+            file = "z\msf\addons\sys_logi\functions";
             class InitializeLogistics {
                 postInit = 1;
             };
+            class InitializeSupplyDepot {};
         };
         class Inventory
         {
-            file = "z\msf\addons\sys_logi\fnc\inventory";
+            file = "z\msf\addons\sys_logi\functions\inventory";
             class AddItem {};
             class GenerateArmoryAmmo {};
 			class GenerateRandomArmory {};
@@ -20,29 +21,24 @@ class CfgFunctions
         };
         class Module
 		{
-			file = "z\msf\addons\sys_logi\fnc\module";
+			file = "z\msf\addons\sys_logi\functions\module";
             class Mod_InvGen {};
             class Mod_Rearm {};
             class Mod_UAV {};
         };
         class Spawn
         {
-            file = "z\msf\addons\sys_logi\fnc\spawn";
-            class SpawnSupplyCrate {};
+            file = "z\msf\addons\sys_logi\functions\spawn";
+            class SpawnRearmCrate {};
         };
         class System
         {
-            file = "z\msf\addons\sys_logi\fnc\system";
+            file = "z\msf\addons\sys_logi\functions\system";
             class GenerateInventory {};
+            class GetLogiSelection {};
             class SelectCategory {};
             class SetupRearmInteraction {};
             class SetupUAVSystem {};
-        };
-        class UI
-        {
-            file = "z\msf\addons\sys_logi\fnc\ui";
-            class DisplayDeployUAV {};
-            class StartPlaceObjectUI {};
         };
     };
 };

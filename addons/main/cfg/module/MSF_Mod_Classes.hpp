@@ -2,7 +2,7 @@ class MSF_Module_ClassOverride : Module_F
 {
 	scope = 2;
 	displayName = "Config - Override Classes";
-	icon = "z\msf\addons\main\ui\msf_icon.paa";
+	icon = MSF_ICON;
 	category = "MSF_Module";
 	function = "";
 	functionPriority = 1;

@@ -1,9 +1,8 @@
-#include "MSF_Version.hpp"
+#include "cfg\MSF_Macros.hpp"
 #include "cfg\eden\MSF_Editor_Menu.hpp"
 #include "cfg\MSF_Config.hpp"
 #include "cfg\MSF_Categories.hpp"
 #include "cfg\MSF_Factions.hpp"
-#include "cfg\MSF_Controls.hpp"
 
 class CfgPatches
 {
@@ -73,7 +72,7 @@ class CfgHints
 		class EndScenario
 		{
 			displayName = "Mission Completed";
-			image = "z\msf\addons\main\ui\msf_icon.paa";            
+			image = MSF_ICON;            
 			description = "Primary mission objectives have been completed, use the %11 option in your %12 to end the mission when you are ready.";			
 			arguments[] = {{"End Mission"}, {"ACE Self Menu"}};
 		};

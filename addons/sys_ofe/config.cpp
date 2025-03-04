@@ -1,4 +1,4 @@
-#include "..\main\MSF_Version.hpp"
+#include "..\main\cfg\MSF_Macros.hpp"
 #include "MSF_OFE_Functions.hpp"
 #include "cfg\state\MSF_OFE_EnemyStateMachine.hpp"
 #include "cfg\MSF_OFE_Config.hpp"
@@ -33,7 +33,7 @@ class CfgHints
 			description = "Enemy strength has been reduced to %11.";
 			tip = "As enemy strength is lowered bases will be less defended and easier to take, however your notoriety will rise.";
 			arguments[] = {"[missionNamespace getVariable ['MSF_OFE_EnemyStr', 4]] call MSF_fnc_OFE_GetStrengthText"};
-			image = "z\msf\addons\main\ui\msf_icon.paa";
+			image = MSF_ICON;
 		};
 	};
 };
