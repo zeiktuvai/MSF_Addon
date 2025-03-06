@@ -29,6 +29,8 @@ class CfgFunctions
         class Spawn
         {
             file = "z\msf\addons\sys_logi\functions\spawn";
+            class SpawnFoodCrate {};
+            class SpawnMedCrate {};
             class SpawnRearmCrate {};
         };
         class System

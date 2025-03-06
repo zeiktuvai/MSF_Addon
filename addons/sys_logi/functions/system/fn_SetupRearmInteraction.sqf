@@ -14,7 +14,7 @@ params [["_object", objNull, [objNull]], ["_repeat", true, [true]]];
 	},
 	{},
 	[],
-	5,
+	2,
 	nil,
 	!_repeat,
 	false

@@ -1,4 +1,4 @@
-
+disableSerialization;
 createDialog "SupplyDialog";
 
 {

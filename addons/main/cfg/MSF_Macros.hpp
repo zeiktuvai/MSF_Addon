@@ -1,3 +1,10 @@
 #define MSF_VERSION __EVAL(MAJOR.MINOR.PATCH)
 #define MSF_ICON "z\msf\addons\ui\data\icons\MSF_icon.paa"
 #define MSF_PICTURE "z\msf\addons\ui\data\MSF_main.paa"
+#define MSF_CARGO_SUPPLY "Supply"
+#define MSF_CARGO_VAMMO "VicAmmo"
+#define MSF_CARGO_MED "Medical"
+#define MSF_CARGO_FOOD "Food"
+#define MSF_CARGO_WEAP "Armory"
+#define MSF_CARGO_AMMO "Ammo"
+#define MSF_CARGO_ORD "Ordinance"

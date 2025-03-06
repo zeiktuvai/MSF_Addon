@@ -1,6 +1,7 @@
+#include "\z\msf\addons\main\cfg\MSF_Macros.hpp"
 params [["_unit", objNull, [objNull]]];
 
-private _classes = ["cargo"] call MSF_fnc_GetConfigData get "Ammo";
+private _classes = ["cargo"] call MSF_fnc_GetConfigData get MSF_CARGO_AMMO;
 private _crate = createVehicle [selectRandom _classes, position _unit];
 
 clearWeaponCargoGlobal _crate;
