@@ -1,7 +1,8 @@
 params [["_unit", objNull, [objNull]], ["_type", "", [""]]];
 
 switch (_type) do {
-	case "BP_Medical": { 
+	case "BP_Medical": {
+		//TODO: Fix this (See Task)
 		private _configs = configProperties [configFile >> "CfgVehicles" >> "MSF_mc_MedicBackpack" >> "TransportItems"];
 		private _items = [];
 		{
