@@ -8,12 +8,6 @@ class MSFConfig
 		aceMedical[] = {"ACE_bloodIV_500", "ACE_bloodIV", "ACE_quikclot", "ACE_packingBandage", "ACE_elasticBandage", "ACE_fieldDressing", "ACE_adenosine", "ACE_bodyBag", "ACE_bodyBag_blue", "ACE_bodyBag_white", "ACE_EarPlugs", "ACE_epinephrine", "ACE_morphine", "ACE_plasmaIV", "ACE_plasmaIV_500", "ACE_plasmaIV_250", "ACE_salineIV", "ACE_salineIV_250", "ACE_salineIV_500", "ACE_splint", "ACE_tourniquet"};
 		aceFood[] = {"ACE_Can_RedGull", "ACE_Can_Spirit", "ACE_Canteen", "ACE_Canteen_Empty", "ACE_Canteen_Half", "ACE_Humanitarian_Ration", "ACE_MRE_BeefStew", "ACE_MRE_ChickenTikkaMasala", "ACE_MRE_ChickenHerbDumplings", "ACE_MRE_CreamChickenSoup", "ACE_MRE_CreamTomatoSoup", "ACE_MRE_LambCurry", "ACE_MRE_MeatballsPasta", "ACE_MRE_SteakVegetables", "ACE_Sunflower_Seeds", "ACE_WaterBottle", "ACE_WaterBottle_Empty", "ACE_WaterBottle_Half", "ACE_Can_Franta"};
 	};
-	class Weapons
-	{
-		Primary[] = {};
-		Secondary[] = {};
-		Launcher[] = {};
-	};
 	class UnitSets
 	{
 		// Groups[] = {"MSF_InfTeam_ARC", "MSF_InfTeam_AT_ARC", "MSF_InfTeam_AA_ARC", "MSF_InfSentry_ARC", "MSF_ReconTeam_ARC", "MSF_ReconPatrol_ARC",	"MSF_ReconSentry_ARC"};
@@ -32,7 +26,7 @@ class MSFConfig
 			Turrets[] = {"O_GMG_01_F", "O_GMG_01_high_F", "O_GMG_01_A_F", "O_HMG_01_F", "O_HMG_01_high_F", "O_HMG_01_A_F", "O_Mortar_01_F"};
 			Units[] = {"O_T_Soldier_F", "O_T_Soldier_LAT_F", "O_T_Soldier_HAT_F", "O_T_Soldier_SL_F", "O_T_Soldier_TL_F", "O_T_Soldier_Repair_F", "O_T_Soldier_M_F", "O_T_Soldier_AR_F", "O_T_Medic_F", "O_T_Engineer_F"};
 			Air[] = {"O_Heli_Light_02_dynamicLoadout_F", "O_Heli_Attack_02_dynamicLoadout_F"};
-			VehiclePatrols[] = {"O_T_MRAP_02_ghex_F", "O_T_MRAP_02_gmg_ghex_F", "O_T_MRAP_02_hmg_ghex_F", "O_T_LSV_02_unarmed_F", "O_T_LSV_02_armed_F", "O_T_LSV_02_AT_F"};
+			VehiclePatrols[] = {"O_TCfgVehicles_MRAP_02_ghex_F", "O_T_MRAP_02_gmg_ghex_F", "O_T_MRAP_02_hmg_ghex_F", "O_T_LSV_02_unarmed_F", "O_T_LSV_02_armed_F", "O_T_LSV_02_AT_F"};
 		};
 		// Independant - AAF
 		class guer
@@ -103,6 +97,8 @@ class MSFConfig
 			"B_Truck_01_ammo_F", "O_Truck_02_Ammo_F", "I_Truck_02_ammo_F"
 		};
 	};
+	class BackPackSets
+	{
+		MedicBackpack = "[['ACE_quikclot',5],['ACE_packingBandage',5],['ACE_tourniquet',2],['ACE_splint',2],['ACE_epinephrine',1],['ACE_adenosine',1],['ACE_morphine',4],['ACE_salineIV_500',2],['ACE_bloodIV',1],['ACE_bodyBag',1],['ACE_EarPlugs',1],['ACE_MapTools',1],['ACE_M26_Clacker',1],['ACE_IR_Strobe_Item',1],['ACE_CableTie',1],['ACE_HuntIR_monitor',1],['ACE_WaterBottle',1],['ACE_Canteen',1],['ACE_microDAGR',1],['ACE_quikclot',15],['ACE_packingBandage',20],['ACE_tourniquet',10],['ACE_splint',10],['ACE_epinephrine',4],['ACE_adenosine',4],['ACE_morphine',11],['ACE_salineIV_500',3],['ACE_bloodIV',4],['ACE_plasmaIV',2],['ACE_bloodIV_500',2],['ACE_plasmaIV_500',2],['ACE_bodyBag',1],['ACE_EarPlugs',3],['ACE_CableTie',1],['ACE_WaterBottle',1],['ACE_personalAidKit',1]]";
+	};
 };
-
-
