@@ -11,4 +11,6 @@ createDialog "SupplyDialog";
 	(findDisplay 6217 displayCtrl 1500) lbSetTextRight [_forEachIndex, [_count, "∞"] select (_count == -1)];
 } forEach ((missionNamespace getVariable "MSF") get "LogiInventory");
 
+1500 lbSortBy ["TEXT"];
+
 lbSetCurSel [1500, 0];

@@ -74,6 +74,7 @@ class MSFConfig
 		WeaponBoxes[] = {"Box_NATO_Wps_F", "Box_IND_Wps_F", "Box_EAF_Wps_F", "Box_T_East_Wps_F"};
 		AmmoBoxes[] = {"Box_NATO_Ammo_F", "Box_IND_Ammo_F", "Box_T_East_Ammo_F", "Box_EAF_Ammo_F"};
 		LauncherBoxes [] = {"Box_IND_WpsLaunch_F", "Box_EAF_WpsLaunch_F", "Box_NATO_WpsLaunch_F", "Box_East_WpsLaunch_F"};
+		OrdinanceBoxes [] = {"Box_NATO_Support_F", "Box_IND_Support_F", "Box_East_Support_F", "Box_EAF_Support_F"};
 	};
 	class EmptyUnitSets
 	{

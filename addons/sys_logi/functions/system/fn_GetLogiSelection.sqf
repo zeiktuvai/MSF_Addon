@@ -6,16 +6,14 @@ systemChat format ["Unit: %1 Type: %2", _unit, _type];
 
 // systemChat str (local _unit);
 switch (_type) do {
-	case MSF_CARGO_AMMO: { 
-		[10, [_unit], {[_args select 0] call MSF_Logi_fnc_SpawnRearmCrate;}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
-	};
-	case MSF_CARGO_ORD: {
-		
-	};
-	case MSF_CARGO_MED: {
-		[10, [_unit], {[_args select 0] call MSF_Logi_fnc_SpawnMedCrate;}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
-	};
+	case MSF_CARGO_AMMO;
+	case MSF_CARGO_ORD;
+	case MSF_CARGO_MED;
 	case MSF_CARGO_FOOD: {
-		[10, [_unit], {[_args select 0] call MSF_Logi_fnc_SpawnFoodCrate;}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
-	};
+		[10, [_unit, _type], {[_args select 0, _args select 1] call MSF_Logi_fnc_SpawnLogiCrate;}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
+	};		
+	case "BP_Ammo";
+	case "BP_Medical": {
+		[10, [_unit, _type], {[_args select 0, _args select 1] call MSF_Logi_fnc_SpawnLogiBackpack}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
+	};	
 };

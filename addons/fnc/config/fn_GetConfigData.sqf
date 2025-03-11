@@ -50,7 +50,9 @@ switch (_type) do {
 			["Medical", getArray (configFile >> 'MSFConfig' >> 'CargoSets' >> 'MedicalBoxes')],
 			["Food", getArray (configFile >> 'MSFConfig' >> 'CargoSets' >> 'FoodBoxes')],
 			["Armory", getArray (configFile >> 'MSFConfig' >> 'CargoSets' >> 'WeaponBoxes')],
-			["Ammo", getArray (configFile >> 'MSFConfig' >> 'CargoSets' >> 'AmmoBoxes')]
+			["Ammo", getArray (configFile >> 'MSFConfig' >> 'CargoSets' >> 'AmmoBoxes')],
+			["Launcher", getArray (configFile >> 'MSFConfig' >> 'CargoSets' >> 'LauncherBoxes')],
+			["Ordinance", getArray (configFile >> 'MSFConfig' >> 'CargoSets' >> 'OrdinanceBoxes')]			
 		];
 	};
 

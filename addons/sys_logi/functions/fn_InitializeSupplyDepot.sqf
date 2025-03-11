@@ -19,4 +19,3 @@ params [["_object", objNull, [objNull]]];
 	false,
 	false
 ] remoteExec ["BIS_fnc_holdActionAdd", 0, _object];
-//"a3\ui_f\data\map\vehicleicons\iconparachute_ca.paa"
