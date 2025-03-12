@@ -36,6 +36,7 @@ class CfgFunctions
         {
             file = "z\msf\addons\sys_logi\functions\system";
             class GenerateInventory {};
+            class GetLogiItemsMenu {};
             class GetLogiSelection {};
             class SelectCategory {};
             class SetupRearmInteraction {};

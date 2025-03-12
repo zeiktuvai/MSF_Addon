@@ -2,7 +2,7 @@
 # MSF Config Diagrams
 ```mermaid
 classDiagram
-Root <|-- LogiInventory
+Root <|-- Logi_Inventory
 Root <|-- UAV_Inventory
 namespace MSF {
     class Root["Root Entries"] {
@@ -68,6 +68,15 @@ namespace MSF_IntelItems {
         [String] Description
         [String] TaskType
         [String] TaskState
+    }
+}
+```
+```mermaid
+classDiagram
+namespace MSF_Local {
+    class Root {
+        [int] UAV_SpawnTimer
+        [Array] Logi_Items
     }
 }
 ```

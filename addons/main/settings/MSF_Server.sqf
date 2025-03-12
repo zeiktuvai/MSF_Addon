@@ -82,3 +82,11 @@
 	[1, 10, 2, 0],
 	1
 ] call CBA_fnc_addSetting;
+[
+	"MSF_Logi_PointsPerVic",
+	"SLIDER",
+	["Vechicle Cost", "Number of logistics points needed to call in a vehicle."],
+	["MSF - Server Settings", "MSF Logistics"],
+	[1, 10, 3, 0],
+	1
+] call CBA_fnc_addSetting;

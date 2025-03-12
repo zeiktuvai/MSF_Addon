@@ -19,6 +19,22 @@ class CfgVehicles
 {
     #include "cfg\MSF_Logi_Modules.hpp"
 	#include "cfg\vehicle\MSF_Supply_Depot.hpp"
+
+	class Man;
+	class CAManBase : Man
+	{
+		class ACE_SelfActions
+		{
+			class MSF_Logistics
+			{
+				displayName = "Logistics";
+				condition = "count (localNamespace getVariable 'MSF_Local' getOrDefault ['Logi_Items', []]) > 0";
+				exceptions[] = {};
+				icon = "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa";
+				insertChildren = "params [""_target"", ""_player"", ""_params""]; [_target, _player, _params] call MSF_Logi_fnc_GetLogiItemsMenu;";
+			};
+		};
+	};
 };
 
 class CfgHints
