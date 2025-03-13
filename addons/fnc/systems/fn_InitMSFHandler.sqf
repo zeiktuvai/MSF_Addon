@@ -14,7 +14,7 @@ private _handle = [] spawn {
 			_fuelTick = _fuelTick + 1;
 		};
 
-		//[] call MSF_fnc_LogiSupplyDropHandler;
+		[] call MSF_fnc_LogiSupplyDropHandler;
 
 		sleep 1;
 	};

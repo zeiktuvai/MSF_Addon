@@ -14,6 +14,7 @@ private _logiInv = createHashMapFromArray [
 
 ["MSF", "Logi_Inventory", _logiInv] call MSF_fnc_SetConfigValue;
 ["MSF", "Logi_Points", 9] call MSF_fnc_SetConfigValue;
+["MSF", "Logi_Queue", [10] call BIS_fnc_PriorityQueue_Init] call MSF_fnc_SetConfigValue;
 
 //"a3\ui_f\data\map\vehicleicons\iconbackpack_ca.paa"
 //"a3\ui_f\data\gui\rsc\rscdisplayarsenal\backpack_ca.paa"

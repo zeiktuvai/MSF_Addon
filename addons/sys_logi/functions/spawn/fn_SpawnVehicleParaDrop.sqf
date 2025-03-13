@@ -1,12 +1,22 @@
-params [["_side", east, [east]], ["_pos", [], [[]]]];
+params [["_side", east, [east]], ["_pos", [], [[]]], ["_type", "", [""]]];
 
+//TODO: Make this configurable
 private _height = 200;
-private _vics = format ["'LandVehicle' in ([_x, true] call BIS_fnc_returnParents) && getNumber (_x >> 'attendant') == 1 && getNumber (_x >> 'side') == %1", _side call BIS_fnc_sideID] configClasses (configFile >> "CfgVehicles");
-
+private _vic = objNull;
 private _spawnPos = [_pos select 0, _pos select 1, _height];
-private _vic = createVehicle [configName selectRandom _vics, _spawnPos];
-private _para = "B_parachute_02_F" createVehicle [0,0,0];
 
+switch (_type) do {
+	case "V_Medical": {
+		private _vics = format ["'LandVehicle' in ([_x, true] call BIS_fnc_returnParents) && getNumber (_x >> 'attendant') == 1 && getNumber (_x >> 'side') == %1", _side call BIS_fnc_sideID] configClasses (configFile >> "CfgVehicles");
+		_vic = createVehicle [configName selectRandom _vics, _spawnPos];
+		[_vic, true, 0, true, [0,0,0,0,1,0]] call MSF_Logi_fnc_GenerateInventory;
+	 };
+	case "V_Ammo": {
+		
+	};
+};
+
+private _para = "B_parachute_02_F" createVehicle [0,0,0];
 _para setPosASL (getPosASL _vic);
 _vic attachTo [_para, [0,0,0]];
 

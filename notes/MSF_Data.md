@@ -13,6 +13,7 @@ namespace MSF {
         [HashMap] Logi_Inventory
         [HashMap] UAV_Inventory
         [int] Logi_Points
+        [Priority Queue] Logi_Queue
     }
     class Logi_Inventory {
         [String] Key

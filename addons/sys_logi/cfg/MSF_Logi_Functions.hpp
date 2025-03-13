@@ -31,6 +31,7 @@ class CfgFunctions
             file = "z\msf\addons\sys_logi\functions\spawn";
             class SpawnLogiBackpack {};
             class SpawnLogiCrate {};
+            class SpawnVehicleParaDrop {};
         };
         class System
         {
@@ -38,6 +39,7 @@ class CfgFunctions
             class GenerateInventory {};
             class GetLogiItemsMenu {};
             class GetLogiSelection {};
+            class RemoveLocalLogiItem {};
             class SelectCategory {};
             class SetupRearmInteraction {};
             class SetupUAVSystem {};
