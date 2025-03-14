@@ -23,6 +23,7 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\sys_logi\functions\module";
             class Mod_InvGen {};
+            class Mod_LogiPoints {};
             class Mod_Rearm {};
             class Mod_UAV {};
         };
@@ -43,6 +44,7 @@ class CfgFunctions
             class SelectCategory {};
             class SetupRearmInteraction {};
             class SetupUAVSystem {};
+            class UpdateLogiPoints {};
         };
     };
 };

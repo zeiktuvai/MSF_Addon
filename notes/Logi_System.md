@@ -1,3 +1,5 @@
+# Logistics System Sequence Diagrams
+
 ## Logi Initial Interaction
 ```mermaid
 sequenceDiagram
@@ -29,7 +31,7 @@ sequenceDiagram
     Handler->>LocalConfig: Remove/reduce selected logi action
     create participant UI
     Handler->>UI: Displays place object UI
-    create participant MSFConfig
+    create participant MSFConfig as MSFConfig_Queue
     UI->>MSFConfig: Store selection/type & position data
     destroy UI
     UI-->>LocalConfig: Remove selection/type data
