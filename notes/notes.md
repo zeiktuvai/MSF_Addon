@@ -7,6 +7,7 @@
     - Added Logistics points system and module
     - Added para-dropping of ambulance/ammo supply truck
     - Added UI system for placing para-drop marker
+- Fixed bug with MSF Handler causing infinite fuel, a planes and logi requests not to be handled.
 
 [position player, 40] call BIS_fnc_objectsGrabber;
 

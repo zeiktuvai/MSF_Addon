@@ -1,4 +1,4 @@
-params [["_side", east, [east]], ["_pos", [], [[]]], ["_type", "", [""]]];
+params [["_side", west, [west]], ["_pos", [], [[]]], ["_type", "", [""]]];
 
 //TODO: Make this configurable
 private _height = 200;

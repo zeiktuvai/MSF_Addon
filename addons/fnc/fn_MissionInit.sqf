@@ -13,7 +13,6 @@
 
 
 if (isServer) then {
-	[] call MSF_fnc_InitMSFHandler;
 	[] call MSF_fnc_ACEMedUnconcious;
 	[] call MSF_fnc_HideShowHideModUnits;
 
@@ -21,8 +20,10 @@ if (isServer) then {
 		[] call MSF_fnc_RespawnVehicleCustomization;
 	};
 
-
-	//[] call MSF_fnc_ApplyDamageReduction;
+	[] spawn {
+		sleep 10;
+		[] call MSF_fnc_InitMSFHandler;	
+	};
 };
 
 if (!isServer) then

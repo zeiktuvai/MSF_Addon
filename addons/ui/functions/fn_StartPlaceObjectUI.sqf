@@ -11,8 +11,8 @@ findDisplay 46 displayAddEventHandler ["KeyDown", {
 		findDisplay 46 displayRemoveEventHandler ["KeyDown", _thisEventHandler];
 		createVehicle ["SmokeShellGreen", screenToWorld[0.5,0.5]];
 
-		private _queue = missionNamespace getVariable "MSF" get "Logi_Queue";
-		[_queue, [localNamespace getVariable "MSF_Local" get "MSF_Logi_Place_Type", screenToWorld[0.5,0.5], side player], 0] call BIS_fnc_priorityQueue_PushItem;
+		private _reqType = localNamespace getVariable "MSF_Local" get "MSF_Logi_Place_Type";
+		[missionNamespace getVariable "MSF" get "Logi_Queue",[_reqType, screenToWorld[0.5,0.5], side player], 0] remoteExec ["BIS_fnc_priorityQueue_PushItem", 2];
 
 		localNamespace getVariable "MSF_Local" deleteAt "MSF_Logi_Place_Obj";
 		localNamespace getVariable "MSF_Local" deleteAt "MSF_Logi_Place_Handle";
