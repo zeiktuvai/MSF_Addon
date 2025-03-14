@@ -17,7 +17,7 @@ class display3DEN
 				{
 					text = "Mission Settings";
 					action = "edit3DENMissionAttributes 'MSFSettings';";
-					picture = "z\msf\addons\main\ui\MSF_icon.paa";
+					picture = MSF_ICON;
 					opensNewWindow = 1;
 				};
 				class MSF_CFG_Multi

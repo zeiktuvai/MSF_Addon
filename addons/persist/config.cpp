@@ -1,4 +1,4 @@
-#include "..\main\MSF_Version.hpp"
+#include "..\main\cfg\MSF_Macros.hpp"
 
 class CfgPatches
 {

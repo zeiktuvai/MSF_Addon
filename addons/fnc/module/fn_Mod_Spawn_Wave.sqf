@@ -16,7 +16,7 @@ private _airNum = _logic getVariable ["AirNum", 0];
 private _vicFill = _logic getVariable ["VicFillProb", 0];
 
 [_area select 0, _area select 1, _height, _position, [[_activationSide] call MSF_fnc_GetModuleActivationSide, "PRESENT"], ["this",
-	"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_CreateWaveDefenseArea; }; ",
+	"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_SpawnWaveDefenseArea; }; ",
 	""],
 	_isRectangle, false, false,
 	[[_side] call BIS_fnc_sideType, _waveNum, _waveInterval, _infNum, _vicNum, _armorNum, _airNum, _vicFill],

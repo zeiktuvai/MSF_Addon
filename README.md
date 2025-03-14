@@ -1,5 +1,7 @@
 # Mission Support Foundation for Arma 3
 
+<img src="https://raw.githubusercontent.com/zeiktuvai/MSF_Addon/refs/heads/Dev/addons/ui/data/MSF-logo.png" style="display:block;float:none;margin-left:auto;margin-right:auto;" />
+
 The MSF project is a collection of scripts and resources to make building story driven unique experiences far easier in Arma 3. Instead of copying and pasting a bunch of scripts into the mission folder and using execVM to run them, I took on the task of incorporating all of them into a addon that can be installed through the workshop.
 
 Doing so allowed missions to easily be updated with new content, scripts and bug fixes without having to download, extract, re-publish all your missions.

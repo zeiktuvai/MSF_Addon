@@ -1,9 +1,9 @@
 class MSF_Module_Spawn_DeadUnit : Module_F
 {
 	scope = 2;
-	displayName = "Spawn - Empty/Dead Units";
+	displayName = "Empty/Dead Units";
 	icon = "A3\Modules_F_Tacops\Data\CivilianPresence\icon32_ca.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_Spawn";
 	function = "MSF_fnc_Mod_DeadUnit";
 	functionPriority = 1;
 	isGlobal = 0;

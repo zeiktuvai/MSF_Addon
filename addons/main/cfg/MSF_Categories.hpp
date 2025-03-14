@@ -14,4 +14,8 @@ class CfgEditorSubcategories
     {
         displayName = "Spawn Placeholders";
     };
+    class MSF_Logistics
+    {
+        displayName = "Logistics";
+    };
 };
