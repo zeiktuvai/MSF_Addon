@@ -15,3 +15,8 @@ class CfgPatches
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction", "MSF3den"};
     };
 };
+
+
+class RscTitles {
+    #include "cfg\UI_Hud.hpp"
+};

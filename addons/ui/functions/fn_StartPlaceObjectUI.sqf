@@ -6,6 +6,7 @@ findDisplay 46 displayAddEventHandler ["KeyDown", {
 	params ["_displayOrControl", "_key", "_shift", "_ctrl", "_alt"];
 	if (_key == 57) then {
 		terminate (localNamespace getVariable "MSF_Local" get "MSF_Logi_Place_Handle");
+		"MSFLogi_Controls" cutFadeOut 0;
 		deleteVehicle (localNamespace getVariable "MSF_Local" get "MSF_Logi_Place_Obj");
 		findDisplay 46 displayRemoveEventHandler ["KeyDown", _thisEventHandler];
 		createVehicle ["SmokeShellGreen", screenToWorld[0.5,0.5]];
@@ -29,6 +30,7 @@ private _spawnHandle = [_vic] spawn
 	};
 };
 
+"MSFLogi_Controls" cutRsc ["MSF_Hud_LogiControls", "PLAIN", -1, false, true];
 ["MSF_Logi_Place_Handle", _spawnHandle] call MSF_fnc_SetLocalValue;
 ["MSF_Logi_Place_Obj", _vic] call MSF_fnc_SetLocalValue;
 ["MSF_Logi_Place_Type", _type] call MSF_fnc_SetLocalValue;
