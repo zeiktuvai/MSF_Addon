@@ -33,6 +33,7 @@ class CfgFunctions
 			class DeleteConfigValue {};
 			class ParseValidArray {};
 			class SetConfigValue {};
+			class SetLocalValue {};
 		};
 		class Eden
 		{
@@ -44,7 +45,8 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\fnc\handlers";
 			class AntistasiEnemyPlanes {};
-			class InfiniteFuelHandler {};			
+			class InfiniteFuelHandler {};
+			class LogiSupplyDropHandler {};
 		};
 		class Helpers
 		{

@@ -3,6 +3,6 @@ params [["_vics", [], [[]]]];
 {
 	if (fuel _x < 1) then 
 	{ 
-		_x setFuel 1; 
+		[_x, 1] remoteExec ["setFuel", _x];
 	}; 
 } forEach _vics;

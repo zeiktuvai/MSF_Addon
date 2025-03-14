@@ -1,9 +1,13 @@
-- MOVED: GM Options, End Mission, Progress Bar Iteraction, Dialog Helper, Infinite Fuel and Damage reduction to modules.
-- Added delete unit module for cinematic effects to delete any synced unit that enters it.
-- Added the Dynamic Weapons System to allow players to choose from a curated list of Primaries or keep the default unit weapon.
-- Added input checking to SetIntel function
-- Updated a lot of back end code to optimize resource spawning.
-- Updated Antistasi plane handler.
+- Added Logistics system.
+    - Added Supply Depot vehicle
+    - Added "Convert to Supply Depot" option to vanilla repair depots.
+    - Added New logistics UI component
+    - Added spawning supply crates
+    - Added spawning supply backpacks
+    - Added Logistics points system and module
+    - Added para-dropping of ambulance/ammo supply truck
+    - Added UI system for placing para-drop marker
+- Fixed bug with MSF Handler causing infinite fuel, a planes and logi requests not to be handled.
 
 [position player, 40] call BIS_fnc_objectsGrabber;
 

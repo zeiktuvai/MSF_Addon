@@ -6,7 +6,7 @@ if (MSF_User_SelectedPrimary != "Default") then {
 	private _invMags = magazines player arrayIntersect _mags;
 
 	{
-	player removeMagazines _x;
+		player removeMagazines _x;
 	} forEach _invMags;
 
 	player removeWeapon primaryWeapon player;
