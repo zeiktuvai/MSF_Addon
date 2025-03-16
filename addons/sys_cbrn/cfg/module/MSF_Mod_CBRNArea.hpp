@@ -2,7 +2,7 @@ class MSF_Module_CBRN_Area : Module_F
 {
 	scope = 2;
 	displayName = "CBRN Area";
-	icon = "a3\ui_f\data\map\mapcontrol\bunker_ca.paa";
+	icon = "x\zen\addons\modules\ui\nuke_ca.paa";
 	category = "MSF_Module_CBRN";
 	function = "MSF_fnc_Mod_Spawn_Fortify";
 	functionPriority = 1;

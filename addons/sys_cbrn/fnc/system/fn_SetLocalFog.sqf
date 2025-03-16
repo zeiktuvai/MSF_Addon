@@ -1,76 +1,47 @@
-params ["_logic"];
+params [["_logic", objNull, [objNull]], ["_area", 100, [1]]];
 
-private _script = [_logic] spawn {
-	params ["_logic"];
-  	private _foundation = localNamespace getVariable "MSF_Local";
+private _emitter = "#particlesource" createVehicle (getPos _logic);
+private _pos = getPos _logic;
+private _emitter setPos _pos;
 
-	_emitter = (_logic getVariable "effectEmitter") select 0;
-	_pos = getPos _logic;
-	_emitter setPos _pos;
+private _colorRed = 0.6;
+private _colorGreen = 0.6;
+private _colorBlue = 0.1;
+private _colorAlpha = 0.5;
+private _timeout = 0;
+private _particleLifeTime = 30;
+private _particleDensity = 50;
+private _particleSize = 75;
+private _particleSpeed = 0;
+private _particleLifting = 0.2 ;
+private _windEffect = 0;
+private _effectSize = _area;
+private _expansion = 0;
 
-	//--- variables set by user
-	_colorRed = 0.6;
-	_colorGreen = 0.6;
-	_colorBlue = 0.1;
-	_colorAlpha = 0.5;
-	_timeout = 0;
-	_particleLifeTime = 30;
-	_particleDensity = 500;
-	_particleSize = 100;
-	_particleSpeed = 0;
-	_particleLifting = 1 ;
-	_windEffect = 0;
-	_effectSize = 100;
-	_expansion = 0;
+_emitter setParticleParams [["\A3\data_f\ParticleEffects\Universal\Universal_02",8,0,40,1],"","billboard",1,_particleLifeTime,[0,0,0],[0,0,2*_particleSpeed],0,0.05,0.04*_particleLifting,0.05*_windEffect,[1 *_particleSize + 1,1.8 * _particleSize + 15],
+	[[0.7*_colorRed,0.7*_colorGreen,0.7*_colorBlue,0.7*_colorAlpha],[0.7*_colorRed,0.7*_colorGreen,0.7*_colorBlue,0.6*_colorAlpha],[0.7*_colorRed,0.7*_colorGreen,0.7*_colorBlue,0.45*_colorAlpha],
+	[0.84*_colorRed,0.84*_colorGreen,0.84*_colorBlue,0.28*_colorAlpha],[0.84*_colorRed,0.84*_colorGreen,0.84*_colorBlue,0.16*_colorAlpha],[0.84*_colorRed,0.84*_colorGreen,0.84*_colorBlue,0.09*_colorAlpha],
+	[0.84*_colorRed,0.84*_colorGreen,0.84*_colorBlue,0.06*_colorAlpha],[1*_colorRed,1*_colorGreen,1*_colorBlue,0.02*_colorAlpha],[1*_colorRed,1*_colorGreen,1*_colorBlue,0*_colorAlpha]],
+	[1,0.55,0.35], 0.1, 0.08*_expansion, "", "", ""];
+_emitter setParticleRandom [_particleLifeTime/2, [0.5*_effectSize,0.5*_effectSize,0.2*_effectSize], [0.3,0.3,0.5], 1, 0, [0,0,0,0.06], 0, 0];
+_emitter setDropInterval (1/_particleDensity);
+
+_logic setVariable ["Emitter", _emitter];
 
 
-	while {true} do {
-		private _zone = [_logic] call MSF_CBRN_fnc_GetPlayerZoneInArea;
-		//private _screen = _foundation get "Fog_Overlay";
 
-		if (_zone > 0) then {
-			switch (_zone) do {
-				case 1: { };
-				case 2: { };
-				case 3: { };
-				case 4: { };
-				case 5: { };
-			};
-		}
-		else
-		{
-			
-			// if (!(isNil "_screen")) then 
-			// {
-			// 	ppEffectDestroy _screen;
-			// 	_foundation deleteAt "Fog_Overlay";
-			// };
-		};
 
-		// if (isNil "_screen") then {
-		// 	_handle = ppEffectCreate ["colorCorrections", 1500];
-		// 	_handle ppEffectEnable true;
-		// 	_handle ppEffectAdjust [1.0, 1.0, 0.0, [0.9, 0.9, 0.1, 0.1], [0.5, 0.5, 0.5, 0.8], [0.199, 0.587, 0.114, 0.0]];
-		// 	_handle ppEffectCommit 0;
-		// 	_foundation set ["Fog_Overlay", _handle];
-		// };
-
-		sleep 5;
-  };
-};
-
-//_logic getVariable "effectEmitter"
 
 //"Land_Device_assembled_F", 
 //"Land_WaterTank_F"
 
-if ((_fnc != "") && !(isNull _logic)) then {
-    _emitterArray = [];
-    while {_nr > 0} do {
-        _source = "#particlesource" createVehicle (getPos _logic);
-        _emitterArray = _emitterArray + [_source];
-        _nr = _nr - 1;
-    };
-    _logic setVariable ["effectEmitter",_emitterArray,true];
 
-};
+// private _emitterArray = "#particlesource" createVehicle (getPos _logic);
+
+// if (isMultiplayer) then {
+// 	[_logic,_fnc,nil,true] call BIS_fnc_MP;
+// } else {
+// 	_logic call (missionnamespace getvariable _fnc);
+// };
+
+

@@ -1,4 +1,4 @@
-params ["_logic"];
+params [["_logic", objNull, [objNull]]];
 
 private _zone = 0;
 private _modArea = _logic getVariable ["objectArea", [100, 100]];
