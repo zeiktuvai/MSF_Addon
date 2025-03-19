@@ -12,7 +12,7 @@ findDisplay 46 displayAddEventHandler ["KeyDown", {
 		createVehicle ["SmokeShellGreen", screenToWorld[0.5,0.5]];
 
 		private _reqType = localNamespace getVariable "MSF_Local" get "MSF_Logi_Place_Type";
-		[missionNamespace getVariable "MSF" get "Logi_Queue",[_reqType, screenToWorld[0.5,0.5], side player], 0] remoteExec ["BIS_fnc_priorityQueue_PushItem", 2];
+		[missionNamespace, "MSF_Logi_DropRequested", [side player, screenToWorld[0.5,0.5], _reqType]] remoteExec ["BIS_fnc_callScriptedEventHandler", 2];
 
 		localNamespace getVariable "MSF_Local" deleteAt "MSF_Logi_Place_Obj";
 		localNamespace getVariable "MSF_Local" deleteAt "MSF_Logi_Place_Handle";

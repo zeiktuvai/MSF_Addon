@@ -1,4 +1,4 @@
-class SupplyDialog
+class MSF_SupplyDialog
 {
     idd = 6217;
     class ControlsBackground
@@ -67,6 +67,7 @@ class SupplyDialog
         {
             idc = 1500;
 
+            colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
             x = "0.40407 * safezoneW + safezoneX";
             y = "0.357 * safezoneH + safezoneY";
             w = "0.184186 * safezoneW";
@@ -81,6 +82,17 @@ class SupplyDialog
             y = "0.313 * safezoneH + safezoneY";
             w = "0.141977 * safezoneW";
             h = "0.022 * safezoneH";
-        };        
+        };
+        class RscText_1002: RscText
+        {
+            idc = 1002;
+            text = "Available Points:";
+            x = "0.534535 * safezoneW + safezoneX";
+            y = "0.313 * safezoneH + safezoneY";
+            w = "0.0652326 * safezoneW";
+            h = "0.022 * safezoneH";
+        };
     };
 };
+
+

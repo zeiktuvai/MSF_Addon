@@ -14,7 +14,24 @@ private _logiInv = createHashMapFromArray [
 
 ["MSF", "Logi_Inventory", _logiInv] call MSF_fnc_SetConfigValue;
 ["MSF", "Logi_Points", 9] call MSF_fnc_SetConfigValue;
-["MSF", "Logi_Queue", [10] call BIS_fnc_PriorityQueue_Init] call MSF_fnc_SetConfigValue;
+
+[true, "respawn", {
+	params ["_newVeh", "_veh"];
+	if (_newVeh getVariable ["MSF_Logi_isRarm", false]) then {
+		[_newVeh] call MSF_Logi_fnc_SetupRearmInteraction;
+	};
+	if (_newVeh getVariable ["MSF_Logi_isInventory", false]) then {
+		private _opts = _newVeh getVariable "MSF_Logi_InvGen";
+		_opts params ["_clear", "_count", "_fill", "_weights"];
+		[_newVeh, _clear, _count, _fill, _weights] call MSF_Logi_fnc_GenerateInventory;	
+	};
+}] call BIS_fnc_addScriptedEventHandler;
+
+[missionNamespace, "MSF_Logi_DropRequested", {
+	params ["_side", "_pos", "_type"];
+	[_side, _pos, _type] call MSF_Logi_fnc_SpawnVehicleParaDrop;
+}] call BIS_fnc_addScriptedEventHandler;
+
 
 //"a3\ui_f\data\map\vehicleicons\iconbackpack_ca.paa"
 //"a3\ui_f\data\gui\rsc\rscdisplayarsenal\backpack_ca.paa"
