@@ -18,4 +18,8 @@ class CfgEditorSubcategories
     {
         displayName = "Logistics";
     };
+    class MSF_Intel
+    {
+        displayName = "Intel";
+    };
 };

@@ -2,6 +2,7 @@
 params [["_unit", objNull, [objNull]],["_type", "", [""]]];
 
 //[player, "Acts_Accessing_Computer_Loop", 1] call ace_common_fnc_doAnimation;
+//TODO: Check if available points on execution
 
 switch (_type) do {
 	case MSF_CARGO_AMMO;
@@ -11,6 +12,7 @@ switch (_type) do {
 		[10, [_unit, _type], {[_args select 0, _args select 1] call MSF_Logi_fnc_SpawnLogiCrate;}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
 	};		
 	case "BP_Ammo";
+	case "BP_Std";
 	case "BP_Medical": {
 		[10, [_unit, _type], {[_args select 0, _args select 1] call MSF_Logi_fnc_SpawnLogiBackpack}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
 	};

@@ -1,11 +1,13 @@
 disableSerialization;
-createDialog "SupplyDialog";
+createDialog "MSF_SupplyDialog";
 
+private _points = (missionNamespace getVariable "MSF") getOrDefault ["Logi_Points", 0, true];
 private _idx = 0;
+ctrlSetText [1002, format ["Available Points: %1", _points]];
+
 {
 	_y params ["_key", "_title", "_desc", "_icon", "_crateType", "_infinite"];
 
-	private _points = (missionNamespace getVariable "MSF") getOrDefault ["Logi_Points", 0, true];
 	
 	if (_infinite || !_infinite && _points >= MSF_Logi_PointsPerVic) then {
 		lbAdd [1500, _title];

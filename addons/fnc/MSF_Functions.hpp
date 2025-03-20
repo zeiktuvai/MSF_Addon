@@ -46,7 +46,6 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\handlers";
 			class AntistasiEnemyPlanes {};
 			class InfiniteFuelHandler {};
-			class LogiSupplyDropHandler {};
 		};
 		class Helpers
 		{

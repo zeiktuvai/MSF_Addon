@@ -1,13 +1,14 @@
-- Added Logistics system.
-    - Added Supply Depot vehicle
-    - Added "Convert to Supply Depot" option to vanilla repair depots.
-    - Added New logistics UI component
-    - Added spawning supply crates
-    - Added spawning supply backpacks
-    - Added Logistics points system and module
-    - Added para-dropping of ambulance/ammo supply truck
-    - Added UI system for placing para-drop marker
-- Fixed bug with MSF Handler causing infinite fuel, a planes and logi requests not to be handled.
+v2.12.1
+- Added standard backpack to supply depot
+- Added intel laptop with custom screen animation
+- Updated Rarm interaction to:
+  Add UAV Battery to inventory if player is drone operator and has less than 2 batteries in inventory
+  Add Hand Grenade if player has less than 3 in inventory
+- Updated air drop code to use event handler.
+- Updated Supply Depot UI
+- Fixed bug in Logi code causing it to be called for every player and messing up logi points
+- Fixed bug causing "Convert to Supply Depot" interaction to stay available after execution
+- Fixed player rearm and inventory generation modules to persist when a vehicle is respawned
 
 [position player, 40] call BIS_fnc_objectsGrabber;
 

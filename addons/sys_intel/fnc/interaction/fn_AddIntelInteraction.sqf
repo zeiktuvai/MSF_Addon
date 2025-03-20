@@ -11,6 +11,9 @@ private _failAction = {
 	if (isMultiplayer) then {
 		[_target , ["MSF_Intel_InProg", false]] remoteExec ["setVariable", -(clientOwner)];
 	};
+	if (_target isKindOf "MSF_IntelLaptop_Black" || _target isKindOf "MSF_IntelLaptop_Green" || _target isKindOf "MSF_IntelLaptop_Sand") then {
+		_target setObjectTextureGlobal ["Screen_1", "z\msf\addons\ui\data\intel\MSF_Intel_Laptop.paa"];
+	};
 };
 private _actTime = 5;
 private _type = "CIV";
@@ -50,11 +53,26 @@ if (_parents findIf { _x == "SoldierWB" || _x == "SoldierEB" || _x == "SoldierGB
 			[_target , ["MSF_Intel_InProg", true]] remoteExec ["setVariable", -(clientOwner)];
 		};
 	},
-	{},
+	{
+		if (_target isKindOf "MSF_IntelLaptop_Black" || _target isKindOf "MSF_IntelLaptop_Green" || _target isKindOf "MSF_IntelLaptop_Sand") then {
+			if (_frame == 3) then {
+				_target setObjectTextureGlobal ["Screen_1", "z\msf\addons\ui\data\intel\MSF_Intel_Laptop_I1.paa"];
+			};
+			if (_frame == 6) then {
+				_target setObjectTextureGlobal ["Screen_1", "z\msf\addons\ui\data\intel\MSF_Intel_Laptop_I2.paa"];
+			};
+			if (_frame == 9) then {
+				_target setObjectTextureGlobal ["Screen_1", "z\msf\addons\ui\data\intel\MSF_Intel_Laptop_I3.paa"];
+			};
+		};
+	},
 	{
 		_target setVariable ["MSF_Intel_Activated", true, true];
 		[_target, objNull] remoteExec ["doWatch", 2];
 		[_target, _a0, _a1] call MSF_Intel_fnc_GetIntelItem;
+		if (_target isKindOf "MSF_IntelLaptop_Black" || _target isKindOf "MSF_IntelLaptop_Green" || _target isKindOf "MSF_IntelLaptop_Sand") then {
+			_target setObjectTextureGlobal ["Screen_1", "z\msf\addons\ui\data\intel\MSF_Intel_Laptop_F.paa"];
+		};
 	},
 	_failAction,
 	[_type, _intelChance],
