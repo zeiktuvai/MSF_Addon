@@ -8,7 +8,7 @@ class CfgPatches
 		name = "MSF - Logistics System";
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
-        units[] = {"MSF_Module_InvGen", "MSF_Module_UAV", "MSF_Module_UAVSpawn", "MSF_Module_UGVSpawn", "MSF_Module_Rearm"};
+        units[] = {"MSF_Module_InvGen", "MSF_Module_UAV", "MSF_Module_UAVSpawn", "MSF_Module_UGVSpawn", "MSF_Module_Rearm", "MSF_SupplyDepot"};
         weapons[] = {};
         requiredVersion = 2.1;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction", "MSF3den"};
@@ -19,7 +19,6 @@ class CfgVehicles
 {
     #include "cfg\MSF_Logi_Modules.hpp"
 	#include "cfg\vehicle\MSF_Supply_Depot.hpp"
-	#include "cfg\vehicle\MSF_Intel_Laptop.hpp"
 
 	class Man;
 	class CAManBase : Man
