@@ -1,5 +1,8 @@
 params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", true, [true]]];
 
+private _objs = _units select { isPlayer _x };
+_objs append (allPlayers select {admin (owner _x) == 2});
+
 {
 	private _values = _x;
 
@@ -31,4 +34,4 @@ params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", tru
 	[_x, 1, ["ACE_SelfActions", "GM_Menu"], _arsenal_action] call ace_interact_menu_fnc_addActionToObject;
 
 	[_x, 1, ["ACE_SelfActions", "GM_Menu"], _reveal_act] call ace_interact_menu_fnc_addActionToObject;
-} forEach (_units select { isPlayer _x });
+} forEach _objs;

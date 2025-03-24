@@ -8,16 +8,23 @@ class CfgFunctions
             class InitializeLogistics {
                 postInit = 1;
             };
-            class InitializeSupplyDepot {};
+        };
+        class Helper
+        {
+            file = "z\msf\addons\sys_logi\functions\helper";
+            class CheckAvailablePoints {};
+            class RequestLogistics {};
         };
         class Inventory
         {
             file = "z\msf\addons\sys_logi\functions\inventory";
             class AddItem {};
             class GenerateArmoryAmmo {};
+            class GenerateInventory {};
 			class GenerateRandomArmory {};
             class GetPlayerWeaponInventory {};
             class RearmUnit {};
+            class SelectCategory {};
         };
         class Module
 		{
@@ -25,6 +32,7 @@ class CfgFunctions
             class Mod_InvGen {};
             class Mod_LogiPoints {};
             class Mod_Rearm {};
+            class Mod_SupplyTruck {};
             class Mod_UAV {};
         };
         class Spawn
@@ -37,11 +45,11 @@ class CfgFunctions
         class System
         {
             file = "z\msf\addons\sys_logi\functions\system";
-            class GenerateInventory {};
             class GetLogiItemsMenu {};
             class GetLogiSelection {};
+            class InitializeSupplyDepot {};
+            class InitializeSupplyTruck {};
             class RemoveLocalLogiItem {};
-            class SelectCategory {};
             class SetupRearmInteraction {};
             class SetupUAVSystem {};
             class UpdateLogiPoints {};
