@@ -1,12 +1,9 @@
-params [["_center", [], [[]]]];
+params [["_zero", 0, [0]], ["_target", objNull, [objNull]], ["_center", [], [[]]]];
 
-private _zero = 6;
-private _leader = leader player;
 private _dist = 150;
 private _radius = 350;
-private _closeUnits = _leader nearObjects 50 select { _x isKindOf "man" && side _x == side player};
 private _shells = ["R_230mm_Cluster", "Sh_82mm_AMOS"];
-private _pos = position _leader;
+private _pos = position _target;
 
 switch (_zero) do {
 	case 0: { _dist = 300; };
@@ -19,7 +16,7 @@ switch (_zero) do {
 };
 
 if (count _center > 0) then {
- _pos = [position _leader, _dist, _leader getDir _center] call BIS_fnc_relPos;
+	_pos = [position _target, _dist, _target getDir _center] call BIS_fnc_relPos;
 };
 
 [_pos, selectRandom _shells, _radius, 2, [5,10], {false}, _dist] spawn BIS_fnc_fireSupportVirtual;

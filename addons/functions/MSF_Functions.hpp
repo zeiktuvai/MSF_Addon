@@ -21,6 +21,13 @@ class CfgFunctions
 			class AddAceMenuItem {};
 			class AddInventoryOverrideOption {};
 		};
+		class Commands
+		{
+			file = "z\msf\addons\functions\commands";
+			class FortifyArea {};
+			class RandomSpawn {};
+			class SetWeaponOverrideEH {};
+		};
 		class Config
 		{
 			file = "z\msf\addons\functions\config";
@@ -83,13 +90,6 @@ class CfgFunctions
 			class Mod_Spawn_Supplies {};
 			class Mod_Spawn_Wave {};
 		};
-		class Multiplayer
-		{
-			file = "z\msf\addons\functions\mp";
-			class ConfigRespawnOnPlayer	{};
-			class JIPSpawnNearPlayer {};
-			class RandomSpawn {};
-		};
 		class Objects
 		{
 			file = "z\msf\addons\functions\object";
@@ -102,6 +102,8 @@ class CfgFunctions
 		class Player
 		{
 			file = "z\msf\addons\functions\player";
+			class ConfigRespawnOnPlayer	{};
+			class JIPSpawnNearPlayer {};
 			class UpdatePlayerWeapon {};
 		};
 		class Services
@@ -124,12 +126,6 @@ class CfgFunctions
 			class SpawnSeekAndDestroyVehicles {};
 			class SpawnUAV {};
 			class SpawnWaveDefenseArea {};
-		};
-		class Systems
-		{
-			file = "z\msf\addons\functions\systems";
-			class FortifyArea {};
-			class SetWeaponOverrideEH {};
 		};
 		class TFY
 		{

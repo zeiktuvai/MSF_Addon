@@ -2,29 +2,29 @@ class CfgFunctions
 {
     class MSF_Intel
 	{
-		class Interaction
+		class Client
 		{
-			file = "z\msf\addons\sys_intel\fnc\interaction";
+			file = "z\msf\addons\sys_intel\functions\client";
 			class AddIntelInteraction {};
 			class GetIntelItem {};
 			class GetDiscoveredIntelItem {};
 		};
-		class Module
+		class Commands
 		{
-			file = "z\msf\addons\sys_intel\fnc\module";
-			class Mod_IntelLevel {};
-			class Mod_IntelItem {};
-			class Mod_IntelItemTask {};
-			class Mod_IntelObjects {};
-		};
-		class System
-		{
-			file = "z\msf\addons\sys_intel\fnc\system";
+			file = "z\msf\addons\sys_intel\functions\commands";
 			class AddIntelItem {};
 			class CreateNewDiaryEntry {};
 			class GetGatheredIntelCount {};
 			class GetIsIntelEnabled {};
 			class SetIntelLevel {};
+		};
+		class Module
+		{
+			file = "z\msf\addons\sys_intel\functions\module";
+			class Mod_IntelLevel {};
+			class Mod_IntelItem {};
+			class Mod_IntelItemTask {};
+			class Mod_IntelObjects {};
 		};
 	};
 };

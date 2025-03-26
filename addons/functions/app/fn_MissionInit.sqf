@@ -20,13 +20,12 @@ if (isServer) then {
 		[] call MSF_fnc_RespawnVehicleCustomization;
 	};
 
+	if (MSF_AU_Enemy_Plane) then {
+		["au_planes", {[] call MSF_fnc_AntistasiEnemyPlaneService;}, 0] call MSF_fnc_SetServiceWorker;
+	};
 	["Debug", {[format ["interval %1", time]] remoteExec ["systemChat"];}, 2] call MSF_fnc_SetServiceWorker;
-	if (MSF_AU_Enemy_Plane) then {["au_planes", {[] call MSF_fnc_AntistasiEnemyPlanes;}, 0] call MSF_fnc_SetServiceWorker;};
-	["infFuel", {[] call MSF_fnc_InfiniteFuelHandler;}, MSF_Fuel_Tick] call MSF_fnc_SetServiceWorker;
-	// [] spawn {
-	// 	sleep 10;
-	// 	[] call MSF_fnc_InitMSFHandler;	
-	// };
+	["infFuel", {[] call MSF_fnc_InfiniteFuelService;}, MSF_Fuel_Tick] call MSF_fnc_SetServiceWorker;
+	[] call MSF_fnc_InitializeMSFService;
 };
 
 if (!isServer) then

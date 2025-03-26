@@ -4,7 +4,7 @@ class MSF_Module_TrackingArty : MSF_Module_Intel
 	displayName = "Tracking Artillery";
 	icon = "a3\ui_f\data\gui\cfg\communicationmenu\artillery_ca.paa";
 	category = "MSF_Module";
-	function = "";
+	function = "MSF_Arty_fnc_Mod_TrackingArtillery";
 	functionPriority = 1;
 	isGlobal = 0;
 	isTriggerActivated = 1;
