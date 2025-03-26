@@ -1,7 +1,6 @@
 params [["_side", west, [west]], ["_pos", [], [[]]], ["_type", "", [""]]];
 
-//TODO: Make this configurable
-private _height = 200;
+private _height = MSF_Logi_DropHeight;
 private _vic = objNull;
 private _spawnPos = [_pos select 0, _pos select 1, _height];
 
@@ -11,11 +10,12 @@ switch (_type) do {
 		_vic = createVehicle [configName selectRandom _vics, _spawnPos];
 		[_vic, true, 0, true, [0,0,0,0,1,0]] call MSF_Logi_fnc_GenerateInventory;
 	 };
-	case "V_Ammo": {
+	case "V_Supply": {
 		private _vics = format ["'LandVehicle' in ([_x, true] call BIS_fnc_returnParents) && getNumber (_x >> 'ace_rearm_defaultSupply') > 0 && getNumber (_x >> 'side') == %1", _side call BIS_fnc_sideID] configClasses (configFile >> "CfgVehicles");
 		_vic = createVehicle [configName selectRandom _vics, _spawnPos];
 		[_vic, true, 0, true, [1,1,1,1,0,1]] call MSF_Logi_fnc_GenerateInventory;
 		[_vic] call MSF_Logi_fnc_SetupRearmInteraction;
+		[_vic] call MSF_Logi_fnc_InitializeSupplyTruck;
 	};
 };
 

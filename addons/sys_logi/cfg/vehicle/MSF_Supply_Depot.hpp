@@ -7,8 +7,7 @@ class Land_RepairDepot_01_green_F : Land_RepairDepot_01_base_F
     {
         class SupplyInit
         {
-            init = INIT_CODE
-            //"[_this select 0, ['Convert to Supply Depot', '[_this select 0] call MSF_Logi_fnc_InitializeSupplyDepot;']] remoteExec ['addAction', 0, (_this select 0)];";
+            init = INIT_CODE           
         };
     };
 };

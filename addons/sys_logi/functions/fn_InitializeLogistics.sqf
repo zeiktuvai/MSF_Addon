@@ -11,8 +11,8 @@ if (isServer) then {
 		["BP_Ammo", ["BP_Ammo", "Ammo Bearer Backpack", "Places a backpack filled with ammo for players primary weapons in place of your current backpack", "a3\ui_f\data\igui\cfg\simpletasks\types\backpack_ca.paa", "BP_Ammo", true]],
 		["BP_Medical", ["BP_Medical", "Combat Medic Backpack", "Places a backpack with medical supplies in place of your current backpack", "a3\ui_f\data\igui\cfg\simpletasks\types\backpack_ca.paa", "BP_Medical", true]],
 		["BP_Std", ["BP_Std", "Standard Backpack", "Places a backpack with a standard set of items in place of your current backpack", "a3\ui_f\data\igui\cfg\simpletasks\types\backpack_ca.paa", "BP_Std", true]],
-		["V_Medical", ["V_Medical", "Vehicle Air-Drop: Ambulance", "Allows you to call in an Ambulance Air-drop. (Only a limited number of these can be used based on available logistics support).", "a3\soft_f_epc\truck_03\data\ui\truck_03_medevac_ca.paa", "V_Medical", false]],
-		["V_Ammo", ["V_Ammo", "Vehicle Air-Drop: Ammo Truck", "Allows you to call in an Ammo Truck Air-drop. (Only a limited number of these can be used based on available logistics support).", "a3\soft_f_epc\truck_03\data\ui\truck_03_ammo_ca.paa", "V_Ammo", false]]
+		["V_Medical", ["V_Medical", "Vehicle Air-Drop: Ambulance", "Allows you to call in an Ambulance Air-drop.", "a3\soft_f_epc\truck_03\data\ui\truck_03_medevac_ca.paa", "V_Medical", false]],
+		["V_Supply", ["V_Supply", "Vehicle Air-Drop: Supply Truck", "Allows you to call in an Supply Truck Air-drop. (Can rearm players, rearm vehicles, and acts as a mini supply depot).", "a3\soft_f_epc\truck_03\data\ui\truck_03_ammo_ca.paa", "V_Supply", false]]
 	];
 
 	["MSF", "Logi_Inventory", _logiInv] call MSF_fnc_SetConfigValue;
@@ -27,6 +27,9 @@ if (isServer) then {
 			private _opts = _newVeh getVariable "MSF_Logi_InvGen";
 			_opts params ["_clear", "_count", "_fill", "_weights"];
 			[_newVeh, _clear, _count, _fill, _weights] call MSF_Logi_fnc_GenerateInventory;	
+		};
+		if (_newVeh getVariable ["MSF_Logi_isSupplyTruck", false]) then {
+			[_newVeh] call MSF_Logi_fnc_InitializeSupplyTruck;
 		};
 	}] call BIS_fnc_addScriptedEventHandler;
 
