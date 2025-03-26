@@ -1,6 +1,6 @@
 params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", true, [true]]];
 
-[] call MSF_fnc_GetIsIntelEnabled;
+[] call MSF_Intel_fnc_GetIsIntelEnabled;
 
 private _type = _logic getVariable ["UnitTypes", "Civ_African"];
 private _infSpawns = _units select { typeOf _x == "MSF_Placeholder_Infantry_D"};

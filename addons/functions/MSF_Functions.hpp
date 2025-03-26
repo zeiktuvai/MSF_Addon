@@ -2,9 +2,9 @@ class CfgFunctions
 {
     class MSF
 	{
-		class Initialization
+		class App
 		{
-			file = "z\msf\addons\fnc";
+			file = "z\msf\addons\functions\app";
 			class FoundationInit {
 				preInit = 1;
 			};
@@ -12,23 +12,24 @@ class CfgFunctions
 			{				
 				postInit = 1;
 			};
+			class InitializeMSFService{};
 		};
 		class ACE
 		{
-			file = "z\msf\addons\fnc\ace";
+			file = "z\msf\addons\functions\ace";
 			class ACEMedUnconcious {};
 			class AddAceMenuItem {};
 			class AddInventoryOverrideOption {};
 		};
 		class Config
 		{
-			file = "z\msf\addons\fnc\config";
+			file = "z\msf\addons\functions\config";
 			class GetConfigData {};
 			class GetUnitOverrideCfg {};
 		};
 		class Data
 		{
-			file = "z\msf\addons\fnc\data";
+			file = "z\msf\addons\functions\data";
 			class ConfigValueExists {};
 			class DeleteConfigValue {};
 			class GetConfigValue {};
@@ -38,19 +39,13 @@ class CfgFunctions
 		};
 		class Eden
 		{
-			file = "z\msf\addons\fnc\eden";
+			file = "z\msf\addons\functions\eden";
 			class ConfigureMP {};
 			class GetSelectedUnitWeaponData {};
 		};
-		class Handlers
-		{
-			file = "z\msf\addons\fnc\handlers";
-			class AntistasiEnemyPlanes {};
-			class InfiniteFuelHandler {};
-		};
 		class Helpers
 		{
-			file = "z\msf\addons\fnc\helper";
+			file = "z\msf\addons\functions\helper";
 			class CreateActivationTrigger {};
 			class CreateMapMarker {};
 			class DistinctArray {};
@@ -64,14 +59,14 @@ class CfgFunctions
 		};
 		class Math
 		{
-			file = "z\msf\addons\fnc\math";
+			file = "z\msf\addons\functions\math";
 			class CalculateProbability {};
 			class GetAreaRadius {};
 			class OrderArrayByStartingValue {};
 		};
 		class Module
 		{
-			file = "z\msf\addons\fnc\module";
+			file = "z\msf\addons\functions\module";
 			class Mod_BuildingDestroy {};
 			class Mod_DeadUnit {};
 			class Mod_DeleteUnit {};
@@ -90,14 +85,14 @@ class CfgFunctions
 		};
 		class Multiplayer
 		{
-			file = "z\msf\addons\fnc\mp";
+			file = "z\msf\addons\functions\mp";
 			class ConfigRespawnOnPlayer	{};
 			class JIPSpawnNearPlayer {};
 			class RandomSpawn {};
 		};
 		class Objects
 		{
-			file = "z\msf\addons\fnc\object";
+			file = "z\msf\addons\functions\object";
 			class GetShowHideVehicleInTrigger {};
 			class HideShowHideModUnits {};
 			class RespawnVehicleCustomization {};
@@ -106,12 +101,19 @@ class CfgFunctions
 		};
 		class Player
 		{
-			file = "z\msf\addons\fnc\player";
+			file = "z\msf\addons\functions\player";
 			class UpdatePlayerWeapon {};
+		};
+		class Services
+		{
+			file = "z\msf\addons\functions\services";
+			class AntistasiEnemyPlaneService {};
+			class InfiniteFuelService {};
+			class SetServiceWorker {};
 		};
 		class Spawn
 		{
-			file = "z\msf\addons\fnc\spawn";
+			file = "z\msf\addons\functions\spawn";
 			class DeleteAreaInfantryPatrol {};
 			class SpawnAreaAirAttack {};
 			class SpawnAreaBuildingDefense {};
@@ -125,23 +127,16 @@ class CfgFunctions
 		};
 		class Systems
 		{
-			file = "z\msf\addons\fnc\systems";
+			file = "z\msf\addons\functions\systems";
 			class FortifyArea {};
-			class GetIsIntelEnabled {};
-			class InitMSFHandler {};
 			class SetWeaponOverrideEH {};
 		};
 		class TFY
 		{
-			file = "z\msf\addons\fnc\TFY";
+			file = "z\msf\addons\functions\TFY";
 			class InitializeInternal {
 				postInit = 1;
 			};
-		};
-		class Validators
-		{
-			file = "z\msf\addons\fnc\validator";
-			class SetInvGenEnable {};
 		};
 	};
 };

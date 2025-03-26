@@ -1,6 +1,6 @@
 params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", true, [true]]];
 
-[] call MSF_fnc_GetIsIntelEnabled;
+[] call MSF_Intel_fnc_GetIsIntelEnabled;
 
 private _interactC = _logic getVariable ["InteractionChance", 0.5];
 private _intelC = _logic getVariable ["IntelChance", 0.6];

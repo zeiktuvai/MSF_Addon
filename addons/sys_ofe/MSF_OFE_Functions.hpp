@@ -64,14 +64,5 @@ class CfgFunctions
 			class OFE_GetStrengthText {};
 			class OFE_InitStatusDisplay {};
 		};
-		// class Initialization
-		// {
-		// 	file = "z\msf\addons\fnc";
-		// 	class Init {};
-		// 	class MissionInit
-		// 	{				
-		// 		postInit = 1;
-		// 	};
-		// };
 	};
 };

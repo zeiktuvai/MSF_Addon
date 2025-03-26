@@ -23,6 +23,7 @@ class CfgFunctions
 			class AddIntelItem {};
 			class CreateNewDiaryEntry {};
 			class GetGatheredIntelCount {};
+			class GetIsIntelEnabled {};
 			class SetIntelLevel {};
 		};
 	};
