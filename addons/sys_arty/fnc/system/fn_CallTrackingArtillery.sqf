@@ -1,7 +1,5 @@
 params [["_center", [], [[]]]];
 
-//_center = position aa;
-
 private _zero = 6;
 private _leader = leader player;
 private _dist = 150;

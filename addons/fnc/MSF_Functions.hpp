@@ -31,6 +31,7 @@ class CfgFunctions
 			file = "z\msf\addons\fnc\data";
 			class ConfigValueExists {};
 			class DeleteConfigValue {};
+			class GetConfigValue {};
 			class ParseValidArray {};
 			class SetConfigValue {};
 			class SetLocalValue {};
