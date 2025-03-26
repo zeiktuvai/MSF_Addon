@@ -10,7 +10,7 @@ params [["_object", objNull, [objNull]]];
 	{},
 	{},
 	{
-		[] call MSF_UI_fnc_DisplayLogisticsUI;
+		[(missionNamespace getVariable "MSF") get "Logi_Inventory", (missionNamespace getVariable "MSF") getOrDefault ["Logi_Points", 0, true]] call MSF_UI_fnc_DisplayLogisticsUI;
 	},
 	{},
 	[],

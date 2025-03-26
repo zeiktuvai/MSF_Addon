@@ -21,8 +21,8 @@
 [
 	"MSF_AU_Enemy_Plane",
 	"CHECKBOX",
-	["Disable Enemy Planes", "This option will prevent enemy planes from spawning in Antistasi, leaving unmanned and friendly planes alone. (Does not affect helicopters)."],
-	["MSF - Server Settings", "Antistasi"],
+	["Antistasi - Disable Enemy Planes", "This option will prevent enemy planes from spawning in Antistasi, leaving unmanned and friendly planes alone. (Does not affect helicopters)."],
+	"MSF - Server Settings",
 	false,
 	1
 ] call CBA_fnc_addSetting;
@@ -62,7 +62,7 @@
 	"MSF_Fuel_Tick",
 	"TIME",
 	["Infinite Fuel Tick", "Sets the interval used by the infinite fuel handler to refuel vehicles."],
-	["MSF - Server Settings", "MSF System"],
+	"MSF - Server Settings",
 	[10, 300, 60],
 	1
 ] call CBA_fnc_addSetting;
@@ -70,7 +70,7 @@
 	"MSF_Rearm_PMags",
 	"SLIDER",
 	["Primary Mag Count", "Number of mags to re-arm a player with when using a re-arm object."],
-	["MSF - Server Settings", "MSF Logistics"],
+	["MSF - Server Settings", "Player Re-Arm"],
 	[1, 10, 4, 0],
 	1
 ] call CBA_fnc_addSetting;
@@ -78,7 +78,7 @@
 	"MSF_Rearm_HMags",
 	"SLIDER",
 	["Handgun Mag Count", "Number of mags to re-arm a player with when using a re-arm object."],
-	["MSF - Server Settings", "MSF Logistics"],
+	["MSF - Server Settings", "Player Re-Arm"],
 	[1, 10, 2, 0],
 	1
 ] call CBA_fnc_addSetting;
@@ -86,7 +86,23 @@
 	"MSF_Logi_PointsPerVic",
 	"SLIDER",
 	["Vechicle Cost", "Number of logistics points needed to call in a vehicle."],
-	["MSF - Server Settings", "MSF Logistics"],
-	[1, 10, 3, 0],
+	["MSF - Server Settings", "Logistics System"],
+	[1, 15, 3, 0],
+	1
+] call CBA_fnc_addSetting;
+[
+	"MSF_Logi_CrateCost",
+	"SLIDER",
+	["Supply Truck Crate Cost", "Number of supply truck ammo points needed to get a crate or backpack."],
+	["MSF - Server Settings", "Logistics System"],
+	[1, 20, 10, 0],
+	1
+] call CBA_fnc_addSetting;
+[
+	"MSF_Logi_DropHeight",
+	"SLIDER",
+	["Vechicle Para-Drop Height", "Height that called in vehicles will be dropped from."],
+	["MSF - Server Settings", "Logistics System"],
+	[100, 500, 200, 0],
 	1
 ] call CBA_fnc_addSetting;
