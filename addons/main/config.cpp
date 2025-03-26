@@ -43,6 +43,12 @@ class Extended_PreInit_EventHandlers
     };
 };
 
+class CfgUnitInsignia
+{
+	#include "cfg\insignia\MSF_Insignia.hpp"
+	#include "cfg\insignia\MSF_Qual.hpp"
+};
+
 //Temp Triggers for compatibility
 class CfgNonAIVehicles
 {
