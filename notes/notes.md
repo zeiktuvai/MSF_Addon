@@ -1,7 +1,10 @@
 v2.12.2
-- Added Supply Truck interface to para dropped supply trucks to be able to retrieve supplies (Uses ACE Rearm vehicle points)
-- Added Supply Truck module
-- Added Module to make a vehicle a supply truck (If it is an ACE Rearm vehicle)
+- Added Logistics interface to Supply truck para drop.  Uses ACE Rearm points when players get crates/backpacks from the supply truck.
+- Added supply truck module to turn a placed ACE Rearm compatible vehicle into a supply truck with Logi Interface.
+- Added addon option to set crate/backpack cost for supply trucks
+- Added addon option to set vehicle drop height.
+- Updated GM and End mission module to include the logged in admin by default.
+- Reorganized some addon options
 
 
 [position player, 40] call BIS_fnc_objectsGrabber;
