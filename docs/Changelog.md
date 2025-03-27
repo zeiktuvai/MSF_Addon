@@ -1,3 +1,7 @@
+## [2.12.3]
+- Fixed a bug in the spawn checkpoint module causing road checkpoints to only be activated by BLUFOR
+- Fixed a bug in the fortify module causing an excess of empty groups to be created causing group counts to max out. (Especially in cup maps).
+
 ## [2.12.2]
 - Added Logistics interface to Supply truck para drop.  Uses ACE Rearm points when players get crates/backpacks from the supply truck.
 - Added supply truck module to turn a placed ACE Rearm compatible vehicle into a supply truck with Logi Interface.

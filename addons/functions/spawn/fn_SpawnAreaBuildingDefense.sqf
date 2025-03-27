@@ -33,6 +33,7 @@ if (_bldgFound) then {
 				};
 				
 				units _group apply { _x disableAI "PATH" };
+				if (count units _group == 0) then {deleteGroup _group};
 				_allObjs append (units _group);
 			};
 		};
