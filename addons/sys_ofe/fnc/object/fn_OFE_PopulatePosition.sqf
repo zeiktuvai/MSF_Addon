@@ -1,15 +1,11 @@
 // _type: 0 Checkpoint, 1 Outpost, 2 Base, 3 helibase, 4 bastion, 5 existing outpost, 6 existing base, 7 existing helibase, 8 existing airbase
 params [["_logic", objNull, [objNull]], ["_def", [], [[]]], ["_type", "", [""]], "_params", ["_existing", false, [false]],
- ["_isOFE", [true], [[]]], ["_intel", true, [true]], ["_intelProvider", [], [[]]]
-];
+ ["_isOFE", [true], [[]]], ["_intel", true, [true]], ["_intelProvider", [], [[]]], ["_friendlySide", "west", [""]]];
 
 //hint format ["%1 %2", missionNamespace getVariable "MSF_OFE_cpCount", [] call MSF_fnc_OFE_CalculateStrengthValues];
 
 private _activationRange = 500;
 private _intelID = "";
-
-//TODO: Update this to use a configurable value
-private _friendlySide = "west";
 
 private _side = east;
 if (_isOFE select 0) then {
@@ -94,7 +90,9 @@ if (count _intelProvider > 0) then
 if (_type in ["Checkpoint","Outpost","Base","HeliBase","Bastion"]) then {
 	[_allObjs, false] call MSF_fnc_ShowHideObjects;
 };
+
 if (_type != "Bastion" || !(_isOFE select 0)) then {
 	[_logic, 50, 50, _type] call MSF_fnc_OFE_CreateModuleClearTrigger;	
 };
+
 [_logic, 50, 50] call MSF_fnc_OFE_CreateModuleAITrigger;
