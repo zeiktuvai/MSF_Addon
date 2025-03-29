@@ -6,11 +6,17 @@ class CfgFunctions
         {
             file = "z\msf\addons\sys_arty\functions\commands";
             class CallTrackingArtillery {};
+            class GetArtilleryZero {};
         };
         class Modules
         {
             file = "z\msf\addons\sys_arty\functions\modules";
             class Mod_TrackingArtillery {};
+        };
+        class Services
+        {
+            file = "z\msf\addons\sys_arty\functions\services";
+            class ArtilleryServiceWorker {};
         };
     };
 };

@@ -1,9 +1,8 @@
-params [["_zero", 0, [0]], ["_target", objNull, [objNull]], ["_center", [], [[]]]];
+params [["_pos", [], [[]]], ["_zero", 0, [0]], ["_center", [], [[]]]];
 
 private _dist = 150;
 private _radius = 350;
 private _shells = ["R_230mm_Cluster", "Sh_82mm_AMOS"];
-private _pos = position _target;
 
 switch (_zero) do {
 	case 0: { _dist = 300; };
@@ -16,7 +15,7 @@ switch (_zero) do {
 };
 
 if (count _center > 0) then {
-	_pos = [position _target, _dist, _target getDir _center] call BIS_fnc_relPos;
+	_pos = [_pos, _dist, _pos getDir _center] call BIS_fnc_relPos;
 };
 
 [_pos, selectRandom _shells, _radius, 2, [5,10], {false}, _dist] spawn BIS_fnc_fireSupportVirtual;

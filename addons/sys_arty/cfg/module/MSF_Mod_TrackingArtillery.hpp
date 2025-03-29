@@ -8,7 +8,7 @@ class MSF_Module_TrackingArty : MSF_Module_Intel
 	functionPriority = 1;
 	isGlobal = 0;
 	isTriggerActivated = 1;
-	isDisposable = 1;	
+	isDisposable = 0;	
 	is3DEN = 0;
 	curatorCanAttach = 0;
 	canSetArea = 0;

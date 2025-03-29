@@ -111,7 +111,7 @@ class CfgFunctions
 			file = "z\msf\addons\functions\services";
 			class AntistasiEnemyPlaneService {};
 			class InfiniteFuelService {};
-			class SetServiceWorker {};
+			class RegisterServiceWorker {};
 		};
 		class Spawn
 		{
