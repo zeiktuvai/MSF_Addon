@@ -26,7 +26,7 @@ if (isServer) then {
 	["infFuel", {[] call MSF_fnc_InfiniteFuelService;}, MSF_Fuel_Tick] call MSF_fnc_RegisterServiceWorker;
 	
 	//TODO: Remove this before release
-	//["Debug", {[format ["interval %1", time]] remoteExec ["systemChat"];}, 2] call MSF_fnc_RegisterServiceWorker;
+	["Debug", {[format ["interval %1", time]] remoteExec ["systemChat"];}, 2] call MSF_fnc_RegisterServiceWorker;
 	
 	[] call MSF_fnc_InitializeMSFService;
 };

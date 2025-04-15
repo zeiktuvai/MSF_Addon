@@ -7,6 +7,6 @@ _logic setVariable ["MSF_tArty_Units", _units];
 
 [str _logic, {	
 	[_arguments select 0] call MSF_Arty_fnc_ArtilleryServiceWorker;
-}, 15, [_logic]] call MSF_fnc_RegisterServiceWorker;
+}, 30, [_logic], 10] call MSF_fnc_RegisterServiceWorker;
 
 //300
