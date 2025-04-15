@@ -1,11 +1,11 @@
 #include "..\main\cfg\MSF_Macros.hpp"
-#include "cfg\MSF_Arty_Functions.hpp"
+#include "cfg\MSF_Exfil_Functions.hpp"
 
 class CfgPatches
 {
     class ADDON
     {
-		name = "MSF - Artillery System";
+		name = "MSF - Exfil Game Mode";
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
         units[] = {"MSF_Module_TrackingCenter", "MSF_Module_TrackingArty"};
@@ -17,5 +17,5 @@ class CfgPatches
 
 class CfgVehicles
 {
-    #include "cfg\MSF_Arty_Modules.hpp"
+    #include "cfg\MSF_Exfil_Modules.hpp"
 };

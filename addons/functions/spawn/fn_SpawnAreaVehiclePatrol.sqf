@@ -26,7 +26,7 @@ private _count = [1, 2] select ((_trigger getVariable ["MSF_Trig_Patrol_SpawnCou
 
 
 for "_g" from 1 to _count do {
-	if (_g == 1) then {	_initial = getPosATL (_roads select _skip);	} else { _initial = getPosATL (_roads select (count _roads - 1)); };
+	if (_g == 1) then {	_initial = getPosATL (_roads select _skip);	} else { _initial = getPosATL (_roads select -1); };
 	private _gen = [_initial, 0, selectRandom _vehicles, _side] call BIS_fnc_spawnVehicle;
 	private _group = _gen select 2;
 	_group setSpeedMode _speed;
