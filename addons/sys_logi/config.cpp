@@ -1,5 +1,6 @@
 #include "..\main\cfg\MSF_Macros.hpp"
 #include "cfg\MSF_Logi_Functions.hpp"
+#include "cfg\MSF_Logi_Config.hpp"
 
 class CfgPatches
 {

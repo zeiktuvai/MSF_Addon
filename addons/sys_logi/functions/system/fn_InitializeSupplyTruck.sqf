@@ -10,18 +10,9 @@ params [["_object", objNull, [objNull]]];
 	{},
 	{},
 	{
-		private _inv = (missionNamespace getVariable "MSF") get "Logi_Inventory";
-		{
-			_y params ["_key", "_title", "_desc", "_icon", "_crateType", "_infinite"];
-
-			if ("V" in _key) then {_inv deleteAt _key} else {
-				_inv set [_key, [_key, _title, _desc, _icon, _crateType, false]];
-			};
-			
-		} forEach _inv;
-			
-		[_inv, [_target] call ace_rearm_fnc_getSupplyCount, "Supply Truck", true] call MSF_UI_fnc_DisplayLogisticsUI;
+		["LogiSourceTruck", true] call MSF_fnc_SetLocalValue;		
 		_caller setVariable ["MSF_SupplyTruck", _target];
+		[[true] call MSF_Logi_fnc_GetLogiInventory, [_target] call ace_rearm_fnc_getSupplyCount, "Supply Truck", true, _target] call MSF_UI_fnc_DisplayLogisticsUI;
 	},
 	{},
 	[],
