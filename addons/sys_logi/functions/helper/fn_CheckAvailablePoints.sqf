@@ -7,9 +7,7 @@ if (isNull _obj) then {
 }
 else
 {
-	if ([_obj] call ace_rearm_fnc_getSupplyCount > MSF_Logi_CrateCost) then {_return = true;};
+	if ([_obj] call ace_rearm_fnc_getSupplyCount >= MSF_Logi_CrateCost) then {_return = true;};
 };
-
-if !(_return) then {"MSF_Message" cutText ["Logistics request failed, Not enough resources.", "PLAIN"];	};
 
 _return;

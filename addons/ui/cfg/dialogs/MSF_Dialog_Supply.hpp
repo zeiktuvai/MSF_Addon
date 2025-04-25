@@ -40,7 +40,7 @@ class MSF_SupplyDialog
         class MSF_supply_dialog_ok: RscButtonMenu
         {
             idc = 1600;
-            action = "private _sel = lbCurSel 1500; [player, lbData [1500, _sel], ctrlText 1001] call MSF_Logi_fnc_GetLogiSelection; closeDialog 0;";            
+            action = "private _sel = lbCurSel 1500; [player, lbData [1500, _sel]] call MSF_Logi_fnc_GetLogiSelection; closeDialog 0;";            
             //colorBackground2[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
             colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
 
@@ -54,8 +54,7 @@ class MSF_SupplyDialog
         };
         class RscButtonMenuCancel_2700: RscButtonMenuCancel
         {
-            action = "closeDialog 0";
-
+            action = "player setVariable ['MSF_SupplyTruck', nil]; closeDialog 0;";
             x = "0.492326 * safezoneW + safezoneX";
             y = "0.511 * safezoneH + safezoneY";
             w = "0.0460465 * safezoneW";
