@@ -9,6 +9,11 @@ class CfgFunctions
                 postInit = 1;
             };
         };
+        class Config
+        {
+            file = "z\msf\addons\sys_logi\functions\config";
+            class GetLogiInventory {};
+        };
         class Helper
         {
             file = "z\msf\addons\sys_logi\functions\helper";

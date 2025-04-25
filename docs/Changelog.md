@@ -1,3 +1,9 @@
+## [2.12.4]
+- Fixed a bug in the Logistics system causing items not to be retrieved even if there are enough points.
+- Fixed a bug in the Logistics system causing some items not to be displayed or retrieved properly.
+- Updated Logistics UI to not display items if there are not enough points.
+- Re-organized Logistics config data to be more efficient.
+
 ## [2.12.3]
 - Fixed a bug in the spawn checkpoint module causing road checkpoints to only be activated by BLUFOR
 - Fixed a bug in the fortify module causing an excess of empty groups to be created causing group counts to max out. (Especially in cup maps).
