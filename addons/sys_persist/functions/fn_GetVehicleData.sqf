@@ -9,7 +9,7 @@
         object - Unit object (vehicle).
         
 	Examples:
-		[unit] call MSF_fnc_Persist_GetVehicleData;
+		[unit] call MSF_Persist_fnc_GetVehicleData;
 
 	Function Ver 2.0
 	Implemented in: MSF Addon v1.0

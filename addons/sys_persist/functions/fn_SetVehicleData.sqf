@@ -18,7 +18,7 @@
 		array of arrays - [[123,456,789],0.213434].
         
 	Examples:
-		[unit, type, contents, damage, look, ammo, fuel, isAlive, loc, refuel, rearm] call MSF_fnc_Persist_SetVehicleData;
+		[unit, type, contents, damage, look, ammo, fuel, isAlive, loc, refuel, rearm] call MSF_Persist_fnc_SetVehicleData;
 
 	Function Ver 2.0
 	Implemented in: MSF Addon v1.0
