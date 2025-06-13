@@ -14,5 +14,11 @@ class CfgFunctions
 			class SaveData {};
 			class LoadData {};
 		};
+		class Object
+		{
+			file = "z\msf\addons\sys_persist\functions\object";
+			class GetObjectCargo {};
+			class GetObjectDamage {};
+		};
 	};
 };
