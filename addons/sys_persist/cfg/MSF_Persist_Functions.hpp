@@ -22,6 +22,7 @@ class CfgFunctions
 			class GetObjectCargo {};
 			class GetObjectDamage {};
 			class GetVehicleData {};
+			class SetObjectCargo {};
 			class SetVehicleData {};
 		};
 	};
