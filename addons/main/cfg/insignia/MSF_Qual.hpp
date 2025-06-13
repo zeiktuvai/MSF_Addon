@@ -1,11 +1,3 @@
-class TFY_Armor_Alt1
-{
-    scope = 2;
-    displayName = "Alternate Armor";
-    author = "zeik_tuvai";
-    texture = "z\msf\addons\data\insignia\qual\Armor1.paa";
-    textureVehicle = "";
-};
 class TFY_Armor_Rank1
 {
     scope = 1;
