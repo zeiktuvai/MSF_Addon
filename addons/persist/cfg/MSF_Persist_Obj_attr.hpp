@@ -9,7 +9,7 @@ class MSFPersistence
 			tooltip = "Enable persistence for this object";
 			property = "MSF_Persist_isEnable";
 			control = "Checkbox";
-			expression = "_this setVariable ['%s',_value]; [_this, _value] call MSF_fnc_SetInvGenEnable;";
+			expression = "_this setVariable ['%s',_value];";
 			defaultValue = 0;
 			unique = 0; 
 			validate = "none";
