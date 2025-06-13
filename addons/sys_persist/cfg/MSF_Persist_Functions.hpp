@@ -2,15 +2,17 @@ class CfgFunctions
 {
     class MSF_Persist
 	{		
-		class Persistence
+		class App
 		{
-			file = "z\msf\addons\sys_persist\functions";
+			file = "z\msf\addons\sys_persist\functions\app";
 			class Init
 			{
 				postInit = 1;
 			};
-			class GetVehicleData {};
-			class SetVehicleData {};
+		};
+		class Commands
+		{
+			file = "z\msf\addons\sys_persist\functions\commands";
 			class SaveData {};
 			class LoadData {};
 		};
@@ -19,6 +21,8 @@ class CfgFunctions
 			file = "z\msf\addons\sys_persist\functions\object";
 			class GetObjectCargo {};
 			class GetObjectDamage {};
+			class GetVehicleData {};
+			class SetVehicleData {};
 		};
 	};
 };
