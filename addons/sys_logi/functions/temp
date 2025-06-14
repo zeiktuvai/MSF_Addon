@@ -1,0 +1,82 @@
+cargo = [cursorObject] call MSF_Persist_fnc_GetObjectCargo;
+//publicVariable "cargo";
+//[cursorObject, cargo] call MSF_Persist_fnc_SetObjectCargo;
+
+private _items = [];
+
+// Items
+{
+	_items pushBack [
+		(configFile >> "CfgWeapons" >> _x select 0 >> "picture") call BIS_fnc_getCfgData,
+		(configFile >> "CfgWeapons" >> _x select 0 >> "displayName") call BIS_fnc_getCfgData,
+		_x select 1,
+		[]
+		];
+} forEach (cargo select 0 select 0 select 0);
+
+// Weapons
+{
+	private _item = (configFile >> "CfgMagazines" >> _x select 0 select 0) call BIS_fnc_getCfg;
+	_items pushBack [
+		(_item >> "picture") call BIS_fnc_getCfgData,
+		(_item >> "displayName") call BIS_fnc_getCfgData,
+		_x select 1,
+		[]];
+} forEach (cargo select 0 select 0 select 1);
+
+//Bp
+{
+  private _item = (configFile >> "CfgVehicles" >> _x select 0) call BIS_fnc_getCfg;
+  private _subItems = [];
+   {
+	_subItems pushBack [
+		(configFile >> "CfgWeapons" >> _x select 0 >> "picture") call BIS_fnc_getCfgData,
+		(configFile >> "CfgWeapons" >> _x select 0 >> "displayName") call BIS_fnc_getCfgData, _x select 1];		 
+   } forEach (_x select 1 select 0);
+
+   {
+	private _bitem = (configFile >> "CfgMagazines" >> _x select 0 select 0) call BIS_fnc_getCfg;
+	_subItems pushBack [
+		(_bitem >> "picture") call BIS_fnc_getCfgData,
+		(_bitem >> "displayName") call BIS_fnc_getCfgData, _x select 1];
+   } forEach (_x select 1 select 1);
+
+  _items pushBack [
+	(_item >> "picture") call BIS_fnc_getCfgData,
+	(_item >> "displayName") call BIS_fnc_getCfgData,
+	nil,
+	_subItems];
+  
+  } forEach (cargo select 0 select 1);
+
+createDialog "MSFdevdialog";
+tvAdd [1500, [], "Private"];
+tvAdd [1500, [0], "Supply Truck"];
+tvAdd [1500, [], "Server"];
+tvAdd [1500, [1], "TFY Ambulance"];
+tvExpand [1500, [0]];
+tvExpand [1500, [1]];
+tvSetCurSel [1500, [0,0]];
+
+lnbAddColumn [1501, 0.05];
+lnbAddColumn [1501, 0.1];
+lnbAddColumn [1501, 0.9];
+
+private _idx = 0;
+{
+	_x params ["_pic", "_name", "_count", "_sub"];
+	
+	lnbAddRow [1501, ["", "", _name, str _count]];
+	lnbSetPicture [1501, [_idx, 0], _pic];
+	_idx = _idx + 1;
+	
+	if (count _sub > 0) then {
+		{
+			_x params ["_pic", "_name", "_count"];
+			
+			lnbAddRow [1501, ["", "", _name, str _count]];
+			lnbSetPicture [1501, [_idx, 1], _pic];
+			_idx = _idx + 1;  
+		} forEach _sub;
+	};
+} forEach _items;
