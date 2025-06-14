@@ -25,6 +25,13 @@ if (isServer) then {
 	}] call BIS_fnc_addScriptedEventHandler;
 };
 
+if (isDedicated) then {
+	//TODO: vic code here
+}
+else
+{
+	//[] call BIS_fnc_getNetMode != "SinglePlayer"	
+};
 
 //"a3\ui_f\data\map\vehicleicons\iconbackpack_ca.paa"
 //"a3\ui_f\data\gui\rsc\rscdisplayarsenal\backpack_ca.paa"

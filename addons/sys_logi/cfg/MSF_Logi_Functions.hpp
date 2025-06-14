@@ -25,6 +25,8 @@ class CfgFunctions
         {
             file = "z\msf\addons\sys_logi\functions\config";
             class GetLogiInventory {};
+            class GetSavedVehicleLoadout {};
+            class SaveVehicleLoadout {};
         };
         class Helper
         {

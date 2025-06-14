@@ -45,6 +45,14 @@ class MSF_VicLoadout
             x = "((getResolution select 2) * 0.5 * pixelW) - 100 * (pixelW * pixelGrid * 0.50)";
             y = "((getResolution select 3) * 0.5 * pixelH) - 50 * (pixelH * pixelGrid * 0.50)";
         };
+        class MSFVer: RscText
+        {
+            idc = 1003;
+
+            text = "";
+            x = "((getResolution select 2) * 0.5 * pixelW) + 62 * (pixelW * pixelGrid * 0.50)";
+            y = "((getResolution select 3) * 0.5 * pixelH) + 50 * (pixelH * pixelGrid * 0.50)";
+        };
         class LoadoutGroup : RscControlsGroup
         {
             idc = 113;
@@ -70,6 +78,7 @@ class MSF_VicLoadout
                 {
                     idc = 1500;
                     
+                    onTreeSelChanged = "params ['_control', '_selectionPath']; [_control, _selectionPath] call MSF_UI_fnc_OnVehicleLoadoutTreeSelChanged;";
                     colorLines[] = {1,1,1,1};
                     colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                     x = "0";
@@ -93,7 +102,7 @@ class MSF_VicLoadout
                 {
                     idc = 1601;
                     
-                    //action = "private _sel = lbCurSel 1500; [player, lbData [1500, _sel]] call MSF_Logi_fnc_GetLogiSelection; closeDialog 0;";
+                    onButtonClick = "[] call MSF_UI_fnc_OnVehicleLoadoutCreate";
                     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                     text = "Create"; //--- ToDo: Localize;
                     x = "0";
@@ -107,7 +116,7 @@ class MSF_VicLoadout
                 {
                     idc = 1602;
                     
-                    //action = "private _sel = lbCurSel 1500; [player, lbData [1500, _sel]] call MSF_Logi_fnc_GetLogiSelection; closeDialog 0;";
+                    onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutApply; closeDialog 0;";                    
                     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                     text = "Apply"; //--- ToDo: Localize;
                     x = "0"; 
