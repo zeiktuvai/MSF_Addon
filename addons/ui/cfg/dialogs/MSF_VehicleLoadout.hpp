@@ -50,7 +50,7 @@ class MSF_VicLoadout
             idc = 1003;
 
             text = "";
-            x = "((getResolution select 2) * 0.5 * pixelW) + 62 * (pixelW * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) + 74 * (pixelW * pixelGrid * 0.50)";
             y = "((getResolution select 3) * 0.5 * pixelH) + 50 * (pixelH * pixelGrid * 0.50)";
         };
         class LoadoutGroup : RscControlsGroup
@@ -104,7 +104,7 @@ class MSF_VicLoadout
                     
                     onButtonClick = "[] call MSF_UI_fnc_OnVehicleLoadoutCreate";
                     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    text = "Create"; //--- ToDo: Localize;
+                    text = "New"; //--- ToDo: Localize;
                     x = "0";
                     y = "0";
                     w = "24 * (pixelW * pixelGrid * 0.50)";
@@ -126,19 +126,68 @@ class MSF_VicLoadout
                     colorText[] = {1,1,1,1};
                     colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                 };
-                class Delete: RscButtonMenu
+                class Update: RscButtonMenu
                 {
-                    idc = 1603;
+                    idc = 1604;
                     
-                    //action = "private _sel = lbCurSel 1500; [player, lbData [1500, _sel]] call MSF_Logi_fnc_GetLogiSelection; closeDialog 0;";
+                    onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutUpdate; closeDialog 0;";
                     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    text = "Delete"; //--- ToDo: Localize;
+                    text = "Update"; //--- ToDo: Localize;
                     x = "0";
                     y = "16 * (pixelH * pixelGrid * 0.50)";
                     w = "24 * (pixelW * pixelGrid * 0.50)";
                     h = "6 * (pixelH * pixelGrid * 0.50)";
                     colorText[] = {1,1,1,1};
                     colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                };
+                class Delete: RscButtonMenu
+                {
+                    idc = 1603;
+                    
+                    onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutDelete;";
+                    colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                    text = "Delete"; //--- ToDo: Localize;
+                    x = "0";
+                    y = "24 * (pixelH * pixelGrid * 0.50)";
+                    w = "24 * (pixelW * pixelGrid * 0.50)";
+                    h = "6 * (pixelH * pixelGrid * 0.50)";
+                    colorText[] = {1,1,1,1};
+                    colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                };
+                class ServerButtonGroup : RscControlsGroup
+                {
+                    idc = 114;
+                    
+                    x = "0";
+                    y = "32 * (pixelH * pixelGrid * 0.50)";                    
+                    w = "24 * (pixelW * pixelGrid * 0.50)";
+                    h = "24 * (pixelH * pixelGrid * 0.50)";
+                    class Controls
+                    {
+                        class ServerControls: RscText
+                        {
+                            idc = 1004;
+
+                            text = "  Server";
+                            x = "0";
+                            y = "0";
+                            w = "24 * (pixelW * pixelGrid * 0.50)";
+                        };
+                        class CopyServer: RscButtonMenu
+                        {
+                            idc = 1605;
+                            
+                            //onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutDelete;";
+                            colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                            text = "Upload"; //--- ToDo: Localize;
+                            x = "0";
+                            y = "8 * (pixelH * pixelGrid * 0.50)";
+                            w = "24 * (pixelW * pixelGrid * 0.50)";
+                            h = "6 * (pixelH * pixelGrid * 0.50)";
+                            colorText[] = {1,1,1,1};
+                            colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                        };
+                    };
                 };
                 class RscButtonMenuCancel: RscButtonMenuCancel
                 {
