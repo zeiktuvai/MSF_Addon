@@ -18,7 +18,7 @@
 		array of arrays - [[123,456,789],0.213434].
         
 	Examples:
-		[unit, type, contents, damage, look, ammo, fuel, isAlive, loc, refuel, rearm] call MSF_fnc_Persist_SetVehicleData;
+		[unit, type, contents, damage, look, ammo, fuel, isAlive, loc, refuel, rearm] call MSF_Persist_fnc_SetVehicleData;
 
 	Function Ver 2.0
 	Implemented in: MSF Addon v1.0
@@ -49,66 +49,7 @@ if (_unit getVariable "MSF_Persist_isLocEnable") then {
 
 if (_isALive) then {	
 	// restore inventory
-	if (_unit getVariable "MSF_Persist_isInvEnable") then {
-		{
-			_x params[ "_vicContents", "_containerCont" ];	
-
-			clearItemCargoGlobal _unit;
-			clearMagazineCargoGlobal _unit;
-			clearWeaponCargoGlobal _unit;
-			clearBackpackCargoGlobal _unit;
-			
-			TFY_fnc_addContents = {
-				params[ "_index", "_inventory", "_container" ];
-				
-				{
-					_x params[ "_info", "_count" ];
-					
-					switch ( _index ) do {
-						//Items
-						case 0 : {
-							_container addItemCargoGlobal[ _info, _count ];
-						};
-						//Magazines
-						case 1 : {
-							_info params[ "_magazineType", "_ammoCount" ];
-							
-							_container addMagazineAmmoCargo[ _magazineType, _count, _ammoCount ];
-						};
-						//Weapons
-						case 2 : {
-							_container addWeaponWithAttachmentsCargoGlobal[ _info, _count ];
-						};
-					};
-				}forEach _inventory;
-			};
-			
-			{
-				[ _forEachIndex, _x, _unit ] call TFY_fnc_addContents;
-			}forEach _vicContents;
-			
-			{
-				_x params[ "_containerType", "_containerContents" ];
-				
-				if ( _containerType call BIS_fnc_itemType select 1 == "backpack" ) then {
-					_unit addBackpackCargoGlobal[ _containerType, 1 ];
-				}else{
-					_unit addItemCargoGlobal[ _containerType, 1 ];
-				};
-				everyContainer _unit select ( count everyContainer _unit - 1 ) params[ "_type", "_container" ];
-				
-				clearItemCargoGlobal _container;
-				clearMagazineCargoGlobal _container;
-				clearWeaponCargoGlobal _container;
-				clearBackpackCargoGlobal _container;
-				
-				{
-					[ _forEachIndex, _x, _container ] call TFY_fnc_addContents;
-				}forEach _containerContents;		
-			}forEach _containerCont;
-			
-		}forEach _inventory;
-	};
+	[_unit, _inventory] call MSF_Persist_fnc_SetObjectCargo;
 
 	// restore vehicle customizations
 	if (_unit getVariable "MSF_Persist_isLookEnable") then {

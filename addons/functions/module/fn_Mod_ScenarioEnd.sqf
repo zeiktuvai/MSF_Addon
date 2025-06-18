@@ -3,7 +3,7 @@ params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", tru
 private _endCode = {
 	if (getMissionConfigValue "MSF_Mission_Persistence" && getMissionConfigValue "MSF_Mission_Saving") then 
 	{
-		[] call MSF_fnc_Persist_SaveData;
+		[] call MSF_Persist_fnc_SaveData;
 	};
 
 	["end"] remoteExec ["BIS_fnc_endMission", 0];

@@ -2,28 +2,44 @@ class CfgFunctions
 {
     class MSF_Logi
 	{
-        class Init
+        class System
         {
-            file = "z\msf\addons\sys_logi\functions";
+            file = "z\msf\addons\sys_logi\functions\app";
             class InitializeLogistics {
                 postInit = 1;
             };
+        };
+        class Commands
+        {
+            file = "z\msf\addons\sys_logi\functions\commands";
+            class GetLogiItemsMenu {};
+            class GetLogiSelection {};
+            class InitializeSupplyDepot {};
+            class InitializeSupplyTruck {};
+            class RemoveLocalLogiItem {};
+            class SetupRearmInteraction {};
+            class SetupUAVSystem {};
+            class UpdateLogiPoints {};
         };
         class Config
         {
             file = "z\msf\addons\sys_logi\functions\config";
             class GetLogiInventory {};
+            class GetSavedVehicleLoadout {};
+            class SaveVehicleLoadout {};
         };
         class Helper
         {
             file = "z\msf\addons\sys_logi\functions\helper";
             class CheckAvailablePoints {};
             class RequestLogistics {};
+            class ShareVehicleLoadout {};
         };
         class Inventory
         {
             file = "z\msf\addons\sys_logi\functions\inventory";
             class AddItem {};
+            class AddVehicleCargoFormatted {};
             class GenerateArmoryAmmo {};
             class GenerateInventory {};
 			class GenerateRandomArmory {};
@@ -46,18 +62,6 @@ class CfgFunctions
             class SpawnLogiBackpack {};
             class SpawnLogiCrate {};
             class SpawnVehicleParaDrop {};
-        };
-        class System
-        {
-            file = "z\msf\addons\sys_logi\functions\system";
-            class GetLogiItemsMenu {};
-            class GetLogiSelection {};
-            class InitializeSupplyDepot {};
-            class InitializeSupplyTruck {};
-            class RemoveLocalLogiItem {};
-            class SetupRearmInteraction {};
-            class SetupUAVSystem {};
-            class UpdateLogiPoints {};
         };
     };
 };

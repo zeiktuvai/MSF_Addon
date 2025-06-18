@@ -8,7 +8,7 @@ private _actions = [];
 		params ["_target", "_player", "_params"];
 
 		[_params] call MSF_Logi_fnc_RemoveLocalLogiItem;
-		[_params] call MSF_UI_fnc_StartPlaceObjectUI;
+		[_params] call MSF_UI_fnc_OnStartPlaceObjectUI;
 	}; 
 	private _action = [_x, _title, "", _childStatement, {true}, {}, _x] call ace_interact_menu_fnc_createAction; 
 	_actions pushBack [_action, [], _target]; 

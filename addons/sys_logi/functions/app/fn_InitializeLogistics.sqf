@@ -25,6 +25,12 @@ if (isServer) then {
 	}] call BIS_fnc_addScriptedEventHandler;
 };
 
+if (hasInterface) then {
+	[] spawn {
+		sleep 10;
+
+	};
+};
 
 //"a3\ui_f\data\map\vehicleicons\iconbackpack_ca.paa"
 //"a3\ui_f\data\gui\rsc\rscdisplayarsenal\backpack_ca.paa"

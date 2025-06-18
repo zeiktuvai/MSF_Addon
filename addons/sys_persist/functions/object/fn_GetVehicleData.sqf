@@ -9,7 +9,7 @@
         object - Unit object (vehicle).
         
 	Examples:
-		[unit] call MSF_fnc_Persist_GetVehicleData;
+		[unit] call MSF_Persist_fnc_GetVehicleData;
 
 	Function Ver 2.0
 	Implemented in: MSF Addon v1.0
@@ -20,8 +20,7 @@ params ["_unit"];
 
 // declare vars
 private _vehicleType = typeOf _unit;		
-private _vehicleName = vehicleVarName _unit;
-private _containers = everyContainer _unit; 	
+private _vehicleName = vehicleVarName _unit;	
 private _inventory = [];
 private _damage = [];
 private _look = [];
@@ -33,23 +32,8 @@ private _aceRefuel = -1;
 private _aceRearm = -1;
 
 // get damage 
-if (_unit getVariable "MSF_Persist_isDamageEnable") then {
-	if (damage _unit == 1) then {
-		_isAlive = false;
-	}
-	else 
-	{
-		private ["_hitC","_cfg","_PartN","_HitP"];
-		_hitC = (count ((configFile >> "CfgVehicles" >> _vehicleType >> "HitPoints") call Bis_fnc_getCfgSubClasses)) - 1; 
-
-		for "_i" from 0 to _hitC do { 
-			_cfg = (configFile >> "CfgVehicles" >> _vehicleType >> "HitPoints") select _i; 
-			_PartN = getText(_cfg >> "name");
-			_HitP = _unit getHit _PartN;
-			_damage pushBack [_i,[_PartN,_HitP]];
-		}; 
-	};	
-};
+_damage = [_unit] call MSF_Persist_fnc_GetObjectDamage;
+_isAlive = [true, false] select {_damage == -1};
 
 if (_unit getVariable "MSF_Persist_isLocEnable") then 
 {
@@ -59,39 +43,7 @@ if (_unit getVariable "MSF_Persist_isLocEnable") then
 
 if (_isAlive) then {
 	// get inventory
-	if (_unit getVariable "MSF_Persist_isInvEnable") then {
-		private _items = itemCargo _unit select {
-			_item = _x; 
-			_containers findIf 
-			{ 
-				_x select 0 == _item 
-			} 
-			isEqualTo -1 
-			};
-
-		private _vicContents = [ 
-			_items call BIS_fnc_consolidateArray,
-			magazinesAmmoCargo _unit call BIS_fnc_consolidateArray,
-			weaponsItemsCargo _unit call BIS_fnc_consolidateArray
-		];
-
-		_containerCont = [];
-
-		{
-			_x params[ "_cType", "_cont" ];
-			
-			_containerCont pushBack [ 
-				_cType,
-				[
-					itemCargo _cont call BIS_fnc_consolidateArray,
-					magazinesAmmoCargo _cont call BIS_fnc_consolidateArray,
-					weaponsItemsCargo _cont call BIS_fnc_consolidateArray
-				]
-			];
-		} forEach _containers;
-
-		_inventory pushBack [ _vicContents, _containerCont ];		
-	};
+	_inventory = [_unit] call MSF_Persist_fnc_GetObjectCargo;
 
 
 	// get vehicle look

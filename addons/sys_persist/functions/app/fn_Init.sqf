@@ -14,10 +14,10 @@ if (isServer && getMissionConfigValue "MSF_Mission_Persistence") then {
 	if (getMissionConfigValue "MSF_Mission_Saving") then {
 		_saveTrig = createTrigger ["EmptyDetector", [0,0,0]];
 		private _con = "triggerActivated " + getMissionConfigValue "MSF_Mission_EndTrig";
-		_saveTrig setTriggerStatements [_con, "[] call MSF_fnc_Persist_SaveData; hint 'Persistence Saved';", ""];			
+		_saveTrig setTriggerStatements [_con, "[] call MSF_Persist_fnc_SaveData; hint 'Persistence Saved';", ""];			
 	};
 	
 	if (getMissionConfigValue "MSF_Mission_Loading") then {
-		[] call MSF_fnc_Persist_LoadData;
+		[] call MSF_Persist_fnc_LoadData;
 	};
 };

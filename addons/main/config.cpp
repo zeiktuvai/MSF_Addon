@@ -73,9 +73,18 @@ class CfgNonAIVehicles
 
 class CfgHints
 {
-	displayName = "MSF - End Scenario";
-	class MSFEnd
+	displayName = "MSF Messages";
+	class MSF
 	{
+		class General
+		{
+			displayName = "%11";
+			image = MSF_ICON;
+			description = "%1 %12";			
+			arguments[] = {"player getVariable ['MSF_NotificationText', ['General Message']] select 0", "player getVariable ['MSF_NotificationText', ['General Text']] select 1"};
+		};
+
+
 		class EndScenario
 		{
 			displayName = "Mission Completed";
