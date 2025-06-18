@@ -1,33 +1,14 @@
-#define INIT_CODE "[(_this select 0), ['Convert to Supply Depot', {[_this select 0] call MSF_Logi_fnc_InitializeSupplyDepot; (_this select 0) setVariable ['MSF_IsSupplyDepot', true];}, nil, 1.5, true, true, '', '!(_target getVariable [""MSF_IsSupplyDepot"", false])']] remoteExec ['addAction', 0, (_this select 0)];";
+class Land_Cargo20_military_green_F;
 
-class Land_RepairDepot_01_base_F;
-class Land_RepairDepot_01_green_F : Land_RepairDepot_01_base_F
-{
-    class EventHandlers
-    {
-        class SupplyInit
-        {
-            init = INIT_CODE           
-        };
-    };
-};
-
-class Land_RepairDepot_01_tan_F : Land_RepairDepot_01_base_F
-{
-    class EventHandlers
-    {
-        class SupplyInit
-        {
-            init = INIT_CODE
-        };
-    };
-};
-
-class MSF_SupplyDepot : Land_RepairDepot_01_green_F
+class MSF_SupplyDepot : Land_Cargo20_military_green_F
 {
     displayName = "Supply Depot";
     editorCategory = "MSF";
     editorSubcategory = "MSF_Logistics";
+    actionBegin1 = "";
+    actionBegin2 = "";
+    actionEnd1 = "";
+    actionEnd2 = "";
     class EventHandlers
     {
         class SupplyInit
@@ -35,4 +16,5 @@ class MSF_SupplyDepot : Land_RepairDepot_01_green_F
             init = "[_this select 0] call MSF_Logi_fnc_InitializeSupplyDepot";
         };
     };
+    class UserActions {};
 };

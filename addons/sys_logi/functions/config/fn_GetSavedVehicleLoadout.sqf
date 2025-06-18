@@ -1,16 +1,17 @@
-params [["_key", "", [""]], ["_location", 0, [0]]];
+params [["_key", "", [""]], ["_location", 0, [0]], ["_itemsOnly", true, [true]]];
 
-private _items = [];
+private _return = [];
 private _idx = 0;
 
 switch (_location) do {
 	case 1: {
-		//TODO: Server code
+		
 	};	
 	case 0;
 	default {
-		_items = profileNamespace getVariable ["MSF_VehicleLoadouts", createHashMap] get _key;
+		private _item = profileNamespace getVariable ["MSF_VehicleLoadouts", createHashMap] get _key;
+		_return = if (_itemsOnly) then {_item # 0} else {_item};
 	};
 };
 
-_items;
+_return;

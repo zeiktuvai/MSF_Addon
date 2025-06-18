@@ -19,6 +19,7 @@ class CfgFunctions
             class OnVehicleLoadoutDelete {};
             class OnVehicleLoadoutCreate {};
             class OnVehicleLoadoutLoad {};
+            class OnVehicleLoadoutShare {};
             class OnVehicleLoadoutTreeSelChanged {};
             class OnVehicleLoadoutUpdate {};
         };
@@ -26,6 +27,7 @@ class CfgFunctions
         {
             file = "z\msf\addons\ui\functions\helpers";
             class CreateUIKeyboardHandler {};
+            class SetTabletStats {};
         };
         class UI
         {

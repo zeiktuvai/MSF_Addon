@@ -17,10 +17,7 @@
 			{
 				if (_obj isKindOf "LandVehicle") then {
 					private _name = player getVariable ["MSF_VicLoadoutName", "INVALID"];
-					private _items = [_obj] call MSF_Logi_fnc_SaveVehicleLoadout;
-					private _local = profileNamespace getVariable ["MSF_VehicleLoadouts", createHashMap];
-					_local set [_name, _items, true];
-					saveProfileNamespace;
+					[_name, _obj] call MSF_Logi_fnc_SaveVehicleLoadout;
 					player setVariable ["MSF_NotificationText", ["Vehicle Loadout Saved", format ["Vehicle Loadout saved as %1", _name]]];
 					[["MSF", "General"], 15, "", 35, "", true, true, false, true] call BIS_fnc_advHint;
 				};

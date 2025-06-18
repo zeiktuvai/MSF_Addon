@@ -2,9 +2,9 @@ class CfgFunctions
 {
     class MSF_Logi
 	{
-        class Init
+        class System
         {
-            file = "z\msf\addons\sys_logi\functions";
+            file = "z\msf\addons\sys_logi\functions\app";
             class InitializeLogistics {
                 postInit = 1;
             };
@@ -33,6 +33,7 @@ class CfgFunctions
             file = "z\msf\addons\sys_logi\functions\helper";
             class CheckAvailablePoints {};
             class RequestLogistics {};
+            class ShareVehicleLoadout {};
         };
         class Inventory
         {

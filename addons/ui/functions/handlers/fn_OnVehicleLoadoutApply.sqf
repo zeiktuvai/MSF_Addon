@@ -1,6 +1,6 @@
 params [["_loadout", "", [""]], ["_type", 0, [0]]];
 
-player setVariable ["MSF_VicLoadout", [[_loadout, 0] call MSF_Logi_fnc_GetSavedVehicleLoadout, _loadout]];
+player setVariable ["MSF_VicLoadout", [[_loadout, _type] call MSF_Logi_fnc_GetSavedVehicleLoadout, _loadout]];
 
 [
 	"APPLY",
