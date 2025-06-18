@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.13.0]
+
+- Added Vehicle Loadouts to the logistics system
+- Updated persist module code
+- Updated some UI componenets
+
 ## [2.12.5]
 
 - Updated MSF Handler to a service worker model for greater efficiency and scalability
