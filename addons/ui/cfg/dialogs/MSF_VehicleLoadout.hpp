@@ -2,250 +2,190 @@ class MSF_VicLoadout
 {
 	idd = 6218;
 	class ControlsBackground {
-        class RscFrame_1800: RscFrame
-        {
-            idc = 1800;
-
-            x = "((getResolution select 2) * 0.5 * pixelW) - 100 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 50 * (pixelH * pixelGrid * 0.50)";
-            w = "200 * (pixelW * pixelGrid * 0.50)";
-            h = "100 * (pixelH * pixelGrid * 0.50)";
-            colorText[] = {0,0,0,1};
-            colorBackground[] = {0.412,0.412,0.412,1};
-            colorActive[] = {0.412,0.412,0.412,1};
-        };
-        class msf_supply_diag_bg: RscText
-        {
-            idc = 1200;
-
-            text = "";
-            colorBackground[] = {0.3,0.3,0.3,0.95};
-            x = "((getResolution select 2) * 0.5 * pixelW) - 100 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 50 * (pixelH * pixelGrid * 0.50)";
-            w = "200 * (pixelW * pixelGrid * 0.50)";
-            h = "100 * (pixelH * pixelGrid * 0.50)";
-        };
-        class IGUIBack_2200: IGUIBack
-        {
-            idc = 2200;
-
-            x = "((getResolution select 2) * 0.5 * pixelW) - 100 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 50 * (pixelH * pixelGrid * 0.50)";
-            w = "200 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
-        }; 
+        #include "assets\MSFTablet.inc"
     };
     class Controls
     {
-        class Title: RscText
+        class MenuGroup : RscControlsGroup
         {
-            idc = 1001;
-
-            text = "Vehicle Loadouts"; //--- ToDo: Localize;
-            x = "((getResolution select 2) * 0.5 * pixelW) - 100 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 50 * (pixelH * pixelGrid * 0.50)";
-        };
-        class MSFVer: RscText
-        {
-            idc = 1003;
-
-            text = "";
-            x = "((getResolution select 2) * 0.5 * pixelW) + 74 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) + 50 * (pixelH * pixelGrid * 0.50)";
-        };
-        class LoadoutGroup : RscControlsGroup
-        {
-            idc = 113;
+            idc = 101;
             
-            x = "((getResolution select 2) * 0.5 * pixelW) - 95 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 41.5 * (pixelH * pixelGrid * 0.50)";
-            w = "(55 * (pixelW * pixelGrid * 0.50))";
-            h = "(87 * (pixelH * pixelGrid * 0.50))";
+            x = "((getResolution select 2) * 0.5 * pixelW) - 100.2 * (pixelW * pixelGrid * 0.50)";
+            y = "((getResolution select 3) * 0.5 * pixelH) - 66.5 * (pixelH * pixelGrid * 0.50)";
+            w = "200.2 * (pixelW * pixelGrid * 0.50)";
+            h = "5 * (pixelH * pixelGrid * 0.50)";
             class Controls
             {
-                class loadout_bg: RscText
+                class Title: RscText
                 {
-                    idc = 1201;
+                    idc = 1001;
 
-                    text = "";
-                    colorBackground[] = {0,0,0,0.3};
+                    text = "Logistics: Vehicle Loadouts"; //--- ToDo: Localize;
                     x = "0";
                     y = "0";
-                    w = "(55 * (pixelW * pixelGrid * 0.50))";
-                    h = "(87 * (pixelH * pixelGrid * 0.50))";
                 };
-                class loadout_list: RscTree
+                class RscButtonMenuCancel: RscButtonMenuSteam
                 {
-                    idc = 1500;
-                    
-                    onTreeSelChanged = "params ['_control', '_selectionPath']; [_control, _selectionPath] call MSF_UI_fnc_OnVehicleLoadoutTreeSelChanged;";
-                    colorLines[] = {1,1,1,1};
-                    colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    x = "0";
+                    idc = 1600;
+
+                    onButtonClick = "closeDialog 0;";
+                    x = "195 * (pixelW * pixelGrid * 0.50)";                    
                     y = "0";
-                    w = "(54.5 * (pixelW * pixelGrid * 0.50))";
-                    h = "(87 * (pixelH * pixelGrid * 0.50))";
+                    w = "5 * (pixelW * pixelGrid * 0.50)";
+                    h = "5 * (pixelH * pixelGrid * 0.50)";
+                    text = "";
+                    textureNoShortcut = "\a3\3den\data\controlsgroups\tutorial\close_ca.paa";
+                    colorBackground[] = {1,1,1,0};
+                    colorBackground2[] = {0,0,0,0.4};
+	                colorBackgroundActive[] = {1,1,1,0};
+	                colorBackgroundDisabled[] = { 1, 1, 1, 0 };
+	                colorBackgroundFocused[] = {1,1,1,0};
+	                colorShadow[] = { 1, 1, 1, 0 };
                 };
             };
         };
-        class ButtonGroup : RscControlsGroup
+        class MainGroup : RscControlsGroup
         {
-            idc = 112;
+            idc = 102;
             
-            x = "((getResolution select 2) * 0.5 * pixelW) - 35 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 41.5 * (pixelH * pixelGrid * 0.50)";
-            w = "24 * (pixelW * pixelGrid * 0.50)";
-            h = "87 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - 100.2 * (pixelW * pixelGrid * 0.50)";
+            y = "((getResolution select 3) * 0.5 * pixelH) - 61.4 * (pixelH * pixelGrid * 0.50)";
+            w = "200.2 * (pixelW * pixelGrid * 0.50)";
+            h = "116.1 * (pixelH * pixelGrid * 0.50)";
             class Controls
             {
-                class Create: RscButtonMenu
+                class menu: ctrlMenuStrip
                 {
-                    idc = 1601;
-                    
-                    onButtonClick = "[] call MSF_UI_fnc_OnVehicleLoadoutCreate";
-                    colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    text = "New"; //--- ToDo: Localize;
+                    idc = 2201;            
                     x = "0";
                     y = "0";
-                    w = "24 * (pixelW * pixelGrid * 0.50)";
-                    h = "6 * (pixelH * pixelGrid * 0.50)";
-                    colorText[] = {1,1,1,1};
-                    colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                    w = "200 * (pixelW * pixelGrid * 0.50)";
+                    h = "5 * (pixelH * pixelGrid * 0.50)";
+                    class Items
+                    {
+                        items[] = {"Loadout", "Sharing"};
+                        class Loadout
+                        {
+                            text = "Loadout";
+                            items[] = {"New", "Apply", "Update", "Delete"};
+                        };
+                        class Sharing
+                        {
+                            text = "Sharing";
+                            items[] = {"Share"};
+                        };
+                        class New
+                        {
+                            text = "New";
+                            action = "[] call MSF_UI_fnc_OnVehicleLoadoutCreate;";
+                        };
+                        class Apply
+                        {
+                            text = "Apply";
+                            action = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutApply; closeDialog 0;";
+                        };
+                        class Update
+                        {
+                            text = "Update";
+                            action = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutUpdate; closeDialog 0;";
+                        };
+                        class Delete
+                        {
+                            text = "Delete";
+                            action = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutDelete;";
+                        };
+                        class Share
+                        {
+                            text = "Share/Unshare Selected";
+                            action = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutShare;";
+                        };
+                        class Default;
+                        class Separator;
+                    };
                 };
-                class Apply: RscButtonMenu
+                class LoadoutGroup : RscControlsGroup
                 {
-                    idc = 1602;
-                    
-                    onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutApply; closeDialog 0;";                    
-                    colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    text = "Apply"; //--- ToDo: Localize;
-                    x = "0"; 
-                    y = "8 * (pixelH * pixelGrid * 0.50)";
-                    w = "24 * (pixelW * pixelGrid * 0.50)";
-                    h = "6 * (pixelH * pixelGrid * 0.50)";
-                    colorText[] = {1,1,1,1};
-                    colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                };
-                class Update: RscButtonMenu
-                {
-                    idc = 1604;
-                    
-                    onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutUpdate; closeDialog 0;";
-                    colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    text = "Update"; //--- ToDo: Localize;
-                    x = "0";
-                    y = "16 * (pixelH * pixelGrid * 0.50)";
-                    w = "24 * (pixelW * pixelGrid * 0.50)";
-                    h = "6 * (pixelH * pixelGrid * 0.50)";
-                    colorText[] = {1,1,1,1};
-                    colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                };
-                class Delete: RscButtonMenu
-                {
-                    idc = 1603;
-                    
-                    onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutDelete;";
-                    colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    text = "Delete"; //--- ToDo: Localize;
-                    x = "0";
-                    y = "24 * (pixelH * pixelGrid * 0.50)";
-                    w = "24 * (pixelW * pixelGrid * 0.50)";
-                    h = "6 * (pixelH * pixelGrid * 0.50)";
-                    colorText[] = {1,1,1,1};
-                    colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                };
-                class ServerButtonGroup : RscControlsGroup
-                {
-                    idc = 114;
+                    idc = 113;
                     
                     x = "0";
-                    y = "32 * (pixelH * pixelGrid * 0.50)";                    
-                    w = "24 * (pixelW * pixelGrid * 0.50)";
-                    h = "24 * (pixelH * pixelGrid * 0.50)";
+                    y = "5 * (pixelH * pixelGrid * 0.50)";
+                    w = "60 * (pixelW * pixelGrid * 0.50)";
+                    h = "110.1 * (pixelH * pixelGrid * 0.50)";
                     class Controls
                     {
-                        class ServerControls: RscText
+                        class loadout_bg: RscFrame
                         {
-                            idc = 1004;
+                            idc = 1201;
 
-                            text = "  Server";
-                            x = "0";
-                            y = "0";
-                            w = "24 * (pixelW * pixelGrid * 0.50)";
+                            text = "Loadouts";
+                            colorBackground[] = {0,0,0,0.3};
+                            x = "5 * (pixelW * pixelGrid * 0.50)";
+                            y = "5 * (pixelH * pixelGrid * 0.50)";
+                            w = "55 * (pixelW * pixelGrid * 0.50)";
+                            h = "100 * (pixelH * pixelGrid * 0.50)";
                         };
-                        class CopyServer: RscButtonMenu
+                        class loadout_list: RscTree
                         {
-                            idc = 1605;
+                            idc = 1500;
                             
-                            //onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutDelete;";
-                            colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                            text = "Upload"; //--- ToDo: Localize;
-                            x = "0";
-                            y = "8 * (pixelH * pixelGrid * 0.50)";
-                            w = "24 * (pixelW * pixelGrid * 0.50)";
-                            h = "6 * (pixelH * pixelGrid * 0.50)";
-                            colorText[] = {1,1,1,1};
-                            colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                            onTreeSelChanged = "params ['_control', '_selectionPath']; [_control, _selectionPath] call MSF_UI_fnc_OnVehicleLoadoutTreeSelChanged;";
+                            colorLines[] = {1,1,1,1};
+                            colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                            x = "4 * (pixelW * pixelGrid * 0.50)";
+                            y = "6 * (pixelH * pixelGrid * 0.50)";
+                            w = "54 * (pixelW * pixelGrid * 0.50)";
+                            h = "99 * (pixelH * pixelGrid * 0.50)";
                         };
                     };
                 };
-                class RscButtonMenuCancel: RscButtonMenuCancel
+                class DetailGroup : RscControlsGroup
                 {
-                    action = "closeDialog 0;";
-                    x = "0";
-                    y = "81 * (pixelH * pixelGrid * 0.50)";
-                    w = "24 * (pixelW * pixelGrid * 0.50)";
-                    h = "6 * (pixelH * pixelGrid * 0.50)";
-                    colorText[] = {1,1,1,1};
-                    colorBackground[] = {0,0,0,0.8};
+                    idc = 111;
+                    x = "66 * (pixelW * pixelGrid * 0.50)";
+                    y = "11 * (pixelH * pixelGrid * 0.50)";
+                    w = "129 * (pixelW * pixelGrid * 0.50)";
+                    h = "100 * (pixelH * pixelGrid * 0.50)";
+                    class Controls
+                    {
+                        class detail_bg: RscText
+                        {
+                            idc = 1202;
+
+                            text = "";
+                            colorBackground[] = {0,0,0,0.3};
+                            x = "0";
+                            y = "5 * (pixelH * pixelGrid * 0.50)";
+                            w = "129 * (pixelW * pixelGrid * 0.50)";
+                            h = "94 * (pixelH * pixelGrid * 0.50)";
+                        };
+                        class detail_text: RscText
+                        {
+                            idc = 1002;
+
+                            text = "Contents";
+                            colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                            x = "0";
+                            y = "0";
+                            w = "129 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                        };
+                        class loadout_details: ctrlListNBox
+                        {
+                            idc = 1501;           
+                            
+                            disableOverflow = 1;
+                            rowHeight = 0.05;
+                            colorSelectBackground[] = {0,0,0,0};
+                            colorSelectBackground2[] = {0,0,0,0};
+                            x = "0";
+                            y = "5 * (pixelH * pixelGrid * 0.50)";
+                            w = "128.5 * (pixelW * pixelGrid * 0.50)";
+                            h = "93.5 * (pixelH * pixelGrid * 0.50)";
+                        };
+                    };
                 };
             };
         };
-        class DetailGroup : RscControlsGroup
-        {
-            idc = 111;
-            x = "((getResolution select 2) * 0.5 * pixelW) - 5 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 41.5 * (pixelH * pixelGrid * 0.50)";
-            w = "(100 * (pixelW * pixelGrid * 0.50))";
-            h = "(87 * (pixelH * pixelGrid * 0.50))";
-            class Controls
-            {
-                class detail_bg: RscText
-                {
-                    idc = 1202;
-
-                    text = "";
-                    colorBackground[] = {0,0,0,0.3};
-                    x = "0";
-                    y = "5 * (pixelH * pixelGrid * 0.50)";
-                    w = "(100 * (pixelW * pixelGrid * 0.50))";
-                    h = "(82 * (pixelH * pixelGrid * 0.50))";
-                };
-                class detail_text: RscText
-                {
-                    idc = 1002;
-
-                    text = "Contents";
-                    colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    x = "0";
-                    y = "0";
-                    w = "(100 * (pixelW * pixelGrid * 0.50))";
-                    h = "5 * (pixelH * pixelGrid * 0.50)";
-                };
-                class loadout_details: ctrlListNBox
-                {
-                    idc = 1501;           
-                    
-                    disableOverflow = 1;
-                    rowHeight = 0.05;
-                    colorSelectBackground[] = {0,0,0,0};
-                    colorSelectBackground2[] = {0,0,0,0};
-                    x = "0";
-                    y = "5 * (pixelH * pixelGrid * 0.50)";
-                    w = "(100 * (pixelW * pixelGrid * 0.50))";
-                    h = "(82 * (pixelH * pixelGrid * 0.50))";
-                };
-            };
-        };
+        #include "assets/StatusBar.inc"
     };
 };

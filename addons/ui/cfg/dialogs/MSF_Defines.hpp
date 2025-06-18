@@ -126,3 +126,4 @@ class RscMapControlEmpty;
 class RscCheckBox;
 class IGUIBack;
 class ctrlListNBox;
+class ctrlMenuStrip;
