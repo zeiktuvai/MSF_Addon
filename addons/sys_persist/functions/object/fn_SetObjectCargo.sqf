@@ -21,7 +21,8 @@ params ["_unit", "_inventory"];
 		}else{
 			_unit addItemCargoGlobal[ _containerType, 1 ];
 		};
-		everyContainer _unit select ( count everyContainer _unit - 1 ) params[ "_type", "_container" ];
+		(everyContainer _unit select -1) params[ "_type", "_container" ];
+		//everyContainer _unit select ( count everyContainer _unit - 1 ) params[ "_type", "_container" ];
 		
 		clearItemCargoGlobal _container;
 		clearMagazineCargoGlobal _container;
