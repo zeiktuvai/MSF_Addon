@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.13.2]
+
+- Fixed "Create Loadout" input dialog allowing empty strings as a name
+
 ## [2.13.1]
 
 - Added "Vehicle Loadout Terminal"
