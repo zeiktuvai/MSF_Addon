@@ -49,6 +49,7 @@ class MSFInputDialog
         {
             idc = 12011;
 
+            onEditChanged = "params ['_control', '_newText']; [_control, _newText] call MSF_UI_fnc_OnInputEditChanged;";
             x = "((getResolution select 2) * 0.5 * pixelW) - 45 * (pixelW * pixelGrid * 0.50)";
             y = "((getResolution select 3) * 0.5 * pixelH) - 7 * (pixelH * pixelGrid * 0.50)";
             w = "90 * (pixelW * pixelGrid * 0.50)";

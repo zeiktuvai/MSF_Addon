@@ -13,6 +13,7 @@ class CfgFunctions
         class Handlers
         {
             file = "z\msf\addons\ui\functions\handlers";
+            class OnInputEditChanged {};
             class OnInputOkClicked {};
             class OnStartPlaceObjectUI {};
             class OnVehicleLoadoutApply {};
