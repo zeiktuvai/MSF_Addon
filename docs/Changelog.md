@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.13.1]
+
+- Added "Vehicle Loadout Terminal"
+- Updated "Supply Depot" to "Supply Crate"
+- Some UI Fixes
+
 ## [2.13.0]
 
 - Added Vehicle Loadouts to the logistics system
