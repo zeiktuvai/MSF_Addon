@@ -52,20 +52,6 @@ class MSF_SupplyDialog
             colorText[] = {1,1,1,1};
             colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
         };
-        class MSF_supply_VicLoad: RscButtonMenu
-        {
-            idc = 1601;
-            action = "closeDialog 0; [] call MSF_UI_fnc_DisplayVicLoadouts;";            
-            
-            colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-            text = "Vehicle Loadouts"; //--- ToDo: Localize;
-            x = "0.40407 * safezoneW + safezoneX";
-            y = "0.511 * safezoneH + safezoneY";
-            w = "0.07 * safezoneW";
-            h = "0.022 * safezoneH";
-            colorText[] = {1,1,1,1};
-            colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-        };
         class RscButtonMenuCancel_2700: RscButtonMenuCancel
         {
             action = "player setVariable ['MSF_SupplyTruck', nil]; closeDialog 0;";

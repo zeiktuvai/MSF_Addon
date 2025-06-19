@@ -25,15 +25,15 @@ if (_selectionPath # 0 == 0 && count _selectionPath > 1 ||_selectionPath # 0 == 
 			} forEach _sub;
 		};
 	} forEach _items;
-	menuEnable [2201, [0,1], true];
-	menuEnable [2201, [0,2], true];
-	menuEnable [2201, [0,3], true];
-	//menuEnable [2201, [1,0], true];
+	menuEnable [2201, [1,1], true];
+	menuEnable [2201, [1,2], true];
+	menuEnable [2201, [1,3], true];
+	//menuEnable [2201, [2,0], true];
 }
 else
 {
-	menuEnable [2201, [0,1], false];
-	menuEnable [2201, [0,2], false];
-	menuEnable [2201, [0,3], false];
-	menuEnable [2201, [1,0], false];
+	menuEnable [2201, [1,1], false];
+	menuEnable [2201, [1,2], false];
+	menuEnable [2201, [1,3], false];
+	menuEnable [2201, [2,0], false];
 };

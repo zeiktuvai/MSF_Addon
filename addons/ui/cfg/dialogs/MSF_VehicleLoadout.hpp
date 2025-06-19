@@ -20,7 +20,7 @@ class MSF_VicLoadout
                 {
                     idc = 1001;
 
-                    text = "Logistics: Vehicle Loadouts"; //--- ToDo: Localize;
+                    text = "Vehicle Loadouts"; //--- ToDo: Localize;
                     x = "0";
                     y = "0";
                 };
@@ -63,7 +63,11 @@ class MSF_VicLoadout
                     h = "5 * (pixelH * pixelGrid * 0.50)";
                     class Items
                     {
-                        items[] = {"Loadout", "Sharing"};
+                        items[] = {"Logi", "Loadout", "Sharing"};
+                        class Logi
+                        {
+                            text = "Logistics System";
+                        };
                         class Loadout
                         {
                             text = "Loadout";

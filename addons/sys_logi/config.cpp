@@ -21,6 +21,7 @@ class CfgVehicles
 {
     #include "cfg\MSF_Logi_Modules.hpp"
 	#include "cfg\vehicle\MSF_Supply_Depot.hpp"
+	#include "cfg\vehicle\MSF_VicTerminal.hpp"
 
 	class Man;
 	class CAManBase : Man
