@@ -10,7 +10,7 @@ class CfgPatches
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
         units[] = {"MSF_Module_InvGen", "MSF_Module_UAV", "MSF_Module_UAVSpawn", "MSF_Module_UGVSpawn", "MSF_Module_Rearm", "MSF_SupplyDepot",
-			"MSF_Module_SupplyTruck"};
+			"MSF_VehicleTerminal", "MSF_Module_SupplyTruck"};
         weapons[] = {};
         requiredVersion = 2.1;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction", "MSF3den"};
@@ -28,7 +28,7 @@ class CfgVehicles
 	{
 		class ACE_SelfActions
 		{
-			class MSF_Logistics
+			class MSF_LogiAction
 			{
 				displayName = "Logistics";
 				condition = "count (localNamespace getVariable 'MSF_Local' getOrDefault ['Logi_Items', []]) > 0";

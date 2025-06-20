@@ -32,6 +32,7 @@ class CfgFunctions
         {
             file = "z\msf\addons\sys_logi\functions\helper";
             class CheckAvailablePoints {};
+            class ConvertVehicleInventoryData {};
             class RequestLogistics {};
             class ShareVehicleLoadout {};
         };
@@ -44,8 +45,10 @@ class CfgFunctions
             class GenerateInventory {};
 			class GenerateRandomArmory {};
             class GetPlayerWeaponInventory {};
+            class GetVehicleInventoryData {};
             class RearmUnit {};
             class SelectCategory {};
+            class SetVehicleInventoryData {};
         };
         class Module
 		{
