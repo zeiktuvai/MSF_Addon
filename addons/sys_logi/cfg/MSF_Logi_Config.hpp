@@ -10,7 +10,7 @@ class MSF_Logi_Config
             class Ammo
             {
                 name = "Ammo Bearer Backpack";
-                description = "Places a backpack filled with ammo for players primary weapons in place of your current backpack";
+                description = "Places a backpack filled with ammo for players primary weapons in place of your current backpack.";
                 icon = BP_ICON;
                 type = "BP_Ammo";
                 depotInfinite = "true";
@@ -20,7 +20,7 @@ class MSF_Logi_Config
             class Medical
             {
                 name = "Combat Medic Backpack";
-                description = "Places a backpack with medical supplies in place of your current backpack";
+                description = "Places a backpack with medical supplies in place of your current backpack.";
                 icon = BP_ICON;
                 type = "BP_Medical";
                 depotInfinite = "true";
@@ -30,7 +30,7 @@ class MSF_Logi_Config
             class Standard
             {
                 name = "Standard Backpack";
-                description = "Places a backpack with a standard set of items in place of your current backpack";
+                description = "Places a backpack with a standard set of items in place of your current backpack.";
                 icon = BP_ICON;
                 type = "BP_Std";
                 depotInfinite = "true";
@@ -73,7 +73,7 @@ class MSF_Logi_Config
             class Food
             {
                 name = "Food Crate";
-                description = "Spawns a supply crate containing ACE Rations";
+                description = "Spawns a supply crate containing ACE Rations.";
                 icon = CRATE_ICON;
                 type = MSF_CARGO_FOOD;
                 depotInfinite = "true";

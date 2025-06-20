@@ -3,8 +3,6 @@ class CfgEditorCategories
     class MSF
     {
         displayName = "MSF";
-        priority = 1;
-        side = 1;
     };
 };
 
