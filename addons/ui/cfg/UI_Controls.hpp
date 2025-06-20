@@ -1,5 +1,4 @@
 #include "dialogs\MSF_Defines.hpp"
 #include "dialogs\MSF_Dialog_Supply.hpp"
-#include "dialogs\MSF_Input.hpp"
 #include "dialogs\MSF_UAV_Control.hpp"
 #include "dialogs\MSF_VehicleLoadout.hpp"

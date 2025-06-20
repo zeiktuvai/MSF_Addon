@@ -190,6 +190,7 @@ class MSF_VicLoadout
                 };
             };
         };
+        #include "assets/InputDialog.inc"
         #include "assets/StatusBar.inc"
     };
 };
