@@ -1,3 +1,6 @@
+lnbClear 1501;
+tvClear 1500;
+
 private _lds = profileNamespace getVariable ["MSF_VehicleLoadouts", createHashMap];
 if (count (keys (_lds)) > 0) then {
 	if (typeName (_lds get (keys (_lds) select 0)) == "ARRAY") then {
@@ -22,12 +25,19 @@ if (count _local > 0) then {
 	} forEach _local;
 };
 
-// private _server = missionNamespace getVariable ["MSF_ServerVehicleLoadouts", createHashmap];
+private _public = missionNamespace getVariable "MSF_Shared_VehicleLoadouts";
 
-// if (count _server > 0) then {
-// 	{
-// 		tvAdd [1500, [1], _x];
-// 	} forEach _server;
-// };
+if !(isNil "_public") then {
+	{
+		if (_x != (getPlayerUID player)) then {
+			private _id = _forEachIndex;
+			tvAdd [1500, [1], _y get "PlayerName"];
+			tvSetData [1500, [1,_id], _x];
+			{
+				tvAdd [1500, [1, _id], _x];
+			} forEach (_y get "Loadouts");
+		};
+	} forEach _public;
+};
 
 tvSort [1500, [0], false];

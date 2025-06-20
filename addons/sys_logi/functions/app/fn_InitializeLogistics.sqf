@@ -23,15 +23,13 @@ if (isServer) then {
 		params ["_side", "_pos", "_type"];
 		[_side, _pos, _type] call MSF_Logi_fnc_SpawnVehicleParaDrop;
 	}] call BIS_fnc_addScriptedEventHandler;
+	
+	missionNamespace setVariable ["MSF_Shared_VehicleLoadouts", createHashMap, true];
 };
 
-if (hasInterface) then {
-	[] spawn {
-		sleep 10;
-
-	};
+if (hasInterface && ([] call BIS_fnc_getNetMode != "SinglePlayer")) then {
+	[] call MSF_Logi_fnc_ShareVehicleLoadout;
 };
-
 //"a3\ui_f\data\map\vehicleicons\iconbackpack_ca.paa"
 //"a3\ui_f\data\gui\rsc\rscdisplayarsenal\backpack_ca.paa"
 
