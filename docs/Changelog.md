@@ -3,7 +3,8 @@
 ## [2.13.3]
 
 - Updated Supply Depot interface to Yodel OS.
-- Fixed issue with saving containers (backpacks, vests, etc) in vehicle loadouts causing them not to display or be captured properly. The loadout storage format needed to be changed to accomodate this fix, however existing entries will be converted automatically.
+- Updated Loadout dialog to display create loadout input within the YodelOS window instead of an external display.
+- Fixed issue with saving containers (backpacks, vests, etc) in vehicle load-outs causing them not to display or be captured properly. The load-out storage format needed to be changed to accommodate this fix, however existing entries will be converted automatically.
 
 ## [2.13.2]
 
