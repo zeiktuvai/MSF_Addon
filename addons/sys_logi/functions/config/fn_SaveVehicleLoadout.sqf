@@ -1,9 +1,10 @@
 params [["_name", "", [""]], ["_obj", objNull, [objNull]], ["_insertOnly", true, [true]]];
 
-private _loadout = [_obj] call MSF_Persist_fnc_GetObjectCargo;
+private _loadout = [_obj] call MSF_Logi_fnc_GetVehicleInventoryData;
 private _local = profileNamespace getVariable ["MSF_VehicleLoadouts", createHashMap];
-private _isShared = if (_insertOnly) then {false} else {(_local get _name) # 1};
+private _isShared = if (_insertOnly) then {false} else {_local get _name get "Shared"};
 
-_local set [_name, [_loadout, _isShared], _insertOnly];
+_loadout set ["Shared", _isShared];
+_local set [_name, _loadout, _insertOnly];
 profileNamespace setVariable ["MSF_VehicleLoadouts", _local];
 saveProfileNamespace;
