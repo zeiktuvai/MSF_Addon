@@ -86,7 +86,7 @@ class MSF_VicLoadout
                         class Apply
                         {
                             text = "Apply";
-                            action = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutApply; closeDialog 0;";
+                            action = "[tvText [1500, tvCurSel 1500], tvCurSel 1500] call MSF_UI_fnc_OnVehicleLoadoutApply; closeDialog 0;";
                         };
                         class Update
                         {
@@ -109,7 +109,7 @@ class MSF_VicLoadout
                 };
                 class LoadoutGroup : RscControlsGroup
                 {
-                    idc = 113;
+                    idc = 103;
                     
                     x = "0";
                     y = "5 * (pixelH * pixelGrid * 0.50)";
@@ -142,9 +142,57 @@ class MSF_VicLoadout
                         };
                     };
                 };
+                class TreeButtonGroup : RscControlsGroup
+                {
+                    idc = 104;
+                    x = "60.1 * (pixelW * pixelGrid * 0.50)";
+                    y = "11 * (pixelH * pixelGrid * 0.50)";
+                    w = "5 * (pixelW * pixelGrid * 0.50)";
+                    h = "20 * (pixelH * pixelGrid * 0.50)";
+
+                    class Controls
+                    {
+                        class ExpandAll: RscButtonMenuSteam
+                        {
+                            idc = 1610;
+
+                            onButtonClick = "tvExpandAll 1500;";
+                            x = "0";
+                            y = "0";
+                            w = "5 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            text = "";
+                            textureNoShortcut = "a3\3den\data\displays\display3den\tree_expand_ca.paa";
+                            colorBackground[] = {1,1,1,0};
+                            colorBackground2[] = {0,0,0,0.4};
+                            colorBackgroundActive[] = {1,1,1,0};
+                            colorBackgroundDisabled[] = { 1, 1, 1, 0 };
+                            colorBackgroundFocused[] = {1,1,1,0};
+                            colorShadow[] = { 1, 1, 1, 0 };
+                        };
+                        class CollapseAll: RscButtonMenuSteam
+                        {
+                            idc = 1611;
+
+                            onButtonClick = "tvCollapseAll 1500;";
+                            x = "0";
+                            y = "5 * (pixelH * pixelGrid * 0.50)";
+                            w = "5 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            text = "";
+                            textureNoShortcut = "a3\3den\data\displays\display3den\tree_collapse_ca.paa";
+                            colorBackground[] = {1,1,1,0};
+                            colorBackground2[] = {0,0,0,0.4};
+                            colorBackgroundActive[] = {1,1,1,0};
+                            colorBackgroundDisabled[] = { 1, 1, 1, 0 };
+                            colorBackgroundFocused[] = {1,1,1,0};
+                            colorShadow[] = { 1, 1, 1, 0 };
+                        };
+                    };
+                };
                 class DetailGroup : RscControlsGroup
                 {
-                    idc = 111;
+                    idc = 105;
                     x = "66 * (pixelW * pixelGrid * 0.50)";
                     y = "11 * (pixelH * pixelGrid * 0.50)";
                     w = "129 * (pixelW * pixelGrid * 0.50)";

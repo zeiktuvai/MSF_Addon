@@ -27,6 +27,7 @@ class CfgFunctions
             class GetLogiInventory {};
             class GetSavedVehicleLoadout {};
             class SaveVehicleLoadout {};
+            class ShareVehicleLoadout {};
         };
         class Helper
         {
@@ -34,7 +35,6 @@ class CfgFunctions
             class CheckAvailablePoints {};
             class ConvertVehicleInventoryData {};
             class RequestLogistics {};
-            class ShareVehicleLoadout {};
         };
         class Inventory
         {

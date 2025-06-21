@@ -1,4 +1,4 @@
-params [["_selection", "", [""]], ["_selectionPath", 0, [0]]];
+params [["_selection", "", [""]], ["_selectionPath", [0], [[]]]];
 
 _fnc_GetWeaponInfo = {
     params ["_list"];
