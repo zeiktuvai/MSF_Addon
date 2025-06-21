@@ -12,12 +12,8 @@ class CfgFunctions
         class Commands
         {
             file = "z\msf\addons\sys_logi\functions\commands";
-            class GetLogiItemsMenu {};
-            class GetLogiSelection {};
-            class InitializeSupplyDepot {};
+            class GetLogiSelection {};            
             class InitializeSupplyTruck {};
-            class RemoveLocalLogiItem {};
-            class SetupRearmInteraction {};
             class SetupUAVSystem {};
             class UpdateLogiPoints {};
         };
@@ -35,6 +31,7 @@ class CfgFunctions
             class CheckAvailablePoints {};
             class ConvertVehicleInventoryData {};
             class RequestLogistics {};
+            class SetupRearmInteraction {};
         };
         class Inventory
         {

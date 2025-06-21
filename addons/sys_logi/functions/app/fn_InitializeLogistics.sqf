@@ -3,7 +3,7 @@
 if (isServer) then {
 	[] call MSF_Logi_fnc_SetupUAVSystem;
 	["MSF", "Logi_Points", 9] call MSF_fnc_SetConfigValue;
-
+	
 	[true, "respawn", {
 		params ["_newVeh", "_veh"];
 		if (_newVeh getVariable ["MSF_Logi_isRarm", false]) then {

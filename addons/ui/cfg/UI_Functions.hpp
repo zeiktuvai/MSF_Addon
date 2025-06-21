@@ -6,7 +6,7 @@ class CfgFunctions
         {
             file = "z\msf\addons\ui\functions\commands";
             class DisplayDeployUAV {};
-            class DisplayLogisticsUI {};
+            class DisplaySupplyMenu {};
             class DisplayVicLoadouts {};
         };
         class Handlers

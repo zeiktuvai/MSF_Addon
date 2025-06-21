@@ -14,6 +14,7 @@ class MSF_SupplyDepot : B_Slingload_01_Repair_F
     transportMaxItems = 0;
     transportRepair = 0;
     disableInventory = 1;
+    ace_rearm_defaultSupply = 2000;
     class TransportItems {};
     class UserActions {
         class RetrieveSupplies {
@@ -27,7 +28,7 @@ class MSF_SupplyDepot : B_Slingload_01_Repair_F
             onlyForPlayer = 1;
             shortcut = "";
             condition = "alive this";
-            statement = "['LogiSourceTruck', false] call MSF_fnc_SetLocalValue; [[false] call MSF_Logi_fnc_GetLogiInventory, (missionNamespace getVariable 'MSF') getOrDefault ['Logi_Points', 0, true]] call MSF_UI_fnc_DisplayLogisticsUI;";
+            statement = "player setVariable ['MSF_SupplySource', this]; [[] call MSF_Logi_fnc_GetLogiInventory, 'Supply Depot', this] call MSF_UI_fnc_DisplaySupplyMenu;";
         };
     };
 };
