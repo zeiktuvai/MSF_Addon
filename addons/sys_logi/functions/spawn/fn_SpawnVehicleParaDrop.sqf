@@ -15,7 +15,6 @@ switch (_type) do {
 		_vic = createVehicle [configName selectRandom _vics, _spawnPos];
 		[_vic, true, 0, true, [1,1,1,1,0,1]] call MSF_Logi_fnc_GenerateInventory;
 		[_vic] call MSF_Logi_fnc_SetupRearmInteraction;
-		[_vic] call MSF_Logi_fnc_InitializeSupplyTruck;
 	};
 };
 

@@ -10,3 +10,22 @@
 ["CUP_arifle_ACR_DMR_wdl_68",["CUP_arifle_ACR_DMR_wdl_68","ACR DMR (6.8 SPC / Woodland)",["","CUP_acc_ANPEQ_15","CUP_optic_SB_3_12x50_PMII_Tan","bipod_01_F_khk"],[["CUP_30Rnd_680x43_Stanag_Tracer_Green",7]]]]]
 
 [aa, "R_230mm_Cluster", 5, 2, [5,10]] spawn BIS_fnc_fireSupportVirtual;
+
+Old logi ACE menu code
+// params ["_target", "_player", "_params"];
+
+// private _actions = []; 
+
+// {
+// 	_y params ["_title", "_count"];
+// 	private _childStatement = {
+// 		params ["_target", "_player", "_params"];
+
+// 		[_params] call MSF_Logi_fnc_RemoveLocalLogiItem;
+// 		[_params] call MSF_UI_fnc_OnStartPlaceObjectUI;
+// 	}; 
+// 	private _action = [_x, _title, "", _childStatement, {true}, {}, _x] call ace_interact_menu_fnc_createAction; 
+// 	_actions pushBack [_action, [], _target]; 
+// } forEach (localNamespace getVariable 'MSF_Local' getOrDefault ['Logi_Items', createHashMap]);
+
+// _actions

@@ -18,7 +18,6 @@ class CfgFunctions
         class Handlers
         {
             file = "z\msf\addons\ui\functions\handlers";
-            class OnStartPlaceObjectUI {};
             class OnSupplySelChanged {};
         };
         class Handlers_VehicleLoadout
@@ -45,6 +44,7 @@ class CfgFunctions
             class CreateUIKeyboardHandler {};
             class GetMSFIDD {};
             class SetTabletStats {};
+            class StartPlaceObjectUI {};
         };
         class UI
         {

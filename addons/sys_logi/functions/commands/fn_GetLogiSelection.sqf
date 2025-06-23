@@ -1,28 +1,22 @@
 #include "\z\msf\addons\main\cfg\MSF_Macros.hpp"
-params [["_unit", objNull, [objNull]],["_type", "", [""]]];
+params [["_type", "", [""]]];
 
-//[player, "Acts_Accessing_Computer_Loop", 1] call ace_common_fnc_doAnimation;
+private _obj = player getVariable ["MSF_SupplySource", objNull];
+
 switch (_type) do {
 	case MSF_CARGO_AMMO;
 	case MSF_CARGO_ORD;
 	case MSF_CARGO_MED;
 	case MSF_CARGO_FOOD: {
-		[10, [_unit, _type], {
-			_args params ["_unit", "_type"];
-
-			private _obj = player getVariable ["MSF_SupplySource", objNull];
-			[{[_unit, _type] call MSF_Logi_fnc_SpawnLogiCrate;}, [_unit, _type], _obj] call MSF_Logi_fnc_RequestLogistics;			
-		}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
+		[{[_type] call MSF_Logi_fnc_SpawnLogiCrate;}, [_type], _obj] call MSF_Logi_fnc_RequestLogistics;			
+		
 	};
 	case "BP_Ammo";
 	case "BP_Std";
 	case "BP_Medical": {
-		[10, [_unit, _type], {
-			_args params ["_unit", "_type"];
-
-			private _obj = player getVariable ["MSF_SupplySource", objNull];			
-			[{[_unit, _type] call MSF_Logi_fnc_SpawnLogiBackpack;}, [_unit, _type], _obj] call MSF_Logi_fnc_RequestLogistics;
-		}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
+		private _obj = player getVariable ["MSF_SupplySource", objNull];			
+		[{[_unit, _type] call MSF_Logi_fnc_SpawnLogiBackpack;}, [_unit, _type], _obj] call MSF_Logi_fnc_RequestLogistics;
+		
 	};
 	// case "V_Medical";
 	// case "V_Supply": {

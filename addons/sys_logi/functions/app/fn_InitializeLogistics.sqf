@@ -14,9 +14,6 @@ if (isServer) then {
 			_opts params ["_clear", "_count", "_fill", "_weights"];
 			[_newVeh, _clear, _count, _fill, _weights] call MSF_Logi_fnc_GenerateInventory;	
 		};
-		if (_newVeh getVariable ["MSF_Logi_isSupplyTruck", false]) then {
-			[_newVeh] call MSF_Logi_fnc_InitializeSupplyTruck;
-		};
 	}] call BIS_fnc_addScriptedEventHandler;
 
 	[missionNamespace, "MSF_Logi_DropRequested", {

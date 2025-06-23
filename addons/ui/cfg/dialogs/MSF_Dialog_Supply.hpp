@@ -165,7 +165,7 @@ class MSF_SupplyDialog
                         class MSF_supply_dialog_ok: RscShortcutButton
                         {
                             idc = 1600;
-                            onButtonClick = "[player, lnbData [1500, [lnbCurSelRow 1500, 1]]] call MSF_Logi_fnc_GetLogiSelection; closeDialog 0;";
+                            onButtonClick = "[lnbData [1500, [lnbCurSelRow 1500, 1]]] call MSF_Logi_fnc_GetLogiSelection; closeDialog 0;";
                             colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
 
                             borderSize = 2;

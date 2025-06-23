@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.14.0]
+
+- Updated Supply Depot to new model.
+- Upgraded Supply Depot interface to YodelOS.
+- Added service worker to add logistics points on an interval as configured in Addon Options.
+- Removed infinite items, all items now have a base cost and a configuratble multiplier (Addon Options).
+- Vehicle Air-Drops removed from Supply Depot.
+- Removed the Supply Truck module.
+
 ## [2.13.5]
 
 - Added code to ensure shared vehicle loadouts are removed when a player leaves the session and when a loadout is unshared by a player.
