@@ -8,44 +8,7 @@ class MSF_SupplyDialog
     };
     class Controls
     {
-        class MenuGroup : RscControlsGroup
-        {
-            idc = 101;
-            
-            x = "((getResolution select 2) * 0.5 * pixelW) - 100.2 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 66.5 * (pixelH * pixelGrid * 0.50)";
-            w = "200.2 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
-            class Controls
-            {
-                class Title: RscText
-                {
-                    idc = 1001;
-
-                    text = "Supply Depot"; //--- ToDo: Localize;
-                    x = "0";
-                    y = "0";
-                };
-                class RscButtonMenuCancel: RscButtonMenuSteam
-                {
-                    idc = 601;
-
-                    onButtonClick = "closeDialog 0;";
-                    x = "195 * (pixelW * pixelGrid * 0.50)";                    
-                    y = "0";
-                    w = "5 * (pixelW * pixelGrid * 0.50)";
-                    h = "5 * (pixelH * pixelGrid * 0.50)";
-                    text = "";
-                    textureNoShortcut = "\a3\3den\data\controlsgroups\tutorial\close_ca.paa";
-                    colorBackground[] = {1,1,1,0};
-                    colorBackground2[] = {0,0,0,0.4};
-	                colorBackgroundActive[] = {1,1,1,0};
-	                colorBackgroundDisabled[] = { 1, 1, 1, 0 };
-	                colorBackgroundFocused[] = {1,1,1,0};
-	                colorShadow[] = { 1, 1, 1, 0 };
-                };
-            };
-        };
+        #include "assets\Header.inc"
         class MainGroup : RscControlsGroup
         {
             idc = 102;
@@ -56,7 +19,7 @@ class MSF_SupplyDialog
             h = "116.1 * (pixelH * pixelGrid * 0.50)";
             class Controls
             {
-                 class menu: ctrlMenuStrip
+                class menu: ctrlMenuStrip
                 {
                     idc = 2201;            
                     x = "0";
@@ -69,7 +32,7 @@ class MSF_SupplyDialog
                         class Logi
                         {
                             text = "Logistics System";
-                        };                      
+                        };
                         class Supply
                         {
                             items[] = {"Retrieve"};
@@ -129,13 +92,33 @@ class MSF_SupplyDialog
                     w = "100 * (pixelW * pixelGrid * 0.50)";
                     h = "95 * (pixelH * pixelGrid * 0.50)";
                 };
+                class PointsDisp : RscStructuredText
+                {
+
+                    idc = 1203;
+
+                    text = "Remaining Supply: 0pts";
+                    colorBackground[] = {1,0.75,0,0.3};                            
+                    x = "114 * (pixelW * pixelGrid * 0.50)";
+                    y = "10 * (pixelH * pixelGrid * 0.50)";
+                    w = "75.6 * (pixelW * pixelGrid * 0.50)";
+                    h = "5 * (pixelH * pixelGrid * 0.50)";
+                    shadow = 0;
+                    class Attributes
+                    {
+                        font = "PuristaBold";
+                        align = "center";
+                        size = 0.9;
+                        shadow = 1;
+                    };
+                };
                 class DetailGroup : RscControlsGroup
                 {
                     idc = 104;
                     x = "114 * (pixelW * pixelGrid * 0.50)";
-                    y = "10 * (pixelH * pixelGrid * 0.50)";
+                    y = "18 * (pixelH * pixelGrid * 0.50)";
                     w = "77 * (pixelW * pixelGrid * 0.50)";
-                    h = "100 * (pixelH * pixelGrid * 0.50)";
+                    h = "93 * (pixelH * pixelGrid * 0.50)";
 
                     class Controls
                     {
@@ -148,7 +131,7 @@ class MSF_SupplyDialog
                             x = "0.1 * (pixelW * pixelGrid * 0.50)";
                             y = "0.1 * (pixelH * pixelGrid * 0.50)";
                             w = "75.5 * (pixelW * pixelGrid * 0.50)";
-                            h = "90 * (pixelH * pixelGrid * 0.50)";
+                            h = "80 * (pixelH * pixelGrid * 0.50)";
                         };
                         class detail_title: RscStructuredText
                         {
@@ -173,7 +156,7 @@ class MSF_SupplyDialog
                             x = "0.1 * (pixelW * pixelGrid * 0.50)";
                             y = "8 * (pixelH * pixelGrid * 0.50)";
                             w = "75 * (pixelW * pixelGrid * 0.50)";
-                            h = "82 * (pixelH * pixelGrid * 0.50)";
+                            h = "73 * (pixelH * pixelGrid * 0.50)";
                             class Attributes
                             {
                                 size = 0.8;
@@ -187,9 +170,9 @@ class MSF_SupplyDialog
 
                             borderSize = 2;
                             colorBorder[] = {1,1,1,1};
-                            text = "Retrieve Selection"; //--- ToDo: Localize;
+                            text = "            Retrieve Selection"; //--- ToDo: Localize;
                             x = "0.1 * (pixelW * pixelGrid * 0.50)";
-                            y = "91 * (pixelH * pixelGrid * 0.50)";
+                            y = "83 * (pixelH * pixelGrid * 0.50)";
                             w = "75.5 * (pixelW * pixelGrid * 0.50)";
                             h = "9 * (pixelH * pixelGrid * 0.50)";
                             colorText[] = {1,1,1,1};
@@ -197,48 +180,13 @@ class MSF_SupplyDialog
                             class Attributes
                             {
                                 size = 1.3;
-                                align = "center";
-                                
+                                align = "left";                                
                             };
                         };
                     };
                 };
             };
         };
-        class StatusbarGroup : RscControlsGroup
-        {
-            idc = 103;
-            
-            x = "((getResolution select 2) * 0.5 * pixelW) - 61.2 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) + 55 * (pixelH * pixelGrid * 0.50)";
-            w = "161.2 * (pixelW * pixelGrid * 0.50)";
-            h = "8 * (pixelH * pixelGrid * 0.50)";
-            class Controls
-            {
-                class LogiP: RscText
-                {
-                    idc = 1034;
-
-                    sizeEx = 0.03;
-                    colorBackground[] = {0,0,0,0.8};
-                    shadow = 2;
-                    text = "Logi: 0pts";
-                    tooltip = "Available Logistics Poinsts";
-                    x = "0";
-                    y = "0.5 * (pixelH * pixelGrid * 0.50)";
-                    w = "15 * (pixelW * pixelGrid * 0.50)";
-                    h = "7 * (pixelH * pixelGrid * 0.50)";
-                };
-                class MSFVer: RscText
-                {
-                    idc = 1033;
-
-                    text = "v2.13.0";
-                    x = "146 * (pixelW * pixelGrid * 0.50)";
-                    y = "3 * (pixelH * pixelGrid * 0.50)";
-                    w = "15 * (pixelW * pixelGrid * 0.50)";
-                };
-            };
-        };
+        #include "assets/StatusBar.inc"
     };
 };

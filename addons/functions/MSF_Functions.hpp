@@ -112,6 +112,8 @@ class CfgFunctions
 			class AntistasiEnemyPlaneService {};
 			class InfiniteFuelService {};
 			class RegisterServiceWorker {};
+			class RemoveServiceWorker {};
+			class SetServiceWorker {};
 		};
 		class Spawn
 		{

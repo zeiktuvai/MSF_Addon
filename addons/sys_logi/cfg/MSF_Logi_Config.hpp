@@ -68,27 +68,29 @@ class MSF_Logi_Config
             };
         };
     };
-    class AirDrop
+    class Supports
     {
-        class Vehicles
+        class Vic_Ambulance
         {
-            class Medical
-            {
-                name = "Vehicle Air-Drop: Ambulance";
-                description = "Allows you to call in an Ambulance Air-drop.";
-                icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_medevac_ca.paa";
-                type = "V_Medical";
-                baseCost = 3;
-            };
-            class Supply
-            {
-                name = "Vehicle Air-Drop: Supply Truck";
-                description = "Allows you to call in an Supply Truck Air-drop. (Can rearm players, rearm vehicles, and acts as a mini supply depot).";
-                icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_ammo_ca.paa";
-                type = "V_Supply";
-                baseCost = 5;
-            };
+            name = "Ambulance";
+            description = "Calls in an Ambulance Air-drop loaded with medical supplies.";
+            icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_medevac_ca.paa";
+            type = "V_Medical";
+            baseCost = 3;
         };
+        class Vic_Supply
+        {
+            name = "Supply Truck";
+            description = "Calls in a Supply Truck Air-drop. (Can rearm players, rearm vehicles, and acts as a mini supply depot).";
+            icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_ammo_ca.paa";
+            type = "V_Supply";
+            baseCost = 4;
+        };
+        //supply depot
+        //UAV
+        //Artillery
+        //Flares
+        //Armored Vic
     };
 };
 

@@ -12,7 +12,8 @@ class CfgFunctions
         class Commands
         {
             file = "z\msf\addons\sys_logi\functions\commands";
-            class GetLogiSelection {};            
+            class GetLogiPoints {};
+            class GetLogiSelection {};
             class InitializeSupplyTruck {};
             class SetupUAVSystem {};
             class UpdateLogiPoints {};
@@ -21,6 +22,7 @@ class CfgFunctions
         {
             file = "z\msf\addons\sys_logi\functions\config";
             class GetLogiInventory {};
+            class GetLogiSupports {};
             class GetSavedVehicleLoadout {};
             class SaveVehicleLoadout {};
             class ShareVehicleLoadout {};
@@ -28,6 +30,7 @@ class CfgFunctions
         class Helper
         {
             file = "z\msf\addons\sys_logi\functions\helper";
+            class CalculateItemCost {};
             class CheckAvailablePoints {};
             class ConvertVehicleInventoryData {};
             class RequestLogistics {};
@@ -55,6 +58,11 @@ class CfgFunctions
             class Mod_Rearm {};
             class Mod_SupplyTruck {};
             class Mod_UAV {};
+        };
+        class Services
+        {
+            file = "z\msf\addons\sys_logi\functions\services";
+            class LogisticsChannelService {};
         };
         class Spawn
         {

@@ -13,7 +13,7 @@ private _idx = 0;
 {
 	_x params ["_name", "_desc", "_icon", "_crateType", "_baseCost"];
 	
-	private _cost = _baseCost;
+	private _cost = [_baseCost] call MSF_Logi_fnc_CalculateItemCost;
 	lnbAddRow [1500, ["", _name, str _cost]];
 	lnbSetPicture [1500, [_idx, 0], _icon];
 	lnbSetData [1500, [_idx, 0], _desc];
@@ -29,5 +29,6 @@ if (_idx == 0) then {
 };
 
 [1500, 1] lnbSortBy ["TEXT"];
+findDisplay 6217 displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Supply: %1pts", [_obj] call ace_rearm_fnc_getSupplyCount];
 
-[] call MSF_UI_fnc_SetTabletStats;
+[6217] call MSF_UI_fnc_SetTabletStats;
