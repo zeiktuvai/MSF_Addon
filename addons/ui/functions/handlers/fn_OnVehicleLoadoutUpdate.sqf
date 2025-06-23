@@ -8,8 +8,7 @@ player setVariable ["MSF_VicLoadoutName", _loadout];
 		if (_obj isKindOf "LandVehicle") then {
 			private _name = player getVariable ["MSF_VicLoadoutName", "INVALID"];
 			[_name, _obj, false] call MSF_Logi_fnc_SaveVehicleLoadout;
-
-			//TODO: Call share code to update
+			
 			player setVariable ["MSF_NotificationText", ["Vehicle Loadout Updated", format ["%1 has been updated.", _name]]];
 			[["MSF", "General"], 15, "", 35, "", true, true, false, true] call BIS_fnc_advHint;
 		};

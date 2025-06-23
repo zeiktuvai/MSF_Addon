@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.13.5]
+
+- Added code to ensure shared vehicle loadouts are removed when a player leaves the session and when a loadout is unshared by a player.
+- Fixed a bug causing vehicle loadouts not to be shared at all.
+- Fixed a bug where in some instances when a player updates their shared loadout it did not update the loadout for other players.
+
 ## [2.13.4]
 
 - Added code and UI elements to enable Vehicle Loadout sharing.
