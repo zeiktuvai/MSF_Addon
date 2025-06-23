@@ -26,7 +26,7 @@ switch (_type) do {
 	};
 };
 
-private _crate = createVehicle [selectRandom _classes, _pos, [], 7, "CAN_COLLIDE"];
+private _crate = createVehicle [selectRandom _classes, _pos, [], 4, "CAN_COLLIDE"];
 
 if (_type == MSF_CARGO_FOOD || _type == MSF_CARGO_AMMO || _type == MSF_CARGO_ORD) then {
 	clearWeaponCargoGlobal _crate;

@@ -4,7 +4,7 @@ params [["_type", "", [""]]];
 private _obj = player getVariable ["MSF_SupplySource", objNull];
 private _bpClasses = ["B_Kitbag_sgg"];
 private _pos = [_obj] call MSF_Logi_fnc_CheckSupplyPointExists;
-private _bp = createVehicle [(selectRandom _bpClasses), _pos, [], 5, "CAN_COLLIDE"];
+private _bp = createVehicle [(selectRandom _bpClasses), _pos, [], 4, "CAN_COLLIDE"];
 
 switch (_type) do {
 	case "BP_Medical": {

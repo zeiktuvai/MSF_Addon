@@ -15,7 +15,7 @@ switch (_type) do {
 	case "BP_Std";
 	case "BP_Medical": {
 		private _obj = player getVariable ["MSF_SupplySource", objNull];			
-		[{[_unit, _type] call MSF_Logi_fnc_SpawnLogiBackpack;}, [_unit, _type], _obj] call MSF_Logi_fnc_RequestLogistics;
+		[{[_type] call MSF_Logi_fnc_SpawnLogiBackpack;}, [_type], _obj] call MSF_Logi_fnc_RequestLogistics;
 		
 	};
 	// case "V_Medical";
