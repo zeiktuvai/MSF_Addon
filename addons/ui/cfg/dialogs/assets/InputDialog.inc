@@ -54,7 +54,7 @@ class InputGroup : RscControlsGroup
                 {
                     idc = 10011;
 
-                    text = "Input Dialog"; //TODO: Localize
+                    text = "Input Dialog";
                     x = "0";
                     y = "0";
                 };
@@ -73,7 +73,7 @@ class InputGroup : RscControlsGroup
                     idc = 16001;
                     
                     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    text = "Ok"; //TODO: Localize;
+                    text = "Ok";
                     x = "73 * (pixelW * pixelGrid * 0.50)";
                     y = "17 * (pixelH * pixelGrid * 0.50)";
                     w = "24 * (pixelW * pixelGrid * 0.50)";

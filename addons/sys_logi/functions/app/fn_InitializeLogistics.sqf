@@ -23,8 +23,6 @@ if (isServer) then {
 		params ["_side", "_pos", "_type"];
 		[_side, _pos, _type] call MSF_Logi_fnc_SpawnVehicleParaDrop;
 	}] call BIS_fnc_addScriptedEventHandler;
-	
-	missionNamespace setVariable ["MSF_Shared_VehicleLoadouts", createHashMap, true];
 };
 
 if (hasInterface && ([] call BIS_fnc_getNetMode != "SinglePlayer")) then {

@@ -26,6 +26,7 @@ class CfgFunctions
             file = "z\msf\addons\sys_logi\functions\config";
             class GetLogiInventory {};
             class GetSavedVehicleLoadout {};
+            class RemoveSharedVehicleLoadout {};
             class SaveVehicleLoadout {};
             class ShareVehicleLoadout {};
         };
@@ -58,6 +59,11 @@ class CfgFunctions
             class Mod_Rearm {};
             class Mod_SupplyTruck {};
             class Mod_UAV {};
+        };
+        class Server
+        {
+            file = "z\msf\addons\sys_logi\functions\server";
+            class AddLoadoutServerEH {};
         };
         class Spawn
         {
