@@ -10,7 +10,7 @@ class Tablet : RscPicture
 };
 class BGGroup : RscControlsGroup
 {
-    idc =100;
+    idc =110;
     
     x = "((getResolution select 2) * 0.5 * pixelW) - 100.2 * (pixelW * pixelGrid * 0.50)";
     y = "((getResolution select 3) * 0.5 * pixelH) - 66.5 * (pixelH * pixelGrid * 0.50)";
@@ -20,7 +20,7 @@ class BGGroup : RscControlsGroup
     {
         class msf_diag_bg: RscText
         {
-            idc = 1200;
+            idc = 12222;
 
             text = "";
             colorBackground[] = {0.3,0.3,0.3,0.95};
@@ -31,7 +31,7 @@ class BGGroup : RscControlsGroup
         };
         class IGUIBack_2200: IGUIBack
         {
-            idc = 2200;
+            idc = 22222;
 
             x = "0";
             y = "0";

@@ -3,7 +3,7 @@
 if (isServer) then {
 	[] call MSF_Logi_fnc_SetupUAVSystem;
 	["MSF", "Logi_Points", 9] call MSF_fnc_SetConfigValue;
-
+	
 	[true, "respawn", {
 		params ["_newVeh", "_veh"];
 		if (_newVeh getVariable ["MSF_Logi_isRarm", false]) then {
@@ -14,15 +14,16 @@ if (isServer) then {
 			_opts params ["_clear", "_count", "_fill", "_weights"];
 			[_newVeh, _clear, _count, _fill, _weights] call MSF_Logi_fnc_GenerateInventory;	
 		};
-		if (_newVeh getVariable ["MSF_Logi_isSupplyTruck", false]) then {
-			[_newVeh] call MSF_Logi_fnc_InitializeSupplyTruck;
-		};
 	}] call BIS_fnc_addScriptedEventHandler;
 
 	[missionNamespace, "MSF_Logi_DropRequested", {
 		params ["_side", "_pos", "_type"];
 		[_side, _pos, _type] call MSF_Logi_fnc_SpawnVehicleParaDrop;
 	}] call BIS_fnc_addScriptedEventHandler;
+
+	if (MSF_Logi_PointsTickEnable) then {
+		["LogiTick", {[] call MSF_Logi_fnc_LogisticsChannelService;}, MSF_Logi_PointsTickInterval] call MSF_fnc_RegisterServiceWorker;
+	}
 };
 
 if (hasInterface && ([] call BIS_fnc_getNetMode != "SinglePlayer")) then {

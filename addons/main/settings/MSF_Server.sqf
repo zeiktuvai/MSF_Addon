@@ -24,7 +24,10 @@
 	["Antistasi - Disable Enemy Planes", "This option will prevent enemy planes from spawning in Antistasi, leaving unmanned and friendly planes alone. (Does not affect helicopters)."],
 	"MSF - Server Settings",
 	false,
-	1
+	1,
+	{
+		[_this, "au_planes", [{[] call MSF_fnc_AntistasiEnemyPlaneService;}, 0]] call MSF_fnc_SetServiceWorker;		
+	}
 ] call CBA_fnc_addSetting;
 [
 	"MSF_Intel_CivTime",
@@ -83,26 +86,37 @@
 	1
 ] call CBA_fnc_addSetting;
 [
-	"MSF_Logi_PointsPerVic",
+	"MSF_Logi_CostMulti",
 	"SLIDER",
-	["Vechicle Cost", "Number of logistics points needed to call in a vehicle."],
+	["Logistics Cost Multiplier", "Sets the cost multiplier for support called in via the logistics terminal and items retrieved from supply depots/trucks. (Base Cost * Multiplier)."],
 	["MSF - Server Settings", "Logistics System"],
-	[1, 15, 3, 0],
+	[1, 3, 1, 2],
 	1
 ] call CBA_fnc_addSetting;
 [
-	"MSF_Logi_CrateCost",
-	"SLIDER",
-	["Supply Truck Crate Cost", "Number of supply truck ammo points needed to get a crate or backpack."],
+	"MSF_Logi_PointsTickEnable",
+	"CHECKBOX",
+	["Enable Logistics Support Channel", "Adds a set amount of logistics points per interval set over time."],
 	["MSF - Server Settings", "Logistics System"],
-	[1, 20, 10, 0],
+	true,
+	1,
+	{
+		[_this, "LogiTick", [{[] call MSF_Logi_fnc_LogisticsChannelService;}, MSF_Logi_PointsTickInterval]] call MSF_fnc_SetServiceWorker;		
+	}
+] call CBA_fnc_addSetting;
+[
+	"MSF_Logi_PointsTickInterval",
+	"TIME",
+	["Logistics Interval", "Interval that will be used for adding logistics points over time."],
+	["MSF - Server Settings", "Logistics System"],
+	[300, 1800, 300],
 	1
 ] call CBA_fnc_addSetting;
 [
-	"MSF_Logi_DropHeight",
+	"MSF_Logi_PointsPerTick",
 	"SLIDER",
-	["Vechicle Para-Drop Height", "Height that called in vehicles will be dropped from."],
+	["Logistics Interval Points", "Sets the number of points awarded per inteval."],
 	["MSF - Server Settings", "Logistics System"],
-	[100, 500, 200, 0],
+	[1, 10, 3, 0],
 	1
 ] call CBA_fnc_addSetting;

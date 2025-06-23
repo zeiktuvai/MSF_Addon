@@ -1,17 +1,15 @@
-params [["_isTruck", false, [false]], ["_type", "", [""]]];
+params [["_type", "", [""]]];
 
 private _result = [];
 {
-	{
-		if !(_isTruck && getText(_x >> "supplyTruck")  == "false") then {
-			private _row = [];
+	{		
+		private _row = [];
 
-			{
-				_row pushBack (_x call BIS_fnc_getCfgData);
-			} forEach configProperties [_x, "true"];
+		{
+			_row pushBack (_x call BIS_fnc_getCfgData);
+		} forEach configProperties [_x, "true"];
 
-			_result pushBack _row;
-		};		
+		_result pushBack _row;		
   	} forEach ("true" configClasses _x);
 } forEach ("true" configClasses (configFile >> "MSF_Logi_Config" >> "Inventory"));
 

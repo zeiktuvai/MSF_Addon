@@ -1,49 +1,36 @@
 #include "\z\msf\addons\main\cfg\MSF_Macros.hpp"
-params [["_unit", objNull, [objNull]],["_type", "", [""]]];
+params [["_type", "", [""]]];
 
-//[player, "Acts_Accessing_Computer_Loop", 1] call ace_common_fnc_doAnimation;
-private _isTruck = localNamespace getVariable "MSF_Local" getOrDefault ["LogiSourceTruck", false];
-
-
-private _logiInfo = [false, _type] call MSF_Logi_fnc_GetLogiInventory;			
-_logiInfo params ["_name", "_desc", "_icon", "_crateType", "_depotInf", "_spInf"];
-private _infinite = if (_isTruck) then {[false,true] select (_spInf == "true");} else {[false,true] select (_depotInf == "true");};
+private _obj = player getVariable ["MSF_SupplySource", objNull];
 
 switch (_type) do {
 	case MSF_CARGO_AMMO;
 	case MSF_CARGO_ORD;
 	case MSF_CARGO_MED;
 	case MSF_CARGO_FOOD: {
-		[10, [_unit, _type, _infinite], {
-			private _obj = player getVariable ["MSF_SupplyTruck", objNull];
-			[{[_args # 0, _args # 1] call MSF_Logi_fnc_SpawnLogiCrate;}, [_args # 0, _args # 1], _obj, _args # 2] call MSF_Logi_fnc_RequestLogistics;
-			player setVariable ["MSF_SupplyTruck", nil];
-		}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
+		[{[_type] call MSF_Logi_fnc_SpawnLogiCrate;}, [_type], _obj] call MSF_Logi_fnc_RequestLogistics;			
+		
 	};
 	case "BP_Ammo";
 	case "BP_Std";
 	case "BP_Medical": {
-		[10, [_unit, _type, _infinite], {
-			private _obj = player getVariable ["MSF_SupplyTruck", objNull];			
-			[{[_args # 0, _args # 1] call MSF_Logi_fnc_SpawnLogiBackpack;}, [_args # 0, _args # 1], _obj, _args # 2] call MSF_Logi_fnc_RequestLogistics;
-			player setVariable ["MSF_SupplyTruck", nil];			
-		}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
+		private _obj = player getVariable ["MSF_SupplySource", objNull];			
+		[{[_unit, _type] call MSF_Logi_fnc_SpawnLogiBackpack;}, [_unit, _type], _obj] call MSF_Logi_fnc_RequestLogistics;
+		
 	};
-	case "V_Medical";
-	case "V_Supply": {
-		if ([] call MSF_Logi_fnc_CheckAvailablePoints) then {
-			[10, [_unit, _type], {
-				_args params ["_unit", "_type"];
-				private _msfl = localNamespace getVariable "MSF_Local" getOrDefault ['Logi_Items', createHashMap];
-				private _item = _msfl getOrDefault [_type, nil];
+	// case "V_Medical";
+	// case "V_Supply": {
+	// 	if ([] call MSF_Logi_fnc_CheckAvailablePoints) then {
+	// 		[10, [_unit, _type], {
+	// 			_args params ["_unit", "_type"];
+	// 			private _msfl = localNamespace getVariable "MSF_Local" getOrDefault ['Logi_Items', createHashMap];
+	// 			private _item = _msfl getOrDefault [_type, nil];
 				
-				_msfl set [_type, [_name, if (isNil "_item") then {1} else {(_item # 1) + 1}]];
-				(localNamespace getVariable "MSF_Local") set ["Logi_Items", _msfl];
-				private _logiPoints = ((missionNamespace getVariable "MSF") get "Logi_Points");
-				["MSF", "Logi_Points", _logiPoints - MSF_Logi_PointsPerVic] call MSF_fnc_SetConfigValue;
-			}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
-		};		
-	};	
+	// 			_msfl set [_type, [_name, if (isNil "_item") then {1} else {(_item # 1) + 1}]];
+	// 			(localNamespace getVariable "MSF_Local") set ["Logi_Items", _msfl];
+	// 			private _logiPoints = ((missionNamespace getVariable "MSF") get "Logi_Points");
+	// 			["MSF", "Logi_Points", _logiPoints - MSF_Logi_PointsPerVic] call MSF_fnc_SetConfigValue;
+	// 		}, {}, "Preparing..."] remoteExec ["ace_common_fnc_progressBar", _unit];
+	// 	};		
+	// };	
 };
-
-["LogiSourceTruck", nil] call MSF_fnc_SetLocalValue;
