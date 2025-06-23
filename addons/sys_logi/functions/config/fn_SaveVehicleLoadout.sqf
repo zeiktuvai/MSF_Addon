@@ -8,3 +8,7 @@ _loadout set ["Shared", _isShared];
 _local set [_name, _loadout, _insertOnly];
 profileNamespace setVariable ["MSF_VehicleLoadouts", _local];
 saveProfileNamespace;
+
+if (_isShared) then {
+	[] call MSF_Logi_fnc_ShareVehicleLoadout;
+}
