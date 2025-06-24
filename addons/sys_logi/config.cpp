@@ -23,21 +23,34 @@ class CfgVehicles
 	#include "cfg\vehicle\MSF_Supply_Depot.hpp"
 	#include "cfg\vehicle\MSF_VicTerminal.hpp"
 
-	// class Man;
-	// class CAManBase : Man
-	// {
-	// 	class ACE_SelfActions
-	// 	{
-	// 		class MSF_LogiAction
-	// 		{
-	// 			displayName = "Logistics";
-	// 			condition = "count (localNamespace getVariable 'MSF_Local' getOrDefault ['Logi_Items', []]) > 0";
-	// 			exceptions[] = {};
-	// 			icon = "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa";
-	// 			insertChildren = "params [""_target"", ""_player"", ""_params""]; [_target, _player, _params] call MSF_Logi_fnc_GetLogiItemsMenu;";
-	// 		};
-	// 	};
-	// };
+	class Man;
+	class CAManBase : Man
+	{
+		class ACE_SelfActions
+		{
+			class MSF_Logistics
+			{
+				displayName = "Logistics";
+				icon = "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa";
+				condition = "[player, 'MSF_LogisticsTerminal', false] call BIS_fnc_hasItem";
+				exceptions[] = {};
+
+				class MSF_LogisticsTerminal
+				{
+					displayName = "Open Logistics Terminal";
+					condition = "true";
+					exceptions[] = {};
+					icon = "\A3\Drones_F\Weapons_F_Gamma\Items\data\UI\gear_UAV_controller_rgr_CA.paa";
+					statement = "[] call MSF_UI_fnc_DisplayLogiSupport";
+				};
+			};
+		};
+	};
+};
+
+class CfgWeapons
+{
+	#include "cfg\vehicle\MSF_LogisticsTerminal.hpp"
 };
 
 class CfgHints

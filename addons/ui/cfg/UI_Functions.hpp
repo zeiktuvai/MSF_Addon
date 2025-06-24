@@ -34,6 +34,7 @@ class CfgFunctions
         class Handlers_LogiSupport
         {
             file = "z\msf\addons\ui\functions\handlers\logiSupport";
+            class OnClearMarkersClicked {};
             class OnSupportMapLoad {};
             class OnSupportSelChanged {};
         };

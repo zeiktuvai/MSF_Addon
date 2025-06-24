@@ -36,6 +36,7 @@ class MSF_LogiSupport
                 class Clear
                 {
                     text = "Clear Request Markers";
+                    action = "[player] call MSF_Logi_fnc_OnClearMarkersClicked";
                 };
                 class Default;
                 class Separator;
@@ -105,30 +106,12 @@ class MSF_LogiSupport
                     w = "53 * (pixelW * pixelGrid * 0.50)";
                     h = "78 * (pixelH * pixelGrid * 0.50)";
                 };
-                // class RequestButton: RscShortcutButton
-                // {
-                //     idc = 1600;
-                //     onButtonClick = "[] call MSF_UI_fnc_SetMapUIHandler;";
-                //     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                //     text = "       New Request"; //--- ToDo: Localize;
-                //     x = "1 * (pixelW * pixelGrid * 0.50)";
-                //     y = "91 * (pixelH * pixelGrid * 0.50)";
-                //     w = "53 * (pixelW * pixelGrid * 0.50)";
-                //     h = "9 * (pixelH * pixelGrid * 0.50)";
-                //     colorText[] = {1,1,1,1};
-                //     colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                //     class Attributes
-                //     {
-                //         size = 1.3;
-                //         align = "left";                        
-                //     };
-                // };
                 class SubmitButton: RscShortcutButton
                 {
                     idc = 1601;
-                    //onButtonClick = "[player, lnbData [1500, [lnbCurSelRow 1500, 1]]] call MSF_Logi_fnc_GetLogiSelection; closeDialog 0;";
+                    onButtonClick = "[lnbData [1500, [lnbCurSelRow 1500, 1]], player] call MSF_Logi_fnc_SubmitLogiRequest; closeDialog 0;";
                     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    text = "            Submit"; //--- ToDo: Localize;
+                    text = "    Submit Request";
                     x = "1 * (pixelW * pixelGrid * 0.50)";
                     y = "101 * (pixelH * pixelGrid * 0.50)";
                     w = "53 * (pixelW * pixelGrid * 0.50)";

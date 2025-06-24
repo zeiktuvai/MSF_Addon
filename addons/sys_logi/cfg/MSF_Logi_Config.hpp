@@ -70,21 +70,23 @@ class MSF_Logi_Config
     };
     class Supports
     {
-        class Vic_Ambulance
+        class Ambulance
         {
             name = "Ambulance";
             description = "Calls in an Ambulance Air-drop loaded with medical supplies.";
             icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_medevac_ca.paa";
             type = "V_Medical";
             baseCost = 3;
+            airDrop = 1;
         };
-        class Vic_Supply
+        class SupplyDepot
         {
-            name = "Supply Truck";
-            description = "Calls in a Supply Truck Air-drop. (Can rearm players, rearm vehicles, and acts as a mini supply depot).";
-            icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_ammo_ca.paa";
-            type = "V_Supply";
-            baseCost = 4;
+            name = "Supply Depot";
+            description = "Calls in a Supply Depot Air-drop.";
+            icon = "a3\ui_f\data\map\vehicleicons\iconobject_3x1_ca.paa";
+            type = "SupplyDepot";
+            baseCost = 5;
+            airDrop = 1;
         };
         //supply depot
         //UAV

@@ -32,11 +32,6 @@ player setVariable ["MSF_Logi_Place_Obj", _placeHolder];
 player setVariable ["MSF_Logi_Place_Type", _objType];
 player setVariable ["MSF_Logi_Place_Handle", _spawnHandle];
 
-
-//private _reqType = localNamespace getVariable "MSF_Local" get "MSF_Logi_Place_Type";
-//[missionNamespace, "MSF_Logi_DropRequested", [side player, screenToWorld[0.5,0.5], _reqType]] remoteExec ["BIS_fnc_callScriptedEventHandler", 2];
-
-
 // "MSFLogi_Controls" cutRsc ["MSF_Hud_LogiControls", "PLAIN", -1, false, true];
 // ["MSF_Logi_Place_Handle", _spawnHandle] call MSF_fnc_SetLocalValue;
 //"Sign_Arrow_Green_F"
