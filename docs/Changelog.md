@@ -2,6 +2,10 @@
 
 ## [2.14.0]
 
+- Added Logistics Support Channel Menu to allow airdrops and other logi support to be called in.
+- Added Logistics terminal item that fits in the GPS slot and allows access to the Logistics system.
+- Added Logistics menu to terminal item accessible through ACE Self Interaction.
+- Allowed Engineer class to access most logi screens remotely.
 - Updated Supply Depot to new model.
 - Upgraded Supply Depot interface to YodelOS.
 - Added service worker to add logistics points on an interval as configured in Addon Options.

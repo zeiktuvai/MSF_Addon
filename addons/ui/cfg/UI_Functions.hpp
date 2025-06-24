@@ -11,6 +11,7 @@ class CfgFunctions
         {
             file = "z\msf\addons\ui\functions\commands";
             class DisplayDeployUAV {};
+            class DisplayLogiMain {};
             class DisplayLogiSupport {};
             class DisplaySupplyMenu {};
             class DisplayVicLoadouts {};
@@ -34,6 +35,7 @@ class CfgFunctions
         class Handlers_LogiSupport
         {
             file = "z\msf\addons\ui\functions\handlers\logiSupport";
+            class OnClearMarkersClicked {};
             class OnSupportMapLoad {};
             class OnSupportSelChanged {};
         };
@@ -43,6 +45,7 @@ class CfgFunctions
             class CreateLoadout {};
             class CreateUIKeyboardHandler {};
             class GetMSFIDD {};
+            class GetSideColor {};
             class SetTabletStats {};
             class StartPlaceObjectUI {};
         };

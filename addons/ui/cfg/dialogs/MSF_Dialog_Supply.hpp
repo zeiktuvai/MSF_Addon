@@ -13,10 +13,10 @@ class MSF_SupplyDialog
         {
             idc = 102;
             
-            x = "((getResolution select 2) * 0.5 * pixelW) - 100.2 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 61.4 * (pixelH * pixelGrid * 0.50)";
-            w = "200.2 * (pixelW * pixelGrid * 0.50)";
-            h = "116.1 * (pixelH * pixelGrid * 0.50)";
+            x = STR(CENTER_X - 100.2 * GRID_W);
+            y = STR(CENTER_Y - 61.4 * GRID_H);
+            w = STR(200.2 * GRID_W);
+            h = STR(116.1 * GRID_H);
             class Controls
             {
                 class menu: ctrlMenuStrip
@@ -24,25 +24,10 @@ class MSF_SupplyDialog
                     idc = 2201;            
                     x = "0";
                     y = "0";
-                    w = "200 * (pixelW * pixelGrid * 0.50)";
-                    h = "5 * (pixelH * pixelGrid * 0.50)";
+                    w = STR(200 * GRID_W);
+                    h = STR(5 * GRID_H);
                     class Items
                     {
-                        items[] = {"Logi", "Supply"};
-                        class Logi
-                        {
-                            text = "Logistics System";
-                        };
-                        class Supply
-                        {
-                            items[] = {"Retrieve"};
-                            text = "Supplies";
-                        };
-                        class Retrieve
-                        {
-                            text = "Retrieve Selected";
-                            action = "[player, lnbData [1500, [lnbCurSelRow 1500, 1]]] call MSF_Logi_fnc_GetLogiSelection; closeDialog 0;";
-                        };
                         class Default;
                         class Separator;
                     };
@@ -53,20 +38,20 @@ class MSF_SupplyDialog
 
                     text = "Item";
                     colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    x = "5 * (pixelW * pixelGrid * 0.50)";
-                    y = "10 * (pixelH * pixelGrid * 0.50)";
-                    w = "100 * (pixelW * pixelGrid * 0.50)";
-                    h = "5 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(5 * GRID_W);
+                    y = STR(10 * GRID_H);
+                    w = STR(100 * GRID_W);
+                    h = STR(5 * GRID_H);
                 };
                 class list_cost: RscText
                 {
                     idc = 1003;
 
                     text = "Cost";                    
-                    x = "94 * (pixelW * pixelGrid * 0.50)";
-                    y = "10 * (pixelH * pixelGrid * 0.50)";
-                    w = "100 * (pixelW * pixelGrid * 0.50)";
-                    h = "5 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(94 * GRID_W);
+                    y = STR(10 * GRID_H);
+                    w = STR(100 * GRID_W);
+                    h = STR(5 * GRID_H);
                 };
                 class detail_bg: RscText
                 {
@@ -74,10 +59,10 @@ class MSF_SupplyDialog
 
                     text = "";
                     colorBackground[] = {0,0,0,0.3};
-                    x = "5 * (pixelW * pixelGrid * 0.50)";
-                    y = "15 * (pixelH * pixelGrid * 0.50)";
-                    w = "100 * (pixelW * pixelGrid * 0.50)";
-                    h = "95 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(5 * GRID_W);
+                    y = STR(15 * GRID_H);
+                    w = STR(100 * GRID_W);
+                    h = STR(95 * GRID_H);
                 };
                 class MSF_supply_dialog_list: ctrlListNBox
                 {
@@ -87,10 +72,10 @@ class MSF_SupplyDialog
                     disableOverflow = 1;
                     rowHeight = 0.05;
                     colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    x = "5 * (pixelW * pixelGrid * 0.50)";
-                    y = "15 * (pixelH * pixelGrid * 0.50)";
-                    w = "100 * (pixelW * pixelGrid * 0.50)";
-                    h = "95 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(5 * GRID_W);
+                    y = STR(15 * GRID_H);
+                    w = STR(100 * GRID_W);
+                    h = STR(95 * GRID_H);
                 };
                 class PointsDisp : RscStructuredText
                 {
@@ -99,10 +84,10 @@ class MSF_SupplyDialog
 
                     text = "Remaining Supply: 0pts";
                     colorBackground[] = {1,0.75,0,0.3};                            
-                    x = "114 * (pixelW * pixelGrid * 0.50)";
-                    y = "10 * (pixelH * pixelGrid * 0.50)";
-                    w = "75.6 * (pixelW * pixelGrid * 0.50)";
-                    h = "5 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(114 * GRID_W);
+                    y = STR(10 * GRID_H);
+                    w = STR(75.6 * GRID_W);
+                    h = STR(5 * GRID_H);
                     shadow = 0;
                     class Attributes
                     {
@@ -115,10 +100,10 @@ class MSF_SupplyDialog
                 class DetailGroup : RscControlsGroup
                 {
                     idc = 104;
-                    x = "114 * (pixelW * pixelGrid * 0.50)";
-                    y = "18 * (pixelH * pixelGrid * 0.50)";
-                    w = "77 * (pixelW * pixelGrid * 0.50)";
-                    h = "93 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(114 * GRID_W);
+                    y = STR(18 * GRID_H);
+                    w = STR(77 * GRID_W);
+                    h = STR(93 * GRID_H);
 
                     class Controls
                     {
@@ -128,10 +113,10 @@ class MSF_SupplyDialog
 
                             text = "";
                             colorBackground[] = {0,0,0,0.3};
-                            x = "0.1 * (pixelW * pixelGrid * 0.50)";
-                            y = "0.1 * (pixelH * pixelGrid * 0.50)";
-                            w = "75.5 * (pixelW * pixelGrid * 0.50)";
-                            h = "80 * (pixelH * pixelGrid * 0.50)";
+                            x = STR(0.1 * GRID_W);
+                            y = STR(0.1 * GRID_H);
+                            w = STR(75.5 * GRID_W);
+                            h = STR(80 * GRID_H);
                         };
                         class detail_title: RscStructuredText
                         {
@@ -139,10 +124,10 @@ class MSF_SupplyDialog
 
                             text = "";
                             colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                            x = "0.1 * (pixelW * pixelGrid * 0.50)";
-                            y = "0.1 * (pixelH * pixelGrid * 0.50)";
-                            w = "75 * (pixelW * pixelGrid * 0.50)";
-                            h = "7 * (pixelH * pixelGrid * 0.50)";
+                            x = STR(0.1 * GRID_W);
+                            y = STR(0.1 * GRID_H);
+                            w = STR(75 * GRID_W);
+                            h = STR(7 * GRID_H);
                             class Attributes
                             {
                                 size = 1.2;
@@ -153,10 +138,10 @@ class MSF_SupplyDialog
                             idc = 1004;
 
                             text = "";
-                            x = "0.1 * (pixelW * pixelGrid * 0.50)";
-                            y = "8 * (pixelH * pixelGrid * 0.50)";
-                            w = "75 * (pixelW * pixelGrid * 0.50)";
-                            h = "73 * (pixelH * pixelGrid * 0.50)";
+                            x = STR(0.1 * GRID_W);
+                            y = STR(8 * GRID_H);
+                            w = STR(75 * GRID_W);
+                            h = STR(73 * GRID_H);
                             class Attributes
                             {
                                 size = 0.8;
@@ -165,16 +150,16 @@ class MSF_SupplyDialog
                         class MSF_supply_dialog_ok: RscShortcutButton
                         {
                             idc = 1600;
-                            onButtonClick = "[lnbData [1500, [lnbCurSelRow 1500, 1]]] call MSF_Logi_fnc_GetLogiSelection; closeDialog 0;";
+                            onButtonClick = "[lnbData [1500, [lnbCurSelRow 1500, 1]]] call MSF_Logi_fnc_RetrieveSupplies; closeDialog 0;";
                             colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
 
                             borderSize = 2;
                             colorBorder[] = {1,1,1,1};
                             text = "            Retrieve Selection"; //--- ToDo: Localize;
-                            x = "0.1 * (pixelW * pixelGrid * 0.50)";
-                            y = "83 * (pixelH * pixelGrid * 0.50)";
-                            w = "75.5 * (pixelW * pixelGrid * 0.50)";
-                            h = "9 * (pixelH * pixelGrid * 0.50)";
+                            x = STR(0.1 * GRID_W);
+                            y = STR(83 * GRID_H);
+                            w = STR(75.5 * GRID_W);
+                            h = STR(9 * GRID_H);
                             colorText[] = {1,1,1,1};
                             colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                             class Attributes

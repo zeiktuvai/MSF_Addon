@@ -2,10 +2,10 @@ class InputGroup : RscControlsGroup
 {
     idc = 112;
     
-    x = "((getResolution select 2) * 0.5 * pixelW) - 100.2 * (pixelW * pixelGrid * 0.50)";
-    y = "((getResolution select 3) * 0.5 * pixelH) - 61.4 * (pixelH * pixelGrid * 0.50)";
-    w = "200.2 * (pixelW * pixelGrid * 0.50)";
-    h = "116.1 * (pixelH * pixelGrid * 0.50)";
+    x = STR(CENTER_X - 100.2 * GRID_W);
+    y = STR(CENTER_Y - 61.4 * GRID_H);
+    w = STR(200.2 * GRID_W);
+    h = STR(116.1 * GRID_H);
     
     class Controls
     {
@@ -17,16 +17,16 @@ class InputGroup : RscControlsGroup
             colorBackground[] = {0,0,0,0.5};
             x = "0";
             y = "0";
-            w = "200.2 * (pixelW * pixelGrid * 0.50)";
-            h = "116.1 * (pixelH * pixelGrid * 0.50)";
+            w = STR(200.2 * GRID_W);
+            h = STR(116.1 * GRID_H);
         };
         class InputDialogGroup : RscControlsGroup
         {
             idc = 113;
-            x = "50.1 * (pixelW * pixelGrid * 0.50)";
-            y = "43 * (pixelH * pixelGrid * 0.50)";
-            w = "100 * (pixelW * pixelGrid * 0.50)";
-            h = "25 * (pixelH * pixelGrid * 0.50)";
+            x = STR(50.1 * GRID_W);
+            y = STR(43 * GRID_H);
+            w = STR(100 * GRID_W);
+            h = STR(25 * GRID_H);
 
             class Controls
             {
@@ -38,8 +38,8 @@ class InputGroup : RscControlsGroup
                     colorBackground[] = {0.3,0.3,0.3,0.95};
                     x = "0";
                     y = "0";
-                    w = "100 * (pixelW * pixelGrid * 0.50)";
-                    h = "25 * (pixelH * pixelGrid * 0.50)";
+                    w = STR(100 * GRID_W);
+                    h = STR(25 * GRID_H);
                 };
                 class IGUIBack_2200: IGUIBack
                 {
@@ -47,8 +47,8 @@ class InputGroup : RscControlsGroup
 
                     x = "0";
                     y = "0";
-                    w = "100 * (pixelW * pixelGrid * 0.50)";
-                    h = "5 * (pixelH * pixelGrid * 0.50)";
+                    w = STR(100 * GRID_W);
+                    h = STR(5 * GRID_H);
                 };
                 class Title: RscText
                 {
@@ -63,10 +63,10 @@ class InputGroup : RscControlsGroup
                     idc = 12011;
 
                     onEditChanged = "params ['_control', '_newText']; [_control, _newText] call MSF_UI_fnc_OnInputEditChanged;";
-                    x = "4 * (pixelW * pixelGrid * 0.50)";
-                    y = "8 * (pixelH * pixelGrid * 0.50)";
-                    w = "93 * (pixelW * pixelGrid * 0.50)";
-                    h = "8 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(4 * GRID_W);
+                    y = STR(8 * GRID_H);
+                    w = STR(93 * GRID_W);
+                    h = STR(8 * GRID_H);
                 };
                 class Ok: RscButtonMenu
                 {
@@ -74,10 +74,10 @@ class InputGroup : RscControlsGroup
                     
                     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                     text = "Ok";
-                    x = "73 * (pixelW * pixelGrid * 0.50)";
-                    y = "17 * (pixelH * pixelGrid * 0.50)";
-                    w = "24 * (pixelW * pixelGrid * 0.50)";
-                    h = "6 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(73 * GRID_W);
+                    y = STR(17 * GRID_H);
+                    w = STR(24 * GRID_W);
+                    h = STR(6 * GRID_H);
                     colorText[] = {1,1,1,1};
                     colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                 };
@@ -86,10 +86,10 @@ class InputGroup : RscControlsGroup
                     idc = 16002;
 
                     text = "Cancel";                    
-                    x = "46 * (pixelW * pixelGrid * 0.50)";
-                    y = "17 * (pixelH * pixelGrid * 0.50)";
-                    w = "24 * (pixelW * pixelGrid * 0.50)";
-                    h = "6 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(46 * GRID_W);
+                    y = STR(17 * GRID_H);
+                    w = STR(24 * GRID_W);
+                    h = STR(6 * GRID_H);
                     colorText[] = {1,1,1,1};
                     colorBackground[] = {0,0,0,0.8};
                 };

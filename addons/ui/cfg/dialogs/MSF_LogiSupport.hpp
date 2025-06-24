@@ -1,7 +1,3 @@
-#define GRID_H (pixelH * pixelGrid * 0.50)
-#define GRID_W (pixelW * pixelGrid * 0.50)
-#define STR(VAR) #VAR
-
 class MSF_LogiSupport
 {
 	idd = 6219;
@@ -17,17 +13,13 @@ class MSF_LogiSupport
         class menu: ctrlMenuStrip
         {
             idc = 2201;            
-            x = "((getResolution select 2) * 0.5 * pixelW) - 100.2 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 61.4 * (pixelH * pixelGrid * 0.50)";
+            x = STR(CENTER_X - 100.2 * GRID_W);
+            y = STR(CENTER_Y - 61.4 * GRID_H);
             w = STR(200.1 * GRID_W);
             h = STR(5 * GRID_H);
             class Items
             {
-                items[] = {"Logi", "Map"};
-                class Logi
-                {
-                    text = "Logistics System";
-                };
+                items[] = {"Map"};                
                 class Map
                 {
                     text = "Map";
@@ -36,6 +28,7 @@ class MSF_LogiSupport
                 class Clear
                 {
                     text = "Clear Request Markers";
+                    action = "[] call MSF_UI_fnc_OnClearMarkersClicked";
                 };
                 class Default;
                 class Separator;
@@ -44,10 +37,10 @@ class MSF_LogiSupport
         class MainGroup : RscControlsGroup
         {
             idc = 102;
-            x = "((getResolution select 2) * 0.5 * pixelW) - 100.2 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 56.4 * (pixelH * pixelGrid * 0.50)";
-            w = "55 * (pixelW * pixelGrid * 0.50)";
-            h = "111.1 * (pixelH * pixelGrid * 0.50)";        
+            x = STR(CENTER_X - 100.2 * GRID_W);
+            y = STR(CENTER_Y - 56.4 * GRID_H);
+            w = STR(55 * GRID_W);
+            h = STR(111.1 * GRID_H);        
             class Controls
             {
                 class PointsDisp : RscStructuredText
@@ -56,10 +49,10 @@ class MSF_LogiSupport
 
                     text = "Available Logistics <br/> 0pts";
                     colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    x = "1 * (pixelW * pixelGrid * 0.50)";
-                    y = "1 * (pixelH * pixelGrid * 0.50)";
-                    w = "53 * (pixelW * pixelGrid * 0.50)";
-                    h = "12 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(1 * GRID_W);
+                    y = STR(1 * GRID_H);
+                    w = STR(53 * GRID_W);
+                    h = STR(12 * GRID_H);
                     shadow = 1;
                     class Attributes
                     {
@@ -76,20 +69,20 @@ class MSF_LogiSupport
 
                     text = "Item";
                     colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    x = "1 * (pixelW * pixelGrid * 0.50)";
-                    y = "14 * (pixelH * pixelGrid * 0.50)";
-                    w = "53 * (pixelW * pixelGrid * 0.50)";
-                    h = "5 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(1 * GRID_W);
+                    y = STR(14 * GRID_H);
+                    w = STR(53 * GRID_W);
+                    h = STR(5 * GRID_H);
                 };
                 class list_cost: RscText
                 {
                     idc = 1003;
 
                     text = "Cost";                    
-                    x = "44 * (pixelW * pixelGrid * 0.50)";
-                    y = "14 * (pixelH * pixelGrid * 0.50)";
-                    w = "10 * (pixelW * pixelGrid * 0.50)";
-                    h = "5 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(44 * GRID_W);
+                    y = STR(14 * GRID_H);
+                    w = STR(10 * GRID_W);
+                    h = STR(5 * GRID_H);
                 };
                 class SupportList: ctrlListNBox
                 {
@@ -100,39 +93,21 @@ class MSF_LogiSupport
                     rowHeight = 0.05;
                     tooltipPerColumn = "true";
                     colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    x = "1 * (pixelW * pixelGrid * 0.50)";
-                    y = "20 * (pixelH * pixelGrid * 0.50)";
-                    w = "53 * (pixelW * pixelGrid * 0.50)";
-                    h = "78 * (pixelH * pixelGrid * 0.50)";
+                    x = STR(1 * GRID_W);
+                    y = STR(20 * GRID_H);
+                    w = STR(53 * GRID_W);
+                    h = STR(78 * GRID_H);
                 };
-                // class RequestButton: RscShortcutButton
-                // {
-                //     idc = 1600;
-                //     onButtonClick = "[] call MSF_UI_fnc_SetMapUIHandler;";
-                //     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                //     text = "       New Request"; //--- ToDo: Localize;
-                //     x = "1 * (pixelW * pixelGrid * 0.50)";
-                //     y = "91 * (pixelH * pixelGrid * 0.50)";
-                //     w = "53 * (pixelW * pixelGrid * 0.50)";
-                //     h = "9 * (pixelH * pixelGrid * 0.50)";
-                //     colorText[] = {1,1,1,1};
-                //     colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                //     class Attributes
-                //     {
-                //         size = 1.3;
-                //         align = "left";                        
-                //     };
-                // };
                 class SubmitButton: RscShortcutButton
                 {
                     idc = 1601;
-                    //onButtonClick = "[player, lnbData [1500, [lnbCurSelRow 1500, 1]]] call MSF_Logi_fnc_GetLogiSelection; closeDialog 0;";
+                    onButtonClick = "[lnbData [1500, [lnbCurSelRow 1500, 1]], player] call MSF_Logi_fnc_SubmitLogiRequest; closeDialog 0;";
                     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    text = "            Submit"; //--- ToDo: Localize;
-                    x = "1 * (pixelW * pixelGrid * 0.50)";
-                    y = "101 * (pixelH * pixelGrid * 0.50)";
-                    w = "53 * (pixelW * pixelGrid * 0.50)";
-                    h = "9 * (pixelH * pixelGrid * 0.50)";
+                    text = "    Submit Request";
+                    x = STR(1 * GRID_W);
+                    y = STR(101 * GRID_H);
+                    w = STR(53 * GRID_W);
+                    h = STR(9 * GRID_H);
                     colorText[] = {1,1,1,1};
                     colorBackground[] = {1,0.74,0,1};
                     class Attributes
@@ -147,10 +122,10 @@ class MSF_LogiSupport
         {
             idc = 3001;
 
-            x = "((getResolution select 2) * 0.5 * pixelW) - 44.8 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 56.4 * (pixelH * pixelGrid * 0.50)";
-            w = "144.8 * (pixelW * pixelGrid * 0.50)";
-            h = "111.1 * (pixelH * pixelGrid * 0.50)";         
+            x = STR(CENTER_X - 44.8 * GRID_W);
+            y = STR(CENTER_Y - 56.4 * GRID_H);
+            w = STR(144.8 * GRID_W);
+            h = STR(111.1 * GRID_H);         
         };
         class InfoDisp : RscStructuredText
         {
@@ -158,10 +133,10 @@ class MSF_LogiSupport
 
             text = "Select the location to deploy your logistics request.";
             colorBackground[] = {0,0,0,0.7};
-            x = "((getResolution select 2) * 0.5 * pixelW) - 33 * (pixelW * pixelGrid * 0.50)";
-            y = "((getResolution select 3) * 0.5 * pixelH) - 55.4 * (pixelH * pixelGrid * 0.50)";
-            w = "120 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";  
+            x = STR(CENTER_X - 33 * GRID_W);
+            y = STR(CENTER_Y - 55.4 * GRID_H);
+            w = STR(120 * GRID_W);
+            h = STR(5 * GRID_H);  
             shadow = 0;
             class Attributes
             {

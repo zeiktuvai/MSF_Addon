@@ -53,6 +53,7 @@ class CfgFunctions
 		class Helpers
 		{
 			file = "z\msf\addons\functions\helper";
+			class CheckPlayerTrait {};
 			class CreateActivationTrigger {};
 			class CreateMapMarker {};
 			class DistinctArray {};

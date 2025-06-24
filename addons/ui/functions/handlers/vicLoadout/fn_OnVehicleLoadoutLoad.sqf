@@ -28,16 +28,15 @@ if (count _local > 0) then {
 private _public = missionNamespace getVariable "MSF_Shared_VehicleLoadouts";
 
 if !(isNil "_public") then {
-	{
-		//TODO: Uncomment this on release
-		//if (_x != (getPlayerUID player)) then {
+	{		
+		if (_x != (getPlayerUID player)) then {
 			private _id = _forEachIndex;
 			tvAdd [1500, [1], _y get "PlayerName"];
 			tvSetData [1500, [1,_id], _x];
 			{
 				tvAdd [1500, [1, _id], _x];
 			} forEach (_y get "Loadouts");
-		//};
+		};
 	} forEach _public;
 };
 

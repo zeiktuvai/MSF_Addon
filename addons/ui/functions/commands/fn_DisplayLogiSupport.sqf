@@ -11,9 +11,6 @@ ctrlShow [1201, false];
 ctrlEnable [1600, false];
 ctrlEnable [1601, false];
 
-//remove
-menuEnable [2201, [1,0], false];
-
 lnbAddColumn [1500, 0.3];
 lnbAddColumn [1500, 0.88];
 

@@ -2,8 +2,6 @@ private _idd = ["MSF_LogiSupport"] call MSF_UI_fnc_GetMSFIDD;
 private _display = findDisplay _idd;
 private _map = _display displayCtrl 3001;
 
-//ctrlShow [1201, true];
-
 _map ctrlAddEventHandler ["MouseButtonClick", {
 	params ["_control", "_button", "_xPos", "_yPos", "_shift", "_ctrl", "_alt"];
 	
