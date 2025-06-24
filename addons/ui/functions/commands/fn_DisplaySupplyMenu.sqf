@@ -3,11 +3,12 @@ params [["_inventory", [], [[]]], ["_title", "Logistics Depot", [""]], ["_obj", 
 disableSerialization;
 createDialog "MSF_SupplyDialog";
 
+private _idd = ["MSF_SupplyDialog"] call MSF_UI_fnc_GetMSFIDD;
+
 ctrlSetText [1001, _title];
 lnbAddColumn [1500, 0.15];
 lnbAddColumn [1500, 0.9];
 ctrlShow [104, false];
-menuEnable[2201, [1], false];
 
 private _idx = 0;
 {
@@ -29,6 +30,6 @@ if (_idx == 0) then {
 };
 
 [1500, 1] lnbSortBy ["TEXT"];
-findDisplay 6217 displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Supply: %1pts", [_obj] call ace_rearm_fnc_getSupplyCount];
+findDisplay _idd displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Supply: %1pts", [_obj] call ace_rearm_fnc_getSupplyCount];
 
-[6217] call MSF_UI_fnc_SetTabletStats;
+[_idd] call MSF_UI_fnc_SetTabletStats;

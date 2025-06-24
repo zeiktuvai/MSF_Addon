@@ -19,6 +19,7 @@ else {
 
 	private _cost = [(_item # 4)] call MSF_Logi_fnc_CalculateItemCost;
 	private _logiPoints = ((missionNamespace getVariable "MSF") get "Logi_Points");
+
 	if (_logiPoints > _cost) then {
 		["MSF", "Logi_Points", _logiPoints - _cost] call MSF_fnc_SetConfigValue;
 		

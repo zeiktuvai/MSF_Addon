@@ -11,6 +11,7 @@ class CfgFunctions
         {
             file = "z\msf\addons\ui\functions\commands";
             class DisplayDeployUAV {};
+            class DisplayLogiMain {};
             class DisplayLogiSupport {};
             class DisplaySupplyMenu {};
             class DisplayVicLoadouts {};
@@ -44,6 +45,7 @@ class CfgFunctions
             class CreateLoadout {};
             class CreateUIKeyboardHandler {};
             class GetMSFIDD {};
+            class GetSideColor {};
             class SetTabletStats {};
             class StartPlaceObjectUI {};
         };

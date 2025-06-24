@@ -8,5 +8,3 @@ class MSF_LogisticsTerminal : ItemGPS
     model = "\a3\Drones_F\Weapons_F_Gamma\Items\UAV_controller_F";
     picture = "\A3\Drones_F\Weapons_F_Gamma\Items\data\UI\gear_UAV_controller_rgr_CA.paa";
 };
-
-//CfgWeapons

@@ -30,18 +30,34 @@ class CfgVehicles
 		{
 			class MSF_Logistics
 			{
-				displayName = "Logistics";
-				icon = "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa";
+				displayName = "Logistics Terminal";
+				icon = "\A3\Drones_F\Weapons_F_Gamma\Items\data\UI\gear_UAV_controller_rgr_CA.paa";
 				condition = "[player, 'MSF_LogisticsTerminal', false] call BIS_fnc_hasItem";
 				exceptions[] = {};
 
-				class MSF_LogisticsTerminal
+				class MSF_LogisticsMenu
 				{
-					displayName = "Open Logistics Terminal";
+					displayName = "Logistics Management";
+					exceptions[] = {};
+					icon = MSF_ICON;
+					condition = "[player, 'Engineer'] call MSF_fnc_CheckPlayerTrait";
+					statement = "[] call MSF_UI_fnc_DisplayLogiMain";
+				};
+				class MSF_LogisticsSupport
+				{
+					displayName = "Logistics Support Channel";
 					condition = "true";
 					exceptions[] = {};
-					icon = "\A3\Drones_F\Weapons_F_Gamma\Items\data\UI\gear_UAV_controller_rgr_CA.paa";
+					icon = "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa";
 					statement = "[] call MSF_UI_fnc_DisplayLogiSupport";
+				};
+				class MSF_VicLoadouts
+				{
+					displayName = "Vehicle Loadouts";
+					exceptions[] = {};
+					icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_ammo_ca.paa";
+					condition = "[player, 'Engineer'] call MSF_fnc_CheckPlayerTrait";
+					statement = "[] call MSF_UI_fnc_DisplayVicLoadouts;";
 				};
 			};
 		};
