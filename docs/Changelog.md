@@ -2,16 +2,16 @@
 
 ## [2.14.0]
 
-- Added Logistics Support Channel Menu to allow airdrops and other logi support to be called in.
+- Added Logistics Support Channel Menu to allow airdrops and other Logi support to be called in.
 - Added Logistics terminal item that fits in the GPS slot and allows access to the Logistics system.
 - Added Logistics menu to terminal item accessible through ACE Self Interaction.
-- Allowed Engineer class to access most logi screens remotely.
+- Allowed Engineer class to access most Logi screens remotely.
 - Updated Supply Depot to new model.
 - Upgraded Supply Depot interface to YodelOS.
-- Added service worker to add logistics points on an interval as configured in Addon Options.
-- Removed infinite items, all items now have a base cost and a configuratble multiplier (Addon Options).
+- Added service worker to add logistics points on an interval as configured in Add-on Options.
+- Removed infinite items, all items now have a base cost and a configurable multiplier (Add-on Options).
 - Vehicle Air-Drops removed from Supply Depot.
-- Removed the Supply Truck module.
+- Removed the Supply Truck module (It may still exist in your mission, but will no longer do anything).
 
 ## [2.13.5]
 
@@ -76,7 +76,16 @@
 - Added standard backpack to supply depot
 - Added intel laptop with custom screen animation
 - Updated Rarm interaction to:
-  - Add UAV Battery to inventory if player is drone operator and has less than 2 batteries in inventory
+  - Add UAV Battery to inventory if player is drone operator and has less than 2 batteries in in- Added Logistics Support Channel Menu to allow airdrops and other logi support to be called in.
+- Added Logistics terminal item that fits in the GPS slot and allows access to the Logistics system.
+- Added Logistics menu to terminal item accessible through ACE Self Interaction.
+- Allowed Engineer class to access most logi screens remotely.
+- Updated Supply Depot to new model.
+- Upgraded Supply Depot interface to YodelOS.
+- Added service worker to add logistics points on an interval as configured in Addon Options.
+- Removed infinite items, all items now have a base cost and a configuratble multiplier (Addon Options).
+- Vehicle Air-Drops removed from Supply Depot.
+- Removed the Supply Truck module.ventory
   - Add Hand Grenade if player has less than 3 in inventory
 - Updated air drop code to use event handler.
 - Updated Supply Depot UI
