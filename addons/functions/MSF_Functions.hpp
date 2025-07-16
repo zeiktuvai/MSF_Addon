@@ -62,6 +62,7 @@ class CfgFunctions
 			class GetModuleActivationSide {};
 			class GetRadialPositionRoute {};
 			class GetRoadDirection {};
+			class GetTimeBasedGUID {};
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};
 		};
