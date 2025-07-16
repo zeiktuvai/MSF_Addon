@@ -119,8 +119,7 @@ switch (_type) do {
 };
 
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
-[_logic, 400, 400, _activationSide, "present", false, _allObjs, "POI", [], _intelID] call MSF_fnc_OFE_CreateModuleActivationTrigger;
-
+[_logic, 400, 400, _activationSide, "present", false, _allObjs, "POI", [], _intelID] call MSF_Loc_fnc_CreateLocationActivationTrigger;
 // intel system provider
 if (count _intelProvider > 0) then
 {

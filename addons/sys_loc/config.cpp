@@ -1,15 +1,13 @@
 #include "..\main\cfg\MSF_Macros.hpp"
-#include "MSF_OFE_Functions.hpp"
-#include "cfg\MSF_OFE_Config.hpp"
 
 class CfgPatches
 {
     class MSF3den
     {
-		name = "MSF - Occupational Force Engagement System";
+		name = "MSF - Locations";
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
-        units[] = {"MSF_Module_OFE", "MSF_Mod_OFE_Checkpoint"};
+        units[] = {};
         weapons[] = {};
         requiredVersion = 2.1;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction"};
@@ -18,5 +16,8 @@ class CfgPatches
 
 class CfgVehicles
 {
-   #include "cfg\MSF_OFE_Modules.hpp"
+  // #include "cfg\MSF_OFE_Modules.hpp"
 };
+
+#include "MSF_Loc_Functions.hpp"
+//#include "cfg\MSF_OFE_Config.hpp"

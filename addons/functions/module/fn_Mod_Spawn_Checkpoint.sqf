@@ -8,5 +8,6 @@ private _intel = _logic getVariable ["IntelIntegration", true];
 private _intelP = _logic getVariable ["IntelProvider", false];
 private _interactC = _logic getVariable ["InteractionChance", 0.7];
 private _intelC = _logic getVariable ["IntelChance", 0.2];
+private _marker = true;
 
-[_logic, _def, _type, [true], false, [false, [_side] call BIS_fnc_sideType], _intel, [_intelP, _interactC, _intelC], [_spawnSide] call MSF_fnc_GetModuleActivationSide] call MSF_fnc_OFE_PopulatePosition;
+[_logic, _def, _type, [true], false, [_side] call BIS_fnc_sideType, [_spawnSide] call MSF_fnc_GetModuleActivationSide, _intel, [_intelP, _interactC, _intelC], 500, _marker] call MSF_Loc_fnc_InitLocation;
