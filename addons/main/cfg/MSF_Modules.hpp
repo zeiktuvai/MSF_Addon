@@ -3,7 +3,7 @@ class Module_F : Logic
 {
 	class AttributesBase
 	{
-		class Default;
+		//class Default;
 		class Checkbox;
 		class ModuleDescription;
 		class Units;
@@ -11,7 +11,7 @@ class Module_F : Logic
 
 	class ModuleDescription
 	{
-		class AnyBrain;
+		//class AnyBrain;
 	};
 };
 
@@ -26,6 +26,7 @@ class Module_F : Logic
 #include "module\MSF_Mod_Classes.hpp"
 #include "module\MSF_Mod_DeleteUnit.hpp"
 #include "module\MSF_Mod_Dialog.hpp"
+#include "module\MSF_Mod_EscapeArea.hpp"
 #include "module\MSF_Mod_Fuel.hpp"
 #include "module\MSF_Mod_GM.hpp"
 #include "module\MSF_Mod_ProgressBarInteract.hpp"
