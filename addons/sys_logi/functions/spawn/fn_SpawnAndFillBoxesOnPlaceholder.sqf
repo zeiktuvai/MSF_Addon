@@ -1,15 +1,8 @@
-params [["_objects", [], [[]]], ["_fillCount", 50, [1]], ["_type", "", [""]], ["_isOFE", true, [true]], ["_weaponClasses", [], [[]]]];
+params [["_objects", [], [[]]], ["_fillCount", 50, [1]], ["_type", "", [""]], ["_weaponClasses", [], [[]]]];
 
-
-private _str = 1;
+private ["_probabilities", "_weapTypes"];
 private _boxTypes = ["cargo"] call MSF_fnc_GetConfigData get _type;
-private _probabilities = [];
 private _boxes = [];
-private _weapTypes = [];
-
-if (_isOFE) then {
-	_str = 1 - ([] call MSF_fnc_OFE_CalculateStrengthValues select 2);
-};
 
 switch (_type) do {
 	case "Supply": { _probabilities = [0.25,0.1,0.15,0,1,0.5]; };
@@ -24,7 +17,7 @@ switch (_type) do {
 	switch (_type) do {
 		case "Armory": { _weapTypes = [_box, _fillCount] call MSF_Logi_fnc_GenerateRandomArmory; };
 		case "Ammo": { [_box, _weaponClasses] call MSF_Logi_fnc_GenerateArmoryAmmo; };
-		default { [_box, true, round (_fillCount * _str), false, _probabilities] call MSF_Logi_fnc_GenerateInventory; };
+		default { [_box, true, _fillCount, false, _probabilities] call MSF_Logi_fnc_GenerateInventory; };
 	};
 
 	_boxes pushBack _box;

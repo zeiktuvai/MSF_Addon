@@ -1,19 +1,17 @@
-params [["_unitTypes", [], [[]]], ["_objects", [], [[]]], "_group"];
+params [["_unitTypes", [], [[]]], ["_objects", [], [[]]], ["_side", east, [east]], ["_fillP", 0.5, [0]]];
 
 private _spots = [];
-private _str = 1 - ([] call MSF_fnc_OFE_CalculateStrengthValues select 2);
+private _group = createGroup [_side, true];
 
 {
 	private _exempt = nearestObjects [_x, ["MSF_Placeholder_BldgSpawnExempt"], sizeOf (typeOf _x)];
 
 	if (count _exempt == 0) then {
-		_spots append (_x buildingPos -1);		
+		_spots append (_x buildingPos -1);
 	};
 } forEach (_objects select {_x isKindOf "House_F"});
 
-
-
-private _count = round ((count _spots) * _str);
+private _count = round ((count _spots) * _fillP);
 
 for "_i" from 1 to _count do {
 	private _spot = selectRandom _spots;
@@ -21,6 +19,6 @@ for "_i" from 1 to _count do {
 	_spots deleteAt (_spots find _spot);
 };
 
-{
-    _x disableAI "path";
-} forEach units _group;
+{ _x disableAI "path"; } forEach units _group;
+
+units _group;

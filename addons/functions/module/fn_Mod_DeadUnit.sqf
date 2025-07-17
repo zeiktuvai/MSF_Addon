@@ -19,9 +19,8 @@ private _intel = _logic getVariable ["IntelIntegration", true];
 private _intelP = _logic getVariable ["IntelProvider", false];
 private _interactC = _logic getVariable ["InteractionChance", 0.7];
 private _intelC = _logic getVariable ["IntelChance", 0.2];
-private _group = objNull;
+private ["_side", "_intelID", "_deadUnits"];
 private _allObjs = [];
-private _intelID = "";
 
 if (count _infSpawns > 0) then {
 	private _deadUnitTypes = [];
@@ -33,19 +32,19 @@ if (count _infSpawns > 0) then {
 		case "Civ_Livionian";
 		case "Civ_Tanoan": {
 			_deadUnitTypes = ["civs"] call MSF_fnc_GetConfigData get _type;
-			_group = createGroup [civilian, true];
+			_side = civilian;
 		};
 		case "Mil_NATO": {
 			_deadUnitTypes = ["unit", west] call MSF_fnc_GetConfigData get "Units";
-			_group = createGroup [west, true];
+			_side = west;
 		};
 		case "Mil_OPFOR": {
 			_deadUnitTypes = ["unit", east] call MSF_fnc_GetConfigData get "Units";
-			_group = createGroup [east, true];
+			_side = east;
 		};
 		case "Mil_IND": {
 			_deadUnitTypes = ["unit", independent] call MSF_fnc_GetConfigData get "Units";
-			_group = createGroup [independent, true];
+			_side = independent;
 		};
 	};
 
@@ -53,13 +52,13 @@ if (count _infSpawns > 0) then {
 		_deadUnitTypes = [_logic, "UnitClasses", "Parsing Infantry Class Override Dead Unit module"] call MSF_fnc_ParseValidArray;
 	};
 
-	[_deadUnitTypes, _infSpawns, _group] call MSF_fnc_OFE_SpawnInfantryOnPlaceholder;
+	_deadUnits = [_deadUnitTypes, _infSpawns, _side] call MSF_fnc_SpawnInfantryOnPlaceholder;
 
 	{
 		_x setDamage 1;
-	} forEach units _group;
+	} forEach _deadUnits;
 
-	_allObjs append units _group;
+	_allObjs append _deadUnits;
 };
 
 if (count _vicSpawns > 0) then {
@@ -71,7 +70,7 @@ if (count _vicSpawns > 0) then {
 		_vicTypes = [_logic, "VicClasses", "Parsing Vehicle Class Override Dead Unit module"] call MSF_fnc_ParseValidArray;
 	};
 
-	_allObjs append ([_vicTypes, _vicSpawns] call MSF_fnc_OFE_SpawnUnmannedVic);
+	_allObjs append ([_vicTypes, _vicSpawns] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder);
 };
 
 if (count _armorSpawns > 0) then {
@@ -83,19 +82,19 @@ if (count _armorSpawns > 0) then {
 		_types = [_logic, "ArmorClasses", "Parsing Armor Class Override Dead Unit module"] call MSF_fnc_ParseValidArray;
 	};
 
-	_allObjs append ([_types, _armorSpawns] call MSF_fnc_OFE_SpawnUnmannedVic);
+	_allObjs append ([_types, _armorSpawns] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder);
 };
 
 if (count _ftSpawns > 0) then {
 	private _types = _uTypes get "FuelTruck";
 	
-	_allObjs append ([_types, _ftSpawns] call MSF_fnc_OFE_SpawnUnmannedVic);	
+	_allObjs append ([_types, _ftSpawns] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder);	
 };
 
 if (count _atSpawns > 0) then {
 	private _types = _uTypes get "AmmoTruck";
 	
-	_allObjs append ([_types, _atSpawns] call MSF_fnc_OFE_SpawnUnmannedVic);
+	_allObjs append ([_types, _atSpawns] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder);
 };
 
 // intel system
@@ -105,7 +104,7 @@ if (_intelP && _type in ["Mil_NATO", "Mil_OPFOR", "Mil_IND"]) then
 		if ([_interactC] call MSF_fnc_CalculateProbability) then {
 			[_x, _intelC] call MSF_Intel_fnc_AddIntelInteraction;
 		};		
-	} forEach units _group;
+	} forEach _deadUnits;
 };
 
 [_allObjs, false] call MSF_fnc_ShowHideObjects;

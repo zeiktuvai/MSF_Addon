@@ -1,9 +1,9 @@
-params [["_logic", objNull, [objNull]],	["_x", 50, [1]], ["_y", 50, [1]], ["_activationBy", west, [west]], ["_activationType", "present", ["present"]],
-	["_isRectangle", false, [false]], ["_objects", [], [[]]], ["_type", "", [""]], ["_params", [], [[]]], ["_intelID", "", [""]]];
+params [["_logic", objNull, [objNull]],	["_x", 50, [1]], ["_y", 50, [1]], ["_activationBy", "west", [""]], ["_activationType", "present", ["present"]],
+	["_isRectangle", false, [false]], ["_objects", [], [[]]], ["_type", "", [""]], ["_params", [], [[]]], ["_intelID", "", [""]], ["_side", east, [east]]];
 
 private ["_intelAct"];
 private _actStatement = {
-	[thisTrigger] call MSF_fnc_OFE_SpawnLocation;
+	[thisTrigger] call MSF_Loc_fnc_SpawnLocation;
 };
 
 private _hideStatement = {
@@ -25,11 +25,12 @@ if (getMissionConfigValue ["MSF_Intel_EnableDiscovery", true]) then
 private _trig = createTrigger ["emptyDetector", getPos _logic];
 
 _trig setTriggerArea [_x, _y, 0, _isRectangle];
-_trig setTriggerActivation [[_activationBy] call BIS_fnc_sideNameUnlocalized, _activationType, false];
+_trig setTriggerActivation [_activationBy, _activationType, false];
 _trig setVariable ["objects", _objects, true];
 _trig setVariable ["type", _type, true];
 _trig setVariable ["vars", _params, true];
 _trig setVariable ["IntelID", _intelID, true];
+_trig setVariable ["side", _side, true];
 
 if (_type isEqualTo "POI") then 
 {
@@ -39,7 +40,7 @@ if (_type isEqualTo "POI") then
 		toString _hideStatement
 		//"[thisTrigger getVariable 'objects', false] call MSF_fnc_ShowHideObjects;"
 	];
-	_trig setTriggerActivation [[_activationBy] call BIS_fnc_sideNameUnlocalized, _activationType, true];
+	_trig setTriggerActivation [_activationBy, _activationType, true];
 }
 else
 {

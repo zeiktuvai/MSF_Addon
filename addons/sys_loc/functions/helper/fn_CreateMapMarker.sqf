@@ -1,5 +1,4 @@
-// This will need to integrate with intel system.
-// _type: 0 Checkpoint, 1 Outpost, 2 Base, 3 helibase, 4 bastion, 5 poi
+// TODO: Integrate with Intel system
 
 params [["_type", "", [""]], ["_position", [0,0,0], [[]]]];
 private ["_markerType", "_markerColor"];
