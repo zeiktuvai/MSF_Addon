@@ -1,9 +1,10 @@
 # Changelog
 
-## [2.15.0]
+## [2.14.1]
 
-- Added Escape Area module (For designating an area that will trigger end scenario if any players leave that area).
+- Moved Escape Area module from OFE to main MSF addon (For designating an area that will trigger end scenario if any players leave that area).
 - Added code to randomize damage/fuel/ammo for any vehicles spawned by the Dead Unit module.
+- Moved logi points notification to chat message.
 - Re-organized some background code.
 
 ## [2.14.0]
