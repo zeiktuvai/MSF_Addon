@@ -34,6 +34,22 @@ class tfy_insignia_train
   texture = "z\msf\addons\data\insignia\unit_train.paa";
   textureVehicle = "";
 };
+class tfy_rank0
+{
+  scope = 2;
+  displayName = "Task Force Yodel";
+  author = "zeik_tuvai";
+  texture = "z\msf\addons\data\insignia\unit_rank0.paa";
+  textureVehicle = "";
+};
+class tfy_rank1
+{
+  scope = 1;
+  displayName = "Task Force Yodel Soldier";
+  author = "zeik_tuvai";
+  texture = "z\msf\addons\data\insignia\unit_rank1.paa";
+  textureVehicle = "";
+};
 class tfy_backup_pilot
 {
   displayName = "TFY Backup Pilot";
