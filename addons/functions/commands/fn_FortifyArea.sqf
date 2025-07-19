@@ -54,7 +54,7 @@ if (_vehicle) then {
 // armored vics
 if (_armor) then {
 	[_trigger, _armorNum, _side, _classes get "Armor", _armorProb, _logicArea] spawn {
-		params ["_trigger", "_armorN_unitsum", "_side", "_armorTypes", "_armorProb", "_logicArea"];
+		params ["_trigger", "_armorNum", "_side", "_armorTypes", "_armorProb", "_logicArea"];
 		[_trigger, _armorNum, _side, _armorTypes, [], 1, _armorProb, _logicArea] call MSF_fnc_SpawnAreaVehicleDefense;
 	};
 };

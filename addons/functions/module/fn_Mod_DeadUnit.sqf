@@ -19,7 +19,8 @@ private _intel = _logic getVariable ["IntelIntegration", true];
 private _intelP = _logic getVariable ["IntelProvider", false];
 private _interactC = _logic getVariable ["InteractionChance", 0.7];
 private _intelC = _logic getVariable ["IntelChance", 0.2];
-private ["_side", "_intelID", "_deadUnits"];
+private ["_side", "_deadUnits"];
+private _intelID = "";
 private _allObjs = [];
 
 if (count _infSpawns > 0) then {
