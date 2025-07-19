@@ -1,10 +1,10 @@
 class MSF_Module_EscapeArea : Module_F
 {
 	scope = 2;
-	displayName = "Mission Area (Escape)";
+	displayName = "Mission - Area Escape End";
 	icon = "a3\modules_f_curator\data\portraitendmission_ca.paa";
 	category = "MSF_Module";
-	function = "MSF_fnc_OFE_Mod_EscapeArea";
+	function = "MSF_fnc_Mod_EscapeArea";
 	functionPriority = 2;
 	isGlobal = 0;
 	isTriggerActivated = 0;

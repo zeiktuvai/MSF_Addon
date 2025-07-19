@@ -100,19 +100,13 @@ else {
 				} forEach _vics;
 			};
 
-			if (_ptype == "Vehicle" || _ptype == "Armor") then {
-					{
-						_x setVehicleAmmo random 1;
-						_x setDamage random [0, 0.45, 0.75];
-						_x setFuel random [0.2, 0.40, 0.60];
-					} forEach _vics;
 
-					if (_type == "Armor") then
-					{
-						_unt = (createGroup [_victimSide, true]) createUnit [selectRandom _deadUnitTypes, getPos ((_objects select {typeOf _x == "MSF_Placeholder_Infantry_D"}) select 0), [], 0, "CAN_COLLIDE"];
-						_unt setDamage 1;
-						_unt moveInDriver (_vics select 0);
-					}
+			if (_ptype == "Vehicle" || _ptype == "Armor") then { [_vics] call MSF_fnc_SetRandomVehicleState; };
+			if (_ptype == "Armor") then
+			{
+				_unt = (createGroup [_victimSide, true]) createUnit [selectRandom _deadUnitTypes, getPos ((_objects select {typeOf _x == "MSF_Placeholder_Infantry_D"}) select 0), [], 0, "CAN_COLLIDE"];
+				_unt setDamage 1;
+				_unt moveInDriver (_vics select 0);
 			};
 			if (_ptype == "Static") then {
 				{

@@ -107,6 +107,7 @@ if (_intelP && _type in ["Mil_NATO", "Mil_OPFOR", "Mil_IND"]) then
 	} forEach _deadUnits;
 };
 
+[_allObjs select {_x isKindOf "LandVehicle"}] call MSF_fnc_SetRandomVehicleState;
 [_allObjs, false] call MSF_fnc_ShowHideObjects;
 
 if (_intel) then {

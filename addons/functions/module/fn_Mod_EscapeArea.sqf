@@ -22,7 +22,7 @@ switch _mode do
 				_trig setTriggerArea [_area, _area, 0, _isRectangle];
 				_trig setTriggerStatements [
 					"count (allPlayers select { !(_x inArea thisTrigger) }) > 0;",
-					"['end1'] call BIS_fnc_endMission;",
+					"['end1', true] remoteExecCall ['BIS_fnc_endMission'];",
 					""
 				];
 			};

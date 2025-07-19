@@ -94,3 +94,13 @@ class CfgHints
 		};
 	};
 };
+
+class CfgHQIdentities
+{
+	class MSF_Logi
+	{
+		name = "Logistics Command";
+		pitch = 1;
+		speaker = "Male03EN";
+	};
+};

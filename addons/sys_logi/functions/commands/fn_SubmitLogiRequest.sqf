@@ -6,7 +6,7 @@ private _item = [_type] call MSF_Logi_fnc_GetLogiSupports;
 private _code = {};
 
 if (serverTime < (missionNamespace getVariable "MSF" getOrDefault ["LastLogiRequstTime", 0]) + 30) exitWith {
-	[side player, "Base"] commandChat "Cannot process logistics support request, all logistics units are busy.";
+	[side player, "MSF_Logi"] commandChat "Cannot process logistics support request, all logistics units are busy.";
 };
 
 if (_item # 5 == 1) then {
@@ -14,7 +14,7 @@ if (_item # 5 == 1) then {
 		private _type = _item # 3;
 
 		[missionNamespace, "MSF_Logi_DropRequested", [side player, _pos, _type]] remoteExec ["BIS_fnc_callScriptedEventHandler", 2];
-		[[side player, "Base"], format ["%1 air-drop en route to grid %2", _item # 0, mapGridPosition _pos]] remoteExec ["commandChat", side player];
+		[[side player, "MSF_Logi"], format ["%1 air-drop en route to grid %2", _item # 0, mapGridPosition _pos]] remoteExec ["commandChat", side player];
 
 		private _mID = format ["%1_%2", _type, random 999];
 		private _marker = createMarkerLocal [_mID, _pos];
@@ -32,7 +32,7 @@ if (_item # 5 == 1) then {
 if (_supplyChain) then {}
 else
 {
-	[side player, "Base"] commandChat "Logistics Support request received";
+	[side player, "MSF_Logi"] commandChat "Logistics Support request received";
 
 	[_code, _item, uiNamespace getVariable ["MSFLogiDeployCoord", []]] spawn {
 		params ["_code", "_item", "_pos"];
