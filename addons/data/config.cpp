@@ -13,3 +13,9 @@ class CfgPatches
       requiredAddons[] = { "MSF3den" };
     };
 };
+
+class CfgUnitInsignia
+{
+	#include "cfg\MSF_Insignia.hpp"
+  #include "cfg\MSF_Qual.hpp"
+};

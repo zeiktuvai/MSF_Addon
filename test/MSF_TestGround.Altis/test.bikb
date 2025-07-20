@@ -1,0 +1,14 @@
+class Sentences
+{
+    class tna1
+    {
+        text = "Welcome to Tanoa, I understand you ran afoul of our unwanted guests. Well, I'm glad to see you made it through unharmed, even if your presence was not invited here you are welcome.  I am Captain Kai, commander of Tanoa air base and your liaison for the time being an the behest of COL Nagata, our commander.";
+        speech[] = { "dialog\line1.ogg" };
+        class Arguments {};
+        actor = "civ1";
+    };
+};
+class Arguments {};
+class Special {};
+startWithVocal[] = { hour };
+startWithConsonant[] = { europe, university };

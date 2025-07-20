@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.14.1]
+
+- Moved Escape Area module from OFE to main MSF addon (For designating an area that will trigger end scenario if any players leave that area).
+- Added code to randomize damage/fuel/ammo for any vehicles spawned by the Dead Unit module.
+- Moved logi points notification to chat message.
+- Re-organized some background code.
+
 ## [2.14.0]
 
 - Added Logistics Support Channel Menu to allow airdrops and other Logi support to be called in.

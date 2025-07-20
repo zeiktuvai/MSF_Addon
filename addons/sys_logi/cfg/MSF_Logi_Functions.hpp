@@ -73,8 +73,11 @@ class CfgFunctions
         class Spawn
         {
             file = "z\msf\addons\sys_logi\functions\spawn";
+            class SpawnAndFillBoxesOnPlaceholder {};
             class SpawnLogiBackpack {};
             class SpawnLogiCrate {};
+            class SpawnUnmannedVicsOnPlaceholder {};
+            class SpawnVehicleAmmoOnPlaceholder {};
             class SpawnVehicleParaDrop {};
         };
     };

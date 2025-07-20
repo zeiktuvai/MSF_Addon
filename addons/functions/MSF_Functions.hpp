@@ -80,6 +80,7 @@ class CfgFunctions
 			class Mod_DeadUnit {};
 			class Mod_DeleteUnit {};
 			class Mod_Dialog {};
+			class Mod_EscapeArea {};
 			class Mod_Fuel {};
 			class Mod_GM {};
 			class Mod_InfantryVehiclePatrol {};
@@ -127,6 +128,9 @@ class CfgFunctions
 			class SpawnAreaVehicleDefense {};
 			class SpawnAreaVehiclePatrol {};
 			class SpawnGroupInSafePos {};
+			class SpawnInfantryInBuildings {};
+			class SpawnInfantryOnPlaceholder {};
+			class SpawnMannedVicArray {};
 			class SpawnSeekAndDestroyVehicles {};
 			class SpawnUAV {};
 			class SpawnWaveDefenseArea {};

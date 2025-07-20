@@ -43,12 +43,6 @@ class Extended_PreInit_EventHandlers
     };
 };
 
-class CfgUnitInsignia
-{
-	#include "cfg\insignia\MSF_Insignia.hpp"
-	#include "cfg\insignia\MSF_Qual.hpp"
-};
-
 //Temp Triggers for compatibility
 class CfgNonAIVehicles
 {
@@ -92,5 +86,15 @@ class CfgHints
 			description = "Primary mission objectives have been completed, use the %11 option in your %12 to end the mission when you are ready.";			
 			arguments[] = {{"End Mission"}, {"ACE Self Menu"}};
 		};
+	};
+};
+
+class CfgHQIdentities
+{
+	class MSF_Logi
+	{
+		name = "Logistics Command";
+		pitch = 1;
+		speaker = "Male03EN";
 	};
 };
