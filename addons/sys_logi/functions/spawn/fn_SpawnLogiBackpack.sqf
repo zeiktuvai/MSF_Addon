@@ -1,17 +1,19 @@
-params [["_unit", objNull, [objNull]], ["_type", "", [""]]];
+params [["_type", "", [""]]];
 
+
+private _obj = player getVariable ["MSF_SupplySource", objNull];
 private _bpClasses = ["B_Kitbag_sgg"];
+private _pos = [_obj] call MSF_Logi_fnc_CheckSupplyPointExists;
+private _bp = createVehicle [(selectRandom _bpClasses), _pos, [], 4, "CAN_COLLIDE"];
 
 switch (_type) do {
 	case "BP_Medical": {
 		private _items = parseSimpleArray (getText (configFile >> "MSFConfig" >> "BackPackSets" >> "MedicBackpack"));
-		
-		_unit addBackpack (selectRandom _bpClasses);
 
 		{
 			_x params ["_item", "_count"];
 			for "_i" from 1 to _count do {
-				_unit addItemToBackpack _item;
+				_bp addItemCargo [_item, 1];
 			};
 		} forEach _items;
 	};
@@ -20,33 +22,29 @@ switch (_type) do {
 		private _items = ([] call MSF_Logi_fnc_GetPlayerWeaponInventory) get "Mags";
 		private _max = 0.9;
 
-		_unit addBackpack (selectRandom _bpClasses);
-
-		while { loadBackpack _unit < _max } do {
-			_unit addItemToBackpack (selectRandom _items);
+		while { load _bp < _max } do {
+			_bp addMagazineCargo [(selectRandom _items), 1];
 		};
 	};
 	case "BP_Std": {
 		private _items = parseSimpleArray (getText (configFile >> "MSFConfig" >> "BackPackSets" >> "StandardBackpack"));
-		private _mag = primaryWeaponMagazine _unit;
-
-		_unit addBackpack (selectRandom _bpClasses);
+		private _mag = primaryWeaponMagazine player;
 
 		{
 			_x params ["_item", "_count"];
 			for "_i" from 1 to _count do {
-				_unit addItemToBackpack _item;
+				_bp addItemCargo [_item, 1];
 			};
 		} forEach _items;
 
 		if (count _mag > 0) then {
 			for "_i" from 1 to 3 do {
-				_unit addItemToBackpack (_mag # 0);
+				_bp addMagazineCargo [(_mag # 0), 1];
 			};
 		};
 
-		if (_unit getUnitTrait "UavHacker" == true) then {
-			_unit addItemToBackpack "ACE_UAVBattery";
+		if (player getUnitTrait "UavHacker" == true) then {
+			_bp addItemCargo ["ACE_UAVBattery", 2];
 		}
 	};
 };

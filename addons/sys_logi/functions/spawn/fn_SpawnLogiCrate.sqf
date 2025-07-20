@@ -1,6 +1,8 @@
 #include "\z\msf\addons\main\cfg\MSF_Macros.hpp"
-params [["_unit", objNull, [objNull]], ["_type", "Ammo", [""]]];
+params [["_type", "Ammo", [""]]];
 
+private _obj = player getVariable ["MSF_SupplySource", objNull];
+private _pos = [_obj] call MSF_Logi_fnc_CheckSupplyPointExists;
 private ["_classes", "_items", "_maxFill"];
 
 switch (_type) do {
@@ -24,7 +26,7 @@ switch (_type) do {
 	};
 };
 
-private _crate = createVehicle [selectRandom _classes, position _unit];
+private _crate = createVehicle [selectRandom _classes, _pos, [], 4, "CAN_COLLIDE"];
 
 if (_type == MSF_CARGO_FOOD || _type == MSF_CARGO_AMMO || _type == MSF_CARGO_ORD) then {
 	clearWeaponCargoGlobal _crate;
@@ -44,6 +46,4 @@ if (_type == MSF_CARGO_AMMO) then {
 	[_crate] call MSF_Logi_fnc_SetupRearmInteraction;
 };
 
-
 [_crate, 1] call ace_cargo_fnc_setSize;
-[_unit, _crate] call ace_dragging_fnc_startCarry;

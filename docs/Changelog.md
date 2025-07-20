@@ -1,5 +1,57 @@
 # Changelog
 
+## [2.14.1]
+
+- Moved Escape Area module from OFE to main MSF addon (For designating an area that will trigger end scenario if any players leave that area).
+- Added code to randomize damage/fuel/ammo for any vehicles spawned by the Dead Unit module.
+- Moved logi points notification to chat message.
+- Re-organized some background code.
+
+## [2.14.0]
+
+- Added Logistics Support Channel Menu to allow airdrops and other Logi support to be called in.
+- Added Logistics terminal item that fits in the GPS slot and allows access to the Logistics system.
+- Added Logistics menu to terminal item accessible through ACE Self Interaction.
+- Allowed Engineer class to access most Logi screens remotely.
+- Updated Supply Depot to new model.
+- Upgraded Supply Depot interface to YodelOS.
+- Added service worker to add logistics points on an interval as configured in Add-on Options.
+- Removed infinite items, all items now have a base cost and a configurable multiplier (Add-on Options).
+- Vehicle Air-Drops removed from Supply Depot.
+- Removed the Supply Truck module (It may still exist in your mission, but will no longer do anything).
+
+## [2.13.5]
+
+- Added code to ensure shared vehicle loadouts are removed when a player leaves the session and when a loadout is unshared by a player.
+- Fixed a bug causing vehicle loadouts not to be shared at all.
+- Fixed a bug where in some instances when a player updates their shared loadout it did not update the loadout for other players.
+
+## [2.13.4]
+
+- Added code and UI elements to enable Vehicle Loadout sharing.
+
+## [2.13.3]
+
+- Updated Supply Depot interface to Yodel OS.
+- Updated Load-out dialog to display create load-out input within the Yodel OS window instead of an external display.
+- Fixed issue with saving containers (backpacks, vests, etc) in vehicle load-outs causing them not to display or be captured properly. The load-out storage format needed to be changed to accommodate this fix, however existing entries will be converted automatically.
+
+## [2.13.2]
+
+- Fixed "Create Loadout" input dialog allowing empty strings as a name
+
+## [2.13.1]
+
+- Added "Vehicle Loadout Terminal"
+- Updated "Supply Depot" to "Supply Crate"
+- Some UI Fixes
+
+## [2.13.0]
+
+- Added Vehicle Loadouts to the logistics system
+- Updated persist module code
+- Updated some UI componenets
+
 ## [2.12.5]
 
 - Updated MSF Handler to a service worker model for greater efficiency and scalability
@@ -31,7 +83,16 @@
 - Added standard backpack to supply depot
 - Added intel laptop with custom screen animation
 - Updated Rarm interaction to:
-  - Add UAV Battery to inventory if player is drone operator and has less than 2 batteries in inventory
+  - Add UAV Battery to inventory if player is drone operator and has less than 2 batteries in in- Added Logistics Support Channel Menu to allow airdrops and other logi support to be called in.
+- Added Logistics terminal item that fits in the GPS slot and allows access to the Logistics system.
+- Added Logistics menu to terminal item accessible through ACE Self Interaction.
+- Allowed Engineer class to access most logi screens remotely.
+- Updated Supply Depot to new model.
+- Upgraded Supply Depot interface to YodelOS.
+- Added service worker to add logistics points on an interval as configured in Addon Options.
+- Removed infinite items, all items now have a base cost and a configuratble multiplier (Addon Options).
+- Vehicle Air-Drops removed from Supply Depot.
+- Removed the Supply Truck module.ventory
   - Add Hand Grenade if player has less than 3 in inventory
 - Updated air drop code to use event handler.
 - Updated Supply Depot UI

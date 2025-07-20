@@ -53,6 +53,7 @@ class CfgFunctions
 		class Helpers
 		{
 			file = "z\msf\addons\functions\helper";
+			class CheckPlayerTrait {};
 			class CreateActivationTrigger {};
 			class CreateMapMarker {};
 			class DistinctArray {};
@@ -61,6 +62,7 @@ class CfgFunctions
 			class GetModuleActivationSide {};
 			class GetRadialPositionRoute {};
 			class GetRoadDirection {};
+			class GetTimeBasedGUID {};
 			class GetVehiclesByProperty {};
 			class GetVehiclesByPropertyValue {};
 		};
@@ -78,6 +80,7 @@ class CfgFunctions
 			class Mod_DeadUnit {};
 			class Mod_DeleteUnit {};
 			class Mod_Dialog {};
+			class Mod_EscapeArea {};
 			class Mod_Fuel {};
 			class Mod_GM {};
 			class Mod_InfantryVehiclePatrol {};
@@ -112,6 +115,8 @@ class CfgFunctions
 			class AntistasiEnemyPlaneService {};
 			class InfiniteFuelService {};
 			class RegisterServiceWorker {};
+			class RemoveServiceWorker {};
+			class SetServiceWorker {};
 		};
 		class Spawn
 		{
@@ -123,6 +128,9 @@ class CfgFunctions
 			class SpawnAreaVehicleDefense {};
 			class SpawnAreaVehiclePatrol {};
 			class SpawnGroupInSafePos {};
+			class SpawnInfantryInBuildings {};
+			class SpawnInfantryOnPlaceholder {};
+			class SpawnMannedVicArray {};
 			class SpawnSeekAndDestroyVehicles {};
 			class SpawnUAV {};
 			class SpawnWaveDefenseArea {};

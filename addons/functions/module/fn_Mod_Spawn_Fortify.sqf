@@ -30,10 +30,15 @@ private _intelC = _logic getVariable ["IntelChance", 0.1];
 
 [_units, false] call MSF_fnc_ShowHideObjects;
 
-[_area select 0, _area select 1, _height, _position, [[_activationSide] call MSF_fnc_GetModuleActivationSide, "present"], ["this",
-	"[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_FortifyArea; }; ",
-	""],
-	_isRectangle, _onStart, false,
+[
+	_area select 0, 
+	_area select 1, 
+	_height,
+	_position, [[_activationSide] call MSF_fnc_GetModuleActivationSide, "present"], 
+	["this", "[thisTrigger] spawn { params [""_trigger""]; [_trigger] call MSF_fnc_FortifyArea; }; ", ""],
+	_isRectangle, 
+	_onStart, 
+	false,
 	[[_side] call BIS_fnc_sideType, _building, _bldgStr, _bldgProb, _vehicle, _vicNum, _vicFill, _vicProb, _armor, _armorNum, _armorProb, _static, _staticNum, _staticProb, _air, _airNum, _airProb, _area, [_intelP, _interactC, _intelC], _units],
 	true
 ] call MSF_fnc_CreateActivationTrigger;	

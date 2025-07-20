@@ -14,7 +14,7 @@ private _interactC = _logic getVariable ["InteractionChance", 0.7];
 private _intelC = _logic getVariable ["IntelChance", 0.2];
 
 private _stype = if (_type == "Random") then { selectRandom ["Vehicle", "Armor", "Supply", "Medical", "Armory", "Food"] } else { _type };
-private _def = ["POI", _stype] call MSF_fnc_OFE_GetComposition;
+private _def = ["POI", _stype] call MSF_Loc_fnc_GetComposition;
 private _intelID = "";
 
 private _desc = "Reported Unknown Site";
@@ -31,5 +31,6 @@ if (_intel) then {
 	_intelID = ["SUPPLLY_MOD", position _logic, _desc, ["CIV", "MIL", "OBJ"], 1, ["hd_unknown", "Color3_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], []] call MSF_Intel_fnc_AddIntelItem;
 };
 
-[false, _position, _def, _stype, [_spawnSide] call BIS_fnc_sideType, [_victimSide] call BIS_fnc_sideType,
-	[_activationSide] call MSF_fnc_GetModuleActivationSide, _supplyCount, random [_min, (_min + _max) / 2, _max], _intelID, [_intelP, _interactC, _intelC]] call MSF_fnc_OFE_SpawnPOI;
+[_position, _def, _stype, [_spawnSide] call BIS_fnc_sideType, [_victimSide] call BIS_fnc_sideType,
+	[_activationSide] call MSF_fnc_GetModuleActivationSide, _supplyCount, (random [_min, (_min + _max) / 2, _max]), 
+	_intelID, [_intelP, _interactC, _intelC], false, 500] call MSF_Loc_fnc_InitPOI;

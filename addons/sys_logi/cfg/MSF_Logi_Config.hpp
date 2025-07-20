@@ -10,32 +10,26 @@ class MSF_Logi_Config
             class Ammo
             {
                 name = "Ammo Bearer Backpack";
-                description = "Places a backpack filled with ammo for players primary weapons in place of your current backpack";
+                description = "Places a backpack filled with ammo for players primary weapons in place of your current backpack.";
                 icon = BP_ICON;
                 type = "BP_Ammo";
-                depotInfinite = "true";
-                supplyTruckInfinite = "false";
-                supplyTruck = "true";
+                baseCost = 5;
             };
             class Medical
             {
                 name = "Combat Medic Backpack";
-                description = "Places a backpack with medical supplies in place of your current backpack";
+                description = "Places a backpack with medical supplies in place of your current backpack.";
                 icon = BP_ICON;
                 type = "BP_Medical";
-                depotInfinite = "true";
-                supplyTruckInfinite = "false";
-                supplyTruck = "true";
+                baseCost = 5;
             };
             class Standard
             {
                 name = "Standard Backpack";
-                description = "Places a backpack with a standard set of items in place of your current backpack";
+                description = "Places a backpack with a standard set of items in place of your current backpack.";
                 icon = BP_ICON;
                 type = "BP_Std";
-                depotInfinite = "true";
-                supplyTruckInfinite = "false";
-                supplyTruck = "true";
+                baseCost = 5;
             };
         };
         class Crates
@@ -46,9 +40,7 @@ class MSF_Logi_Config
                 description = "Spawns an ammo supply crate that adds primary/secondary ammo to a players inventory upon interaction.";
                 icon = "a3\ui_f\data\map\vehicleicons\iconcrateammo_ca.paa";
                 type = MSF_CARGO_AMMO;
-                depotInfinite = "true";
-                supplyTruckInfinite = "false";
-                supplyTruck = "true";
+                baseCost = 3;
             };
             class HeavyAmmo
             {
@@ -56,9 +48,7 @@ class MSF_Logi_Config
                 description = "Spawns a supply crate containing grenades and launcher ammo.";
                 icon = "a3\ui_f\data\map\vehicleicons\iconcrateord_ca.paa";
                 type = MSF_CARGO_ORD;
-                depotInfinite = "true";
-                supplyTruckInfinite = "false";
-                supplyTruck = "true";
+                baseCost = 7;
             };
             class Medical
             {
@@ -66,44 +56,43 @@ class MSF_Logi_Config
                 description = "Spawns an ACE advanced medical crate.";
                 icon = CRATE_ICON;
                 type = MSF_CARGO_MED;
-                depotInfinite = "true";
-                supplyTruckInfinite = "false";
-                supplyTruck = "true";
+                baseCost = 5;
             };
             class Food
             {
                 name = "Food Crate";
-                description = "Spawns a supply crate containing ACE Rations";
+                description = "Spawns a supply crate containing ACE Rations.";
                 icon = CRATE_ICON;
                 type = MSF_CARGO_FOOD;
-                depotInfinite = "true";
-                supplyTruckInfinite = "false";
-                supplyTruck = "true";
+                baseCost = 3;
             };
         };
-        class Vehicles
+    };
+    class Supports
+    {
+        class Ambulance
         {
-            class Medical
-            {
-                name = "Vehicle Air-Drop: Ambulance";
-                description = "Allows you to call in an Ambulance Air-drop.";
-                icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_medevac_ca.paa";
-                type = "V_Medical";
-                depotInfinite = "false";
-                supplyTruckInfinite = "";
-                supplyTruck = "false";
-            };
-            class Supply
-            {
-                name = "Vehicle Air-Drop: Supply Truck";
-                description = "Allows you to call in an Supply Truck Air-drop. (Can rearm players, rearm vehicles, and acts as a mini supply depot).";
-                icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_ammo_ca.paa";
-                type = "V_Supply";
-                depotInfinite = "false";
-                supplyTruckInfinite = "";
-                supplyTruck = "false";
-            };
+            name = "Ambulance";
+            description = "Calls in an Ambulance Air-drop loaded with medical supplies.";
+            icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_medevac_ca.paa";
+            type = "V_Medical";
+            baseCost = 3;
+            airDrop = 1;
         };
+        class SupplyDepot
+        {
+            name = "Supply Depot";
+            description = "Calls in a Supply Depot Air-drop.";
+            icon = "a3\ui_f\data\map\vehicleicons\iconobject_3x1_ca.paa";
+            type = "SupplyDepot";
+            baseCost = 5;
+            airDrop = 1;
+        };
+        //supply depot
+        //UAV
+        //Artillery
+        //Flares
+        //Armored Vic
     };
 };
 

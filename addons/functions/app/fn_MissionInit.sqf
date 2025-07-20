@@ -46,4 +46,8 @@ if (!isDedicated) then
 	};
 };
 
+if (hasInterface) then {
+	[] call MSF_UI_fnc_InitUI;
+};
+
 [] call MSF_fnc_RandomSpawn;

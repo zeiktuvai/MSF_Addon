@@ -1,4 +1,3 @@
-params [["_key", "base", [""]], ["_config", "MSF", [""]]];
+params [["_key", "base", [""]], ["_config", "MSF", [""]], ["_default", ""]];
 
-private _data = missionNamespace getVariable _config;
-_data getOrDefault [_key, []];
+missionNamespace getVariable _config getOrDefault [_key, _default];
