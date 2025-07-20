@@ -1,86 +1,177 @@
-class SupplyDialog
+class MSF_SupplyDialog
 {
     idd = 6217;
-    class ControlsBackground
+    
+     class ControlsBackground
     {
-        class RscFrame_1800: RscFrame
-        {
-            idc = 1800;
-
-            x = "0.392558 * safezoneW + safezoneX";
-            y = "0.313 * safezoneH + safezoneY";
-            w = "0.207209 * safezoneW";
-            h = "0.231 * safezoneH";
-            colorText[] = {0,0,0,1};
-            colorBackground[] = {0.412,0.412,0.412,1};
-            colorActive[] = {0.412,0.412,0.412,1};
-        };
-        class msf_supply_diag_bg: RscPicture
-        {
-            idc = 1200;
-
-            text = "#(argb,8,8,3)color(0.412,0.412,0.412,0.8)";
-            x = "0.392558 * safezoneW + safezoneX";
-            y = "0.335 * safezoneH + safezoneY";
-            w = "0.207209 * safezoneW";
-            h = "0.209 * safezoneH";
-        };
-        class IGUIBack_2200: IGUIBack
-        {
-            idc = 2200;
-
-            x = "0.392558 * safezoneW + safezoneX";
-            y = "0.313 * safezoneH + safezoneY";
-            w = "0.207209 * safezoneW";
-            h = "0.022 * safezoneH";
-        };
+        #include "assets\MSFTablet.inc"
     };
     class Controls
     {
-        class MSF_supply_dialog_ok: RscButtonMenu
+        #include "assets\Header.inc"
+        class MainGroup : RscControlsGroup
         {
-            idc = 1600;
-            action = "private _sel = lbCurSel 1500; [player, lbData [1500, _sel]] call MSF_Logi_fnc_GetLogiSelection; closeDialog 0;";            
-            //colorBackground2[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-            colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+            idc = 102;
+            
+            x = STR(CENTER_X - 100.2 * GRID_W);
+            y = STR(CENTER_Y - 61.4 * GRID_H);
+            w = STR(200.2 * GRID_W);
+            h = STR(116.1 * GRID_H);
+            class Controls
+            {
+                class menu: ctrlMenuStrip
+                {
+                    idc = 2201;            
+                    x = "0";
+                    y = "0";
+                    w = STR(200 * GRID_W);
+                    h = STR(5 * GRID_H);
+                    class Items
+                    {
+                        class Default;
+                        class Separator;
+                    };
+                };
+                class list_item: RscText
+                {
+                    idc = 1002;
 
-            text = "Retrieve"; //--- ToDo: Localize;
-            x = "0.546046 * safezoneW + safezoneX";
-            y = "0.511 * safezoneH + safezoneY";
-            w = "0.0460465 * safezoneW";
-            h = "0.022 * safezoneH";
-            colorText[] = {1,1,1,1};
-            colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                    text = "Item";
+                    colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                    x = STR(5 * GRID_W);
+                    y = STR(10 * GRID_H);
+                    w = STR(100 * GRID_W);
+                    h = STR(5 * GRID_H);
+                };
+                class list_cost: RscText
+                {
+                    idc = 1003;
+
+                    text = "Cost";                    
+                    x = STR(94 * GRID_W);
+                    y = STR(10 * GRID_H);
+                    w = STR(100 * GRID_W);
+                    h = STR(5 * GRID_H);
+                };
+                class detail_bg: RscText
+                {
+                    idc = 1202;
+
+                    text = "";
+                    colorBackground[] = {0,0,0,0.3};
+                    x = STR(5 * GRID_W);
+                    y = STR(15 * GRID_H);
+                    w = STR(100 * GRID_W);
+                    h = STR(95 * GRID_H);
+                };
+                class MSF_supply_dialog_list: ctrlListNBox
+                {
+                    idc = 1500;
+
+                    onLBSelChanged = "params ['_control', '_lbCurSel', '_lbSelection']; [_control, _lbCurSel, _lbSelection] call MSF_UI_fnc_OnSupplySelChanged;";
+                    disableOverflow = 1;
+                    rowHeight = 0.05;
+                    colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                    x = STR(5 * GRID_W);
+                    y = STR(15 * GRID_H);
+                    w = STR(100 * GRID_W);
+                    h = STR(95 * GRID_H);
+                };
+                class PointsDisp : RscStructuredText
+                {
+
+                    idc = 1203;
+
+                    text = "Remaining Supply: 0pts";
+                    colorBackground[] = {1,0.75,0,0.3};                            
+                    x = STR(114 * GRID_W);
+                    y = STR(10 * GRID_H);
+                    w = STR(75.6 * GRID_W);
+                    h = STR(5 * GRID_H);
+                    shadow = 0;
+                    class Attributes
+                    {
+                        font = "PuristaBold";
+                        align = "center";
+                        size = 0.9;
+                        shadow = 1;
+                    };
+                };
+                class DetailGroup : RscControlsGroup
+                {
+                    idc = 104;
+                    x = STR(114 * GRID_W);
+                    y = STR(18 * GRID_H);
+                    w = STR(77 * GRID_W);
+                    h = STR(93 * GRID_H);
+
+                    class Controls
+                    {
+                        class detailt_bg: RscFrame
+                        {
+                            idc = 1201;
+
+                            text = "";
+                            colorBackground[] = {0,0,0,0.3};
+                            x = STR(0.1 * GRID_W);
+                            y = STR(0.1 * GRID_H);
+                            w = STR(75.5 * GRID_W);
+                            h = STR(80 * GRID_H);
+                        };
+                        class detail_title: RscStructuredText
+                        {
+                            idc = 1005;
+
+                            text = "";
+                            colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                            x = STR(0.1 * GRID_W);
+                            y = STR(0.1 * GRID_H);
+                            w = STR(75 * GRID_W);
+                            h = STR(7 * GRID_H);
+                            class Attributes
+                            {
+                                size = 1.2;
+                            };
+                        };
+                        class detail_text: RscStructuredText
+                        {
+                            idc = 1004;
+
+                            text = "";
+                            x = STR(0.1 * GRID_W);
+                            y = STR(8 * GRID_H);
+                            w = STR(75 * GRID_W);
+                            h = STR(73 * GRID_H);
+                            class Attributes
+                            {
+                                size = 0.8;
+                            };
+                        };
+                        class MSF_supply_dialog_ok: RscShortcutButton
+                        {
+                            idc = 1600;
+                            onButtonClick = "[lnbData [1500, [lnbCurSelRow 1500, 1]]] call MSF_Logi_fnc_RetrieveSupplies; closeDialog 0;";
+                            colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+
+                            borderSize = 2;
+                            colorBorder[] = {1,1,1,1};
+                            text = "            Retrieve Selection"; //--- ToDo: Localize;
+                            x = STR(0.1 * GRID_W);
+                            y = STR(83 * GRID_H);
+                            w = STR(75.5 * GRID_W);
+                            h = STR(9 * GRID_H);
+                            colorText[] = {1,1,1,1};
+                            colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                            class Attributes
+                            {
+                                size = 1.3;
+                                align = "left";                                
+                            };
+                        };
+                    };
+                };
+            };
         };
-        class RscButtonMenuCancel_2700: RscButtonMenuCancel
-        {
-            action = "closeDialog 0";
-
-            x = "0.492326 * safezoneW + safezoneX";
-            y = "0.511 * safezoneH + safezoneY";
-            w = "0.0460465 * safezoneW";
-            h = "0.022 * safezoneH";
-            colorText[] = {1,1,1,1};
-            colorBackground[] = {0,0,0,0.8};
-        };
-        class MSF_supply_dialog_list: RscListBox
-        {
-            idc = 1500;
-
-            x = "0.40407 * safezoneW + safezoneX";
-            y = "0.357 * safezoneH + safezoneY";
-            w = "0.184186 * safezoneW";
-            h = "0.132 * safezoneH";
-        };
-        class RscText_1001: RscText
-        {
-            idc = 1001;
-
-            text = "Logistics Depot"; //--- ToDo: Localize;
-            x = "0.392558 * safezoneW + safezoneX";
-            y = "0.313 * safezoneH + safezoneY";
-            w = "0.141977 * safezoneW";
-            h = "0.022 * safezoneH";
-        };        
+        #include "assets/StatusBar.inc"
     };
 };

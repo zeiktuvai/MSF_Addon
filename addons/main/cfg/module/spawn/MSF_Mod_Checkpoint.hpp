@@ -54,6 +54,17 @@ class MSF_Module_Spawn_RoadCheckpoint : Module_F
 				};
 			};	
 		};
+		class ActivationSide
+		{
+			displayName = "Activation Side";
+			tooltip = "Faction that will spawn these locations.";
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			property = "MSF_Module_Checkpoint_ActSide";
+			defaultValue = 3;
+			typeName = "Number";
+			#include "..\..\eden\ActivationSide.inc"
+		};
 		class Integrations
 		{
 			data = "AttributeSystemSubcategory";

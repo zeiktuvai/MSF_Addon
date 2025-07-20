@@ -1,1 +1,0 @@
-missionNamespace setVariable ["MSF_Mod_RandomSpawnCrash", true, true];

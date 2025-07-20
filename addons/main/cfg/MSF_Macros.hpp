@@ -8,3 +8,9 @@
 #define MSF_CARGO_WEAP "Armory"
 #define MSF_CARGO_AMMO "Ammo"
 #define MSF_CARGO_ORD "Ordinance"
+
+#define GRID_H (pixelH * pixelGrid * 0.50)
+#define GRID_W (pixelW * pixelGrid * 0.50)
+#define CENTER_X ((getResolution select 2) * 0.5 * pixelW)
+#define CENTER_Y ((getResolution select 3) * 0.5 * pixelH)
+#define STR(VAR) #VAR

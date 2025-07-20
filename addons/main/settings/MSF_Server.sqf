@@ -21,10 +21,13 @@
 [
 	"MSF_AU_Enemy_Plane",
 	"CHECKBOX",
-	["Disable Enemy Planes", "This option will prevent enemy planes from spawning in Antistasi, leaving unmanned and friendly planes alone. (Does not affect helicopters)."],
-	["MSF - Server Settings", "Antistasi"],
+	["Antistasi - Disable Enemy Planes", "This option will prevent enemy planes from spawning in Antistasi, leaving unmanned and friendly planes alone. (Does not affect helicopters)."],
+	"MSF - Server Settings",
 	false,
-	1
+	1,
+	{
+		[_this, "au_planes", [{[] call MSF_fnc_AntistasiEnemyPlaneService;}, 0]] call MSF_fnc_SetServiceWorker;		
+	}
 ] call CBA_fnc_addSetting;
 [
 	"MSF_Intel_CivTime",
@@ -62,7 +65,7 @@
 	"MSF_Fuel_Tick",
 	"TIME",
 	["Infinite Fuel Tick", "Sets the interval used by the infinite fuel handler to refuel vehicles."],
-	["MSF - Server Settings", "MSF System"],
+	"MSF - Server Settings",
 	[10, 300, 60],
 	1
 ] call CBA_fnc_addSetting;
@@ -70,7 +73,7 @@
 	"MSF_Rearm_PMags",
 	"SLIDER",
 	["Primary Mag Count", "Number of mags to re-arm a player with when using a re-arm object."],
-	["MSF - Server Settings", "MSF Logistics"],
+	["MSF - Server Settings", "Player Re-Arm"],
 	[1, 10, 4, 0],
 	1
 ] call CBA_fnc_addSetting;
@@ -78,15 +81,42 @@
 	"MSF_Rearm_HMags",
 	"SLIDER",
 	["Handgun Mag Count", "Number of mags to re-arm a player with when using a re-arm object."],
-	["MSF - Server Settings", "MSF Logistics"],
+	["MSF - Server Settings", "Player Re-Arm"],
 	[1, 10, 2, 0],
 	1
 ] call CBA_fnc_addSetting;
 [
-	"MSF_Logi_PointsPerVic",
+	"MSF_Logi_CostMulti",
 	"SLIDER",
-	["Vechicle Cost", "Number of logistics points needed to call in a vehicle."],
-	["MSF - Server Settings", "MSF Logistics"],
+	["Logistics Cost Multiplier", "Sets the cost multiplier for support called in via the logistics terminal and items retrieved from supply depots/trucks. (Base Cost * Multiplier)."],
+	["MSF - Server Settings", "Logistics System"],
+	[1, 3, 1, 2],
+	1
+] call CBA_fnc_addSetting;
+[
+	"MSF_Logi_PointsTickEnable",
+	"CHECKBOX",
+	["Enable Logistics Support Channel", "Adds a set amount of logistics points per interval set over time."],
+	["MSF - Server Settings", "Logistics System"],
+	true,
+	1,
+	{
+		[_this, "LogiTick", [{[] call MSF_Logi_fnc_LogisticsChannelService;}, MSF_Logi_PointsTickInterval]] call MSF_fnc_SetServiceWorker;		
+	}
+] call CBA_fnc_addSetting;
+[
+	"MSF_Logi_PointsTickInterval",
+	"TIME",
+	["Logistics Interval", "Interval that will be used for adding logistics points over time."],
+	["MSF - Server Settings", "Logistics System"],
+	[300, 1800, 300],
+	1
+] call CBA_fnc_addSetting;
+[
+	"MSF_Logi_PointsPerTick",
+	"SLIDER",
+	["Logistics Interval Points", "Sets the number of points awarded per inteval."],
+	["MSF - Server Settings", "Logistics System"],
 	[1, 10, 3, 0],
 	1
 ] call CBA_fnc_addSetting;

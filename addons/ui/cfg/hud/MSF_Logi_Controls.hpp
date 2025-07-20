@@ -1,6 +1,6 @@
 class MSF_Hud_LogiControls
 {
-    idd = 6218;
+    idd = 7218;
     fadein = 0;
     fadeout = 0;
     duration = 1e+011;

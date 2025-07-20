@@ -1,0 +1,17 @@
+//#include "defines.hpp"
+//#include "control.hpp"
+respawnOnStart = -1;
+
+// class CfgSentences
+// {
+//     class MSFTest
+//     {
+//         class CIV
+//         {
+//             file = "test.bikb";
+//             #include "test.bikb"
+//         };
+//     };
+// };
+
+#include "devdialog.hpp"

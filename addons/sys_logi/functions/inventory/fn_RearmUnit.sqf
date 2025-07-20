@@ -24,3 +24,14 @@ if (count _hMags > 0) then {
 		_unit addMagazines [_x, MSF_Rearm_HMags];
 	} forEach _invHMags;
 };
+
+if (_unit getUnitTrait "UavHacker" == true) then {
+	if (count (items player select {_x == "ACE_UAVBattery"}) < 2) then {
+		_unit addItemToBackpack "ACE_UAVBattery";
+	};
+};
+
+if (count (itemsWithMagazines player select {_x == "HandGrenade"}) < 3) then {
+	_unit addMagazines ["HandGrenade", 1];
+};
+playSound3D ["a3\sounds_f_mark\arsenal\weapons\longrangerifles\dmr_02_mar10\dmr02_reload.wss", player];

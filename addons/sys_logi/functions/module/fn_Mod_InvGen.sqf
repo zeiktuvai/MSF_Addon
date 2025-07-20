@@ -15,4 +15,6 @@ private _compatUnits = _units select { _x isKindOf "LandVehicle" || _x isKindOf 
 
 {
 	[_x, _clear, _count, _fill, _weights] call MSF_Logi_fnc_GenerateInventory;
+	_x setVariable ["MSF_Logi_isInventory", true];
+	_x setVariable ["MSF_Logi_InvGen", [_clear, _count, _fill, _weights]];
 } forEach (_compatUnits select { maxLoad _x > 0 });

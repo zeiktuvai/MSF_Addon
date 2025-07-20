@@ -1,7 +1,7 @@
 class MSF_Module_ScenarioEnd : Module_F
 {
 	scope = 2;
-	displayName = "Mission - Scenario Ending";
+	displayName = "Mission - ACE Scenario End";
 	icon = "a3\modules_f_curator\data\portraitendmission_ca.paa";
 	category = "MSF_Module";
 	function = "MSF_fnc_Mod_ScenarioEnd";

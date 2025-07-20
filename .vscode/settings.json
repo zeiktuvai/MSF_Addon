@@ -1,0 +1,5 @@
+{
+    "betterOpenEditors.InsertSpaceForLastSlug": true,
+    "betterOpenEditors.PackagePatterns": "**/components/*\n**/modules/*\n**/addons/*",
+    "betterOpenEditors.HideFilePath": true
+}

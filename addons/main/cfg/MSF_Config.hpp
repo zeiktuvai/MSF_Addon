@@ -100,5 +100,6 @@ class MSFConfig
 	class BackPackSets
 	{
 		MedicBackpack = "[['ACE_quikclot',5],['ACE_packingBandage',5],['ACE_tourniquet',2],['ACE_splint',2],['ACE_epinephrine',1],['ACE_adenosine',1],['ACE_morphine',4],['ACE_salineIV_500',2],['ACE_bloodIV',1],['ACE_bodyBag',1],['ACE_EarPlugs',1],['ACE_MapTools',1],['ACE_M26_Clacker',1],['ACE_IR_Strobe_Item',1],['ACE_CableTie',1],['ACE_HuntIR_monitor',1],['ACE_WaterBottle',1],['ACE_Canteen',1],['ACE_microDAGR',1],['ACE_quikclot',15],['ACE_packingBandage',20],['ACE_tourniquet',10],['ACE_splint',10],['ACE_epinephrine',4],['ACE_adenosine',4],['ACE_morphine',11],['ACE_salineIV_500',3],['ACE_bloodIV',4],['ACE_plasmaIV',2],['ACE_bloodIV_500',2],['ACE_plasmaIV_500',2],['ACE_bodyBag',1],['ACE_EarPlugs',3],['ACE_CableTie',1],['ACE_WaterBottle',1],['ACE_personalAidKit',1]]";
+		StandardBackpack = "[['ACE_quikclot', 5],['ACE_packingBandage', 5],['ACE_tourniquet', 2],['ACE_splint', 2],['ACE_epinephrine', 1],['ACE_adenosine', 1],['ACE_morphine', 4],['ACE_salineIV_500', 2],['ACE_bloodIV', 1],['ACE_bodyBag', 1],['ACE_EarPlugs', 1],['ACE_MapTools', 1],['ACE_M26_Clacker', 1],['ACE_IR_Strobe_Item', 1],['ACE_CableTie', 1],['ACE_HuntIR_monitor', 1],['ACE_WaterBottle', 1],['ACE_Canteen', 1],['ACE_microDAG', 1],['HandGrenade', 2],['SmokeShellRed', 1],['SmokeShellGreen', 1]]";
 	};
 };
