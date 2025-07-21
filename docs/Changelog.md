@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.14.2]
+
+- Fixed discovered intel items listed in map missing description text.
+- Fixed a bug with the Road Checkpoint module when NOT placed directly on a road.
+
 ## [2.14.1]
 
 - Moved Escape Area module from OFE to main MSF addon (For designating an area that will trigger end scenario if any players leave that area).
