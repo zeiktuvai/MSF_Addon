@@ -11,7 +11,7 @@ if (!isNil "_intel") then {
 		[side (allPlayers select 0), _taskID, [_taskDesc, _taskTitle, ""], _position, "SUCCEEDED", 5, true, _taskType] call BIS_fnc_taskCreate;	
 	};
 
-	[player, ["Diary", ["Gathered Intel", format ["<marker name='%1'>%2</marker>", _marker, _diaryData]], taskNull, "", false]] remoteExec ["createDiaryRecord"];
+	[player, ["Diary", ["Gathered Intel", format ["<marker name='%1'>%2</marker>", _marker, _title]], taskNull, "", false]] remoteExec ["createDiaryRecord"];
 
 	["MSF_IntelItems", _intel select 0] call MSF_fnc_DeleteConfigValue;	
 };
