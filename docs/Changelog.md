@@ -4,6 +4,7 @@
 
 - Fixed discovered intel items listed in map missing description text.
 - Fixed a bug with the Road Checkpoint module when NOT placed directly on a road.
+- Fixed a bug causing spawned infantry to not be added to zeus when enabled.
 
 ## [2.14.1]
 

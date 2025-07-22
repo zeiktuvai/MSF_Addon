@@ -23,4 +23,8 @@ if (_spots > 0) then {
 	_allObjs = [_unitTypes, _bldgs, _side, _str] call MSF_fnc_SpawnInfantryInBuildings;
 };
 
+if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
+	{ _x addCuratorEditableObjects [_allObjs, true]} forEach allCurators;
+};
+
 _allObjs;
