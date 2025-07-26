@@ -73,7 +73,7 @@ class MSF_Logi_Config
         class Ambulance
         {
             name = "Ambulance";
-            description = "Calls in an Ambulance Air-drop loaded with medical supplies.";
+            description = "Calls in an Ambulance Air-drop filled with medical supplies. Counts as a medical vehicle for advanced ACE Medical requirements.";
             icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_medevac_ca.paa";
             type = "V_Medical";
             baseCost = 3;
