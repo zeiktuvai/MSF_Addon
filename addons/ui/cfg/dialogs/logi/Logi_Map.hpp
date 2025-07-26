@@ -1,57 +1,11 @@
-import RscObject;
-import RscText;
-import RscFrame;
-import RscLine;
-import RscProgress;
-import RscPicture;
-import RscPictureKeepAspect;
-import RscVideo;
-import RscHTML;
-import RscButton;
-import RscShortcutButton;
-import RscEdit;
-import RscCombo;
-import RscListBox;
-import RscListNBox;
-import RscXListBox;
-import RscTree;
-import RscSlider;
-import RscXSliderH;
-import RscActiveText;
-import RscActivePicture;
-import RscActivePictureKeepAspect;
-import RscStructuredText;
-import RscToolbox;
-import RscControlsGroup;
-import RscControlsGroupNoScrollbars;
-import RscControlsGroupNoHScrollbars;
-import RscControlsGroupNoVScrollbars;
-import RscButtonTextOnly;
-import RscButtonMenu;
-import RscButtonMenuOK;
-import RscButtonMenuCancel;
-import RscButtonMenuSteam;
-import RscMapControl;
-import RscMapControlEmpty;
-import RscCheckBox;
-import IGUIBack;
-import ctrlListNBox;
-import ctrlMenuStrip;
-
-#define GRID_H (pixelH * pixelGrid * 0.50)
-#define GRID_W (pixelW * pixelGrid * 0.50)
-#define CENTER_X ((getResolution select 2) * 0.5 * pixelW)
-#define CENTER_Y ((getResolution select 3) * 0.5 * pixelH)
-#define STR(VAR) #VAR
-
-class MSFdevdialog
+class MSF_LogiMap
 {
-	idd = 6218;
+	idd = 6219;
 	
     class ControlsBackground
     {
         #include "\z\msf\addons\ui\cfg\dialogs\assets\MSFTablet.inc"
-        
+
         class Map : RscMapControl
         {
             idc = 3001;
@@ -162,10 +116,20 @@ class MSFdevdialog
                         shadow = 1;
                     };
                 };
+                class type : RscText
+                {
+                    idc = 1203;
+
+                    text = "";
+                    x = 0;
+                    y = 0;
+                    w = 0;
+                    h = 0;
+                };
                 class SubmitButton: RscShortcutButton
                 {
                     idc = 1601;
-                    //onButtonClick = "[lnbData [1500, [lnbCurSelRow 1500, 1]], player] call MSF_Logi_fnc_SubmitLogiRequest; closeDialog 0;";
+                    onButtonClick = "[ctrlText 1203, player] call MSF_Logi_fnc_SubmitLogiRequest; closeDialog 0;";
                     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                     text = "    Submit Request";
                     x = STR(140 * GRID_W);
@@ -182,8 +146,8 @@ class MSFdevdialog
                 };
             };
         };
-
-
+       
         #include "\z\msf\addons\ui\cfg\dialogs\assets\StatusBar.inc"
     };
 };
+

@@ -75,20 +75,42 @@ class MSF_Logi_Config
             name = "Ambulance";
             description = "Calls in an Ambulance Air-drop filled with medical supplies. Counts as a medical vehicle for advanced ACE Medical requirements.";
             icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_medevac_ca.paa";
-            type = "V_Medical";
+            type = "Ambulance";
             baseCost = 3;
             airDrop = 1;
+            vehicle = 1;
         };
         class SupplyDepot
         {
             name = "Supply Depot";
-            description = "Calls in a Supply Depot Air-drop.";
-            icon = "a3\ui_f\data\map\vehicleicons\iconobject_3x1_ca.paa";
+            description = "Calls in a Supply Depot Air-drop that allows you to use the supply menu to retrieve various supplies like ammo boxes and medical supplies.";
+            icon = "a3\weapons_f\ammoboxes\data\ui\map_wpnsbox_f_ca.paa";
             type = "SupplyDepot";
             baseCost = 5;
             airDrop = 1;
+            vehicle = 0;
         };
-        //supply depot
+        class FuelDrop
+        {
+            name = "Fuel Tank";
+            description = "Calls in a Fuel Tank Air-drop.";
+            icon = "a3\ui_f\data\igui\cfg\actions\refuel_ca.paa";
+            type = "FuelTank";
+            baseCost = 2;
+            airDrop = 1;
+            vehicle = 0;
+        };
+        class VehicleAmmo
+        {
+            name = "Vehicle Ammo";
+            description = "Calls in a Vehicle Ammo resupply box (ACE Rearm).";
+            icon = "a3\weapons_f\ammoboxes\data\ui\map_ammoveh_f_ca.paa";
+            type = "VicAmmo";
+            baseCost = 3;
+            airDrop = 1;
+            vehicle = 0;
+        };
+        
         //UAV
         //Artillery
         //Flares
@@ -97,4 +119,12 @@ class MSF_Logi_Config
 };
 
 
+// "a3\ui_f\data\map\vehicleicons\iconobject_3x1_ca.paa"
 
+// "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa"
+
+
+// "a3\armor_f_epb\mbt_03\data\ui\mbt_03_ca.paa"
+// "a3\ui_f\data\gui\cfg\communicationmenu\artillery_ca.paa"
+// "a3\modules_f_curator\data\portraitflare_ca.paa"
+// "a3\drones_f\air_f_gamma\uav_02\data\ui\map_uav_02_ca.paa"

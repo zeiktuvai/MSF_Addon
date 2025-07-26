@@ -1,4 +1,4 @@
-class MSFdevdialog
+class MSF_Logi_Supports
 {
 	idd = 6221;
 	
@@ -9,27 +9,30 @@ class MSFdevdialog
     class Controls
     {   
         #include "\z\msf\addons\ui\cfg\dialogs\assets\Header.inc"
-        class menu : RscText // ctrlMenuStrip
+        
+        class menu : ctrlMenuStrip
         {
-            idc = 2201;
-            
+            idc = 2201;            
             x = STR(CENTER_X - 100.2 * GRID_W);
             y = STR(CENTER_Y - 61.4 * GRID_H);
             w = STR(200.1 * GRID_W);
-            h = STR(5 * GRID_H);
-            
-            text = "";
-            colorBackground[] = {0,0,0,1};        
-            // class Items
-            // {
-            //     items[] = {"Logi"};
-            //     class Logi
-            //     {
-            //         text = "Logistics System";
-            //     };                
-            //     class Default;
-            //     class Separator;
-            // };
+            h = STR(5 * GRID_H);     
+            class Items
+            {
+                items[] = {"Map"};                
+                class Map
+                {
+                    text = "Map";
+                    items[] = {"Clear"};
+                };
+                class Clear
+                {
+                    text = "Clear Request Markers";
+                    action = "[] call MSF_UI_fnc_OnClearMarkersClicked";
+                };
+                class Default;
+                class Separator;
+            };
         };
         class MainGroup : RscControlsGroup
         {
@@ -69,7 +72,7 @@ class MSFdevdialog
 
                     text = "";
                     colorBackground[] = {0,0,0,0.3};
-                    x = 0
+                    x = 0;
                     y = STR(5 * GRID_H);
                     w = STR(100 * GRID_W);
                     h = STR(95 * GRID_H);
@@ -78,7 +81,7 @@ class MSFdevdialog
                 {
                     idc = 1500;
 
-                    onLBSelChanged = "params ['_control', '_lbCurSel', '_lbSelection']; [_control, _lbCurSel, _lbSelection] call MSF_UI_fnc_OnSupplySelChanged;";
+                    onLBSelChanged = "params ['_control', '_lbCurSel', '_lbSelection']; [_control, _lbCurSel, _lbSelection] call MSF_UI_fnc_OnSupportSelChanged;";
                     disableOverflow = 1;
                     rowHeight = 0.05;
                     colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
@@ -93,10 +96,10 @@ class MSFdevdialog
 
                     text = "Remaining Logistics: 0pts";
                     colorBackground[] = {1,0.75,0,0.3};                            
-                    x = STR(105 * GRID_W);
-                    y = 0;
-                    w = STR(89 * GRID_W);
-                    h = STR(5 * GRID_H);
+                    x = STR(105.2 * GRID_W);
+                    y = STR(0.1 * GRID_H);
+                    w = STR(88.7 * GRID_W);
+                    h = STR(5.7 * GRID_H);
                     shadow = 0;
                     class Attributes
                     {
@@ -106,13 +109,22 @@ class MSFdevdialog
                         shadow = 1;
                     };
                 };
+                class PointsFrame : RscFrame
+                {
+                    idc = -1;
+                    colorText[] = {0,0,0,1};                            
+                    x = STR(105 * GRID_W);
+                    y = 0;
+                    w = STR(89 * GRID_W);
+                    h = STR(6 * GRID_H);
+                };
                 class DetailGroup : RscControlsGroup
                 {
                     idc = 104;
                     x = STR(105 * GRID_W);
-                    y = STR(7 * GRID_H);
+                    y = STR(5.7 * GRID_H);
                     w = STR(89* GRID_W);
-                    h = STR(93 * GRID_H);
+                    h = STR(94.4 * GRID_H);
 
                     class Controls
                     {
@@ -132,6 +144,17 @@ class MSFdevdialog
                                 align = "center";
                             };
                         };
+                        class detail_text_bg: RscText
+                        {
+                            idc = 1205;
+
+                            text = "";
+                            colorBackground[] = {0,0,0,0.3};
+                            x = STR(0.1 * GRID_W);
+                            y = STR(7 * GRID_H);
+                            w = STR(88.7 * GRID_W);
+                            h = STR(61 * GRID_H);
+                        };
                         class detail_text: RscStructuredText
                         {
                             idc = 1004;
@@ -140,14 +163,13 @@ class MSFdevdialog
                             x = STR(0.1 * GRID_W);
                             y = STR(8 * GRID_H);
                             w = STR(88.8 * GRID_W);
-                            h = STR(59 * GRID_H);
-                            colorBackground[] = {0,0,0,0.3};
+                            h = STR(59 * GRID_H);                            
                             class Attributes
                             {
                                 size = 0.8;
                             };
                         };
-                        class DetailGroup : RscControlsGroup
+                        class StatGroup : RscControlsGroup
                         {
                             idc = 105;
                             x = STR(0.1 * GRID_W);
@@ -191,19 +213,19 @@ class MSFdevdialog
                         class SubmitButton: RscShortcutButton
                         {
                             idc = 1600;
-                            //onButtonClick = "[lnbData [1500, [lnbCurSelRow 1500, 1]], player] call MSF_Logi_fnc_SubmitLogiRequest; closeDialog 0;";
+                            onButtonClick = "closeDialog 0; [lnbData [1500, [lnbCurSelRow 1500, 0]]] call MSF_UI_fnc_DisplayLogiMap;";
                             colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                            text = "    Submit Request";
+                            text = "Select Drop Zone";
                             x = STR(0.1 * GRID_W);
-                            y = STR(84 * GRID_H);
-                            w = STR(75.5 * GRID_W);
+                            y = STR(85 * GRID_H);
+                            w = STR(88.6 * GRID_W);
                             h = STR(9 * GRID_H);
                             colorText[] = {1,1,1,1};
                             colorBackground[] = {1,0.74,0,1};
                             class Attributes
                             {
                                 size = 1.3;
-                                align = "left";                        
+                                align = "center";                        
                             };
                         };
                     };

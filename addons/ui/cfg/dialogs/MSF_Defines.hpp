@@ -123,7 +123,7 @@ class RscButtonMenuCancel;
 class RscButtonMenuSteam;
 class RscMapControl;
 //class RscMapControlEmpty;
-//class RscCheckBox;
+class RscCheckBox;
 class IGUIBack;
 class ctrlListNBox;
 class ctrlMenuStrip;

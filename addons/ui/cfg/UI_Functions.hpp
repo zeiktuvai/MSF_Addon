@@ -12,6 +12,7 @@ class CfgFunctions
             file = "z\msf\addons\ui\functions\commands";
             class DisplayDeployUAV {};
             class DisplayLogiMain {};
+            class DisplayLogiMap {};
             class DisplayLogiSupport {};
             class DisplaySupplyMenu {};
             class DisplayVicLoadouts {};

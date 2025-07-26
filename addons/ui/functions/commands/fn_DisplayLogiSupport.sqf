@@ -1,33 +1,32 @@
 disableSerialization;
 
 private _logiP = missionNamespace getVariable ["MSF", createHashMapFromArray [["Logi_Points", 0]]] get "Logi_Points";
-private _idd = ["MSF_LogiSupport"] call MSF_UI_fnc_GetMSFIDD;
-createDialog "MSF_LogiSupport";
+private _idd = ["MSF_Logi_Supports"] call MSF_UI_fnc_GetMSFIDD;
+createDialog "MSF_Logi_Supports";
 
 [_idd] call MSF_UI_fnc_SetTabletStats;
-uiNamespace setVariable ["MSFLogiDeployCoord", nil];
 ctrlSetText [1001, "Logistics Support Channel"];
-ctrlShow [1201, false];
 ctrlEnable [1600, false];
-ctrlEnable [1601, false];
+ctrlEnable [1800, false];
+lnbAddColumn [1500, 0.2];
+lnbAddColumn [1500, 0.9];
 
-lnbAddColumn [1500, 0.3];
-lnbAddColumn [1500, 0.88];
-
-findDisplay _idd displayCtrl 1200 ctrlSetStructuredText parseText format ["Available Logistics <br/> %1pts", missionNamespace getVariable ["MSF", createHashMapFromArray [["Logi_Points", 0]]] get "Logi_Points"];
+findDisplay _idd displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Logistics <br/> %1pts", missionNamespace getVariable ["MSF", createHashMapFromArray [["Logi_Points", 0]]] get "Logi_Points"];
 
 {
-	_x params ["_name", "_desc", "_icon", "_type", "_baseCost"];
+	_x params ["_name", "_desc", "_icon", "_type", "_baseCost", "_airDrop"];
 	
-	lnbAddRow [1500, ["", _name, str _baseCost]];
+	private _cost = [_baseCost] call MSF_Logi_fnc_CalculateItemCost;
+	
+	lnbAddRow [1500, ["", _name, str _cost]];
 	lnbSetPicture [1500, [_forEachIndex,0], _icon];
+	lnbSetData [1500, [_forEachIndex, 0], str [_name, _desc, _icon, _type, _baseCost, _airDrop]];
 	lnbSetTooltip [1500, [_forEachIndex,1], _desc];
 	lnbSetData [1500, [_forEachIndex, 1], _type];
-	
+
 	if (_baseCost > _logiP) then {
 		lnbSetColor [1500, [_forEachIndex,1], [0.5, 0.5, 0.5, 1]];
 		lnbSetColor [1500, [_forEachIndex,2], [0.5, 0.5, 0.5, 1]];
 		lnbSetPictureColor [1500, [_forEachIndex,0], [0.5, 0.5, 0.5, 1]];
 	};
 } forEach ([] call MSF_Logi_fnc_GetLogiSupports);
-[] call MSF_UI_fnc_OnSupportMapLoad;
