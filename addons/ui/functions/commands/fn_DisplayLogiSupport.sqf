@@ -8,10 +8,11 @@ createDialog "MSF_Logi_Supports";
 ctrlSetText [1001, "Logistics Support Channel"];
 ctrlEnable [1600, false];
 ctrlEnable [1800, false];
+ctrlShow [104, false];
 lnbAddColumn [1500, 0.2];
 lnbAddColumn [1500, 0.9];
 
-findDisplay _idd displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Logistics <br/> %1pts", missionNamespace getVariable ["MSF", createHashMapFromArray [["Logi_Points", 0]]] get "Logi_Points"];
+findDisplay _idd displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Logistics: %1pts", _logiP];
 
 {
 	_x params ["_name", "_desc", "_icon", "_type", "_baseCost", "_airDrop"];

@@ -94,12 +94,12 @@ class MSF_Logi_Supports
                 {
                     idc = 1203;
 
-                    text = "Remaining Logistics: 0pts";
+                    text = "Remaining Logistics:<br/> 0pts";
                     colorBackground[] = {1,0.75,0,0.3};                            
                     x = STR(105.2 * GRID_W);
                     y = STR(0.1 * GRID_H);
                     w = STR(88.7 * GRID_W);
-                    h = STR(5.7 * GRID_H);
+                    h = STR(10.5 * GRID_H);
                     shadow = 0;
                     class Attributes
                     {
@@ -115,14 +115,14 @@ class MSF_Logi_Supports
                     colorText[] = {0,0,0,1};                            
                     x = STR(105 * GRID_W);
                     y = 0;
-                    w = STR(89 * GRID_W);
-                    h = STR(6 * GRID_H);
+                    w = STR(89.1 * GRID_W);
+                    h = STR(10.8 * GRID_H);
                 };
                 class DetailGroup : RscControlsGroup
                 {
                     idc = 104;
                     x = STR(105 * GRID_W);
-                    y = STR(5.7 * GRID_H);
+                    y = STR(10.7 * GRID_H);
                     w = STR(89* GRID_W);
                     h = STR(94.4 * GRID_H);
 
@@ -136,7 +136,7 @@ class MSF_Logi_Supports
                             colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                             x = STR(0.1 * GRID_W);
                             y = STR(0.1 * GRID_H);
-                            w = STR(88.8 * GRID_W);
+                            w = STR(88.7 * GRID_W);
                             h = STR(7 * GRID_H);
                             class Attributes
                             {
@@ -153,7 +153,7 @@ class MSF_Logi_Supports
                             x = STR(0.1 * GRID_W);
                             y = STR(7 * GRID_H);
                             w = STR(88.7 * GRID_W);
-                            h = STR(61 * GRID_H);
+                            h = STR(58 * GRID_H);
                         };
                         class detail_text: RscStructuredText
                         {
@@ -163,7 +163,7 @@ class MSF_Logi_Supports
                             x = STR(0.1 * GRID_W);
                             y = STR(8 * GRID_H);
                             w = STR(88.8 * GRID_W);
-                            h = STR(59 * GRID_H);                            
+                            h = STR(57 * GRID_H);                            
                             class Attributes
                             {
                                 size = 0.8;
@@ -173,7 +173,7 @@ class MSF_Logi_Supports
                         {
                             idc = 105;
                             x = STR(0.1 * GRID_W);
-                            y = STR(68 * GRID_H);
+                            y = STR(65 * GRID_H);
                             w = STR(88.8 * GRID_W);
                             h = STR(14 * GRID_H);
 
@@ -217,7 +217,7 @@ class MSF_Logi_Supports
                             colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                             text = "Select Drop Zone";
                             x = STR(0.1 * GRID_W);
-                            y = STR(85 * GRID_H);
+                            y = STR(80.5 * GRID_H);
                             w = STR(88.6 * GRID_W);
                             h = STR(9 * GRID_H);
                             colorText[] = {1,1,1,1};

@@ -5,6 +5,7 @@ private _idd = ["MSF_Logi_Supports"] call MSF_UI_fnc_GetMSFIDD;
 
 private _cost = parseNumber ((findDisplay _idd displayCtrl 1500) lnbText [_lbCurSel, 2]);
 
+ctrlShow [104, true];
 if (_logiP > _cost) then { ctrlEnable [1600, true]; } else { ctrlEnable [1600, false]; };
 //&& count (uiNamespace getVariable ["MSFLogiDeployCoord", []]) > 0
 
