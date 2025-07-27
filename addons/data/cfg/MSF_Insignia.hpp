@@ -1,29 +1,9 @@
-class tfy_insignia
+class tfy
 {
-  displayName = "Task Force Yodel Insignia (MC)";
+  scope = 2;
+  displayName = "Task Force Yodel";
   author = "zeik_tuvai";
-  texture = "z\msf\addons\data\insignia\unit_mc.paa";
-  textureVehicle = "";
-};
-class tfy_insignia_trop
-{
-  displayName = "Task Force Yodel Insignia (Tropic)";
-  author = "zeik_tuvai";
-  texture = "z\msf\addons\data\insignia\unit_trop.paa";
-  textureVehicle = "";
-};
-class tfy_insignia_arct
-{
-  displayName = "Task Force Yodel Insignia (arctic)";
-  author = "zeik_tuvai";
-  texture = "z\msf\addons\data\insignia\unit_arct.paa";
-  textureVehicle = "";
-};
-class tfy_insignia_blk
-{
-  displayName = "Task Force Yodel Insignia (night)";
-  author = "zeik_tuvai";
-  texture = "z\msf\addons\data\insignia\unit_blk.paa";
+  texture = "z\msf\addons\data\insignia\unit_rank0.paa";
   textureVehicle = "";
 };
 class tfy_insignia_train
@@ -32,14 +12,6 @@ class tfy_insignia_train
   displayName = "TFY Trainee";
   author = "zeik_tuvai";
   texture = "z\msf\addons\data\insignia\unit_train.paa";
-  textureVehicle = "";
-};
-class tfy_rank0
-{
-  scope = 2;
-  displayName = "Task Force Yodel";
-  author = "zeik_tuvai";
-  texture = "z\msf\addons\data\insignia\unit_rank0.paa";
   textureVehicle = "";
 };
 class tfy_rank1
