@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.14.3]
+
+- Updated Logistics support menu, location selection is a separate dialog now.
+- Added Fuel and Vehicle Ammo air-drop options.
+
 ## [2.14.2]
 
 - Fixed discovered intel items listed in map missing description text.

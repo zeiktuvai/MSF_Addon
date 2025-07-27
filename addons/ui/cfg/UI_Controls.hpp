@@ -1,6 +1,7 @@
 #include "dialogs\MSF_Defines.hpp"
 #include "dialogs\MSF_Dialog_Supply.hpp"
 #include "dialogs\MSF_Logi_Main.hpp"
-#include "dialogs\MSF_LogiSupport.hpp"
+#include "dialogs\logi\Logi_Supports.hpp"
+#include "dialogs\logi\Logi_Map.hpp"
 #include "dialogs\MSF_UAV_Control.hpp"
 #include "dialogs\MSF_VehicleLoadout.hpp"

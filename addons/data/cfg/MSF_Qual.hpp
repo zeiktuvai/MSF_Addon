@@ -22,7 +22,7 @@ class TFY_Armor_Rank3
     texture = "z\msf\addons\data\insignia\qual\armor3.paa";
     textureVehicle = "";
 };
-class TFY_Tank_Commander
+class TFY_Armor_TankCommander
 {
     scope = 1;
     displayName = "Armor - Tank Commander";
@@ -30,7 +30,7 @@ class TFY_Tank_Commander
     texture = "z\msf\addons\data\insignia\qual\tank_commander.paa";
     textureVehicle = "";
 };
-class TFY_CQB
+class TFY_Infantry_CQB
 {
     scope = 1;
     displayName = "Infantry - CQB";
@@ -38,7 +38,7 @@ class TFY_CQB
     texture = "z\msf\addons\data\insignia\qual\cqb.paa";
     textureVehicle = "";
 };
-class TFY_Marksman
+class TFY_Infantry_Marksman
 {
     scope = 1;
     displayName = "Infantry - Designated Marksman";

@@ -1,52 +1,6 @@
-import RscObject;
-import RscText;
-import RscFrame;
-import RscLine;
-import RscProgress;
-import RscPicture;
-import RscPictureKeepAspect;
-import RscVideo;
-import RscHTML;
-import RscButton;
-import RscShortcutButton;
-import RscEdit;
-import RscCombo;
-import RscListBox;
-import RscListNBox;
-import RscXListBox;
-import RscTree;
-import RscSlider;
-import RscXSliderH;
-import RscActiveText;
-import RscActivePicture;
-import RscActivePictureKeepAspect;
-import RscStructuredText;
-import RscToolbox;
-import RscControlsGroup;
-import RscControlsGroupNoScrollbars;
-import RscControlsGroupNoHScrollbars;
-import RscControlsGroupNoVScrollbars;
-import RscButtonTextOnly;
-import RscButtonMenu;
-import RscButtonMenuOK;
-import RscButtonMenuCancel;
-import RscButtonMenuSteam;
-import RscMapControl;
-import RscMapControlEmpty;
-import RscCheckBox;
-import IGUIBack;
-import ctrlListNBox;
-import ctrlMenuStrip;
-
-#define GRID_H (pixelH * pixelGrid * 0.50)
-#define GRID_W (pixelW * pixelGrid * 0.50)
-#define CENTER_X ((getResolution select 2) * 0.5 * pixelW)
-#define CENTER_Y ((getResolution select 3) * 0.5 * pixelH)
-#define STR(VAR) #VAR
-
-class MSFdevdialog
+class MSF_Logi_Supports
 {
-	idd = 6218;
+	idd = 6221;
 	
     class ControlsBackground
     {
@@ -55,8 +9,32 @@ class MSFdevdialog
     class Controls
     {   
         #include "\z\msf\addons\ui\cfg\dialogs\assets\Header.inc"
-
- class MainGroup : RscControlsGroup
+        
+        class menu : ctrlMenuStrip
+        {
+            idc = 2201;            
+            x = STR(CENTER_X - 100.2 * GRID_W);
+            y = STR(CENTER_Y - 61.4 * GRID_H);
+            w = STR(200.1 * GRID_W);
+            h = STR(5 * GRID_H);     
+            class Items
+            {
+                items[] = {"Map"};                
+                class Map
+                {
+                    text = "Map";
+                    items[] = {"Clear"};
+                };
+                class Clear
+                {
+                    text = "Clear Request Markers";
+                    action = "[] call MSF_UI_fnc_OnClearMarkersClicked";
+                };
+                class Default;
+                class Separator;
+            };
+        };
+        class MainGroup : RscControlsGroup
         {
             idc = 102;
             
@@ -254,7 +232,6 @@ class MSFdevdialog
                 };
             };
         };
-
 
         #include "\z\msf\addons\ui\cfg\dialogs\assets\StatusBar.inc"
     };
