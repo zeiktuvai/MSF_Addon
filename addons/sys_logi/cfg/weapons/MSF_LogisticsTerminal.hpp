@@ -1,4 +1,5 @@
 class ItemGPS;
+
 class MSF_LogisticsTerminal : ItemGPS
 {
     displayName = "Logistics Terminal";

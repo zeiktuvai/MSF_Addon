@@ -12,3 +12,11 @@
 	["MSF - User Settings", "Debug"],
 	false
 ] call CBA_fnc_addSetting;
+[
+	"MSF_Logi_Message_Enabled",
+	"CHECKBOX",
+	["Enable Logistics System Messages", "Enables receiving logistics systems radio messages including air-drops, points, and status messages."],
+	["MSF - User Settings", "Logistics System"],
+	true,
+	2
+] call CBA_fnc_addSetting;

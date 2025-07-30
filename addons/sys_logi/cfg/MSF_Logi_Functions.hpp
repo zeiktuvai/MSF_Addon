@@ -36,6 +36,7 @@ class CfgFunctions
             class CheckAvailablePoints {};
             class CheckSupplyPointExists {};
             class ConvertVehicleInventoryData {};
+            class SendLogisticsMessage {};
             class SetupRearmInteraction {};
         };
         class Inventory

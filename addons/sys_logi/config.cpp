@@ -22,51 +22,12 @@ class CfgVehicles
     #include "cfg\MSF_Logi_Modules.hpp"
 	#include "cfg\vehicle\MSF_Supply_Depot.hpp"
 	#include "cfg\vehicle\MSF_VicTerminal.hpp"
-
-	class Man;
-	class CAManBase : Man
-	{
-		class ACE_SelfActions
-		{
-			class MSF_Logistics
-			{
-				displayName = "Logistics Terminal";
-				icon = "\A3\Drones_F\Weapons_F_Gamma\Items\data\UI\gear_UAV_controller_rgr_CA.paa";
-				condition = "[player, 'MSF_LogisticsTerminal', false] call BIS_fnc_hasItem";
-				exceptions[] = {};
-
-				class MSF_LogisticsMenu
-				{
-					displayName = "Logistics Management";
-					exceptions[] = {};
-					icon = MSF_ICON;
-					condition = "[player, 'Engineer'] call MSF_fnc_CheckPlayerTrait";
-					statement = "[] call MSF_UI_fnc_DisplayLogiMain";
-				};
-				class MSF_LogisticsSupport
-				{
-					displayName = "Logistics Support Channel";
-					condition = "true";
-					exceptions[] = {};
-					icon = "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa";
-					statement = "[] call MSF_UI_fnc_DisplayLogiSupport";
-				};
-				class MSF_VicLoadouts
-				{
-					displayName = "Vehicle Loadouts";
-					exceptions[] = {};
-					icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_ammo_ca.paa";
-					condition = "[player, 'Engineer'] call MSF_fnc_CheckPlayerTrait";
-					statement = "[] call MSF_UI_fnc_DisplayVicLoadouts;";
-				};
-			};
-		};
-	};
+	#include "cfg\vehicle\Logi_Extensions.hpp"	
 };
 
 class CfgWeapons
 {
-	#include "cfg\vehicle\MSF_LogisticsTerminal.hpp"
+	#include "cfg\weapons\MSF_LogisticsTerminal.hpp"
 };
 
 class CfgHints
