@@ -27,6 +27,8 @@ class CfgFunctions
         {
             file = "z\msf\addons\ui\functions\handlers\logiMarker";
             class OnLogiMarkerCurSelChanged {};
+            class OnLogiMarkerDeleteAll {};
+            class OnLogiMarkerDeleteSel {};
             class OnLogiMarkerMapLoad {};
             class OnLogiMarkerSelChanged {};            
         };

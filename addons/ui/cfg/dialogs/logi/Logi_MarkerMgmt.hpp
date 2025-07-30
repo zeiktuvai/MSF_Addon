@@ -119,6 +119,7 @@ class MSF_Logi_Markers
                             idc = 1600;
                             
                             text = "All";
+                            onButtonClick = "[] call MSF_UI_fnc_OnLogiMarkerDeleteAll;";
                             x = STR(20.5 * GRID_W);
                             y = 0;
                             w = STR(10 * GRID_W);
@@ -129,6 +130,7 @@ class MSF_Logi_Markers
                             idc = 1600;
                             
                             text = "Selected";
+                            onButtonClick = "[] call MSF_UI_fnc_OnLogiMarkerDeleteSel;";
                             x = STR(32 * GRID_W);
                             y = 0;
                             w = STR(23 * GRID_W);
