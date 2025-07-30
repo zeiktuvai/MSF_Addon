@@ -12,7 +12,7 @@ ctrlShow [104, false];
 lnbAddColumn [1500, 0.2];
 lnbAddColumn [1500, 0.9];
 
-findDisplay _idd displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Logistics: %1pts", _logiP];
+findDisplay _idd displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Logistics: <br/> %1pts", _logiP];
 
 {
 	_x params ["_name", "_desc", "_icon", "_type", "_baseCost", "_airDrop"];

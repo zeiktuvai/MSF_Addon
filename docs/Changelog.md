@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.14.4]
+
+- Added Logistics Terminal to vanilla NATO Engineer classes (Engineer, Repair Specialist);
+- Added Logistics Terminal menu for managing map markers placed by the logistics system.
+
 ## [2.14.3]
 
 - Updated Logistics support menu, location selection is a separate dialog now.

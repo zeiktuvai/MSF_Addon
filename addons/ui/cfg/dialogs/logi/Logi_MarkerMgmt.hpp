@@ -1,50 +1,4 @@
-import RscObject;
-import RscText;
-import RscFrame;
-import RscLine;
-import RscProgress;
-import RscPicture;
-import RscPictureKeepAspect;
-import RscVideo;
-import RscHTML;
-import RscButton;
-import RscShortcutButton;
-import RscEdit;
-import RscCombo;
-import RscListBox;
-import RscListNBox;
-import RscXListBox;
-import RscTree;
-import RscSlider;
-import RscXSliderH;
-import RscActiveText;
-import RscActivePicture;
-import RscActivePictureKeepAspect;
-import RscStructuredText;
-import RscToolbox;
-import RscControlsGroup;
-import RscControlsGroupNoScrollbars;
-import RscControlsGroupNoHScrollbars;
-import RscControlsGroupNoVScrollbars;
-import RscButtonTextOnly;
-import RscButtonMenu;
-import RscButtonMenuOK;
-import RscButtonMenuCancel;
-import RscButtonMenuSteam;
-import RscMapControl;
-import RscMapControlEmpty;
-import RscCheckBox;
-import IGUIBack;
-import ctrlListNBox;
-import ctrlMenuStrip;
-
-#define GRID_H (pixelH * pixelGrid * 0.50)
-#define GRID_W (pixelW * pixelGrid * 0.50)
-#define CENTER_X ((getResolution select 2) * 0.5 * pixelW)
-#define CENTER_Y ((getResolution select 3) * 0.5 * pixelH)
-#define STR(VAR) #VAR
-
-class MSFdevdialog
+class MSF_Logi_Markers
 {
 	idd = 6222;
 	
@@ -182,24 +136,6 @@ class MSFdevdialog
                         };
                     };
                 };
-                // class SubmitButton: RscShortcutButton
-                // {
-                //     idc = 1601;
-                //     onButtonClick = "[ctrlText 1203, player] call MSF_Logi_fnc_SubmitLogiRequest; closeDialog 0;";
-                //     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                //     text = "    Submit Request";
-                //     x = STR(140 * GRID_W);
-                //     y = STR(1.5 * GRID_H);
-                //     w = STR(53 * GRID_W);
-                //     h = STR(9 * GRID_H);
-                //     colorText[] = {1,1,1,1};
-                //     colorBackground[] = {1,0.74,0,1};
-                //     class Attributes
-                //     {
-                //         size = 1.3;
-                //         align = "left";                        
-                //     };
-                // };
             };
         };
 
