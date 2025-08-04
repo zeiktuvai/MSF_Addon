@@ -61,6 +61,14 @@ class CAManBase : Man
                 condition = "[player, 'Engineer'] call MSF_fnc_CheckPlayerTrait";
                 statement = "[] call MSF_UI_fnc_DisplayVicLoadouts;";
             };
+            class MSF_Markers
+            {
+                displayName = "Manage Markers";
+                exceptions[] = {};
+                icon = "a3\ui_f\data\map\diary\signal_ca.paa";
+                condition = "[player, 'Engineer'] call MSF_fnc_CheckPlayerTrait";
+                statement = "[] call MSF_UI_fnc_DisplayLogiMarker;";
+            };
         };
     };
 };
