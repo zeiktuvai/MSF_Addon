@@ -1,6 +1,6 @@
 disableSerialization;
 
-private _logiP = missionNamespace getVariable ["MSF", createHashMapFromArray [["Logi_Points", 0]]] get "Logi_Points";
+private _logiP = [side player] call MSF_Logi_fnc_GetLogiPoints;
 private _idd = ["MSF_Logi_Supports"] call MSF_UI_fnc_GetMSFIDD;
 createDialog "MSF_Logi_Supports";
 

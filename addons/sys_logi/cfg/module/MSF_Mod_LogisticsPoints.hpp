@@ -58,6 +58,37 @@ class MSF_Module_LogiPoints : Module_F
 			validate = "number";
 			typeName = "NUMBER";
 		};
+		class Side
+		{
+			displayName = "Side";
+			tooltip = "Faction to add points to.";
+			control = "Combo";
+			expression = "_this setVariable ['%s',_value];";
+			property = "MSF_Logi_PointSide";
+			defaultValue = 1;
+			typeName = "Number";
+			class Values
+			{
+				class East
+				{
+					name = "East";
+					tooltip = "OPFOR";
+					value = 0;
+				};
+				class West
+				{
+					name = "West";
+					tooltip = "BLUFOR";
+					value = 1;
+				};
+				class Independant
+				{
+					name = "Independant";
+					tooltip = "Independant";
+					value = 2;
+				};
+			};	
+		};
 
         class ModuleDescription : ModuleDescription {};
 	};

@@ -2,7 +2,7 @@ disableSerialization;
 
 createDialog "MSF_LogiMain";
 
-private _logiP = missionNamespace getVariable ["MSF", createHashMapFromArray [["Logi_Points", 0]]] get "Logi_Points";
+private _logiP = [side player] call MSF_Logi_fnc_GetLogiPoints;
 private _idd = ["MSF_LogiMain"] call MSF_UI_fnc_GetMSFIDD;
 private _playerName = profileNameSteam;
 [_idd] call MSF_UI_fnc_SetTabletStats;
