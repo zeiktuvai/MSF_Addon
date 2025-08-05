@@ -6,6 +6,7 @@
 - Added Logistics Terminal menu for managing map markers placed by the logistics system.
 - Updated Logistics points to take faction into account with separate pools for each faction.
 - Updated menu options on the Vehicle Loadouts display.
+- Fixed error displaying when loading a mission in multiplayer when a player hasn't updated their vehicle loadouts by opening the Vehicle Loadout menu.
 
 ## [2.14.3]
 
