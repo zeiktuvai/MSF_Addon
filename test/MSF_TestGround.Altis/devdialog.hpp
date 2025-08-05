@@ -51,159 +51,378 @@ class MSFdevdialog
     class ControlsBackground
     {
         #include "\z\msf\addons\ui\cfg\dialogs\assets\MSFTablet.inc"
-        class Map : RscMapControl
-        {
-            idc = 3001;
 
-            x = STR(CENTER_X - 100 * GRID_W);
-            y = STR(CENTER_Y - 61.2 * GRID_H);
-            w = STR(199.9 * GRID_W);
-            h = STR(116.1 * GRID_H);       
-        };
     };
     class Controls
     {   
-        #include "\z\msf\addons\ui\cfg\dialogs\assets\Header.inc"
+        //#include "\z\msf\addons\ui\cfg\dialogs\assets\Header.inc"
+        class HeaderGroup : RscControlsGroup
+        {
+            idc = 111;
+            
+            x = STR(CENTER_X - 100.2 * GRID_W);
+            y = STR(CENTER_Y - 66.5 * GRID_H);
+            w = STR(200.2 * GRID_W);
+            h = STR(5 * GRID_H);
+            class Controls
+            {
+                class Title: RscText
+                {
+                    idc = 1001;
+
+                    text = "Supply Depot"; //--- ToDo: Localize;
+                    x = "0";
+                    y = "0";
+                    w = STR(200 * GRID_W);
+                    style = 0x02;
+                };
+                class RscButtonMenuCancel: RscButtonMenuSteam
+                {
+                    idc = 601;
+
+                    onButtonClick = "closeDialog 0;";
+                    x = STR(195 * GRID_W);                    
+                    y = "0";
+                    w = STR(5 * GRID_W);
+                    h = STR(5 * GRID_H);
+                    text = "";
+                    textureNoShortcut = "\a3\3den\data\controlsgroups\tutorial\close_ca.paa";
+                    colorBackground[] = {1,1,1,0};
+                    colorBackground2[] = {0,0,0,0.4};
+                    colorBackgroundActive[] = {1,1,1,0};
+                    colorBackgroundDisabled[] = { 1, 1, 1, 0 };
+                    colorBackgroundFocused[] = {1,1,1,0};
+                    colorShadow[] = { 1, 1, 1, 0 };
+                };
+            };
+        };
 
         class MainGroup : RscControlsGroup
         {
             idc = 102;
-            x = STR(CENTER_X - 97 * GRID_W);
-            y = STR(CENTER_Y - 57 * GRID_H);
-            w = STR(60 * GRID_W);
-            h = STR(108 * GRID_H);
             
+            x = "((getResolution select 2) * 0.5 * pixelW) - 100.2 * (pixelW * pixelGrid * 0.50)";
+            y = "((getResolution select 3) * 0.5 * pixelH) - 61.4 * (pixelH * pixelGrid * 0.50)";
+            w = "200.2 * (pixelW * pixelGrid * 0.50)";
+            h = "116.1 * (pixelH * pixelGrid * 0.50)";
             class Controls
             {
-                class Frame : RscFrame
+                class MenuGroup : RscControlsGroup
                 {
-                    idc = -1;
-                    colorText[] = {0,0,0,1};                            
-                    x = 0;
-                    y = 0;
-                    w = STR(60 * GRID_W);
-                    h = STR(108 * GRID_H);
-                };
-                class bg : RscText
-                {
-                    idc = 1451;
-                    text = "";
-                    colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])",0.9};
-                    x = STR(0.1 * GRID_W);
-                    y = STR(0.1 * GRID_H);
-                    w = STR(59.8 * GRID_W);
-                    h = STR(107.8 * GRID_H);    
-                };
-                class Name : RscStructuredText
-                {
-                    idc = 1200;
-
-                    text = "Logi Markers";
-                    x = STR(1 * GRID_W);
-                    y = STR(0.1 * GRID_H);
-                    w = STR(58 * GRID_W);
-                    h = STR(8 * GRID_H);
-                    shadow = 1;
-                    class Attributes
-                    {
-                        font = "PuristaBold";
-                        align = "center";
-                        size = 1;                        
-                        shadow = 1;
-                    };
-                };
-                class List_BG : RscText
-                {
-                    idc = -1;
-                    text = "";
-                    colorBackground[] = {0,0,0,0.6};
-                    x = STR(0.1 * GRID_W);
-                    y = STR(8 * GRID_H);
-                    w = STR(59.8 * GRID_W);
-                    h = STR(90 * GRID_H);
-                };
-                class Marker_list : ctrlListNBox
-                {
-                    idc = 1500;
-
-                    style = 0x20;
-                    onLBSelChanged = "params ['_control', '_lbCurSel', '_lbSelection']; [_lbCurSel] call MSF_UI_fnc_OnLogiMarkerCurSelChanged; [] call MSF_UI_fnc_OnLogiMarkerSelChanged;";
-                    disableOverflow = 1;
-                    rowHeight = 0.02;
-                    colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                    x = STR(0.1 * GRID_W);
-                    y = STR(9 * GRID_H);
-                    w = STR(59.8 * GRID_W);
-                    h = STR(89 * GRID_H);
-                };
-                class ButtonGroup : RscControlsGroup
-                {
-                    idc = 103;
-                    x = STR(2.5 * GRID_W);
-                    y = STR(100 * GRID_H);
-                    w = STR(55 * GRID_W);
-                    h = STR(8 * GRID_H);
-                    
+                    idc = 100;
+                                        
+                    x = "0";
+                    y = "0";
+                    w = "200 * (pixelW * pixelGrid * 0.50)";
+                    h = "5 * (pixelH * pixelGrid * 0.50)";
                     class Controls
                     {
-                        class Del_BG : RscStructuredText
+                        class menu_bg : RscText
                         {
                             idc = -1;
-                            text = "DELETE: ";
-                            colorBackground[] = {0,0,0,0.6};
-                            x = 0;
-                            y = 0;
-                            w = STR(19 * GRID_W);
-                            h = STR(6 * GRID_H);
+                            x = "0";
+                            y = "0";
+                            w = "200 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            colorBackground[] = {0,0,0,1};
+                        };
+                        class BttnNew : RscShortcutButton
+                        {
+                            idc = 1600;
+                            
+                            text = "New";
+                            x = "1 * (pixelW * pixelGrid * 0.50)";
+                            y = "0";
+                            w = "15 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            onButtonClick = "[] call MSF_UI_fnc_OnVehicleLoadoutCreate;";
+                            textureNoShortcut = "a3\3den\data\displays\display3den\toolbar\new_ca.paa";
+                            colorBackground[] = {0,0,0,0};
+                            colorBackground2[] = {0,0,0,0};
                             class Attributes
                             {
+                                size = 0.9;
                                 font = "PuristaLight";
                             };
+                            class ShortcutPos
+                            {
+                                left = "0";
+                                top = "0.5 * (pixelH * pixelGrid * 0.50)";
+                                w = "4 * (pixelW * pixelGrid * 0.50)";
+                                h = "4 * (pixelH * pixelGrid * 0.50)";
+                            };
+                            class TextPos
+                            {
+                                left = "4.5 * (pixelW * pixelGrid * 0.50)";
+                                top = "0";
+                                right = "0";
+                                bottom = "0";
+                            };
                         };
-                        class Delete_All : RscButtonMenu
+                        class BttnApply : RscShortcutButton
                         {
-                            idc = 1600;
+                            idc = 1601;
                             
-                            text = "All";
-                            x = STR(20.5 * GRID_W);
-                            y = 0;
-                            w = STR(10 * GRID_W);
-                            h = STR(6 * GRID_H);
+                            text = "Apply";
+                            x = "17 * (pixelW * pixelGrid * 0.50)";
+                            y = "0";
+                            w = "15 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500] call MSF_UI_fnc_OnVehicleLoadoutApply; closeDialog 0;";
+                            textureNoShortcut = "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_continue_ca.paa";
+                            colorBackground[] = {0,0,0,0};
+                            class Attributes
+                            {
+                                size = 0.9;
+                                font = "PuristaLight";
+                            };
+                            class ShortcutPos
+                            {
+                                left = "0";
+                                top = "0.5 * (pixelH * pixelGrid * 0.50)";
+                                w = "4 * (pixelW * pixelGrid * 0.50)";
+                                h = "4 * (pixelH * pixelGrid * 0.50)";
+                            };
+                            class TextPos
+                            {
+                                left = "4.5 * (pixelW * pixelGrid * 0.50)";
+                                top = "0";
+                                right = "0";
+                                bottom = "0";
+                            };
                         };
-                        class Delete_Sel : RscButtonMenu
+                        class BttnUpdate : RscShortcutButton
                         {
-                            idc = 1600;
+                            idc = 1602;
                             
-                            text = "Selected";
-                            x = STR(32 * GRID_W);
-                            y = 0;
-                            w = STR(23 * GRID_W);
-                            h = STR(6 * GRID_H);
+                            text = "Update";
+                            x = "34 * (pixelW * pixelGrid * 0.50)";
+                            y = "0";
+                            w = "17 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutUpdate; closeDialog 0;";
+                            textureNoShortcut = "a3\3den\data\displays\display3den\panelright\customcomposition_edit_ca.paa";
+                            colorBackground[] = {0,0,0,0};
+                            class Attributes
+                            {
+                                size = 0.9;
+                                font = "PuristaLight";
+                            };
+                            class ShortcutPos
+                            {
+                                left = "0";
+                                top = "0.5 * (pixelH * pixelGrid * 0.50)";
+                                w = "4 * (pixelW * pixelGrid * 0.50)";
+                                h = "4 * (pixelH * pixelGrid * 0.50)";
+                            };
+                            class TextPos
+                            {
+                                left = "4.5 * (pixelW * pixelGrid * 0.50)";
+                                top = "0";
+                                right = "0";
+                                bottom = "0";
+                            };
+                        };
+                        class BttnDelete : RscShortcutButton
+                        {
+                            idc = 1603;
+                            
+                            text = "Delete";
+                            x = "53 * (pixelW * pixelGrid * 0.50)";
+                            y = "0";
+                            w = "17 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutDelete;";
+                            textureNoShortcut = "a3\3den\data\displays\display3den\panelleft\entitylist_delete_ca.paa";
+                            colorBackground[] = {0,0,0,0};
+                            class Attributes
+                            {
+                                size = 0.9;
+                                font = "PuristaLight";
+                            };
+                            class ShortcutPos
+                            {
+                                left = "0";
+                                top = "0.5 * (pixelH * pixelGrid * 0.50)";
+                                w = "4 * (pixelW * pixelGrid * 0.50)";
+                                h = "4 * (pixelH * pixelGrid * 0.50)";
+                            };
+                            class TextPos
+                            {
+                                left = "4.5 * (pixelW * pixelGrid * 0.50)";
+                                top = "0";
+                                right = "0";
+                                bottom = "0";
+                            };
+                        };
+                        class BttnShare : RscShortcutButton
+                        {
+                            idc = 1604;
+                            
+                            text = "Share";
+                            x = "72 * (pixelW * pixelGrid * 0.50)";
+                            y = "0";
+                            w = "17 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutShare;";
+                            textureNoShortcut = "a3\3den\data\cfg3den\group\iconcustomcomposition_ca.paa";
+                            colorBackground[] = {0,0,0,0};
+                            class Attributes
+                            {
+                                size = 0.9;
+                                font = "PuristaLight";
+                            };
+                            class ShortcutPos
+                            {
+                                left = "0";
+                                top = "0.5 * (pixelH * pixelGrid * 0.50)";
+                                w = "4 * (pixelW * pixelGrid * 0.50)";
+                                h = "4 * (pixelH * pixelGrid * 0.50)";
+                            };
+                            class TextPos
+                            {
+                                left = "4.5 * (pixelW * pixelGrid * 0.50)";
+                                top = "0";
+                                right = "0";
+                                bottom = "0";
+                            };
                         };
                     };
                 };
-                // class SubmitButton: RscShortcutButton
-                // {
-                //     idc = 1601;
-                //     onButtonClick = "[ctrlText 1203, player] call MSF_Logi_fnc_SubmitLogiRequest; closeDialog 0;";
-                //     colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                //     text = "    Submit Request";
-                //     x = STR(140 * GRID_W);
-                //     y = STR(1.5 * GRID_H);
-                //     w = STR(53 * GRID_W);
-                //     h = STR(9 * GRID_H);
-                //     colorText[] = {1,1,1,1};
-                //     colorBackground[] = {1,0.74,0,1};
-                //     class Attributes
-                //     {
-                //         size = 1.3;
-                //         align = "left";                        
-                //     };
-                // };
+
+                class LoadoutGroup : RscControlsGroup
+                {
+                    idc = 103;
+                    
+                    x = "0";
+                    y = "5 * (pixelH * pixelGrid * 0.50)";
+                    w = "60 * (pixelW * pixelGrid * 0.50)";
+                    h = "110.1 * (pixelH * pixelGrid * 0.50)";
+                    class Controls
+                    {
+                        class loadout_bg: RscFrame
+                        {
+                            idc = 1201;
+
+                            text = "Loadouts";
+                            colorBackground[] = {0,0,0,0.3};
+                            x = "5 * (pixelW * pixelGrid * 0.50)";
+                            y = "5 * (pixelH * pixelGrid * 0.50)";
+                            w = "55 * (pixelW * pixelGrid * 0.50)";
+                            h = "100 * (pixelH * pixelGrid * 0.50)";
+                        };
+                        class loadout_list: RscTree
+                        {
+                            idc = 1500;
+                            
+                            onTreeSelChanged = "params ['_control', '_selectionPath']; [_control, _selectionPath] call MSF_UI_fnc_OnVehicleLoadoutTreeSelChanged;";
+                            colorLines[] = {1,1,1,1};
+                            colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                            x = "4 * (pixelW * pixelGrid * 0.50)";
+                            y = "6 * (pixelH * pixelGrid * 0.50)";
+                            w = "54 * (pixelW * pixelGrid * 0.50)";
+                            h = "99 * (pixelH * pixelGrid * 0.50)";
+                        };
+                    };
+                };
+                class TreeButtonGroup : RscControlsGroup
+                {
+                    idc = 104;
+                    x = "60.1 * (pixelW * pixelGrid * 0.50)";
+                    y = "11 * (pixelH * pixelGrid * 0.50)";
+                    w = "5 * (pixelW * pixelGrid * 0.50)";
+                    h = "20 * (pixelH * pixelGrid * 0.50)";
+
+                    class Controls
+                    {
+                        class ExpandAll: RscButtonMenuSteam
+                        {
+                            idc = 1610;
+
+                            onButtonClick = "tvExpandAll 1500;";
+                            x = "0";
+                            y = "0";
+                            w = "5 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            text = "";
+                            textureNoShortcut = "a3\3den\data\displays\display3den\tree_expand_ca.paa";
+                            colorBackground[] = {1,1,1,0};
+                            colorBackground2[] = {0,0,0,0.4};
+                            colorBackgroundActive[] = {1,1,1,0};
+                            colorBackgroundDisabled[] = { 1, 1, 1, 0 };
+                            colorBackgroundFocused[] = {1,1,1,0};
+                            colorShadow[] = { 1, 1, 1, 0 };
+                        };
+                        class CollapseAll: RscButtonMenuSteam
+                        {
+                            idc = 1611;
+
+                            onButtonClick = "tvCollapseAll 1500;";
+                            x = "0";
+                            y = "5 * (pixelH * pixelGrid * 0.50)";
+                            w = "5 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            text = "";
+                            textureNoShortcut = "a3\3den\data\displays\display3den\tree_collapse_ca.paa";
+                            colorBackground[] = {1,1,1,0};
+                            colorBackground2[] = {0,0,0,0.4};
+                            colorBackgroundActive[] = {1,1,1,0};
+                            colorBackgroundDisabled[] = { 1, 1, 1, 0 };
+                            colorBackgroundFocused[] = {1,1,1,0};
+                            colorShadow[] = { 1, 1, 1, 0 };
+                        };
+                    };
+                };
+                class DetailGroup : RscControlsGroup
+                {
+                    idc = 105;
+                    x = "66 * (pixelW * pixelGrid * 0.50)";
+                    y = "11 * (pixelH * pixelGrid * 0.50)";
+                    w = "129 * (pixelW * pixelGrid * 0.50)";
+                    h = "100 * (pixelH * pixelGrid * 0.50)";
+                    class Controls
+                    {
+                        class detail_bg: RscText
+                        {
+                            idc = 1202;
+
+                            text = "";
+                            colorBackground[] = {0,0,0,0.3};
+                            x = "0";
+                            y = "5 * (pixelH * pixelGrid * 0.50)";
+                            w = "129 * (pixelW * pixelGrid * 0.50)";
+                            h = "94 * (pixelH * pixelGrid * 0.50)";
+                        };
+                        class detail_text: RscText
+                        {
+                            idc = 1002;
+
+                            text = "Contents";
+                            colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
+                            x = "0";
+                            y = "0";
+                            w = "129 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                        };
+                        class loadout_details: ctrlListNBox
+                        {
+                            idc = 1501;           
+                            
+                            disableOverflow = 1;
+                            rowHeight = 0.05;
+                            colorSelectBackground[] = {0,0,0,0};
+                            colorSelectBackground2[] = {0,0,0,0};
+                            x = "0";
+                            y = "5 * (pixelH * pixelGrid * 0.50)";
+                            w = "128.5 * (pixelW * pixelGrid * 0.50)";
+                            h = "93.5 * (pixelH * pixelGrid * 0.50)";
+                        };
+                    };
+                };
             };
         };
 
-
+        #include "\z\msf\addons\ui\cfg\dialogs\assets\InputDialog.inc"
         #include "\z\msf\addons\ui\cfg\dialogs\assets\StatusBar.inc"
     };
 };

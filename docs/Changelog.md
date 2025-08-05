@@ -5,6 +5,7 @@
 - Added Logistics Terminal to vanilla NATO Engineer classes (Engineer, Repair Specialist);
 - Added Logistics Terminal menu for managing map markers placed by the logistics system.
 - Updated Logistics points to take faction into account with separate pools for each faction.
+- Updated menu options on the Vehicle Loadouts display.
 
 ## [2.14.3]
 

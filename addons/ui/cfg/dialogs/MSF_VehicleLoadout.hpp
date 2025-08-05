@@ -18,53 +18,90 @@ class MSF_VicLoadout
             h = "116.1 * (pixelH * pixelGrid * 0.50)";
             class Controls
             {
-                class menu: ctrlMenuStrip
+                class MenuGroup : RscControlsGroup
                 {
-                    idc = 2201;            
+                    idc = 100;
+                                        
                     x = "0";
                     y = "0";
                     w = "200 * (pixelW * pixelGrid * 0.50)";
                     h = "5 * (pixelH * pixelGrid * 0.50)";
-                    class Items
+                    class Controls
                     {
-                        items[] = {"Loadout", "Sharing"};
-                        class Loadout
+                        class menu_bg : RscText
                         {
-                            text = "Loadout";
-                            items[] = {"New", "Apply", "Update", "Delete"};
+                            idc = -1;
+                            x = "0";
+                            y = "0";
+                            w = "200 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            colorBackground[] = {0,0,0,1};
                         };
-                        class Sharing
+                        class BttnNew : RscShortcutButton
                         {
-                            text = "Sharing";
-                            items[] = {"Share"};
-                        };
-                        class New
-                        {
+                            idc = 1600;
+                            
                             text = "New";
-                            action = "[] call MSF_UI_fnc_OnVehicleLoadoutCreate;";
+                            x = "1 * (pixelW * pixelGrid * 0.50)";
+                            y = "0";
+                            w = "15 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            onButtonClick = "[] call MSF_UI_fnc_OnVehicleLoadoutCreate;";
+                            textureNoShortcut = "a3\3den\data\displays\display3den\toolbar\new_ca.paa";
+                            #include "\z\msf\addons\ui\cfg\dialogs\assets\MenuButtonAttr.inc"
                         };
-                        class Apply
+                        class BttnApply : RscShortcutButton
                         {
+                            idc = 1601;
+                            
                             text = "Apply";
-                            action = "[tvText [1500, tvCurSel 1500], tvCurSel 1500] call MSF_UI_fnc_OnVehicleLoadoutApply; closeDialog 0;";
+                            x = "17 * (pixelW * pixelGrid * 0.50)";
+                            y = "0";
+                            w = "15 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500] call MSF_UI_fnc_OnVehicleLoadoutApply; closeDialog 0;";
+                            textureNoShortcut = "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_continue_ca.paa";
+                            #include "\z\msf\addons\ui\cfg\dialogs\assets\MenuButtonAttr.inc"
                         };
-                        class Update
+                        class BttnUpdate : RscShortcutButton
                         {
+                            idc = 1602;
+                            
                             text = "Update";
-                            action = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutUpdate; closeDialog 0;";
+                            x = "34 * (pixelW * pixelGrid * 0.50)";
+                            y = "0";
+                            w = "17 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutUpdate; closeDialog 0;";
+                            textureNoShortcut = "a3\3den\data\displays\display3den\panelright\customcomposition_edit_ca.paa";                            
+                            #include "\z\msf\addons\ui\cfg\dialogs\assets\MenuButtonAttr.inc"
                         };
-                        class Delete
+                        class BttnDelete : RscShortcutButton
                         {
+                            idc = 1603;
+                            
                             text = "Delete";
-                            action = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutDelete;";
+                            x = "53 * (pixelW * pixelGrid * 0.50)";
+                            y = "0";
+                            w = "17 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutDelete;";
+                            textureNoShortcut = "a3\3den\data\displays\display3den\panelleft\entitylist_delete_ca.paa";
+                            #include "\z\msf\addons\ui\cfg\dialogs\assets\MenuButtonAttr.inc"
                         };
-                        class Share
+                        class BttnShare : RscShortcutButton
                         {
-                            text = "Share/Unshare Selected";
-                            action = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutShare;";
+                            idc = 1604;
+                            
+                            text = "Share";
+                            x = "72 * (pixelW * pixelGrid * 0.50)";
+                            y = "0";
+                            w = "17 * (pixelW * pixelGrid * 0.50)";
+                            h = "5 * (pixelH * pixelGrid * 0.50)";
+                            onButtonClick = "[tvText [1500, tvCurSel 1500], tvCurSel 1500 select 0] call MSF_UI_fnc_OnVehicleLoadoutShare;";
+                            textureNoShortcut = "a3\3den\data\cfg3den\group\iconcustomcomposition_ca.paa";
+                            #include "\z\msf\addons\ui\cfg\dialogs\assets\MenuButtonAttr.inc"
                         };
-                        class Default;
-                        class Separator;
                     };
                 };
                 class LoadoutGroup : RscControlsGroup
