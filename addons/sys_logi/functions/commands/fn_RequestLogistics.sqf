@@ -17,14 +17,13 @@ if !(_supportReq) then {
 	};
 }
 else {
-	_args params ["_item", "_pos"];
+	_args params ["_item", "_pos", "_unit"];
 
 	private _cost = [_baseCost] call MSF_Logi_fnc_CalculateItemCost;
-	private _logiPoints = ((missionNamespace getVariable "MSF") get "Logi_Points");
+	private _logiPoints = [side _unit] call MSF_Logi_fnc_GetLogiPoints;
 
 	if (_logiPoints > _cost) then {
-		["MSF", "Logi_Points", _logiPoints - _cost] call MSF_fnc_SetConfigValue;
-		
+		[_cost, true, side _unit] call MSF_Logi_fnc_UpdateLogiPoints;				
 		call _code;
 	}
 	else

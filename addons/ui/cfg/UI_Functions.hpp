@@ -13,6 +13,7 @@ class CfgFunctions
             class DisplayDeployUAV {};
             class DisplayLogiMain {};
             class DisplayLogiMap {};
+            class DisplayLogiMarker {};
             class DisplayLogiSupport {};
             class DisplaySupplyMenu {};
             class DisplayVicLoadouts {};
@@ -21,6 +22,15 @@ class CfgFunctions
         {
             file = "z\msf\addons\ui\functions\handlers";
             class OnSupplySelChanged {};
+        };
+        class Handlers_LogiMarker
+        {
+            file = "z\msf\addons\ui\functions\handlers\logiMarker";
+            class OnLogiMarkerCurSelChanged {};
+            class OnLogiMarkerDeleteAll {};
+            class OnLogiMarkerDeleteSel {};
+            class OnLogiMarkerMapLoad {};
+            class OnLogiMarkerSelChanged {};            
         };
         class Handlers_VehicleLoadout
         {

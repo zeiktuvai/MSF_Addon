@@ -1,6 +1,6 @@
 params [["_dialog", 0, [0]]];
 
-private _logip = missionNamespace getVariable ["MSF", createHashMapFromArray [["Logi_Points", 0]]] get "Logi_Points";
+private _logip = [side player] call MSF_Logi_fnc_GetLogiPoints;
 findDisplay _dialog displayCtrl 1034 ctrlSetTooltip format ["Available Logistics Points: %1", _logip];
 findDisplay _dialog displayCtrl 1034 ctrlSetStructuredText parseText format ["Logi Points <br/> %1", _logip];
 

@@ -1,6 +1,6 @@
 disableSerialization;
 
-private _logiP = missionNamespace getVariable ["MSF", createHashMapFromArray [["Logi_Points", 0]]] get "Logi_Points";
+private _logiP = [side player] call MSF_Logi_fnc_GetLogiPoints;
 private _idd = ["MSF_Logi_Supports"] call MSF_UI_fnc_GetMSFIDD;
 createDialog "MSF_Logi_Supports";
 
@@ -12,7 +12,7 @@ ctrlShow [104, false];
 lnbAddColumn [1500, 0.2];
 lnbAddColumn [1500, 0.9];
 
-findDisplay _idd displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Logistics: %1pts", _logiP];
+findDisplay _idd displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Logistics: <br/> %1pts", _logiP];
 
 {
 	_x params ["_name", "_desc", "_icon", "_type", "_baseCost", "_airDrop"];

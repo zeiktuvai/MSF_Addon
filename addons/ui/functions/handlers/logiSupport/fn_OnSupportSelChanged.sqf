@@ -1,6 +1,6 @@
 params ["_control", "_lbCurSel", "_lbSelection"];
 
-private _logiP = missionNamespace getVariable ["MSF", createHashMapFromArray [["Logi_Points", 0]]] get "Logi_Points";
+private _logiP = [side player] call MSF_Logi_fnc_GetLogiPoints;
 private _idd = ["MSF_Logi_Supports"] call MSF_UI_fnc_GetMSFIDD;
 
 private _cost = parseNumber ((findDisplay _idd displayCtrl 1500) lnbText [_lbCurSel, 2]);
