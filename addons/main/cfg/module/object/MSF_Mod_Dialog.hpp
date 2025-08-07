@@ -1,7 +1,7 @@
 class MSF_Module_Dialog : Module_F
 {
 	scope = 2;
-	displayName = "Cinematic - Dialog";
+	displayName = "Object - Dialog";
 	icon = "a3\3den\data\cfgwaypoints\talk_ca.paa";
 	category = "MSF_Module";
 	function = "MSF_fnc_Mod_Dialog";

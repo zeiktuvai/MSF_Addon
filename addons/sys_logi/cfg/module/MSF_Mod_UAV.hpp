@@ -1,9 +1,9 @@
 class MSF_Module_UAV : Module_F
 {
 	scope = 2;
-	displayName = "Drones - Inventory";
+	displayName = "Drone Inventory";
 	icon = "\A3\Drones_F\Air_F_Gamma\UAV_02\Data\UI\Map_UAV_02_CA.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_Logi";
 	function = "MSF_Logi_fnc_Mod_UAV";
 	functionPriority = 1;
 	isGlobal = 0;

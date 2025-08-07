@@ -1,4 +1,5 @@
 params [["_player", objNull, [objNull]], ["_jip", false, [false]]];
+
 private _spawns = allMissionObjects "MSF_Module_RandomSpawn";
 private _crash = missionNamespace getVariable ["MSF_Mod_RandomSpawnCrash", false];
 private _wrecks = ["Land_Wreck_Plane_Transport_01_F", "Land_UWreck_MV22_F", "Land_Wreck_Ural_F", "Land_Wreck_MBT_04_F", "Land_Wreck_Heli_02_Wreck_01_F", "Land_Wreck_AFV_Wheeled_01_F"];

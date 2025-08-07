@@ -1,16 +1,4 @@
-/*
-	Author: zeik_tuvai
-
-	Description:
-		MSF Mission Initialization script.  Is used to automatically apply settings and handlers to enabled objects.
-        
-	Examples:
-		[] call MSF_fnc_Init;
-
-	Function Ver 2.0
-	Implemented in: MSF Addon v1.0
-*/
-
+// Main MSF Initialization for missions
 
 if (isServer) then {
 	[] call MSF_fnc_ACEMedUnconcious;
