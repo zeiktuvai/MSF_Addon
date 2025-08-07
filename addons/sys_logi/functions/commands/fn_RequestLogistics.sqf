@@ -17,9 +17,9 @@ if !(_supportReq) then {
 	};
 }
 else {
-	_args params ["_item", "_pos", "_unit"];
+	_args params ["_item", "_pos", "_unit", "_data"];	
+	_item params ["_name", "_desc", "_icon", "_reqType", "_baseCost", "_airDrop", "_category"];
 
-	_item params ["_name", "_desc", "_icon", "_reqType", "_baseCost", "_airDrop"];
 	private _cost = [_baseCost] call MSF_Logi_fnc_CalculateItemCost;
 	private _logiPoints = [side _unit] call MSF_Logi_fnc_GetLogiPoints;
 

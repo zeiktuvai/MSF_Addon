@@ -15,13 +15,13 @@ lnbAddColumn [1500, 0.9];
 findDisplay _idd displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Logistics: <br/> %1pts", _logiP];
 
 {
-	_x params ["_name", "_desc", "_icon", "_type", "_baseCost", "_airDrop"];
+	_x params ["_name", "_desc", "_icon", "_type", "_baseCost", "_airDrop", "_category"];
 	
 	private _cost = [_baseCost] call MSF_Logi_fnc_CalculateItemCost;
 	
 	lnbAddRow [1500, ["", _name, str _cost]];
 	lnbSetPicture [1500, [_forEachIndex,0], _icon];
-	lnbSetData [1500, [_forEachIndex, 0], str [_name, _desc, _icon, _type, _baseCost, _airDrop]];
+	lnbSetData [1500, [_forEachIndex, 0], str _x];
 	lnbSetTooltip [1500, [_forEachIndex,1], _desc];
 	lnbSetData [1500, [_forEachIndex, 1], _type];
 

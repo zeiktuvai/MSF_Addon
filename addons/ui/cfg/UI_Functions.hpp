@@ -16,6 +16,7 @@ class CfgFunctions
             class DisplayLogiMarker {};
             class DisplayLogiSupport {};
             class DisplaySupplyMenu {};
+            class DisplayVicSelection {};
             class DisplayVicLoadouts {};
         };
         class Handlers
@@ -49,6 +50,9 @@ class CfgFunctions
             class OnClearMarkersClicked {};
             class OnSupportMapLoad {};
             class OnSupportSelChanged {};
+            class OnSupportSubmitClicked {};
+            class OnVechicleSelChanged {};
+            class OnVehicleSelect {};
         };
         class Helpers
         {

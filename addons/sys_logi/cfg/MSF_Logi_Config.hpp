@@ -78,7 +78,7 @@ class MSF_Logi_Config
             type = "Ambulance";
             baseCost = 3;
             airDrop = 1;
-            vehicle = 1;
+            category = 0;
         };
         class SupplyDepot
         {
@@ -88,7 +88,7 @@ class MSF_Logi_Config
             type = "SupplyDepot";
             baseCost = 5;
             airDrop = 1;
-            vehicle = 0;
+            category = 0;
         };
         class FuelDrop
         {
@@ -98,7 +98,7 @@ class MSF_Logi_Config
             type = "FuelTank";
             baseCost = 2;
             airDrop = 1;
-            vehicle = 0;
+            category = 0;
         };
         class VehicleAmmo
         {
@@ -108,7 +108,27 @@ class MSF_Logi_Config
             type = "VicAmmo";
             baseCost = 3;
             airDrop = 1;
-            vehicle = 0;
+            category = 0;
+        };
+        class VicStatic
+        {
+            name = "Turret";
+            description = "Calls in a turret emplacement Air-drop at the selected location.";
+            icon = "a3\static_f_gamma\data\ui\gear_staticturret_mg_ca.paa";
+            type = "VicStatic";
+            baseCost = 5;
+            airDrop = 1;
+            category = 1;
+        };
+        class VicTank
+        {
+            name = "Tank";
+            description = "Calls in a tank Air-drop at the selected location.";
+            icon = "a3\armor_f_epb\mbt_03\data\ui\mbt_03_ca.paa";
+            type = "VicTank";
+            baseCost = 15;
+            airDrop = 1;
+            category = 1;
         };
         
         //UAV
@@ -124,7 +144,6 @@ class MSF_Logi_Config
 // "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa"
 
 
-// "a3\armor_f_epb\mbt_03\data\ui\mbt_03_ca.paa"
 // "a3\ui_f\data\gui\cfg\communicationmenu\artillery_ca.paa"
 // "a3\modules_f_curator\data\portraitflare_ca.paa"
 // "a3\drones_f\air_f_gamma\uav_02\data\ui\map_uav_02_ca.paa"
