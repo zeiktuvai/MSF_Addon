@@ -33,7 +33,6 @@ class CfgFunctions
         {
             file = "z\msf\addons\sys_logi\functions\helper";
             class CalculateItemCost {};
-            class CheckAvailablePoints {};
             class CheckSupplyPointExists {};
             class ConvertVehicleInventoryData {};
             class SendLogisticsMessage {};

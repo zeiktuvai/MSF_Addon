@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.14.5]
+
+- Updated supply depot to use it's own internal supply count.
+- Updated supply depot supply point to spawn a IR Chemlight for easy location during night missions.
+
 ## [2.14.4]
 
 - Added Logistics Terminal to vanilla NATO Engineer classes (Engineer, Repair Specialist);

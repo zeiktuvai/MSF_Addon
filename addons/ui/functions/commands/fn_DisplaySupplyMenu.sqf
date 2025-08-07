@@ -30,6 +30,6 @@ if (_idx == 0) then {
 };
 
 [1500, 1] lnbSortBy ["TEXT"];
-findDisplay _idd displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Supply: %1pts", [_obj] call ace_rearm_fnc_getSupplyCount];
+findDisplay _idd displayCtrl 1203 ctrlSetStructuredText parseText format ["Remaining Supply: %1pts", _obj getVariable ["MSF_SupplyPoints", 0]];
 
 [_idd] call MSF_UI_fnc_SetTabletStats;
