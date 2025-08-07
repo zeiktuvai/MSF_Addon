@@ -32,7 +32,7 @@
 [
 	"MSF_Intel_CivTime",
 	"TIME",
-	["Civilian Interation Time", "Sets how long a player needs to hold the interaction for civilian intel."],
+	["Civilian Interaction Time", "Sets how long a player needs to hold the interaction for civilian intel."],
 	["MSF - Server Settings", "Intel System"],
 	[1, 60, 5],
 	1
@@ -40,7 +40,7 @@
 [
 	"MSF_Intel_MilTime",
 	"TIME",
-	["Military Interation Time", "Sets how long a player needs to hold the interaction for Military intel."],
+	["Military Interaction Time", "Sets how long a player needs to hold the interaction for Military intel."],
 	["MSF - Server Settings", "Intel System"],
 	[1, 60, 10],
 	1
@@ -48,7 +48,7 @@
 [
 	"MSF_Intel_ObjTime",
 	"TIME",
-	["Object Interation Time", "Sets how long a player needs to hold the interaction for object intel."],
+	["Object Interaction Time", "Sets how long a player needs to hold the interaction for object intel."],
 	["MSF - Server Settings", "Intel System"],
 	[1, 60, 15],
 	1
