@@ -2,6 +2,7 @@
 
 ## [2.14.5]
 
+- Added static turret, APC, Artillery and Tank air-drop to the support channel.
 - Updated supply depot to use it's own internal supply count.
 - Updated supply depot supply point to spawn a IR Chemlight for easy location during night missions.
 
