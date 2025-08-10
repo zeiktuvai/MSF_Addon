@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.14.4]
+
+- Added Logistics Terminal to vanilla NATO Engineer classes (Engineer, Repair Specialist);
+- Added Logistics Terminal menu for managing map markers placed by the logistics system.
+- Updated Logistics points to take faction into account with separate pools for each faction.
+- Updated menu options on the Vehicle Loadouts display.
+- Fixed error displaying when loading a mission in multiplayer when a player hasn't updated their vehicle loadouts by opening the Vehicle Loadout menu.
+
+## [2.14.3]
+
+- Updated Logistics support menu, location selection is a separate dialog now.
+- Added Fuel and Vehicle Ammo air-drop options.
+
+## [2.14.2]
+
+- Fixed discovered intel items listed in map missing description text.
+- Fixed a bug with the Road Checkpoint module when NOT placed directly on a road.
+- Fixed a bug causing spawned infantry to not be added to zeus when enabled.
+
 ## [2.14.1]
 
 - Moved Escape Area module from OFE to main MSF addon (For designating an area that will trigger end scenario if any players leave that area).

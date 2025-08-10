@@ -120,7 +120,7 @@ class MSF_Module_Spawn_RoadCheckpoint : Module_F
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = "Spawns a road checkpoint using the configured options when the linked trigger is activated.";
+		description = "Spawns a road checkpoint when placed DIRECTLY on a road segment.";
 		sync[] = { "LocationArea_F", "EmptyDetector" };
 
 		class LocationArea_F

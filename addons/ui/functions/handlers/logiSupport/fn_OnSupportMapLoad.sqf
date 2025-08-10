@@ -1,4 +1,4 @@
-private _idd = ["MSF_LogiSupport"] call MSF_UI_fnc_GetMSFIDD;
+private _idd = ["MSF_LogiMap"] call MSF_UI_fnc_GetMSFIDD;
 private _display = findDisplay _idd;
 private _map = _display displayCtrl 3001;
 
@@ -7,14 +7,7 @@ _map ctrlAddEventHandler ["MouseButtonClick", {
 	
 	ctrlSetFocus (findDisplay (["MSF_LogiSupport"] call MSF_UI_fnc_GetMSFIDD) displayCtrl 1201);
 	uiNamespace setVariable ["MSFLogiDeployCoord", _control ctrlMapScreenToWorld [_xPos, _yPos]];
-
-	if (lnbCurSelRow 1500 != -1) then {
-		private _logiP = missionNamespace getVariable ["MSF", createHashMapFromArray [["Logi_Points", 0]]] get "Logi_Points";
-		private _idd = ["MSF_LogiSupport"] call MSF_UI_fnc_GetMSFIDD;
-		private _cost = parseNumber ((findDisplay _idd displayCtrl 1500) lnbText [_lbCurSel, 2]);
-
-		if (_logiP > _cost && count (uiNamespace getVariable ["MSFLogiDeployCoord", []]) > 0) then { ctrlEnable [1601, true]; } else { ctrlEnable [1601, false]; };
-	};
+	if (count (uiNamespace getVariable ["MSFLogiDeployCoord", []]) > 0) then { ctrlEnable [1601, true]; } else { ctrlEnable [1601, false]; };
 }];
 
 uiNamespace setVariable ["MSFLogiDeployIdx", 1];

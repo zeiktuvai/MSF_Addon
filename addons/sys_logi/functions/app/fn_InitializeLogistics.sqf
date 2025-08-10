@@ -2,7 +2,11 @@
 
 if (isServer) then {
 	[] call MSF_Logi_fnc_SetupUAVSystem;
-	["MSF", "Logi_Points", 9] call MSF_fnc_SetConfigValue;
+
+
+	["MSF", "Logi_Points", 
+		createHashMapFromArray [[west, 9], [east, 9], [independent, 9]]
+	] call MSF_fnc_SetConfigValue;
 	
 	[true, "respawn", {
 		params ["_newVeh", "_veh"];
@@ -29,8 +33,6 @@ if (isServer) then {
 if (hasInterface && ([] call BIS_fnc_getNetMode != "SinglePlayer")) then {
 	[] call MSF_Logi_fnc_ShareVehicleLoadout;
 };
-//"a3\ui_f\data\map\vehicleicons\iconbackpack_ca.paa"
-//"a3\ui_f\data\gui\rsc\rscdisplayarsenal\backpack_ca.paa"
 
 //fuel truck
 //"a3\soft_f_epc\truck_03\data\ui\truck_03_fuel_ca.paa"

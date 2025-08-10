@@ -1,0 +1,7 @@
+private _parent = "Tank";
+private _category = "Tank";
+
+private _t = "_parent in ([_x, true] call BIS_fnc_returnParents) && _category in getText (_x >> 'editorSubcategory') && getNumber (_x >> 'scope') == 2" configClasses (configFile >> "CfgVehicles");
+_p = _t apply {[getText (_x >> "displayName"), getText (_x >> "picture")]};
+_p sort true;
+_p;
