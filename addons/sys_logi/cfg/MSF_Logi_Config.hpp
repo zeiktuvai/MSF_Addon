@@ -70,16 +70,9 @@ class MSF_Logi_Config
     };
     class Supports
     {
-        class Ambulance
-        {
-            name = "Ambulance";
-            description = "Calls in an Ambulance Air-drop filled with medical supplies. Counts as a medical vehicle for advanced ACE Medical requirements.";
-            icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_medevac_ca.paa";
-            type = "Ambulance";
-            baseCost = 3;
-            airDrop = 1;
-            category = 0;
-        };
+        west[] = {"BLU_F", "CUP_B_US_Army", "CUP_B_GB"};
+        east[] = {"OPF_F", "CUP_O_RU", "CUP_O_RU"};
+        guer[] = {"IND_G_F", "CUP_B_GB"};
         class SupplyDepot
         {
             name = "Supply Depot";
@@ -110,6 +103,16 @@ class MSF_Logi_Config
             airDrop = 1;
             category = 0;
         };
+        class Ambulance
+        {
+            name = "Ambulance";
+            description = "Calls in an Ambulance Air-drop filled with medical supplies. Counts as a medical vehicle for advanced ACE Medical requirements.";
+            icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_medevac_ca.paa";
+            type = "Ambulance";
+            baseCost = 3;
+            airDrop = 1;
+            category = 0;
+        };
         class VicStatic
         {
             name = "Turret";
@@ -117,6 +120,26 @@ class MSF_Logi_Config
             icon = "a3\static_f_gamma\data\ui\gear_staticturret_mg_ca.paa";
             type = "VicStatic";
             baseCost = 5;
+            airDrop = 1;
+            category = 1;
+        };
+        class VicApc
+        {
+            name = "APC";
+            description = "Calls in an APC Air-drop at the selected location.";
+            icon = "a3\armor_f_beta\apc_wheeled_02\data\ui\apc_wheeled_02_rcws_ca.paa";
+            type = "VicApc";
+            baseCost = 9;
+            airDrop = 1;
+            category = 1;
+        };
+        class VicArty
+        {
+            name = "Artillery";
+            description = "Calls in an artillery veicle Air-drop at the selected location.";
+            icon = "a3\armor_f_gamma\mbt_02\data\ui\mbt_02_arty_ca.paa";
+            type = "VicArty";
+            baseCost = 12;
             airDrop = 1;
             category = 1;
         };
@@ -134,16 +157,10 @@ class MSF_Logi_Config
         //UAV
         //Artillery
         //Flares
-        //Armored Vic
     };
 };
-
-
 // "a3\ui_f\data\map\vehicleicons\iconobject_3x1_ca.paa"
-
 // "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa"
 
-
-// "a3\ui_f\data\gui\cfg\communicationmenu\artillery_ca.paa"
 // "a3\modules_f_curator\data\portraitflare_ca.paa"
 // "a3\drones_f\air_f_gamma\uav_02\data\ui\map_uav_02_ca.paa"

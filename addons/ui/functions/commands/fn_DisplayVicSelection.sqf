@@ -6,14 +6,16 @@ private _category = "";
 private _title = "";
 private _type = (parseSimpleArray _config) select 3;
 private _cost = (parseSimpleArray _config) select 4;
-[_idd] call MSF_UI_fnc_SetTabletStats;
 
 switch (_type) do {
 	case "VicStatic": { _category = "Turrets"; _title = "Deploy Turret"; };
+	case "VicApc": { _category = "APC"; _title = "Deploy APC"; };
+	case "VicArty": { _category = "Artillery"; _title = "Deploy Artillery Vehicle"};
 	case "VicTank": { _category = "Tanks"; _title = "Deploy Armored Vehicle";}
 };
 
 createDialog "MSF_Logi_Vics";
+[_idd] call MSF_UI_fnc_SetTabletStats;
 
 ctrlSetText [1001, _title];
 ctrlEnable [1600, false];

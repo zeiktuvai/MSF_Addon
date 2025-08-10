@@ -6,7 +6,7 @@ private _config = parseSimpleArray (lnbData [1500, [_lbCurSel, 0]]);
 private _cost = parseNumber ((findDisplay _idd displayCtrl 1500) lnbText [_lbCurSel, 2]);
 
 ctrlShow [104, true];
-if (_logiP > _cost) then { ctrlEnable [1600, true]; } else { ctrlEnable [1600, false]; };
+if (_logiP >= _cost) then { ctrlEnable [1600, true]; } else { ctrlEnable [1600, false]; };
 //&& count (uiNamespace getVariable ["MSFLogiDeployCoord", []]) > 0
 
 private _cur = parseSimpleArray lnbData [1500, [_lbCurSel, 0]];

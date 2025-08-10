@@ -25,6 +25,7 @@ class CfgFunctions
             class GetLogiInventory {};
             class GetLogiSupports {};
             class GetSavedVehicleLoadout {};
+            class GetSupportFaction {};
             class RemoveSharedVehicleLoadout {};
             class SaveVehicleLoadout {};
             class ShareVehicleLoadout {};

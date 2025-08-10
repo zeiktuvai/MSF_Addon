@@ -30,7 +30,8 @@ class MSF_Module_LogiPoints : Module_F
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
 			property = "MSF_Mod_Logi_Act";
-			defaultValue = 0;			
+			defaultValue = 0;
+			typeName = "Number";		
 			class Values
 			{
 				class Add
