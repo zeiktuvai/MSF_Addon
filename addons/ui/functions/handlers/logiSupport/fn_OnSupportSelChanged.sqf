@@ -16,10 +16,9 @@ if (_cur # 5 == 1) then {
 	findDisplay _idd displayCtrl 1800 cbSetChecked true;
 };
 
-if (_config # 6 == 1) then {
-	ctrlSetText [1600, "Select Vehicle"];
-}
-else
-{
-	ctrlSetText [1600, "Select Drop Zone"];
+switch (_config # 6) do {
+	case 1: { ctrlSetText [1600, "Select Vehicle"]; };
+	case 2;
+	case 3: { ctrlSetText [1600, "Select Target"]; };
+	default { ctrlSetText [1600, "Select Drop Zone"]; };
 };

@@ -29,6 +29,15 @@ if (_airDrop == 1) then {
 		_markers pushBack _marker;
 		uiNamespace setVariable ["MSF_LogiMarkers", _markers];
 	};
+}
+else
+{
+	_code = {
+		_data params ["_type", "_category"];
+		private _type = _reqType;
+
+		[_unit, format ["%1 barrage en route to grid %2", _name, mapGridPosition _pos], true] call MSF_Logi_fnc_SendLogisticsMessage;
+	};
 };
 
 //TODO: supply chain code

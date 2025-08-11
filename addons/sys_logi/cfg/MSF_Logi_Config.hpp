@@ -153,7 +153,16 @@ class MSF_Logi_Config
             airDrop = 1;
             category = 1;
         };
-        
+        class ArtyFlare
+        {
+            name = "Flare Round";
+            description = "Calls in a barrage of artillery fired flares at the selected location.";
+            icon = "a3\modules_f_curator\data\portraitflare_ca.paa";
+            type = "ArtyFlare";
+            baseCost = 3;
+            airDrop = 0;
+            category = 3;
+        };
         //UAV
         //Artillery
         //Flares
@@ -162,5 +171,4 @@ class MSF_Logi_Config
 // "a3\ui_f\data\map\vehicleicons\iconobject_3x1_ca.paa"
 // "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa"
 
-// "a3\modules_f_curator\data\portraitflare_ca.paa"
 // "a3\drones_f\air_f_gamma\uav_02\data\ui\map_uav_02_ca.paa"
