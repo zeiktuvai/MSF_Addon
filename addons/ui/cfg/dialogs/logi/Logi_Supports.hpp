@@ -1,63 +1,40 @@
-import RscObject;
-import RscText;
-import RscFrame;
-import RscLine;
-import RscProgress;
-import RscPicture;
-import RscPictureKeepAspect;
-import RscVideo;
-import RscHTML;
-import RscButton;
-import RscShortcutButton;
-import RscEdit;
-import RscCombo;
-import RscListBox;
-import RscListNBox;
-import RscXListBox;
-import RscTree;
-import RscSlider;
-import RscXSliderH;
-import RscActiveText;
-import RscActivePicture;
-import RscActivePictureKeepAspect;
-import RscStructuredText;
-import RscToolbox;
-import RscControlsGroup;
-import RscControlsGroupNoScrollbars;
-import RscControlsGroupNoHScrollbars;
-import RscControlsGroupNoVScrollbars;
-import RscButtonTextOnly;
-import RscButtonMenu;
-import RscButtonMenuOK;
-import RscButtonMenuCancel;
-import RscButtonMenuSteam;
-import RscMapControl;
-import RscMapControlEmpty;
-import RscCheckBox;
-import IGUIBack;
-import ctrlListNBox;
-import ctrlMenuStrip;
-
-#define GRID_H (pixelH * pixelGrid * 0.50)
-#define GRID_W (pixelW * pixelGrid * 0.50)
-#define CENTER_X ((getResolution select 2) * 0.5 * pixelW)
-#define CENTER_Y ((getResolution select 3) * 0.5 * pixelH)
-#define STR(VAR) #VAR
-
-class MSFdevdialog
+class MSF_Logi_Supports
 {
-	idd = 6222;
+	idd = 6221;
 	
     class ControlsBackground
     {
         #include "\z\msf\addons\ui\cfg\dialogs\assets\MSFTablet.inc"
-
     };
     class Controls
     {   
         #include "\z\msf\addons\ui\cfg\dialogs\assets\Header.inc"
         
-         class MainGroup : RscControlsGroup
+        class menu : ctrlMenuStrip
+        {
+            idc = 2201;            
+            x = STR(CENTER_X - 100.2 * GRID_W);
+            y = STR(CENTER_Y - 61.4 * GRID_H);
+            w = STR(200.1 * GRID_W);
+            h = STR(5 * GRID_H);     
+            class Items
+            {
+                items[] = {"Map"};                
+                class Map
+                {
+                    text = "Map";
+                    items[] = {"Clear"};
+                };
+                class Clear
+                {
+                    text = "Clear Request Markers";
+                    action = "[] call MSF_UI_fnc_OnClearMarkersClicked";
+                };
+                class Default;
+                class Separator;
+            };
+        };
+        class MainGroup : RscControlsGroup
         {
             idc = 102;
             
@@ -72,11 +49,21 @@ class MSFdevdialog
                 {
                     idc = 1002;
 
-                    text = "Item Selection";
+                    text = "Item";
                     colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                     x = 0;
                     y = 0;
                     w = STR(100 * GRID_W);
+                    h = STR(5 * GRID_H);
+                };
+                class list_cost: RscText
+                {
+                    idc = 1003;
+
+                    text = "Cost";                    
+                    x = STR(88 * GRID_W);
+                    y = 0;
+                    w = STR(10 * GRID_W);
                     h = STR(5 * GRID_H);
                 };
                 class detail_bg: RscText
@@ -94,7 +81,7 @@ class MSFdevdialog
                 {
                     idc = 1500;
 
-                    onLBSelChanged = "params ['_control', '_lbCurSel', '_lbSelection']; [lnbData [1500, [_lbCurSel, 1]]] execVM 'onsel.sqf';";
+                    onLBSelChanged = "params ['_control', '_lbCurSel', '_lbSelection']; [_control, _lbCurSel, _lbSelection] call MSF_UI_fnc_OnSupportSelChanged;";
                     disableOverflow = 1;
                     rowHeight = 0.05;
                     colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
@@ -102,6 +89,34 @@ class MSFdevdialog
                     y = STR(6 * GRID_H);
                     w = STR(99.8 * GRID_W);
                     h = STR(92 * GRID_H);
+                };
+                class PointsDisp : RscStructuredText
+                {
+                    idc = 1203;
+
+                    text = "Remaining Logistics:<br/> 0pts";
+                    colorBackground[] = {1,0.75,0,0.3};                            
+                    x = STR(105.2 * GRID_W);
+                    y = STR(0.1 * GRID_H);
+                    w = STR(88.7 * GRID_W);
+                    h = STR(10.5 * GRID_H);
+                    shadow = 0;
+                    class Attributes
+                    {
+                        font = "PuristaBold";
+                        align = "center";
+                        size = 0.9;
+                        shadow = 1;
+                    };
+                };
+                class PointsFrame : RscFrame
+                {
+                    idc = -1;
+                    colorText[] = {0,0,0,1};                            
+                    x = STR(105 * GRID_W);
+                    y = 0;
+                    w = STR(89.1 * GRID_W);
+                    h = STR(10.8 * GRID_H);
                 };
                 class DetailGroup : RscControlsGroup
                 {
@@ -140,7 +155,7 @@ class MSFdevdialog
                             w = STR(88.7 * GRID_W);
                             h = STR(58 * GRID_H);
                         };
-                        class detail_img: RscPicture
+                        class detail_text: RscStructuredText
                         {
                             idc = 1004;
 
@@ -149,10 +164,10 @@ class MSFdevdialog
                             y = STR(8 * GRID_H);
                             w = STR(88.8 * GRID_W);
                             h = STR(57 * GRID_H);                            
-                            // class Attributes
-                            // {
-                            //     size = 0.8;
-                            // };
+                            class Attributes
+                            {
+                                size = 0.8;
+                            };
                         };
                         class StatGroup : RscControlsGroup
                         {
@@ -217,7 +232,6 @@ class MSFdevdialog
                 };
             };
         };
-        
 
         #include "\z\msf\addons\ui\cfg\dialogs\assets\StatusBar.inc"
     };

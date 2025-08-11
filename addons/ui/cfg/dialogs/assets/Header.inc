@@ -15,6 +15,8 @@ class HeaderGroup : RscControlsGroup
             text = "Supply Depot"; //--- ToDo: Localize;
             x = "0";
             y = "0";
+            w = STR(200 * GRID_W);
+            style = 0x02;
         };
         class RscButtonMenuCancel: RscButtonMenuSteam
         {

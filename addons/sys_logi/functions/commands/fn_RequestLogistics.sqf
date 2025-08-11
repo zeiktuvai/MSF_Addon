@@ -1,28 +1,29 @@
 params [["_code", {}, [{}]], ["_args", [], [[]]],["_obj", objNull, [objNull]],["_supportReq", false, [false]]];
 
+_item params ["_name", "_desc", "_icon", "_reqType", "_baseCost", "_airDrop"];
+
 if !(_supportReq) then {
 	_args params ["_type"];
 
 	private _item = [_type] call MSF_Logi_fnc_GetLogiInventory;
-	private _cost = [(_item # 4)] call MSF_Logi_fnc_CalculateItemCost;
+	private _cost = [_baseCost] call MSF_Logi_fnc_CalculateItemCost;
 
 	if ([_obj, _cost] call MSF_Logi_fnc_CheckAvailablePoints) then {
 		call _code;
 
-		systemChat format ["%1 delivered to supply point.", (_item # 0)];
+		systemChat format ["%1 delivered to supply point.", _name];
 		private _points = [_obj] call ace_rearm_fnc_getSupplyCount;
 		[_obj, _points - _cost] call ace_rearm_fnc_setSupplyCount;
 	};
 }
 else {
-	_args params ["_item", "_pos"];
+	_args params ["_item", "_pos", "_unit"];
 
-	private _cost = [(_item # 4)] call MSF_Logi_fnc_CalculateItemCost;
-	private _logiPoints = ((missionNamespace getVariable "MSF") get "Logi_Points");
+	private _cost = [_baseCost] call MSF_Logi_fnc_CalculateItemCost;
+	private _logiPoints = [side _unit] call MSF_Logi_fnc_GetLogiPoints;
 
 	if (_logiPoints > _cost) then {
-		["MSF", "Logi_Points", _logiPoints - _cost] call MSF_fnc_SetConfigValue;
-		
+		[_cost, true, side _unit] call MSF_Logi_fnc_UpdateLogiPoints;				
 		call _code;
 	}
 	else
