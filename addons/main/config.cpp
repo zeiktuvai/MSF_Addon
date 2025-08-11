@@ -4,7 +4,6 @@
 #include "cfg\MSF_Categories.hpp"
 #include "cfg\MSF_Factions.hpp"
 #include "cfg\MSF_MPGameTypes.hpp"
-#include "cfg\MSF_Patch.hpp"
 
 class CfgPatches
 {

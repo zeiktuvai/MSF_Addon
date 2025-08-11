@@ -1,5 +1,6 @@
 #include "..\main\cfg\MSF_Macros.hpp"
 #include "cfg\MSF_CBRN_Functions.hpp"
+#include "cfg\CBRN_Particles.hpp"
 
 class CfgPatches
 {
