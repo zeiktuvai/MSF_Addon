@@ -45,3 +45,32 @@ class CfgHints
 		};
 	};
 };
+
+class CfgSounds
+{
+	sounds[] = {};
+	class MSF_DistantMortar1
+	{
+		name = "Distant mortar fire";
+		sound[] = {"A3\Sounds_F\arsenal\weapons_static\Mortar\Mortar82mm_distShot_01.wss", 0.3, 1};
+		titles[] = {0,""};
+	};
+	class MSF_DistantMortar2
+	{
+		name = "Distant mortar fire";
+		sound[] = {"A3\Sounds_F\arsenal\weapons_static\Mortar\Mortar82mm_distShot_02.wss", 0.3, 1};
+		titles[] = {0,""};
+	};
+	class MSF_DistantMortar3
+	{
+		name = "Distant mortar fire";
+		sound[] = {"A3\Sounds_F\arsenal\weapons_static\Mortar\Mortar82mm_distShot_03.wss", 0.3, 1};
+		titles[] = {0,""};
+	};
+	class MSF_DistantHowitzer
+	{
+		name = "Distant howitzer fire";
+		sound[] = {"A3\Sounds_F\arsenal\weapons_vehicles\cannon_155mm\CannonHeavy_distShot.wss", 0.3, 1};
+		titles[] = {0,""};
+	};
+};

@@ -36,6 +36,14 @@ else
 		_data params ["_type", "_category"];
 		private _type = _reqType;
 
+		switch (_category) do {
+			case 2: {
+				[_pos, _type] call MSF_Logi_fnc_SpawnArtyBarrage;
+			};
+			case 3: { 
+				[_pos, _type] call MSF_Logi_fnc_SpawnFlareBarrage;
+			};			
+		};
 		[_unit, format ["%1 barrage en route to grid %2", _name, mapGridPosition _pos], true] call MSF_Logi_fnc_SendLogisticsMessage;
 	};
 };

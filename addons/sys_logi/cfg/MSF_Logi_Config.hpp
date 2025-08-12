@@ -123,6 +123,16 @@ class MSF_Logi_Config
             airDrop = 1;
             category = 1;
         };
+        class VicCar
+        {
+            name = "Car";
+            description = "Calls in a car Air-drop at the selected location.";
+            icon = "\A3\Soft_F\MRAP_01\Data\UI\MRAP_01_Base_ca.paa";
+            type = "VicCar";
+            baseCost = 7;
+            airDrop = 1;
+            category = 1;
+        };
         class VicApc
         {
             name = "APC";
@@ -153,19 +163,55 @@ class MSF_Logi_Config
             airDrop = 1;
             category = 1;
         };
-        class ArtyFlare
+        class ArtyFlareG
         {
-            name = "Flare Round";
-            description = "Calls in a barrage of artillery fired flares at the selected location.";
-            icon = "a3\modules_f_curator\data\portraitflare_ca.paa";
-            type = "ArtyFlare";
+            name = "Illumination Flare - Green";
+            #include "include/flare_info.inc"
+            type = "ArtyFlareG";
+            #include "include/flare_stats.inc"
+        };
+        class ArtyFlareR
+        {
+            name = "Illumination Flare - Red";
+            #include "include/flare_info.inc"
+            type = "ArtyFlareR";
+            #include "include/flare_stats.inc"
+        };
+        class ArtyFlareW
+        {
+            name = "Illumination Flare - White";
+            #include "include/flare_info.inc"
+            type = "ArtyFlareW";
+            #include "include/flare_stats.inc"
+        };
+        class ArtyFlareY
+        {
+            name = "Illumination Flare - Yellow";
+            #include "include/flare_info.inc"
+            type = "ArtyFlareY";
+            #include "include/flare_stats.inc"
+        };
+        class ArtyMis
+        {
+            name = "Artillery - Missile Salvo";
+            description = "Calls in a cluster missile barrage fired at the selected location. Fires several sequential missiles.";
+            icon = "a3\armor_f_gamma\mbt_01\data\ui\slammer_mlrs_base_ca.paa";
+            type = "ArtyMis";
+            baseCost = 4;
+            airDrop = 0;
+            category = 2;
+        };
+        class ArtyShell
+        {
+            name = "Artillery - Barrage";
+            description = "Calls in an artillery barrage fired at the selected location. Fires several sequential shells.";
+            icon = "a3\armor_f_gamma\mbt_01\data\ui\slammer_scorcher_m4_base_ca.paa";
+            type = "ArtyShell";
             baseCost = 3;
             airDrop = 0;
-            category = 3;
+            category = 2;
         };
         //UAV
-        //Artillery
-        //Flares
     };
 };
 // "a3\ui_f\data\map\vehicleicons\iconobject_3x1_ca.paa"

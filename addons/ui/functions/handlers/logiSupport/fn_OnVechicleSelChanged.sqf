@@ -3,7 +3,13 @@ params [["_selection", "", [""]], ["_item", "", [""]]];
 private _config = [_item, configNull] call BIS_fnc_configPath;
 private _desc = switch ((parseSimpleArray _selection) select 3) do {
 	case "VicStatic": { getText (_config >> "Armory" >> "description"); };
-	case "VicTank": {getText (_config >> "Library" >> "libTextDesc"); };
+	case "VicCar";
+	case "VicApc";
+	case "VicArty";
+	case "VicTank": { 
+		private _text = getText (_config >> "Library" >> "libTextDesc");
+		if (isLocalized _text) then { localize _text } else { _text };
+	};
 	default {""};
 };
 

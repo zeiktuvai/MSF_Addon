@@ -25,6 +25,16 @@ findDisplay _idd displayCtrl 1203 ctrlSetStructuredText parseText format ["Remai
 	lnbSetTooltip [1500, [_forEachIndex,1], _desc];
 	lnbSetData [1500, [_forEachIndex, 1], _type];
 
+	if (_category == 3) then {
+		private _color = switch (_type) do {
+			case "ArtyFlareG": {[0, 0.8, 0, 1]};
+			case "ArtyFlareR": {[0.9, 0, 0, 1]};
+			case "ArtyFlareW": {[1, 1, 1, 1]};
+			case "ArtyFlareY": {[0.85, 0.85, 0, 1]};
+		};
+		lnbSetPictureColor [1500, [_forEachIndex,0], _color];
+	};
+
 	if (_baseCost > _logiP) then {
 		lnbSetColor [1500, [_forEachIndex,1], [0.5, 0.5, 0.5, 1]];
 		lnbSetColor [1500, [_forEachIndex,2], [0.5, 0.5, 0.5, 1]];
