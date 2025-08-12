@@ -20,11 +20,6 @@ if (isServer) then {
 		};
 	}] call BIS_fnc_addScriptedEventHandler;
 
-	[missionNamespace, "MSF_Logi_DropRequested", {
-		params ["_side", "_pos", "_type", ["_class", ""]];
-		[_side, _pos, _type, _class] call MSF_Logi_fnc_SpawnVehicleParaDrop;
-	}] call BIS_fnc_addScriptedEventHandler;
-
 	if (MSF_Logi_PointsTickEnable) then {
 		["LogiTick", {[] call MSF_Logi_fnc_LogisticsChannelService;}, MSF_Logi_PointsTickInterval] call MSF_fnc_RegisterServiceWorker;
 	}

@@ -2,9 +2,19 @@
 
 ## [2.14.5]
 
-- Added static turret, APC, Artillery and Tank air-drop to the support channel.
+- Added the following to the Logistics Support Channel:
+  - Static turrets
+  - APCs
+  - Cars
+  - Tanks
+  - Artillery barrages
+  - Missile barrages
+  - Moartar barrages
+  - Flares
 - Updated supply depot to use it's own internal supply count.
 - Updated supply depot supply point to spawn a IR Chemlight for easy location during night missions.
+- Fixed parachute so that if it gets stuck, the parachute is removed after 15 seconds.
+- Fixed bug in Logi support channels where clicking "Clear request markers" wouldn't remove users map markers.
 
 ## [2.14.4]
 

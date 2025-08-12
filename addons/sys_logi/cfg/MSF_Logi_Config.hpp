@@ -220,11 +220,8 @@ class MSF_Logi_Config
             baseCost = 3;
             airDrop = 0;
             category = 2;
-        };        
-        //UAV
+        };
     };
 };
-// "a3\ui_f\data\map\vehicleicons\iconobject_3x1_ca.paa"
 // "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa"
-
 // "a3\drones_f\air_f_gamma\uav_02\data\ui\map_uav_02_ca.paa"

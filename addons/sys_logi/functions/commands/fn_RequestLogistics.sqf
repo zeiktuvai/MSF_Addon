@@ -24,13 +24,43 @@ else {
 	private _logiPoints = [side _unit] call MSF_Logi_fnc_GetLogiPoints;
 
 	if (_logiPoints > _cost) then {
-		[_cost, true, side _unit] call MSF_Logi_fnc_UpdateLogiPoints;				
-		call _code;
+		[_cost, true, side _unit] call MSF_Logi_fnc_UpdateLogiPoints;
+		
+		if (_airDrop == 1) then {
+			_data params ["_type", "_category", "_class"];
+			private _type = _reqType;
+
+			[side _unit, _pos, _type, _class] remoteExec ["MSF_Logi_fnc_SpawnVehicleParaDrop", 2];			
+			[_unit, format ["%1 air-drop en route to grid %2", _name, mapGridPosition _pos], true] call MSF_Logi_fnc_SendLogisticsMessage;
+
+			private _mID = format ["MSF_Logi_%1_%2", _type, floor (random 999)];
+			private _marker = createMarkerLocal [_mID, _pos];
+			_marker setMarkerTypeLocal "mil_dot";
+			_marker setMarkerColorLocal ([side _unit] call MSF_UI_fnc_GetSideColor);
+			_marker setMarkerText format ["%1 LZ", _name];
+			
+			private _markers = uiNamespace getVariable ["MSF_LogiMarkers", []];
+			_markers pushBack _marker;
+			uiNamespace setVariable ["MSF_LogiMarkers", _markers];
+		}
+		else
+		{
+			_data params ["_type", "_category"];
+			private _type = _reqType;
+
+			switch (_category) do {
+				case 2: {
+					[_pos, _type] call MSF_Logi_fnc_SpawnArtyBarrage;
+				};
+				case 3: { 
+					[_pos, _type] call MSF_Logi_fnc_SpawnFlareBarrage;
+				};			
+			};
+			[_unit, format ["%1 barrage en route to grid %2", _name, mapGridPosition _pos], true] call MSF_Logi_fnc_SendLogisticsMessage;			
+		};
 	}
 	else
 	{
 		systemChat "Available logistics insufficient for submitted request.";
 	};
 };
-
-

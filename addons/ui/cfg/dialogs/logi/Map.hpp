@@ -87,7 +87,7 @@ class MSF_LogiMap
                     text = "";
                     x = STR(27 * GRID_W);
                     y = STR(2.5 * GRID_H);
-                    w = STR(60 * GRID_W);
+                    w = STR(70 * GRID_W);
                     h = STR(10 * GRID_H);
                     shadow = 1;
                     class Attributes

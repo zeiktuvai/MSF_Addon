@@ -19,6 +19,7 @@ switch (_type) do {
 		_obj = createVehicle [selectRandom ["Box_IND_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_EAF_AmmoVeh_F", "Box_NATO_AmmoVeh_F"], _spawnPos];
 	};
 	case "VicStatic";
+	case "VicCar";
 	case "VicApc";
 	case "VicArty";
 	case "VicTank": {
