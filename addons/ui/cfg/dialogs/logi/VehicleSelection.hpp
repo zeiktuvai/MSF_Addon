@@ -1,52 +1,6 @@
-import RscObject;
-import RscText;
-import RscFrame;
-import RscLine;
-import RscProgress;
-import RscPicture;
-import RscPictureKeepAspect;
-import RscVideo;
-import RscHTML;
-import RscButton;
-import RscShortcutButton;
-import RscEdit;
-import RscCombo;
-import RscListBox;
-import RscListNBox;
-import RscXListBox;
-import RscTree;
-import RscSlider;
-import RscXSliderH;
-import RscActiveText;
-import RscActivePicture;
-import RscActivePictureKeepAspect;
-import RscStructuredText;
-import RscToolbox;
-import RscControlsGroup;
-import RscControlsGroupNoScrollbars;
-import RscControlsGroupNoHScrollbars;
-import RscControlsGroupNoVScrollbars;
-import RscButtonTextOnly;
-import RscButtonMenu;
-import RscButtonMenuOK;
-import RscButtonMenuCancel;
-import RscButtonMenuSteam;
-import RscMapControl;
-import RscMapControlEmpty;
-import RscCheckBox;
-import IGUIBack;
-import ctrlListNBox;
-import ctrlMenuStrip;
-
-#define GRID_H (pixelH * pixelGrid * 0.50)
-#define GRID_W (pixelW * pixelGrid * 0.50)
-#define CENTER_X ((getResolution select 2) * 0.5 * pixelW)
-#define CENTER_Y ((getResolution select 3) * 0.5 * pixelH)
-#define STR(VAR) #VAR
-
-class MSFdevdialog
+class MSF_Logi_Vics
 {
-	idd = 6222;
+	idd = 6223;
 	
     class ControlsBackground
     {
@@ -63,7 +17,7 @@ class MSFdevdialog
             text = "Cost: ";
             x = STR(CENTER_X - 100.2 * GRID_W);
             y = STR(CENTER_Y - 69 * GRID_H);
-            w = STR(30 * GRID_W);
+            w = STR(40 * GRID_W);
             h = STR(10 * GRID_H);
         };
         class MainGroup : RscControlsGroup
@@ -103,7 +57,7 @@ class MSFdevdialog
                 {
                     idc = 1500;
 
-                    onLBSelChanged = "params ['_control', '_lbCurSel', '_lbSelection']; [lnbData [1500, [_lbCurSel, 1]]] execVM 'onsel.sqf';";
+                    onLBSelChanged = "params ['_control', '_lbCurSel', '_lbSelection']; [lnbData [1500, [_lbCurSel, 0]], lnbData [1500, [_lbCurSel, 1]]] call MSF_UI_fnc_OnVechicleSelChanged;";
                     disableOverflow = 1;
                     rowHeight = 0.05;
                     colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
@@ -163,51 +117,10 @@ class MSFdevdialog
                             w = STR(88.8 * GRID_W);
                             h = STR(57 * GRID_H);
                         };
-                        // class StatGroup : RscControlsGroup
-                        // {
-                        //     idc = 105;
-                        //     x = STR(0.1 * GRID_W);
-                        //     y = STR(65 * GRID_H);
-                        //     w = STR(88.8 * GRID_W);
-                        //     h = STR(14 * GRID_H);
-
-                        //     class Controls
-                        //     {
-                        //         class stat_bgs: RscText
-                        //         {
-                        //             idc = 1204;
-
-                        //             text = "";
-                        //             colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
-                        //             x = 0;
-                        //             y = 0;
-                        //             w = STR(88.8 * GRID_W);
-                        //             h = STR(14 * GRID_H);
-                        //         };
-                        //         class stat_para: RscCheckBox
-                        //         {
-                        //             idc = 1800;
-                        //             x = STR(1 * GRID_W);
-                        //             y = STR(1 * GRID_H);
-                        //             w = STR(5 * GRID_W);
-                        //             h = STR(5 * GRID_H);
-                        //         };
-                        //         class para_text: RscText
-                        //         {
-                        //             idc = 1006;
-
-                        //             text = "Paradrop";                    
-                        //             x = STR(6 * GRID_W);
-                        //             y = STR(1 * GRID_H);
-                        //             w = STR(20 * GRID_W);
-                        //             h = STR(5 * GRID_H);
-                        //         };
-                        //     };
-                        // };
                         class SubmitButton: RscShortcutButton
                         {
                             idc = 1600;
-                            //onButtonClick = "closeDialog 0; [lnbData [1500, [lnbCurSelRow 1500, 0]]] call MSF_UI_fnc_DisplayLogiMap;";
+                            onButtonClick = "[lnbCurSelRow 1500] call MSF_UI_fnc_OnVehicleSelect;";
                             colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                             text = "Select Drop Zone";
                             x = STR(0.1 * GRID_W);

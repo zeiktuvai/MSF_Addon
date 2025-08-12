@@ -1,9 +1,9 @@
 class MSF_Module_UAVSpawn : Module_F
 {
 	scope = 2;
-	displayName = "Drones - UAV Spawn Point";
+	displayName = "UAV Spawn Point";
 	icon = "a3\modules_f_beta\data\firingdrills\checkpoint_ca.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_Logi";
 	function = "";
 	functionPriority = 1;
 	isGlobal = 0;

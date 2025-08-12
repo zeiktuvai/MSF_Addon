@@ -17,4 +17,8 @@ class CfgFactionClasses
 	{
 		displayName = "MSF - Intel System";
 	};
+	class MSF_Module_Logi : NO_CATEGORY
+	{
+		displayName = "MSF - Logistics System";
+	};
 };

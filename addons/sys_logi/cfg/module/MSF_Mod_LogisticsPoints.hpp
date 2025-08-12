@@ -1,9 +1,9 @@
 class MSF_Module_LogiPoints : Module_F
 {
 	scope = 2;
-	displayName = "Logistics - Points";
+	displayName = "Update Logi Points";
 	icon = "a3\ui_f\data\map\vehicleicons\iconbackpack_ca.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_Logi";
 	function = "MSF_Logi_fnc_Mod_LogiPoints";
 	functionPriority = 2;
 	isGlobal = 0;
@@ -30,7 +30,8 @@ class MSF_Module_LogiPoints : Module_F
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
 			property = "MSF_Mod_Logi_Act";
-			defaultValue = 0;			
+			defaultValue = 0;
+			typeName = "Number";		
 			class Values
 			{
 				class Add
