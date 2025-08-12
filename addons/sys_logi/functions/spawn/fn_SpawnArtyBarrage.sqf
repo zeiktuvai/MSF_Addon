@@ -29,7 +29,15 @@ params [["_pos", [], [[]]], ["_type", "", [""]]];
 			_velocity = [0,0,-100];
 			_sounds = ["MSF_DistantHowitzer"];
 		};
-		case "ArtyMortar": { _ammo = "ModuleOrdnanceMortar_F_ammo"; };
+		case "ArtyMortar": { 
+			_ammo = "ModuleOrdnanceMortar_F_ammo";
+			_posAmmo = [_pos];
+			for "_i" from 0 to 2 do {
+				_posAmmo pushBack ([_pos, random [10, 20, 30], random 360] call BIS_fnc_relPos);
+			};
+			_velocity = [0,0,-100];
+			_sounds = ["MSF_DistantMortar1", "MSF_DistantMortar2", "MSF_DistantMortar3"];
+		};
 	};
 
 	{

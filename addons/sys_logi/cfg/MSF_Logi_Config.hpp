@@ -197,20 +197,30 @@ class MSF_Logi_Config
             description = "Calls in a cluster missile barrage fired at the selected location. Fires several sequential missiles.";
             icon = "a3\armor_f_gamma\mbt_01\data\ui\slammer_mlrs_base_ca.paa";
             type = "ArtyMis";
-            baseCost = 4;
+            baseCost = 5;
             airDrop = 0;
             category = 2;
         };
         class ArtyShell
         {
             name = "Artillery - Barrage";
-            description = "Calls in an artillery barrage fired at the selected location. Fires several sequential shells.";
+            description = "Calls in a artillery barrage fired at the selected location. Fires several sequential shells.";
             icon = "a3\armor_f_gamma\mbt_01\data\ui\slammer_scorcher_m4_base_ca.paa";
             type = "ArtyShell";
-            baseCost = 3;
+            baseCost = 4;
             airDrop = 0;
             category = 2;
         };
+        class ArtyMortar
+        {
+            name = "Artillery - Mortar Barrage";
+            description = "Calls in a mortar barrage fired at the selected location. Fires several sequential shells.";
+            icon = "\A3\Static_f\Mortar_01\data\UI\Mortar_01_ca.paa";
+            type = "ArtyMortar";
+            baseCost = 3;
+            airDrop = 0;
+            category = 2;
+        };        
         //UAV
     };
 };
