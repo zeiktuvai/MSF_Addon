@@ -9,10 +9,10 @@
   - Tanks
   - Artillery barrages
   - Missile barrages
-  - Moartar barrages
+  - Mortar  barrages
   - Flares
 - Updated supply depot to use it's own internal supply count.
-- Updated supply depot supply point to spawn a IR Chemlight for easy location during night missions.
+- Updated supply depot supply point to spawn a IR Chem-light for easy location during night missions.
 - Fixed parachute so that if it gets stuck, the parachute is removed after 15 seconds.
 - Fixed bug in Logi support channels where clicking "Clear request markers" wouldn't remove users map markers.
 
