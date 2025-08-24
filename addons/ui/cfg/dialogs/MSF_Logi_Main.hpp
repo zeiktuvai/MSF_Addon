@@ -111,7 +111,7 @@ class MSF_LogiMain
                 {
                     idc = 901;
 
-                    text = "yodelos.paa";
+                    text = "z\msf\addons\ui\data\ui\yodelos.paa";
                     x = STR(115 * GRID_W);
                     y = STR(6 * GRID_H);
                     w = STR(75 * GRID_W);
