@@ -10,7 +10,8 @@ private _run = true;
 while {_run} do {
 
 	for "_g" from 1 to _infNum do {
-		private _pos = _trigger getRelPos [400, random 350];		
+		private _pos = _trigger getRelPos [400, random 350];
+		//TODO: same as patrol, update to use units
 		private _group = [_pos, _side, _units get "Groups"] call MSF_fnc_SpawnGroupInSafePos;
 		
 		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {

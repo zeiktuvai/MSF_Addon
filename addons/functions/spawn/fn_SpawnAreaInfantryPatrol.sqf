@@ -16,6 +16,7 @@ params ["_trigger"];
 private _vals = _trigger getVariable ["module_params", []];
 _vals params ["_sideVal", "_amount", "_mode", "_behv", "_speed", "_spawnCount"];
 
+//TODO: Update to spawn number of units instead of group.
 if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {
 	private _side = [_sideVal] call BIS_fnc_sideType;
 	private _groupTypes = ["unit", _side] call MSF_fnc_GetConfigData get "Groups";
