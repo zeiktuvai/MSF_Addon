@@ -33,7 +33,7 @@ class CfgFunctions
 			file = "z\msf\addons\functions\config";
 			class GetConfigData {};
 			class GetSyncedUntConfig {};
-			class GetUnitOverrideCfg {};
+			class GetOldCfg {};
 		};
 		class Data
 		{
@@ -130,7 +130,6 @@ class CfgFunctions
 			class SpawnAreaInfantryPatrol {};
 			class SpawnAreaVehicleDefense {};
 			class SpawnAreaVehiclePatrol {};
-			class SpawnGroupInSafePos {};
 			class SpawnInfantryInBuildings {};
 			class SpawnInfantryOnPlaceholder {};
 			class SpawnMannedVicArray {};
