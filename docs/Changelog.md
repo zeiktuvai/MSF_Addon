@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.14.6]
+
+- Updated class override to use a new module that allows you to sync to units to use.
+- Hid old class override but kept code in place to prevent older missions breaking.
+- Fixed bug in player rearm code causing ammor for some primary weapons to not be added to a players inventory.
+
 ## [2.14.5]
 
 - Added the following to the Logistics Support Channel:
