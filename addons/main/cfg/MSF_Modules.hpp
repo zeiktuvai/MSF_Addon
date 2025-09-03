@@ -16,6 +16,7 @@ class Module_F : Logic
 };
 
 #include "module\config\MSF_Mod_Classes.hpp"
+#include "module\config\MSF_Mod_SpawnUnits.hpp"
 #include "module\object\MSF_Mod_BuildingDestroy.hpp"
 #include "module\object\MSF_Mod_DeleteUnit.hpp"
 #include "module\object\MSF_Mod_Dialog.hpp"

@@ -18,7 +18,7 @@ params [["_pos", [], [[]]], ["_type", "", [""]]];
 			_posAmmo = [[_pos, 500, _dir + 180] call bis_fnc_relpos];
 			_posAmmo set [1, _posAmmo select 0];
 			_velocity = [sin _dir * 68,cos _dir * 68,-100];
-			_sounds = ["MLRS_far_1", "MLRS_far_2", "MLRS_far_3", "MLRS_far_4"];
+			_sounds = ["MSF_DistantMissile1", "MSF_DistantMissile2", "MSF_DistantMissile3", "MSF_DistantMissile4"];
 		};
 		case "ArtyShell": { 
 			_ammo = "ModuleOrdnanceHowitzer_F_ammo";

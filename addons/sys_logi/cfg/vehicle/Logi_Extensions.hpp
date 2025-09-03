@@ -36,7 +36,7 @@ class CAManBase : Man
             icon = "\A3\Drones_F\Weapons_F_Gamma\Items\data\UI\gear_UAV_controller_rgr_CA.paa";
             condition = "[player, 'MSF_LogisticsTerminal', false] call BIS_fnc_hasItem";
             statement = "[] call MSF_UI_fnc_DisplayLogiMain";
-            exceptions[] = {};
+            exceptions[] = {"isNotInside","isNotSitting","isNotSwimming"};
 
             // class MSF_LogisticsMenu
             // {
@@ -49,14 +49,14 @@ class CAManBase : Man
             {
                 displayName = "Logistics Support Channel";
                 condition = "true";
-                exceptions[] = {};
+                exceptions[] = {"isNotInside","isNotSitting","isNotSwimming"};
                 icon = "a3\ui_f\data\gui\cfg\communicationmenu\supplydrop_ca.paa";
                 statement = "[] call MSF_UI_fnc_DisplayLogiSupport";
             };
             class MSF_VicLoadouts
             {
                 displayName = "Vehicle Loadouts";
-                exceptions[] = {};
+                exceptions[] = {"isNotSitting"};
                 icon = "a3\soft_f_epc\truck_03\data\ui\truck_03_ammo_ca.paa";
                 condition = "[player, 'Engineer'] call MSF_fnc_CheckPlayerTrait";
                 statement = "[] call MSF_UI_fnc_DisplayVicLoadouts;";
@@ -64,7 +64,7 @@ class CAManBase : Man
             class MSF_Markers
             {
                 displayName = "Manage Markers";
-                exceptions[] = {};
+                exceptions[] = {"isNotInside","isNotSitting","isNotSwimming"};
                 icon = "a3\ui_f\data\map\diary\signal_ca.paa";
                 condition = "[player, 'Engineer'] call MSF_fnc_CheckPlayerTrait";
                 statement = "[] call MSF_UI_fnc_DisplayLogiMarker;";

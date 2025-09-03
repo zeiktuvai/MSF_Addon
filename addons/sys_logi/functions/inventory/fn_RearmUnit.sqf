@@ -8,7 +8,13 @@ private _invHMags = magazines _unit arrayIntersect _hMags;
 if (count _pMags > 0) then {
 	if (count _invPMags == 0) then
 	{
-		_invPMags = [selectRandom (_pMags select { getNumber (configFile >> "CfgMagazines" >> _x >> "tracersEvery") == 1 })];
+		if (count _pMags <= 2) then {
+			_invPMags = [selectRandom _pMags];
+		}
+		else
+		{
+			_invPMags = [selectRandom (_pMags select { getNumber (configFile >> "CfgMagazines" >> _x >> "tracersEvery") == 1 })];
+		};
 	};
 	{
 		_unit addMagazines [_x, MSF_Rearm_PMags];
@@ -34,4 +40,5 @@ if (_unit getUnitTrait "UavHacker" == true) then {
 if (count (itemsWithMagazines player select {_x == "HandGrenade"}) < 3) then {
 	_unit addMagazines ["HandGrenade", 1];
 };
+
 playSound3D ["a3\sounds_f_mark\arsenal\weapons\longrangerifles\dmr_02_mar10\dmr02_reload.wss", player];
