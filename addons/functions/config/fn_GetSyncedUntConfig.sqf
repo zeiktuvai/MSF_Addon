@@ -16,10 +16,10 @@ private _turr = _exist getOrDefault ["Turrets", []];
 } forEach _units;
 
 private _result = createHashMap;
-if (count _vics > 0) then { _result set ["Vehicles", _vics] };
-if (count _armor > 0) then { _result set ["Armor", _armor] };
-if (count _air > 0) then { _result set ["Air", _air] };
-if (count _turr > 0) then { _result set ["Turrets", _turr] };
-if (count _men > 0) then { _result set ["Units", _men] };
+if (count _vics > 0) then { _result set ["Vehicles", _vics arrayIntersect _vics] };
+if (count _armor > 0) then { _result set ["Armor", _armor arrayIntersect _armor] };
+if (count _air > 0) then { _result set ["Air", _air arrayIntersect _air] };
+if (count _turr > 0) then { _result set ["Turrets", _turr arrayIntersect _turr] };
+if (count _men > 0) then { _result set ["Units", _men arrayIntersect _men] };
 
 _result;

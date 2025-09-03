@@ -33,7 +33,7 @@ class MSF_Module_SpawnTypes : Module_F
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = "Use this module to override the classes MSF uses to spawn units.";
+		description = "Any unit synced to this module will be used by the MSF to spawn units. Only grabs class names to use for spawns and discards any customizations.";
 		sync[] = { "LocationArea_F" };
 
 		class LocationArea_F
