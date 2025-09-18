@@ -7,20 +7,17 @@ private _type = _trigger getVariable ["type", "Outpost"];
 private _params = _trigger getVariable ["vars", []];
 private _center = position _trigger;
 private _units = [];
-private _spawnReduction = 0;
 
 [_objects, true] call MSF_fnc_ShowHideObjects;
 
 if (_type != "POI") then {
-	_params params ["_vic", "_vicChance", "_supply", "_intelP"];
+	_params params ["_vic", "_vicChance", "_supply", "_intelProvider", "_spawnReduction"];
 	
 	private _unitTypes = ["unit", _side] call MSF_fnc_GetConfigData;
 	private _uTypes = ["empty"] call MSF_fnc_GetConfigData;
 	private _locationData = ["Location", _type] call MSF_Loc_fnc_GetLocationType;
 	private _vicAmmo = _locationData get "VehicleAmmo";
 	private _supplyCnt = _locationData get "SupplyItemCount";
-
-	//if (_type isEqualTo "Checkpoint") then {}
 
 	[_unitTypes get "Vehicles", _objects select {typeOf _x == "MSF_Placeholder_Vehicle"}, _side, _center] call MSF_fnc_SpawnMannedVicArray;
 	[_unitTypes get "Armor", _objects select {typeOf _x == "MSF_Placeholder_Armor"}, _side, _center] call MSF_fnc_SpawnMannedVicArray;
@@ -142,10 +139,12 @@ else {
 [_uTypes get "FuelTruck", _objects select {typeOf _x == "MSF_Placeholder_FuelTruck"}] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder;
 [_uTypes get "AmmoTruck", _objects select {typeOf _x == "MSF_Placeholder_AmmoTruck"}] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder;
 
+private _intelP = if (_type != "POI") then {	_params # 3 } else { _params # 4 };	
+
 // intel system provider
-if (count _intelProvider > 0) then
+if (count _intelP > 0) then
 {
-	_intelProvider params ["_intelP", "_interactC", "_intelC"];
+	_intelP params ["_intelP", "_interactC", "_intelC"];
 
 	if (_intelP) then {
 		{		

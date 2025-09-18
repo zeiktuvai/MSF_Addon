@@ -1,5 +1,16 @@
-params [["_logic", objNull, [objNull]],	["_x", 50, [1]], ["_y", 50, [1]], ["_activationBy", "west", [""]], ["_activationType", "present", ["present"]],
-	["_isRectangle", false, [false]], ["_objects", [], [[]]], ["_type", "", [""]], ["_params", [], [[]]], ["_intelID", "", [""]], ["_side", east, [east]]];
+params [
+	["_logic", objNull, [objNull]],
+	["_x", 50, [1]],
+	["_y", 50, [1]],
+	["_activationBy", "west", [""]],
+	["_activationType", "present", ["present"]],
+	["_isRectangle", false, [false]],
+	["_objects", [], [[]]],
+	["_type", "", [""]],
+	["_params", [], [[]]],
+	["_intelID", "", [""]],
+	["_side", east, [east]]
+];
 
 private ["_intelAct"];
 private _actStatement = {
@@ -49,7 +60,6 @@ else
 		toString _actStatement + toString _intelAct,			
 		""
 	];
-
 };
 
 _trig;

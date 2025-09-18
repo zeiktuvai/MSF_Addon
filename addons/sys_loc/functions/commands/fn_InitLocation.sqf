@@ -34,4 +34,3 @@ _params pushBack _intelProvider;
 [_logic, _radius, _radius, if (typeName _friendlySide == "SIDE") then {[_friendlySide] call BIS_fnc_sideNameUnlocalized} else {_friendlySide},
 	"present", false, _allObjs, _type, _params, _intelID, _side] call MSF_Loc_fnc_CreateLocationActivationTrigger;
 [_logic, 50, 50] call MSF_Loc_fnc_CreateLocationAITrigger;
-//[_logic, 50, 50, _type] call MSF_fnc_OFE_CreateModuleClearTrigger;

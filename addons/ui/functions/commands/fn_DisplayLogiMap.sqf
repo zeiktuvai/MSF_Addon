@@ -1,5 +1,7 @@
 params [["_data", "", [""]]];
 
+disableSerialization;
+
 (parseSimpleArray _data) params ["_name", "_desc", "_icon", "_type", "_baseCost", "_airDrop", "_category", ["_class", ""]];
 private _idd = ["MSF_LogiMap"] call MSF_UI_fnc_GetMSFIDD;
 private _cost = [_baseCost] call MSF_Logi_fnc_CalculateItemCost;
