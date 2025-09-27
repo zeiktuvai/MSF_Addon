@@ -73,4 +73,28 @@ class CfgSounds
 		sound[] = {"A3\Sounds_F\arsenal\weapons_vehicles\cannon_155mm\CannonHeavy_distShot.wss", 0.3, 1};
 		titles[] = {0,""};
 	};
+	class MSF_DistantMissile1
+	{
+		name = "Distant Missile fire";
+		sound[] = {"a3\sounds_f\arsenal\weapons_vehicles\missiles\missilesheavy_shot_01.wss", 0.06, 1};
+		titles[] = {0,""};
+	};
+	class MSF_DistantMissile2
+	{
+		name = "Distant Missile fire";
+		sound[] = {"a3\sounds_f\arsenal\weapons_vehicles\missiles\missilesheavy_shot_02.wss", 0.06, 1};
+		titles[] = {0,""};
+	};
+	class MSF_DistantMissile3
+	{
+		name = "Distant Missile fire";
+		sound[] = {"a3\sounds_f\arsenal\weapons_vehicles\missiles\missilesheavy_shot_03.wss", 0.06, 1};
+		titles[] = {0,""};
+	};
+	class MSF_DistantMissile4
+	{
+		name = "Distant Missile fire";
+		sound[] = {"a3\sounds_f\arsenal\weapons_vehicles\missiles\missilesheavy_shot_04.wss", 0.06, 1};
+		titles[] = {0,""};
+	};
 };
