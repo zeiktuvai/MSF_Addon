@@ -32,9 +32,9 @@ class CfgWeapons
 
 class CfgHints
 {
-	displayName = "MSF - Drone System";
 	class MSFDrone
 	{
+		displayName = "MSF - Drone System";
 		class DroneDeployed
 		{
 			displayName = "Drone Deployed";

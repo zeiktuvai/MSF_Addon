@@ -67,9 +67,9 @@ class CfgNonAIVehicles
 
 class CfgHints
 {
-	displayName = "MSF Messages";
 	class MSF
 	{
+		displayName = "MSF Messages";
 		class General
 		{
 			displayName = "%11";

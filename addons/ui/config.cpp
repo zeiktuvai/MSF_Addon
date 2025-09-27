@@ -16,7 +16,6 @@ class CfgPatches
     };
 };
 
-
 class RscTitles {
     #include "cfg\UI_Hud.hpp"
 };
