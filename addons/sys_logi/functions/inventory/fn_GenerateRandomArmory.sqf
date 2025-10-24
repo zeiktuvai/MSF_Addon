@@ -14,7 +14,7 @@ for "_i" from 1 to _fillCount do {
 	_weaps pushBack _weap;
 
 	private _acc = compatibleItems _weap;
-	if (count _acc > 0 ) then {
+	if (_acc isNotEqualTo []) then {
 		if ([0.8] call MSF_fnc_CalculateProbability) then {
 			_box addItemCargoGlobal [selectRandom _acc, 1];
 		};

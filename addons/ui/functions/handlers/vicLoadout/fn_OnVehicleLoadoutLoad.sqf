@@ -2,7 +2,7 @@ lnbClear 1501;
 tvClear 1500;
 
 private _lds = profileNamespace getVariable ["MSF_VehicleLoadouts", createHashMap];
-if (count (keys (_lds)) > 0) then {
+if (keys _lds isNotEqualTo []) then {
 	if (typeName (_lds get (keys (_lds) select 0)) == "ARRAY") then {
 		[] call MSF_Logi_fnc_ConvertVehicleInventoryData;
 	};

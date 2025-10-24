@@ -5,8 +5,8 @@ private _invPMags = magazines _unit arrayIntersect _pMags;
 private _hMags = compatibleMagazines handgunWeapon _unit;
 private _invHMags = magazines _unit arrayIntersect _hMags;
 
-if (count _pMags > 0) then {
-	if (count _invPMags == 0) then
+if (_pMags isNotEqualTo []) then {
+	if (_invPMags isEqualTo []) then
 	{
 		if (count _pMags <= 2) then {
 			_invPMags = [selectRandom _pMags];
@@ -21,8 +21,8 @@ if (count _pMags > 0) then {
 	} forEach _invPMags;
 };
 
-if (count _hMags > 0) then {
-	if (count _invHMags == 0) then
+if (_hMags isNotEqualTo []) then {
+	if (_invHMags isEqualTo []) then
 	{
 		_invHMags = [selectRandom _hMags];
 	};

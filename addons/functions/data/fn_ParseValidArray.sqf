@@ -6,7 +6,7 @@
 		if (_var == "") exitWith {[]};
 
 		private _val = parseSimpleArray _var;
-		if (count _val == 0) then { throw "Invalid Value" };
+		if (_val isNotEqualTo []) then { throw "Invalid Value" };
 		_val;
 	}
 	catch

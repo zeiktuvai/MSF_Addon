@@ -30,7 +30,7 @@ private _list = _items apply {[getText (_x >> "displayName"),if(getText (_x >> "
 private _dlist = [];
 {
 	private _entry = _x # 0;
-	if (count (_dlist select { (_x # 0) == _entry}) == 0) then { _dlist pushBack _x };
+	if (_dlist select { (_x # 0) == _entry} isEqualTo []) then { _dlist pushBack _x };
 } forEach _list;
 
 {

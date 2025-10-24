@@ -18,7 +18,7 @@ private _condition = {
 	count ((missionNamespace getVariable "MSF") get "UAV_Inventory") > 0;
 };
 
-if (_count > 0 && count _droneOps > 0) then {
+if (_count > 0 && _droneOps isNotEqualTo []) then {
 
 	{		
 		[_x, "Deploy Drone", _action, _condition, [], "\A3\Drones_F\Air_F_Gamma\UAV_02\Data\UI\Map_UAV_02_CA.paa", true] call MSF_fnc_AddAceMenuItem;
