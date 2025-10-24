@@ -7,7 +7,7 @@ params [
 	["_isRectangle", false, [false]],
 	["_objects", [], [[]]],
 	["_type", "", [""]],
-	["_params", [], [[]]],
+	["_params", createHashMap, [createHashMap]],
 	["_intelID", "", [""]],
 	["_side", east, [east]]
 ];

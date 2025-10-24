@@ -46,4 +46,4 @@ private _intelID = [
 ] call MSF_Intel_fnc_AddIntelItem;
 
 [_units, false] call MSF_fnc_ShowHideObjects;
-[_logic, 300, 300, [_activationSide] call MSF_fnc_GetModuleActivationSide, "present", false, _units, "POI", [], _intelID] call MSF_Loc_fnc_CreateLocationActivationTrigger;
+[_logic, 300, 300, [_activationSide] call MSF_fnc_GetModuleActivationSide, "present", false, _units, "POI", createHashMap, _intelID] call MSF_Loc_fnc_CreateLocationActivationTrigger;

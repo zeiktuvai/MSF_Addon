@@ -4,20 +4,19 @@ private ["_types", "_vGroup"];
 private _objects = _trigger getVariable 'objects';
 private _side = _trigger getVariable 'side';
 private _type = _trigger getVariable ["type", "Outpost"];
-private _params = _trigger getVariable ["vars", []];
+private _params = _trigger getVariable ["vars", createHashMap];
 private _center = position _trigger;
 private _units = [];
+private _uTypes = ["empty"] call MSF_fnc_GetConfigData;
 
 [_objects, true] call MSF_fnc_ShowHideObjects;
 
 if (_type != "POI") then {
-	_params params ["_vic", "_vicChance", "_supply", "_intelProvider", "_spawnReduction"];
-	
 	private _unitTypes = ["unit", _side] call MSF_fnc_GetConfigData;
-	private _uTypes = ["empty"] call MSF_fnc_GetConfigData;
 	private _locationData = ["Location", _type] call MSF_Loc_fnc_GetLocationType;
 	private _vicAmmo = _locationData get "VehicleAmmo";
 	private _supplyCnt = _locationData get "SupplyItemCount";
+	private _spawnReduction = _params get "EnemyStrength";
 
 	[_unitTypes get "Vehicles", _objects select {typeOf _x == "MSF_Placeholder_Vehicle"}, _side, _center] call MSF_fnc_SpawnMannedVicArray;
 	[_unitTypes get "Armor", _objects select {typeOf _x == "MSF_Placeholder_Armor"}, _side, _center] call MSF_fnc_SpawnMannedVicArray;
@@ -25,23 +24,34 @@ if (_type != "POI") then {
 	_units append ([_unitTypes get "Units", _objects select {typeOf _x == "MSF_Placeholder_Infantry"}, _side] call MSF_fnc_SpawnInfantryOnPlaceholder);
 	_units append ([_unitTypes get "Units", _objects, _side, 1 - _spawnReduction] call MSF_fnc_SpawnInfantryInBuildings);
 
-	if (_supply) then {
-		if (count (_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}) > 0) then {
+	if (_params getOrDefault ["SpawnSupplies", false]) then {
+		if (_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"} isNotEqualTo []) then {
 			_vicAmmoBoxes = [_objects select {typeOf _x == "MSF_Placeholder_VehicleAmmo"}, _vicAmmo - (_vicAmmo * _spawnReduction)] call MSF_Logi_fnc_SpawnVehicleAmmoOnPlaceholder;
 		};
-		if (count (_objects select {typeOf _x == "MSF_Placeholder_Supplies"}) > 0) then {
+		if (_objects select {typeOf _x == "MSF_Placeholder_Supplies"} isNotEqualTo []) then {
 			[_objects select {typeOf _x == "MSF_Placeholder_Supplies"}, _supplyCnt - (_supplyCnt * _spawnReduction), "Supply"] call MSF_Logi_fnc_SpawnAndFillBoxesOnPlaceholder;
 		};
 	};
 
-	if (_vic && [_vicChance] call MSF_fnc_CalculateProbability) then {
+	if (_params getOrDefault ["SpawnVacantVic", false] && [_params getOrDefault ["VacantVicChance", 0]] call MSF_fnc_CalculateProbability) then {
 		private _vics = [_uTypes get "UnmannedVic", _objects select {typeOf _x == "MSF_Placeholder_Vehicle_U"}] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder;
 		[_vics] call MSF_fnc_SetRandomVehicleState;
 	};
 
-	// if (_type in ["AirBase","HeliBase","Bastion"]) then {
-	// 	[_uTypes get "UnmannedHeli", _objects select {typeOf _x == "MSF_Placeholder_Heli"}] call MSF_fnc_OFE_SpawnEscapeVic;
-	// };
+	if (_params getOrDefault ["SpawnVacantHeli", false] && [_params getOrDefault ["VacantHeliChance", 0]] call MSF_fnc_CalculateProbability) then {
+		private _vics = [_uTypes get "UnmannedHeli", _objects select {typeOf _x == "MSF_Placeholder_Heli"}] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder;
+		[_vics] call MSF_fnc_SetRandomVehicleState;
+	};
+
+	if (_type == "AntiAir") then {
+		private _aas = _objects select {typeOf _x == "MSF_Placeholder_AA"};
+		private _aav = _objects select {typeOf _x == "MSF_Placeholder_AAV"};
+		private _aasTypes = [_side, "EdSubcat_Turrets", "AA"] call MSF_Loc_fnc_GetVehicleByFactionCategory;
+		private _aavTypes = [_side, "EdSubcat_AAs"] call MSF_Loc_fnc_GetVehicleByFactionCategory;
+
+		if (_aas isNotEqualTo []) then {[_aasTypes, _aas] call MSF_fnc_SpawnMannedVicArray};
+		if (_aav isNotEqualTo []) then {[_aavTypes, _aav] call MSF_fnc_SpawnMannedVicArray};
+	};
 
 	// if (_type == "AirBase") then {
 	// 	[_uTypes get "UnmannedPlane", _objects select {typeOf _x == "MSF_Placeholder_Aircraft"}] call MSF_fnc_OFE_SpawnEscapeVic;
@@ -58,8 +68,9 @@ if (_type != "POI") then {
 	// }; 
 }
 else {
-	_params params ["_ptype", "_victimSide", "_fillCount", "_vicAmmo", "_intelProvider"];
-
+	private _ptype = _params get "POIType";
+	private _victimSide = _params get "VictimSide";
+	private _fillCount = _params get "SupplyFillCount";
 	private _deadUnitTypes = ["unit", _victimSide] call MSF_fnc_GetConfigData get "Units";
 	private _enemyTypes = ["unit", _side] call MSF_fnc_GetConfigData get "Units";
 	private _emptyTypes = ["empty"] call MSF_fnc_GetConfigData;
@@ -115,15 +126,15 @@ else {
 			private _ammo = _objects select {typeOf _x == "MSF_Placeholder_Logi_Ammo"};
 			private _weapTypes = [];
 
-			if (count _vap > 0) then {[_vap, _vicAmmo] call MSF_Logi_fnc_SpawnVehicleAmmoOnPlaceholder;};
-			if (count _bp > 0) then {[_bp, _fillCount, "Supply"] call MSF_Logi_fnc_SpawnAndFillBoxesOnPlaceholder;};
-			if (count _med > 0) then {[_med, _fillCount, "Medical"] call MSF_Logi_fnc_SpawnAndFillBoxesOnPlaceholder;};
-			if (count _food > 0) then {[_food, _fillCount, "Food"] call MSF_Logi_fnc_SpawnAndFillBoxesOnPlaceholder;};
-			if (count _weap > 0) then {
+			if (_vap isNotEqualTo []) then {[_vap, _params get "VicAmmoCount"] call MSF_Logi_fnc_SpawnVehicleAmmoOnPlaceholder;};
+			if (_bp isNotEqualTo []) then {[_bp, _fillCount, "Supply"] call MSF_Logi_fnc_SpawnAndFillBoxesOnPlaceholder;};
+			if (_med isNotEqualTo []) then {[_med, _fillCount, "Medical"] call MSF_Logi_fnc_SpawnAndFillBoxesOnPlaceholder;};
+			if (_food isNotEqualTo []) then {[_food, _fillCount, "Food"] call MSF_Logi_fnc_SpawnAndFillBoxesOnPlaceholder;};
+			if (_weap isNotEqualTo []) then {
 				private _weapboxes = [_weap, 15, "Armory"] call MSF_Logi_fnc_SpawnAndFillBoxesOnPlaceholder;				
 				_weapTypes = (_weapboxes select 1);
 			};
-			if (count _ammo > 0) then {[_ammo, 15, "Ammo", _weapTypes] call MSF_Logi_fnc_SpawnAndFillBoxesOnPlaceholder;};
+			if (_ammo isNotEqualTo []) then {[_ammo, 15, "Ammo", _weapTypes] call MSF_Logi_fnc_SpawnAndFillBoxesOnPlaceholder;};
 		};
 	};
 };
@@ -131,9 +142,9 @@ else {
 [_uTypes get "FuelTruck", _objects select {typeOf _x == "MSF_Placeholder_FuelTruck"}] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder;
 [_uTypes get "AmmoTruck", _objects select {typeOf _x == "MSF_Placeholder_AmmoTruck"}] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder;
 
-private _intelP = if (_type != "POI") then {	_params # 3 } else { _params # 4 };	
-
 // intel system provider
+private _intelP = _params get "IntelProvider";
+
 if (count _intelP > 0) then
 {
 	_intelP params ["_intelP", "_interactC", "_intelC"];
