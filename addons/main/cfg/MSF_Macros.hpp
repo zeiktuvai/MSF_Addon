@@ -14,3 +14,5 @@
 #define CENTER_X ((getResolution select 2) * 0.5 * pixelW)
 #define CENTER_Y ((getResolution select 3) * 0.5 * pixelH)
 #define STR(VAR) #VAR
+
+#define PLACEHOLDER(NAME,DESC) class MSF_Placeholder_##NAME : MSF_Placeholder {displayName = DESC; scope = 2;};

@@ -7,116 +7,24 @@ class MSF_Placeholder : Land_HelipadEmpty_F
     editorPreview = "";
 };
 
-class MSF_Placeholder_Infantry : MSF_Placeholder
-{
-    displayName = "Units - Infantry";
-    scope = 2;
-};
-
-class MSF_Placeholder_Vehicle : MSF_Placeholder
-{
-    displayName = "Units - Vehicle";
-    scope = 2;
-};
-
-class MSF_Placeholder_Armor : MSF_Placeholder
-{
-    displayName = "Units - Armor";
-    scope = 2;
-};
-
-class MSF_Placeholder_Heli : MSF_Placeholder
-{
-    displayName = "Units - Helicopter";
-    scope = 2;
-};
-
-class MSF_Placeholder_Aircraft : MSF_Placeholder
-{
-    displayName = "Units - Aircraft";
-    scope = 2;
-};
-
-class MSF_Placeholder_Supplies: MSF_Placeholder
-{
-    displayName = "Logistics - Supplies";
-    scope = 2;
-};
-
-class MSF_Placeholder_VehicleAmmo : MSF_Placeholder
-{class Land_HelipadEmpty_F;
-    displayName = "Logistics - Vehicle Ammo";
-    scope = 2;
-};
-
-class MSF_Placeholder_Vehicle_U : MSF_Placeholder
-{
-    displayName = "Empty - Vehicle";
-    scope = 2;
-};
-
-class MSF_Placeholder_Infantry_D : MSF_Placeholder
-{
-    displayName = "Empty - Dead Infantry";
-    scope = 2;
-};
-
-class MSF_Placeholder_Direction : MSF_Placeholder
-{
-    displayName = "Misc - Spawn Direction";
-    scope = 2;
-};
-
-class MSF_Placeholder_Static : MSF_Placeholder
-{
-    displayName = "Units - Turret";
-    scope = 2;
-};
-
-class MSF_Placeholder_FuelTruck : MSF_Placeholder
-{
-    displayName = "Empty - Fuel Truck";
-    scope = 2;
-};
-
-class MSF_Placeholder_AmmoTruck : MSF_Placeholder
-{
-    displayName = "Empty - Ammo Truck";
-    scope = 2;
-};
-
-class MSF_Placeholder_BldgSpawnExempt : MSF_Placeholder
-{
-    displayName = "Misc - Disable Building Spawn";
-    scope = 2;
-};
-
-class MSF_Placeholder_Armor_U : MSF_Placeholder
-{
-    displayName = "Empty - Armor";
-    scope = 2;
-};
-
-class MSF_Placeholder_Logi_Medical : MSF_Placeholder
-{
-    displayName = "Logistics - Medical Supplies";
-    scope = 2;
-};
-
-class MSF_Placeholder_Logi_Weapons : MSF_Placeholder
-{
-    displayName = "Logistics - Weapons Crate";
-    scope = 2;
-};
-
-class MSF_Placeholder_Logi_Food : MSF_Placeholder
-{
-    displayName = "Logistics - Food Crate";
-    scope = 2;
-};
-
-class MSF_Placeholder_Logi_Ammo : MSF_Placeholder
-{
-    displayName = "Logistics - Ammo Crate";
-    scope = 2;
-};
+PLACEHOLDER(Infantry,"Units - Infantry")
+PLACEHOLDER(Vehicle,"Units - Vehicle")
+PLACEHOLDER(Armor,"Units - Armor")
+PLACEHOLDER(Heli,"Units - Helicopter")
+PLACEHOLDER(Aircraft,"Units - Aircraft")
+PLACEHOLDER(AA,"Units - Anti-Air")
+PLACEHOLDER(AAV,"Units - Anti-Air Vehicle")
+PLACEHOLDER(Supplies,"Logistics - Supplies")
+PLACEHOLDER(VehicleAmmo,"Logistics - Vehicle Ammo")
+PLACEHOLDER(Vehicle_U,"Empty - Vehicle")
+PLACEHOLDER(Infantry_D,"Empty - Dead Infantry")
+PLACEHOLDER(Direction,"Misc - Spawn Direction")
+PLACEHOLDER(Static,"Units - Turret")
+PLACEHOLDER(FuelTruck,"Empty - Fuel Truck")
+PLACEHOLDER(AmmoTruck,"Empty - Ammo Truck")
+PLACEHOLDER(BldgSpawnExempt,"Misc - Disable Building Spawn")
+PLACEHOLDER(Armor_U,"Empty - Armor")
+PLACEHOLDER(Logi_Medical,"Logistics - Medical Supplies")
+PLACEHOLDER(Logi_Weapons,"Logistics - Weapons Crate")
+PLACEHOLDER(Logi_Food,"Logistics - Food Crate")
+PLACEHOLDER(Logi_Ammo,"Logistics - Ammo Crate")
