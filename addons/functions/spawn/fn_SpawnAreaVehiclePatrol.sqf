@@ -40,7 +40,7 @@ for "_g" from 1 to _count do {
 	if (count _roads < 11) then 
 	{
 		private _route = [_trigger, _amount, _radius * 2, false] call MSF_fnc_GetRadialPositionRoute;
-		[_route, _group] call MSF_fnc_GeneratePatrolRoute;
+		[_route, _group, _speed, _mode, _behv] call MSF_fnc_GeneratePatrolRoute;
 	}
 	else
 	{

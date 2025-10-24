@@ -1,10 +1,12 @@
 params [["_objType", "", [""]], ["_scale", 1, [1]]];
 
 private _placeHolder = createSimpleObject [_objType, screenToWorld[0.5,0.5], true];
-//createVehicleLocal [_objType, screenToWorld[0.5,0.5]];
+uiNamespace setVariable ["MSF_PlaceScale", _scale];
 
 findDisplay 46 displayAddEventHandler ["KeyDown", { 
 	params ["_displayOrControl", "_key", "_shift", "_ctrl", "_alt"];
+	private _scale = uiNamespace getVariable ["MSF_PlaceScale", 1];
+
 	if (_key == 57) then {
 		terminate (localNamespace getVariable "MSF_Local" get "MSF_Logi_Place_Handle");
 		//"MSFLogi_Controls" cutFadeOut 0;		
@@ -15,6 +17,7 @@ findDisplay 46 displayAddEventHandler ["KeyDown", {
 		player setVariable ["MSF_Logi_Place_Obj", nil];
 		player setVariable ["MSF_Logi_Place_Type", nil];
 		player setVariable ["MSF_Logi_Place_Handle", nil];
+		uiNamespace setVariable ["MSF_PlaceScale", nil];
 	};
 }];
 

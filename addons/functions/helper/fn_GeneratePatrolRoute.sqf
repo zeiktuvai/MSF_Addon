@@ -1,4 +1,4 @@
-params [["_route", [], [[]]], "_group"];
+params [["_route", [], [[]]], "_group", "_speed", "_mode", "_behv"];
 
 private _i = 1;
 private _startPos = _route select 0;

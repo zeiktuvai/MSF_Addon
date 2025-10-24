@@ -18,7 +18,7 @@ while {_run} do {
 		};
 		
 		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
-			{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
+			{ _x addCuratorEditableObjects [units _group, true]} forEach allCurators;
 		};
 		
 		private _wp = _group addWaypoint [position _trigger, 0];

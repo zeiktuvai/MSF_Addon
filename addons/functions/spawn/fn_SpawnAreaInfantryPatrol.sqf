@@ -35,11 +35,10 @@ if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {
 		_group setCombatMode _mode;
 		_group setBehaviour _behv;
 		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
-			{ _x addCuratorEditableObjects [units _group]} forEach allCurators;
+			{ _x addCuratorEditableObjects [units _group, true]} forEach allCurators;
 		};
 		_ids pushBack _group;
-
-		[_route, _group] call MSF_fnc_GeneratePatrolRoute;
+		[_route, _group, _speed, _mode, _behv] call MSF_fnc_GeneratePatrolRoute;
 	};
 	
 	_trigger setVariable ["MSF_Patrol_Group_ID", _ids, true];
