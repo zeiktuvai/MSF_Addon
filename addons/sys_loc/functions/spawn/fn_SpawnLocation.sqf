@@ -88,15 +88,7 @@ else {
 		case "Vehicle"; 
 		case "Armor";
 		case "Static": { 
-			private _vicDir = _objects select {typeOf _x == "MSF_Placeholder_Direction"};
-
 			private	_vics = [_types, _objects select {typeOf _x == "MSF_Placeholder_Vehicle_U"}] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder;
-			if (count _vicDir > 0) then {
-				{
-					_x setDir (getDir _x + (_x getRelDir (position (_vicDir select 0))))
-				} forEach _vics;
-			};
-
 
 			if (_ptype == "Vehicle" || _ptype == "Armor") then { [_vics] call MSF_fnc_SetRandomVehicleState; };
 			if (_ptype == "Armor") then

@@ -4,7 +4,7 @@ private _vics = [];
 
 {
 	private _vic = selectRandom _vicTypes createVehicle position _x;
-	[_vic] call MSF_Loc_fnc_SetObjectDir;
+	_vic setDir direction _x;
 	
 	_vics pushBack _vic;
 } forEach _objects;

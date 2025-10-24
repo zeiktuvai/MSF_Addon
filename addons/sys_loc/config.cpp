@@ -19,5 +19,5 @@ class CfgVehicles
   // #include "cfg\MSF_OFE_Modules.hpp"
 };
 
-#include "MSF_Loc_Functions.hpp"
+#include "cfg\MSF_Loc_Functions.hpp"
 #include "cfg\MSF_Loc_Config.hpp"

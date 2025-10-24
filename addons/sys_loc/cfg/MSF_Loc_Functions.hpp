@@ -7,6 +7,7 @@ class CfgFunctions
 			file = "z\msf\addons\sys_location\functions\cfg";
 			class GetComposition {};
 			class GetLocationType {};
+			class GetVehicleByFactionCategory {};
 		};
 		class Commands
 		{
@@ -20,7 +21,6 @@ class CfgFunctions
 			class CreateLocationActivationTrigger {};
 			class CreateLocationAITrigger {};
 			class CreateMapMarker {};
-			class SetObjectDir {};
 		};
 		class MSF_OFE_Object
 		{
