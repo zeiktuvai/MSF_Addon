@@ -11,7 +11,7 @@ private _units = [];
 		_group setBehaviourStrong "SAFE";
 		
 		private _spots = _x buildingPos -1;
-		private _count = round ((count _spots) * _fillP);
+		private _count = if (count _spots > 10) then {round (((count _spots) * 0.5) * _fillP)} else {round ((count _spots) * _fillP)};
 
 		for "_i" from 1 to _count do {
 			private _spot = selectRandom _spots;
