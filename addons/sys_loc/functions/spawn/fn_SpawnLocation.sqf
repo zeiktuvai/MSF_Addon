@@ -46,8 +46,8 @@ if (_type != "POI") then {
 	if (_type == "AntiAir") then {
 		private _aas = _objects select {typeOf _x == "MSF_Placeholder_AA"};
 		private _aav = _objects select {typeOf _x == "MSF_Placeholder_AAV"};
-		private _aasTypes = [_side, "EdSubcat_Turrets", "AA"] call MSF_Loc_fnc_GetVehicleByFactionCategory;
-		private _aavTypes = [_side, "EdSubcat_AAs"] call MSF_Loc_fnc_GetVehicleByFactionCategory;
+		private _aasTypes = [_side, "EdSubcat_Turrets", "AA"] call MSF_Loc_fnc_GetVehicleByFactionCategory apply { configName _x };
+		private _aavTypes = [_side, "EdSubcat_AAs"] call MSF_Loc_fnc_GetVehicleByFactionCategory apply { configName _x };
 
 		if (_aas isNotEqualTo []) then {[_aasTypes, _aas] call MSF_fnc_SpawnMannedVicArray};
 		if (_aav isNotEqualTo []) then {[_aavTypes, _aav] call MSF_fnc_SpawnMannedVicArray};
