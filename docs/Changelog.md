@@ -1,5 +1,9 @@
 # Changelog
 
+## [NEXT]
+
+- Added code to **fortify buildings** module to ignore buildings that have no spawn positions, speeding up code execution.
+
 ## [2.14.6]
 
 - Updated class override to use a new module that allows you to sync to units to use.
