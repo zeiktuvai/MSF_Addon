@@ -1,7 +1,8 @@
-params [["_position", [], [[]]], ["_def", [], [[]]], ["_type", "", [""]], ["_enemySide", east, [east]],
+params [["_logic", objNull, [objNull]], ["_def", [], [[]]], ["_type", "", [""]], ["_enemySide", east, [east]],
 	["_victimSide", resistance, [resistance]], ["_activationSide", "west", [west, ""]], ["_fillCount", 50, [50]], ["_vicAmmo", 250, [250]],
 	["_intelID", "", [""]], ["_intelP", [], [[]]], ["_marker", false, [false]], ["_radius", 500, [0]]];
 
+private _position = position _logic;
 private _allObjs = [_position, 0, _def] call BIS_fnc_objectsMapper;
 private _params = [_type, _victimSide, _fillCount, _vicAmmo, _intelP];
 

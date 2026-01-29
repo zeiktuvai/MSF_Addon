@@ -32,7 +32,6 @@ switch (_type) do {
 		_markerType = "hd_unknown";
 		_markerColor = "Color3_FD_F";
 	};
-	case
 	default {
 		_markerType = "hd_unknown";
 		_markerColor = "Color3_FD_F";

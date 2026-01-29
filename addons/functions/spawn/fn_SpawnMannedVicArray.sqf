@@ -1,6 +1,6 @@
 params [["_unitTypes", [], [[]]], ["_objects", [], [[]]], ["_side", east, [east]], ["_center", [], [[]]]];
 
-if (count _objects > 0) then {
+if (_objects isNotEqualTo []) then {
 	private _vics = [];
 
 	{
@@ -8,7 +8,7 @@ if (count _objects > 0) then {
 		_vics pushBack (_vic select 0);	
 	} forEach _objects;
 
-	if (count _center > 0) then {
+	if (_center isNotEqualTo []) then {
 		{
 			[_x, _center] call MSF_Loc_fnc_SetObjectDir;
 		} forEach _vics;

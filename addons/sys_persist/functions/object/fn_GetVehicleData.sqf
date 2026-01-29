@@ -33,7 +33,7 @@ private _aceRearm = -1;
 
 // get damage 
 _damage = [_unit] call MSF_Persist_fnc_GetObjectDamage;
-_isAlive = [true, false] select {_damage == -1};
+_isAlive = [true, false] select (_damage == -1);
 
 if (_unit getVariable "MSF_Persist_isLocEnable") then 
 {

@@ -14,7 +14,15 @@ class CfgPatches
 		version = MSF_VERSION;
         units[] = {"MSF_Module_BldgDestroy", "MSF_Module_RandomSpawn", "MSF_Module_RandomSpawnCrash", "MSF_Module_Spawn_InfantryPatrol",
 			"MSF_Module_Spawn_Supplies", "MSF_Module_Spawn_Fortify", "MSF_Module_Spawn_VehiclePatrol", "MSF_Module_Spawn_Wave",
-			"MSF_Module_Spawn_DeadUnit", "MSF_Module_ClassOverride", "MSF_Module_Spawn_RoadCheckpoint", "MSF_Module_DeleteUnit"};
+			"MSF_Module_Spawn_DeadUnit", "MSF_Module_ClassOverride", "MSF_Module_Spawn_RoadCheckpoint", "MSF_Module_DeleteUnit",
+			"MSF_Module_SpawnTypes","MSF_Module_EscapeArea","MSF_Module_Fuel","MSF_Module_GM","MSF_Module_ScenarioEnd","MSF_Module_Dialog",
+			"MSF_Module_ProgressBarInteract","MSF_Module_ShowHide",
+			"MSF_Placeholder_Infantry", "MSF_Placeholder_Vehicle","MSF_Placeholder_Armor","MSF_Placeholder_Heli","MSF_Placeholder_Aircraft",
+			"MSF_Placeholder_Supplies","MSF_Placeholder_VehicleAmmo","MSF_Placeholder_Vehicle_U","MSF_Placeholder_Infantry_D",
+			"MSF_Placeholder_Direction","MSF_Placeholder_Static","MSF_Placeholder_FuelTruck","MSF_Placeholder_AmmoTruck",
+			"MSF_Placeholder_BldgSpawnExempt","MSF_Placeholder_Armor_U","MSF_Placeholder_Logi_Medical","MSF_Placeholder_Logi_Weapons",
+			"MSF_Placeholder_Logi_Food","MSF_Placeholder_Logi_Ammo"
+		};
         weapons[] = {};
         requiredVersion = 1.0;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction"};

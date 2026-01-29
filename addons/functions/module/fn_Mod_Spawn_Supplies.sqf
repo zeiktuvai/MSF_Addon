@@ -1,6 +1,5 @@
 params [["_logic", objNull, [objNull]],	["_units", [], [[]]], ["_activated", true, [true]]];
 
-private _position = position _logic;
 private _activationSide = _logic getVariable ["ActivationSide", 1];
 private _spawnSide = _logic getVariable ["SpawnSide", 0];
 private _victimSide = _logic getVariable ["VictimSide", 2];
@@ -31,6 +30,6 @@ if (_intel) then {
 	_intelID = ["SUPPLLY_MOD", position _logic, _desc, ["CIV", "MIL", "OBJ"], 1, ["hd_unknown", "Color3_FD_F"], ["MapUpdate", format ["Map updated with %1.", _desc]], []] call MSF_Intel_fnc_AddIntelItem;
 };
 
-[_position, _def, _stype, [_spawnSide] call BIS_fnc_sideType, [_victimSide] call BIS_fnc_sideType,
+[_logic, _def, _stype, [_spawnSide] call BIS_fnc_sideType, [_victimSide] call BIS_fnc_sideType,
 	[_activationSide] call MSF_fnc_GetModuleActivationSide, _supplyCount, (random [_min, (_min + _max) / 2, _max]), 
 	_intelID, [_intelP, _interactC, _intelC], false, 500] call MSF_Loc_fnc_InitPOI;
