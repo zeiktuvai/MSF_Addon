@@ -3,7 +3,7 @@ params [["_name", "", [""]]];
 player setVariable ["MSF_VicLoadoutName", _name];
 
 [
-	"Save",
+	"vehicle to Save loadout",
 	{
 		if (_obj isKindOf "LandVehicle") then {
 			private _name = player getVariable ["MSF_VicLoadoutName", "INVALID"];

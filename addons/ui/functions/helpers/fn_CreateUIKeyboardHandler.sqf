@@ -1,9 +1,9 @@
-params [["_actionName", "", [""]], ["_successCode", {}, [{}]], ["_closeCode", {}, [{}]]];
+params [["_actionText", "", [""]], ["_successCode", {}, [{}]], ["_closeCode", {}, [{}]]];
 
 _ctrl = findDisplay 46 ctrlCreate ["RscStructuredText", 62181]; 
 _ctrl ctrlSetPosition [((getResolution select 2) * 0.5 * pixelW) - 50 * (pixelW * pixelGrid * 0.50), ((getResolution select 3) * 0.5 * pixelH) - 20 * (pixelH * pixelGrid * 0.50), 100 * (pixelW * pixelGrid * 0.50), 10 * (pixelH * pixelGrid * 0.50)];
 _ctrl ctrlCommit 0;
-_ctrl ctrlSetStructuredText parseText format ["<t color='#8b0000' align='center'>Place cursor on vehicle to %1 loadout and press SPACE.<br/>(Any Other Key [Except movement] to cancel)</t>", _actionName];
+_ctrl ctrlSetStructuredText parseText format ["<t color='#8b0000' align='center'>Place cursor on %1 and press SPACE.<br/>(Any Other Key [Except movement] to cancel)</t>", _actionText];
 player setVariable ["MSF_UIKeybdHandlerCode", [_successCode, _closeCode]];
 
 findDisplay 46 displayAddEventHandler ["KeyDown", { 

@@ -3,7 +3,7 @@ params [["_loadout", "", [""]], ["_type", [0], [[]]]];
 player setVariable ["MSF_VicLoadout", [[_loadout, _type] call MSF_Logi_fnc_GetSavedVehicleLoadout, _loadout]];
 
 [
-	"APPLY",
+	"vehicle to	APPLY loadout",
 	{
 		if (_obj isKindOf "LandVehicle") then {
 			[_obj, player getVariable ["MSF_VicLoadout", createHashMap] select 0] call MSF_Logi_fnc_SetVehicleInventoryData;			

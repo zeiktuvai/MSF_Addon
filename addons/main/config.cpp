@@ -41,6 +41,21 @@ class CfgVehicles
 {
 	#include "cfg\MSF_Modules.hpp"
 	#include "cfg\placeholder\MSF_Placeholder.hpp"
+	class Man;
+	class CAManBase : Man
+	{
+		class ACE_SelfActions
+		{
+			class AdminMenu
+			{
+				displayName = "Admin Menu";
+				icon = "\z\msf\addons\ui\data\icons\MSF_icon.paa";
+				condition = "call BIS_fnc_admin == 2 || if !(isNil ""theBoss"") then {player == theBoss} else {false} || call BIS_fnc_getNetMode == ""SinglePlayer""";
+				statement = "[] call MSF_UI_fnc_DisplayAdminMenu;";
+				exceptions[] = {"isNotInside","isNotSitting","isNotSwimming"};
+			};
+		};
+	};
 };
 
 class Extended_PreInit_EventHandlers
