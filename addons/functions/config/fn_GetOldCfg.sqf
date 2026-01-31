@@ -5,7 +5,7 @@ private _cfgMods = allMissionObjects "MSF_Module_ClassOverride";
 private _modules = _cfgMods select {_x getVariable "Side" == _side};
 private _return = createHashMap;
 
-if (count _modules > 0) then {
+if (_modules isNotEqualTo []) then {
 	private _mod = _modules select 0;
 	private _errMessage = format ["Parsing MSF Class Override Module for side: %1", [_side] call BIS_fnc_sideType];
 	

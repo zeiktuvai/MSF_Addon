@@ -10,6 +10,7 @@ class CfgFunctions
         class Commands
         {
             file = "z\msf\addons\ui\functions\commands";
+            class DisplayAdminMenu {};
             class DisplayDeployUAV {};
             class DisplayLogiMain {};
             class DisplayLogiMap {};
@@ -23,6 +24,17 @@ class CfgFunctions
         {
             file = "z\msf\addons\ui\functions\handlers";
             class OnSupplySelChanged {};
+        };
+        class Handlers_Admin
+        {
+            file = "z\msf\addons\ui\functions\handlers\admin";
+            class OnDeleteCursor {};
+            class OnForceOutCursor {};
+            class OnHealAllSelected {};
+            class OnHealCursor {};
+            class OnHealSelected {};
+            class OnRepairCursor {};
+            class OnRepairSelected {};
         };
         class Handlers_LogiMarker
         {

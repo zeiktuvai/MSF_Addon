@@ -7,6 +7,7 @@ if (damage _unit == 1) then {
 }
 else 
 {
+	private _vehicleType = typeOf _unit;
 	private ["_hitC","_cfg","_PartN","_HitP"];
 	_hitC = (count ((configFile >> "CfgVehicles" >> _vehicleType >> "HitPoints") call Bis_fnc_getCfgSubClasses)) - 1; 
 

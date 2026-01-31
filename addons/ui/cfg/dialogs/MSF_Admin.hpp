@@ -1,52 +1,6 @@
-import RscObject;
-import RscText;
-import RscFrame;
-import RscLine;
-import RscProgress;
-import RscPicture;
-import RscPictureKeepAspect;
-import RscVideo;
-import RscHTML;
-import RscButton;
-import RscShortcutButton;
-import RscEdit;
-import RscCombo;
-import RscListBox;
-import RscListNBox;
-import RscXListBox;
-import RscTree;
-import RscSlider;
-import RscXSliderH;
-import RscActiveText;
-import RscActivePicture;
-import RscActivePictureKeepAspect;
-import RscStructuredText;
-import RscToolbox;
-import RscControlsGroup;
-import RscControlsGroupNoScrollbars;
-import RscControlsGroupNoHScrollbars;
-import RscControlsGroupNoVScrollbars;
-import RscButtonTextOnly;
-import RscButtonMenu;
-import RscButtonMenuOK;
-import RscButtonMenuCancel;
-import RscButtonMenuSteam;
-import RscMapControl;
-import RscMapControlEmpty;
-import RscCheckBox;
-import IGUIBack;
-import ctrlListNBox;
-import ctrlMenuStrip;
-
-#define GRID_H (pixelH * pixelGrid * 0.50)
-#define GRID_W (pixelW * pixelGrid * 0.50)
-#define CENTER_X ((getResolution select 2) * 0.5 * pixelW)
-#define CENTER_Y ((getResolution select 3) * 0.5 * pixelH)
-#define STR(VAR) #VAR
-
-class MSFdevdialog
+class MSF_Admin
 {
-	idd = 6222;
+	idd = 6333;
 	
     class ControlsBackground
     {
@@ -93,7 +47,6 @@ class MSFdevdialog
                 {
                     idc = 1500;
 
-                    //onLBSelChanged = "params ['_control', '_lbCurSel', '_lbSelection']; [_control, _lbCurSel, _lbSelection] call MSF_UI_fnc_OnSupportSelChanged;";
                     colorLines[] = {1,1,1,1};
                     colorSelectBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                     multiselectEnabled = 1;
@@ -120,7 +73,7 @@ class MSFdevdialog
                     idc = 1600;
                     
                     text = "Heal Selected";
-                    onButtonClick = "[findDisplay 6222 displayCtrl 1500] call MSF_UI_fnc_OnHealSelected;";
+                    onButtonClick = "[findDisplay 6333 displayCtrl 1500] call MSF_UI_fnc_OnHealSelected;";
                     x = 0;
                     y = 0;
                     w = STR(40 * GRID_W);
@@ -153,7 +106,7 @@ class MSFdevdialog
                     idc = 1603;
                     
                     text = "Repair Selected Players Vehicle";
-                    onButtonClick = "[findDisplay 6222 displayCtrl 1500] call MSF_UI_fnc_OnRepairSelected;";
+                    onButtonClick = "[findDisplay 6333 displayCtrl 1500] call MSF_UI_fnc_OnRepairSelected;";
                     x = 0;
                     y = STR(24 * GRID_H);
                     w = STR(40 * GRID_W);

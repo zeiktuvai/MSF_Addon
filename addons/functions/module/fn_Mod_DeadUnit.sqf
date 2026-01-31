@@ -23,7 +23,7 @@ private ["_side", "_deadUnits"];
 private _intelID = "";
 private _allObjs = [];
 
-if (count _infSpawns > 0) then {
+if (_infSpawns isNotEqualTo []) then {
 	private _deadUnitTypes = [];
 	
 	switch (_type) do {
@@ -62,7 +62,7 @@ if (count _infSpawns > 0) then {
 	_allObjs append _deadUnits;
 };
 
-if (count _vicSpawns > 0) then {
+if (_vicSpawns isNotEqualTo []) then {
 	private _vicTypes = [];
 	
 	if (_vicDefault) then {			
@@ -74,7 +74,7 @@ if (count _vicSpawns > 0) then {
 	_allObjs append ([_vicTypes, _vicSpawns] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder);
 };
 
-if (count _armorSpawns > 0) then {
+if (_armorSpawns isNotEqualTo []) then {
 	private _types = [];
 	
 	if (_armorDefault) then {			
@@ -86,13 +86,13 @@ if (count _armorSpawns > 0) then {
 	_allObjs append ([_types, _armorSpawns] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder);
 };
 
-if (count _ftSpawns > 0) then {
+if (_ftSpawns isNotEqualTo []) then {
 	private _types = _uTypes get "FuelTruck";
 	
 	_allObjs append ([_types, _ftSpawns] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder);	
 };
 
-if (count _atSpawns > 0) then {
+if (_atSpawns isNotEqualTo []) then {
 	private _types = _uTypes get "AmmoTruck";
 	
 	_allObjs append ([_types, _atSpawns] call MSF_Logi_fnc_SpawnUnmannedVicsOnPlaceholder);
