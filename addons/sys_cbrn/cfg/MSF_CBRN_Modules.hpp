@@ -15,4 +15,4 @@ class Module_F : Logic
 	};
 };
 
-#include "module/MSF_Mod_CBRNArea.hpp"
+#include "module/MSF_Mod_RadArea.hpp"
