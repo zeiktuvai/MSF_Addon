@@ -1,9 +1,9 @@
 class MSF_Module_InvGen : Module_F
 {
 	scope = 2;
-	displayName = "Logistics - Generate Inventory";
+	displayName = "Generate Inventory";
 	icon = "a3\weapons_f\ammoboxes\data\ui\map_support_f_ca.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_Logi";
 	function = "MSF_Logi_fnc_Mod_InvGen";
 	functionPriority = 2;
 	isGlobal = 0;

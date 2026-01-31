@@ -32,7 +32,8 @@ class CfgFunctions
 		{
 			file = "z\msf\addons\functions\config";
 			class GetConfigData {};
-			class GetUnitOverrideCfg {};
+			class GetSyncedUntConfig {};
+			class GetOldCfg {};
 		};
 		class Data
 		{
@@ -60,6 +61,7 @@ class CfgFunctions
 			class FindSafeSpawnPos {};
 			class GeneratePatrolRoute {};
 			class GetModuleActivationSide {};
+			class GetModuleSyncedUnits {};
 			class GetRadialPositionRoute {};
 			class GetRoadDirection {};
 			class GetTimeBasedGUID {};
@@ -92,6 +94,7 @@ class CfgFunctions
 			class Mod_Spawn_Fortify {};
 			class Mod_Spawn_Supplies {};
 			class Mod_Spawn_Wave {};
+			class Mod_SpawnUnitTypes {};
 		};
 		class Objects
 		{
@@ -127,7 +130,6 @@ class CfgFunctions
 			class SpawnAreaInfantryPatrol {};
 			class SpawnAreaVehicleDefense {};
 			class SpawnAreaVehiclePatrol {};
-			class SpawnGroupInSafePos {};
 			class SpawnInfantryInBuildings {};
 			class SpawnInfantryOnPlaceholder {};
 			class SpawnMannedVicArray {};

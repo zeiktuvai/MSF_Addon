@@ -1,4 +1,4 @@
-params [["_side", west, [west]], ["_pos", [], [[]]], ["_type", "", [""]], ["_height", 200, [0]]];
+params [["_side", west, [west]], ["_pos", [], [[]]], ["_type", "", [""]], ["_class", "", [""]],["_height", 200, [0]]];
 
 private _obj = objNull;
 private _spawnPos = [_pos select 0, _pos select 1, _height];
@@ -18,6 +18,13 @@ switch (_type) do {
 	case "VicAmmo": {
 		_obj = createVehicle [selectRandom ["Box_IND_AmmoVeh_F", "Box_East_AmmoVeh_F", "Box_EAF_AmmoVeh_F", "Box_NATO_AmmoVeh_F"], _spawnPos];
 	};
+	case "VicStatic";
+	case "VicCar";
+	case "VicApc";
+	case "VicArty";
+	case "VicTank": {
+		_obj = createVehicle [_class, _spawnPos];
+	};
 };
 
 private _para = "B_parachute_02_F" createVehicle [0,0,0];
@@ -34,4 +41,11 @@ _obj attachTo [_para, [0,0,0]];
 	};
 		
 	detach _obj;
+	
+	[_para] spawn {
+		params ["_para"];
+
+		sleep 15;
+		if (!isNull _para) then { deleteVehicle _para};
+	};
 };

@@ -2,20 +2,36 @@ params [["_type", "inv", [""]], ["_side", east, [east]]];
 
 switch (_type) do {
 
-	case "unit": {		
-		private _override = [[_side] call BIS_fnc_sideID] call MSF_fnc_GetUnitOverrideCfg;
-		private _isOverride = count _override > 0;
-
-		createHashMapFromArray
+	case "unit": {
+		private _typeConfig = (["SpawnConfigOverride", "MSF", createHashMap] call MSF_fnc_GetConfigValue) getOrDefault [_side, createHashMap];
+		private _oldOverride = [[_side] call BIS_fnc_sideID] call MSF_fnc_GetOldCfg;
+		
+		private _return = createHashMapFromArray
 		[
-			["Groups", if (_isOverride && {if (_isOverride) then { count (_override select 0) > 0} else {false}}) then {_override select 0} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> (str _side) >> 'Groups')}],
-			["Vehicles", if (_isOverride && {if (_isOverride) then { count (_override select 1) > 0} else {false}}) then {_override select 1} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> (str _side) >> 'Vehicles')}],
-			["Armor", if (_isOverride && {if (_isOverride) then { count (_override select 2) > 0} else {false}}) then {_override select 2} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> (str _side) >> 'Armor')}],
-			["Air", if (_isOverride && {if (_isOverride) then { count (_override select 3) > 0} else {false}}) then {_override select 3} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> (str _side) >> 'Air')}],
-			["Turrets", if (_isOverride && {if (_isOverride) then { count (_override select 4) > 0} else {false}}) then {_override select 4} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> (str _side) >> 'Turrets')}],
-			["Units", if (_isOverride && {if (_isOverride) then { count (_override select 5) > 0} else {false}}) then {_override select 5} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> (str _side) >> 'Units')}],
-			["VehiclePatrols", if (_isOverride && {if (_isOverride) then { count (_override select 6) > 0} else {false}}) then {_override select 6} else {getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> (str _side) >> 'VehiclePatrols')}]
+			["Vehicles", getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> (str _side) >> 'Vehicles')],
+			["Armor", getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> (str _side) >> 'Armor')],
+			["Air", getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> (str _side) >> 'Air')],
+			["Turrets", getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> (str _side) >> 'Turrets')],
+			["Units", getArray (configFile >> 'MSFConfig' >> 'UnitSets' >> (str _side) >> 'Units')]
 		];
+
+		if (count _typeConfig > 0) then {
+			if (count (_typeConfig getOrDefault ["Vehicles", []]) > 0) then {_return set ["Vehicles", (_typeConfig get "Vehicles")]};
+			if (count (_typeConfig getOrDefault ["Armor", []]) > 0) then {_return set ["Armor", (_typeConfig get "Armor")]};
+			if (count (_typeConfig getOrDefault ["Air", []]) > 0) then {_return set ["Air", (_typeConfig get "Air")]};
+			if (count (_typeConfig getOrDefault ["Turrets", []]) > 0) then {_return set ["Turrets", (_typeConfig get "Turrets")]};
+			if (count (_typeConfig getOrDefault ["Units", []]) > 0) then {_return set ["Units", (_typeConfig get "Units")]};
+		};
+		
+		if (count _oldOverride > 0) then {
+			if (count (_oldOverride getOrDefault ["Vehicles", []]) > 0) then {_return set ["Vehicles", (_oldOverride get "Vehicles")]};
+			if (count (_oldOverride getOrDefault ["Armor", []]) > 0) then {_return set ["Armor", (_oldOverride get "Armor")]};
+			if (count (_oldOverride getOrDefault ["Air", []]) > 0) then {_return set ["Air", (_oldOverride get "Air")]};
+			if (count (_oldOverride getOrDefault ["Turrets", []]) > 0) then {_return set ["Turrets", (_oldOverride get "Turrets")]};
+			if (count (_oldOverride getOrDefault ["Units", []]) > 0) then {_return set ["Units", (_oldOverride get "Units")]};
+		};
+
+		_return;
 	};
 
 	case "inv": {
@@ -67,3 +83,4 @@ switch (_type) do {
 		];
 	};
 };
+

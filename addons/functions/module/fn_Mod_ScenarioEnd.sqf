@@ -14,7 +14,7 @@ if (_activated) then {
 	_objs append (allPlayers select {admin (owner _x) == 2});
 
 	{
-		[["MSFEnd", "EndScenario"], 15, "", 35, "", true, true, false, true] remoteExec ["BIS_fnc_advHint", _x];
+		[["MSF", "EndScenario"], 15, "", 35, "", true, true, false, true] remoteExec ["BIS_fnc_advHint", _x];
 		[_x, "End Mission", _endCode, {true}, [], "a3\modules_f_curator\data\portraitendmission_ca.paa", true] call MSF_fnc_AddAceMenuItem;		
 	} forEach _objs;	
 };

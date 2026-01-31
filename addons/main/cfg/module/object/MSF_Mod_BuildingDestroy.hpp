@@ -1,7 +1,7 @@
 class MSF_Module_BldgDestroy : Module_F
 {
 	scope = 2;
-	displayName = "Destroy Buildings";
+	displayName = "Object - Destroy Buildings";
 	icon = "a3\modules_f\data\editterrainobject\icon_ca.paa";
 	category = "MSF_Module";
 	function = "MSF_fnc_Mod_BuildingDestroy";

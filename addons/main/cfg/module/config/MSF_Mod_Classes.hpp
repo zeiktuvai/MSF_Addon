@@ -1,6 +1,6 @@
 class MSF_Module_ClassOverride : Module_F
 {
-	scope = 2;
+	scope = 1;
 	displayName = "Config - Override Classes";
 	icon = MSF_ICON;
 	category = "MSF_Module";

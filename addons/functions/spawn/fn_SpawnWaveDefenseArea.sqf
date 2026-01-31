@@ -10,8 +10,12 @@ private _run = true;
 while {_run} do {
 
 	for "_g" from 1 to _infNum do {
-		private _pos = _trigger getRelPos [400, random 350];		
-		private _group = [_pos, _side, _units get "Groups"] call MSF_fnc_SpawnGroupInSafePos;
+		private _pos = _trigger getRelPos [400, random 350];
+		private _group = createGroup _side;
+
+		for "_s" from 0 to (random [5, 7, 10]) do {
+			_group createUnit [selectRandom (_units get "Units"), _pos, [], 5, "NONE"]
+		};
 		
 		if (getMissionConfigValue ["MSF_Mission_Zeus", true]) then {
 			{ _x addCuratorEditableObjects [units _group]} forEach allCurators;

@@ -1,9 +1,9 @@
 class MSF_Module_Rearm : Module_F
 {
 	scope = 2;
-	displayName = "Logistics - Player Rearm";
+	displayName = "Player Rearm";
 	icon = "a3\ui_f\data\igui\cfg\cursors\iconrearmat_ca.paa";
-	category = "MSF_Module";
+	category = "MSF_Module_Logi";
 	function = "MSF_Logi_fnc_Mod_Rearm";
 	functionPriority = 1;
 	isGlobal = 0;

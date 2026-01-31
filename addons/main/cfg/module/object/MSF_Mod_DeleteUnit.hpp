@@ -1,7 +1,7 @@
 class MSF_Module_DeleteUnit : Module_F
 {
 	scope = 2;
-	displayName = "Cinematic - Delete Units";
+	displayName = "Object - Delete Units";
 	icon = "iconModule";
 	category = "MSF_Module";
 	function = "MSF_fnc_Mod_DeleteUnit";

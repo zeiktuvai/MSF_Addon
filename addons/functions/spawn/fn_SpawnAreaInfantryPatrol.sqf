@@ -18,13 +18,18 @@ _vals params ["_sideVal", "_amount", "_mode", "_behv", "_speed", "_spawnCount"];
 
 if (count (_trigger getVariable ["MSF_Patrol_Group_ID", []]) == 0) then {
 	private _side = [_sideVal] call BIS_fnc_sideType;
-	private _groupTypes = ["unit", _side] call MSF_fnc_GetConfigData get "Groups";
+	private _types = ["unit", _side] call MSF_fnc_GetConfigData get "Units";
 	private _ids = [];
 	private _count = [1, 2] select (_spawnCount);
 
 	for "_g" from 1 to _count do {
 		private _route = [_trigger, _amount, ([_trigger, true] call MSF_fnc_GetAreaRadius) * 2, false] call MSF_fnc_GetRadialPositionRoute;
-		private _group = [_route select 0, _side, _groupTypes] call MSF_fnc_SpawnGroupInSafePos;		
+		private _group = createGroup _side;
+
+		for "_s" from 0 to (random [4, 5, 6]) do {
+			_group createUnit [selectRandom _types, _route select 0, [], 5, "NONE"]
+		};
+
 		_group deleteGroupWhenEmpty true;
 		_group setSpeedMode _speed;
 		_group setCombatMode _mode;

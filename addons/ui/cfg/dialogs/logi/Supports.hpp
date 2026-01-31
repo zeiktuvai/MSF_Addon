@@ -213,7 +213,7 @@ class MSF_Logi_Supports
                         class SubmitButton: RscShortcutButton
                         {
                             idc = 1600;
-                            onButtonClick = "closeDialog 0; [lnbData [1500, [lnbCurSelRow 1500, 0]]] call MSF_UI_fnc_DisplayLogiMap;";
+                            onButtonClick = "closeDialog 0; [lnbData [1500, [lnbCurSelRow 1500, 0]]] call MSF_UI_fnc_OnSupportSubmitClicked;";
                             colorBackgroundFocused[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
                             text = "Select Drop Zone";
                             x = STR(0.1 * GRID_W);

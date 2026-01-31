@@ -1,7 +1,7 @@
 class MSF_Module_ShowHide : Module_F
 {
 	scope = 2;
-	displayName = "Better Show/Hide";
+	displayName = "Object - Better Show/Hide";
 	icon = "iconModule";
 	category = "MSF_Module";
 	function = "MSF_fnc_Mod_ShowHide";

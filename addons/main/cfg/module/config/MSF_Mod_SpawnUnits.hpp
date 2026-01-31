@@ -1,14 +1,14 @@
-class MSF_Module_RandomSpawn : Module_F
+class MSF_Module_SpawnTypes : Module_F
 {
 	scope = 2;
-	displayName = "Random Spawn Location";
-	icon = "a3\ui_f\data\igui\rsctitles\mpprogress\respawn_ca.paa";
+	displayName = "Config - Spawn Unit Types";
+	icon = MSF_ICON;
 	category = "MSF_Module";
-	function = "";
+	function = "MSF_fnc_Mod_SpawnUnitTypes";
 	functionPriority = 1;
-	isGlobal = 1;
+	isGlobal = 0;
 	isTriggerActivated = 0;
-	isDisposable = 1;	
+	isDisposable = 0;	
 	is3DEN = 0;
 	curatorCanAttach = 0;
 	canSetArea = 0;
@@ -23,18 +23,23 @@ class MSF_Module_RandomSpawn : Module_F
 
 	class Attributes : AttributesBase
 	{
+		class Units : Units
+		{
+			property = "MSF_Mod_UnitTypes";
+            defaultValue = "'0'";
+		};
 		class ModuleDescription : ModuleDescription {};
 	};
 	
 	class ModuleDescription : ModuleDescription
 	{
-		description = "If more than one of these modules is placed on a map, one will be selected at random as the starting spawn. (Does not function in 3den, only when playing outside of the editor).";
+		description = "Any unit synced to this module will be used by the MSF to spawn units. Only grabs class names to use for spawns and discards any customizations.";
 		sync[] = { "LocationArea_F" };
 
 		class LocationArea_F
 		{
 			description[] = {};
-			position = 1;
+			position = 0;
 			direction = 0;
 			optional = 0;
 			duplicate = 0;

@@ -1,5 +1,33 @@
 # Changelog
 
+## [NEXT]
+
+- Added code to **fortify buildings** module to ignore buildings that have no spawn positions, speeding up code execution.
+
+## [2.14.6]
+
+- Updated class override to use a new module that allows you to sync to units to use.
+- Hid old class override but kept code in place to prevent older missions breaking.
+- Fixed bug in player rearm code causing ammor for some primary weapons to not be added to a players inventory.
+- Fixed missile launch sound being incredibly loud when calling in a missile strike through logistics supports.
+- Fixed logistics terminal not being accessible when in a vehicle.
+
+## [2.14.5]
+
+- Added the following to the Logistics Support Channel:
+  - Static turrets
+  - APCs
+  - Cars
+  - Tanks
+  - Artillery barrages
+  - Missile barrages
+  - Mortar  barrages
+  - Flares
+- Updated supply depot to use it's own internal supply count.
+- Updated supply depot supply point to spawn a IR Chem-light for easy location during night missions.
+- Fixed parachute so that if it gets stuck, the parachute is removed after 15 seconds.
+- Fixed bug in Logi support channels where clicking "Clear request markers" wouldn't remove users map markers.
+
 ## [2.14.4]
 
 - Added Logistics Terminal to vanilla NATO Engineer classes (Engineer, Repair Specialist);

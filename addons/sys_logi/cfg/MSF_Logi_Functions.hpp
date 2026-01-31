@@ -25,6 +25,7 @@ class CfgFunctions
             class GetLogiInventory {};
             class GetLogiSupports {};
             class GetSavedVehicleLoadout {};
+            class GetSupportFaction {};
             class RemoveSharedVehicleLoadout {};
             class SaveVehicleLoadout {};
             class ShareVehicleLoadout {};
@@ -33,7 +34,6 @@ class CfgFunctions
         {
             file = "z\msf\addons\sys_logi\functions\helper";
             class CalculateItemCost {};
-            class CheckAvailablePoints {};
             class CheckSupplyPointExists {};
             class ConvertVehicleInventoryData {};
             class SendLogisticsMessage {};
@@ -75,6 +75,8 @@ class CfgFunctions
         {
             file = "z\msf\addons\sys_logi\functions\spawn";
             class SpawnAndFillBoxesOnPlaceholder {};
+            class SpawnArtyBarrage {};
+            class SpawnFlareBarrage {};
             class SpawnLogiBackpack {};
             class SpawnLogiCrate {};
             class SpawnUnmannedVicsOnPlaceholder {};

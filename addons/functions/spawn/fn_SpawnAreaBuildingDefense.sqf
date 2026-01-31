@@ -14,8 +14,10 @@ private _spots = 0;
 } forEach _bldgs;
 
 {
-	if ([_bldgProb] call MSF_fnc_CalculateProbability) then {
-		_buildings pushBack _x;
+	if (count (_x buildingPos -1) > 0) then {
+		if ([_bldgProb] call MSF_fnc_CalculateProbability) then {
+			_buildings pushBack _x;
+		};
 	};
 } forEach _bldgs;
 
