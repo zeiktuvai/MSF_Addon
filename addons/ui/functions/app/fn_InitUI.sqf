@@ -6,5 +6,6 @@ uiNamespace setVariable ["MSF_DisplayIDD", createHashMapFromArray [
 	["MSF_LogiMain", 6220],
 	["MSF_Logi_Supports", 6221],
 	["MSF_Logi_Markers", 6222],
-	["MSF_Logi_Vics", 6223]
+	["MSF_Logi_Vics", 6223],
+	["MSF_Admin", 6333]
 ]];

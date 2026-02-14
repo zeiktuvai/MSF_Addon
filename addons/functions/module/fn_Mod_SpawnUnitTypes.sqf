@@ -6,11 +6,11 @@ private _ind = _units select {getNumber (configOf _x >> "side") == 2};
 
 private _config = ["SpawnConfigOverride", "MSF", createHashMap] call MSF_fnc_GetConfigValue;
 
-if (count _west > 0) then {		
+if (_west isNotEqualTo []) then {		
 	_config set [west, [_west, _config getOrDefault [west, createHashMap]] call MSF_fnc_GetSyncedUntConfig];
 };
-if (count _east > 0) then {	_config set [east, [_east, _config getOrDefault [east, createHashMap]] call MSF_fnc_GetSyncedUntConfig]; };
-if (count _ind > 0) then { _config set [independent, [_ind, _config getOrDefault [independent, createHashMap]] call MSF_fnc_GetSyncedUntConfig]; };
+if (_east isNotEqualTo []) then {	_config set [east, [_east, _config getOrDefault [east, createHashMap]] call MSF_fnc_GetSyncedUntConfig]; };
+if (_ind isNotEqualTo []) then { _config set [independent, [_ind, _config getOrDefault [independent, createHashMap]] call MSF_fnc_GetSyncedUntConfig]; };
 
 ["MSF", "SpawnConfigOverride", _config] call MSF_fnc_SetConfigValue;
 

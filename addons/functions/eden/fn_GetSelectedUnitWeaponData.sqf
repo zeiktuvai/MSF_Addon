@@ -1,7 +1,7 @@
 private _units = get3DENSelected "object" select { _x isKindOf "Man"};
 private _return = [];
 
-if (count _units > 0) then
+if (_units isNotEqualTo []) then
 {
 	{
 		private _weap = primaryWeapon _x;

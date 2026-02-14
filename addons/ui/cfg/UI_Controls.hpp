@@ -1,4 +1,5 @@
 #include "dialogs\MSF_Defines.hpp"
+#include "dialogs\MSF_Admin.hpp"
 #include "dialogs\MSF_Dialog_Supply.hpp"
 #include "dialogs\MSF_Logi_Main.hpp"
 #include "dialogs\logi\Map.hpp"

@@ -10,5 +10,5 @@ switch (toLower _trait) do {
 };
 
 if (_type isEqualTo "") exitWith {false};
-[false, true] select (getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> _type) == 1);
+[false, true] select (getNumber (configOf _unit >> _type) == 1);
 //if (getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> _type) == 1) then {true} else {false};

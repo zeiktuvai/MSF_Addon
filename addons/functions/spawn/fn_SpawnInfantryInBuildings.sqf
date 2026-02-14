@@ -5,7 +5,7 @@ private _units = [];
 {
 	private _exempt = nearestObjects [_x, ["MSF_Placeholder_BldgSpawnExempt"], sizeOf (typeOf _x)];
 
-	if (count _exempt == 0) then {
+	if (_exempt isNotEqualTo []) then {
 		private _group = createGroup [_side, true];
 		_group setCombatMode "WHITE";
 		_group setBehaviourStrong "SAFE";
