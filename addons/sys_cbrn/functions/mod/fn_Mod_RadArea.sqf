@@ -5,4 +5,10 @@ private _mask = _logic getVariable ["Mask", ["G_AirPurifyingRespirator_02_black_
 private _damage = _logic getVariable ["DamageType", 0];
 private _area = _logic getVariable ["objectArea", [0,0,0,false,-1]];
 
+if (count (nearestObjects [position a, ["MSF_Module_Radiation_Area"], (_area # 0) + 50]) > 1) exitwith {};
 
+private _trig = createTrigger ["emptyDetector", getPos _logic];
+
+_trig setTriggerArea _area;
+_trig setTriggerActivation ["ANYPLAYER", PRESENT, true];
+_trig setTriggerStatements ["this", "", ""];

@@ -10,7 +10,7 @@ class CfgFunctions
 		};
         class Module
 		{
-			file = "z\msf\addons\sys_cbrn\functions\module";
+			file = "z\msf\addons\sys_cbrn\functions\mod";
 			class Mod_RadArea {};
 		};
     };

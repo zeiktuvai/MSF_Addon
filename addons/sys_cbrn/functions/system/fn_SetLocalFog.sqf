@@ -2,7 +2,7 @@ params [["_logic", objNull, [objNull]], ["_area", 100, [1]]];
 
 private _emitter = "#particlesource" createVehicle (getPos _logic);
 private _pos = getPos _logic;
-private _emitter setPos _pos;
+_emitter setPos _pos;
 
 private _colorRed = 0.6;
 private _colorGreen = 0.6;

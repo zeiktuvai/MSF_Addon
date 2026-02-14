@@ -9,7 +9,7 @@ class CfgPatches
 		name = "MSF - CBRN System";
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
-        units[] = {};
+        units[] = {"MSF_Module_Radiation_Area"};
         weapons[] = {};
         requiredVersion = 2.1;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction", "MSF3den"};

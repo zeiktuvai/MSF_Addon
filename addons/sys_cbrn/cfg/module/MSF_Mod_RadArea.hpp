@@ -30,7 +30,7 @@ class MSF_Module_Radiation_Area : Module_F
 			property = "MSF_CBRN_Rad_Cloth";
 			control = "EditCode";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "";
+			defaultValue = """";
 		};
 		class Mask
 		{
@@ -39,7 +39,7 @@ class MSF_Module_Radiation_Area : Module_F
 			property = "MSF_CBRN_Rad_Face";
 			control = "EditCode";
 			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "";
+			defaultValue = """";
 		};
 		class DamageType
 		{
