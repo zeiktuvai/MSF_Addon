@@ -3,7 +3,7 @@ params [["_loadout", "", [""]], ["_type", 0, [0]]];
 player setVariable ["MSF_VicLoadoutName", _loadout];
 
 [
-	"UPDATE",
+	"vehicle to UPDATE loadout",
 	{
 		if (_obj isKindOf "LandVehicle") then {
 			private _name = player getVariable ["MSF_VicLoadoutName", "INVALID"];

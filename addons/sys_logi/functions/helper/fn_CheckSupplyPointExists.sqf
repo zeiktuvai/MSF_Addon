@@ -2,7 +2,7 @@ params [["_obj", objNull, [objNull]]];
 
 private _objs = position _obj nearObjects ["AreaMarker_01_F", 20];
 
-if (count _objs == 0) then {
+if (_objs isEqualTo []) then {
 	private _newObj = createVehicle ["AreaMarker_01_F", position _obj, [], 20];
 	private _pos = position _newObj;
 	_newObj setObjectScale 0.6;

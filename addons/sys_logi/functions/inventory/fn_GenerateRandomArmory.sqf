@@ -8,15 +8,15 @@ clearBackpackCargoGlobal _object;
 private _primarys = "(getNumber ( _x >> 'scope' ) isEqualTo 2 && { getText ( _x >> 'simulation' ) isEqualTo 'Weapon' && { getNumber ( _x >> 'type' ) isEqualTo 1 }})" configClasses ( configFile >> "cfgWeapons" );
 private _weaps = [];
 
-for "_i" from 1 to _fillCount do {
+for "_i" from 1 to _count do {
 	private _weap = configName selectRandom _primarys;
-	_box addWeaponCargoGlobal [_weap, 1];
+	_object addWeaponCargoGlobal [_weap, 1];
 	_weaps pushBack _weap;
 
 	private _acc = compatibleItems _weap;
-	if (count _acc > 0 ) then {
+	if (_acc isNotEqualTo []) then {
 		if ([0.8] call MSF_fnc_CalculateProbability) then {
-			_box addItemCargoGlobal [selectRandom _acc, 1];
+			_object addItemCargoGlobal [selectRandom _acc, 1];
 		};
 	};
 };

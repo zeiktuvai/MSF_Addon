@@ -27,5 +27,5 @@ _display displayCtrl 3001 ctrlAddEventHandler ["Draw", {
 
 	{
 		if !(_x in _marks) then {_x setMarkerAlphaLocal 1};
-	} forEach allMapMarkers select { "MSF_Logi" in _x };
+	} forEach (allMapMarkers select { "MSF_Logi" in _x });
 }];

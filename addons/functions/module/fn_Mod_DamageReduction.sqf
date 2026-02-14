@@ -8,7 +8,7 @@ private _factor = _logic getVariable ["DmgReduction", 0.5];
 		//private _unit = _this select 0;		
 		//private _hit = _this select 1;
 		//private _dam = _this select 2;
-		private _toughness = 1 - _factor;
+		private _toughness = 1; //- _factor;
 		private _damage = 0;
 
 		if ("wheel" in _hit || "track" in _hit) then {

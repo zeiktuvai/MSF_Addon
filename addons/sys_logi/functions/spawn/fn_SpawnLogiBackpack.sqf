@@ -37,7 +37,7 @@ switch (_type) do {
 			};
 		} forEach _items;
 
-		if (count _mag > 0) then {
+		if (_mag isNotEqualTo []) then {
 			for "_i" from 1 to 3 do {
 				_bp addMagazineCargo [(_mag # 0), 1];
 			};

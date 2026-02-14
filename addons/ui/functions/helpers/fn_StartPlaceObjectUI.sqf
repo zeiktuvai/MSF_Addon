@@ -11,7 +11,7 @@ findDisplay 46 displayAddEventHandler ["KeyDown", {
 		deleteVehicle (player getVariable "MSF_Logi_Place_Obj");
 		findDisplay 46 displayRemoveEventHandler ["KeyDown", _thisEventHandler];
 		private _obj = createVehicle [player getVariable "MSF_Logi_Place_Type", screenToWorld[0.5,0.5], [], 0, "CAN_COLLIDE"];
-		if (_scale != 1) then {_obj setObjectScale _scale};
+		//if (_scale != 1) then {_obj setObjectScale _scale};
 		player setVariable ["MSF_Logi_Place_Obj", nil];
 		player setVariable ["MSF_Logi_Place_Type", nil];
 		player setVariable ["MSF_Logi_Place_Handle", nil];
