@@ -4,18 +4,18 @@ class CfgFunctions
     {
         class System
 		{
-			file = "z\msf\addons\sys_cbrn\functions\system";
+			file = "msf\addons\sys_cbrn\functions\system";
 			class GetPlayerZoneInArea {};
             class SetLocalFog {};
 		};
         class Module
 		{
-			file = "z\msf\addons\sys_cbrn\functions\mod";
+			file = "msf\addons\sys_cbrn\functions\mod";
 			class Mod_RadArea {};
 		};
 		class Radiation
 		{
-			file = "z\msf\addons\sys_cbrn\functions\radiation";
+			file = "msf\addons\sys_cbrn\functions\radiation";
 			class SetRadiationArea {};
 		};
     };
