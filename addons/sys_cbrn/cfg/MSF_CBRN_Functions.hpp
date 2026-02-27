@@ -13,5 +13,10 @@ class CfgFunctions
 			file = "z\msf\addons\sys_cbrn\functions\mod";
 			class Mod_RadArea {};
 		};
+		class Radiation
+		{
+			file = "z\msf\addons\sys_cbrn\functions\radiation";
+			class SetRadiationArea {};
+		};
     };
 };

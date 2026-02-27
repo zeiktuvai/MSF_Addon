@@ -6,7 +6,7 @@ class MSF_Module_Radiation_Area : Module_F
 	category = "MSF_Module_CBRN";
 	function = "";
 	functionPriority = 1;
-	isGlobal = 0;
+	isGlobal = 1;
 	isTriggerActivated = 0;
 	isDisposable = 0;	
 	is3DEN = 0;
@@ -41,31 +41,41 @@ class MSF_Module_Radiation_Area : Module_F
 			expression = "_this setVariable ['%s',_value];";
 			defaultValue = """";
 		};
-		class DamageType
+		class ShowOnMap
 		{
-			displayName = "Damage Ramp Method";
-			tooltip = "Determins how damage will increase over time.";
+			displayName = "Show on Map";
+			tooltip = "Marks the radiation area on the map.";
+			property = "MSF_MOD_RadAreaMap";
+			control = "Checkbox";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "true";
+		};
+		class MapDetail
+		{
+			displayName = "Detail Level";
+			tooltip = "How much information will be displayed about this area on the map.";
 			control = "Combo";
 			expression = "_this setVariable ['%s',_value];";
-			property = "MSF_CBRN_Rad_Dmg";
+			property = "MSF_MOD_RadArea_MapDetail";
 			defaultValue = 0;
 			typeName = "Number";
 			class Values
 			{
-				class Linear
+				class Zone
 				{
-					name = "Linear";
-					tooltip = "Linear increases damage by the same amount every tick.";
+					name = "Zone Only";
+					tooltip = "Only marks the radiation zone area on the map.";
 					value = 0;
 				};
-				class Exponential
+				class Full
 				{
-					name = "Exponential";
-					tooltip = "Exponential increases by a multiple every tick.";
+					name = "Full";
+					tooltip = "Shows all details about the radiation zone on the map.";
 					value = 1;
-				};
+				};				
 			};	
 		};
+
         class ModuleDescription : ModuleDescription {};
 	};
 	
