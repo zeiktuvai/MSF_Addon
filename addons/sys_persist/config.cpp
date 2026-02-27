@@ -2,7 +2,7 @@
 
 class CfgPatches
 {
-    class MSF3den
+    class ADDON
     {
 		name = "MSF - Persistence";
 		author = "Zeik_Tuvai";
