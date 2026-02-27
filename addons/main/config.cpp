@@ -101,7 +101,6 @@ class CfgHints
 			arguments[] = {"player getVariable ['MSF_NotificationText', ['General Message']] select 0", "player getVariable ['MSF_NotificationText', ['General Text']] select 1"};
 		};
 
-
 		class EndScenario
 		{
 			displayName = "Mission Completed";

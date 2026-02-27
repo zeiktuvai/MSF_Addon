@@ -1,8 +1,11 @@
 # Changelog
 
-## [NEXT]
+## [2.14.7]
 
+- Added admin menu with common functions for logged in admins.
 - Added code to **fortify buildings** module to ignore buildings that have no spawn positions, speeding up code execution.
+- Various syntax and performance improvements.
+- Various small bug fixes.
 
 ## [2.14.6]
 
