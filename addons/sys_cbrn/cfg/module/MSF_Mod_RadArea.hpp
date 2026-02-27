@@ -4,7 +4,7 @@ class MSF_Module_Radiation_Area : Module_F
 	displayName = "Radiation Area";
 	icon = "x\zen\addons\modules\ui\nuke_ca.paa";
 	category = "MSF_Module_CBRN";
-	function = "";
+	function = "MSF_CBRN_fnc_Mod_RadArea";
 	functionPriority = 1;
 	isGlobal = 1;
 	isTriggerActivated = 0;
@@ -23,24 +23,6 @@ class MSF_Module_Radiation_Area : Module_F
 
     class Attributes : AttributesBase
 	{
-		class Clothing
-		{
-			displayName = "Protective Clothes";
-			tooltip = "Any uniform in this list will protext the wearer from damage. Comma delimited list of strings";
-			property = "MSF_CBRN_Rad_Cloth";
-			control = "EditCode";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = """";
-		};
-		class Mask
-		{
-			displayName = "Protective Mask";
-			tooltip = "Any facewear in this list will protext the wearer from damage. Comma delimited list of strings";
-			property = "MSF_CBRN_Rad_Face";
-			control = "EditCode";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = """";
-		};
 		class ShowOnMap
 		{
 			displayName = "Show on Map";
@@ -74,6 +56,24 @@ class MSF_Module_Radiation_Area : Module_F
 					value = 1;
 				};				
 			};	
+		};
+		class Clothing
+		{
+			displayName = "Protective Clothes";
+			tooltip = "Any uniform in this list will protext the wearer from damage. Comma delimited list of strings";
+			property = "MSF_CBRN_Rad_Cloth";
+			control = "EditCodeMulti3";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "'""U_C_CBRN_Suit_01_Blue_F"",""U_B_CBRN_Suit_01_MTP_F"",""U_B_CBRN_Suit_01_Tropic_F"",""U_C_CBRN_Suit_01_White_F"",""U_C_CBRN_Suit_01_White_F"",""U_I_CBRN_Suit_01_AAF_F"",""U_I_E_CBRN_Suit_01_EAF_F"",""CUP_U_C_Fireman_01""'";
+		};
+		class Mask
+		{
+			displayName = "Protective Mask";
+			tooltip = "Any facewear in this list will protext the wearer from damage. Comma delimited list of strings";
+			property = "MSF_CBRN_Rad_Face";
+			control = "EditCodeMulti3";
+			expression = "_this setVariable ['%s',_value];";
+			defaultValue = "'""G_AirPurifyingRespirator_02_black_F"",""G_AirPurifyingRespirator_02_olive_F"",""G_AirPurifyingRespirator_02_sand_F"",""G_AirPurifyingRespirator_01_F"",""CUP_G_ESS_BLK_Facewrap_Black""'";
 		};
 
         class ModuleDescription : ModuleDescription {};
