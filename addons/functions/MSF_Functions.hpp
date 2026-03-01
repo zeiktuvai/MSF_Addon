@@ -45,6 +45,12 @@ class CfgFunctions
 			class SetConfigValue {};
 			class SetLocalValue {};
 		};
+		class Debug
+		{
+			file = "z\msf\addons\functions\debug";
+			class SendDebugMsg {};
+			class SetDebugMsgService {};
+		};
 		class Eden
 		{
 			file = "z\msf\addons\functions\eden";
