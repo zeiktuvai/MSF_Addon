@@ -49,32 +49,38 @@ class MSF_Module_Radiation_Area : Module_F
 					tooltip = "Only marks the radiation zone area on the map.";
 					value = 0;
 				};
+				class ZoneH
+				{
+					name = "Zone and Hotspot";
+					tooltip = "Marks the radiation zone and hotspots on the map.";
+					value = 1;
+				};
 				class Full
 				{
 					name = "Full";
-					tooltip = "Shows all details about the radiation zone on the map.";
-					value = 1;
+					tooltip = "Shows all details about the radiation zone on the map including hotspots.";
+					value = 2;
 				};				
 			};	
 		};
-		class Clothing
-		{
-			displayName = "Protective Clothes";
-			tooltip = "Any uniform in this list will protext the wearer from damage. Comma delimited list of strings";
-			property = "MSF_CBRN_Rad_Cloth";
-			control = "EditCodeMulti3";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "'""U_C_CBRN_Suit_01_Blue_F"",""U_B_CBRN_Suit_01_MTP_F"",""U_B_CBRN_Suit_01_Tropic_F"",""U_C_CBRN_Suit_01_White_F"",""U_C_CBRN_Suit_01_White_F"",""U_I_CBRN_Suit_01_AAF_F"",""U_I_E_CBRN_Suit_01_EAF_F"",""CUP_U_C_Fireman_01""'";
-		};
-		class Mask
-		{
-			displayName = "Protective Mask";
-			tooltip = "Any facewear in this list will protext the wearer from damage. Comma delimited list of strings";
-			property = "MSF_CBRN_Rad_Face";
-			control = "EditCodeMulti3";
-			expression = "_this setVariable ['%s',_value];";
-			defaultValue = "'""G_AirPurifyingRespirator_02_black_F"",""G_AirPurifyingRespirator_02_olive_F"",""G_AirPurifyingRespirator_02_sand_F"",""G_AirPurifyingRespirator_01_F"",""CUP_G_ESS_BLK_Facewrap_Black""'";
-		};
+		// class Clothing
+		// {
+		// 	displayName = "Protective Clothes";
+		// 	tooltip = "Any uniform in this list will protext the wearer from damage. Comma delimited list of strings";
+		// 	property = "MSF_CBRN_Rad_Cloth";
+		// 	control = "EditCodeMulti3";
+		// 	expression = "_this setVariable ['%s',_value];";
+		// 	defaultValue = "'""U_C_CBRN_Suit_01_Blue_F"",""U_B_CBRN_Suit_01_MTP_F"",""U_B_CBRN_Suit_01_Tropic_F"",""U_C_CBRN_Suit_01_White_F"",""U_C_CBRN_Suit_01_White_F"",""U_I_CBRN_Suit_01_AAF_F"",""U_I_E_CBRN_Suit_01_EAF_F"",""CUP_U_C_Fireman_01""'";
+		// };
+		// class Mask
+		// {
+		// 	displayName = "Protective Mask";
+		// 	tooltip = "Any facewear in this list will protext the wearer from damage. Comma delimited list of strings";
+		// 	property = "MSF_CBRN_Rad_Face";
+		// 	control = "EditCodeMulti3";
+		// 	expression = "_this setVariable ['%s',_value];";
+		// 	defaultValue = "'""G_AirPurifyingRespirator_02_black_F"",""G_AirPurifyingRespirator_02_olive_F"",""G_AirPurifyingRespirator_02_sand_F"",""G_AirPurifyingRespirator_01_F"",""CUP_G_ESS_BLK_Facewrap_Black""'";
+		// };
 
         class ModuleDescription : ModuleDescription {};
 	};

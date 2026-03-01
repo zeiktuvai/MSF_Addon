@@ -7,6 +7,7 @@ class Module_F : Logic
 		class Checkbox;
 		class ModuleDescription;
 		class Units;
+		class SliderMultiplier;
 	};
 
 	class ModuleDescription
@@ -16,3 +17,4 @@ class Module_F : Logic
 };
 
 #include "module/MSF_Mod_RadArea.hpp"
+#include "module/MSF_Mod_RadHotspot.hpp"

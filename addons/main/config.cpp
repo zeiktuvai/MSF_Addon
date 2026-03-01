@@ -62,7 +62,7 @@ class Extended_PreInit_EventHandlers
 {
     class ADDON
     {
-        init = "call compile preprocessFileLineNumbers 'z\msf\addons\main\settings\MSF_Server.sqf'; call compile preprocessFileLineNumbers 'z\msf\addons\main\settings\Logistics.sqf'; call compile preprocessFileLineNumbers 'z\msf\addons\main\settings\MSF_User.sqf'";
+        init = "call compile preprocessFileLineNumbers 'z\msf\addons\main\settings\MSF_Server.sqf'; call compile preprocessFileLineNumbers 'z\msf\addons\main\settings\Logistics.sqf'; call compile preprocessFileLineNumbers 'z\msf\addons\main\settings\MSF_User.sqf'; call compile preprocessFileLineNumbers 'z\msf\addons\main\settings\cbrn.sqf'";
     };
 };
 

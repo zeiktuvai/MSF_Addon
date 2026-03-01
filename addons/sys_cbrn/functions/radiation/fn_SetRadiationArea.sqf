@@ -1,13 +1,13 @@
-params ["_suits", "_masks"];
-
 addMissionEventHandler ["EntityRespawned", {
 	params ["_newEntity", "_oldEntity"];
 
   if !(isNil {_newEntity getVariable "MSF_Radiation"}) then { _newEntity setVariable ["MSF_Radiation", nil]; };
 }];
 
-private _handle = [_suits, _masks] spawn {
-  params ["_suits", "_masks"];
+private _handle = [] spawn {
+
+  private _suits = parseSimpleArray format ["[%1]", MSF_CBRN_ProtSuit];
+  private _masks = parseSimpleArray format ["[%1]", MSF_CBRN_ProtMask];
 
   private _parts = ["Head", "Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"];
   private _int = 0.009;
@@ -19,7 +19,14 @@ private _handle = [_suits, _masks] spawn {
       private _pl = player;
       private _trigs = missionNamespace getVariable ["MSF_RadiationZones", []];
       
-      if (_trigs select { _pl inArea _x } isNotEqualTo []) then {
+      private _trig = _trigs select { _pl inArea _x };
+      if (_trig isNotEqualTo []) then {
+        
+        private _zones = (_trig # 0) getVariable ["Rad_Zones", []];
+        private _hspot = (_zones select {
+          private _zarea = _x getVariable ["objectArea", [0,0,0,false,-1]];
+          position _pl inArea [_x, _zarea # 0, _zarea # 1, _zarea # 2, _zarea # 3, _zarea # 4];
+        }) isNotEqualTo [];
 
         if (_pl getVariable ["RadMsg", true]) then {
           if !(goggles _pl in _masks && uniform _pl in _suits) then {cutText ["You start to feel a slight tingle.", "PLAIN", 0.5];};
@@ -37,7 +44,11 @@ private _handle = [_suits, _masks] spawn {
           case 3: {_dmg = 0};
         };
 
-        //systemChat format ["pro: %1 dmg: %2", _protection, _dmg];
+        if (_hspot) then {_dmg = _dmg * 2};
+
+        if (MSF_Debug_Message_Enabled) then {
+          [format ["Radiation Protection: %1 Applied Damage: %2", _protection, _dmg]] call MSF_fnc_SendDebugMsg;
+        };
 
         if (_dmg != 0) then {
           [_pl, _dmg, selectRandom _parts, "burn"] call ace_medical_fnc_addDamageToUnit;
