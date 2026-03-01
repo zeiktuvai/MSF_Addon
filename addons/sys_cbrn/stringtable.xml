@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="MSF CBRN">
+    <Package name="Medical_Damage">
+        <Key ID="STR_ACE_Medical_Damage_RadiationBurn">
+            <English>Radiation Burn</English>
+            <French>Brûlure due aux radiations</French>
+            <Spanish>Quemadura por radiación</Spanish>
+            <Italian>Ustione da radiazioni</Italian>
+            <Polish>Oparzenie radiacyjne</Polish>
+            <Portuguese>Queimadura de radiação</Portuguese>
+            <Russian>Радиационный ожог</Russian>
+            <German>Strahlenverbrennung</German>
+            <Korean>방사선 화상</Korean>
+            <Japanese>放射線による火傷</Japanese>
+            <Chinesesimp>辐射烧伤</Chinesesimp>
+            <Ukrainian>Радіаційний опік</Ukrainian>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_RadiationBurn_Large">
+            <English>Major Radiation Burn</English>
+            <French>Brûlure majeure due aux radiations</French>
+            <Spanish>Quemaduras graves por radiación</Spanish>
+            <Italian>Grave ustione da radiazioni</Italian>
+            <Polish>Poważne oparzenie popromienne</Polish>
+            <Portuguese>Grande Queimadura de Radiação</Portuguese>
+            <Russian>Большой радиационный ожог</Russian>
+            <German>Schwere Strahlenverbrennung</German>
+            <Korean>주요 방사선 화상</Korean>
+            <Japanese>重度の放射線熱傷</Japanese>
+            <Chinesesimp>严重辐射烧伤</Chinesesimp>
+            <Ukrainian>Великий радіаційний опік</Ukrainian>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_RadiationBurn_Medium">
+            <English>Medium Radiation Burn</English>
+            <French>Brûlure moyenne par rayonnement</French>
+            <Spanish>Quemadura por radiación media</Spanish>
+            <Italian>Ustione da radiazioni medie</Italian>
+            <Polish>Średnie oparzenie radiacyjne</Polish>
+            <Portuguese>Queimadura por radiação de intensidade média</Portuguese>
+            <Russian>Средний радиационный ожог</Russian>
+            <German>Mittelschwere Strahlenverbrennung</German>
+            <Korean>중등도 방사선 화상</Korean>
+            <Japanese>中程度の放射線熱傷</Japanese>
+            <Chinesesimp>中等辐射烧伤</Chinesesimp>
+            <Ukrainian>Опік середнього ступеня випромінювання</Ukrainian>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_RadiationBurn_Minor">
+            <English>Minor Radiation Burn</English>
+            <French>Brûlure mineure due aux radiations</French>
+            <Spanish>Quemadura leve por radiación</Spanish>
+            <Italian>Ustione da radiazioni minore</Italian>
+            <Polish>Lekkie oparzenie popromienne</Polish>
+            <Portuguese>Queimadura ligeira por radiação</Portuguese>
+            <Russian>Незначительный радиационный ожог</Russian>
+            <German>Leichte Strahlenverbrennung</German>
+            <Korean>경미한 방사선 화상</Korean>
+            <Japanese>軽度の放射線火傷</Japanese>
+            <Chinesesimp>轻微辐射灼伤</Chinesesimp>
+            <Ukrainian>Незначний опік опроміненням</Ukrainian>
+        </Key>
+    </Package>
+</Project>

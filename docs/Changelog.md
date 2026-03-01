@@ -3,6 +3,7 @@
 ## [2.14.8]
 
 - Added the groundwork for the radiation part of the CBRN system.
+- Added custom damage type to ACE Medical for radiation.
 - Added debug user addon options to enable easier toggling of MSF debug options.
 
 ## [2.14.7]

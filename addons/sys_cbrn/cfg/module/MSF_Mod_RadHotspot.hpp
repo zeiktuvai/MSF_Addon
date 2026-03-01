@@ -1,6 +1,6 @@
 class MSF_Module_Radiation_Hotspot : Module_F
 {
-	scope = 2;
+	scope = 1;
 	displayName = "Radiation Hot Spot";
 	icon = "x\zen\addons\modules\ui\nuke_ca.paa";
 	category = "MSF_Module_CBRN";

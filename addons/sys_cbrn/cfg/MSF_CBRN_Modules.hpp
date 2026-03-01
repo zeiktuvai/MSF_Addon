@@ -3,16 +3,15 @@ class Module_F : Logic
 {
 	class AttributesBase
 	{
-		class Default;
-		class Checkbox;
+		//class Default;
+		//class Checkbox;
 		class ModuleDescription;
-		class Units;
-		class SliderMultiplier;
+		//class Units;
 	};
 
 	class ModuleDescription
 	{
-		class AnyBrain;
+		//class AnyBrain;
 	};
 };
 

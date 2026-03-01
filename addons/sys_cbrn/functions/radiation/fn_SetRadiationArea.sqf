@@ -51,7 +51,7 @@ private _handle = [] spawn {
         };
 
         if (_dmg != 0) then {
-          [_pl, _dmg, selectRandom _parts, "burn"] call ace_medical_fnc_addDamageToUnit;
+          [_pl, _dmg, selectRandom _parts, "radiation"] call ace_medical_fnc_addDamageToUnit;
           _pl setVariable ["MSF_Radiation", _rad + _int];        
         };
 
