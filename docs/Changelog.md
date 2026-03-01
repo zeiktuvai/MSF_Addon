@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.14.8]
+
+- Added the groundwork for the radiation part of the CBRN system.
+- Added debug user addon options to enable easier toggling of MSF debug options.
+
 ## [2.14.7]
 
 - Added admin menu with common functions for logged in admins.

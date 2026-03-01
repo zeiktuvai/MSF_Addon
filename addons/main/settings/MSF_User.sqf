@@ -10,7 +10,17 @@
 	"CHECKBOX",
 	["Enable Debug Messages", "When enabled, shows debug messages in system chat."],
 	["MSF - User Settings", "Debug"],
-	false
+	false,
+	2,
+	{[_this] call MSF_fnc_SetDebugMsgService;}
+] call CBA_fnc_addSetting;
+[
+	"MSF_Debug_Message_Log",
+	"CHECKBOX",
+	["Enable Arma Logging", "When enabled, records debug messages to the report file."],
+	["MSF - User Settings", "Debug"],
+	false,
+	2
 ] call CBA_fnc_addSetting;
 [
 	"MSF_Logi_Message_Enabled",
