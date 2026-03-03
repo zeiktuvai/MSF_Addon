@@ -8,7 +8,7 @@ class CfgPatches
 		author = "Zeik_Tuvai";
 		version = MSF_VERSION;
         units[] = {"MSF_Module_Radiation_Area", "MSF_Module_Radiation_Hotspot"};
-        weapons[] = {};
+        weapons[] = {"MSF_PotassiumIodide_Item"};
         requiredVersion = 2.1;
         requiredAddons[] = {"3DEN", "cba_settings", "ace_interaction", "MSF3den"};
     };

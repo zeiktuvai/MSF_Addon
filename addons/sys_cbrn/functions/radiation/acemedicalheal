@@ -1,0 +1,11 @@
+
+//ace_medical_bodyPartDamage [Head,torso,left arm,right arm,left leg,right leg]
+
+_t = player getVariable "ace_medical_openWounds";
+//get "rightleg";
+//_t # 0 set [3, 0];
+//_t deleteAt "rightleg";
+//_t;
+_d = player getVariable "ace_medical_bodyPartDamage";
+_d set [5, 0];
+_d;

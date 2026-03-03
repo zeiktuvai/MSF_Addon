@@ -20,34 +20,33 @@ private _handle = [] spawn {
       private _trigs = missionNamespace getVariable ["MSF_RadiationZones", []];
       
       private _trig = _trigs select { _pl inArea _x };
-      if (_trig isNotEqualTo []) then {
-        
+      if (_trig isNotEqualTo []) then {        
         private _zones = (_trig # 0) getVariable ["Rad_Zones", []];
         private _hspot = (_zones select {
           private _zarea = _x getVariable ["objectArea", [0,0,0,false,-1]];
           position _pl inArea [_x, _zarea # 0, _zarea # 1, _zarea # 2, _zarea # 3, _zarea # 4];
         }) isNotEqualTo [];
 
+        private _rad = _pl getVariable ["MSF_Radiation", 0];
+        private _suitDur = uniformContainer _pl getVariable ["MSF_CBRN_Durability", 1];
+        
         if (_pl getVariable ["RadMsg", true]) then {
-          if !(goggles _pl in _masks && uniform _pl in _suits) then {cutText ["You start to feel a slight tingle.", "PLAIN", 0.5];};
+          if (!(goggles _pl in _masks && uniform _pl in _suits) || _suitDur < 0.35) then {cutText ["You start to feel a slight tingle.", "PLAIN", 0.5];};
+        };
+        
+        if (uniform _pl in _suits) then {
+          private _durLoss = [0.002, 0.01] select _hspot;
+          uniformContainer _pl setVariable ["MSF_CBRN_Durability", [_suitDur - _durLoss, 0] select (_suitDur <= 0.005)];
         };
       
-        private _rad = _pl getVariable ["MSF_Radiation", 0];
         private _dmg = random [_dmin + _rad, _dmid + _rad, _dmax + _rad];
-        private _protection = 0;
-        if (goggles _pl in _masks) then {_protection = 1};
-        if (uniform _pl in _suits) then {_protection = 2};
-        if (goggles _pl in _masks && uniform _pl in _suits) then {_protection = 3};
-        switch (_protection) do {
-          case 1: {_dmg = _dmg * 0.75 };
-          case 2: {_dmg = _dmg * 0.50 };
-          case 3: {_dmg = 0};
-        };
+        private _dmgMltplier = [_pl] call MSF_CBRN_fnc_CalculateRadDamage;
+        _dmg = _dmg * _dmgMltplier;
 
         if (_hspot) then {_dmg = _dmg * 2};
 
         if (MSF_Debug_Message_Enabled) then {
-          [format ["Radiation Protection: %1 Applied Damage: %2", _protection, _dmg]] call MSF_fnc_SendDebugMsg;
+          [format ["Applied Damage: %1", _dmg]] call MSF_fnc_SendDebugMsg;
         };
 
         if (_dmg != 0) then {

@@ -16,6 +16,7 @@ class CfgFunctions
 		class Radiation
 		{
 			file = "msf\addons\sys_cbrn\functions\radiation";
+			class CalculateRadDamage {};
 			class SetRadiationArea {};
 		};
     };

@@ -1,6 +1,6 @@
 class MSF_Module_Radiation_Area : Module_F
 {
-	scope = 1;
+	scope = 2;
 	displayName = "Radiation Area";
 	icon = "x\zen\addons\modules\ui\nuke_ca.paa";
 	category = "MSF_Module_CBRN";

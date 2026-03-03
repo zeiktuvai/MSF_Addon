@@ -80,6 +80,7 @@ class CfgFunctions
 			class CalculateProbability {};
 			class GetAreaRadius {};
 			class OrderArrayByStartingValue {};
+			class SumNumArray {};
 		};
 		class Module
 		{
