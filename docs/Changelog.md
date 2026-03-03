@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.15]
+
+- Implemented the Nuclear and Radiological portion of the CBRN system.
+- CBRN: Added radiation area module to define areas of radiation in missions.
+- CBRN: Added radiation hot spot module to define areas of intense radiation inside a radiation area.
+- CBRN: Added addon options with a default list of defined uniforms/goggles that protect against radiation.
+- CBRN: Implemented suit protection durability which is reduced gradualy the longer you stay in a radiation area (hot spots greatly increse durability reduction) and starts to let radiation damage in once durability gets low.
+- CBRN: Added Potassium Iodide as an ACE medical item that can be used to reduce your bodies radiation levels.
+
 ## [2.14.8]
 
 - Added the groundwork for the radiation part of the CBRN system.
