@@ -8,6 +8,8 @@
 - CBRN: Added addon options with a default list of defined uniforms/goggles that protect against radiation.
 - CBRN: Implemented suit protection durability which is reduced gradualy the longer you stay in a radiation area (hot spots greatly increse durability reduction) and starts to let radiation damage in once durability gets low.
 - CBRN: Added Potassium Iodide as an ACE medical item that can be used to reduce your bodies radiation levels.
+- CBRN: Damage only applies to body areas that are unprotected (except for chemical areas where no mask would damage head and body {because lungs}).
+- CBRN: Added a simple UI interface for tracking suit durability.
 
 ## [2.14.8]
 
