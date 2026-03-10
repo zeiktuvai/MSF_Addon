@@ -1,15 +1,4 @@
-addMissionEventHandler ["EntityRespawned", {
-	params ["_newEntity", "_oldEntity"];
-
-  if !(isNil {_newEntity getVariable "MSF_Radiation"}) then { _newEntity setVariable ["MSF_Radiation", nil]; };
-}];
-
 private _handle = [] spawn {
-
-  private _suits = parseSimpleArray format ["[%1]", MSF_CBRN_ProtSuit];
-  private _masks = parseSimpleArray format ["[%1]", MSF_CBRN_ProtMask];
-
-  private _parts = ["Head", "Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"];
   private _int = 0.009;
   private _dmin = 0.01;
   private _dmid = 0.115;
@@ -31,14 +20,15 @@ private _handle = [] spawn {
         private _suitDur = uniformContainer _pl getVariable ["MSF_CBRN_Durability", 1];
         
         if (_pl getVariable ["RadMsg", true]) then {
-          if (!(goggles _pl in _masks && uniform _pl in _suits) || _suitDur < 0.35) then {cutText ["You start to feel a slight tingle.", "PLAIN", 0.5];};
+          if (!([_pl, 2] call MSF_CBRN_fnc_GetPlayerCBRNGear && [_pl, 1] call MSF_CBRN_fnc_GetPlayerCBRNGear) || _suitDur < 0.35)
+           then {cutText ["You start to feel a slight tingle.", "PLAIN", 0.5];};
         };
         
-        if (uniform _pl in _suits) then {
-          private _durLoss = [0.002, 0.01] select _hspot;
-          uniformContainer _pl setVariable ["MSF_CBRN_Durability", [_suitDur - _durLoss, 0] select (_suitDur <= 0.005)];
+        if ([_pl, 1] call MSF_CBRN_fnc_GetPlayerCBRNGear) then {
+          private _durLoss = [0.002, 0.005] select _hspot;
+          uniformContainer _pl setVariable ["MSF_CBRN_Durability", [_suitDur - _durLoss, 0] select (_suitDur <= 0.005), true];
         };
-      
+
         private _dmg = random [_dmin + _rad, _dmid + _rad, _dmax + _rad];
         private _dmgMltplier = [_pl] call MSF_CBRN_fnc_CalculateRadDamage;
         _dmg = _dmg * _dmgMltplier;
@@ -50,6 +40,7 @@ private _handle = [] spawn {
         };
 
         if (_dmg != 0) then {
+          private _parts = [[_pl, 1] call MSF_CBRN_fnc_GetPlayerCBRNGear, [_pl, 2] call MSF_CBRN_fnc_GetPlayerCBRNGear] call MSF_CBRN_fnc_GetDamageParts;
           [_pl, _dmg, selectRandom _parts, "radiation"] call ace_medical_fnc_addDamageToUnit;
           _pl setVariable ["MSF_Radiation", _rad + _int];        
         };

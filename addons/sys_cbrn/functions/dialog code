@@ -1,0 +1,15 @@
+createDialog "MSFdevdialog";
+
+_dur = uniformContainer player getVariable ["MSF_CBRN_Durability", -1];
+private _color = switch true do {
+	case (_dur > 0.75): {[0.722, 1, 0.682, 1]};
+	case (_dur < 0.75 && _dur > 0.50): {[1, 0.894, 0.494, 1]};
+	case (_dur < 0.50): {[0.851, 0.435, 0.435, 1]};
+	default {[1,1,1,1]};
+};
+findDisplay 6222 displayCtrl 1301 ctrlSetTextColor _color;
+_color;
+// red[0.851, 0.435, 0.435, 1];
+//orange [1, 0.894, 0.494, 1];
+// green [0.722, 1, 0.682, 1];
+

@@ -2,6 +2,18 @@ class CfgFunctions
 {
     class MSF_CBRN
     {
+		class App
+		{
+			file = "msf\addons\sys_cbrn\functions\app";
+			class initCBRN {
+				postInit = 1;
+			};
+		};
+		class Helper
+		{
+			file = "msf\addons\sys_cbrn\functions\helper";
+			class CreateRadiationMarker {};
+		};
         class System
 		{
 			file = "msf\addons\sys_cbrn\functions\system";
@@ -17,6 +29,8 @@ class CfgFunctions
 		{
 			file = "msf\addons\sys_cbrn\functions\radiation";
 			class CalculateRadDamage {};
+			class GetDamageParts {};
+			class GetPlayerCBRNGear {};
 			class SetRadiationArea {};
 		};
     };
