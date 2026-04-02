@@ -120,3 +120,25 @@ class CfgHQIdentities
 		speaker = "Male03EN";
 	};
 };
+
+class CfgNotifications
+{
+	class NewMessage
+		{
+		title = "New Radio Message";
+		iconPicture = "a3\modules_f_curator\data\portraitradio_ca.paa";
+		iconText = "";
+		description = "A new radio message was recieved, check the map for details.";
+		color[] = {1,1,1,1};
+		duration = 5;
+	};
+	class RespawnVic
+		{
+		title = "New Vehicle Respawn Point";
+		iconPicture = "a3\modules_f\data\portraitrespawn_ca.paa";
+		iconText = "";
+		description = "This vehicle is a respawn position. Keep it safe.";
+		color[] = {1,1,1,1};
+		duration = 5;
+	};
+};
